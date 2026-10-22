@@ -1,0 +1,10 @@
+pydantic==2.13.4
+Pillow==12.3.0
+numpy>=1.26,<3
+requests>=2.32,<3
+piper-tts==1.8.0
+faster-whisper==1.2.1
+pytest>=8,<10
+PyYAML>=6,<7
+google-api-python-client>=2,<3
+google-auth-oauthlib>=1,<2
