@@ -1,0 +1,128 @@
+name: Generate Stickman Video
+on:
+  workflow_dispatch:
+    inputs:
+      title:
+        description: Video title
+        required: true
+        type: string
+      duration_minutes:
+        description: Duration in minutes (4–10)
+        default: 6
+        type: number
+      style:
+        type: choice
+        options: [auto, minimalist, cinematic, humorous, dark-philosophical]
+        default: auto
+      voice:
+        type: choice
+        options: [auto, custom]
+        default: auto
+      format:
+        type: choice
+        options: ['16:9', '9:16']
+        default: '16:9'
+      quality:
+        type: choice
+        options: [standard, high]
+        default: high
+      music:
+        type: choice
+        options: [auto, ambient, cinematic, none]
+        default: auto
+      seed:
+        description: Optional reproducibility seed
+        type: string
+        default: ''
+      upload_to_youtube:
+        type: boolean
+        default: false
+permissions:
+  contents: read
+concurrency:
+  group: video-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  produce:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    env:
+      STUDIO_INPUTS: ${{ toJSON(inputs) }}
+      OLLAMA_HOST: 127.0.0.1:11434
+      OLLAMA_NUM_PARALLEL: '1'
+      OLLAMA_MAX_LOADED_MODELS: '1'
+      HF_HOME: ${{ github.workspace }}/.cache/huggingface
+      OLLAMA_MODELS: ${{ github.workspace }}/.cache/ollama
+      STUDIO_HISTORY: ${{ github.workspace }}/.cache/history
+      YOUTUBE_OAUTH_JSON: ${{ secrets.YOUTUBE_OAUTH_JSON }}
+      CUSTOM_VOICE_AUTHORIZED: ${{ vars.CUSTOM_VOICE_AUTHORIZED }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - name: Validate input before downloads
+        run: |
+          python -m pip install 'pydantic==2.13.4'
+          python -c "from pipeline.config import Config; c=Config.environment(); assert 4 <= c.duration_minutes <= 10, 'Duration must be 4–10 minutes'"
+      - name: Inspect runner resources
+        run: |
+          nproc
+          free -h
+          df -h .
+          lscpu
+      - name: System and Python dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg fonts-dejavu-core zstd
+          python -m pip install -r requirements.txt
+      - uses: actions/cache@v4
+        with:
+          path: |
+            .cache/voices
+            .cache/huggingface
+            .cache/ollama
+          key: studio-models-v1-${{ runner.os }}
+      - uses: actions/cache/restore@v4
+        with:
+          path: .cache/history
+          key: studio-history-${{ github.run_id }}
+          restore-keys: studio-history-
+      - name: Install and start local Ollama
+        run: |
+          mkdir -p work/ollama
+          curl --fail --location --retry 3 https://ollama.com/download/ollama-linux-amd64.tar.zst -o work/ollama.tar.zst
+          tar --zstd -xf work/ollama.tar.zst -C work/ollama
+          rm work/ollama.tar.zst
+          work/ollama/bin/ollama serve > work/ollama.log 2>&1 &
+          python scripts/wait_ollama.py
+          work/ollama/bin/ollama pull qwen3:4b
+      - name: Download default licensed voice
+        run: |
+          python -m piper.download_voices en_US-lessac-medium --download-dir .cache/voices
+          curl --fail --location https://huggingface.co/rhasspy/piper-voices/resolve/main/en/en_US/lessac/medium/MODEL_CARD -o .cache/voices/MODEL_CARD
+      - name: Produce and verify complete video
+        run: python -m pipeline.main --out outputs/stickman-video-output
+      - uses: actions/cache/save@v4
+        if: success()
+        with:
+          path: .cache/history
+          key: studio-history-${{ github.run_id }}
+      - name: Deliver successful production
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stickman-video-output
+          path: outputs/stickman-video-output/
+          retention-days: 14
+          if-no-files-found: error
+      - name: Preserve failure diagnostics and checkpoints
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: failed-production-diagnostics
+          path: |
+            outputs/
+            work/*.log
+          retention-days: 7
