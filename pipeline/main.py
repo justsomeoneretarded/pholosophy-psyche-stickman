@@ -29,7 +29,7 @@ def run(config,out,story=None,whisper_model='base.en',voice_path=None):
     save(out/'claims.json',{'framing':episode.framing,'claims_verified':False,'policy':'No precise empirical claims or attributed quotations are authorized by metadata alone.','review_required':True})
     (out/'script.txt').write_text('\n\n'.join(s.narration for s in episode.scenes))
     history_path,history_record=originality(episode,os.environ.get('STUDIO_HISTORY','.cache/history'))
-    voice_path=Path(voice_path or os.environ.get('PIPER_VOICE','.cache/voices/en_US-lessac-medium.onnx'))
+    voice_path=Path(voice_path or os.environ.get('PIPER_VOICE','.cache/voices/en_US-ljspeech-high.onnx'))
     if config.voice=='custom' and os.environ.get('CUSTOM_VOICE_AUTHORIZED')!='true':raise ValueError('Custom voice needs CUSTOM_VOICE_AUTHORIZED=true and a permitted Piper ONNX model. Audio cloning is not implemented.')
     speech_dir=out/'speech';durations,speech_seconds=synthesize(episode.scenes,speech_dir,voice_path)
     verification=verify(episode.scenes,speech_dir,whisper_model);save(out/'speech_verification.json',verification)
@@ -49,7 +49,7 @@ def run(config,out,story=None,whisper_model='base.en',voice_path=None):
     bench=render(episode,timeline,captions,out,config.size,30,config.quality)
     events=design(timeline,episode,out,config.music,config.seed);save(out/'sound_cues.json',events)
     finish(out,timeline[-1]['end']);thumbnail(episode,out);package(episode,timeline,sources,out)
-    save(out/'audio_licenses.json',{'music':'Original procedural synthesis, GPL-3.0-or-later','effects':'Original procedural synthesis, GPL-3.0-or-later','narration':{'engine':'Piper GPL-3.0-or-later','voice':str(voice_path),'model_card':'https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_US/lessac/medium/MODEL_CARD','dataset_license':'Model card references the Lessac Blizzard 2013 dataset license; review voice terms before distribution'}})
+    save(out/'audio_licenses.json',{'music':'Original procedural synthesis, GPL-3.0-or-later','effects':'Original procedural synthesis, GPL-3.0-or-later','narration':{'engine':'Piper GPL-3.0-or-later','voice':str(voice_path),'model_card':'https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_US/ljspeech/high/MODEL_CARD','dataset_license':'LJ Speech dataset is public domain; see downloaded model card'}})
     qa=inspect(out,config.size,30,target);qa['motion']=motion;qa['speech_verified']=all(v['verified'] for v in verification);qa['artistic_quality']='Requires editorial review, no artistic numerical score';save(out/'quality_report.json',qa)
     report={'elapsed_seconds':time.monotonic()-started,'speech_seconds':speech_seconds,'render':bench,'model_metrics':metrics,'warnings':warnings,'limitations':['Metadata retrieval is not full-text fact checking','Chatterbox not benchmarked','Advanced object interactions are experimental','No audio voice cloning','No monetization guarantee']}
     save(out/'production_metrics.json',report);(out/'production_report.md').write_text('# Production report\n\n'+json.dumps(report,indent=2)+'\n\nTechnical QA passed: '+str(qa['passed']))

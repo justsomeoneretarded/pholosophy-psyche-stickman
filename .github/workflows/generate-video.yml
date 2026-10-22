@@ -93,15 +93,15 @@ jobs:
         run: |
           mkdir -p work/ollama
           curl --fail --location --retry 3 https://ollama.com/download/ollama-linux-amd64.tar.zst -o work/ollama.tar.zst
-          tar --zstd -xf work/ollama.tar.zst -C work/ollama
+          tar --zstd --exclude='*cuda*' --exclude='*rocm*' -xf work/ollama.tar.zst -C work/ollama
           rm work/ollama.tar.zst
           work/ollama/bin/ollama serve > work/ollama.log 2>&1 &
           python scripts/wait_ollama.py
           work/ollama/bin/ollama pull qwen3:4b
       - name: Download default licensed voice
         run: |
-          python -m piper.download_voices en_US-lessac-medium --download-dir .cache/voices
-          curl --fail --location https://huggingface.co/rhasspy/piper-voices/resolve/main/en/en_US/lessac/medium/MODEL_CARD -o .cache/voices/MODEL_CARD
+          python -m piper.download_voices en_US-ljspeech-high --download-dir .cache/voices
+          curl --fail --location https://huggingface.co/rhasspy/piper-voices/resolve/main/en/en_US/ljspeech/high/MODEL_CARD -o .cache/voices/MODEL_CARD
       - name: Produce and verify complete video
         run: python -m pipeline.main --out outputs/stickman-video-output
       - uses: actions/cache/save@v4
