@@ -23,11 +23,8 @@ jobs:
               request=urllib.request.Request(base+path,data=json.dumps(data or {}).encode(),method='POST',headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'})
               with urllib.request.urlopen(request,timeout=30) as response:
                   print(path, response.status)
-          # This older run predates the constrained action enum and detailed scene validation diagnostics.
-          try:post('/actions/runs/39924475279/cancel')
-          except urllib.error.HTTPError as error:
-              if error.code not in (409,422):raise
-              print('Obsolete validation already finished')
+          # Core compilation and tests passed at e32f7c1; run the corrected production code.
           post('/actions/workflows/acceptance.yml/dispatches',{'ref':'main'})
           post('/actions/workflows/generate-video.yml/dispatches',{'ref':'main','inputs':{'title':'Why Smart People Overthink Everything'}})
+          post('/actions/workflows/longform-benchmark.yml/dispatches',{'ref':'main'})
           PY
