@@ -13,8 +13,8 @@ jobs:
           python-version: '3.12'
       - name: Lightweight dependencies
         run: |
-          command -v ffmpeg
-          test -f /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg fonts-dejavu-core zstd
           python -m pip install pydantic==2.13.4 Pillow==12.3.0 numpy pytest
       - run: python -m pytest -q
       - run: python -m scripts.demo

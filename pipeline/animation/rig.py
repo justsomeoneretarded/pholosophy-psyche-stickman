@@ -55,7 +55,11 @@ def pose(action,t,duration=3.,x=0.,floor=0.,target=None,facing=1):
             if action=='argue':hands[1]=(hands[1][0],hands[1][1]+.04*math.sin(t*8));emotion='angry'
         if action in ('pick_up','carry','drop','use_phone'):
             grip=target or (x+.22,floor-.45)
-            if action=='pick_up':hands[1]=mix(mix(hands[1],grip,ease(p*3)),(x+.20,floor-.65),ease((p-.45)/.55))
+            if action=='pick_up':
+                bend=ease(p/.28)*(1-ease((p-.45)/.55))
+                hip=(x,floor-.49+.21*bend)
+                shoulder=(x+.24*bend,hip[1]-math.sqrt(.30**2-(.24*bend)**2))
+                hands[1]=mix(mix(hands[1],grip,ease(p/.35)),(x+.20,floor-.65),ease((p-.45)/.55))
             elif action=='drop':hands[1]=mix((x+.20,floor-.65),hands[1],ease(p))
             else:hands[1]=(x+.20,floor-.65)
         if action in ('think','scratch_head','facepalm'):

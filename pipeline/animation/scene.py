@@ -8,16 +8,31 @@ PALETTES={'reflective':('#f0eee7','#c5d8dc','#64899a'),'hopeful':('#f6f0de','#de
 @lru_cache(maxsize=64)
 def font(size):return ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf',max(10,int(size)))
 
-def actor_pose(scene,actor,t,world_width=2.5):
+def actor_pose(scene,actor,t,world_width=2.5,world_height=None):
+    world_height=world_height or world_width*9/16
     actions=sorted([a for a in scene.actions if a.actor==actor],key=lambda a:a.start)
     previous=None;last=None
     for a in actions:
         if t<a.start:break
         prop=next((p for p in scene.props if p.id==a.target),None)
-        target=((prop.x-a.x)*world_width,(prop.y-.78)*world_width) if prop else None
+        target=((prop.x-a.x)*world_width,(prop.y-.78)*world_height) if prop else None
         local=min(t-a.start,a.end-a.start)
-        current=pose(a.action,local,a.end-a.start,0,0,target)
-        current.joints={k:(v[0]+a.x*world_width,v[1]) for k,v in current.joints.items()}
+        origin=a.x*world_width
+        if a.action=='handshake' and len(scene.characters)>1:
+            partner=next(c for c in scene.characters if c!=actor)
+            other=next((b.x for b in scene.actions if b.actor==partner),.65 if partner!='main' else .35)*world_width
+            center=(origin+other)/2;direction=1 if other>origin else -1
+            final_origin=center-direction*.25
+            travel=abs(final_origin-origin)
+            if local<travel/.24:
+                # Approach through the same planted-foot walk cycle, not sliding poses.
+                current=pose('walk',local,a.end-a.start,0,0,None,direction)
+            else:
+                origin=final_origin
+                # Matched pair controls share a world-space contact target.
+                current=pose('handshake',local,a.end-a.start,0,0,(center-origin,-.73),direction)
+        else:current=pose(a.action,local,a.end-a.start,0,0,target)
+        current.joints={k:(v[0]+origin,v[1]) for k,v in current.joints.items()}
         if previous and t<a.start+.35:
             q=ease((t-a.start)/.35)
             # Blend joints then re-solve limbs to preserve segment lengths.
@@ -45,7 +60,7 @@ def frame(scene,t,size=(1920,1080),caption='',diagnostic=False):
     zoom=1+.07*ease(u) if scene.camera=='push_in' else 1.07-.07*ease(u) if scene.camera=='pull_out' else 1
     pan=math.sin(u*math.pi)*w*.025 if scene.camera=='pan' else 0
     if scene.camera=='track':
-        p,_=actor_pose(scene,scene.characters[0],t,world_width);pan=(p.joints['hip'][0]*scale-w*.42)*.55
+        p,_=actor_pose(scene,scene.characters[0],t,world_width,h/scale);pan=(p.joints['hip'][0]*scale-w*.42)*.55
     shake=math.sin(t*67)*math.exp(-t*6)*w*.003 if scene.camera=='shake' else 0
     def xy(p):
         x=p[0]*scale;y=ground+p[1]*scale
@@ -72,7 +87,7 @@ def frame(scene,t,size=(1920,1080),caption='',diagnostic=False):
         for i in range(7):
             x=w*(.1+i*.14);y=h*(.25+.10*math.sin(t*.3+i));d.ellipse((x-12,y-12,x+12,y+12),fill=back)
     d.rectangle((0,ground,w,h),fill=back);d.line((0,ground,w,ground),fill=accent,width=max(1,w//650))
-    actors={actor:actor_pose(scene,actor,t,world_width) for actor in scene.characters}
+    actors={actor:actor_pose(scene,actor,t,world_width,h/scale) for actor in scene.characters}
     for p in scene.props:
         x,y=p.x,p.y
         if p.kind in ('chair','bench'):
