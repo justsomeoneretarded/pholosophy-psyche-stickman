@@ -4,6 +4,26 @@ from pydantic import BaseModel,Field,ConfigDict
 from pipeline.models import Episode,Scene
 from pipeline.writing.ollama import Ollama
 from pipeline.animation.rig import ACTIONS
+def normalize_scene(raw):
+    """Repair scheduling/declarations without dropping or inventing any requested action."""
+    raw=dict(raw);changes=[]
+    actions=raw.get('actions',[])
+    used=list(dict.fromkeys(a.get('actor','main') for a in actions))
+    characters=list(dict.fromkeys(raw.get('characters',['main'])+used))
+    if characters!=raw.get('characters'):changes.append('Declared every actor used by an action')
+    raw['characters']=characters
+    ends=[a.get('end',0) for a in actions if isinstance(a.get('end'),(int,float))]
+    duration=max([raw.get('duration',20)]+ends)
+    if duration!=raw.get('duration'):changes.append('Extended planned scene duration to cover all requested actions')
+    raw['duration']=duration
+    for actor in characters:
+        acts=sorted([a for a in actions if a.get('actor','main')==actor],key=lambda a:a.get('start',0))
+        if any(a.get('end',0)>b.get('start',0) for a,b in zip(acts,acts[1:])):
+            # Preserve action order and meaning, but give each action an exclusive interval.
+            for i,a in enumerate(acts):a['start']=duration*i/len(acts);a['end']=duration*(i+1)/len(acts)
+            changes.append('Reallocated overlapping '+actor+' action intervals in their original order')
+    return raw,changes
+
 class Outline(BaseModel):
     model_config=ConfigDict(extra='forbid')
     thesis:str
@@ -39,13 +59,22 @@ Keep main x=.35 and friend x=.65 for stationary gestures. Walk/run/sprint at mos
         error=''
         for attempt in range(3):
             try:
-                raw,m=llm.generate(prompt+error,Scene.model_json_schema(),seed+i+attempt);metrics.append(m);scene=Scene.model_validate(raw)
+                raw,m=llm.generate(prompt+error,Scene.model_json_schema(),seed+i+attempt);metrics.append(m)
+                raw,repairs=normalize_scene(raw)
+                if repairs:
+                    print(f'Scene {i+1} schedule repairs: '+str(repairs),flush=True)
+                    if checkpoint:(checkpoint/(key+f'_scene_{i:03d}_repairs.json')).write_text(json.dumps(repairs,indent=2))
+                scene=Scene.model_validate(raw)
                 if all(a.action=='idle' for a in scene.actions):raise ValueError('Meaningful acting required')
                 scene=scene.model_copy(update={'id':f'scene_{i+1:03d}'})
                 scenes.append(scene)
                 if scene_path:scene_path.write_text(scene.model_dump_json(indent=2))
                 break
-            except ValueError as exc:error='\nCorrect validation error: '+str(exc)[:1500]
+            except ValueError as exc:
+                print(f'Scene {i+1} attempt {attempt+1} rejected: {exc}',flush=True)
+                if checkpoint:
+                    (checkpoint/(key+f'_scene_{i:03d}_attempt_{attempt+1}.json')).write_text(json.dumps({'response':raw,'validation_error':str(exc)},indent=2))
+                error='\nCorrect validation error: '+str(exc)[:1500]
         else:raise RuntimeError(f'Scene {i+1} failed validation')
     count=sum(len(s.narration.split()) for s in scenes)
     if not words*.65<count<words*1.4:raise ValueError(f'Script has {count} words; outside target {words}')

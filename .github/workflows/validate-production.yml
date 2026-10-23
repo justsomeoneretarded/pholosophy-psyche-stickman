@@ -23,8 +23,8 @@ jobs:
               request=urllib.request.Request(base+path,data=json.dumps(data or {}).encode(),method='POST',headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'})
               with urllib.request.urlopen(request,timeout=30) as response:
                   print(path, response.status)
-          # This old run uses the observed incompatible PyAV decoder and lacks current writing checkpoints.
-          try:post('/actions/runs/39923027168/cancel')
+          # This older run predates the constrained action enum and detailed scene validation diagnostics.
+          try:post('/actions/runs/39924475279/cancel')
           except urllib.error.HTTPError as error:
               if error.code not in (409,422):raise
               print('Obsolete validation already finished')
