@@ -11,9 +11,18 @@ def font(size):return ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaV
 def _blend_pose(a,b,q):
     from pipeline.animation.rig import ik
     joints={k:mix(a.joints[k],v,q) for k,v in b.joints.items()}
+    def angle(v):return math.atan2(v[1],v[0])
+    def subtract(p,r):return (p[0]-r[0],p[1]-r[1])
+    def blend_angle(x,y):return x+((y-x+math.pi)%math.tau-math.pi)*q
     for side in ('left','right'):
-        joints[side+'_knee'],joints[side+'_foot']=ik(joints[side+'_hip'],joints[side+'_foot'],.255,.255,-1)
-        joints[side+'_elbow'],joints[side+'_hand']=ik(joints[side+'_shoulder'],joints[side+'_hand'],.17,.17,1 if side=='left' else -1)
+        joints[side+'_knee'],joints[side+'_foot']=ik(joints[side+'_hip'],joints[side+'_foot'],.255,.255,-b.facing)
+        # Blend arm rotations instead of dragging wrists through shoulder singularities.
+        shoulder=joints[side+'_shoulder']
+        upper=blend_angle(angle(subtract(a.joints[side+'_elbow'],a.joints[side+'_shoulder'])),angle(subtract(b.joints[side+'_elbow'],b.joints[side+'_shoulder'])))
+        lower=blend_angle(angle(subtract(a.joints[side+'_hand'],a.joints[side+'_elbow'])),angle(subtract(b.joints[side+'_hand'],b.joints[side+'_elbow'])))
+        elbow=(shoulder[0]+.17*math.cos(upper),shoulder[1]+.17*math.sin(upper))
+        joints[side+'_elbow']=elbow
+        joints[side+'_hand']=(elbow[0]+.17*math.cos(lower),elbow[1]+.17*math.sin(lower))
     return Pose(joints,b.emotion,b.facing)
 
 def actor_pose(scene,actor,t,world_width=2.5,world_height=None):
@@ -37,6 +46,9 @@ def actor_pose(scene,actor,t,world_width=2.5,world_height=None):
             else:
                 origin=final_origin
                 current=pose('handshake',local,a.end-a.start,0,0,(center-origin,-.73),direction)
+                approach=pose('walk',travel/.24,a.end-a.start,0,0,None,direction)
+                approach.joints={k:(v[0]-direction*travel,v[1]) for k,v in approach.joints.items()}
+                current=_blend_pose(approach,current,ease((local-travel/.24)/.35))
         elif a.action=='use_phone' and local<min(1.2,a.end-a.start):
             current=pose('pick_up',local,min(1.2,a.end-a.start),0,0,target)
         else:current=pose(a.action,local,a.end-a.start,0,0,target)
