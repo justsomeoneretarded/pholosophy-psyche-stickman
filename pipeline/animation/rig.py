@@ -78,4 +78,4 @@ def pose(action,t,duration=3.,x=0.,floor=0.,target=None,facing=1):
         knee,foot=ik(hh,feet[i],.255,.255,-facing);elbow,hand=ik(ss,hands[i],.17,.17,1 if i==0 else -1)
         j.update({side+'_hip':hh,side+'_knee':knee,side+'_foot':foot,side+'_shoulder':ss,side+'_elbow':elbow,side+'_hand':hand})
     return Pose(j,emotion,facing)
-BONES=[('hip','shoulder'),('shoulder','neck')]+[(s+'_'+a,s+'_'+b) for s in ('left','right') for a,b in [('hip','knee'),('knee','foot'),('shoulder','elbow'),('elbow','hand')]]
+BONES=[('hip','shoulder'),('shoulder','neck'),('neck','head')]+[(center,side+'_'+center) for center in ('hip','shoulder') for side in ('left','right')]+[(s+'_'+a,s+'_'+b) for s in ('left','right') for a,b in [('hip','knee'),('knee','foot'),('shoulder','elbow'),('elbow','hand')]]
