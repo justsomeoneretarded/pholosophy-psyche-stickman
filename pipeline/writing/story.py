@@ -8,6 +8,8 @@ def normalize_scene(raw):
     """Repair scheduling/declarations without dropping or inventing any requested action."""
     raw=dict(raw);changes=[]
     actions=raw.get('actions',[])
+    for key,fallback in [('symbol','none'),('camera','static'),('environment','stage'),('mood','reflective')]:
+        if raw.get(key) is None:raw[key]=fallback;changes.append('Used supported default for unspecified '+key)
     used=list(dict.fromkeys(a.get('actor','main') for a in actions))
     characters=list(dict.fromkeys(raw.get('characters',['main'])+used))
     if characters!=raw.get('characters'):changes.append('Declared every actor used by an action')
@@ -16,6 +18,21 @@ def normalize_scene(raw):
     duration=max([raw.get('duration',20)]+ends)
     if duration!=raw.get('duration'):changes.append('Extended planned scene duration to cover all requested actions')
     raw['duration']=duration
+    props=raw.get('props',[])
+    canonical=lambda value:re.sub(r'[^a-z0-9]','',value.lower())
+    aliases={'page':'book','blankpage':'book','notebook':'book','mobile':'phone','mobilephone':'phone','cellphone':'phone'}
+    for a in actions:
+        start=a.get('start',0)
+        if a.get('end',0)<=start:
+            a['end']=min(duration,start+.8)
+            changes.append('Expanded zero-length '+a.get('action','action')+' into an articulated transition')
+        target=a.get('target')
+        if target:
+            matches=[p['id'] for p in props if canonical(p['id'])==canonical(target)]
+            if not matches and canonical(target) in aliases:
+                matches=[p['id'] for p in props if p['kind']==aliases[canonical(target)]]
+            if len(matches)==1 and matches[0]!=target:
+                a['target']=matches[0];changes.append('Resolved '+target+' to declared prop '+matches[0])
     for actor in characters:
         acts=sorted([a for a in actions if a.get('actor','main')==actor],key=lambda a:a.get('start',0))
         if any(a.get('end',0)>b.get('start',0) for a,b in zip(acts,acts[1:])):

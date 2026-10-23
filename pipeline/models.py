@@ -43,7 +43,7 @@ class Scene(Strict):
         if len(set(ids))!=len(ids):raise ValueError('Duplicate prop')
         for a in self.actions:
             if a.actor not in self.characters:raise ValueError('Unknown actor')
-            if a.target and a.target not in ids:raise ValueError('Unknown prop')
+            if a.target and a.target not in ids:raise ValueError(f'Unknown prop {a.target!r}; declared prop IDs are {ids!r}')
             if a.end>self.duration+.01:raise ValueError('Action outside scene')
         for actor in self.characters:
             acts=sorted([a for a in self.actions if a.actor==actor],key=lambda a:a.start)
