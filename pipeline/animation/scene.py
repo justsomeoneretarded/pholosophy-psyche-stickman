@@ -28,7 +28,7 @@ def _blend_pose(a,b,q):
 def actor_pose(scene,actor,t,world_width=2.5,world_height=None):
     world_height=world_height or world_width*9/16
     actions=sorted([a for a in scene.actions if a.actor==actor],key=lambda a:a.start)
-    previous=None;last=None;carry_origin=0
+    previous=None;last=None;carry_origin=0;seated=False
     gait=('walk','run','sprint','stop','climb_stairs')
     for a in actions:
         if t<a.start:break
@@ -52,6 +52,14 @@ def actor_pose(scene,actor,t,world_width=2.5,world_height=None):
         elif a.action=='use_phone' and local<min(1.2,a.end-a.start):
             current=pose('pick_up',local,min(1.2,a.end-a.start),0,0,target)
         else:current=pose(a.action,local,a.end-a.start,0,0,target)
+        if seated and a.action not in ('sit','stand','type','walk','run','sprint','stop','jump','fall','recover','stumble','climb_stairs'):
+            sitting=pose('sit',1,1)
+            delta=(sitting.joints['shoulder'][0]-current.joints['shoulder'][0],sitting.joints['shoulder'][1]-current.joints['shoulder'][1])
+            for key in list(current.joints):
+                if key in ('hip','left_hip','right_hip','left_knee','right_knee','left_foot','right_foot'):current.joints[key]=sitting.joints[key]
+                else:current.joints[key]=(current.joints[key][0]+delta[0],current.joints[key][1]+delta[1])
+        if a.action in ('sit','type'):seated=True
+        elif a.action in ('stand','walk','run','sprint','jump','fall','recover','climb_stairs'):seated=False
         current.joints={k:(v[0]+origin,v[1]) for k,v in current.joints.items()}
         carry_origin=current.joints['hip'][0] if a.action in gait else origin
         if t>a.end and a.action in gait:
