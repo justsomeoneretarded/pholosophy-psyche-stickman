@@ -8,7 +8,7 @@ class Outline(BaseModel):
     model_config=ConfigDict(extra='forbid')
     thesis:str
     metaphor:str
-    beats:list[str]=Field(min_length=4,max_length=24)
+    beats:list[str]=Field(min_length=4,max_length=40)
 def create(title,minutes,sources,seed,style='auto',model='qwen3:4b',words_per_minute=155,checkpoint_dir=None):
     llm=Ollama(model);metrics=[];context=json.dumps(sources,ensure_ascii=False)[:7000]
     n=max(4,round(minutes*3));words=round(minutes*words_per_minute)

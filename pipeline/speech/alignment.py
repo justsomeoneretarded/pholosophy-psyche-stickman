@@ -22,26 +22,28 @@ def align(episode,durations,verification):
     cursor=0;timeline=[];captions=[]
     for i,(s,duration) in enumerate(zip(episode.scenes,durations)):
         original=s.duration;s.duration=duration+(.18 if i<len(episode.scenes)-1 else 0)
-        words=verification[i]['words']
+        words=verification[i]['words'];anchor_report=[]
         for a in s.actions:
             old_start,old_end=a.start,a.end
             a.start=old_start/original*duration;a.end=old_end/original*duration
             # Word token indices can differ from Whisper word indices; map explicitly.
             if a.anchor:
+                matched=False
                 flat=[];indices=[]
                 for wi,word in enumerate(words):
                     ts=tokens(word['word']);flat.extend(ts);indices.extend([wi]*len(ts))
                 target=tokens(a.anchor)
                 for k in range(len(flat)-len(target)+1):
                     if target and flat[k:k+len(target)]==target:
-                        a.start=words[indices[k]]['start'];a.end=min(duration,a.start+(old_end-old_start)/original*duration);break
+                        a.start=words[indices[k]]['start'];a.end=min(duration,a.start+(old_end-old_start)/original*duration);matched=True;break
+                anchor_report.append({'actor':a.actor,'phrase':a.anchor,'matched':matched,'fallback':None if matched else 'proportional_scene_timing'})
         for actor in s.characters:
             acts=sorted([a for a in s.actions if a.actor==actor],key=lambda a:a.start)
             for a,b in zip(acts,acts[1:]):
                 if a.end>b.start:a.end=max(a.start+.01,b.start)
         for k in range(0,len(words),7):
             chunk=words[k:k+7];captions.append({'start':cursor+chunk[0]['start'],'end':cursor+chunk[-1]['end'],'text':' '.join(w['word'] for w in chunk)})
-        timeline.append({'scene_id':s.id,'start':cursor,'end':cursor+s.duration,'speech_duration':duration,'actions':[a.model_dump() for a in s.actions]})
+        timeline.append({'scene_id':s.id,'start':cursor,'end':cursor+s.duration,'speech_duration':duration,'actions':[a.model_dump() for a in s.actions],'anchors':anchor_report})
         cursor+=s.duration
     return timeline,captions
 def stamp(t,separator=','):

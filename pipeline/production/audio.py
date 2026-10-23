@@ -9,7 +9,9 @@ def design(timeline,episode,out,music='auto',seed=1):
             start=row['start']+a.start;end=row['start']+a.end
             if a.action in ('walk','run','sprint'):
                 events.extend((float(t),'step') for t in np.arange(start,end,.425 if a.action=='walk' else .29))
-            elif a.action in ('pick_up','drop','open_door','jump','land','fall','use_phone','celebrate'):events.append((start+.4,a.action))
+            elif a.action=='pick_up':events.append((start+.45*(end-start),'pick_up'))
+            elif a.action in ('jump','land','fall'):events.append((max(start,end-.05),a.action))
+            elif a.action in ('drop','open_door','use_phone','celebrate'):events.append((min(end,start+.4),a.action))
         events.append((row['start'],'whoosh'))
     with wave.open(str(Path(out)/'sound_design.wav'),'wb') as wav:
         wav.setnchannels(1);wav.setsampwidth(2);wav.setframerate(rate)
