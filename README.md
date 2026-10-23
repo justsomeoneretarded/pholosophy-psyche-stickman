@@ -1,6 +1,6 @@
 # Stickman psychology & philosophy studio
 
-CPU-only, local-model video production with an original articulated stickman rig. **Early implementation: full autonomous production is not yet verified.** [Validation status](docs/VALIDATION.md) separates observed results from untested features.
+CPU-only, local-model video production with an original articulated stickman rig. **Production core verified with a 39-second native 1080p smoke test; autonomous long-form generation remains under validation.** [Validation status](docs/VALIDATION.md) separates observed results from untested features.
 
 ## One-title quick start
 
@@ -12,6 +12,8 @@ CPU-only, local-model video production with an original articulated stickman rig
 Failures upload **failed-production-diagnostics**, not a successful package. A failed-run MP4 is not an approved production. GitHub login is generally required to download artifacts.
 
 Default: native 1920×1080, 30 FPS, H.264/AAC, approximately six minutes. Workflow duration accepts 4–10 minutes. Measured narration must fall within 22% of target, or the run stops before rendering. CLI permits 0.5-minute tests. Vertical output renders natively at 1080×1920, reflows text and uses its own canvas; staging remains experimental.
+
+[Download the verified smoke-test video and publishing package](https://github.com/justsomeoneretarded/pholosophy-psyche-stickman/actions/runs/39923854262/artifacts/12488312183). This test uses a fixed editorial fixture to isolate production; AI writing is tested separately.
 
 ## Architecture
 
