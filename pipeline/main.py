@@ -11,6 +11,7 @@ from pipeline.speech.alignment import verify,align,subtitles
 from pipeline.production.render import render,thumbnail
 from pipeline.production.audio import design,finish
 from pipeline.production.quality import motion_checks,inspect
+from pipeline.production.director import prepare
 from pipeline.publishing import package,upload
 def save(path,data):Path(path).write_text(json.dumps(data,indent=2,ensure_ascii=False))
 def run(config,out,story=None,whisper_model='base.en',voice_path=None):
@@ -26,6 +27,7 @@ def run(config,out,story=None,whisper_model='base.en',voice_path=None):
         sources,warnings=research(config.title);save(out/'sources.json',sources)
         episode,metrics=create(config.title,config.duration_minutes,sources,config.seed,config.style,os.environ.get('OLLAMA_MODEL','qwen3:4b'),checkpoint_dir=out/'writing_checkpoints')
     if episode.title!=config.title:raise ValueError('Storyboard title differs from requested title')
+    repairs=prepare(episode,config.size);save(out/'scene_repairs.json',repairs)
     save(out/'storyboard.original.json',episode.model_dump());save(out/'sources.json',sources)
     (out/'research_notes.md').write_text('# Research notes\n\n'+'\n\n'.join(warnings))
     save(out/'claims.json',{'framing':episode.framing,'claims_verified':False,'policy':'No precise empirical claims or attributed quotations are authorized by metadata alone.','review_required':True})
@@ -42,6 +44,7 @@ def run(config,out,story=None,whisper_model='base.en',voice_path=None):
         print(f'Rewriting to measured narrator rate: {observed_rate:.1f} words/minute',flush=True)
         episode,extra=create(config.title,config.duration_minutes,sources,config.seed,config.style,os.environ.get('OLLAMA_MODEL','qwen3:4b'),words_per_minute=observed_rate,checkpoint_dir=out/'writing_checkpoints')
         metrics.extend(extra)
+        repairs=prepare(episode,config.size);save(out/'scene_repairs.json',repairs)
         content=assess(episode);save(out/'content_report.json',content)
         if not content['passed']:raise ValueError('Rewritten content QA failed: '+str(content['failures']))
         save(out/'storyboard.original.json',episode.model_dump())

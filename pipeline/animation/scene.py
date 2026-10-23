@@ -37,6 +37,8 @@ def actor_pose(scene,actor,t,world_width=2.5,world_height=None):
             else:
                 origin=final_origin
                 current=pose('handshake',local,a.end-a.start,0,0,(center-origin,-.73),direction)
+        elif a.action=='use_phone' and local<1.2:
+            current=pose('pick_up',local,1.2,0,0,target)
         else:current=pose(a.action,local,a.end-a.start,0,0,target)
         current.joints={k:(v[0]+origin,v[1]) for k,v in current.joints.items()}
         carry_origin=current.joints['hip'][0] if a.action in gait else origin
@@ -116,14 +118,24 @@ def frame(scene,t,size=(1920,1080),caption='',diagnostic=False):
             d.ellipse((cx-r,cy-r,cx+r,cy+r),fill=bg,outline=accent,width=3)
             d.line((cx,cy,cx+math.sin(t)*r*.7,cy-math.cos(t)*r*.7),fill=accent,width=3)
         elif p.kind in ('phone','box','book','cup','bag'):
-            owner=None;drop=None
-            for ap,a in actors.values():
-                if a and a.target==p.id and a.action in ('pick_up','carry','use_phone','drop'):
-                    if a.action=='drop':drop=(ap,a)
-                    elif a.action!='pick_up' or t-a.start>(a.end-a.start)*.45:owner=ap.joints['right_hand']
+            # Ownership persists across gestures until an explicit drop event.
+            events=[(a.start,actor,a) for actor in scene.characters for a in scene.actions if a.target==p.id and a.start<=t and a.action in ('pick_up','carry','use_phone','drop')]
+            event=max(events,key=lambda event:event[0]) if events else None
+            owner=None;released=None
+            if event:
+                _,actor,a=event
+                if a.action=='drop':
+                    release=a.start+min(.3,(a.end-a.start)*.3)
+                    if t<release:owner=actors[actor][0].joints['right_hand']
+                    else:
+                        release_pose,_=actor_pose(scene,actor,release,world_width,h/scale)
+                        origin=release_pose.joints['right_hand'];age=t-release
+                        released=(origin[0],min(-.0525,origin[1]+1.8*age*age))
+                else:
+                    contact=a.start+.45*(min(1.2,a.end-a.start) if a.action=='use_phone' else a.end-a.start) if a.action in ('pick_up','use_phone') else a.start
+                    if t>=contact:owner=actors[actor][0].joints['right_hand']
             if owner:cx,cy=xy(owner)
-            elif drop:
-                ap,a=drop;cx,cy=xy(ap.joints['right_hand']);age=max(0,t-a.start-.3);cy=min(ground-8,cy+scale*age*age*1.8)
+            elif released:cx,cy=xy(released)
             else:cx,cy=xy((x*world_width,(y*h-ground)/scale))
             rr=scale*.035;d.rounded_rectangle((cx-rr,cy-rr,cx+rr,cy+rr*1.5),radius=3,fill=accent)
         elif p.kind=='stairs':

@@ -57,8 +57,8 @@ def pose(action,t,duration=3.,x=0.,floor=0.,target=None,facing=1):
             grip=target or (x+.22,floor-.45)
             if action=='pick_up':
                 bend=ease(p/.28)*(1-ease((p-.45)/.55))
-                hip=(x,floor-.49+.21*bend)
-                shoulder=(x+.24*bend,hip[1]-math.sqrt(.30**2-(.24*bend)**2))
+                hip=(x,floor-.49+.31*bend)
+                shoulder=(x+.26*bend,hip[1]-math.sqrt(.30**2-(.26*bend)**2))
                 hands[1]=mix(mix(hands[1],grip,ease(p/.35)),(x+.20,floor-.65),ease((p-.45)/.55))
             elif action=='drop':hands[1]=mix((x+.20,floor-.65),hands[1],ease(p))
             else:hands[1]=(x+.20,floor-.65)
