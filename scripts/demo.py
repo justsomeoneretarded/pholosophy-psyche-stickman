@@ -15,7 +15,7 @@ for i,move in enumerate(moves):
     scenes.append(s);timeline.append({'start':cursor,'end':cursor+2.5});cursor+=2.5
 out=Path('outputs/motion-demo');out.mkdir(parents=True,exist_ok=True)
 episode=Episode(title='Motion engine demonstration',thesis='A deterministic articulated rig with inverse kinematics and contact.',metaphor='A rehearsal stage for the recurring cast.',framing='philosophical_exploration',scenes=scenes)
-(out/'motion_report.json').write_text(json.dumps(motion_checks(episode),indent=2))
+(out/'motion_report.json').write_text(json.dumps(motion_checks(episode,(1280,720)),indent=2))
 benchmark=render(episode,timeline,[],out,(1280,720),30);print(benchmark)
 (out/'silent.mp4').replace(out/'motion-demo.mp4')
 (out/'benchmark.json').write_text(json.dumps(benchmark,indent=2))

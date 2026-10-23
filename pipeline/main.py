@@ -61,7 +61,7 @@ def run(config,out,story=None,whisper_model='base.en',voice_path=None):
     if abs(measured-target)/target>.22:raise ValueError(f'Measured narration {measured:.1f}s outside 22% target tolerance ({target:.1f}s); no audio stretching applied')
     concatenate([speech_dir/f'{i:03d}.wav' for i in range(len(episode.scenes))],out/'narration.wav')
     timeline,captions=align(episode,durations,verification);save(out/'scene_timeline.json',timeline);save(out/'storyboard.json',episode.model_dump());save(out/'captions.json',captions);subtitles(captions,out)
-    motion=motion_checks(episode);save(out/'motion_report.json',motion)
+    motion=motion_checks(episode,config.size);save(out/'motion_report.json',motion)
     if not motion['passed']:raise ValueError('Motion QA failed: '+str(motion['issues'][:5]))
     bench=render(episode,timeline,captions,out,config.size,30,config.quality)
     events=design(timeline,episode,out,config.music,config.seed);save(out/'sound_cues.json',events)

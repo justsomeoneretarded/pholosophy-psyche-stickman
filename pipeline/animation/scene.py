@@ -53,8 +53,12 @@ def actor_pose(scene,actor,t,world_width=2.5,world_height=None):
     q.joints={k:(v[0]+base*world_width,v[1]) for k,v in q.joints.items()}
     return q,None
 
+def character_scale(size):
+    w,h=size
+    return min(w*.58,h*.37) if h>w else min(w*.36,h*.49)
+
 def frame(scene,t,size=(1920,1080),caption='',diagnostic=False):
-    w,h=size;vertical=h>w;ground=.78*h;scale=min(w*.36,h*.49);world_width=w/scale
+    w,h=size;vertical=h>w;ground=.78*h;scale=character_scale(size);world_width=w/scale
     bg,back,accent=PALETTES[scene.mood]
     im=Image.new('RGB',size,bg);d=ImageDraw.Draw(im);u=max(0,min(1,t/scene.duration))
     zoom=1+.07*ease(u) if scene.camera=='push_in' else 1.07-.07*ease(u) if scene.camera=='pull_out' else 1

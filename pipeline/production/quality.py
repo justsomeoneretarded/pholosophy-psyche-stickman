@@ -1,16 +1,17 @@
 import math,subprocess
 from pathlib import Path
 import numpy as np
-from pipeline.animation.scene import actor_pose
+from pipeline.animation.scene import actor_pose,character_scale
 from pipeline.animation.rig import BONES
 from pipeline.production.render import probe
-def motion_checks(episode):
+def motion_checks(episode,size=(1920,1080)):
+    w,h=size;scale=character_scale(size);world_width=w/scale;world_height=h/scale
     issues=[];stats={'samples':0,'max_joint_step':0.,'max_floor_penetration':0.}
     for s in episode.scenes:
         for actor in s.characters:
             previous=None
             for t in np.arange(0,s.duration,1/30):
-                p,a=actor_pose(s,actor,float(t));j=p.joints;stats['samples']+=1
+                p,a=actor_pose(s,actor,float(t),world_width,world_height);j=p.joints;stats['samples']+=1
                 if any(not math.isfinite(v) for pos in j.values() for v in pos):issues.append(f'{s.id}: nonfinite joint')
                 for aa,bb in BONES:
                     if math.dist(j[aa],j[bb])>.52:issues.append(f'{s.id}: disconnected limb')
@@ -19,7 +20,7 @@ def motion_checks(episode):
                 if previous:
                     delta=max(math.dist(j[k],previous[k]) for k in j);stats['max_joint_step']=max(stats['max_joint_step'],delta)
                     if delta>.25:issues.append(f'{s.id}/{actor}: abrupt joint motion at {t:.2f}')
-                if not .02<=j['hip'][0]/2.5<=.97:issues.append(f'{s.id}/{actor}: actor outside safe frame')
+                if not .02<=j['hip'][0]/world_width<=.97:issues.append(f'{s.id}/{actor}: actor outside safe frame')
                 previous=j
     return {'passed':not issues,'issues':sorted(set(issues))[:100],'statistics':stats}
 def inspect(out,size,fps,target,tolerance=.22):
