@@ -8,3 +8,5 @@ pytest>=8,<10
 PyYAML>=6,<7
 google-api-python-client>=2,<3
 google-auth-oauthlib>=1,<2
+# faster-whisper 1.2.1 expects the pre-19 PyAV API.
+av>=11,<17

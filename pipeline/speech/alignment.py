@@ -2,13 +2,18 @@ import re,wave
 from difflib import SequenceMatcher
 from pathlib import Path
 def tokens(text):return re.findall(r'[a-z0-9]+',text.lower())
+def load_audio(path):
+    import subprocess
+    import numpy as np
+    raw=subprocess.check_output(['ffmpeg','-v','error','-i',str(path),'-f','f32le','-ac','1','-ar','16000','pipe:1'])
+    return np.frombuffer(raw,dtype='<f4').copy()
 def verify(scenes,audio_dir,model='base.en',strict=True):
     from faster_whisper import WhisperModel
     import numpy as np
     whisper=WhisperModel(model,device='cpu',compute_type='int8',cpu_threads=4,num_workers=1);results=[]
     for i,s in enumerate(scenes):
         path=Path(audio_dir)/f'{i:03d}.wav'
-        segments,info=whisper.transcribe(str(path),language='en',word_timestamps=True,beam_size=5,vad_filter=True,condition_on_previous_text=False)
+        segments,info=whisper.transcribe(load_audio(path),language='en',word_timestamps=True,beam_size=5,vad_filter=True,condition_on_previous_text=False)
         words=[{'word':w.word.strip(),'start':w.start,'end':w.end,'probability':w.probability} for seg in segments for w in (seg.words or [])]
         heard=' '.join(w['word'] for w in words);match=SequenceMatcher(None,tokens(s.narration),tokens(heard),autojunk=False)
         agreement=match.ratio()
