@@ -1,0 +1,35 @@
+name: Integrated speech and animation smoke
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/smoke.yml'
+      - 'examples/procrastination-smoke.json'
+permissions:
+  contents: read
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - name: Dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg fonts-dejavu-core
+          python -m pip install -r requirements.txt
+      - name: Local voice
+        run: python -m piper.download_voices en_US-ljspeech-high --download-dir .cache/voices
+      - name: Real production pipeline with a fixed editorial fixture
+        run: python -m pipeline.main --title "Why We Procrastinate" --minutes 0.75 --storyboard examples/procrastination-smoke.json --out outputs/procrastination-smoke
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: integrated-production-smoke
+          path: outputs/procrastination-smoke/
+          retention-days: 14
+          if-no-files-found: error

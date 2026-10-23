@@ -1,0 +1,172 @@
+{
+  "title": "Why We Procrastinate",
+  "thesis": "A small beginning reveals useful information; delaying can offer immediate relief without resolving the task.",
+  "metaphor": "A blank document and an oversized box make delay visible.",
+  "framing": "philosophical_exploration",
+  "scenes": [
+    {
+      "id": "smoke_01",
+      "purpose": "ONE QUICK CHECK",
+      "narration": "The blank document is open. You reach for your phone, promising yourself that one quick check will make starting easier. Ten minutes later, the document is still blank.",
+      "duration": 12,
+      "environment": "office",
+      "mood": "reflective",
+      "camera": "push_in",
+      "characters": [
+        "main"
+      ],
+      "props": [
+        {
+          "id": "phone",
+          "kind": "phone",
+          "x": 0.43,
+          "y": 0.65
+        },
+        {
+          "id": "computer",
+          "kind": "computer",
+          "x": 0.68,
+          "y": 0.72
+        }
+      ],
+      "actions": [
+        {
+          "actor": "main",
+          "action": "use_phone",
+          "start": 0,
+          "end": 6,
+          "x": 0.35,
+          "target": "phone",
+          "anchor": null
+        },
+        {
+          "actor": "main",
+          "action": "facepalm",
+          "start": 6,
+          "end": 12,
+          "x": 0.35,
+          "target": null,
+          "anchor": null
+        }
+      ],
+      "symbol": "thought",
+      "text": "ONE QUICK CHECK",
+      "transition": "fade"
+    },
+    {
+      "id": "smoke_02",
+      "purpose": "RELIEF NOW",
+      "narration": "One useful way to describe this moment is a bargain: you trade tomorrow's effort for a little relief now. That is an illustration, not a diagnosis.",
+      "duration": 12,
+      "environment": "mindscape",
+      "mood": "reflective",
+      "camera": "push_in",
+      "characters": [
+        "main"
+      ],
+      "props": [],
+      "actions": [
+        {
+          "actor": "main",
+          "action": "shrug",
+          "start": 0,
+          "end": 5,
+          "x": 0.35,
+          "target": null,
+          "anchor": null
+        },
+        {
+          "actor": "main",
+          "action": "think",
+          "start": 5,
+          "end": 12,
+          "x": 0.35,
+          "target": null,
+          "anchor": null
+        }
+      ],
+      "symbol": "loop",
+      "text": "RELIEF NOW",
+      "transition": "fade"
+    },
+    {
+      "id": "smoke_03",
+      "purpose": "ONE VISIBLE FIRST MOVE",
+      "narration": "The task can feel like one enormous box. Instead of demanding that you finish it, define a visible first move: write one rough sentence, or open one page.",
+      "duration": 12,
+      "environment": "stage",
+      "mood": "reflective",
+      "camera": "push_in",
+      "characters": [
+        "main"
+      ],
+      "props": [
+        {
+          "id": "box",
+          "kind": "box",
+          "x": 0.48,
+          "y": 0.65
+        }
+      ],
+      "actions": [
+        {
+          "actor": "main",
+          "action": "point",
+          "start": 0,
+          "end": 5,
+          "x": 0.35,
+          "target": "box",
+          "anchor": null
+        },
+        {
+          "actor": "main",
+          "action": "celebrate",
+          "start": 5,
+          "end": 12,
+          "x": 0.35,
+          "target": null,
+          "anchor": null
+        }
+      ],
+      "symbol": "none",
+      "text": "ONE VISIBLE FIRST MOVE",
+      "transition": "fade"
+    },
+    {
+      "id": "smoke_04",
+      "purpose": "BEGIN, THEN NOTICE",
+      "narration": "A small beginning does not solve every reason for delay. Sometimes you need rest, help, or a different plan. But it gives you information that waiting cannot.",
+      "duration": 12,
+      "environment": "park",
+      "mood": "reflective",
+      "camera": "push_in",
+      "characters": [
+        "main"
+      ],
+      "props": [],
+      "actions": [
+        {
+          "actor": "main",
+          "action": "think",
+          "start": 0,
+          "end": 6,
+          "x": 0.35,
+          "target": null,
+          "anchor": null
+        },
+        {
+          "actor": "main",
+          "action": "wave",
+          "start": 6,
+          "end": 12,
+          "x": 0.35,
+          "target": null,
+          "anchor": null
+        }
+      ],
+      "symbol": "circles",
+      "text": "BEGIN, THEN NOTICE",
+      "transition": "fade"
+    }
+  ]
+}
