@@ -5,6 +5,7 @@ from pipeline.config import Config
 from pipeline.models import Episode
 from pipeline.writing.research import research
 from pipeline.writing.story import create,originality
+from pipeline.writing.quality import assess
 from pipeline.speech.tts import synthesize,concatenate
 from pipeline.speech.alignment import verify,align,subtitles
 from pipeline.production.render import render,thumbnail
@@ -29,6 +30,8 @@ def run(config,out,story=None,whisper_model='base.en',voice_path=None):
     (out/'research_notes.md').write_text('# Research notes\n\n'+'\n\n'.join(warnings))
     save(out/'claims.json',{'framing':episode.framing,'claims_verified':False,'policy':'No precise empirical claims or attributed quotations are authorized by metadata alone.','review_required':True})
     (out/'script.txt').write_text('\n\n'.join(s.narration for s in episode.scenes))
+    content=assess(episode);save(out/'content_report.json',content)
+    if not content['passed']:raise ValueError('Content QA failed: '+str(content['failures']))
     history_path,history_record=originality(episode,os.environ.get('STUDIO_HISTORY','.cache/history'))
     voice_path=Path(voice_path or os.environ.get('PIPER_VOICE','.cache/voices/en_US-ljspeech-high.onnx'))
     if config.voice=='custom' and os.environ.get('CUSTOM_VOICE_AUTHORIZED')!='true':raise ValueError('Custom voice needs CUSTOM_VOICE_AUTHORIZED=true and a permitted Piper ONNX model. Audio cloning is not implemented.')
@@ -39,6 +42,8 @@ def run(config,out,story=None,whisper_model='base.en',voice_path=None):
         print(f'Rewriting to measured narrator rate: {observed_rate:.1f} words/minute',flush=True)
         episode,extra=create(config.title,config.duration_minutes,sources,config.seed,config.style,os.environ.get('OLLAMA_MODEL','qwen3:4b'),words_per_minute=observed_rate,checkpoint_dir=out/'writing_checkpoints')
         metrics.extend(extra)
+        content=assess(episode);save(out/'content_report.json',content)
+        if not content['passed']:raise ValueError('Rewritten content QA failed: '+str(content['failures']))
         save(out/'storyboard.original.json',episode.model_dump())
         (out/'script.txt').write_text('\n\n'.join(s.narration for s in episode.scenes))
         history_path,history_record=originality(episode,os.environ.get('STUDIO_HISTORY','.cache/history'))
