@@ -1,0 +1,33 @@
+name: Coordinate production validation
+on:
+  workflow_dispatch:
+  push:
+    paths: ['.github/workflows/validate-production.yml']
+permissions:
+  actions: write
+  contents: read
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Replace obsolete validation run and dispatch current workflows
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          python - <<'PY'
+          import os,json,urllib.request,urllib.error
+          base='https://api.github.com/repos/'+os.environ['REPOSITORY']
+          def post(path,data=None):
+              request=urllib.request.Request(base+path,data=json.dumps(data or {}).encode(),method='POST',headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'})
+              with urllib.request.urlopen(request,timeout=30) as response:
+                  print(path, response.status)
+          # This old run uses the observed incompatible PyAV decoder and lacks current writing checkpoints.
+          try:post('/actions/runs/39923027168/cancel')
+          except urllib.error.HTTPError as error:
+              if error.code not in (409,422):raise
+              print('Obsolete validation already finished')
+          post('/actions/workflows/acceptance.yml/dispatches',{'ref':'main'})
+          post('/actions/workflows/generate-video.yml/dispatches',{'ref':'main','inputs':{'title':'Why Smart People Overthink Everything'}})
+          PY

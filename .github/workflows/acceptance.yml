@@ -4,6 +4,9 @@ on:
   push:
     paths:
       - '.github/workflows/acceptance.yml'
+concurrency:
+  group: production-acceptance
+  cancel-in-progress: true
 permissions:
   contents: read
 jobs:
@@ -36,11 +39,12 @@ jobs:
           python-version: '3.12'
           cache: pip
       - name: Dependencies
+        timeout-minutes: 12
         run: |
           nproc
           free -h
           df -h .
-          sudo apt-get update -qq
+          sudo apt-get -o Acquire::Retries=3 -o Acquire::http::Timeout=30 -o Acquire::https::Timeout=30 update -qq
           sudo apt-get install -y ffmpeg fonts-dejavu-core zstd
           python -m pip install -r requirements.txt
           ffmpeg -version
