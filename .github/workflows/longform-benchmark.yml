@@ -1,0 +1,33 @@
+name: Full-length production benchmark
+on:
+  workflow_dispatch:
+  push:
+    paths: ['.github/workflows/longform-benchmark.yml']
+permissions:
+  contents: read
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - name: Dependencies
+        run: |
+          sudo apt-get -o Acquire::Retries=3 -o Acquire::http::Timeout=30 update -qq
+          sudo apt-get install -y ffmpeg fonts-dejavu-core
+          python -m pip install -r requirements.txt
+      - name: Default voice
+        run: python -m piper.download_voices en_US-ljspeech-high --download-dir .cache/voices
+      - name: Real full-length rendering with a fixed editorial fixture
+        run: python -m pipeline.main --title "Why Smart People Overthink Everything" --minutes 6 --storyboard examples/overthinking-longform.json --out outputs/overthinking-full
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: full-length-production-benchmark
+          path: outputs/overthinking-full/
+          retention-days: 14
+          if-no-files-found: error

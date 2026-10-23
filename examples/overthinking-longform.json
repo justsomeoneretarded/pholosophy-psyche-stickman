@@ -1,0 +1,701 @@
+{
+  "title": "Why Smart People Overthink Everything",
+  "thesis": "Careful thought serves a decision when it gathers evidence or changes a choice; it becomes unproductive when it is tasked with guaranteeing an uncertain future.",
+  "metaphor": "An internal courtroom keeps accepting appeals until its assignment is narrowed.",
+  "framing": "philosophical_exploration",
+  "scenes": [
+    {
+      "id": "essay_001",
+      "purpose": "ONE MESSAGE",
+      "narration": "Alex has written a message that would take ten seconds to send. He reads it once for clarity, again for tone, and a third time to imagine how it might sound to someone having a terrible day. The message gets shorter. The list of possible misunderstandings gets longer. By the time he closes the window, he has solved several imaginary conversations and avoided the real one.",
+      "duration": 20,
+      "environment": "office",
+      "mood": "reflective",
+      "camera": "push_in",
+      "characters": [
+        "main"
+      ],
+      "props": [
+        {
+          "id": "phone",
+          "kind": "phone",
+          "x": 0.43,
+          "y": 0.65
+        }
+      ],
+      "actions": [
+        {
+          "actor": "main",
+          "action": "use_phone",
+          "start": 0,
+          "end": 10,
+          "x": 0.35,
+          "target": "phone",
+          "anchor": null
+        },
+        {
+          "actor": "main",
+          "action": "facepalm",
+          "start": 10,
+          "end": 20,
+          "x": 0.35,
+          "target": null,
+          "anchor": null
+        }
+      ],
+      "symbol": "thought",
+      "text": "ONE MESSAGE",
+      "transition": "fade"
+    },
+    {
+      "id": "essay_002",
+      "purpose": "WHAT IS THINKING FOR?",
+      "narration": "It is tempting to explain this by calling Alex too intelligent for his own good. But intelligence is not a sentence to spend your life trapped in thought. A more useful question is what the thinking is trying to accomplish. Is he discovering something that will change his decision, or asking thought to remove every uncomfortable possibility before he acts?",
+      "duration": 20,
+      "environment": "stage",
+      "mood": "reflective",
+      "camera": "static",
+      "characters": [
+        "main"
+      ],
+      "props": [],
+      "actions": [
+        {
+          "actor": "main",
+          "action": "shrug",
+          "start": 0,
+          "end": 10,
+          "x": 0.35,
+          "target": null,
+          "anchor": null
+        },
+        {
+          "actor": "main",
+          "action": "point",
+          "start": 10,
+          "end": 20,
+          "x": 0.35,
+          "target": null,
+          "anchor": null
+        }
+      ],
+      "symbol": "none",
+      "text": "WHAT IS THINKING FOR?",
+      "transition": "fade"
+    },
+    {
+      "id": "essay_003",
+      "purpose": "ANOTHER APPEAL",
+      "narration": "Imagine a small courtroom inside his head. One part of Alex proposes sending the message. Another files an appeal: what if it sounds careless? He revises it. A new appeal arrives: what if the revision sounds calculated? Every answer becomes evidence for another hearing. The court is busy, but it has quietly forgotten which question it was appointed to settle.",
+      "duration": 20,
+      "environment": "mindscape",
+      "mood": "tense",
+      "camera": "pan",
+      "characters": [
+        "main"
+      ],
+      "props": [],
+      "actions": [
+        {
+          "actor": "main",
+          "action": "argue",
+          "start": 0,
+          "end": 10,
+          "x": 0.35,
+          "target": null,
+          "anchor": null
+        },
+        {
+          "actor": "main",
+          "action": "think",
+          "start": 10,
+          "end": 20,
+          "x": 0.35,
+          "target": null,
+          "anchor": null
+        }
+      ],
+      "symbol": "balance",
+      "text": "ANOTHER APPEAL",
+      "transition": "fade"
+    },
+    {
+      "id": "essay_004",
+      "purpose": "POSSIBILITY IS NOT EVIDENCE",
+      "narration": "Being good at imagining alternatives can make this courtroom unusually inventive. Alex can construct several convincing versions of the future, including versions in which an ordinary mistake has enormous consequences. The ability itself is useful. The trouble begins when the number of possibilities starts to feel like the amount of evidence. A vivid argument is still an argument, rather than an event that has happened.",
+      "duration": 20,
+      "environment": "library",
+      "mood": "reflective",
+      "camera": "pull_out",
+      "characters": [
+        "main"
+      ],
+      "props": [],
+      "actions": [
+        {
+          "actor": "main",
+          "action": "think",
+          "start": 0,
+          "end": 10,
+          "x": 0.35,
+          "target": null,
+          "anchor": null
+        },
+        {
+          "actor": "main",
+          "action": "scratch_head",
+          "start": 10,
+          "end": 20,
+          "x": 0.35,
+          "target": null,
+          "anchor": null
+        }
+      ],
+      "symbol": "memory",
+      "text": "POSSIBILITY IS NOT EVIDENCE",
+      "transition": "fade"
+    },
+    {
+      "id": "essay_005",
+      "purpose": "CHECKING OR REHEARSING?",
+      "narration": "Think about the difference between checking a bridge before crossing it and repeatedly imagining the bridge collapsing after its supports have been checked. Both can feel like caution from the inside. Yet only one is collecting information about the bridge. The other may be rehearsing uncertainty. This distinction is an illustration, not a test that diagnoses the person standing at the edge.",
+      "duration": 20,
+      "environment": "crossroads",
+      "mood": "reflective",
+      "camera": "push_in",
+      "characters": [
+        "main"
+      ],
+      "props": [],
+      "actions": [
+        {
+          "actor": "main",
+          "action": "point",
+          "start": 0,
+          "end": 10,
+          "x": 0.35,
+          "target": null,
+          "anchor": null
+        },
+        {
+          "actor": "main",
+          "action": "shrug",
+          "start": 10,
+          "end": 20,
+          "x": 0.35,
+          "target": null,
+          "anchor": null
+        }
+      ],
+      "symbol": "doors",
+      "text": "CHECKING OR REHEARSING?",
+      "transition": "fade"
+    },
+    {
+      "id": "essay_006",
+      "purpose": "THE QUESTION CHANGED",
+      "narration": "Alex opens a notebook and writes the question he is actually deciding: should I ask my friend whether that comment upset them? Almost immediately, the courtroom changes the question. Will my friend understand me perfectly? Will the conversation be awkward? Can I guarantee that nothing will change? A manageable decision has been replaced by a request for guarantees that no conversation can provide.",
+      "duration": 20,
+      "environment": "office",
+      "mood": "reflective",
+      "camera": "static",
+      "characters": [
+        "main"
+      ],
+      "props": [
+        {
+          "id": "computer",
+          "kind": "computer",
+          "x": 0.48,
+          "y": 0.7
+        }
+      ],
+      "actions": [
+        {
+          "actor": "main",
+          "action": "type",
+          "start": 0,
+          "end": 10,
+          "x": 0.35,
+          "target": null,
+          "anchor": null
+        },
+        {
+          "actor": "main",
+          "action": "facepalm",
+          "start": 10,
+          "end": 20,
+          "x": 0.35,
+          "target": null,
+          "anchor": null
+        }
+      ],
+      "symbol": "decision_tree",
+      "text": "THE QUESTION CHANGED",
+      "transition": "fade"
+    },
+    {
+      "id": "essay_007",
+      "purpose": "DID THE DECISION MOVE?",
+      "narration": "Sometimes thinking helps because it changes what you can see. You notice a missing fact, compare a real alternative, or discover a consequence you had ignored. Sometimes it repeats the same material while demanding a different feeling. The words become more elaborate, but the available choices remain where they were. More mental activity does not necessarily mean that the decision has moved.",
+      "duration": 20,
+      "environment": "classroom",
+      "mood": "reflective",
+      "camera": "pan",
+      "characters": [
+        "main"
+      ],
+      "props": [],
+      "actions": [
+        {
+          "actor": "main",
+          "action": "point",
+          "start": 0,
+          "end": 10,
+          "x": 0.35,
+          "target": null,
+          "anchor": null
+        },
+        {
+          "actor": "main",
+          "action": "think",
+          "start": 10,
+          "end": 20,
+          "x": 0.35,
+          "target": null,
+          "anchor": null
+        }
+      ],
+      "symbol": "loop",
+      "text": "DID THE DECISION MOVE?",
+      "transition": "fade"
+    },
+    {
+      "id": "essay_008",
+      "purpose": "WHAT BECAME CLEARER?",
+      "narration": "Here is a practical distinction Alex can try without pretending it explains everyone. At the end of a thinking session, he asks what became clearer. Can he name new evidence, a changed priority, or a concrete next question? If all he can report is that the decision still feels uncomfortable, perhaps the next useful step is not another argument of the same kind.",
+      "duration": 20,
+      "environment": "library",
+      "mood": "reflective",
+      "camera": "pull_out",
+      "characters": [
+        "main"
+      ],
+      "props": [],
+      "actions": [
+        {
+          "actor": "main",
+          "action": "think",
+          "start": 0,
+          "end": 10,
+          "x": 0.35,
+          "target": null,
+          "anchor": null
+        },
+        {
+          "actor": "main",
+          "action": "celebrate",
+          "start": 10,
+          "end": 20,
+          "x": 0.35,
+          "target": null,
+          "anchor": null
+        }
+      ],
+      "symbol": "thought",
+      "text": "WHAT BECAME CLEARER?",
+      "transition": "fade"
+    },
+    {
+      "id": "essay_009",
+      "purpose": "THE STAKES STILL MATTER",
+      "narration": "Of course, discomfort can carry information. A rushed contract, an unsafe situation, or an important promise may deserve a long pause. The answer is not to celebrate impulsiveness. Alex needs a way to distinguish a problem that requires more investigation from a feeling that investigation cannot completely remove. That distinction depends on the actual stakes, rather than on how loudly the courtroom is speaking.",
+      "duration": 20,
+      "environment": "crossroads",
+      "mood": "reflective",
+      "camera": "push_in",
+      "characters": [
+        "main"
+      ],
+      "props": [],
+      "actions": [
+        {
+          "actor": "main",
+          "action": "shrug",
+          "start": 0,
+          "end": 10,
+          "x": 0.35,
+          "target": null,
+          "anchor": null
+        },
+        {
+          "actor": "main",
+          "action": "point",
+          "start": 10,
+          "end": 20,
+          "x": 0.35,
+          "target": null,
+          "anchor": null
+        }
+      ],
+      "symbol": "balance",
+      "text": "THE STAKES STILL MATTER",
+      "transition": "fade"
+    },
+    {
+      "id": "essay_010",
+      "purpose": "REVERSIBLE / HARD TO REVERSE",
+      "narration": "He draws two boxes. In the first, he puts decisions that are difficult to reverse. In the second, he puts decisions that can be tested, adjusted, or discussed again. This does not make either box effortless. It changes the kind of care each deserves. A reversible first draft and a permanent commitment should not automatically face the same burden of proof.",
+      "duration": 20,
+      "environment": "stage",
+      "mood": "reflective",
+      "camera": "static",
+      "characters": [
+        "main"
+      ],
+      "props": [],
+      "actions": [
+        {
+          "actor": "main",
+          "action": "point",
+          "start": 0,
+          "end": 10,
+          "x": 0.35,
+          "target": null,
+          "anchor": null
+        },
+        {
+          "actor": "main",
+          "action": "think",
+          "start": 10,
+          "end": 20,
+          "x": 0.35,
+          "target": null,
+          "anchor": null
+        }
+      ],
+      "symbol": "none",
+      "text": "REVERSIBLE / HARD TO REVERSE",
+      "transition": "fade"
+    },
+    {
+      "id": "essay_011",
+      "purpose": "A STOPPING RULE",
+      "narration": "For the message, he defines a stopping rule before beginning another revision. He will check whether it is honest, specific, and respectful. If an important fact is missing, he will find it. If the wording meets those conditions, he will send it. The rule is not a promise of a comfortable outcome. It prevents the standard from moving every time discomfort returns.",
+      "duration": 20,
+      "environment": "office",
+      "mood": "reflective",
+      "camera": "pan",
+      "characters": [
+        "main"
+      ],
+      "props": [
+        {
+          "id": "computer",
+          "kind": "computer",
+          "x": 0.48,
+          "y": 0.7
+        }
+      ],
+      "actions": [
+        {
+          "actor": "main",
+          "action": "type",
+          "start": 0,
+          "end": 10,
+          "x": 0.35,
+          "target": null,
+          "anchor": null
+        },
+        {
+          "actor": "main",
+          "action": "celebrate",
+          "start": 10,
+          "end": 20,
+          "x": 0.35,
+          "target": null,
+          "anchor": null
+        }
+      ],
+      "symbol": "circles",
+      "text": "A STOPPING RULE",
+      "transition": "fade"
+    },
+    {
+      "id": "essay_012",
+      "purpose": "ASK THE OTHER PERSON",
+      "narration": "His friend arrives while Alex is still inspecting the notebook. Instead of supplying another perfect sentence, the friend asks what a useful reply would let him learn. The question turns his attention outward. The other person is not simply a character in the private trial. They can answer, disagree, ask for clarification, or reveal something that Alex could not discover by imagining them.",
+      "duration": 20,
+      "environment": "cafe",
+      "mood": "reflective",
+      "camera": "pull_out",
+      "characters": [
+        "main",
+        "friend"
+      ],
+      "props": [],
+      "actions": [
+        {
+          "actor": "main",
+          "action": "shrug",
+          "start": 0,
+          "end": 10,
+          "x": 0.35,
+          "target": null,
+          "anchor": null
+        },
+        {
+          "actor": "friend",
+          "action": "handshake",
+          "start": 10,
+          "end": 20,
+          "x": 0.65,
+          "target": null,
+          "anchor": null
+        },
+        {
+          "actor": "main",
+          "action": "handshake",
+          "start": 10,
+          "end": 20,
+          "x": 0.35,
+          "target": null,
+          "anchor": null
+        }
+      ],
+      "symbol": "none",
+      "text": "ASK THE OTHER PERSON",
+      "transition": "fade"
+    },
+    {
+      "id": "essay_013",
+      "purpose": "A SMALL EXPERIMENT",
+      "narration": "This is one reason a small experiment can be more useful than another complete rehearsal. A draft can be shown to a trusted reader. A difficult task can begin with a rough paragraph. An uncertain invitation can be made without predicting the whole relationship. These actions do not defeat uncertainty. They make contact with a world that can supply something other than another prediction.",
+      "duration": 20,
+      "environment": "park",
+      "mood": "hopeful",
+      "camera": "push_in",
+      "characters": [
+        "main"
+      ],
+      "props": [],
+      "actions": [
+        {
+          "actor": "main",
+          "action": "walk",
+          "start": 0,
+          "end": 1.2,
+          "x": 0.35,
+          "target": null,
+          "anchor": null
+        },
+        {
+          "actor": "main",
+          "action": "wave",
+          "start": 10,
+          "end": 20,
+          "x": 0.35,
+          "target": null,
+          "anchor": null
+        }
+      ],
+      "symbol": "decision_tree",
+      "text": "A SMALL EXPERIMENT",
+      "transition": "fade"
+    },
+    {
+      "id": "essay_014",
+      "purpose": "THE URGE CAN REMAIN",
+      "narration": "Alex sends the message. Nothing magical happens to his nervous system. He still wants to reopen it and inspect the punctuation. Acting has not erased the urge to think. What has changed is the job available to thinking now. It can help him listen to the reply, prepare a clarification, or notice an actual problem instead of endlessly prosecuting a hypothetical one.",
+      "duration": 20,
+      "environment": "office",
+      "mood": "hopeful",
+      "camera": "static",
+      "characters": [
+        "main"
+      ],
+      "props": [
+        {
+          "id": "phone",
+          "kind": "phone",
+          "x": 0.43,
+          "y": 0.65
+        }
+      ],
+      "actions": [
+        {
+          "actor": "main",
+          "action": "use_phone",
+          "start": 0,
+          "end": 10,
+          "x": 0.35,
+          "target": "phone",
+          "anchor": null
+        },
+        {
+          "actor": "main",
+          "action": "think",
+          "start": 10,
+          "end": 20,
+          "x": 0.35,
+          "target": null,
+          "anchor": null
+        }
+      ],
+      "symbol": "none",
+      "text": "THE URGE CAN REMAIN",
+      "transition": "fade"
+    },
+    {
+      "id": "essay_015",
+      "purpose": "A REAL CONVERSATION",
+      "narration": "The reply is ordinary. His friend had not understood the comment the way Alex feared, but appreciates the question. In another version of this story, the reply could be difficult. That possibility matters. The value of asking was never that it guaranteed reassurance. It gave both people a chance to deal with their real conversation, including whatever neither of them could know in advance.",
+      "duration": 20,
+      "environment": "living_room",
+      "mood": "hopeful",
+      "camera": "pan",
+      "characters": [
+        "main"
+      ],
+      "props": [],
+      "actions": [
+        {
+          "actor": "main",
+          "action": "wave",
+          "start": 0,
+          "end": 10,
+          "x": 0.35,
+          "target": null,
+          "anchor": null
+        },
+        {
+          "actor": "main",
+          "action": "laugh",
+          "start": 10,
+          "end": 20,
+          "x": 0.35,
+          "target": null,
+          "anchor": null
+        }
+      ],
+      "symbol": "waves",
+      "text": "A REAL CONVERSATION",
+      "transition": "fade"
+    },
+    {
+      "id": "essay_016",
+      "purpose": "MORE THAN DISCIPLINE",
+      "narration": "There are also days when a simple stopping rule will not be enough. Exhaustion, pressure, unresolved conflict, or persistent distress can make a decision much harder to carry. A helpful response might involve rest, a changed environment, support from another person, or qualified professional help. Turning every difficulty into a failure of discipline would simply give Alex another accusation to bring into court.",
+      "duration": 20,
+      "environment": "nature",
+      "mood": "sad",
+      "camera": "pull_out",
+      "characters": [
+        "main"
+      ],
+      "props": [
+        {
+          "id": "seat",
+          "kind": "chair",
+          "x": 0.33,
+          "y": 0.7
+        }
+      ],
+      "actions": [
+        {
+          "actor": "main",
+          "action": "sit",
+          "start": 0,
+          "end": 10,
+          "x": 0.35,
+          "target": null,
+          "anchor": null
+        },
+        {
+          "actor": "main",
+          "action": "think",
+          "start": 10,
+          "end": 20,
+          "x": 0.35,
+          "target": null,
+          "anchor": null
+        }
+      ],
+      "symbol": "none",
+      "text": "MORE THAN DISCIPLINE",
+      "transition": "fade"
+    },
+    {
+      "id": "essay_017",
+      "purpose": "A NARROWER ASSIGNMENT",
+      "narration": "The courtroom does not have to disappear. Alex still needs the part of himself that asks careful questions and imagines alternatives. He gives it a narrower assignment: identify a real risk, find relevant evidence, and recommend the next reasonable move. It may object to the remaining uncertainty. It no longer gets to keep the hearing open merely because the future has not testified.",
+      "duration": 20,
+      "environment": "stage",
+      "mood": "hopeful",
+      "camera": "push_in",
+      "characters": [
+        "main"
+      ],
+      "props": [],
+      "actions": [
+        {
+          "actor": "main",
+          "action": "argue",
+          "start": 0,
+          "end": 10,
+          "x": 0.35,
+          "target": null,
+          "anchor": null
+        },
+        {
+          "actor": "main",
+          "action": "point",
+          "start": 10,
+          "end": 20,
+          "x": 0.35,
+          "target": null,
+          "anchor": null
+        }
+      ],
+      "symbol": "balance",
+      "text": "A NARROWER ASSIGNMENT",
+      "transition": "fade"
+    },
+    {
+      "id": "essay_018",
+      "purpose": "MEET THE WORLD",
+      "narration": "Tomorrow there will be another message, another draft, and another choice with an unfinished edge. The aim is not to become a person who never thinks twice. It is to notice when a second thought has stopped serving the decision. A useful mind can help you prepare to meet the world. It cannot meet the world entirely on your behalf.",
+      "duration": 20,
+      "environment": "street",
+      "mood": "hopeful",
+      "camera": "static",
+      "characters": [
+        "main"
+      ],
+      "props": [],
+      "actions": [
+        {
+          "actor": "main",
+          "action": "walk",
+          "start": 0,
+          "end": 1.2,
+          "x": 0.35,
+          "target": null,
+          "anchor": null
+        },
+        {
+          "actor": "main",
+          "action": "wave",
+          "start": 10,
+          "end": 20,
+          "x": 0.35,
+          "target": null,
+          "anchor": null
+        }
+      ],
+      "symbol": "circles",
+      "text": "MEET THE WORLD",
+      "transition": "fade"
+    }
+  ]
+}
