@@ -1,13 +1,16 @@
-import wave,time
+import wave,time,hashlib,json
 from pathlib import Path
 def synthesize(scenes,out,voice_path,rate=1.):
     from piper import PiperVoice,SynthesisConfig
-    voice=PiperVoice.load(str(voice_path));out=Path(out);out.mkdir(parents=True,exist_ok=True)
+    voice_path=Path(voice_path);voice=PiperVoice.load(str(voice_path));out=Path(out);out.mkdir(parents=True,exist_ok=True)
     durations=[];elapsed=time.monotonic()
     for i,s in enumerate(scenes):
-        path=out/f'{i:03d}.wav'
-        if not path.exists():
-            with wave.open(str(path),'wb') as wav:voice.synthesize_wav(s.narration,wav,syn_config=SynthesisConfig(length_scale=rate))
+        path=out/f'{i:03d}.wav';marker=path.with_suffix('.sha256')
+        signature=hashlib.sha256(json.dumps([s.narration,str(voice_path.resolve()),voice_path.stat().st_size,voice_path.stat().st_mtime_ns,rate]).encode()).hexdigest()
+        if not path.exists() or not marker.exists() or marker.read_text()!=signature:
+            temporary=path.with_suffix('.partial.wav')
+            with wave.open(str(temporary),'wb') as wav:voice.synthesize_wav(s.narration,wav,syn_config=SynthesisConfig(length_scale=rate))
+            temporary.replace(path);marker.write_text(signature)
         with wave.open(str(path),'rb') as wav:
             if wav.getnchannels()!=1 or wav.getsampwidth()!=2:raise ValueError('Expected mono 16-bit speech')
             durations.append(wav.getnframes()/wav.getframerate())

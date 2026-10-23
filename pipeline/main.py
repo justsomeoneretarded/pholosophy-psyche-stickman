@@ -16,6 +16,7 @@ def run(config,out,story=None,whisper_model='base.en',voice_path=None):
     out=Path(out);out.mkdir(parents=True,exist_ok=True);started=time.monotonic();manifest=out/'config.json'
     if manifest.exists() and json.loads(manifest.read_text())!=config.model_dump():raise ValueError('Output directory has different configuration; choose a new directory')
     save(manifest,config.model_dump());metrics=[]
+    (out/'SUCCESS.json').unlink(missing_ok=True)
     if story:
         episode=Episode.model_validate_json(Path(story).read_text());sources,warnings=research(config.title)
     elif (out/'storyboard.original.json').exists():
