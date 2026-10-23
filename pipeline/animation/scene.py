@@ -37,8 +37,8 @@ def actor_pose(scene,actor,t,world_width=2.5,world_height=None):
             else:
                 origin=final_origin
                 current=pose('handshake',local,a.end-a.start,0,0,(center-origin,-.73),direction)
-        elif a.action=='use_phone' and local<1.2:
-            current=pose('pick_up',local,1.2,0,0,target)
+        elif a.action=='use_phone' and local<min(1.2,a.end-a.start):
+            current=pose('pick_up',local,min(1.2,a.end-a.start),0,0,target)
         else:current=pose(a.action,local,a.end-a.start,0,0,target)
         current.joints={k:(v[0]+origin,v[1]) for k,v in current.joints.items()}
         carry_origin=current.joints['hip'][0] if a.action in gait else origin
