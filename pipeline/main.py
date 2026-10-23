@@ -23,7 +23,7 @@ def run(config,out,story=None,whisper_model='base.en',voice_path=None):
         episode=Episode.model_validate_json((out/'storyboard.original.json').read_text());sources=json.loads((out/'sources.json').read_text());warnings=['Resumed validated storyboard']
     else:
         sources,warnings=research(config.title);save(out/'sources.json',sources)
-        episode,metrics=create(config.title,config.duration_minutes,sources,config.seed,config.style,os.environ.get('OLLAMA_MODEL','qwen3:4b'))
+        episode,metrics=create(config.title,config.duration_minutes,sources,config.seed,config.style,os.environ.get('OLLAMA_MODEL','qwen3:4b'),checkpoint_dir=out/'writing_checkpoints')
     if episode.title!=config.title:raise ValueError('Storyboard title differs from requested title')
     save(out/'storyboard.original.json',episode.model_dump());save(out/'sources.json',sources)
     (out/'research_notes.md').write_text('# Research notes\n\n'+'\n\n'.join(warnings))
@@ -33,6 +33,17 @@ def run(config,out,story=None,whisper_model='base.en',voice_path=None):
     voice_path=Path(voice_path or os.environ.get('PIPER_VOICE','.cache/voices/en_US-ljspeech-high.onnx'))
     if config.voice=='custom' and os.environ.get('CUSTOM_VOICE_AUTHORIZED')!='true':raise ValueError('Custom voice needs CUSTOM_VOICE_AUTHORIZED=true and a permitted Piper ONNX model. Audio cloning is not implemented.')
     speech_dir=out/'speech';durations,speech_seconds=synthesize(episode.scenes,speech_dir,voice_path)
+    measured=sum(durations)+.18*(len(durations)-1);target=config.duration_minutes*60
+    if abs(measured-target)/target>.22 and not story:
+        observed_rate=sum(len(s.narration.split()) for s in episode.scenes)/max(.01,sum(durations))*60
+        print(f'Rewriting to measured narrator rate: {observed_rate:.1f} words/minute',flush=True)
+        episode,extra=create(config.title,config.duration_minutes,sources,config.seed,config.style,os.environ.get('OLLAMA_MODEL','qwen3:4b'),words_per_minute=observed_rate,checkpoint_dir=out/'writing_checkpoints')
+        metrics.extend(extra)
+        save(out/'storyboard.original.json',episode.model_dump())
+        (out/'script.txt').write_text('\n\n'.join(s.narration for s in episode.scenes))
+        history_path,history_record=originality(episode,os.environ.get('STUDIO_HISTORY','.cache/history'))
+        durations,extra_seconds=synthesize(episode.scenes,speech_dir,voice_path);speech_seconds+=extra_seconds
+    print('Verifying narration with Whisper CPU INT8',flush=True)
     verification=verify(episode.scenes,speech_dir,whisper_model);save(out/'speech_verification.json',verification)
     defective=[i for i,v in enumerate(verification) if not v['verified']]
     if defective:
