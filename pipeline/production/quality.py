@@ -23,6 +23,21 @@ def motion_checks(episode,size=(1920,1080)):
                 if not .02<=j['hip'][0]/world_width<=.97:issues.append(f'{s.id}/{actor}: actor outside safe frame')
                 previous=j
     return {'passed':not issues,'issues':sorted(set(issues))[:100],'statistics':stats}
+def visual_samples(path):
+    """Bounded low-resolution diagnostic samples; never a substitute for visual review."""
+    raw=subprocess.check_output(['ffmpeg','-v','error','-i',str(path),'-vf','fps=1/2,scale=160:90,format=gray','-f','rawvideo','pipe:1'])
+    if not raw:return {'sample_count':0,'all_blank':True,'blank_samples':[],'near_static_pairs':[]}
+    frames=np.frombuffer(raw,dtype=np.uint8).reshape(-1,90,160).astype(float)
+    blank=[i*2 for i,f in enumerate(frames) if float(np.std(f))<1.]
+    still=[i*2 for i in range(1,len(frames)) if float(np.mean(np.abs(frames[i]-frames[i-1])))<.02]
+    return {'sample_count':len(frames),'all_blank':len(blank)==len(frames),'blank_samples':blank,'near_static_pairs':still,'interpretation':'Near-static pairs are review warnings; a deliberate held pose is not automatically a failure.'}
+def audio_levels(path):
+    import re
+    result=subprocess.run(['ffmpeg','-v','info','-i',str(path),'-vn','-af','ebur128=peak=true','-f','null','-'],capture_output=True,text=True,check=True)
+    tail=result.stderr[-2500:]
+    loud=re.findall(r'I:\s*(-?\d+(?:\.\d+)?) LUFS',tail)
+    peak=re.findall(r'Peak:\s*(-?\d+(?:\.\d+)?) dBFS',tail)
+    return {'integrated_lufs':float(loud[-1]) if loud else None,'true_peak_dbfs':float(peak[-1]) if peak else None}
 def inspect(out,size,fps,target,tolerance=.22):
     out=Path(out);data=probe(out/'video.mp4')
     v=next(s for s in data['streams'] if s['codec_type']=='video');a=next(s for s in data['streams'] if s['codec_type']=='audio')
@@ -33,6 +48,9 @@ def inspect(out,size,fps,target,tolerance=.22):
     if abs(numerator/denominator-fps)>.01:issues.append('Wrong FPS')
     if abs(duration-target)>target*tolerance:issues.append(f'Duration {duration:.2f}s outside target {target:.2f}s tolerance')
     subprocess.run(['ffmpeg','-v','error','-i',str(out/'video.mp4'),'-f','null','-'],check=True)
+    visual=visual_samples(out/'video.mp4');levels=audio_levels(out/'video.mp4')
+    if visual['all_blank']:issues.append('Decoded visual samples contain no visible content')
+    if levels['true_peak_dbfs'] is not None and levels['true_peak_dbfs']>=-.1:issues.append('Final mix true peak is too close to clipping')
     for name in ['video.mp4','thumbnail.png','script.txt','storyboard.json','narration.wav','subtitles.srt','subtitles.vtt','sources.json','claims.json','youtube_description.txt']:
         if not (out/name).is_file() or not (out/name).stat().st_size:issues.append('Missing output '+name)
-    return {'passed':not issues,'issues':issues,'duration_seconds':duration,'video':v,'audio':a,'full_decode':'passed'}
+    return {'passed':not issues,'issues':issues,'duration_seconds':duration,'video':v,'audio':a,'full_decode':'passed','visual_samples':visual,'audio_levels':levels}
