@@ -16,6 +16,7 @@ jobs:
           sudo apt-get update -qq
           sudo apt-get install -y ffmpeg fonts-dejavu-core zstd
           python -m pip install pydantic==2.13.4 Pillow==12.3.0 numpy pytest
+      - run: python -m compileall -q pipeline scripts
       - run: python -m pytest -q
       - run: python -m scripts.demo
       - uses: actions/upload-artifact@v4

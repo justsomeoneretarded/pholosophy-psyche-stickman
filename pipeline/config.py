@@ -16,7 +16,9 @@ class Config(BaseModel):
     @classmethod
     def clean(cls,v):
         if any(ord(c)<32 for c in v):raise ValueError('Title cannot contain control characters')
-        return v.strip()
+        v=v.strip()
+        if len(v)<3:raise ValueError('Title must contain at least three non-padding characters')
+        return v
     @property
     def size(self):return (1920,1080) if self.format=='16:9' else (1080,1920)
     @classmethod
