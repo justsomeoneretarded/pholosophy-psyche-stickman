@@ -207,6 +207,12 @@
           "id": "computer",
           "kind": "computer",
           "x": 0.48,
+          "y": 0.74
+        },
+        {
+          "id": "typing_chair",
+          "kind": "chair",
+          "x": 0.33,
           "y": 0.7
         }
       ],
@@ -394,6 +400,12 @@
           "id": "computer",
           "kind": "computer",
           "x": 0.48,
+          "y": 0.74
+        },
+        {
+          "id": "typing_chair",
+          "kind": "chair",
+          "x": 0.33,
           "y": 0.7
         }
       ],

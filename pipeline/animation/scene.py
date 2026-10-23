@@ -8,44 +8,47 @@ PALETTES={'reflective':('#f0eee7','#c5d8dc','#64899a'),'hopeful':('#f6f0de','#de
 @lru_cache(maxsize=64)
 def font(size):return ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf',max(10,int(size)))
 
+def _blend_pose(a,b,q):
+    from pipeline.animation.rig import ik
+    joints={k:mix(a.joints[k],v,q) for k,v in b.joints.items()}
+    for side in ('left','right'):
+        joints[side+'_knee'],joints[side+'_foot']=ik(joints[side+'_hip'],joints[side+'_foot'],.255,.255,-1)
+        joints[side+'_elbow'],joints[side+'_hand']=ik(joints[side+'_shoulder'],joints[side+'_hand'],.17,.17,1 if side=='left' else -1)
+    return Pose(joints,b.emotion,b.facing)
+
 def actor_pose(scene,actor,t,world_width=2.5,world_height=None):
     world_height=world_height or world_width*9/16
     actions=sorted([a for a in scene.actions if a.actor==actor],key=lambda a:a.start)
-    previous=None;last=None
+    previous=None;last=None;carry_origin=0
+    gait=('walk','run','sprint','stop','climb_stairs')
     for a in actions:
         if t<a.start:break
+        # Repeated x means continued acting at the reached position, not teleporting back.
+        origin=carry_origin if last and abs(a.x-last.x)<1e-6 else a.x*world_width
         prop=next((p for p in scene.props if p.id==a.target),None)
-        target=((prop.x-a.x)*world_width,(prop.y-.78)*world_height) if prop else None
+        target=(prop.x*world_width-origin,(prop.y-.78)*world_height) if prop else None
         local=min(t-a.start,a.end-a.start)
-        origin=a.x*world_width
         if a.action=='handshake' and len(scene.characters)>1:
             partner=next(c for c in scene.characters if c!=actor)
             other=next((b.x for b in scene.actions if b.actor==partner),.65 if partner!='main' else .35)*world_width
             center=(origin+other)/2;direction=1 if other>origin else -1
-            final_origin=center-direction*.25
-            travel=abs(final_origin-origin)
-            if local<travel/.24:
-                # Approach through the same planted-foot walk cycle, not sliding poses.
-                current=pose('walk',local,a.end-a.start,0,0,None,direction)
+            final_origin=center-direction*.25;travel=abs(final_origin-origin)
+            if local<travel/.24:current=pose('walk',local,a.end-a.start,0,0,None,direction)
             else:
                 origin=final_origin
-                # Matched pair controls share a world-space contact target.
                 current=pose('handshake',local,a.end-a.start,0,0,(center-origin,-.73),direction)
         else:current=pose(a.action,local,a.end-a.start,0,0,target)
         current.joints={k:(v[0]+origin,v[1]) for k,v in current.joints.items()}
+        carry_origin=current.joints['hip'][0] if a.action in gait else origin
+        if t>a.end and a.action in gait:
+            # A completed gait settles onto grounded feet instead of freezing mid-swing.
+            rest=pose('idle',t-a.end,x=carry_origin)
+            current=_blend_pose(current,rest,ease((t-a.end)/.35))
         if previous and t<a.start+.35:
-            q=ease((t-a.start)/.35)
-            # Blend joints then re-solve limbs to preserve segment lengths.
-            from pipeline.animation.rig import ik
-            current.joints={k:mix(previous.joints[k],v,q) for k,v in current.joints.items()}
-            for side in ('left','right'):
-                j=current.joints
-                j[side+'_knee'],j[side+'_foot']=ik(j[side+'_hip'],j[side+'_foot'],.255,.255,-1)
-                j[side+'_elbow'],j[side+'_hand']=ik(j[side+'_shoulder'],j[side+'_hand'],.17,.17,1 if side=='left' else -1)
+            current=_blend_pose(previous,current,ease((t-a.start)/.35))
         previous=current;last=a
         if t<=a.end:return current,a
     if previous:
-        # A held pose breathes; grounded feet and attached hands remain anchored.
         bob=.003*math.sin((t-last.end)*3)
         for k in ('head','neck','shoulder'):previous.joints[k]=(previous.joints[k][0],previous.joints[k][1]+bob)
         return previous,last
