@@ -62,6 +62,10 @@ def stage_plan(args):
                   narrated=sum(1 for b in script.beats if b.mode == 'narrated'))
     save(plan / 'writer.json', report)
     notice('Script', f"{script.title}: {len(script.beats)} beats, about {report['estimated_seconds'] / 60:.1f} min, written by {report['model']}")
+    lines = [f"{i + 1}.{'N' if b.mode == 'narrated' else 'S'} {b.setpiece}{'*' if b.amber else ''}: "
+             + (b.narration[:70] if b.mode == 'narrated' else f'[{b.seconds:.0f}s] {b.on_screen}') for i, b in enumerate(script.beats)]
+    for k in range(0, len(lines), 8):
+        notice(f'Beats {k + 1}-{min(len(lines), k + 8)}', ' || '.join(lines[k:k + 8]))
 
 
 def stage_voice(args):

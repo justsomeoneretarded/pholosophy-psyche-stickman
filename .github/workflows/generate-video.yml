@@ -178,6 +178,8 @@ jobs:
     if: ${{ !cancelled() && needs.plan.result == 'success' && needs.voice.result == 'success' }}
     runs-on: ubuntu-24.04
     timeout-minutes: 120
+    permissions:
+      contents: write          # only to push the small review preview to the 'previews' branch
     env:
       NARRATOR: ${{ inputs.narrator }}
       VIDEO_FORMAT: ${{ inputs.format }}
@@ -207,6 +209,23 @@ jobs:
           path: work/music
       - name: Animate, mix and package
         run: python -m pipeline.essay produce --work work --final outputs/video
+      - name: Publish a small review preview to the previews branch
+        if: always()
+        continue-on-error: true
+        run: |
+          dir="previews/${{ github.run_id }}"
+          mkdir -p "$RUNNER_TEMP/p/$dir"
+          for f in contact-sheet.jpg thumbnail-01.jpg thumbnail-02.jpg thumbnail-03.jpg quality.json script.txt recommended-title.txt; do
+            [ -f "outputs/video/$f" ] && cp "outputs/video/$f" "$RUNNER_TEMP/p/$dir/"
+          done
+          [ -f outputs/video/video.mp4 ] && ffmpeg -v error -y -i outputs/video/video.mp4 -t 75 -vf scale=640:-2 -c:v libx264 -crf 30 -preset veryfast -c:a aac -b:a 64k "$RUNNER_TEMP/p/$dir/preview-75s.mp4" || true
+          cp work/FAILURE-*.txt "$RUNNER_TEMP/p/$dir/" 2>/dev/null || true
+          cd "$RUNNER_TEMP/p"
+          git init -q && git checkout -q -b previews
+          git config user.name "github-actions[bot]" && git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git remote add origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+          git fetch -q --depth 1 origin previews && git reset -q --soft FETCH_HEAD || true
+          git add -A && git commit -q -m "Preview for run ${{ github.run_id }}: ${{ inputs.title }}" && git push -q origin previews
       - uses: actions/upload-artifact@v4
         with:
           name: philosophy-video
