@@ -16,6 +16,8 @@ from pathlib import Path
 
 DEFAULT_MODELS = 'groq:qwen/qwen3.8-27b,groq:openai/gpt-oss-120b,ollama:gemma4:12b'
 GROQ = 'https://api.groq.com/openai/v1'
+# Groq sits behind Cloudflare, which refuses Python's default user-agent (error 1010).
+USER_AGENT = 'stickman-essay-studio/1.0 (+https://github.com/justsomeoneretarded/pholosophy-psyche-stickman)'
 ROOT = Path(__file__).resolve().parents[2]
 
 
@@ -38,7 +40,8 @@ def parse_json(text):
 
 
 def _post(url, payload, headers, timeout=240):
-    req = urllib.request.Request(url, data=json.dumps(payload).encode(), headers={'Content-Type': 'application/json', **headers})
+    req = urllib.request.Request(url, data=json.dumps(payload).encode(),
+                                 headers={'Content-Type': 'application/json', 'User-Agent': USER_AGENT, 'Accept': 'application/json', **headers})
     with urllib.request.urlopen(req, timeout=timeout) as r:
         return json.load(r)
 
@@ -54,11 +57,12 @@ class Groq:
     def _resolve(self, wanted):
         """Use the exact model id if Groq lists it, otherwise the closest listed id."""
         try:
-            req = urllib.request.Request(GROQ + '/models', headers={'Authorization': 'Bearer ' + self.key})
+            req = urllib.request.Request(GROQ + '/models', headers={'Authorization': 'Bearer ' + self.key, 'User-Agent': USER_AGENT})
             with urllib.request.urlopen(req, timeout=30) as r:
                 ids = [m['id'] for m in json.load(r).get('data', [])]
         except Exception as exc:  # noqa: BLE001
-            notice('Groq model list unavailable', f'{type(exc).__name__}; trying {wanted} directly', 'warning')
+            detail = exc.read().decode(errors='replace')[:200] if hasattr(exc, 'read') else ''
+            notice('Groq model list unavailable', f'{type(exc).__name__} {getattr(exc, "code", "")} {detail}; trying {wanted} directly', 'warning')
             return wanted
         if wanted in ids:
             return wanted
@@ -94,6 +98,8 @@ class Groq:
                     notice('Groq busy', f'HTTP {exc.code}; waiting {wait:.0f}s', 'warning')
                     time.sleep(min(wait, 120))
                     continue
+                if exc.code in (401, 403):
+                    notice('Groq refused the request', f'HTTP {exc.code}: {body[:200]}. Check the GROQ_API_KEY secret.', 'error')
                 raise WriterError(f'Groq HTTP {exc.code}: {body}')
             except (urllib.error.URLError, TimeoutError) as exc:
                 time.sleep(10 * (attempt + 1))
