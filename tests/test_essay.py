@@ -34,14 +34,14 @@ def test_length_rules_follow_auto_or_minutes():
     s = script()
     total = sum(estimate(b) for b in s.beats)
     assert check(s, total / 60)[0] == []
-    problems, _ = check(s, None)
-    assert any('Auto length' in p for p in problems)
+    short = s.model_copy(update={'beats': s.beats[:6]})
+    assert any('Auto length' in p for p in check(short, None)[0])
 
 
 def test_checks_reject_invented_claims():
     data = json.loads(open(FIXTURE).read())
     data['beats'][2]['narration'] = 'Studies show that 73 percent of people feel empty. ' + data['beats'][2]['narration']
-    problems, _ = check(Script.model_validate(data), None)
+    problems, _, _ = check(Script.model_validate(data), None)
     assert any('research' in p for p in problems) and any('statistic' in p for p in problems)
 
 

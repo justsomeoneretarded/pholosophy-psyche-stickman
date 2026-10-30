@@ -56,6 +56,10 @@ jobs:
           cache: pip
       - name: Install
         run: python -m pip install -r requirements-core.txt
+      - name: Check Groq access
+        id: groq
+        continue-on-error: true
+        run: python scripts/check_groq.py
       - name: Write the script (qwen3.8-27b on Groq, with fallbacks)
         run: python -m pipeline.essay plan --work work
       - uses: actions/upload-artifact@v4

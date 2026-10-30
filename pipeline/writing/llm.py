@@ -25,6 +25,15 @@ class WriterError(RuntimeError):
     pass
 
 
+class Rejected(ValueError):
+    """A parsed reply that failed checks; `usable` is a fallback result if nothing better arrives."""
+
+    def __init__(self, message, usable=None, severity=1):
+        super().__init__(message)
+        self.usable = usable
+        self.severity = severity
+
+
 def notice(title, message, level='notice'):
     print(f'::{level} title={title}::{str(message).replace(chr(10), " ")[:900]}', flush=True)
 
@@ -47,23 +56,33 @@ def _post(url, payload, headers, timeout=240):
 
 
 class Groq:
+    """Groq through its official Python SDK (requests Cloudflare accepts), with raw HTTP as a backup."""
+
     def __init__(self, model):
         self.key = os.environ.get('GROQ_API_KEY', '').strip()
         if not self.key:
             raise WriterError('GROQ_API_KEY is not set')
+        try:
+            from groq import Groq as Client
+            self.client = Client(api_key=self.key, max_retries=2, timeout=240)
+        except ImportError:
+            self.client = None
         self.model = self._resolve(model)
         self.optional = {'reasoning_format': 'hidden'} if 'qwen' in self.model else {'reasoning_effort': 'medium'}
+
+    def _list(self):
+        if self.client is not None:
+            return [m.id for m in self.client.models.list().data]
+        req = urllib.request.Request(GROQ + '/models', headers={'Authorization': 'Bearer ' + self.key, 'User-Agent': USER_AGENT})
+        with urllib.request.urlopen(req, timeout=30) as r:
+            return [m['id'] for m in json.load(r).get('data', [])]
 
     def _resolve(self, wanted):
         """Use the exact model id if Groq lists it, otherwise the closest listed id."""
         try:
-            req = urllib.request.Request(GROQ + '/models', headers={'Authorization': 'Bearer ' + self.key, 'User-Agent': USER_AGENT})
-            with urllib.request.urlopen(req, timeout=30) as r:
-                ids = [m['id'] for m in json.load(r).get('data', [])]
+            ids = self._list()
         except Exception as exc:  # noqa: BLE001
-            detail = exc.read().decode(errors='replace')[:200] if hasattr(exc, 'read') else ''
-            notice('Groq model list unavailable', f'{type(exc).__name__} {getattr(exc, "code", "")} {detail}; trying {wanted} directly', 'warning')
-            return wanted
+            raise WriterError(f'Groq refused the model list: {type(exc).__name__}: {str(exc)[:300]}')
         if wanted in ids:
             return wanted
         stem = wanted.split('/')[-1].lower()
@@ -71,39 +90,48 @@ class Groq:
         if close:
             notice('Groq model id', f'{wanted} not listed; using {close[0]}')
             return close[0]
-        raise WriterError(f'{wanted} is not offered by Groq for this key (available: {", ".join(ids[:12])})')
+        raise WriterError(f'{wanted} is not offered by Groq for this key (available: {", ".join(ids[:15])})')
+
+    def _call(self, payload):
+        if self.client is not None:
+            extra = {k: payload.pop(k) for k in list(payload) if k in ('reasoning_format', 'reasoning_effort')}
+            r = self.client.chat.completions.create(**payload, extra_body=extra or None)
+            return {'choices': [{'message': {'content': r.choices[0].message.content}, 'finish_reason': r.choices[0].finish_reason}],
+                    'usage': {'prompt_tokens': r.usage.prompt_tokens, 'completion_tokens': r.usage.completion_tokens}}
+        return _post(GROQ + '/chat/completions', payload, {'Authorization': 'Bearer ' + self.key})
 
     def complete(self, system, user, temperature=.8, max_tokens=7000):
-        payload = {'model': self.model, 'temperature': temperature, 'max_completion_tokens': max_tokens,
-                   'response_format': {'type': 'json_object'},
-                   'messages': [{'role': 'system', 'content': system}, {'role': 'user', 'content': user}], **self.optional}
+        base = {'model': self.model, 'temperature': temperature, 'max_tokens': max_tokens,
+                'response_format': {'type': 'json_object'},
+                'messages': [{'role': 'system', 'content': system}, {'role': 'user', 'content': user}]}
         for attempt in range(6):
+            payload = {**base, **self.optional}
             try:
-                result = _post(GROQ + '/chat/completions', payload, {'Authorization': 'Bearer ' + self.key})
+                result = self._call(payload)
                 choice = result['choices'][0]
                 if choice.get('finish_reason') == 'length':
                     raise WriterError('Reply was cut off by the output limit')
                 usage = result.get('usage', {})
                 notice('Writer', f'{self.model}: {usage.get("prompt_tokens")} prompt + {usage.get("completion_tokens")} output tokens')
                 return choice['message']['content']
-            except urllib.error.HTTPError as exc:
-                body = exc.read().decode(errors='replace')[:600]
-                if exc.code == 400 and self.optional and any(k in body for k in self.optional):
-                    for k in list(self.optional):
-                        payload.pop(k, None)
+            except WriterError:
+                raise
+            except Exception as exc:  # noqa: BLE001
+                status = getattr(exc, 'status_code', None) or getattr(exc, 'code', None)
+                text = str(getattr(exc, 'body', '') or exc)[:600]
+                if status == 400 and self.optional and any(k in text for k in self.optional):
                     self.optional = {}
                     continue
-                if exc.code == 429 or exc.code >= 500:
-                    wait = float(exc.headers.get('retry-after') or 0) or min(90, 15 * (attempt + 1))
-                    notice('Groq busy', f'HTTP {exc.code}; waiting {wait:.0f}s', 'warning')
+                if status == 400 and 'json' in text.lower() and attempt < 2:
+                    base['messages'][1]['content'] = user + '\n\nReturn one valid JSON object only.'
+                    continue
+                if status == 429 or (isinstance(status, int) and status >= 500) or status is None:
+                    headers = getattr(getattr(exc, 'response', None), 'headers', {}) or {}
+                    wait = float(headers.get('retry-after') or 0) or min(90, 15 * (attempt + 1))
+                    notice('Groq busy', f'{status}: {text[:160]}; waiting {wait:.0f}s', 'warning')
                     time.sleep(min(wait, 120))
                     continue
-                if exc.code in (401, 403):
-                    notice('Groq refused the request', f'HTTP {exc.code}: {body[:200]}. Check the GROQ_API_KEY secret.', 'error')
-                raise WriterError(f'Groq HTTP {exc.code}: {body}')
-            except (urllib.error.URLError, TimeoutError) as exc:
-                time.sleep(10 * (attempt + 1))
-                last = exc
+                raise WriterError(f'Groq error {status}: {text}')
         raise WriterError(f'Groq did not answer after retries ({self.model})')
 
 
@@ -145,8 +173,10 @@ class Writer:
         return self.clients[spec]
 
     def json(self, system, user, validate=None, temperature=.8):
-        errors = []
+        errors, best, answered = [], None, False
         for spec in self.specs:
+            if spec.startswith('ollama:') and answered:
+                break               # Groq works; a slower, weaker local model will not do better
             try:
                 client = self._client(spec)
             except Exception as exc:  # noqa: BLE001
@@ -154,9 +184,10 @@ class Writer:
                 notice('Writer unavailable', f'{spec}: {exc}', 'warning')
                 continue
             feedback = ''
-            for attempt in range(3):
+            for attempt in range(4):
                 try:
                     reply = client.complete(system, user + feedback, temperature=temperature)
+                    answered = True
                     data = parse_json(reply)
                     result = validate(data) if validate else data
                     self.used = spec
@@ -166,7 +197,14 @@ class Writer:
                     notice('Writer error', f'{spec}: {exc}', 'warning')
                     break
                 except Exception as exc:  # noqa: BLE001 -- invalid JSON or failed checks: ask for a fix
+                    usable = getattr(exc, 'usable', None)
+                    if usable is not None and (best is None or exc.severity < best[0]):
+                        best = (exc.severity, usable, spec, str(exc))
                     errors.append(f'{spec} attempt {attempt + 1}: {exc}')
                     notice('Script revision', f'{spec} attempt {attempt + 1}: {str(exc)[:400]}', 'warning')
                     feedback = f'\n\nYOUR PREVIOUS ANSWER WAS REJECTED: {str(exc)[:1500]}\nReturn the complete corrected JSON.'
+        if best is not None:
+            notice('Script accepted with a length warning', f'{best[2]}: {best[3][:300]}', 'warning')
+            self.used = best[2]
+            return best[1]
         raise WriterError('No writer produced a valid script: ' + ' | '.join(errors[-6:]))

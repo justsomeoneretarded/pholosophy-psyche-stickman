@@ -2,7 +2,7 @@
 import re
 from pipeline.animation import setpieces
 from pipeline.writing.beats import Script, estimate
-from pipeline.writing.llm import Writer
+from pipeline.writing.llm import Writer, Rejected
 
 SYSTEM = """You are the writer-director of a respected YouTube channel of philosophy and psychology video essays.
 The videos are minimalist stickman animation: black, white and grey, faceless figures, a spotlight, empty space,
@@ -20,7 +20,7 @@ STRUCTURE
 - Beat 1 is a SILENT cold open that poses the idea visually (6-14 seconds). Beat 2 is usually a silent title_card whose label is the topic word and whose on_screen line is a short subtitle.
 - Then alternate: mostly narrated beats, with a silent beat every 2-4 beats to let an image breathe. About 55-70% of the running time is narration.
 - Build an argument: hook, what the idea is, where it comes from (real thinkers and ideas, explained accurately), what it feels like in a life, the strongest objection or turn, and a resolution that leaves the viewer thinking. End on a silent beat.
-- Narrated beats: 25-90 words each, spoken English, short sentences, concrete images, no lists, no "in this video", no "smash that like button".
+- Narrated beats: 40-110 words each, spoken English, short sentences, concrete images, no lists, no "in this video", no "smash that like button".
 - Silent beats: "narration" is empty, "seconds" 6-14, "on_screen" is empty or one short line (max 6 words) such as a question.
 
 VISUALS
@@ -45,7 +45,7 @@ def length_brief(minutes):
         return (f'TARGET LENGTH: about {minutes:g} minutes ({total:.0f} seconds) in total. That means roughly {words} narration words '
                 f'in total plus silent beats. Silent beats count toward the length.')
     return ('TARGET LENGTH: Auto. Choose the length this topic deserves, between 5 and 8 minutes in total (roughly 450-700 narration '
-            'words plus silent beats). Do not pad.')
+            'words plus silent beats, typically 12-18 beats). Do not pad, but do not be brief: develop each idea.')
 
 
 BANNED = [
@@ -57,46 +57,58 @@ BANNED = [
 ]
 
 
+def repair(script, title):
+    """Fix structural slips automatically instead of sending the script back."""
+    beats = list(script.beats)
+    topic = re.sub(r'[^A-Za-z ]', ' ', title.split('-')[0].split(':')[0]).strip().split()
+    word = (max(topic, key=len) if topic else 'MEANING').upper()[:24]
+    if beats[0].mode != 'silent':
+        beats.insert(0, beats[0].model_copy(update={'mode': 'silent', 'narration': '', 'setpiece': 'title_card', 'labels': [word],
+                                                    'seconds': 7, 'on_screen': '', 'amber': False}))
+    if beats[-1].mode != 'silent':
+        first = beats[0]
+        beats.append(first.model_copy(update={'seconds': 7, 'on_screen': first.on_screen or '', 'amber': any(b.amber for b in beats[-4:])}))
+    return script.model_copy(update={'beats': beats})
+
+
 def check(script, minutes):
-    problems = []
+    """Hard problems only (the writer is asked to fix these); returns (problems, notes, seconds)."""
+    problems, notes = [], []
     beats = script.beats
     total = sum(estimate(b) for b in beats)
     narrated = sum(estimate(b) for b in beats if b.mode == 'narrated')
     if minutes:
-        if abs(total - minutes * 60) / (minutes * 60) > .2:
-            problems.append(f'the script would run about {total / 60:.1f} minutes but the target is {minutes:g} minutes; '
-                            f'{"add" if total < minutes * 60 else "remove"} narrated beats or narration words')
-    elif not 4.5 * 60 <= total <= 9 * 60:
-        problems.append(f'the script would run about {total / 60:.1f} minutes; Auto length must be between 5 and 8 minutes')
-    if beats[0].mode != 'silent':
-        problems.append('beat 1 must be a silent cold open')
-    if beats[-1].mode != 'silent':
-        problems.append('the final beat must be silent')
-    if total and not .45 <= narrated / total <= .82:
-        problems.append(f'narration is {narrated / total:.0%} of the running time; it should be 55-70%')
-    if sum(1 for b in beats if b.mode == 'silent') < 3:
-        problems.append('use at least 3 silent beats')
-    counts = {}
+        if abs(total - minutes * 60) / (minutes * 60) > .25:
+            words = sum(len(b.narration.split()) for b in beats if b.mode == 'narrated')
+            need = round((minutes * 60 - (total - narrated)) * 2.35)
+            problems.append(f'the script would run about {total / 60:.1f} minutes but {minutes:g} minutes were requested; '
+                            f'it has {words} narration words, aim for about {need}')
+    elif not 3.5 * 60 <= total <= 10 * 60:
+        words = sum(len(b.narration.split()) for b in beats if b.mode == 'narrated')
+        problems.append(f'the script would run about {total / 60:.1f} minutes with {words} narration words; '
+                        f'Auto length needs 5-8 minutes, about 500-700 narration words')
     for i, b in enumerate(beats):
-        counts[b.setpiece] = counts.get(b.setpiece, 0) + 1
         if b.mode == 'narrated':
             n = len(b.narration.split())
-            if not 15 <= n <= 110:
-                problems.append(f'beat {i + 1} narration has {n} words (15-110 allowed)')
+            if n > 170:
+                problems.append(f'beat {i + 1} narration has {n} words; split it into two beats (max 170)')
             for pattern, why in BANNED:
                 if re.search(pattern, b.narration, re.I):
                     problems.append(f'beat {i + 1} {why}')
-        if i and b.setpiece == beats[i - 1].setpiece and not (b.mode == 'silent' and beats[i - 1].mode == 'narrated'):
-            problems.append(f'beats {i} and {i + 1} repeat the setpiece {b.setpiece}')
-    over = [k for k, v in counts.items() if v > 3]
+    counts = {}
+    for b in beats:
+        counts[b.setpiece] = counts.get(b.setpiece, 0) + 1
+    if total and not .45 <= narrated / total <= .85:
+        notes.append(f'narration is {narrated / total:.0%} of the running time')
+    if len(counts) < 6:
+        notes.append(f'only {len(counts)} different setpieces')
+    over = [k for k, v in counts.items() if v > 4]
     if over:
-        problems.append('setpieces used more than 3 times: ' + ', '.join(over))
-    if len(counts) < min(8, len(beats) - 2):
-        problems.append(f'only {len(counts)} different setpieces; use at least {min(8, len(beats) - 2)}')
+        notes.append('setpieces used often: ' + ', '.join(over))
     sentences = [s.strip().lower() for b in beats for s in re.split(r'[.!?]', b.narration) if len(s.split()) > 6]
     if len(sentences) != len(set(sentences)):
-        problems.append('repeats a narration sentence')
-    return problems, total
+        problems.append('repeats a narration sentence word for word')
+    return problems, notes, total
 
 
 def write(title, minutes=None, research=None, writer=None):
@@ -109,11 +121,16 @@ def write(title, minutes=None, research=None, writer=None):
     report = {}
 
     def validate(data):
-        script = Script.model_validate(data)
-        problems, total = check(script, minutes)
+        script = repair(Script.model_validate(data), title)
+        problems, notes, total = check(script, minutes)
         if problems:
-            raise ValueError('; '.join(problems[:10]))
+            soft = all('minutes' in p for p in problems)      # only the length is off
+            target = minutes * 60 if minutes else 6.5 * 60
+            raise Rejected('; '.join(problems[:10]), script if soft else None, abs(total - target))
+        for n in notes:
+            print(f'::notice title=Script note::{n}', flush=True)
         report['estimated_seconds'] = total
+        report['notes'] = notes
         return script
 
     script = writer.json(SYSTEM, user, validate)
