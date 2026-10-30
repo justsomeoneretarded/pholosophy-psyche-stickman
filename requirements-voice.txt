@@ -1,0 +1,6 @@
+# Narration job (install CPU torch 2.6.0 first, as the workflow does)
+pydantic==2.13.4
+numpy>=1.26,<2
+soundfile>=0.12,<1
+faster-whisper>=1.2,<2
+chatterbox-tts @ git+https://github.com/resemble-ai/chatterbox.git@5de7a54aa4e5e2baadb0182dde554908b48b85c2

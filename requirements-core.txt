@@ -1,0 +1,5 @@
+# Planning and production (script, animation, mixing, packaging)
+pydantic==2.13.4
+Pillow==12.3.0
+numpy>=1.26,<3
+requests>=2.32,<3

@@ -56,7 +56,7 @@ REACTIONS = {
 
 # Prop kinds an action needs (first is preferred when one must be added).
 ACTION_PROPS = {
-    'sit': ('chair', 'bench', 'sofa', 'bed'), 'lie_down': ('bed', 'sofa', 'bench'), 'sleep': ('bed', 'sofa', 'bench'),
+    'sit': ('chair', 'bench', 'sofa', 'bed', 'rock'), 'lie_down': ('bed', 'sofa', 'bench'), 'sleep': ('bed', 'sofa', 'bench'),
     'type': ('computer', 'desk', 'table'), 'use_phone': ('phone',), 'read': ('book',), 'drink': ('cup',),
     'open_door': ('door',), 'look_out_window': ('window',), 'lean_on_wall': ('wall',),
     'flip_switch': ('light_switch',), 'climb_stairs': ('stairs',),

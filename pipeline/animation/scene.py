@@ -49,6 +49,20 @@ FONT_PATH = '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'
 BOLD_PATH = '/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'
 
 
+ASSETS = __import__('pathlib').Path(__file__).resolve().parents[2] / 'assets' / 'fonts'
+FACES = {'display': ASSETS / 'BebasNeue-Regular.ttf', 'serif': ASSETS / 'CormorantGaramond-Medium.ttf',
+         'serif_italic': ASSETS / 'CormorantGaramond-MediumItalic.ttf', 'headline': ASSETS / 'Anton-Regular.ttf'}
+
+
+@lru_cache(maxsize=160)
+def face_font(face, size):
+    path = FACES.get(face)
+    try:
+        return ImageFont.truetype(str(path), max(8, int(size)))
+    except (OSError, TypeError):
+        return font(size, True)
+
+
 @lru_cache(maxsize=96)
 def font(size, bold=False):
     try:
@@ -147,8 +161,9 @@ class Canvas:
             return
         self.d.chord(box, a0, a1, fill=fill)
 
-    def text(self, x, y, s, size, fill, bold=True, anchor='mm'):
-        self.d.text(self.p(x, y), s, font=font(size * self.k, bold), fill=fill, anchor=anchor)
+    def text(self, x, y, s, size, fill, bold=True, anchor='mm', face=None):
+        f = face_font(face, size * self.k) if face else font(size * self.k, bold)
+        self.d.text(self.p(x, y), s, font=f, fill=fill, anchor=anchor)
 
 
 # ---------------------------------------------------------------- camera
@@ -1051,6 +1066,9 @@ def draw_symbol(cv, scene, plan, poses, t, pal):
 
 # ---------------------------------------------------------------- frame
 def frame(scene, t, size=(1920, 1080), caption='', diagnostic=False, ss=2):
+    if getattr(scene, 'style', 'classic') == 'noir':
+        from pipeline.animation.noir import frame as noir_frame
+        return noir_frame(scene, t, size, caption, ss)
     w, h = size
     scale = character_scale(size)
     ww = w / scale

@@ -1,128 +1,221 @@
 name: Generate Stickman Video
+# One title in, one finished philosophy / psychology video essay out.
+# Jobs: plan (script, Groq) -> voice (Chatterbox Turbo) -> produce (animation, mix, package)
+#       music (ACE-Step 1.5) runs in parallel from the start.
+
 on:
   workflow_dispatch:
     inputs:
       title:
-        description: Video title
+        description: Video topic or title (e.g. Nihilism - belief in nothing)
         required: true
         type: string
+      narrator:
+        description: Narrator voice
+        type: choice
+        options: [Warguy, Kit Laser, Female]
+        default: Warguy
       duration_minutes:
-        description: Duration in minutes (4–10)
-        default: 6
-        type: number
-      style:
+        description: Length in minutes (Auto lets the writer choose, usually 5-8)
         type: choice
-        options: [auto, minimalist, cinematic, humorous, dark-philosophical]
-        default: auto
-      voice:
-        type: choice
-        options: [auto, custom]
-        default: auto
+        options: [Auto, '3', '4', '5', '6', '7', '8', '10', '12']
+        default: Auto
       format:
+        description: Video format
         type: choice
         options: ['16:9', '9:16']
         default: '16:9'
-      quality:
-        type: choice
-        options: [standard, high]
-        default: high
-      music:
-        type: choice
-        options: [auto, ambient, cinematic, none]
-        default: auto
-      seed:
-        description: Optional reproducibility seed
-        type: string
-        default: ''
-      upload_to_youtube:
+      burn_captions:
+        description: Burn narration captions into the picture (an SRT file is always included)
         type: boolean
         default: false
+
 permissions:
   contents: read
+
 concurrency:
-  group: video-${{ github.ref }}
+  group: video-${{ github.run_id }}
   cancel-in-progress: false
+
+env:
+  PYTHONUNBUFFERED: '1'
+
 jobs:
-  produce:
-    runs-on: ubuntu-latest
-    timeout-minutes: 350
+  plan:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
     env:
-      STUDIO_INPUTS: ${{ toJSON(inputs) }}
-      OLLAMA_HOST: 127.0.0.1:11434
-      OLLAMA_NUM_PARALLEL: '1'
-      OLLAMA_MAX_LOADED_MODELS: '1'
-      HF_HOME: ${{ github.workspace }}/.cache/huggingface
-      OLLAMA_MODELS: ${{ github.workspace }}/.cache/ollama
-      STUDIO_HISTORY: ${{ github.workspace }}/.cache/history
-      YOUTUBE_OAUTH_JSON: ${{ secrets.YOUTUBE_OAUTH_JSON }}
-      CUSTOM_VOICE_AUTHORIZED: ${{ vars.CUSTOM_VOICE_AUTHORIZED }}
+      VIDEO_TITLE: ${{ inputs.title }}
+      VIDEO_MINUTES: ${{ inputs.duration_minutes }}
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
           cache: pip
-      - name: Validate input before downloads
+      - name: Install
+        run: python -m pip install -r requirements-core.txt
+      - name: Write the script (qwen3.8-27b on Groq, with fallbacks)
+        run: python -m pipeline.essay plan --work work
+      - uses: actions/upload-artifact@v4
+        with:
+          name: plan
+          path: work/plan/
+          retention-days: 3
+      - name: Show the script
+        if: always()
+        run: if [ -f work/plan/script.json ]; then python -c "import json;s=json.load(open('work/plan/script.json'));print(s['title']);[print(i+1,b['mode'],b['setpiece'],'|',b.get('narration') or b.get('on_screen','')) for i,b in enumerate(s['beats'])]"; fi
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: failed-plan-diagnostics
+          path: work/
+          retention-days: 7
+
+  music:
+    # Original score with ACE-Step 1.5 (MIT). Optional: on any failure the bundled
+    # Scott Buckley tracks (CC BY 4.0) are used and credited automatically.
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    continue-on-error: true
+    env:
+      ACESTEP_INIT_LLM: 'false'
+    steps:
+      - uses: actions/checkout@v4
+      - name: Free disk space for the music model
+        run: sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: System packages
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg libsndfile1
+      - name: Install ACE-Step 1.5 (CPU)
+        shell: bash
         run: |
-          python -m pip install 'pydantic==2.13.4'
-          python -c "from pipeline.config import Config; c=Config.environment(); assert 4 <= c.duration_minutes <= 10, 'Duration must be 4–10 minutes'"
-      - name: Inspect runner resources
-        run: |
-          nproc
-          free -h
-          df -h .
-          lscpu
-      - name: System and Python dependencies
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y ffmpeg fonts-dejavu-core zstd
-          python -m pip install -r requirements.txt
+          set -o pipefail
+          git clone --depth 1 https://github.com/ACE-Step/ACE-Step-1.5 "$RUNNER_TEMP/acestep"
+          python -m pip install torch==2.10.0 torchvision==0.25.0 torchaudio==2.10.0 --index-url https://download.pytorch.org/whl/cpu 2>&1 | tail -3
+          cd "$RUNNER_TEMP/acestep"
+          python - <<'INSTALL'
+          import collections, subprocess, sys, tomllib
+          deps = tomllib.load(open("pyproject.toml", "rb"))["project"]["dependencies"]
+          skip = ("torch==", "torch>", "torch;", "torchvision", "torchaudio", "nano-vllm", "mlx")
+          keep = [d for d in deps if not d.replace(" ", "").lower().startswith(skip) and d.split(";")[0].strip().lower() != "torch"]
+          locked = collections.defaultdict(set)
+          for package in tomllib.load(open("uv.lock", "rb"))["package"]:
+              if "version" in package and "editable" not in package.get("source", {}) and "path" not in package.get("source", {}):
+                  locked[package["name"]].add(package["version"].split("+")[0])
+          pins = [f"{name}=={next(iter(versions))}" for name, versions in sorted(locked.items())
+                  if len(versions) == 1 and not name.startswith(("nvidia", "triton", "nano-vllm", "flash"))]
+          open("cpu-constraints.txt", "w").write("\n".join(pins) + "\n")
+          for dep in keep:
+              subprocess.run([sys.executable, "-m", "pip", "install", "-q", "-c", "cpu-constraints.txt", dep], capture_output=True)
+          INSTALL
+          python -m pip install -q --no-deps -e . 2>&1 | tail -3
+      - name: Compose the contemplative score
+        run: python scripts/generate_music.py "$RUNNER_TEMP/acestep" contemplative 150 work/music/contemplative.wav
+      - name: Compose the hopeful score
+        run: python scripts/generate_music.py "$RUNNER_TEMP/acestep" hopeful 90 work/music/hopeful.wav
+      - uses: actions/upload-artifact@v4
+        with:
+          name: music
+          path: work/music/*.wav
+          if-no-files-found: ignore
+          retention-days: 3
+
+  voice:
+    needs: plan
+    runs-on: ubuntu-24.04
+    timeout-minutes: 180
+    env:
+      NARRATOR: ${{ inputs.narrator }}
+      TTS_MODEL: ${{ vars.TTS_MODEL || 'turbo' }}
+      HF_HOME: ${{ github.workspace }}/.cache/huggingface
+    steps:
+      - uses: actions/checkout@v4
+      - name: Free disk space for the voice model
+        run: sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: System packages
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg libsndfile1
       - uses: actions/cache@v4
         with:
-          path: |
-            .cache/voices
-            .cache/huggingface
-            .cache/ollama
-          key: studio-models-v1-${{ runner.os }}
-      - uses: actions/cache/restore@v4
-        with:
-          path: .cache/history
-          key: studio-history-${{ github.run_id }}
-          restore-keys: studio-history-
-      - name: Install and start local Ollama
+          path: .cache/huggingface
+          key: voice-models-v1-${{ env.TTS_MODEL }}
+      - name: Install Chatterbox Turbo and faster-whisper (CPU)
         run: |
-          mkdir -p work/ollama
-          curl --fail --location --retry 3 https://ollama.com/download/ollama-linux-amd64.tar.zst -o work/ollama.tar.zst
-          tar --zstd --exclude='*cuda*' --exclude='*rocm*' -xf work/ollama.tar.zst -C work/ollama
-          rm work/ollama.tar.zst
-          work/ollama/bin/ollama serve > work/ollama.log 2>&1 &
-          python scripts/wait_ollama.py
-          work/ollama/bin/ollama pull qwen3:4b
-      - name: Download default licensed voice
-        run: |
-          python -m piper.download_voices en_US-ljspeech-high --download-dir .cache/voices
-          curl --fail --location https://huggingface.co/rhasspy/piper-voices/resolve/main/en/en_US/ljspeech/high/MODEL_CARD -o .cache/voices/MODEL_CARD
-      - name: Produce and verify complete video
-        run: python -m pipeline.main --out outputs/stickman-video-output
-      - uses: actions/cache/save@v4
-        if: success()
+          python -m pip install --upgrade pip
+          python -m pip install torch==2.6.0 torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install -r requirements-voice.txt
+      - uses: actions/download-artifact@v4
         with:
-          path: .cache/history
-          key: studio-history-${{ github.run_id }}
-      - name: Deliver successful production
-        if: success()
-        uses: actions/upload-artifact@v4
+          name: plan
+          path: work/plan
+      - name: Record the narration
+        run: python -m pipeline.essay voice --work work
+      - uses: actions/upload-artifact@v4
         with:
-          name: stickman-video-output
-          path: outputs/stickman-video-output/
-          retention-days: 14
-          if-no-files-found: error
-      - name: Preserve failure diagnostics and checkpoints
+          name: speech
+          path: work/speech/
+          retention-days: 3
+      - uses: actions/upload-artifact@v4
         if: failure()
-        uses: actions/upload-artifact@v4
         with:
-          name: failed-production-diagnostics
+          name: failed-voice-diagnostics
+          path: work/
+          retention-days: 7
+
+  produce:
+    needs: [plan, voice, music]
+    if: ${{ !cancelled() && needs.plan.result == 'success' && needs.voice.result == 'success' }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    env:
+      NARRATOR: ${{ inputs.narrator }}
+      VIDEO_FORMAT: ${{ inputs.format }}
+      BURN_CAPTIONS: ${{ inputs.burn_captions }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - name: Install
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-dejavu-core
+          python -m pip install -r requirements-core.txt
+      - uses: actions/download-artifact@v4
+        with:
+          name: plan
+          path: work/plan
+      - uses: actions/download-artifact@v4
+        with:
+          name: speech
+          path: work/speech
+      - uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          name: music
+          path: work/music
+      - name: Animate, mix and package
+        run: python -m pipeline.essay produce --work work --final outputs/video
+      - uses: actions/upload-artifact@v4
+        with:
+          name: philosophy-video
+          path: outputs/video/
+          if-no-files-found: error
+          retention-days: 7
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: failed-produce-diagnostics
           path: |
+            work/FAILURE-*.txt
+            work/timeline.json
+            work/render/segments/*.log
             outputs/
-            work/*.log
           retention-days: 7

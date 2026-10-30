@@ -1,0 +1,141 @@
+{
+ "title": "Nihilism: Belief in Nothing",
+ "thesis": "Nihilism removes given meaning; Nietzsche and Camus suggest meaning can be made rather than found.",
+ "beats": [
+  {
+   "mode": "silent",
+   "setpiece": "word_wall",
+   "labels": [
+    "GOD",
+    "PURPOSE",
+    "DESTINY",
+    "MEANING"
+   ],
+   "seconds": 14,
+   "tone": "dark"
+  },
+  {
+   "mode": "silent",
+   "setpiece": "title_card",
+   "labels": [
+    "NIHILISM"
+   ],
+   "seconds": 6,
+   "on_screen": "belief in nothing",
+   "tone": "dark"
+  },
+  {
+   "mode": "narrated",
+   "setpiece": "routine_loop",
+   "tone": "light",
+   "delivery": "calm",
+   "narration": "Wake up. Work. Eat. Sleep. Repeat. Most of us never stop to ask what any of it is for. Nihilism is the view that the question has no answer: that life has no built-in meaning, no purpose handed down to us, no value written into the universe."
+  },
+  {
+   "mode": "narrated",
+   "setpiece": "pillar",
+   "labels": [
+    "CERTAINTY"
+   ],
+   "tone": "dark",
+   "delivery": "dramatic",
+   "narration": "In the nineteenth century, Friedrich Nietzsche saw the old certainties of Europe beginning to crack. Religion, tradition and authority had told people why they mattered. When belief in them weakened, he warned, something would rush into the gap: a feeling that nothing matters at all."
+  },
+  {
+   "mode": "narrated",
+   "setpiece": "crowd",
+   "tone": "light",
+   "delivery": "calm",
+   "narration": "For Nietzsche this was not a conclusion. It was a crisis, a passage a whole culture would have to go through. And it begins quietly, the moment one person in the crowd stops and asks why everyone is walking."
+  },
+  {
+   "mode": "silent",
+   "setpiece": "fall",
+   "labels": [
+    "trophy",
+    "heart",
+    "diploma",
+    "clock"
+   ],
+   "seconds": 13,
+   "tone": "dark"
+  },
+  {
+   "mode": "narrated",
+   "setpiece": "desert",
+   "tone": "light",
+   "delivery": "calm",
+   "narration": "Taken seriously, nihilism can feel like this. A vast, indifferent world, and you in it, very small. If nothing matters, why get up? Why try? Many people meet this question at some point in their lives, often without a name for it."
+  },
+  {
+   "mode": "narrated",
+   "setpiece": "shadow_companion",
+   "tone": "dark",
+   "delivery": "calm",
+   "narration": "And the feeling rarely arrives alone. Emptiness has a way of sitting down beside us, patient and familiar, offering the comfort of not having to care."
+  },
+  {
+   "mode": "narrated",
+   "setpiece": "sisyphus",
+   "labels": [
+    "TOMORROW"
+   ],
+   "tone": "light",
+   "delivery": "normal",
+   "narration": "Albert Camus took the problem head on. He called our situation absurd: we demand meaning, and the universe answers with silence. His image for it was Sisyphus, the figure condemned to push a boulder up a hill forever, only to watch it roll back down."
+  },
+  {
+   "mode": "silent",
+   "setpiece": "sisyphus",
+   "seconds": 10,
+   "amber": true,
+   "on_screen": "and yet",
+   "tone": "light"
+  },
+  {
+   "mode": "narrated",
+   "setpiece": "flower",
+   "amber": true,
+   "tone": "light",
+   "delivery": "calm",
+   "narration": "Camus did not think the answer was despair. He thought Sisyphus could be at peace with the climb, that the struggle itself could be enough to fill a life. Meaning, in this view, is not found. It grows where we choose to tend it."
+  },
+  {
+   "mode": "narrated",
+   "setpiece": "chalk_door",
+   "amber": true,
+   "tone": "dark",
+   "delivery": "normal",
+   "narration": "Nietzsche pointed the same way. If no meaning is given, then we are free to create our own values, and to take responsibility for them. The emptiness is not a wall. It may be a door."
+  },
+  {
+   "mode": "silent",
+   "setpiece": "word_wall",
+   "labels": [
+    "GOD",
+    "PURPOSE",
+    "DESTINY",
+    "MEANING"
+   ],
+   "seconds": 8,
+   "on_screen": "so what will you write?",
+   "tone": "dark"
+  }
+ ],
+ "youtube_titles": [
+  "Nihilism: What If Nothing Means Anything?",
+  "Nihilism Explained: Belief in Nothing",
+  "Why Nothing Matters (And Why That Might Be Good)"
+ ],
+ "description": "What if life has no built-in meaning? A short animated essay on nihilism, Nietzsche and Camus.",
+ "tags": [
+  "nihilism",
+  "philosophy",
+  "nietzsche",
+  "camus",
+  "meaning of life",
+  "absurdism"
+ ],
+ "pinned_comment": "If nothing is given, what would you write on your wall?",
+ "thumbnail_words": "BELIEF IN NOTHING"
+}

@@ -4,31 +4,46 @@ from PIL import Image,ImageDraw
 from pipeline.animation.scene import frame,font
 def probe(path):
     return json.loads(subprocess.check_output(['ffprobe','-v','error','-show_streams','-show_format','-of','json',str(path)]))
-def render(episode,timeline,captions,out,size=(1920,1080),fps=30,quality='high'):
-    out=Path(out);segments=out/'segments';segments.mkdir(exist_ok=True);started=time.monotonic();counts=[]
+def _segment(job):
+    """Render one beat to its own MP4 segment (runs in a worker process)."""
+    scene,row,captions,segments,size,fps,quality,signature,count=job
+    dest=segments/(scene.id+'.mp4');marker=segments/(scene.id+'.sha256')
+    temp=dest.with_suffix('.partial.mp4')
+    cmd=['ffmpeg','-y','-v','error','-f','rawvideo','-pix_fmt','rgb24','-s',f'{size[0]}x{size[1]}','-r',str(fps),'-i','pipe:0','-an','-c:v','libx264','-preset','veryfast','-crf','20' if quality=='high' else '24','-pix_fmt','yuv420p','-threads','1',str(temp)]
+    print(f'Rendering {scene.id}: {count} frames',flush=True)
+    with open(segments/(scene.id+'.log'),'w') as log:
+        process=subprocess.Popen(cmd,stdin=subprocess.PIPE,stderr=log)
+        try:
+            for k in range(count):
+                t=k/fps;gt=row['start']+t
+                cap=next((c['text'] for c in captions if c['start']<=gt<c['end']),'')
+                process.stdin.write(frame(scene,t,size,cap,ss=2 if quality=='high' else 1).tobytes())
+            process.stdin.close()
+            if process.wait()!=0:raise RuntimeError(f'Render failed: {scene.id}; see segment log')
+        except BaseException:
+            process.kill();process.wait();raise
+    temp.replace(dest);marker.write_text(signature)
+    return scene.id
+def render(episode,timeline,captions,out,size=(1920,1080),fps=30,quality='high',workers=None):
+    import os
+    from concurrent.futures import ProcessPoolExecutor
+    out=Path(out);segments=out/'segments';segments.mkdir(parents=True,exist_ok=True);started=time.monotonic();counts=[];jobs=[]
     for scene,row in zip(episode.scenes,timeline):
-        signature=hashlib.sha256((scene.model_dump_json()+json.dumps([size,fps,quality,captions,'renderer-v3'])).encode()).hexdigest()
+        signature=hashlib.sha256((scene.model_dump_json()+json.dumps([size,fps,quality,captions,'renderer-v4'])).encode()).hexdigest()
         dest=segments/(scene.id+'.mp4');marker=segments/(scene.id+'.sha256')
         # Filenames derive from validated positional indices, not model-generated paths.
         if not scene.id.replace('_','').isalnum():raise ValueError('Scene id must be alphanumeric')
         count=round(row['end']*fps)-round(row['start']*fps);counts.append(count)
         if dest.exists() and marker.exists() and marker.read_text()==signature:
             if abs(float(probe(dest)['format']['duration'])-count/fps)<.08:continue
-        temp=dest.with_suffix('.partial.mp4')
-        cmd=['ffmpeg','-y','-v','error','-f','rawvideo','-pix_fmt','rgb24','-s',f'{size[0]}x{size[1]}','-r',str(fps),'-i','pipe:0','-an','-c:v','libx264','-preset','veryfast','-crf','20' if quality=='high' else '24','-pix_fmt','yuv420p','-threads','2',str(temp)]
-        print(f'Rendering {scene.id}: {count} frames',flush=True)
-        with open(segments/(scene.id+'.log'),'w') as log:
-            process=subprocess.Popen(cmd,stdin=subprocess.PIPE,stderr=log)
-            try:
-                for k in range(count):
-                    t=k/fps;gt=row['start']+t
-                    cap=next((c['text'] for c in captions if c['start']<=gt<c['end']),'')
-                    process.stdin.write(frame(scene,t,size,cap,ss=2 if quality=='high' else 1).tobytes())
-                process.stdin.close()
-                if process.wait()!=0:raise RuntimeError(f'Render failed: {scene.id}; see segment log')
-            except BaseException:
-                process.kill();process.wait();raise
-        temp.replace(dest);marker.write_text(signature)
+        jobs.append((scene,row,captions,segments,size,fps,quality,signature,count))
+    workers=workers or int(os.environ.get('RENDER_WORKERS',max(1,min(4,(os.cpu_count() or 2)))))
+    jobs.sort(key=lambda j:-j[-1])          # longest beats first keeps every worker busy
+    if workers>1 and len(jobs)>1:
+        with ProcessPoolExecutor(workers) as pool:
+            for _ in pool.map(_segment,jobs):pass
+    else:
+        for job in jobs:_segment(job)
     listing=segments/'concat.txt';listing.write_text('\n'.join("file '"+s.id+".mp4'" for s in episode.scenes))
     subprocess.run(['ffmpeg','-y','-v','error','-f','concat','-safe','1','-i',str(listing),'-c','copy',str(out/'silent.mp4')],check=True)
     sheet=Image.new('RGB',(960,math.ceil(len(episode.scenes)/3)*200),'white')

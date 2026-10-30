@@ -21,13 +21,13 @@ class Action(Strict):
         return self
 class Prop(Strict):
     id:str=Field(pattern=r'^[A-Za-z][A-Za-z0-9_]{0,47}$')
-    kind:Literal['phone','box','chair','desk','door','clock','book','stairs','sign','bench','cup','computer','bed','lamp','mirror','window','wall','bag','table','calendar','rope','ladder','light_switch','sofa','plant','tv']
+    kind:Literal['phone','box','chair','desk','door','clock','book','stairs','sign','bench','cup','computer','bed','lamp','mirror','window','wall','bag','table','calendar','rope','ladder','light_switch','sofa','plant','tv','rock']
     x:float=Field(ge=.05,le=.95)
     y:float=Field(ge=.1,le=.95,default=.78)
 class Scene(Strict):
     id:str=Field(pattern=r'^[A-Za-z][A-Za-z0-9_]{0,47}$')
     purpose:str
-    narration:str=Field(min_length=15,max_length=3500)
+    narration:str=Field(default='',max_length=3500)
     duration:float=Field(gt=0,le=90)
     environment:Literal['bedroom','classroom','office','street','park','living_room','cafe','library','hallway','city','void','stage','mindscape','staircase','crossroads','gathering','empty_room','hill','nature']='stage'
     mood:Literal['reflective','hopeful','tense','sad','playful']='reflective'
@@ -38,9 +38,18 @@ class Scene(Strict):
     symbol:Literal['none','thought','loop','maze','doors','waves','balance','memory','chains','decision_tree','circles']='none'
     text:str=Field(default='',max_length=55)
     transition:Literal['fade','cut']='fade'
+    style:Literal['classic','noir']='classic'
+    setpiece:str|None=Field(default=None,pattern=r'^[a-z_]{2,40}$')
+    labels:list[str]=Field(default_factory=list,max_length=6)
+    amber:bool=False
+    voiced:bool=True
+    tone:Literal['auto','dark','light']='auto'
+    delivery:Literal['calm','normal','dramatic']='calm'
     @model_validator(mode='after')
     def valid(self):
         if len(set(self.characters))!=len(self.characters):raise ValueError('Duplicate character')
+        if self.voiced and len(self.narration.strip())<15:raise ValueError('Narrated scenes need at least 15 characters of narration')
+        if any(len(l)>24 for l in self.labels):raise ValueError('Labels must be short (24 characters or fewer)')
         ids=[p.id for p in self.props]
         if len(set(ids))!=len(ids):raise ValueError('Duplicate prop')
         for a in self.actions:

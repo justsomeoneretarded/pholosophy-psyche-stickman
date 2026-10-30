@@ -52,6 +52,10 @@ class World:
         self.scene = scene
         self.ww = ww
         self.props = {p.id: p for p in scene.props}
+        from pipeline.animation import setpieces
+        piece = setpieces.get(getattr(scene, 'setpiece', None))
+        self.terrain = getattr(piece, 'floor', None) if piece else None
+        self.piece = piece
 
     def px(self, prop):
         return prop.x * self.ww
@@ -63,7 +67,7 @@ class World:
         return self.px(p) - STAIR_W * STAIR_N / 2
 
     def floor_at(self, x):
-        y = 0.
+        y = self.terrain(x, self.ww) if self.terrain else 0.
         for p in self.by_kind(('stairs',)):
             x0 = self.stairs_x0(p)
             if x0 <= x < x0 + STAIR_W * STAIR_N:
@@ -102,7 +106,7 @@ class World:
         """Where to stand (hip x) and which way to face to use a prop."""
         p = self.px(prop)
         s = 1 if x <= p else -1               # approach from the side the actor is on
-        if prop.kind in SEATS and kind in ('sit', 'lie_down', 'sleep'):
+        if prop.kind in SEATS + ('rock',) and kind in ('sit', 'lie_down', 'sleep'):
             return p, self.seat_facing(prop)
         if prop.kind in ('desk', 'table', 'computer'):
             if kind == 'type':
@@ -446,6 +450,9 @@ class ScenePlan:
                 distance = abs(target - seg.x0)
                 walk_dur = dur - (1.0 if p.get('door') else 0.)
                 travel = self._travel_time(distance, speed)
+                if getattr(self.scene, 'style', 'classic') == 'noir' and kind in ('walk', 'stop') and travel < walk_dur * .85:
+                    speed = max(.14, distance / max(.5, walk_dur * .9 - .25))      # cinematic: walks fill their beat
+                    travel = self._travel_time(distance, speed)
                 if travel > walk_dur:
                     speed = min(SPEED.get(kind, .55) * 1.8, distance / max(.2, walk_dur - .25))
                     travel = min(walk_dur, self._travel_time(distance, speed))
@@ -478,7 +485,7 @@ class ScenePlan:
             st.facing = seg.facing
             return seg
         if kind in ('sit', 'lie_down', 'sleep'):
-            seat = prop if prop is not None and prop.kind in SEATS else None
+            seat = prop if prop is not None and prop.kind in SEATS + ('rock',) else None
             lying = kind != 'sit'
             if seat is not None:
                 top = {'bed': BED_TOP, 'bench': SEAT_TOP, 'sofa': SEAT_TOP}.get(seat.kind, SEAT_TOP)
@@ -583,7 +590,11 @@ class ScenePlan:
         return amount
 
     def controls(self, actor, t, partners=None):
-        return self._controls_at(actor, self.segment(actor, t), t, partners, 0)
+        c = self._controls_at(actor, self.segment(actor, t), t, partners, 0)
+        piece = self.world.piece
+        if piece is not None and hasattr(piece, 'adjust'):
+            c = piece.adjust(actor, c, t, self)
+        return c
 
     def _controls_at(self, actor, i, t, partners, depth):
         """Evaluate segment i at t, blending in from the (itself blended) previous segment."""
