@@ -1,0 +1,617 @@
+{
+ "title": "Acting showcase",
+ "thesis": "Characters move, interact with each other and the environment, and show emotion clearly.",
+ "metaphor": "A day in the life of an anxious mind.",
+ "framing": "philosophical_exploration",
+ "scenes": [
+  {
+   "id": "morning",
+   "purpose": "ANOTHER MONDAY",
+   "narration": "Alex wakes up already tired, as if the day has started without him.",
+   "duration": 13.0,
+   "environment": "bedroom",
+   "mood": "sad",
+   "camera": "static",
+   "characters": [
+    "main"
+   ],
+   "props": [
+    {
+     "id": "bed",
+     "kind": "bed",
+     "x": 0.25,
+     "y": 0.78
+    },
+    {
+     "id": "clock",
+     "kind": "clock",
+     "x": 0.45,
+     "y": 0.78
+    },
+    {
+     "id": "window",
+     "kind": "window",
+     "x": 0.78,
+     "y": 0.78
+    }
+   ],
+   "actions": [
+    {
+     "actor": "main",
+     "action": "sleep",
+     "start": 0.0,
+     "end": 3.0,
+     "target": "bed"
+    },
+    {
+     "actor": "main",
+     "action": "get_up",
+     "start": 3.0,
+     "end": 4.2,
+     "emotion": "tired"
+    },
+    {
+     "actor": "main",
+     "action": "yawn",
+     "start": 4.2,
+     "end": 6.0
+    },
+    {
+     "actor": "main",
+     "action": "stretch",
+     "start": 6.0,
+     "end": 7.6
+    },
+    {
+     "actor": "main",
+     "action": "look_out_window",
+     "start": 8.0,
+     "end": 11.0,
+     "target": "window",
+     "emotion": "thoughtful"
+    },
+    {
+     "actor": "main",
+     "action": "sigh",
+     "start": 11.0,
+     "end": 13.0,
+     "emotion": "sad"
+    }
+   ],
+   "symbol": "thought",
+   "text": "ANOTHER MONDAY",
+   "transition": "fade"
+  },
+  {
+   "id": "desk",
+   "purpose": "THE INNER CRITIC",
+   "narration": "The inner critic arrives the moment work begins.",
+   "duration": 14.0,
+   "environment": "office",
+   "mood": "tense",
+   "camera": "static",
+   "characters": [
+    "main",
+    "shadow"
+   ],
+   "props": [
+    {
+     "id": "pc",
+     "kind": "computer",
+     "x": 0.35,
+     "y": 0.78
+    },
+    {
+     "id": "chair",
+     "kind": "chair",
+     "x": 0.22,
+     "y": 0.78
+    },
+    {
+     "id": "door",
+     "kind": "door",
+     "x": 0.85,
+     "y": 0.78
+    }
+   ],
+   "actions": [
+    {
+     "actor": "main",
+     "action": "type",
+     "start": 0.0,
+     "end": 4.5,
+     "target": "pc",
+     "emotion": "anxious"
+    },
+    {
+     "actor": "shadow",
+     "action": "enter",
+     "start": 1.0,
+     "end": 4.0,
+     "x": 0.62
+    },
+    {
+     "actor": "shadow",
+     "action": "point",
+     "start": 4.2,
+     "end": 6.5,
+     "target": "main"
+    },
+    {
+     "actor": "main",
+     "action": "flinch",
+     "start": 5.0,
+     "end": 6.3
+    },
+    {
+     "actor": "main",
+     "action": "head_in_hands",
+     "start": 6.5,
+     "end": 9.5
+    },
+    {
+     "actor": "shadow",
+     "action": "argue",
+     "start": 7.0,
+     "end": 11.0,
+     "target": "main"
+    },
+    {
+     "actor": "main",
+     "action": "stand",
+     "start": 10.0,
+     "end": 11.0
+    },
+    {
+     "actor": "main",
+     "action": "shake_head",
+     "start": 11.2,
+     "end": 13.5,
+     "emotion": "determined"
+    }
+   ],
+   "symbol": "loop",
+   "text": "THE INNER CRITIC",
+   "transition": "fade"
+  },
+  {
+   "id": "friend",
+   "purpose": "SOMEONE NOTICES",
+   "narration": "A friend notices, and the room changes.",
+   "duration": 15.0,
+   "environment": "office",
+   "mood": "hopeful",
+   "camera": "static",
+   "characters": [
+    "main",
+    "friend"
+   ],
+   "props": [
+    {
+     "id": "door",
+     "kind": "door",
+     "x": 0.85,
+     "y": 0.78
+    },
+    {
+     "id": "chair",
+     "kind": "chair",
+     "x": 0.25,
+     "y": 0.78
+    }
+   ],
+   "actions": [
+    {
+     "actor": "main",
+     "action": "sit",
+     "start": 0.0,
+     "end": 3.0,
+     "target": "chair",
+     "emotion": "sad"
+    },
+    {
+     "actor": "friend",
+     "action": "enter",
+     "start": 1.0,
+     "end": 4.0,
+     "x": 0.6
+    },
+    {
+     "actor": "friend",
+     "action": "wave",
+     "start": 4.0,
+     "end": 5.5,
+     "target": "main"
+    },
+    {
+     "actor": "main",
+     "action": "stand",
+     "start": 4.5,
+     "end": 5.6
+    },
+    {
+     "actor": "friend",
+     "action": "comfort",
+     "start": 6.0,
+     "end": 8.5,
+     "target": "main"
+    },
+    {
+     "actor": "main",
+     "action": "nod",
+     "start": 8.6,
+     "end": 10.0,
+     "emotion": "happy"
+    },
+    {
+     "actor": "main",
+     "action": "high_five",
+     "start": 10.2,
+     "end": 12.0,
+     "target": "friend"
+    },
+    {
+     "actor": "main",
+     "action": "celebrate",
+     "start": 12.2,
+     "end": 15.0
+    }
+   ],
+   "symbol": "balance",
+   "text": "SOMEONE NOTICES",
+   "transition": "fade"
+  },
+  {
+   "id": "phone",
+   "purpose": "SMALL ACCIDENTS",
+   "narration": "Small accidents feel enormous, until someone laughs with you.",
+   "duration": 14.0,
+   "environment": "street",
+   "mood": "playful",
+   "camera": "static",
+   "characters": [
+    "main",
+    "friend"
+   ],
+   "props": [
+    {
+     "id": "phone",
+     "kind": "phone",
+     "x": 0.4,
+     "y": 0.78
+    },
+    {
+     "id": "bench",
+     "kind": "bench",
+     "x": 0.4,
+     "y": 0.78
+    }
+   ],
+   "actions": [
+    {
+     "actor": "main",
+     "action": "walk",
+     "start": 0.0,
+     "end": 2.5,
+     "x": 0.3
+    },
+    {
+     "actor": "main",
+     "action": "pick_up",
+     "start": 2.6,
+     "end": 4.6,
+     "target": "phone"
+    },
+    {
+     "actor": "main",
+     "action": "use_phone",
+     "start": 4.6,
+     "end": 8.0,
+     "emotion": "happy"
+    },
+    {
+     "actor": "main",
+     "action": "drop",
+     "start": 8.0,
+     "end": 9.0,
+     "emotion": "surprised"
+    },
+    {
+     "actor": "main",
+     "action": "facepalm",
+     "start": 9.0,
+     "end": 11.0
+    },
+    {
+     "actor": "friend",
+     "action": "enter",
+     "start": 6.0,
+     "end": 9.0,
+     "x": 0.7
+    },
+    {
+     "actor": "friend",
+     "action": "laugh",
+     "start": 9.2,
+     "end": 11.5,
+     "target": "main"
+    },
+    {
+     "actor": "main",
+     "action": "laugh",
+     "start": 11.6,
+     "end": 14.0
+    }
+   ],
+   "symbol": "none",
+   "text": "SMALL ACCIDENTS",
+   "transition": "fade"
+  },
+  {
+   "id": "future",
+   "purpose": "YOUR FUTURE SELF",
+   "narration": "Imagine the person you will be, sitting down beside you.",
+   "duration": 15.0,
+   "environment": "park",
+   "mood": "reflective",
+   "camera": "static",
+   "characters": [
+    "main",
+    "future"
+   ],
+   "props": [
+    {
+     "id": "bench",
+     "kind": "bench",
+     "x": 0.3,
+     "y": 0.78
+    }
+   ],
+   "actions": [
+    {
+     "actor": "main",
+     "action": "sit",
+     "start": 0.0,
+     "end": 4.0,
+     "target": "bench",
+     "emotion": "thoughtful"
+    },
+    {
+     "actor": "main",
+     "action": "think",
+     "start": 4.0,
+     "end": 6.5
+    },
+    {
+     "actor": "future",
+     "action": "enter",
+     "start": 3.0,
+     "end": 6.5,
+     "x": 0.65
+    },
+    {
+     "actor": "future",
+     "action": "talk",
+     "start": 6.8,
+     "end": 10.5,
+     "target": "main",
+     "emotion": "happy"
+    },
+    {
+     "actor": "main",
+     "action": "stand",
+     "start": 10.5,
+     "end": 11.5
+    },
+    {
+     "actor": "main",
+     "action": "hug",
+     "start": 11.8,
+     "end": 15.0,
+     "target": "future"
+    }
+   ],
+   "symbol": "memory",
+   "text": "YOUR FUTURE SELF",
+   "transition": "fade"
+  },
+  {
+   "id": "chase",
+   "purpose": "STOP RUNNING",
+   "narration": "Running from the thought only feeds it. Turning around changes the chase.",
+   "duration": 15.0,
+   "environment": "mindscape",
+   "mood": "tense",
+   "camera": "static",
+   "characters": [
+    "main",
+    "shadow"
+   ],
+   "props": [],
+   "actions": [
+    {
+     "actor": "main",
+     "action": "pace",
+     "start": 0.0,
+     "end": 4.0,
+     "emotion": "anxious"
+    },
+    {
+     "actor": "shadow",
+     "action": "chase",
+     "start": 4.0,
+     "end": 7.0,
+     "target": "main"
+    },
+    {
+     "actor": "main",
+     "action": "turn",
+     "start": 7.5,
+     "end": 8.0
+    },
+    {
+     "actor": "main",
+     "action": "push",
+     "start": 8.5,
+     "end": 10.5,
+     "target": "shadow",
+     "emotion": "determined"
+    },
+    {
+     "actor": "shadow",
+     "action": "leave",
+     "start": 11.0,
+     "end": 14.0
+    },
+    {
+     "actor": "main",
+     "action": "hands_on_hips",
+     "start": 12.0,
+     "end": 15.0,
+     "emotion": "proud"
+    }
+   ],
+   "symbol": "chains",
+   "text": "STOP RUNNING",
+   "transition": "fade"
+  },
+  {
+   "id": "lights",
+   "purpose": "LET THE LIGHT IN",
+   "narration": "Rest is not the same as hiding.",
+   "duration": 13.0,
+   "environment": "living_room",
+   "mood": "playful",
+   "camera": "static",
+   "characters": [
+    "main"
+   ],
+   "props": [
+    {
+     "id": "switch",
+     "kind": "light_switch",
+     "x": 0.15,
+     "y": 0.78
+    },
+    {
+     "id": "sofa",
+     "kind": "sofa",
+     "x": 0.55,
+     "y": 0.78
+    },
+    {
+     "id": "tv",
+     "kind": "tv",
+     "x": 0.85,
+     "y": 0.78
+    }
+   ],
+   "actions": [
+    {
+     "actor": "main",
+     "action": "flip_switch",
+     "start": 0.0,
+     "end": 2.0,
+     "target": "switch"
+    },
+    {
+     "actor": "main",
+     "action": "lie_down",
+     "start": 2.5,
+     "end": 6.0,
+     "target": "sofa",
+     "emotion": "tired"
+    },
+    {
+     "actor": "main",
+     "action": "get_up",
+     "start": 6.0,
+     "end": 7.2
+    },
+    {
+     "actor": "main",
+     "action": "flip_switch",
+     "start": 7.4,
+     "end": 9.5,
+     "target": "switch",
+     "emotion": "happy"
+    },
+    {
+     "actor": "main",
+     "action": "dance",
+     "start": 9.8,
+     "end": 13.0
+    }
+   ],
+   "symbol": "waves",
+   "text": "LET THE LIGHT IN",
+   "transition": "fade"
+  },
+  {
+   "id": "choice",
+   "purpose": "PICK A ROAD",
+   "narration": "No sign can choose for you. Choosing is the point.",
+   "duration": 13.0,
+   "environment": "crossroads",
+   "mood": "hopeful",
+   "camera": "static",
+   "characters": [
+    "main"
+   ],
+   "props": [
+    {
+     "id": "sign",
+     "kind": "sign",
+     "x": 0.62,
+     "y": 0.78
+    }
+   ],
+   "actions": [
+    {
+     "actor": "main",
+     "action": "walk",
+     "start": 0.0,
+     "end": 2.8,
+     "x": 0.45
+    },
+    {
+     "actor": "main",
+     "action": "look_at",
+     "start": 2.8,
+     "end": 4.5,
+     "target": "sign"
+    },
+    {
+     "actor": "main",
+     "action": "scratch_head",
+     "start": 4.5,
+     "end": 6.5,
+     "emotion": "confused"
+    },
+    {
+     "actor": "main",
+     "action": "shrug",
+     "start": 6.5,
+     "end": 8.0
+    },
+    {
+     "actor": "main",
+     "action": "point",
+     "start": 8.2,
+     "end": 9.8,
+     "target": "sign",
+     "emotion": "determined"
+    },
+    {
+     "actor": "main",
+     "action": "leave",
+     "start": 10.0,
+     "end": 13.0
+    }
+   ],
+   "symbol": "decision_tree",
+   "text": "PICK A ROAD",
+   "transition": "fade"
+  }
+ ]
+}

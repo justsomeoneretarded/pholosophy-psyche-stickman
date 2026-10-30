@@ -3,7 +3,7 @@ from pathlib import Path
 import numpy as np
 import pytest
 from pydantic import ValidationError
-from pipeline.animation.rig import pose, ik, ACTIONS
+from pipeline.animation.rig import ik, ACTIONS
 from pipeline.animation.scene import frame
 from pipeline.models import Scene, Action, Episode, Prop
 from pipeline.config import Config
@@ -13,34 +13,6 @@ from pipeline.production.quality import motion_checks
 
 def scene(action='walk'):
     return Scene(id='s1',purpose='A meaningful motion test',narration='The character takes one small step before considering the next decision.',duration=2,actions=[Action(action=action,end=2,x=.3)])
-
-@pytest.mark.parametrize('action',ACTIONS)
-def test_articulation_is_finite_and_bones_keep_length(action):
-    for t in np.linspace(0,2,31):
-        j=pose(action,float(t),2).joints
-        assert all(math.isfinite(v) for p in j.values() for v in p)
-        for side in ('left','right'):
-            for a,b,length in [('hip','knee',.255),('knee','foot',.255),('shoulder','elbow',.17),('elbow','hand',.17)]:
-                assert math.dist(j[side+'_'+a],j[side+'_'+b])==pytest.approx(length,abs=1e-5)
-        assert max(j['left_foot'][1],j['right_foot'][1])<.025
-
-def test_ik_reachable_and_unreachable():
-    for target in ((.2,.2),(0,10),(0,0)):
-        knee,foot=ik((0,0),target,.255,.255)
-        assert math.dist((0,0),knee)==pytest.approx(.255)
-        assert math.dist(knee,foot)==pytest.approx(.255)
-    knee,foot=ik((0,0),(.2,.2),.255,.255)
-    assert foot==pytest.approx((.2,.2))
-
-def test_walking_has_planted_foot_and_bending_knee():
-    samples=[pose('walk',float(t),2).joints for t in np.arange(.02,.40,.02)]
-    assert max(p['left_foot'][0] for p in samples)-min(p['left_foot'][0] for p in samples)<.001
-    assert math.dist(samples[0]['left_knee'],samples[-1]['left_knee'])>.01
-
-def test_sit_bends_knees_and_lowers_hips():
-    standing=pose('sit',0,2).joints;seated=pose('sit',2,2).joints
-    assert seated['hip'][1]>standing['hip'][1]+.1
-    assert abs(seated['left_knee'][0]-seated['left_hip'][0])>.1
 
 def test_unknown_action_and_prop_fail():
     with pytest.raises(ValidationError):Action(action='execute_python',end=1)

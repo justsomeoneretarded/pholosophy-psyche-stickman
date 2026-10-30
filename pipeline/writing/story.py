@@ -3,7 +3,26 @@ from pathlib import Path
 from pydantic import BaseModel,Field,ConfigDict
 from pipeline.models import Episode,Scene
 from pipeline.writing.ollama import Ollama
-from pipeline.animation.rig import ACTIONS
+from pipeline.animation.rig import ACTIONS, ACTION_GROUPS, EMOTIONS
+ACTION_HELP={
+ 'walk':'walk to x or across the stage','run':'run','sprint':'sprint','sneak':'tiptoe','pace':'pace back and forth (worry, waiting)',
+ 'enter':'walk in from off stage','leave':'walk off stage, or through a door if target is a door','stop':'walk then stop','turn':'turn around',
+ 'jump':'jump','climb_stairs':'climb the stairs prop','sit':'walk to a chair/bench/sofa/bed target and sit','stand':'stand up',
+ 'lie_down':'lie on a bed/sofa (or floor)','sleep':'lie down and sleep','get_up':'get up','kneel':'kneel','crouch':'crouch',
+ 'fall':'fall to the ground','recover':'get back up','stumble':'trip and catch balance','talk':'talk with hand gestures (to target, or to the viewer)',
+ 'point':'point at a target','wave':'wave (at target)','shrug':'shrug','think':'hand on chin','scratch_head':'scratch head, puzzled',
+ 'facepalm':'facepalm','head_in_hands':'bury face in hands','cry':'cry','celebrate':'jump with joy','laugh':'laugh','argue':'argue angrily (with target)',
+ 'nod':'nod','shake_head':'shake head no','cross_arms':'cross arms','hands_on_hips':'hands on hips','clap':'applaud','flinch':'startle back',
+ 'shiver':'shiver','sigh':'sigh','stretch':'stretch','look_around':'look around nervously','check_watch':'check watch impatiently',
+ 'dance':'dance','bow':'bow','cower':'cower, hands over head','panic':'panic, hands on head','yawn':'yawn','idle':'stand naturally',
+ 'handshake':'shake hands with target','hug':'hug target','high_five':'high five target','comfort':'hand on target shoulder',
+ 'push':'push target away','pull':'pull target along','give':'hand held object to target','chase':'chase target',
+ 'pick_up':'pick up a handheld prop','put_down':'put held object down','drop':'drop held object','carry':'carry a prop',
+ 'use_phone':'scroll a phone prop','type':'sit and type at a computer/desk','read':'read a book prop','drink':'sip from a cup prop',
+ 'open_door':'open a door prop','look_out_window':'gaze out a window prop','lean_on_wall':'lean on a wall prop',
+ 'flip_switch':'turn the lights off/on with a light_switch prop','look_at':'look at a prop or character'}
+def action_reference():
+    return '\n'.join(f'- {group}: '+'; '.join(f'{a} ({ACTION_HELP.get(a,a)})' for a in names) for group,names in ACTION_GROUPS.items())
 def normalize_scene(raw):
     """Repair scheduling/declarations without dropping or inventing any requested action."""
     raw=dict(raw);changes=[]
@@ -33,6 +52,12 @@ def normalize_scene(raw):
                 matches=[p['id'] for p in props if p['kind']==aliases[canonical(target)]]
             if len(matches)==1 and matches[0]!=target:
                 a['target']=matches[0];changes.append('Resolved '+target+' to declared prop '+matches[0])
+            elif not matches and target not in characters and target not in [p['id'] for p in props]:
+                a['target']=None;changes.append('Removed unknown target '+str(target)+'; the director supplies required props')
+        if a.get('emotion') not in (None,*EMOTIONS):
+            changes.append('Removed unsupported emotion '+str(a.get('emotion')));a['emotion']=None
+        if isinstance(a.get('x'),(int,float)) and not .05<=a['x']<=.95:
+            a['x']=max(.05,min(.95,a['x']));changes.append('Clamped stage position into the visible stage')
     for actor in characters:
         acts=sorted([a for a in actions if a.get('actor','main')==actor],key=lambda a:a.get('start',0))
         if any(a.get('end',0)>b.get('start',0) for a,b in zip(acts,acts[1:])):
@@ -71,8 +96,20 @@ Return thesis, metaphor and exactly {n} scene beats. Each beat advances the argu
 Thesis: {outline.thesis}. Metaphor: {outline.metaphor}. Outline: {json.dumps(outline.beats)}.
 Current beat: {beat}. Previous narration: {scenes[-1].narration if scenes else 'Opening: begin with a recognizable human situation.'}
 Write approximately {max(25,words//len(outline.beats))} words of natural English narration. No fabricated research, numbers, quotations, diagnosis or universal personality claims. Concrete examples, nuanced distinctions and a progression, not filler.
-Choose meaningful environment, symbol, sparse text and 2-4 actions illustrating narration. Duration exactly 20 seconds (adjusted later to speech). Ordered nonoverlapping action intervals within 0..20. Characters only main, friend, shadow, future, list every actor used. Actions only: {', '.join(ACTIONS)}.
-Keep main x=.35 and friend x=.65 for stationary gestures. Walk/run/sprint at most one second; no other locomotion. Prefer think, wave, point, shrug, argue, celebrate, facepalm and use_phone. Do not invent complex unsupported interactions. All target props must be declared. Use phone at x=.43,y=.65 for actor x=.35. Sit needs a chair at actor x minus .02. At least one articulated action beyond idle. Anchors must be exact narration phrases. Return JSON, never code.'''
+Then STAGE the scene like a professional 2D animator so the picture carries the idea, not just the voice:
+- 5 to 9 actions in the 20 seconds; each action 1.5-4 seconds; something visible must change at least every 3 seconds.
+- Characters MOVE: walk somewhere, enter, leave, pace, sit down, get up. They walk automatically to any prop or character named in `target`, so do not schedule separate walking.
+- Characters INTERACT: talk, argue, hug, comfort, push, pull, give, high_five, handshake, chase. The other character reacts automatically.
+- Characters USE THE ENVIRONMENT: sit on a chair, type at a computer, pick up and use a phone, read a book, drink from a cup, open a door, look out a window, flip a light switch, lean on a wall.
+- Characters FEEL: set `emotion` on actions ({', '.join(EMOTIONS)}). Emotion persists until changed and drives the face and posture. Show emotional change across the scene.
+- Cast: main = the protagonist; friend = another person; shadow = the inner critic, fear or darker self; future = the future or wiser self. Use them to make the metaphor physical (the shadow follows and pushes main, the future self comforts main, a friend interrupts a spiral).
+- Actions of different characters may overlap in time; one character's own actions must not overlap. All times within 0..20 seconds.
+- Declare every prop you target with an id, kind and stage x (0 left .. 1 right). Spread characters and props across the stage.
+- Pick an environment that fits the beat, a mood, a symbol for the thought bubble, a camera style and sparse on-screen text (max 5 words).
+- Anchors must be exact narration phrases.
+Actions available (only these):
+{action_reference()}
+Return JSON, never code.'''
         error=''
         for attempt in range(3):
             try:

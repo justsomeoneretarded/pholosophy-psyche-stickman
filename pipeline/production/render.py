@@ -7,7 +7,7 @@ def probe(path):
 def render(episode,timeline,captions,out,size=(1920,1080),fps=30,quality='high'):
     out=Path(out);segments=out/'segments';segments.mkdir(exist_ok=True);started=time.monotonic();counts=[]
     for scene,row in zip(episode.scenes,timeline):
-        signature=hashlib.sha256((scene.model_dump_json()+json.dumps([size,fps,quality,captions,'renderer-v2'])).encode()).hexdigest()
+        signature=hashlib.sha256((scene.model_dump_json()+json.dumps([size,fps,quality,captions,'renderer-v3'])).encode()).hexdigest()
         dest=segments/(scene.id+'.mp4');marker=segments/(scene.id+'.sha256')
         # Filenames derive from validated positional indices, not model-generated paths.
         if not scene.id.replace('_','').isalnum():raise ValueError('Scene id must be alphanumeric')
@@ -23,7 +23,7 @@ def render(episode,timeline,captions,out,size=(1920,1080),fps=30,quality='high')
                 for k in range(count):
                     t=k/fps;gt=row['start']+t
                     cap=next((c['text'] for c in captions if c['start']<=gt<c['end']),'')
-                    process.stdin.write(frame(scene,t,size,cap).tobytes())
+                    process.stdin.write(frame(scene,t,size,cap,ss=2 if quality=='high' else 1).tobytes())
                 process.stdin.close()
                 if process.wait()!=0:raise RuntimeError(f'Render failed: {scene.id}; see segment log')
             except BaseException:
@@ -33,7 +33,7 @@ def render(episode,timeline,captions,out,size=(1920,1080),fps=30,quality='high')
     subprocess.run(['ffmpeg','-y','-v','error','-f','concat','-safe','1','-i',str(listing),'-c','copy',str(out/'silent.mp4')],check=True)
     sheet=Image.new('RGB',(960,math.ceil(len(episode.scenes)/3)*200),'white')
     for i,s in enumerate(episode.scenes):
-        thumb=frame(s,s.duration*.5,size).resize((320,180));sheet.paste(thumb,(i%3*320,i//3*200))
+        thumb=frame(s,s.duration*.5,size,ss=1).resize((320,180));sheet.paste(thumb,(i%3*320,i//3*200))
         ImageDraw.Draw(sheet).text((i%3*320+5,i//3*200+181),s.id,fill='black')
     sheet.save(out/'contact_sheet.jpg')
     return {'render_seconds':time.monotonic()-started,'frames':sum(counts),'native_resolution':list(size),'fps':fps}

@@ -1,8 +1,9 @@
 from typing import Literal
 from enum import StrEnum
 from pydantic import BaseModel,Field,ConfigDict,model_validator
-from pipeline.animation.rig import ACTIONS
+from pipeline.animation.rig import ACTIONS, EMOTIONS
 ActionKind=StrEnum('ActionKind',{name:name for name in ACTIONS})
+EmotionKind=StrEnum('EmotionKind',{name:name for name in EMOTIONS})
 class Strict(BaseModel):
     model_config=ConfigDict(extra='forbid',allow_inf_nan=False)
 class Action(Strict):
@@ -10,8 +11,9 @@ class Action(Strict):
     action:ActionKind
     start:float=Field(ge=0,default=0)
     end:float=Field(gt=0)
-    x:float=Field(ge=.05,le=.9,default=.35)
-    target:str|None=None
+    x:float|None=Field(ge=.05,le=.95,default=None,description='Stage position (0 left .. 1 right) to move to before acting; omit to stay or to walk to the target automatically')
+    target:str|None=Field(default=None,description='A declared prop id or another character to act on or with')
+    emotion:EmotionKind|None=Field(default=None,description='Emotion shown from this action onward')
     anchor:str|None=None
     @model_validator(mode='after')
     def valid(self):
@@ -19,7 +21,7 @@ class Action(Strict):
         return self
 class Prop(Strict):
     id:str=Field(pattern=r'^[A-Za-z][A-Za-z0-9_]{0,47}$')
-    kind:Literal['phone','box','chair','desk','door','clock','book','stairs','sign','bench','cup','computer','bed','lamp','mirror','window','wall','bag','table','calendar','rope','ladder','light_switch']
+    kind:Literal['phone','box','chair','desk','door','clock','book','stairs','sign','bench','cup','computer','bed','lamp','mirror','window','wall','bag','table','calendar','rope','ladder','light_switch','sofa','plant','tv']
     x:float=Field(ge=.05,le=.95)
     y:float=Field(ge=.1,le=.95,default=.78)
 class Scene(Strict):
@@ -43,7 +45,8 @@ class Scene(Strict):
         if len(set(ids))!=len(ids):raise ValueError('Duplicate prop')
         for a in self.actions:
             if a.actor not in self.characters:raise ValueError('Unknown actor')
-            if a.target and a.target not in ids:raise ValueError(f'Unknown prop {a.target!r}; declared prop IDs are {ids!r}')
+            if a.target and a.target not in ids and a.target not in self.characters:raise ValueError(f'Unknown target {a.target!r}; declared prop IDs are {ids!r} and characters are {self.characters!r}')
+            if a.target==a.actor:raise ValueError('An actor cannot target themselves')
             if a.end>self.duration+.01:raise ValueError('Action outside scene')
         for actor in self.characters:
             acts=sorted([a for a in self.actions if a.actor==actor],key=lambda a:a.start)

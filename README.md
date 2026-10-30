@@ -35,7 +35,20 @@ flowchart TD
 
 Python handles orchestration and animation. The custom Pillow renderer samples a deterministic timeline and streams frames directly to FFmpeg. There is no browser or uncompressed frame archive. This is an engineering baseline, **not a benchmark-proven superiority claim over Remotion**.
 
-The rig contains head, neck, torso, pelvis, shoulders, upper/lower arms, hands, hips, thighs, knees, shins and feet. Two-bone inverse kinematics preserves limb lengths. Walking/running have stance anchors, swinging feet, bent knees, torso lean and body bob. Sitting lowers hips and bends knees. Four cast colors distinguish main, friend, shadow and future self. Facial features and posture provide expression. Compatible action transitions blend and re-solve IK.
+### Acting engine
+
+Characters are directed, not posed. The writer lists actions with a target and an emotion; the acting planner (`pipeline/animation/acting.py`) turns them into a continuous performance:
+
+- **Movement** — walking, running, sneaking, pacing, entering, leaving (off stage or through a door), climbing stairs, sitting, lying down, falling and getting up. Characters walk to whatever they are about to use or talk to, stand up before leaving a chair, and settle onto planted feet.
+- **Interaction** — talk, argue, hug, comfort, handshake, high five, push, pull, give and chase. The partner reacts automatically: hugs are returned, a push knocks the other person back, talking makes them turn, listen and nod.
+- **Environment** — sit on chairs, benches, sofas and beds, type at a computer, pick up, carry, hand over and drop objects, use a phone, read, drink, open doors, look out of windows, lean on walls and switch the lights off.
+- **Emotion** — 14 emotions drive eyes, brows, mouth, blush, tears, sweat, anger marks and hearts, plus posture and gait (sad characters slump and walk slower, scared ones shrink and shiver, happy ones bounce). Emotion persists until it changes.
+- **Life** — breathing, weight shifts, blinking and watching the other character between actions.
+- **Camera** — an automatic editor cuts and pushes between establishing wide shots, two-shots for interactions and close-ups for emotional beats.
+
+The rig (`pipeline/animation/rig.py`) uses two-bone IK with rigid limbs; hands move in arcs around the shoulder and limbs foreshorten while turning, so nothing snaps. The renderer (`pipeline/animation/scene.py`) draws 19 environments, 26 prop types and four distinguishable characters (main, friend, the purple "shadow" inner critic, the "future" self with glasses) at 2x supersampling.
+
+Run `python -m scripts.demo` to render the acting showcase in `examples/acting-showcase.json` (eight scenes, about two minutes) with sound cues and motion QA.
 
 The LLM emits validated data, never executable animation code. Actions, actors, props, time intervals and coordinates are checked. Scene filenames are restricted to safe identifiers. The title is passed as JSON environment data; it is never interpolated into shell commands.
 
@@ -70,14 +83,12 @@ Scene speech is checked with faster-whisper CPU INT8, word timestamps and normal
 
 ## Visual and audio extensions
 
-- Edit proportions, motion trajectories and IK in `pipeline/animation/rig.py`.
-- Edit character faces, cast colors, environments, props, cameras and captions in `pipeline/animation/scene.py`.
-- New motions need an action name, actual articulated trajectories and contact/bone-length tests.
-- New props need validated kinds, geometry, interaction targets and attachment tests. Several secondary props currently share symbolic rectangle drawings.
-- Add sound cues in `pipeline/production/audio.py`. Original ambient synthesis and event cues require no downloaded soundtrack. Any added recordings need documented license and attribution.
-- Validated defaults live in `pipeline/config.py`. Styles influence writing direction; moods select visual palettes. Seeds control procedural randomness and model sampling, but model/dependency changes can alter results.
-
-Walk/run, sitting, falling and gestures have articulated trajectories. Advanced interactions—handshake, push/pull, doors, climbing, released-object continuity and collision avoidance—are **experimental**. Action names alone do not establish correct physical interaction. The diagnostic's separate shots are not one uninterrupted scene.
+- Proportions, IK and the action vocabulary live in `pipeline/animation/rig.py`.
+- Planning, gestures, interactions, emotions and object handling live in `pipeline/animation/acting.py`.
+- Faces, environments, props, effects and the camera live in `pipeline/animation/scene.py`.
+- `pipeline/production/director.py` adds any prop an action needs (a chair to sit on, a phone to pick up) and records the repair.
+- Sound cues follow the planned performance, including automatic footsteps, in `pipeline/production/audio.py`. Any added recordings need documented license and attribution.
+- Validated defaults live in `pipeline/config.py`.
 
 ## Research and originality limits
 
@@ -91,7 +102,7 @@ Each title gets a fresh thesis, metaphor and outline. Scenes are written with na
 
 Successful artifacts include MP4, 1280×720 thumbnail, script, original/aligned storyboards, scene timeline, narration, SRT/VTT, captions, title/description, keywords, hashtags, pinned comment, metadata, sources, claims, research notes, audio licenses, speech/motion reports, quality report, production report/metrics, contact sheet, segments and `SUCCESS.json`.
 
-Technical QA checks native resolution, codecs, FPS, duration, nonempty outputs and a complete FFmpeg decode. Motion sampling checks finite joints, severe displacement, disconnection, floor penetration and actor frame exit. It **does not yet comprehensively detect** text overlap, wall penetration, every attachment failure, blank frames, frozen acting or artistic continuity. Those are gaps, not passing checks.
+Technical QA checks native resolution, codecs, FPS, duration, nonempty outputs and a complete FFmpeg decode. Motion sampling checks finite joints, rigid limb lengths, frame-to-frame continuity, floor contact and stage bounds. It **does not yet comprehensively detect** text overlap, wall penetration, every attachment failure, blank frames, frozen acting or artistic continuity. Those are gaps, not passing checks.
 
 Repeat an identical local command and output path to reuse the original storyboard, matching speech chunks and hashed encoded segments. Different configurations need a new directory. Failure artifacts preserve checkpoints; download them into a matching local output directory to resume. Automatic cross-run restoration is not implemented. Inspect `FAILURE.txt`, speech verification, motion report and scene logs.
 
