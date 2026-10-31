@@ -1,0 +1,37 @@
+{
+ "beat_003": {
+  "seconds": 29.964167,
+  "agreement": 1.0,
+  "delivery": "calm"
+ },
+ "beat_005": {
+  "seconds": 33.927708,
+  "agreement": 0.9608938547486033,
+  "delivery": "normal"
+ },
+ "beat_006": {
+  "seconds": 31.00325,
+  "agreement": 0.9883720930232558,
+  "delivery": "normal"
+ },
+ "beat_008": {
+  "seconds": 36.623417,
+  "agreement": 0.9751243781094527,
+  "delivery": "dramatic"
+ },
+ "beat_010": {
+  "seconds": 34.179083,
+  "agreement": 0.9740932642487047,
+  "delivery": "calm"
+ },
+ "beat_011": {
+  "seconds": 36.559167,
+  "agreement": 0.9803921568627451,
+  "delivery": "calm"
+ },
+ "beat_013": {
+  "seconds": 36.02575,
+  "agreement": 0.9946524064171123,
+  "delivery": "calm"
+ }
+}
