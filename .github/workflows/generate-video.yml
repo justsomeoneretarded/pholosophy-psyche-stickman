@@ -209,23 +209,31 @@ jobs:
           path: work/music
       - name: Animate, mix and package
         run: python -m pipeline.essay produce --work work --final outputs/video
-      - name: Publish a small review preview to the previews branch
+      - name: Publish a review copy to the previews branch
         if: always()
         continue-on-error: true
         run: |
           dir="previews/${{ github.run_id }}"
-          mkdir -p "$RUNNER_TEMP/p/$dir"
-          for f in contact-sheet.jpg thumbnail-01.jpg thumbnail-02.jpg thumbnail-03.jpg quality.json script.txt recommended-title.txt; do
+          mkdir -p "$RUNNER_TEMP/p/$dir/frames"
+          for f in contact-sheet.jpg thumbnail-01.jpg thumbnail-02.jpg thumbnail-03.jpg quality.json script.txt script.json recommended-title.txt description.txt subtitles.srt; do
             [ -f "outputs/video/$f" ] && cp "outputs/video/$f" "$RUNNER_TEMP/p/$dir/"
           done
-          [ -f outputs/video/video.mp4 ] && ffmpeg -v error -y -i outputs/video/video.mp4 -t 75 -vf scale=640:-2 -c:v libx264 -crf 30 -preset veryfast -c:a aac -b:a 64k "$RUNNER_TEMP/p/$dir/preview-75s.mp4" || true
+          for f in work/timeline.json work/plan/writer.json; do [ -f "$f" ] && cp "$f" "$RUNNER_TEMP/p/$dir/"; done
+          # Speech-check scores per narrated line (word timings removed to keep it small)
+          [ -f work/speech/speech.json ] && python -c "import json;d=json.load(open('work/speech/speech.json'));json.dump({k:{x:v[x] for x in ('seconds','agreement','delivery') if x in v} for k,v in d.items()},open('$RUNNER_TEMP/p/$dir/speech-check.json','w'),indent=1)"
+          if [ -f outputs/video/video.mp4 ]; then
+            # Whole video at reduced size, and a frame every 2 seconds as numbered sheets of 24
+            ffmpeg -v error -y -i outputs/video/video.mp4 -vf scale=854:-2 -c:v libx264 -crf 31 -preset veryfast -c:a aac -b:a 96k "$RUNNER_TEMP/p/$dir/review.mp4"
+            ffmpeg -v error -y -i outputs/video/video.mp4 -vf "fps=1/2,scale=480:-2,drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf:text='%{pts\\:hms}':x=6:y=6:fontsize=18:fontcolor=red,tile=4x6" "$RUNNER_TEMP/p/$dir/frames/sheet-%02d.jpg"
+            ffmpeg -v error -i outputs/video/video.mp4 -vn -af ebur128 -f null - 2>&1 | grep -E "^\s+(I|LRA|Peak):" > "$RUNNER_TEMP/p/$dir/loudness.txt" || true
+          fi
           cp work/FAILURE-*.txt "$RUNNER_TEMP/p/$dir/" 2>/dev/null || true
           cd "$RUNNER_TEMP/p"
           git init -q && git checkout -q -b previews
           git config user.name "github-actions[bot]" && git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git remote add origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
           git fetch -q --depth 1 origin previews && git reset -q --soft FETCH_HEAD || true
-          git add -A && git commit -q -m "Preview for run ${{ github.run_id }}: ${{ inputs.title }}" && git push -q origin previews
+          git add -A && git commit -q -m "Review copy for run ${{ github.run_id }}: ${{ inputs.title }}" && git push -q origin previews
       - uses: actions/upload-artifact@v4
         with:
           name: philosophy-video
