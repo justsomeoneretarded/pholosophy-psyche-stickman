@@ -3,6 +3,7 @@ import re
 from pipeline.animation import setpieces
 from pipeline.writing.beats import Script, estimate
 from pipeline.writing.llm import Writer, Rejected
+from pipeline.writing.quotation import has_attributed_quotation
 
 SYSTEM = """You are the writer-director of a respected YouTube channel of philosophy and psychology video essays.
 The videos are minimalist stickman animation: black, white and grey, faceless figures, a spotlight, empty space,
@@ -31,7 +32,7 @@ VISUALS
 - delivery: "calm" by default; "dramatic" for a turning point; "normal" for explanation.
 
 HONESTY
-- Explain real philosophers and psychologists accurately, in your own words. NO invented quotations, NO direct quotes in quotation marks, NO statistics or percentages, NO "studies show" or "research proves", NO diagnosing the viewer.
+- Explain real philosophers and psychologists accurately, in your own words. NO fabricated or unverified quotations attributed to real people; fictional dialogue and inner thoughts in quotation marks are allowed. NO statistics or percentages, NO "studies show" or "research proves", NO diagnosing the viewer.
 
 PUBLISHING
 - youtube_titles: 3 curiosity-driven but honest titles (max 70 characters). description: 2 short paragraphs plus a line of 3-5 hashtags. pinned_comment: one question that invites replies. thumbnail_words: 2-4 bold words.
@@ -51,7 +52,6 @@ def length_brief(minutes):
 BANNED = [
     (r'\b\d+(?:\.\d+)?\s*(?:%|percent|per cent)', 'contains a percentage or statistic'),
     (r'\b(?:studies|research|scientists|psychologists|experts)\s+(?:show|shows|prove|proves|proved|found|suggest|demonstrate)', 'claims research findings'),
-    (r'["“][^"”]{12,}["”]', 'contains a direct quotation in quotation marks'),
     (r'\byou\s+(?:have|suffer from|are suffering from)\s+(?:depression|anxiety|adhd|a disorder)', 'diagnoses the viewer'),
     (r'\b(?:in this video|like and subscribe|smash)', 'contains YouTube filler'),
 ]
@@ -92,6 +92,8 @@ def check(script, minutes):
             n = len(b.narration.split())
             if n > 170:
                 problems.append(f'beat {i + 1} narration has {n} words; split it into two beats (max 170)')
+            if has_attributed_quotation(b.narration):
+                problems.append(f'beat {i + 1} attributes a quotation to a real thinker without verified source evidence')
             for pattern, why in BANNED:
                 if re.search(pattern, b.narration, re.I):
                     problems.append(f'beat {i + 1} {why}')

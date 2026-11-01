@@ -1,5 +1,6 @@
 """Conservative content gates. These do not pretend to measure artistic quality."""
 import re
+from pipeline.writing.quotation import has_attributed_quotation
 STOP=set('the a an why what if how do does is are we you people so much everything really'.split())
 def assess(episode):
     failures=[];warnings=[];text=' '.join(s.narration for s in episode.scenes)
@@ -10,7 +11,7 @@ def assess(episode):
         failures.append('Precise numerical psychology claim requires verified source evidence, not bibliography metadata')
     if re.search(r'\b(?:studies|research|scientists|psychologists)\s+(?:prove|proved|show|shows|found|demonstrate)',text,re.I):
         failures.append('Empirical finding asserted without a verified claim-to-source record')
-    if re.search(r'\b(?:Nietzsche|Seneca|Marcus Aurelius|Socrates|Aristotle|Plato|Camus)\s+(?:said|wrote|once said)[,:]?\s*[\"“]',text,re.I):
+    if has_attributed_quotation(text):
         failures.append('Attributed quotation needs a verified original source')
     if re.search(r'\byou\s+(?:have|must have|suffer from)\s+(?:ADHD|depression|a personality disorder|an anxiety disorder)\b',text,re.I):
         failures.append('Narration diagnoses the viewer')

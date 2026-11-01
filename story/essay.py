@@ -24,6 +24,7 @@ sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / 'story'))
 from validate import VOCAB, repair  # noqa: E402
 from pipeline.writing.llm import Writer, Rejected, notice  # noqa: E402
+from pipeline.writing.quotation import has_attributed_quotation  # noqa: E402
 
 WPS = 2.45            # narration words per second (Chatterbox, calm delivery)
 
@@ -51,7 +52,8 @@ THE NARRATION - a calm, intelligent voice-over that EXPLAINS the concept while t
   detached from the picture. Short spoken sentences of 6-18 words. Second person or third person, warm, honest, never preachy.
 - It covers roughly half of the running time. Between narrated passages the story plays without narration: acting, dialogue, the inner voice.
 - A few lines can twist: "The phone gave him a new face every second." / "She only had one."
-- NO invented quotations, NO statistics or percentages, NO "studies show", NO diagnosing the viewer.
+- NO fabricated or unverified quotations attributed to real people, NO statistics or percentages, NO "studies show", NO diagnosing the viewer.
+- The narrator MAY quote fictional dialogue, self-talk and inner thoughts naturally. Quotation marks alone are allowed.
 
 STRUCTURE (adapt it; do not follow it mechanically): (1) a cold open line on black that hooks; (2) the hero's ordinary moment that shows the
 concept; (3) the narrator names and defines it; (4) the inner voice wins small moments while the narrator explains the mechanism; (5) a
@@ -63,7 +65,6 @@ themselves; (11) a two-line quote card that twists; (12) a title card with a sho
 BANNED = [
     (r'\b\d+(?:\.\d+)?\s*(?:%|percent|per cent)', 'contains a percentage or statistic'),
     (r'\b(?:studies|research|scientists|psychologists|experts)\s+(?:show|shows|prove|proves|proved|found|suggest|demonstrate)', 'claims research findings'),
-    (r'["“][^"”]{25,}["”]', 'contains a direct quotation'),
     (r'\byou\s+(?:have|suffer from)\s+(?:depression|anxiety|adhd|a disorder|an addiction)', 'diagnoses the viewer'),
 ]
 
@@ -135,8 +136,9 @@ with some beats unnarrated.
 Plan 16 story beats: about {narration_beats} narrated beats and 6 acting/dialogue-only beats with narration: [].
 Each narrated beat needs about {per_beat} narration words, usually 3-4 full explanatory sentences. Short individual sentences do not mean
 a short total explanation. Count narration words separately from what_happens, dialogue and metadata.
-Producer notes describe creative intent. Put quoted character speech in dialogue or demon_line, never in narration.
-When notes supply sample lines, paraphrase the narrator's meaning in your own words; do not copy quotation marks into narration.
+Producer notes describe creative intent. Use dialogue or demon_line when a character speaks in their own voice.
+The narrator may naturally recount fictional dialogue or inner thoughts in quotation marks, including sample lines from the notes.
+Do not attribute a quotation to a real thinker without verified source evidence; paraphrase their ideas instead.
 If space is tight, shorten visual descriptions, cast details and publishing metadata rather than deleting required narration.
 A narrated beat lasts at least as long as its narration takes to speak ({WPS} words per second) plus a pause.
 
@@ -170,6 +172,8 @@ def check_concept(sheet, minutes):
     words = 0
     for i, b in enumerate(beats):
         lines = beat_narration(b)
+        if has_attributed_quotation(' '.join(lines)):
+            problems.append(f'beat {i + 1} attributes a quotation to a real thinker without verified source evidence')
         w = sum(len(x.split()) for x in lines)
         words += w
         secs = max(float(b.get('seconds') or 10), w / WPS + 1.5 * max(1, len(lines)) + 2)
