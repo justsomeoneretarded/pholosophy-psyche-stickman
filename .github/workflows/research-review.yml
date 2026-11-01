@@ -1,5 +1,5 @@
 name: Verify topic-aware source retrieval
-# Iteration 3: request extracts for every page and filter specialized review populations.
+# Iteration 4: fetch canonical pages individually and record actual publication types.
 on:
   workflow_dispatch:
   push:

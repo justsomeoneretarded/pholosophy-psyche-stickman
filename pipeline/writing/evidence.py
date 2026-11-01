@@ -19,10 +19,12 @@ def reviews(query,topic=''):
         specialized=[r'gene|genetic|molecular',r'psychosis|schizophren',r'childhood|adolescen']
         if any(re.search(term,title,re.I) and not re.search(term,topic,re.I) for term in specialized):continue
         url='https://pubmed.ncbi.nlm.nih.gov/'+pmid+'/'
-        source={'title':title,'url':url,'source':'PubMed-indexed review','pmid':pmid,'query':query}
+        types=[''.join(p.itertext()) for p in article.findall('.//PublicationType')]
+        source={'title':title,'url':url,'source':'PubMed','pmid':pmid,'query':query,
+                'publication_types':types,'evidence_type':'review' if any('review' in p.lower() or 'meta-analysis' in p.lower() for p in types) else 'research article'}
         doi=next((a.text for a in article.findall('.//ArticleId') if a.get('IdType')=='doi'),None)
         if doi:source['doi']=doi
         sources.append(source)
-        notes.append('## '+title+'\nSource: '+url+'\nReview abstract excerpt (preserve its population, uncertainty and limitations):\n'+abstract[:1100])
+        notes.append('## '+title+'\nSource: '+url+'\nRetrieved abstract excerpt (preserve its population, uncertainty and limitations):\n'+abstract[:1100])
         if len(sources)>=2:break
     return sources,notes

@@ -41,10 +41,13 @@ def research(title,max_chars=9000):
                  'procrastination self regulation':['Procrastination','Temporal motivation theory']}
         titles=list(dict.fromkeys(anchors.get(query,[])+[h['title'] for h in hits]))[:5]
         if titles:
-            pages=_get({'action':'query','prop':'extracts|info','inprop':'url','explaintext':1,
-                'exsectionformat':'plain','titles':'|'.join(titles),'exchars':3500,'exlimit':'max','redirects':1}).get('query',{}).get('pages',[])
-            order={t:i for i,t in enumerate(titles)}
-            for page in sorted(pages,key=lambda p:order.get(p.get('title'),9)):
+            # Fetch each canonical page explicitly; extracts otherwise defaults to one page.
+            pages=[]
+            for requested_title in titles:
+                response=_get({'action':'query','prop':'extracts|info','inprop':'url',
+                    'explaintext':1,'exintro':1,'redirects':1,'titles':requested_title,'exchars':3500})
+                pages.extend(response.get('query',{}).get('pages',[]))
+            for page in pages:
                 text=re.sub(r'\n{2,}','\n',page.get('extract','')).strip()
                 if not text:continue
                 if entertainment_page(text) and not re.search(r'song|music|album|film|movie|game',title,re.I):
