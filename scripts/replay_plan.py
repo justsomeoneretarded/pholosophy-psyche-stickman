@@ -5,6 +5,17 @@ ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
 from story.essay import stage_concept,stage_merge,minutes_value
 def replay(source,title,minutes):
     source=Path(source);writing=source/'writing'
+    fixture=source/'film.json'
+    if fixture.exists():
+        data=json.loads(fixture.read_text())
+        if data.get('_regression_fixture') is True:
+            from story.validate import repair
+            from story.essay import script_md
+            data,notes=repair(data)
+            fixture.write_text(json.dumps(data,indent=1))
+            script_md(data,source/'story.md')
+            print('Rendering explicitly authored regression fixture through the production pipeline',notes)
+            return data
     raw=writing/'concept-after-editor.json'
     if not raw.exists():raw=writing/'beats.json'
     data=json.loads(raw.read_text())

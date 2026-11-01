@@ -21,6 +21,9 @@ on:
       notes:
         type: string
         default: ''
+      procedural_music:
+        type: boolean
+        default: false
       recorded_source_run:
         type: string
         default: ''
@@ -222,7 +225,7 @@ jobs:
           retention-days: 3
 
   music:
-    if: ${{ !inputs.recorded_source_run }}
+    if: ${{ !inputs.recorded_source_run && !inputs.procedural_music }}
     name: Compose the score
     needs: write
     runs-on: ubuntu-24.04
