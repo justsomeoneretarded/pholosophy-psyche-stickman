@@ -1,5 +1,5 @@
 name: Benchmark bounded writing with independent topic
-# Iteration 5: verify focused revisions and storyboards on the available free 20B model.
+# Iteration 6: explicit patch field names and saved rejected proposals.
 on:
   workflow_dispatch:
   push:

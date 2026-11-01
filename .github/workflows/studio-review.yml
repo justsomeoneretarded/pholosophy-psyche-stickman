@@ -1,5 +1,5 @@
 name: Autonomous studio review
-# Iteration 7: available free-model benchmark, then six-minute full production.
+# Iteration 8: schema-explicit editorial patches, then six-minute full production.
 on:
   workflow_dispatch:
   push:

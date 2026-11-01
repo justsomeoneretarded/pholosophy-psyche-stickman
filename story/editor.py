@@ -75,7 +75,7 @@ def review_concept(sheet, writer, check, title, minutes, output_dir, rounds=2):
                      'story_map':[{'beat':i+1,'idea':b.get('idea'),'action':b.get('what_happens')} for i,b in enumerate(sheet['beats'])],
                      'findings':issues}
             if index:
-                payload['current_beat']=sheet['beats'][index-1]
+                payload['current_beat']={k:v for k,v in sheet['beats'][index-1].items() if not k.startswith('_')}
                 payload['previous_beat']=sheet['beats'][index-2] if index>1 else None
                 payload['next_beat']=sheet['beats'][index] if index<len(sheet['beats']) else None
             else:
@@ -91,8 +91,11 @@ reasoning or use the slot for a concrete objection/example instead of erasing th
 Preserve approximately the current amount of narration. Fictional dialogue is allowed.
 Never invent empirical findings, percentages, neuroscience, citations or quotations.
 Unsupported universal claims should be qualified or reframed, not given invented evidence.
-Use existing cast IDs and supported locations. Return JSON only."""
+Use existing cast IDs and supported locations. Do not include beat/index inside changes. Return JSON only."""
+            system += "\nAllowed beat fields: " + ", ".join(sorted(BEAT_FIELDS)) + "\nAllowed metadata fields: " + ", ".join(sorted(META_FIELDS))
             def validate_patch(data):
+                history[-1].setdefault('proposals',[]).append({'beat':index,'data':data})
+                save()
                 candidate=copy.deepcopy(sheet)
                 if index:
                     changes=data.get('changes')
@@ -101,7 +104,11 @@ Use existing cast IDs and supported locations. Return JSON only."""
                         if legacy.get('beat')!=index:raise ValueError('Edit refers to a different requested beat')
                         changes={k:v for k,v in legacy.items() if k!='beat'}
                     if not isinstance(changes,dict) or not changes:raise ValueError('Return changed fields under changes')
-                    if not set(changes)<=BEAT_FIELDS:raise ValueError('Unknown beat fields')
+                    changes=dict(changes)
+                    if 'beat' in changes:
+                        if str(changes.pop('beat'))!=str(index):raise ValueError('Patch identifies a different beat')
+                    unknown=set(changes)-BEAT_FIELDS
+                    if unknown:raise ValueError('Unknown beat fields: '+', '.join(sorted(unknown))+'; use the existing current_beat field names')
                     if any(v is None for v in changes.values()):raise ValueError('Do not erase fields with null')
                     candidate['beats'][index-1].update(changes)
                     if 'where' in changes or 'scene' in changes:
