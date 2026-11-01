@@ -55,4 +55,4 @@ def test_quotes_are_allowed_in_legacy_writer_too():
 def test_prompt_does_not_ban_fictional_quotes():
     prompt = essay.concept_prompt('Overthinking', 4)
     assert 'never in narration' not in prompt
-    assert 'quotation marks are allowed' in prompt
+    assert 'quotation marks alone are allowed' in prompt.lower()

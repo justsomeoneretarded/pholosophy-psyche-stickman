@@ -1,0 +1,40 @@
+name: Autonomous studio review
+on:
+  workflow_dispatch:
+  push:
+    paths: ['.github/workflows/studio-review.yml']
+permissions:
+  actions: write
+  contents: read
+jobs:
+  launch:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Wait for this revision's CI, then run complete production
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+          REVISION: ${{ github.sha }}
+          REVIEW_NOTES: "Develop an original four-minute animated essay about when useful reflection becomes an attempt to eliminate uncertainty. Challenge the idea that overthinking proves intelligence. Follow Alex revising an ordinary message to a friend after an awkward conversation. An initially helpful inner adviser gradually demands guarantees no message can provide. Escalate from checking clarity to trying to control the friend's reaction. Explain the distinction between collecting new information and rehearsing the same possibilities, without diagnosis or fabricated research. Include a counterargument: important, hard-to-reverse decisions deserve investigation. Alex chooses an honest, specific, respectful message and sends it while still uncertain. The friend replies with a small misunderstanding that they resolve through conversation. Let the adviser remain, now helping with the real reply. Prioritize expressive physical acting, plausible prop contact, pauses, and changing body language. Use the narrator to explain while the characters supply concrete situations and occasional natural dialogue. Do not force a villain, a magical cure, identical endings, or generic motivational advice. Preserve thoughtful nuance and restrained humor."
+        run: |
+          python - <<'PY'
+          import os,json,time,urllib.request
+          base='https://api.github.com/repos/'+os.environ['REPOSITORY']
+          headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'}
+          def request(path,payload=None):
+              req=urllib.request.Request(base+path,data=None if payload is None else json.dumps(payload).encode(),headers=headers,method='GET' if payload is None else 'POST')
+              with urllib.request.urlopen(req,timeout=30) as response:
+                  body=response.read()
+                  return json.loads(body) if body else None
+          for attempt in range(48):
+              runs=request('/actions/workflows/test.yml/runs?head_sha='+os.environ['REVISION']+'&event=push&per_page=5')['workflow_runs']
+              if runs and runs[0]['status']=='completed':
+                  if runs[0]['conclusion']!='success':raise SystemExit('CI failed; refusing to launch production on broken code')
+                  print('CI passed:',runs[0]['html_url'])
+                  break
+              time.sleep(15)
+          else:raise SystemExit('CI did not complete within twelve minutes')
+          request('/actions/workflows/generate-video.yml/dispatches',{'ref':'main','inputs':{'title':'Why Smart People Overthink Everything','narrator':'Warguy','duration_minutes':'4','notes':os.environ['REVIEW_NOTES']}})
+          print('Dispatched complete title-to-video production for review')
+          PY
