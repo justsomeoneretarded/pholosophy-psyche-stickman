@@ -25,6 +25,7 @@ sys.path.insert(0, str(ROOT / 'story'))
 from validate import VOCAB, repair  # noqa: E402
 from pipeline.writing.llm import Writer, Rejected, notice, DEFAULT_MODELS  # noqa: E402
 from pipeline.writing.quotation import has_attributed_quotation  # noqa: E402
+from story.normalization import dialogue_lines
 from story.planning import plan_in_parts
 from story.editor import review_concept  # noqa: E402
 
@@ -172,6 +173,9 @@ def check_concept(sheet, minutes):
     lo, hi = target_seconds(minutes)
     total, words = 0., 0
     for i, b in enumerate(beats):
+        dialogue, dialogue_problems = dialogue_lines(b.get('dialogue'), [p.get('id') for p in sheet.get('cast') or [] if isinstance(p,dict)])
+        b['dialogue'] = dialogue
+        problems.extend(f'beat {i+1}: {problem}' for problem in dialogue_problems)
         lines = beat_narration(b)
         if has_attributed_quotation(' '.join(lines)):
             problems.append(f'beat {i + 1} attributes a quotation to a real thinker without verified source evidence')
@@ -251,7 +255,8 @@ def stage_concept(title, minutes, out_dir, research='', reuse_draft=None):
     for warning in sheet.get('_visual_review_notes', []):
         notice('Visual editorial review', warning, 'warning')
     notice('Editorial review', 'Checking argument, causal continuity and resolution before storyboarding')
-    sheet = review_concept(sheet, writer, check_concept, title, minutes, out)
+    reviewer = Writer(os.environ.get('REVIEW_MODELS', 'groq:qwen/qwen3.8-27b,groq:openai/gpt-oss-120b,groq:openai/gpt-oss-20b,ollama:qwen3:4b'))
+    sheet = review_concept(sheet, writer, check_concept, title, minutes, out, reviewer=reviewer)
     sheet['_title'] = title
     sheet['_writer'] = writer.used
     idmap = {}

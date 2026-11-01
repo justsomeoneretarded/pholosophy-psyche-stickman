@@ -1,5 +1,5 @@
 name: Benchmark bounded writing with independent topic
-# Iteration 6: explicit patch field names and saved rejected proposals.
+# Iteration 7: lossless dialogue normalization and an independent metaphor-aware critic.
 on:
   workflow_dispatch:
   push:
@@ -15,6 +15,7 @@ jobs:
       GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
       WRITER_MODELS: groq:openai/gpt-oss-20b
       STORYBOARD_MODELS: groq:openai/gpt-oss-20b
+      REVIEW_MODELS: groq:qwen/qwen3.8-27b,groq:openai/gpt-oss-20b
       TITLE: What If Nothing Really Matters?
       PYTHONUNBUFFERED: '1'
     steps:

@@ -17,6 +17,10 @@ Check that philosophical positions are framed as arguments rather than establish
 Look for a relevant objection and earned reasoning; a gym goal or optimistic slogan alone does not
 resolve a philosophical question. Detect repeated explanations and premature jumps to the ending.
 Do not forbid fictional dialogue, inner thoughts, complex subjects, humor, or creative structures.
+Visual metaphors, talking billboards, imagined advisers and personification are fictional acting,
+not supernatural empirical claims. Do not demand literal disclaimers for poetic language.
+Do not request merging/deleting indexed beats: repurpose redundant beats into new reasoning or objections.
+Do not invent historical corrections from memory; only assert a specific factual error with clear evidence.
 Do not demand generic disclaimers or remove informative depth. A hopeful fictional outcome is
 allowed; a universal psychological promise based on that outcome needs revision.
 Return JSON only: {"issues":[{"severity":"major"|"minor","beats":[1-based beat numbers;
@@ -44,7 +48,8 @@ def context(sheet, title):
     }
 
 
-def review_concept(sheet, writer, check, title, minutes, output_dir, rounds=2):
+def review_concept(sheet, writer, check, title, minutes, output_dir, rounds=2, reviewer=None):
+    reviewer=reviewer or writer
     output=Path(output_dir);output.mkdir(parents=True,exist_ok=True)
     original=copy.deepcopy(sheet)
     (output/'concept-before-editor.json').write_text(json.dumps(original,indent=1,ensure_ascii=False))
@@ -62,9 +67,9 @@ def review_concept(sheet, writer, check, title, minutes, output_dir, rounds=2):
             if not issue.get('problem') or not issue.get('repair'):raise ValueError('Explain the specific problem and repair')
         return data
     for round_index in range(rounds+1):
-        report=writer.json(EDITOR_SYSTEM,json.dumps(context(sheet,title),ensure_ascii=False),
+        report=reviewer.json(EDITOR_SYSTEM,json.dumps(context(sheet,title),ensure_ascii=False),
                            validate_review,temperature=.25,max_tokens=900,attempts=3)
-        history.append({'round':round_index+1,'review':report,'edits':[]});save()
+        history.append({'round':round_index+1,'reviewer':getattr(reviewer,'used',None),'review':report,'edits':[]});save()
         if not report['issues'] or round_index==rounds:break
         selected=sorted({i for issue in report['issues'] for i in issue['beats'] if i})
         if any(0 in issue['beats'] for issue in report['issues']):selected.append(0)

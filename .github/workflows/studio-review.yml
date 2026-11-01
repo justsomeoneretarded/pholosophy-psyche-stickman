@@ -1,5 +1,5 @@
 name: Autonomous studio review
-# Iteration 8: schema-explicit editorial patches, then six-minute full production.
+# Iteration 9: preserve dialogue and visual metaphors before six-minute full production.
 on:
   workflow_dispatch:
   push:

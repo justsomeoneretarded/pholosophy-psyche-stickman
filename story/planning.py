@@ -36,7 +36,8 @@ def plan_in_parts(writer, system, user, validate, minutes, output_dir):
 OUTLINE REQUEST: Do not write the complete film or publishing package.
 Return ONLY this compact JSON:
 {"title":"short","idea":{"definition":"one sentence","mechanism":"one sentence","turn":"one sentence","thinkers":"accurate names or empty"},
-"approach":"one sentence","cast":[{"id":"short id","kind":"hero|friend|extra|demon"}],
+"approach":"one sentence","cast":[{"id":"short id","kind":"hero|friend|extra|demon","top":"optional color","hair":"optional style","hat":"optional style"}],
+"device":{"type":"none|counter|days","items":[{"label":"short","color":"#hex","mode":"cumulative|value"}]},
 "inner_voice":null or {"represents":"short","color":"#hex"},
 "spine":[{"idea":"short","mode":"story|vignette|metaphor|montage|lesson|inner|contrast|hook",
 "where":"supported named set or scene","what_happens":"at most eight words"}]}
