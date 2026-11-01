@@ -1,0 +1,1320 @@
+{
+ "title": "What If Nothing Really Matters?",
+ "logline": "Show a character confronting the idea and discovering how personal projects become sources of value.",
+ "demon_color": "#2b2b2b",
+ "narrator": "male",
+ "hud": null,
+ "music": {
+  "prompt": "Minimalist piano with subtle ambient synth pads, slow tempo, building gently to convey introspection turning into hopeful resolve."
+ },
+ "cast": {
+  "hero": {
+   "kind": "hero"
+  },
+  "demon": {
+   "kind": "demon"
+  },
+  "alex": {
+   "kind": "hero"
+  },
+  "sam": {
+   "kind": "friend"
+  }
+ },
+ "shots": [
+  {
+   "dur": 8.3,
+   "music": "low",
+   "card": {
+    "style": "line",
+    "lines": [
+     "A lone billboard reads nothing—just an empty spa"
+    ]
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "A lone billboard reads nothing—just an empty space that whispers, \"Nothing matters.\"",
+     "at": 0.3,
+     "hidden": true
+    }
+   ],
+   "set": "void",
+   "camera": {
+    "frame": "wide"
+   },
+   "actors": [],
+   "sfx": [],
+   "items": [],
+   "transition": "fade"
+  },
+  {
+   "dur": 6.65,
+   "set": "street",
+   "grade": "cold",
+   "camera": {
+    "frame": "wide",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 20.0,
+     "pose": "stand",
+     "facing": 1
+    }
+   ],
+   "narration_index": 0,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Alex feels the weight of a silent sign, wondering why nothing is written.",
+     "at": 0.25
+    }
+   ],
+   "beat": 1,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 6.65,
+   "set": "street",
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.07
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 20.0,
+     "pose": "stand",
+     "facing": 1
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The empty space whispers that meaning is not waiting, it must be made.",
+     "at": 0.25
+    },
+    {
+     "who": "alex",
+     "text": "Why is it so empty?",
+     "at": 0.5,
+     "style": "bubble"
+    }
+   ],
+   "narration_index": 1,
+   "grade": "cold",
+   "beat": 1,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 3.0,
+   "set": "street",
+   "camera": {
+    "frame": "close",
+    "on": "alex",
+    "push": 0.08
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 20.0,
+     "pose": "stand",
+     "facing": 1
+    }
+   ],
+   "lines": [
+    {
+     "who": "alex",
+     "text": "Maybe I should write something…",
+     "at": 0.4,
+     "style": "thought"
+    }
+   ],
+   "grade": "cold",
+   "beat": 1,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 7.45,
+   "set": "scene",
+   "time": "night",
+   "scene": {
+    "base": "void",
+    "wall": "black",
+    "elements": [
+     {
+      "type": "word",
+      "x": 50.0,
+      "label": "meaning",
+      "color": "white"
+     }
+    ]
+   },
+   "camera": {
+    "frame": "wide",
+    "push": 0.04
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 30.0,
+     "pose": "stand",
+     "facing": 1
+    },
+    {
+     "id": "demon",
+     "x": 45.0,
+     "pose": "lean",
+     "mood": "neutral",
+     "facing": -1
+    }
+   ],
+   "narration_index": 0,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Inside his mind, a dark silhouette asks what purpose remains when the world offers none.",
+     "at": 0.25
+    }
+   ],
+   "beat": 2,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 6.65,
+   "set": "scene",
+   "camera": {
+    "frame": "two",
+    "on": "alex",
+    "push": 0.06
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 30.0,
+     "pose": "stand",
+     "facing": 1
+    },
+    {
+     "id": "demon",
+     "x": 45.0,
+     "pose": "lean",
+     "mood": "neutral",
+     "facing": -1
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Alex realizes that stories he builds become the light that fills the void.",
+     "at": 0.25
+    },
+    {
+     "who": "demon",
+     "text": "What remains when there is none?",
+     "at": 0.5,
+     "style": "bubble"
+    }
+   ],
+   "narration_index": 1,
+   "scene": {
+    "base": "void",
+    "wall": "black",
+    "elements": [
+     {
+      "type": "word",
+      "x": 50.0,
+      "label": "meaning",
+      "color": "white"
+     }
+    ]
+   },
+   "time": "night",
+   "beat": 2,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 3.0,
+   "set": "scene",
+   "camera": {
+    "frame": "close",
+    "on": "alex",
+    "push": 0.07
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 30.0,
+     "pose": "stand",
+     "facing": 1
+    }
+   ],
+   "lines": [
+    {
+     "who": "alex",
+     "text": "Stories I build light the void.",
+     "at": 0.4,
+     "style": "thought"
+    }
+   ],
+   "scene": {
+    "base": "void",
+    "wall": "black",
+    "elements": [
+     {
+      "type": "word",
+      "x": 50.0,
+      "label": "meaning",
+      "color": "white"
+     }
+    ]
+   },
+   "time": "night",
+   "beat": 2,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 8.65,
+   "set": "kitchen",
+   "grade": "warm",
+   "camera": {
+    "frame": "medium",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "sam",
+     "x": 30.0,
+     "pose": "stand",
+     "facing": 1
+    },
+    {
+     "id": "alex",
+     "x": 70.0,
+     "pose": "stand",
+     "facing": -1
+    }
+   ],
+   "narration_index": 0,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Sam explains that meaning isn’t discovered but built, like stacking words into a story we choose to live.",
+     "at": 0.25
+    }
+   ],
+   "beat": 3,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 6.65,
+   "set": "kitchen",
+   "grade": "warm",
+   "camera": {
+    "frame": "close",
+    "on": "alex",
+    "push": 0.04
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 70.0,
+     "pose": "stand",
+     "facing": -1
+    },
+    {
+     "id": "sam",
+     "x": 30.0,
+     "pose": "stand",
+     "facing": 1
+    }
+   ],
+   "narration_index": 1,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Alex watches the steam rise, realizing each breath can become a deliberate chapter.",
+     "at": 0.25
+    }
+   ],
+   "beat": 3,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 9.05,
+   "set": "kitchen",
+   "grade": "warm",
+   "camera": {
+    "frame": "medium",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 70.0,
+     "pose": "stand",
+     "mood": "hopeful",
+     "facing": -1
+    },
+    {
+     "id": "sam",
+     "x": 30.0,
+     "pose": "stand",
+     "mood": "hopeful",
+     "facing": 1
+    }
+   ],
+   "narration_index": 0,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Alex asks how a fleeting hobby can feel lasting, and Sam replies that personal projects anchor our self‑crafted purpose.",
+     "at": 0.25
+    }
+   ],
+   "beat": 4,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 7.45,
+   "set": "kitchen",
+   "grade": "warm",
+   "camera": {
+    "frame": "two",
+    "on": "alex",
+    "push": 0.04
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 70.0,
+     "pose": "stand",
+     "mood": "hopeful",
+     "facing": -1
+    },
+    {
+     "id": "sam",
+     "x": 30.0,
+     "pose": "stand",
+     "mood": "hopeful",
+     "facing": 1
+    }
+   ],
+   "narration_index": 1,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Together they sketch a small garden, a symbol of value grown from their own hands.",
+     "at": 0.25
+    }
+   ],
+   "beat": 4,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 10.0,
+   "set": "bedroom",
+   "time": "night",
+   "grade": "cold",
+   "camera": {
+    "frame": "medium",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "stand",
+     "facing": 0
+    },
+    {
+     "id": "sam",
+     "x": 70.0,
+     "pose": "stand",
+     "facing": -1
+    }
+   ],
+   "narration_index": 0,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Many think happiness comes from external approval, like applause or likes, but those sounds fade when the room goes dark.",
+     "at": 0.25
+    },
+    {
+     "who": "alex",
+     "text": "(sighs)",
+     "at": 0.5,
+     "style": "thought"
+    }
+   ],
+   "beat": 5,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 10.0,
+   "set": "bedroom",
+   "time": "night",
+   "grade": "cold",
+   "camera": {
+    "frame": "close",
+    "push": 0.07
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "stand",
+     "facing": 0
+    },
+    {
+     "id": "sam",
+     "x": 70.0,
+     "pose": "stand",
+     "facing": -1
+    }
+   ],
+   "narration_index": 1,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Alex feels the emptiness deepen, realizing the party’s glow cannot fill the silence inside.",
+     "at": 0.25
+    },
+    {
+     "who": "alex",
+     "text": "(phone screen glows with party footage)",
+     "at": 0.5,
+     "style": "float"
+    }
+   ],
+   "beat": 5,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 10.0,
+   "set": "scene",
+   "time": "night",
+   "grade": "warm",
+   "scene": {
+    "base": "room",
+    "ground": "floor",
+    "backdrop": "none",
+    "elements": [
+     {
+      "type": "desk",
+      "x": 40.0
+     }
+    ]
+   },
+   "camera": {
+    "frame": "medium",
+    "push": 0.04
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "stand",
+     "mood": "determined",
+     "facing": 0
+    },
+    {
+     "id": "demon",
+     "x": 58.0,
+     "pose": "lean",
+     "mood": "neutral",
+     "facing": -1
+    }
+   ],
+   "narration_index": 0,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "When the void whispers that nothing matters, Alex chooses a small project—a sketch of a seedling—to nurture.",
+     "at": 0.25
+    },
+    {
+     "who": "alex",
+     "text": "(lights lamp)",
+     "at": 0.5,
+     "style": "float"
+    }
+   ],
+   "beat": 6,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 10.0,
+   "set": "scene",
+   "time": "night",
+   "grade": "warm",
+   "scene": {
+    "base": "room",
+    "ground": "floor",
+    "backdrop": "none",
+    "elements": [
+     {
+      "type": "desk",
+      "x": 40.0
+     }
+    ]
+   },
+   "camera": {
+    "frame": "close",
+    "push": 0.06
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "stand",
+     "mood": "determined",
+     "facing": 0
+    },
+    {
+     "id": "demon",
+     "x": 58.0,
+     "pose": "lean",
+     "mood": "neutral",
+     "facing": -1
+    }
+   ],
+   "narration_index": 1,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The act of creating a tangible goal turns the darkness into a quiet, purposeful light.",
+     "at": 0.25
+    },
+    {
+     "who": "alex",
+     "text": "(sketches seedling)",
+     "at": 0.5,
+     "style": "float"
+    }
+   ],
+   "beat": 6,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 8.25,
+   "set": "void",
+   "time": "night",
+   "weather": "none",
+   "grade": "cold",
+   "camera": {
+    "frame": "wide",
+    "push": 0.04
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "stand",
+     "facing": 1
+    },
+    {
+     "id": "demon",
+     "x": 30.0,
+     "pose": "lean",
+     "mood": "neutral",
+     "facing": 1
+    }
+   ],
+   "narration_index": 0,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The silhouette’s glowing eyes murmur that existence is empty, and Alex’s breath catches in the cold hush.",
+     "at": 0.25
+    },
+    {
+     "who": "alex",
+     "text": "The silhouette’s glowing eyes murmur that existence is empty, and Alex",
+     "at": 0.2,
+     "style": "float"
+    }
+   ],
+   "beat": 7,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 7.85,
+   "set": "void",
+   "time": "night",
+   "weather": "none",
+   "grade": "cold",
+   "camera": {
+    "frame": "medium",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "demon",
+     "x": 30.0,
+     "pose": "lean",
+     "mood": "neutral",
+     "facing": 1
+    },
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "stand",
+     "facing": -1
+    }
+   ],
+   "narration_index": 1,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Shadow’s words slice through the silence, challenging the value of even the smallest act of creation.",
+     "at": 0.25
+    },
+    {
+     "who": "demon",
+     "text": "Shadow’s words slice through the silence, challenging the value of eve",
+     "at": 0.3,
+     "style": "float"
+    }
+   ],
+   "beat": 7,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 11.05,
+   "set": "void",
+   "time": "night",
+   "weather": "none",
+   "grade": "cold",
+   "camera": {
+    "frame": "close",
+    "push": 0.06
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "stand",
+     "mood": "determined",
+     "facing": -1
+    },
+    {
+     "id": "demon",
+     "x": 30.0,
+     "pose": "lean",
+     "mood": "neutral",
+     "facing": 1
+    }
+   ],
+   "narration_index": 2,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Alex’s reply echoes the quiet resolve that, though the cosmos is indifferent, the act of choosing to create is a meaningful act in itself.",
+     "at": 0.25
+    },
+    {
+     "who": "alex",
+     "text": "Alex’s reply echoes the quiet resolve that, though the cosmos is indif",
+     "at": 0.4,
+     "style": "float"
+    }
+   ],
+   "beat": 7,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 10.0,
+   "set": "park",
+   "time": "day",
+   "grade": "warm",
+   "camera": {
+    "frame": "wide",
+    "push": 0.04
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 40.0,
+     "pose": "stand",
+     "mood": "hopeful",
+     "facing": 1
+    }
+   ],
+   "narration_index": 0,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "On a sun‑dappled bench, Alex spreads a sketchpad and begins tracing a blooming seedling.",
+     "at": 0.25
+    }
+   ],
+   "beat": 8,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 10.0,
+   "set": "park",
+   "time": "day",
+   "grade": "warm",
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 45.0,
+     "pose": "type",
+     "mood": "hopeful",
+     "facing": 1
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Each line stitches meaning into the air, turning idle time into quiet fulfillment.",
+     "at": 0.25
+    },
+    {
+     "who": "alex",
+     "text": "…",
+     "at": 0.3,
+     "style": "float"
+    }
+   ],
+   "narration_index": 1,
+   "beat": 8,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 7.0,
+   "set": "park",
+   "time": "day",
+   "grade": "warm",
+   "camera": {
+    "frame": "wide",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 30.0,
+     "pose": "stand",
+     "mood": "hopeful"
+    },
+    {
+     "id": "sam",
+     "x": 70.0,
+     "pose": "stand",
+     "mood": "hopeful"
+    }
+   ],
+   "narration_index": 0,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Alex invites Sam to the bench, unveiling the sketch that now feels alive.",
+     "at": 0.25
+    }
+   ],
+   "beat": 9,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 6.65,
+   "set": "park",
+   "time": "day",
+   "grade": "warm",
+   "camera": {
+    "frame": "two",
+    "on": "alex",
+    "push": 0.06
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 35.0,
+     "pose": "stand",
+     "mood": "hopeful"
+    },
+    {
+     "id": "sam",
+     "x": 65.0,
+     "pose": "stand",
+     "mood": "hopeful"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Together they discuss its colors, realizing a shared purpose can anchor fleeting thoughts.",
+     "at": 0.25
+    },
+    {
+     "who": "alex",
+     "text": "Check this out!",
+     "at": 0.5
+    },
+    {
+     "who": "sam",
+     "text": "Wow, it looks alive!",
+     "at": 1.2
+    }
+   ],
+   "narration_index": 1,
+   "beat": 9,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 7.0,
+   "set": "park",
+   "time": "day",
+   "grade": "warm",
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.04
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 40.0,
+     "pose": "walk",
+     "to": 70.0,
+     "mood": "hopeful"
+    },
+    {
+     "id": "sam",
+     "x": 70.0,
+     "pose": "walk",
+     "to": 40.0,
+     "mood": "hopeful"
+    }
+   ],
+   "lines": [
+    {
+     "who": "alex",
+     "text": "Colors can anchor thoughts.",
+     "at": 1.0
+    },
+    {
+     "who": "sam",
+     "text": "Yeah, shared purpose matters.",
+     "at": 2.5
+    }
+   ],
+   "beat": 9,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 11.45,
+   "set": "scene",
+   "time": "night",
+   "grade": "cold",
+   "scene": {
+    "base": "stage",
+    "elements": [
+     {
+      "type": "spotlight",
+      "x": 50.0
+     }
+    ]
+   },
+   "camera": {
+    "frame": "wide",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 30.0,
+     "pose": "walk"
+    }
+   ],
+   "narration_index": 0,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Alex walks onto the stage, the word CHOICE blazes, yet the light trembles, and the Void’s eyes flare again, reminding him that choice is fragile.",
+     "at": 0.25
+    }
+   ],
+   "beat": 10,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 6.0,
+   "set": "scene",
+   "time": "night",
+   "grade": "cold",
+   "scene": {
+    "base": "stage",
+    "elements": [
+     {
+      "type": "word",
+      "x": 50.0,
+      "label": "CHOICE",
+      "color": "white"
+     },
+     {
+      "type": "spotlight",
+      "x": 50.0
+     }
+    ]
+   },
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.04
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "stand"
+    }
+   ],
+   "lines": [
+    {
+     "who": "alex",
+     "text": "I can choose...",
+     "at": 0.5
+    }
+   ],
+   "beat": 10,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 9.45,
+   "set": "scene",
+   "time": "night",
+   "grade": "cold",
+   "scene": {
+    "base": "stage",
+    "elements": [
+     {
+      "type": "word",
+      "x": 50.0,
+      "label": "CHOICE",
+      "color": "white"
+     }
+    ]
+   },
+   "camera": {
+    "frame": "wide",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 20.0,
+     "pose": "stand",
+     "mood": "determined",
+     "facing": 1
+    }
+   ],
+   "narration_index": 0,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Alex walks onto the illuminated stage, the word CHOICE blazing behind him, feeling the weight of his own decision lift.",
+     "at": 0.25
+    }
+   ],
+   "beat": 11,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 6.65,
+   "set": "scene",
+   "time": "night",
+   "grade": "cold",
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.06
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "walk",
+     "mood": "determined",
+     "facing": 1
+    },
+    {
+     "id": "demon",
+     "x": 70.0,
+     "pose": "lean",
+     "mood": "flat",
+     "facing": -1
+    }
+   ],
+   "narration_index": 1,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The Void’s shadow recedes, its glowing eyes dimming as purpose steadies his pulse.",
+     "at": 0.25
+    }
+   ],
+   "scene": {
+    "base": "stage",
+    "elements": [
+     {
+      "type": "word",
+      "x": 50.0,
+      "label": "CHOICE",
+      "color": "white"
+     }
+    ]
+   },
+   "beat": 11,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 11.05,
+   "set": "scene",
+   "time": "night",
+   "grade": "cold",
+   "camera": {
+    "frame": "close",
+    "on": "alex",
+    "push": 0.04
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 70.0,
+     "pose": "stand",
+     "mood": "determined",
+     "facing": -1
+    },
+    {
+     "id": "demon",
+     "x": 80.0,
+     "pose": "stand",
+     "mood": "flat",
+     "facing": -1
+    }
+   ],
+   "narration_index": 2,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He grips the light, keeping it steady, realizing that meaning is sustained by the act of holding it, not just by stepping into it.",
+     "at": 0.25
+    }
+   ],
+   "scene": {
+    "base": "stage",
+    "elements": [
+     {
+      "type": "word",
+      "x": 50.0,
+      "label": "CHOICE",
+      "color": "white"
+     }
+    ]
+   },
+   "beat": 11,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "time": "dawn",
+   "grade": "warm",
+   "set": "rooftop",
+   "dur": 8.25,
+   "camera": {
+    "frame": "wide",
+    "push": 0.04
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "sit",
+     "mood": "hopeful"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "At sunrise, Alex stands on the rooftop, the city waking below, his sketchbook warm in his hands.",
+     "at": 0.25
+    }
+   ],
+   "beat": 12,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "time": "dawn",
+   "grade": "warm",
+   "set": "rooftop",
+   "dur": 6.65,
+   "camera": {
+    "frame": "close",
+    "on": "alex",
+    "push": 0.06
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "sit",
+     "mood": "hopeful"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He smiles, realizing each line he draws creates meaning beyond any cosmic void.",
+     "at": 0.25
+    }
+   ],
+   "beat": 12,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 9.72,
+   "music": "high",
+   "card": {
+    "style": "line",
+    "lines": [
+     "At sunrise, Alex smiles, sketchbook warm, realiz"
+    ]
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "At sunrise, Alex smiles, sketchbook warm, realizing every line he draws writes his own purpose.",
+     "at": 0.4,
+     "hidden": true
+    }
+   ],
+   "set": "void",
+   "camera": {
+    "frame": "wide"
+   },
+   "actors": [],
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 4.0,
+   "music": "mid",
+   "card": {
+    "style": "cta",
+    "lines": [
+     "If this made you think, like and subscribe."
+    ]
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "wave",
+     "mood": "happy",
+     "scale": 0.7
+    }
+   ],
+   "set": "void",
+   "camera": {
+    "frame": "wide"
+   },
+   "lines": [],
+   "sfx": [],
+   "items": []
+  }
+ ],
+ "publish": {
+  "youtube_titles": [
+   "What If Nothing Really Matters? | Finding Purpose in a Void",
+   "When Life Has No Meaning: Turning Nihilism Into Fulfillment",
+   "From Existential Void to Personal Projects – A Short Film"
+  ],
+  "description": "In this animated essay we follow Alex as he confronts existential nihilism and discovers that meaning isn’t handed down from the universe—it’s built, one small project at a time. Through sketchbooks, coffee talks, and a shadowy personification of the Void, the film shows how personal creativity can turn emptiness into quiet fulfillment.\n\nWatch the journey from confusion on an empty billboard to hopeful sunrise on a rooftop, and learn why self‑made purpose beats the search for cosmic significance. #Existentialism #Nihilism #SelfMadeMeaning #AnimatedEssay #Philosophy\n",
+  "tags": [
+   "existential nihilism",
+   "meaning of life",
+   "self made purpose",
+   "animated philosophy",
+   "personal projects",
+   "Nietzsche",
+   "Sartre",
+   "Camus",
+   "creative fulfillment",
+   "short philosophical film"
+  ],
+  "pinned_comment": "What small project have you started that suddenly gave your day more meaning?",
+  "thumbnail_words": "Choose Your Meaning",
+  "idea": {
+   "definition": "Existential nihilism claims life lacks inherent meaning or value.",
+   "mechanism": "Meaning is a human construct; without external purpose, we create our own narratives.",
+   "turn": "Even if meaning is self‑made, it can still generate genuine fulfillment.",
+   "thinkers": "Friedrich Nietzsche, Jean-Paul Sartre, Albert Camus"
+  },
+  "inner_voice": {
+   "represents": "the Void of Meaning",
+   "color": "#2b2b2b"
+  },
+  "approach": "Show a character confronting the idea and discovering how personal projects become sources of value."
+ },
+ "writer": "groq:openai/gpt-oss-20b",
+ "sources": [
+  {
+   "title": "Nihilism",
+   "url": "https://en.wikipedia.org/wiki/Nihilism",
+   "source": "Wikipedia",
+   "query": "existential nihilism meaning of life"
+  },
+  {
+   "title": "Meaning of life",
+   "url": "https://en.wikipedia.org/wiki/Meaning_of_life",
+   "source": "Wikipedia",
+   "query": "existential nihilism meaning of life"
+  },
+  {
+   "title": "Existential nihilism",
+   "url": "https://en.wikipedia.org/wiki/Existential_nihilism",
+   "source": "Wikipedia",
+   "query": "existential nihilism meaning of life"
+  }
+ ],
+ "duration": 254.52
+}
