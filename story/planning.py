@@ -1,6 +1,7 @@
 """Bounded concept, beat expansion and publishing requests for free model limits."""
 import copy,json,re
 from pathlib import Path
+from story.normalization import character_ids
 
 VOCAB=json.loads((Path(__file__).resolve().parents[1]/'engine/vocab.json').read_text())
 
@@ -59,13 +60,16 @@ Keep the complete outline comfortably below 750 output tokens."""
     sheet=copy.deepcopy(outline);sheet.pop('spine',None);sheet['beats']=[]
     words=max(20,round(duration*.55*2.45/count))
     history=[]
-    for start in range(0,count,2):
-        indices=list(range(start+1,min(count,start+2)+1))
+    local_only=bool(getattr(writer,'specs',None)) and all(s.startswith('ollama:') for s in writer.specs)
+    batch_size=1 if local_only else 2
+    for start in range(0,count,batch_size):
+        indices=list(range(start+1,min(count,start+batch_size)+1))
         slots=[spine[min(len(spine)-1,int((index-1)*len(spine)/count))] for index in indices]
         payload={'topic':user,'argument_and_cast':{k:v for k,v in outline.items() if k not in ('spine','beats')},'requested_indices':indices,
                  'total_beats':count,'spine_entries_to_advance':slots,'previous_beats':sheet['beats'][-2:]}
         def check_chunk(data):
             beats=data.get('beats')
+            if len(indices)==1 and beats is None and isinstance(data.get('narration'),list):beats=[data]
             if not isinstance(beats,list) or len(beats)!=len(indices):
                 raise ValueError('Return exactly the requested beats')
             prior={' '.join(' '.join(b.get('narration',[])).lower().split()) for b in sheet['beats']}
@@ -74,9 +78,8 @@ Keep the complete outline comfortably below 750 output tokens."""
                     raise ValueError('Each beat needs narration as a sentence list')
                 if not isinstance(b.get('who'),list) or not b.get('what_happens'):
                     raise ValueError('Declare the visible cast (or [] for an intentional object shot) and action')
-                known={p['id'] for p in outline['cast']}
-                if any(w not in known for w in b['who']):
-                    raise ValueError('Use only the declared cast IDs: '+', '.join(sorted(known)))
+                b['who'],who_problems=character_ids(b['who'],outline['cast'])
+                if who_problems:raise ValueError('; '.join(who_problems))
                 supported_location(b, require_scene=True)
                 text=' '.join(' '.join(b['narration']).lower().split())
                 if len(text.split())>=20 and text in prior:

@@ -1,5 +1,5 @@
 name: Benchmark bounded writing with independent topic
-# Iteration 7: lossless dialogue normalization and an independent metaphor-aware critic.
+# Iteration 8: separate affected beats from actual patch targets and normalize speaker aliases.
 on:
   workflow_dispatch:
   push:

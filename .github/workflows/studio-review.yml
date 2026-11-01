@@ -1,5 +1,5 @@
 name: Autonomous studio review
-# Iteration 9: preserve dialogue and visual metaphors before six-minute full production.
+# Iteration 10: targeted editorial operations and normalized cast references.
 on:
   workflow_dispatch:
   push:

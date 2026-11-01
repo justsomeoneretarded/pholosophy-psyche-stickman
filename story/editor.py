@@ -24,8 +24,9 @@ Do not invent historical corrections from memory; only assert a specific factual
 Do not demand generic disclaimers or remove informative depth. A hopeful fictional outcome is
 allowed; a universal psychological promise based on that outcome needs revision.
 Return JSON only: {"issues":[{"severity":"major"|"minor","beats":[1-based beat numbers;
-use 0 for opening/end/publishing metadata],"problem":"specific evidence",
+use 0 for opening/end/publishing metadata],"revise":[only the beat indices that must actually change; these may be fewer than beats],"problem":"specific evidence",
 "repair":"concrete editorial change"}],"strengths":["what should be preserved"]}.
+The beats list is affected context; revise lists only actual patch targets. If beats 10 and 11 repeat, revise only one of them and keep the other as context. Do not tell a patch for beat 10 to edit beat 11.
 List only meaningful issues, not stylistic preferences. Do not invent research or quotations. Proposed repairs must not add unsupported neuroscience or research claims. Replace redundant exposition with deeper reasoning instead of deleting beats."""
 
 BEAT_FIELDS = set("""name seconds where time weather grade emotion what_happens narration
@@ -64,6 +65,8 @@ def review_concept(sheet, writer, check, title, minutes, output_dir, rounds=2, r
             indices=issue.get('beats')
             if not isinstance(indices,list) or not indices:raise ValueError('Issue needs affected beat indices')
             if any(type(i) is not int or not 0<=i<=len(sheet['beats']) for i in indices):raise ValueError('Nonexistent beat')
+            targets=issue.get('revise',indices)
+            if not isinstance(targets,list) or not targets or any(type(i) is not int or not 0<=i<=len(sheet['beats']) for i in targets):raise ValueError('revise needs valid actual patch target indices')
             if not issue.get('problem') or not issue.get('repair'):raise ValueError('Explain the specific problem and repair')
         return data
     for round_index in range(rounds+1):
@@ -71,10 +74,10 @@ def review_concept(sheet, writer, check, title, minutes, output_dir, rounds=2, r
                            validate_review,temperature=.25,max_tokens=900,attempts=3)
         history.append({'round':round_index+1,'reviewer':getattr(reviewer,'used',None),'review':report,'edits':[]});save()
         if not report['issues'] or round_index==rounds:break
-        selected=sorted({i for issue in report['issues'] for i in issue['beats'] if i})
-        if any(0 in issue['beats'] for issue in report['issues']):selected.append(0)
+        selected=sorted({i for issue in report['issues'] for i in issue.get('revise',issue['beats']) if i})
+        if any(0 in issue.get('revise',issue['beats']) for issue in report['issues']):selected.append(0)
         for index in selected:
-            issues=[issue for issue in report['issues'] if index in issue['beats']]
+            issues=[issue for issue in report['issues'] if index in issue.get('revise',issue['beats'])]
             payload={'topic_and_direction':title,'argument':sheet.get('idea'),'approach':sheet.get('approach'),
                      'cast':sheet.get('cast'),'requested_beat':index,
                      'story_map':[{'beat':i+1,'idea':b.get('idea'),'action':b.get('what_happens')} for i,b in enumerate(sheet['beats'])],
@@ -96,7 +99,7 @@ reasoning or use the slot for a concrete objection/example instead of erasing th
 Preserve approximately the current amount of narration. Fictional dialogue is allowed.
 Never invent empirical findings, percentages, neuroscience, citations or quotations.
 Unsupported universal claims should be qualified or reframed, not given invented evidence.
-Use existing cast IDs and supported locations. Do not include beat/index inside changes. Return JSON only."""
+Use existing cast IDs and supported locations. Dialogue is a list of {who: cast ID, text: speech} objects. Do not include beat/index inside changes. Return JSON only."""
             system += "\nAllowed beat fields: " + ", ".join(sorted(BEAT_FIELDS)) + "\nAllowed metadata fields: " + ", ".join(sorted(META_FIELDS))
             def validate_patch(data):
                 history[-1].setdefault('proposals',[]).append({'beat':index,'data':data})

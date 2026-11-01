@@ -25,7 +25,7 @@ sys.path.insert(0, str(ROOT / 'story'))
 from validate import VOCAB, repair  # noqa: E402
 from pipeline.writing.llm import Writer, Rejected, notice, DEFAULT_MODELS  # noqa: E402
 from pipeline.writing.quotation import has_attributed_quotation  # noqa: E402
-from story.normalization import dialogue_lines
+from story.normalization import dialogue_lines, cast_aliases, character_ids
 from story.planning import plan_in_parts
 from story.editor import review_concept  # noqa: E402
 
@@ -173,8 +173,11 @@ def check_concept(sheet, minutes):
     lo, hi = target_seconds(minutes)
     total, words = 0., 0
     for i, b in enumerate(beats):
-        dialogue, dialogue_problems = dialogue_lines(b.get('dialogue'), [p.get('id') for p in sheet.get('cast') or [] if isinstance(p,dict)])
+        dialogue, dialogue_problems = dialogue_lines(b.get('dialogue'), [p.get('id') for p in sheet.get('cast') or [] if isinstance(p,dict)], cast_aliases(sheet.get('cast') or []))
         b['dialogue'] = dialogue
+        if sheet.get('cast'):
+            b['who'], who_problems = character_ids(b.get('who',[]), sheet['cast'])
+            dialogue_problems.extend(who_problems)
         problems.extend(f'beat {i+1}: {problem}' for problem in dialogue_problems)
         lines = beat_narration(b)
         if has_attributed_quotation(' '.join(lines)):

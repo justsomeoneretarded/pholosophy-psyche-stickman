@@ -1,5 +1,5 @@
 name: Benchmark free model alternatives
-# Iteration 2: CPU-only continuation; provider access evidence is already preserved.
+# Iteration 3: local single-beat requests with normalized object-form character references.
 on:
   workflow_dispatch:
   push:

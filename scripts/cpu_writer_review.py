@@ -7,10 +7,11 @@ from story.essay import concept_prompt
 from story.planning import plan_in_parts
 out=Path('model-review');out.mkdir(exist_ok=True)
 writer=Writer('ollama:qwen3:4b')
-report={'model':'ollama:qwen3:4b','scope':'Production outline and first two-beat expansion only; not a complete script/video test',
+report={'model':'ollama:qwen3:4b','scope':'Production outline and first beat-expansion request only; not a complete script/video test',
         'cpu_count':os.cpu_count(),'memory_total':next(l.strip() for l in Path('/proc/meminfo').read_text().splitlines() if l.startswith('MemTotal:')),'calls':[]}
 class ProbeComplete(Exception):pass
 class Probe:
+    specs=['ollama:qwen3:4b']
     def json(self,*args,**kwargs):
         if len(report['calls'])>=2:raise ProbeComplete()
         started=time.monotonic()
