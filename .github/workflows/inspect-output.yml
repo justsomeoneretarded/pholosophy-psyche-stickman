@@ -1,11 +1,12 @@
 name: Inspect finished film
+# Inspect the final ACE-Step mix after the interim review.
 on:
   workflow_dispatch:
     inputs:
       run_id:
         description: Production run whose review copy should be inspected
         type: string
-        default: '41226649032'
+        default: '41324973301'
   push:
     paths: ['.github/workflows/inspect-output.yml']
 permissions:
@@ -15,7 +16,7 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 12
     env:
-      REVIEW_RUN_ID: ${{ inputs.run_id || '41226649032' }}
+      REVIEW_RUN_ID: ${{ inputs.run_id || '41324973301' }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -44,6 +45,8 @@ jobs:
               subprocess.run(['ffmpeg','-y','-v','error','-ss',str(t),'-i',str(video),'-frames:v','1','-vf','scale=960:-2','-q:v','3',str(path)],check=True)
               path.with_suffix('.jpg.b64').write_text(base64.b64encode(path.read_bytes()).decode())
               samples.append({'file':path.name,'seconds':round(t,3)})
+          for thumbnail in source.glob('thumbnail-*.jpg'):
+              (out/(thumbnail.name+'.b64')).write_text(base64.b64encode(thumbnail.read_bytes()).decode())
           audio=[]
           for i,fraction in enumerate([.06,.34,.72],1):
               t=duration*fraction
