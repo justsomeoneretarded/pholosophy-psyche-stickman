@@ -45,6 +45,10 @@ Return ONLY this compact JSON:
 Write 5-8 spine entries, each a substantive advance in this particular argument/story.
 The spine is not a generic prescribed narrative formula. Preserve causal continuity.
 No narration, descriptions, tags, music prompts or full scene objects yet.
+Make a defensible argument, including its strongest objection and a specific response.
+Avoid replacing explanation with atmosphere or slogans such as "fill the void", "write your purpose",
+"each breath is a chapter", "thoughts spiral", or a magical light that solves the problem.
+A metaphor illustrates a reason; it cannot substitute for one. Name observable physical actions.
 Keep the complete outline comfortably below 750 output tokens."""
     def outline_check(data):
         spine=data.get('spine') or data.get('beats')
@@ -61,7 +65,7 @@ Keep the complete outline comfortably below 750 output tokens."""
     words=max(20,round(duration*.55*2.45/count))
     history=[]
     local_only=bool(getattr(writer,'specs',None)) and all(s.startswith('ollama:') for s in writer.specs)
-    batch_size=1 if local_only else 2
+    batch_size=1  # One complete beat fits the smallest free-provider response budgets.
     for start in range(0,count,batch_size):
         indices=list(range(start+1,min(count,start+batch_size)+1))
         slots=[spine[min(len(spine)-1,int((index-1)*len(spine)/count))] for index in indices]
@@ -78,6 +82,12 @@ Keep the complete outline comfortably below 750 output tokens."""
                     raise ValueError('Each beat needs narration as a sentence list')
                 if not isinstance(b.get('who'),list) or not b.get('what_happens'):
                     raise ValueError('Declare the visible cast (or [] for an intentional object shot) and action')
+                clean=[]
+                for line in b['narration']:
+                    text=line.get('text') if isinstance(line,dict) else line
+                    if not isinstance(text,str):raise ValueError('Narration entries need complete text strings')
+                    clean.append(text)
+                b['narration']=clean
                 b['who'],who_problems=character_ids(b['who'],outline['cast'])
                 if who_problems:raise ValueError('; '.join(who_problems))
                 supported_location(b, require_scene=True)
@@ -96,7 +106,7 @@ do not skip to the ending or reuse a different spine entry. Use exact supported 
 not descriptive strings such as park bench or cafe table.
 Each beat needs about {words} spoken words in two complete explanatory sentences,
 lasting about {duration/count:.0f} seconds. The requested beats advance the spine entry
-differently; do not repeat the same explanation or action. Preserve earlier events.
+differently; do not repeat the same explanation or action. Preserve earlier events. Each narrated sentence must add a reason, distinction, example, objection or consequence. Describe fewer atmospheric feelings. Never treat fictional resolution as evidence that the advice works for everyone.
 Keep action descriptions to eight words, and omit unused optional fields.
 When where=scene include base and a few supported elements with x coordinates.
 Otherwise use the named set, without a redundant scene object.

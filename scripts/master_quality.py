@@ -33,7 +33,7 @@ def inspect(video,film):
     poses={}
     for s in film['shots']:
         for a in s.get('actors',[]):poses[a.get('pose','stand')]=poses.get(a.get('pose','stand'),0)+1
-    if sum(poses.get(p,0) for p in ['walk','run','reachout','drink','wave','point','getup','fall','type'])<3:
+    if sum(poses.get(p,0) for p in ['walk','run','reachout','drink','wave','point','getup','fall','type','write','read','show','think','talk','standup','sitdown'])<3:
         warnings.append('Limited active character staging; review the film for excessive idle acting')
     return {'passed':not failures,'failures':failures,'warnings':warnings,'duration_seconds':duration,
             'loudness_lufs':loudness,'true_peak_dbfs':peak,'pose_usage':poses,'full_decode':'passed','probe':probe,

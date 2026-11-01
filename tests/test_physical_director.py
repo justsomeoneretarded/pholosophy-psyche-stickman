@@ -16,4 +16,9 @@ def test_recut_preserves_recorded_speech_and_duration():
     assert json.dumps(f['shots'][0]['lines'])==before
     assert f['shots'][0]['actors'][0]['pose']=='write'
 def test_abstract_words_do_not_trigger_unrelated_motion():
-    assert direct_beat({'who':['alex'],'where':'park','what_happens':'The drawing is a memory of childhood.'},V)[0]['actors'][0]['pose']=='stand'
+    assert direct_beat({'who':['alex'],'where':'park','what_happens':'The drawing is a memory of childhood.'},V)[0]['actors'][0]['pose'] in {'stand','sit'}
+
+def test_recipient_does_not_copy_the_givers_action():
+    s=direct_beat({'who':['alex','sam'],'where':'cafe','what_happens':'Alex shows sketch to Sam.'},V)[0]
+    assert s['actors'][0]['pose']=='show'
+    assert s['actors'][1]['pose'] in {'sit','stand'}

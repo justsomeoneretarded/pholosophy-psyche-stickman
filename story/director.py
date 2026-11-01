@@ -46,9 +46,14 @@ def apply_performance(shot, beat, phase=0, force=False):
     for i,a in enumerate(people):
         if not force and a.get("pose","stand") not in IDLE: continue
         actor_id=str(a.get("id",""))
-        own=[item for item in actions if re.search(r"\b"+re.escape(actor_id)+r"\b",item[1],re.I)]
-        # Unnamed directions belong to the lead; don't make every person draw.
-        relevant=own or (actions if i==0 else [])
+        def subject(clause):
+            match=re.match(r"^\s*([A-Za-z_]+)\b",clause)
+            name=match.group(1).lower() if match else ""
+            return next((str(p.get("id")) for p in people if str(p.get("id")).lower()==name),None)
+        own=[item for item in actions if subject(item[1])==actor_id]
+        unnamed=[item for item in actions if subject(item[1]) is None]
+        # A recipient is not the actor: "Alex shows Sam" must not make Sam show a book.
+        relevant=own or (unnamed if i==0 else [])
         if relevant:
             pose,clause=relevant[min(phase,len(relevant)-1)]
         elif any(l.get("who")==actor_id for l in shot.get("lines") or []):
