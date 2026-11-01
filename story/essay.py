@@ -25,6 +25,7 @@ sys.path.insert(0, str(ROOT / 'story'))
 from validate import VOCAB, repair  # noqa: E402
 from pipeline.writing.llm import Writer, Rejected, notice  # noqa: E402
 from pipeline.writing.quotation import has_attributed_quotation  # noqa: E402
+from story.editor import review_concept  # noqa: E402
 
 WPS = 2.45            # narration words per second (Chatterbox, calm delivery)
 
@@ -236,6 +237,7 @@ def stage_concept(title, minutes, out_dir, research=''):
     report = {}
 
     def validate(data):
+        data.setdefault('_title', title)
         problems, total = check_concept(data, minutes)
         report['estimated_seconds'] = total
         if problems:
@@ -248,6 +250,8 @@ def stage_concept(title, minutes, out_dir, research=''):
 
     t0 = time.time()
     sheet = writer.json(system, user, validate, temperature=.85, max_tokens=6500)
+    notice('Editorial review', 'Checking argument, causal continuity and resolution before storyboarding')
+    sheet = review_concept(sheet, writer, check_concept, title, minutes, out)
     sheet['_title'] = title
     sheet['_writer'] = writer.used
     idmap = {}
