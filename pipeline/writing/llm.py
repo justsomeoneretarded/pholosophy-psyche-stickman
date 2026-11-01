@@ -216,7 +216,7 @@ class Writer:
                     budget = max_tokens or 7000
                     if spec.startswith('groq:'):
                         # Groq's free tier rejects requests whose prompt + output budget exceed the per-minute token limit.
-                        budget = max(1500, min(budget, int(os.environ.get('GROQ_TPM', '8000')) - 250 - int(len(system + user + feedback) / 3.4)))
+                        budget = min(budget, max(128, int(os.environ.get('GROQ_TPM', '8000')) - 250 - int(len(system + user + feedback) / 3.4)))
                     reply = client.complete(system, user + feedback, temperature=temperature, max_tokens=budget)
                     answered = True
                     data = parse_json(reply)
