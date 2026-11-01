@@ -234,7 +234,7 @@ jobs:
           node render/render.mjs --film build/film.json --stills build/stills --every 3 --width 640
           ffmpeg -v error -pattern_type glob -i 'build/stills/*.jpg' -vf "tile=6x12" -frames:v 1 build/contact-sheet.jpg
           POSTER_TIMES=$(python3 story/package.py --poster-times build/film.json)
-          node render/render.mjs --film build/film.json --stills build/poster --times "$POSTER_TIMES" --width 1920
+          node render/render.mjs --film build/film.json --stills build/poster --times "$POSTER_TIMES" --width 1920 --clean
       - uses: actions/upload-artifact@v4
         if: ${{ always() && steps.render_part.outcome == 'success' }}
         with:

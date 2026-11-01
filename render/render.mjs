@@ -3,6 +3,7 @@
 // node render/render.mjs --film examples/film.json --stills build/stills --every 2   (review frames)
 // node render/render.mjs --film examples/film.json --cues build/cues.json            (sound cue sheet)
 import { createRequire } from 'node:module';
+import { cleanPosterFilm } from './poster.mjs';
 import { spawn } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -11,7 +12,8 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 const args = Object.fromEntries(process.argv.slice(2).reduce((acc, v, i, all) => {
   if (v.startsWith('--')) acc.push([v.slice(2), all[i + 1] && !all[i + 1].startsWith('--') ? all[i + 1] : true]); return acc; }, []));
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const film = JSON.parse(fs.readFileSync(args.film, 'utf8'));
+const sourceFilm = JSON.parse(fs.readFileSync(args.film, 'utf8'));
+const film = args.clean ? cleanPosterFilm(sourceFilm) : sourceFilm;
 const width = parseInt(args.width || '1920'), fps = parseInt(args.fps || '30');
 const height = Math.round(width * 9 / 16);
 // An empty shell substitution must never become a NaN timestamp in the canvas engine.

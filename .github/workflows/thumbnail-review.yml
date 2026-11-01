@@ -1,0 +1,57 @@
+name: Inspect clean thumbnail illustrations
+on:
+  workflow_dispatch:
+  push:
+    paths: ['.github/workflows/thumbnail-review.yml']
+permissions:
+  contents: write
+  actions: read
+jobs:
+  render:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: philosophy-video
+          run-id: '41324973301'
+          github-token: ${{ github.token }}
+          path: build/finished
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Render clean production-engine illustrations and thumbnails
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+          python -m pip install -q Pillow
+          TIMES=$(python story/package.py --poster-times build/finished/film.json)
+          node render/render.mjs --film build/finished/film.json --stills build/poster --times "$TIMES" --width 1920 --clean
+          python story/package.py build/finished/film.json build/poster build/package
+          python - <<'PY'
+          from pathlib import Path
+          import base64
+          for p in Path('build/package').glob('thumbnail-*.jpg'):
+              p.with_suffix('.jpg.b64').write_text(base64.b64encode(p.read_bytes()).decode())
+          PY
+      - uses: actions/checkout@v4
+        with:
+          ref: previews
+          path: review-branch
+      - name: Publish actual thumbnail outputs
+        run: |
+          mkdir -p review-branch/previews/41324973301/thumbnail-review
+          cp build/package/thumbnail* review-branch/previews/41324973301/thumbnail-review/
+          cd review-branch
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add previews/41324973301/thumbnail-review
+          git commit -m "Clean thumbnail illustrations for run 41324973301"
+          git pull --rebase origin previews
+          git push origin HEAD:previews
+      - uses: actions/upload-artifact@v4
+        with:
+          name: clean-thumbnails
+          path: build/package/thumbnail*
+          retention-days: 7
