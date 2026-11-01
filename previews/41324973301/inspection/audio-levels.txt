@@ -1,0 +1,27 @@
+1.4  -1.4 dBFS
+[Parsed_ebur128_0 @ 0x557295092a80] t: 211.9      TARGET:-23 LUFS    M: -11.9 S: -15.6     I: -14.0 LUFS       LRA:   8.2 LU  FTPK:  -7.9  -7.9 dBFS  TPK:  -1.4  -1.4 dBFS
+[Parsed_ebur128_0 @ 0x557295092a80] t: 212        TARGET:-23 LUFS    M: -13.0 S: -15.8     I: -14.0 LUFS       LRA:   8.2 LU  FTPK: -10.2 -10.2 dBFS  TPK:  -1.4  -1.4 dBFS
+[Parsed_ebur128_0 @ 0x557295092a80] t: 212.1      TARGET:-23 LUFS    M: -14.6 S: -15.8     I: -14.0 LUFS       LRA:   8.2 LU  FTPK:  -7.3  -7.3 dBFS  TPK:  -1.4  -1.4 dBFS
+[Parsed_ebur128_0 @ 0x557295092a80] t: 212.2      TARGET:-23 LUFS    M: -15.8 S: -15.9     I: -14.0 LUFS       LRA:   8.2 LU  FTPK:  -7.9  -7.9 dBFS  TPK:  -1.4  -1.4 dBFS
+[Parsed_ebur128_0 @ 0x557295092a80] t: 212.3      TARGET:-23 LUFS    M: -15.5 S: -16.1     I: -14.0 LUFS       LRA:   8.2 LU  FTPK:  -9.7  -9.7 dBFS  TPK:  -1.4  -1.4 dBFS
+[Parsed_ebur128_0 @ 0x557295092a80] t: 212.4      TARGET:-23 LUFS    M: -15.4 S: -16.2     I: -14.0 LUFS       LRA:   8.2 LU  FTPK: -12.1 -12.1 dBFS  TPK:  -1.4  -1.4 dBFS
+[Parsed_ebur128_0 @ 0x557295092a80] t: 212.5      TARGET:-23 LUFS    M: -15.7 S: -16.3     I: -14.0 LUFS       LRA:   8.2 LU  FTPK:  -8.4  -8.4 dBFS  TPK:  -1.4  -1.4 dBFS
+[Parsed_ebur128_0 @ 0x557295092a80] t: 212.6      TARGET:-23 LUFS    M: -16.0 S: -16.3     I: -14.0 LUFS       LRA:   8.2 LU  FTPK:  -9.5  -9.5 dBFS  TPK:  -1.4  -1.4 dBFS
+[Parsed_ebur128_0 @ 0x557295092a80] t: 212.7      TARGET:-23 LUFS    M: -17.3 S: -16.3     I: -14.0 LUFS       LRA:   8.2 LU  FTPK: -14.4 -14.4 dBFS  TPK:  -1.4  -1.4 dBFS
+[Parsed_ebur128_0 @ 0x557295092a80] t: 212.8      TARGET:-23 LUFS    M: -18.4 S: -16.4     I: -14.0 LUFS       LRA:   8.2 LU  FTPK: -17.1 -17.1 dBFS  TPK:  -1.4  -1.4 dBFS
+[out#0/null @ 0x557295004b80] video:0kB audio:39912kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+size=N/A time=00:03:32.80 bitrate=N/A speed= 135x    
+[Parsed_ebur128_0 @ 0x557295092a80] Summary:
+
+  Integrated loudness:
+    I:         -14.0 LUFS
+    Threshold: -24.6 LUFS
+
+  Loudness range:
+    LRA:         8.2 LU
+    Threshold: -34.6 LUFS
+    LRA low:   -19.8 LUFS
+    LRA high:  -11.6 LUFS
+
+  True peak:
+    Peak:       -1.4 dBFS
