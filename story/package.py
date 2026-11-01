@@ -9,7 +9,6 @@ import json
 import re
 import sys
 from pathlib import Path
-from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 ROOT = Path(__file__).resolve().parents[1]
 FONTS = ROOT / 'assets' / 'fonts'
@@ -17,6 +16,7 @@ THUMB = (1280, 720)
 
 
 def font(name, size):
+    from PIL import ImageFont
     return ImageFont.truetype(str(FONTS / name), int(size))
 
 
@@ -53,6 +53,7 @@ def poster_times(film):
 
 
 def headline(img, words, box, size, amber=None, align='left'):
+    from PIL import ImageDraw
     d = ImageDraw.Draw(img)
     words = words.upper().split()
     lines = [' '.join(words[i:i + 2]) for i in range(0, len(words), 2)] if len(words) > 2 else [' '.join(words)]
@@ -76,6 +77,7 @@ def headline(img, words, box, size, amber=None, align='left'):
 
 
 def thumbnails(film, poster_dir, out):
+    from PIL import Image
     stills = sorted(Path(poster_dir).glob('*.jpg'))
     if not stills:
         return []

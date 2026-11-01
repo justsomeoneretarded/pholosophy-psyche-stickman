@@ -8,13 +8,22 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
-const { chromium } = createRequire(import.meta.url)('playwright');
 const args = Object.fromEntries(process.argv.slice(2).reduce((acc, v, i, all) => {
   if (v.startsWith('--')) acc.push([v.slice(2), all[i + 1] && !all[i + 1].startsWith('--') ? all[i + 1] : true]); return acc; }, []));
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const film = JSON.parse(fs.readFileSync(args.film, 'utf8'));
 const width = parseInt(args.width || '1920'), fps = parseInt(args.fps || '30');
 const height = Math.round(width * 9 / 16);
+// An empty shell substitution must never become a NaN timestamp in the canvas engine.
+let requestedTimes = [];
+if (args.times !== undefined) {
+  if (typeof args.times !== 'string' || !args.times.trim() ||
+      args.times.split(',').some(v => !v.trim() || !Number.isFinite(Number(v)) || Number(v) < 0)) {
+    throw new Error('--times must be a non-empty comma-separated list of finite, non-negative timestamps');
+  }
+  requestedTimes = args.times.split(',').map(Number);
+}
+const { chromium } = createRequire(import.meta.url)('playwright');
 
 const browser = await chromium.launch({ args: ['--disable-gpu-vsync', '--force-device-scale-factor=1'] });
 const page = await browser.newPage({ viewport: { width: 640, height: 360 } });
@@ -25,6 +34,7 @@ const duration = await page.evaluate(([f, w]) => setup(f, w), [film, width]);
 console.log(`film: ${film.title} — ${duration.toFixed(2)} s, ${film.shots.length} shots`);
 
 async function grab(t, type = 'jpeg') {
+  if (!Number.isFinite(t) || t < 0) throw new Error('Invalid frame timestamp: ' + t);
   const data = await page.evaluate(([t, type]) => { drawFrame(t); return document.getElementById('film').toDataURL(type === 'png' ? 'image/png' : 'image/jpeg', 0.94); }, [t, type]);
   return Buffer.from(data.split(',')[1], 'base64');
 }
@@ -36,7 +46,7 @@ if (args.cues) {
   console.log(`cues: ${cues.cues.length}`);
 } else if (args.stills) {
   fs.mkdirSync(args.stills, { recursive: true });
-  const times = args.times ? String(args.times).split(',').map(Number) : [];
+  const times = [...requestedTimes];
   if (!times.length) { const every = parseFloat(args.every || '2'); for (let t = 0.6; t < duration; t += every) times.push(+t.toFixed(2)); }
   for (const t of times) fs.writeFileSync(path.join(args.stills, `t${String(t.toFixed(2)).padStart(7, '0')}.jpg`), await grab(t));
   console.log(`stills: ${times.length}`);

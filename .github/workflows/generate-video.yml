@@ -212,6 +212,7 @@ jobs:
           npx playwright install --with-deps chromium
           sudo apt-get install -y -qq ffmpeg >/dev/null
       - name: Render this part
+        id: render_part
         run: |
           D=${{ needs.voice.outputs.duration }}
           START=$(python3 -c "print($D*${{ matrix.part }}/4)"); END=$(python3 -c "print($D*(${{ matrix.part }}+1)/4)")
@@ -222,8 +223,10 @@ jobs:
           node render/render.mjs --film build/film.json --cues build/cues.json
           node render/render.mjs --film build/film.json --stills build/stills --every 3 --width 640
           ffmpeg -v error -pattern_type glob -i 'build/stills/*.jpg' -vf "tile=6x12" -frames:v 1 build/contact-sheet.jpg
-          node render/render.mjs --film build/film.json --stills build/poster --times "$(python3 story/package.py --poster-times build/film.json)" --width 1920
+          POSTER_TIMES=$(python3 story/package.py --poster-times build/film.json)
+          node render/render.mjs --film build/film.json --stills build/poster --times "$POSTER_TIMES" --width 1920
       - uses: actions/upload-artifact@v4
+        if: ${{ always() && steps.render_part.outcome == 'success' }}
         with:
           name: film-part-${{ matrix.part }}
           path: |
