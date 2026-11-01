@@ -1,11 +1,12 @@
 name: Benchmark bounded writing with independent topic
-# Iteration 3: exact location IDs and sequential expansion of only the requested argument.
+# Iteration 4: resume the valid draft and test focused single-beat editorial revisions.
 on:
   workflow_dispatch:
   push:
     paths: ['.github/workflows/writing-review.yml']
 permissions:
   contents: write
+  actions: read
 jobs:
   write:
     runs-on: ubuntu-24.04
@@ -20,6 +21,12 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: independent-topic-writing
+          run-id: '41330783972'
+          github-token: ${{ github.token }}
+          path: prior
       - name: Install the actual writing pipeline
         run: python -m pip install -q -r requirements-core.txt
       - name: Generate and edit a distinct philosophical script
@@ -33,7 +40,7 @@ jobs:
           Path('build/writing/research.txt').write_text(r['context'])
           Path('build/writing/sources.json').write_text(json.dumps(r['sources']))
           PY
-          python story/essay.py concept --title "$TITLE" --minutes 4 --dir build/writing --research build/writing/research.txt
+          python story/essay.py concept --title "$TITLE" --minutes 4 --dir build/writing --research build/writing/research.txt --reuse-draft prior/writing/concept-before-editor.json
           python story/essay.py shots --dir build/writing
           python story/essay.py merge --dir build/writing --out build/film.json
       - name: Publish actual writing evidence, including failures

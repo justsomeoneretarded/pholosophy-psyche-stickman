@@ -114,6 +114,5 @@ Do not claim an intelligence/diagnosis explanation the essay did not establish. 
                            max_tokens=900,temperature=.55,attempts=3)
     allowed={'youtube_titles','description','tags','pinned_comment','thumbnail_words','music_prompt','cold_open','ending'}
     sheet.update({k:v for k,v in publishing.items() if k in allowed})
-    sheet['_title']=user
     (out/'concept-before-validation.json').write_text(json.dumps(sheet,indent=1,ensure_ascii=False))
     return validate(sheet)

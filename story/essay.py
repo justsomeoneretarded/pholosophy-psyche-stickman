@@ -225,7 +225,7 @@ def check_concept(sheet, minutes):
     return problems, total
 
 
-def stage_concept(title, minutes, out_dir, research=''):
+def stage_concept(title, minutes, out_dir, research='', reuse_draft=None):
     out = Path(out_dir); out.mkdir(parents=True, exist_ok=True)
     writer = Writer()
     system = concept_prompt(title, minutes) + 'Return only JSON.'
@@ -233,7 +233,7 @@ def stage_concept(title, minutes, out_dir, research=''):
     report = {}
 
     def validate(data):
-        data.setdefault('_title', title)
+        data['_title'] = title
         problems, total = check_concept(data, minutes)
         report['estimated_seconds'] = total
         if problems:
@@ -245,7 +245,7 @@ def stage_concept(title, minutes, out_dir, research=''):
         return data
 
     t0 = time.time()
-    sheet = plan_in_parts(writer, system, user, validate, minutes, out)
+    sheet = validate(json.loads(Path(reuse_draft).read_text())) if reuse_draft else plan_in_parts(writer, system, user, validate, minutes, out)
     for warning in sheet.get('_visual_review_notes', []):
         notice('Visual editorial review', warning, 'warning')
     notice('Editorial review', 'Checking argument, causal continuity and resolution before storyboarding')
@@ -572,10 +572,11 @@ if __name__ == '__main__':
     ap.add_argument('--dir', default='build/writing')
     ap.add_argument('--out', default='build/film.json')
     ap.add_argument('--research', default='')
+    ap.add_argument('--reuse-draft', default='')
     a = ap.parse_args()
     if a.stage == 'concept':
         research = Path(a.research).read_text() if a.research and Path(a.research).exists() else ''
-        stage_concept(a.title, minutes_value(a.minutes), a.dir, research)
+        stage_concept(a.title, minutes_value(a.minutes), a.dir, research, a.reuse_draft or None)
     elif a.stage == 'shots':
         stage_shots(a.dir)
     else:

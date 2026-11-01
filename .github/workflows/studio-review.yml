@@ -1,5 +1,5 @@
 name: Autonomous studio review
-# Iteration 5: sequential narrative expansion and supported location repair.
+# Iteration 6: focused editorial repair verified on the saved independent-topic draft.
 on:
   workflow_dispatch:
   push:
