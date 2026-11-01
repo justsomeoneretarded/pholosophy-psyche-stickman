@@ -86,19 +86,20 @@ function drawLines(ctx, shot, u, heads, K, film) {
     const cps = ln.cps || (narr ? 24 : isDemon ? 18 : 22);
     const txt = typed(ln.text, lu, cps);
     if (narr) {
-      // Wrap the whole sentence once so lines never jump while it types; up to two lines.
-      ctx.font = `38px ${FONT_UI}`;
-      const rows = wrapLines(ctx, ln.text, 1480).slice(0, 2);
-      const lift = (rows.length - 1) * 23 + (ln.twist ? 26 : 0);
-      let shown = txt.length;
-      rows.forEach((row, r) => {
-        const part = row.slice(0, Math.max(0, shown)); shown -= row.length + 1;
-        if (part) textShadowed(ctx, part, 960, 905 - lift + r * 46, 38, ln.twist ? 'rgba(232,230,222,.92)' : C.text, { font: FONT_UI });
-      });
-      if (ln.twist) {
-        const tu = lu - (ln.twist_at ?? (ln.text.length / cps + .35));
-        if (tu > 0) textShadowed(ctx, typed(ln.twist, tu, cps), 960, 905 - lift + rows.length * 46 + 6, 42, '#ffffff', { font: FONT_UI, bold: true });
+      const caption = narratorCaption(ln, lu);
+      if (!caption) continue;
+      let size = 38;
+      ctx.font = size + 'px ' + FONT_UI;
+      let rows = wrapLines(ctx, caption, 1480);
+      while (rows.length > 2 && size > 28) {
+        size -= 2;ctx.font = size + 'px ' + FONT_UI;rows = wrapLines(ctx, caption, 1480);
       }
+      const lineHeight = size + 8, top = 905 - (rows.length - 1) * lineHeight / 2;
+      const boxWidth = Math.max(...rows.map(row => ctx.measureText(row).width)) + 48;
+      ctx.save();ctx.shadowBlur = 0;ctx.fillStyle = 'rgba(0,0,0,.76)';
+      roundRect(ctx, 960 - boxWidth / 2, top - size / 2 - 12, boxWidth, rows.length * lineHeight + 20, 10);
+      ctx.fill();ctx.restore();
+      rows.forEach((row, index) => textShadowed(ctx, row, 960, top + index * lineHeight, size, '#f5f3ec', {font: FONT_UI, glowBlur: 0}));
       continue;
     }
     const head = heads[who];

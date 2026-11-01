@@ -18,6 +18,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from pipeline.speech.narrator import Narrator, verify, wav_seconds  # noqa: E402
+from pipeline.speech.caption_timing import align_caption_words  # noqa: E402
 
 GAP = .4          # pause between a line and its twist
 
@@ -122,6 +123,14 @@ def main() -> int:
         dur = len(audio) / sr
         ln['voice_file'] = name
         ln['voice_dur'] = round(dur, 3)
+        main_words = next(r['words'] for r in records if r['shot'] == i and r['line'] == k and r['part'] == 'main')
+        ln['word_times'] = align_caption_words(ln['text'], main_words, len(a1) / sr)
+        if p2:
+            twist_words = next(r['words'] for r in records if r['shot'] == i and r['line'] == k and r['part'] == 'twist')
+            offset = len(a1) / sr + GAP
+            for word in align_caption_words(ln['twist'], twist_words, len(a2) / sr):
+                word['start'] = round(word['start'] + offset, 3); word['end'] = round(word['end'] + offset, 3)
+                ln['word_times'].append(word)
         ln['cps'] = round(max(9.0, len(ln['text']) / max(.4, len(a1) / sr * .92)), 2)
         if p2:
             ln['twist_at'] = round(len(a1) / sr + GAP, 3)
