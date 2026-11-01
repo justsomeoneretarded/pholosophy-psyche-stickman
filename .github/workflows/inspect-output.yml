@@ -1,76 +1,52 @@
-name: Inspect finished film
-# Inspect the final ACE-Step mix after the interim review.
+name: Inspect encoded production output
 on:
   workflow_dispatch:
     inputs:
-      run_id:
-        description: Production run whose review copy should be inspected
+      source_run_id:
         type: string
-        default: '41324973301'
+        default: '41341144570'
   push:
     paths: ['.github/workflows/inspect-output.yml']
 permissions:
   contents: write
+  actions: read
 jobs:
   inspect:
     runs-on: ubuntu-24.04
-    timeout-minutes: 12
+    timeout-minutes: 35
     env:
-      REVIEW_RUN_ID: ${{ inputs.run_id || '41324973301' }}
+      SOURCE_RUN: ${{ inputs.source_run_id || '41341144570' }}
+      GH_TOKEN: ${{ github.token }}
+      REPO: ${{ github.repository }}
     steps:
       - uses: actions/checkout@v4
-        with:
-          ref: previews
-      - name: Install inspection tools
+      - name: Wait for the production under review
         run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq ffmpeg >/dev/null
-      - name: Extract real frames, audio samples and measurements
-        run: |
-          python3 - <<'PY'
-          import os,json,subprocess,base64,re
-          from pathlib import Path
-          run=os.environ['REVIEW_RUN_ID']
-          if not run.isdigit():raise SystemExit('Run id must be numeric')
-          source=Path('previews')/run
-          video=source/'review.mp4'
-          if not video.exists():raise SystemExit('Review video is not available for '+run)
-          out=source/'inspection';out.mkdir(exist_ok=True)
-          probe=json.loads(subprocess.check_output(['ffprobe','-v','error','-show_format','-show_streams','-of','json',str(video)]))
-          duration=float(probe['format']['duration'])
-          samples=[]
-          for i,fraction in enumerate([.025,.12,.25,.38,.50,.65,.80,.94],1):
-              t=duration*fraction
-              path=out/f'frame-{i:02}.jpg'
-              subprocess.run(['ffmpeg','-y','-v','error','-ss',str(t),'-i',str(video),'-frames:v','1','-vf','scale=960:-2','-q:v','3',str(path)],check=True)
-              path.with_suffix('.jpg.b64').write_text(base64.b64encode(path.read_bytes()).decode())
-              samples.append({'file':path.name,'seconds':round(t,3)})
-          for thumbnail in source.glob('thumbnail-*.jpg'):
-              (out/(thumbnail.name+'.b64')).write_text(base64.b64encode(thumbnail.read_bytes()).decode())
-          audio=[]
-          for i,fraction in enumerate([.06,.34,.72],1):
-              t=duration*fraction
-              path=out/f'audio-{i:02}.wav'
-              subprocess.run(['ffmpeg','-y','-v','error','-ss',str(t),'-i',str(video),'-t','8','-vn','-ar','16000','-ac','1','-c:a','pcm_s16le',str(path)],check=True)
-              path.with_suffix('.wav.b64').write_text(base64.b64encode(path.read_bytes()).decode())
-              audio.append({'file':path.name,'seconds':round(t,3)})
-          result=subprocess.run(['ffmpeg','-v','info','-i',str(video),'-vn','-af','ebur128=peak=true','-f','null','-'],capture_output=True,text=True,check=True)
-          (out/'audio-levels.txt').write_text(result.stderr[-2200:])
-          report={'source_run':run,'source':'review copy, not the full-resolution production master','probe':probe,'frames':samples,'audio_samples':audio}
-          (out/'inspection.json').write_text(json.dumps(report,indent=2))
-          print(json.dumps({'duration':duration,'frames':samples,'audio':audio},indent=2))
+          python - <<'PY'
+          import os,json,time,urllib.request
+          url='https://api.github.com/repos/'+os.environ['REPO']+'/actions/runs/'+os.environ['SOURCE_RUN']
+          for _ in range(60):
+              with urllib.request.urlopen(urllib.request.Request(url,headers={'Authorization':'Bearer '+os.environ['GH_TOKEN']})) as r:run=json.load(r)
+              if run['status']=='completed':
+                  if run['conclusion']!='success':raise SystemExit('Production failed; inspect its preserved diagnostics')
+                  break
+              time.sleep(20)
+          else:raise SystemExit('Production still running; this inspection has not passed')
           PY
-      - name: Publish inspection data for review
+      - uses: actions/download-artifact@v4
+        with:
+          name: philosophy-video
+          run-id: ${{ env.SOURCE_RUN }}
+          github-token: ${{ github.token }}
+          path: review
+      - name: Inspect frames from the encoded master
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add "previews/$REVIEW_RUN_ID/inspection/"
-          if ! git diff --cached --quiet; then
-            git commit -m "Inspection snapshots and audio for run $REVIEW_RUN_ID"
-            git push origin HEAD:previews
-          fi
+          sudo apt-get install -y -qq ffmpeg >/dev/null
+          python scripts/inspect_encoded.py review
+      - name: Publish inspection
+        run: bash scripts/publish_review.sh review "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" "encoded-$SOURCE_RUN" "$RUNNER_TEMP/inspection-publisher"
       - uses: actions/upload-artifact@v4
         with:
-          name: inspection-${{ env.REVIEW_RUN_ID }}
-          path: previews/${{ env.REVIEW_RUN_ID }}/inspection/
+          name: encoded-output-inspection
+          path: review/
           retention-days: 7

@@ -8,6 +8,7 @@ falls back to the synthesized bed, so a render never fails because of music.
 from __future__ import annotations
 
 import json
+import os
 import shutil
 import sys
 import time
@@ -24,7 +25,7 @@ def notice(title, message, level='notice'):
 def main() -> int:
     root, film_path, output = sys.argv[1], Path(sys.argv[2]), Path(sys.argv[3])
     film = json.loads(film_path.read_text())
-    seconds = min(240.0, sum(s['dur'] for s in film['shots']) + 2)
+    seconds = min(float(os.environ.get('ACE_SCORE_SECONDS','45')), sum(s['dur'] for s in film['shots']) + 2)
     prompt = (film.get('music') or {}).get('prompt') or DEFAULT_PROMPT
     sys.path.insert(0, root)
     try:

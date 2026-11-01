@@ -352,7 +352,7 @@ def mix(cues_path, music_path, out_path, ffmpeg='ffmpeg'):
         busy = signal.fftconvolve(has_voice.astype(float), np.ones(k), mode='same') > .5
         duck[busy] = np.minimum(duck[busy], .38)
     duck = signal.fftconvolve(duck, np.ones(int(.3 * SR)) / int(.3 * SR), mode='same')
-    fade = np.ones(n); fl = int(1.2 * SR); fade[-fl:] = np.linspace(1, 0, fl); fade[:int(.4 * SR)] = np.linspace(0, 1, int(.4 * SR))
+    fade = np.ones(n); end = min(n, int(dur * SR)); fl = min(end, int(1.2 * SR)); fade[end-fl:end] = np.linspace(1, 0, fl); fade[end:] = 0; fade[:int(.4 * SR)] = np.linspace(0, 1, int(.4 * SR))
     out += m * (g * duck * fade)[:, None]
     # ambience beds, crossfaded per shot
     beds = {}
@@ -389,6 +389,9 @@ def mix(cues_path, music_path, out_path, ffmpeg='ffmpeg'):
     if has_voice.any():
         vpeak = np.max(np.abs(voice)) or 1
         out[:, 0] += voice / vpeak * .62; out[:, 1] += voice / vpeak * .62
+    # Fade the complete mix to the picture endpoint, including ambience/effect tails.
+    end=min(n,int(dur*SR)); tail=min(end,int(.35*SR))
+    out[end-tail:end] *= np.linspace(1,0,tail)[:,None]; out[end:]=0
     out = np.tanh(out * 1.1) * .95
     pre = Path(out_path).with_suffix('.pre.wav')
     wavfile.write(pre, SR, (out * 32767).astype(np.int16))
