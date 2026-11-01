@@ -1,19 +1,19 @@
-"""Write a narrated concept film (love, heartbreak, addiction, nihilism...) as a Day One-style shot list.
+"""Write a narrated concept film (love, heartbreak, addiction, nihilism...) as an animated shot list.
 
   python story/essay.py concept --title "Addiction" [--minutes auto|5] --dir build/writing
   python story/essay.py shots   --dir build/writing
   python story/essay.py merge   --dir build/writing --out build/film.json
 
-Nothing is pre-scripted: for every title the writer invents a concrete story that dramatizes the
-concept (who the hero is, where they are, what they do, what the inner voice says), and a narrator
-explains the idea over the action. Every shot is composed from the engine's vocabulary
-(engine/vocab.json): sets, time and weather, poses, moods, props, phone screens, notes, calendars,
-speech bubbles, the inner voice, counters, big words and camera framing.
+Nothing is pre-scripted. The film's structure comes from explaining the concept: the writer first
+works out the explanation, then decides, idea by idea, how to show it (a moment in one person's
+life, a different person, a metaphor acted out, a montage, a lesson, the inside of a mind...), and
+builds every place from parts. Checks reject films that fall back on the same moves.
 """
 from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 import sys
 import time
@@ -28,39 +28,22 @@ from pipeline.writing.quotation import has_attributed_quotation  # noqa: E402
 
 WPS = 2.45            # narration words per second (Chatterbox, calm delivery)
 
-FORMAT = """THE FORMAT: a narrated animated video essay in the visual language of Day One Films ("Loneliness", "Lust vs Love",
-"Your Winter Arc Starts Now"), explaining one concept from psychology or philosophy.
+STYLE = """THE STYLE (the look, not the story): minimal 2D animation. Soft cream blob characters with expressive faces and real body
+acting; other people with their own hair, clothes and colours; dark, simple places lit by pools of light (lamps, windows, screens,
+streetlights, sunsets); colour grades that follow the emotion; a calm narrator; speech bubbles; occasional big words on screen.
+A black silhouette with glowing eyes MAY personify a force inside someone (a craving, a fear, grief...) when that genuinely helps
+explain the concept - it is a tool, not a requirement, and most concepts do not need it in every section."""
 
-THE PICTURE - a small human story that makes the concept physical:
-- A plain cream blob character (the hero) lives through the concept in ordinary, specific places: a bedroom at 3:17am, a desk lit by
-  a lamp, a kitchen with the fridge light, a bus stop in the rain, a cafe, a park bench, a rooftop at sunset, a gym, a hallway, an office.
-- THE INNER VOICE: a black silhouette with glowing eyes is the concept's dark side made visible (craving for addiction, doubt for love,
-  emptiness for nihilism, the past for heartbreak, fear, envy...). Its glow colour fits it. It stands beside the hero at weak moments
-  and says SHORT lowercase lines (2-6 words): "just one more.", "nobody would notice.", "what's the point?". It wins early, loses at the end.
-- Other people appear (friends, a partner, strangers) with distinct looks, and short lowercase dialogue in speech bubbles: "you okay?", "...yeah."
-- SPECIFIC PHYSICAL DETAILS carry the meaning: a message typed then deleted, a call declined, a feed scrolling at 2am, a phone switched off,
-  a note written in a notebook, a calendar with days crossed off, an alarm, two coffees on a table, rain, a door opening onto light.
-- The hero MOVES and ACTS: walks, sits, lies awake, slumps, hugs knees, types, calls, cries, laughs, runs, falls, gets up, hugs someone.
-- Colour carries emotion: cold or grey while stuck, the inner voice's colour in temptation, warm amber in connection, sunset for hope.
-- An optional story device the viewer can track: a counter (e.g. "DAYS CLEAN 0", or two that contrast like "SEEN / KNOWN"),
-  day chapters ("DAY 1", "DAY 30"), or none.
-
-THE NARRATION - a calm, intelligent voice-over that EXPLAINS the concept while the story plays:
-- It defines the concept clearly, explains how it works (the psychology or philosophy, with real thinkers or well-established ideas named
-  accurately in your own words), why it feels the way it does, the strongest turn or objection, and what can change.
-- It is concrete and connected to what is on screen ("He tells himself it's one more video. The brain calls that a reward."), never a lecture
-  detached from the picture. Short spoken sentences of 6-18 words. Second person or third person, warm, honest, never preachy.
-- It covers roughly half of the running time. Between narrated passages the story plays without narration: acting, dialogue, the inner voice.
-- A few lines can twist: "The phone gave him a new face every second." / "She only had one."
-- NO fabricated or unverified quotations attributed to real people, NO statistics or percentages, NO "studies show", NO diagnosing the viewer.
-- The narrator MAY quote fictional dialogue, self-talk and inner thoughts naturally. Quotation marks alone are allowed.
-
-STRUCTURE (adapt it; do not follow it mechanically): (1) a cold open line on black that hooks; (2) the hero's ordinary moment that shows the
-concept; (3) the narrator names and defines it; (4) the inner voice wins small moments while the narrator explains the mechanism; (5) a
-trigger: a person, a message, an invitation; (6) a first attempt; (7) a relapse or low point; (8) the turn: the narrator's key insight, a decision
-(an extreme close-up, a phone switched off, a note written); (9) change over time; (10) a quiet payoff with another person or with
-themselves; (11) a two-line quote card that twists; (12) a title card with a short tagline; (13) like and subscribe.
-"""
+MODES = {
+    'story': 'a moment in the life of a recurring character (the film may follow one person, a couple, a family...)',
+    'vignette': 'a different person in a different situation who shows the same idea from another angle',
+    'metaphor': 'the idea acted out symbolically in a built place (a stage, a void with a word on the wall, a door of light, a crowd, stairs, chains of people...)',
+    'montage': '3-6 very short shots of different people and places showing one pattern',
+    'lesson': 'the explanation shown directly: a thinker at a desk, a classroom whiteboard, a historical moment, a diagram acted by people',
+    'inner': 'the inside of a mind: a dark room or void, thoughts as words, the other self or the silhouette',
+    'contrast': 'two situations cut against each other to show a difference',
+    'hook': 'a strange or striking image that makes the viewer ask a question',
+}
 
 BANNED = [
     (r'\b\d+(?:\.\d+)?\s*(?:%|percent|per cent)', 'contains a percentage or statistic'),
@@ -97,56 +80,66 @@ def beat_narration(beat):
 
 
 # ---------------------------------------------------------------- stage 1: concept and beats
+def scene_vocab():
+    sc = VOCAB['scene']
+    return (f"base {list(sc['base'])}; wall {sc['wall']}; ground {sc['ground']}; backdrop {sc['backdrop']}; light {sc['light']};\n"
+            f"elements (each {{\"type\", \"x\" 0-100, optional \"label\", \"color\", \"w\", \"front\": true}}): {', '.join(sc['elements'])}")
+
+
 def concept_prompt(title, minutes):
     lo, hi = target_seconds(minutes)
     v = VOCAB
     length = (f'about {minutes:g} minutes ({lo:.0f} seconds) in total' if minutes else
-              f'the length this concept deserves: {lo // 60:.0f}-{hi // 60:.1f} minutes ({lo}-{hi} seconds) in total')
-    words = round((lo + hi) / 2 * .5 * WPS)
-    narration_beats = 10
-    per_beat = round(words / narration_beats)
-    return FORMAT + f"""
-You are the writer-director. For the topic below, invent an ORIGINAL story that dramatizes it (a new hero, new places, new situation;
-never a generic or reused plot) and write the concept and beat sheet as JSON:
-{{"title": short video title,
- "youtube_titles": [3 honest, curiosity-driven titles, max 70 characters],
- "description": 2 short paragraphs then a line of 3-5 hashtags, "tags": [10-15 search tags], "pinned_comment": one question for viewers,
- "thumbnail_words": 2-4 bold words,
- "idea": {{"definition": one sentence, "mechanism": how it works, "thinkers": real thinkers or ideas you will mention, "turn": the key insight}},
- "logline": one sentence of the story,
- "inner_voice": what the black silhouette represents in this film, "demon_color": hex colour,
- "device": {{"type": "counter" | "days" | "none", "items": [{{"label": "...", "color": "#hex"}}]}},
- "cast": [{{"id": "hero", "kind": "hero", "hood": true}}, {{"id": "demon", "kind": "demon"}}, then 1-3 people:
-          {{"id": short lowercase name, "kind": "friend" | "extra", "hair": ..., "hair_color": ..., "top": colour, "top_style": ..., "pants": colour,
-           "scarf": colour, "hat": ..., "glasses": true|false}}],
- "music_prompt": instrumental style for an AI composer: instruments, mood arc, bpm,
- "opening_line": the cold-open line on black,
- "beats": [{{"name": ..., "seconds": 8-24, "where": set, "time": night|dawn|day|dusk, "weather": none|rain|snow, "grade": colour grade,
-            "emotion": hero mood, "what_happens": concrete visible action and acting (who does what, what objects, what is on screens),
-            "narration": [the narrator's sentences over this beat, in order; [] for an unnarrated beat],
-            "demon_line": optional, "dialogue": [{{"who": id, "text": ...}}], "phone": optional what is on the phone,
-            "insert": optional note/calendar/photo/letter and what it shows, "big_text": optional e.g. "DAY 1.",
-            "counter_values": numbers for the device, "chapter": optional, "relapse": true|false}}],
- "quote": [two lines, the second twists the first], "logo": ["X vs Y." or the concept in two or three words, "short tagline"]}}
+              f'the length this concept deserves: {lo // 60:.0f}-{hi / 60:.1f} minutes ({lo}-{hi} seconds) in total')
+    words = round((lo + hi) / 2 * .55 * WPS) if not minutes else round(lo * .55 * WPS)
+    modes = '\n'.join(f'  - {k}: {d}' for k, d in MODES.items())
+    return f"""You write and direct narrated animated video essays that explain one concept from psychology or philosophy.
+{STYLE}
 
-BEATS ARE THE STORY ONLY: the cold-open line, the quote card, the title card and like/subscribe are added automatically from
-"opening_line", "quote" and "logo" - never write beats for them.
-LENGTH: {length}. Write 14-20 beats. Narration in total about {words} words (roughly half the running time), spread over the film
-with some beats unnarrated.
-Plan 16 story beats: about {narration_beats} narrated beats and 6 acting/dialogue-only beats with narration: [].
-Each narrated beat needs about {per_beat} narration words, usually 3-4 full explanatory sentences. Short individual sentences do not mean
-a short total explanation. Count narration words separately from what_happens, dialogue and metadata.
-Producer notes describe creative intent. Use dialogue or demon_line when a character speaks in their own voice.
-The narrator may naturally recount fictional dialogue or inner thoughts in quotation marks, including sample lines from the notes.
-Do not attribute a quotation to a real thinker without verified source evidence; paraphrase their ideas instead.
-If space is tight, shorten visual descriptions, cast details and publishing metadata rather than deleting required narration.
-A narrated beat lasts at least as long as its narration takes to speak ({WPS} words per second) plus a pause.
+HOW TO BUILD THIS FILM (think in this order):
+1. THE EXPLANATION. What is this concept, really? How does it work, where does it come from, what do people get wrong about it,
+   what do real thinkers or well-established ideas say (named accurately, in your own words), what is the strongest objection or
+   turn, and what changes when you understand it? Choose the 5-8 ideas THIS concept needs, in the order that builds understanding.
+   The order is yours; it must not follow a stock template (no default "hero is stuck, relapses, then wins" arc).
+2. THE NARRATION for each idea: calm, intelligent, concrete spoken sentences of 6-18 words, tied to what is on screen. It carries
+   the explanation; roughly half the running time is spoken. NO fabricated or unverified quotations attributed to real people
+   (paraphrase their ideas), NO statistics or percentages, NO "studies show", NO diagnosing the viewer. The narrator MAY recount
+   fictional dialogue, self-talk and inner thoughts; quotation marks alone are allowed.
+3. THE PICTURE for each idea: pick the visual mode that makes THIS idea clearest, and vary the modes across the film:
+{modes}
+   Invent specific, physical moments that belong to this concept only (what would a grieving person touch? what does pride look
+   like at a dinner table?). Do not default to phones, 3am clocks, fridges or calendars unless the concept is about them.
+4. PLACES: any named set ({', '.join(k for k in v['sets'] if k != 'scene')}) or a place you BUILD with "scene"
+   ({scene_vocab()}). Use many different places; build what the idea needs (a hospital room, a wedding, a classroom, a beach, a
+   church, a train, a stage, a graveyard, a family dinner, a void with one word on the wall...).
 
-VOCABULARY - use only these:
-sets: {sets_text()}
-grades: {list(v['grades'])}; moods: {v['moods']}; times: {v['times']}; weather: {v['weather']}
-wardrobe: hair {v['wardrobe']['hair']}; hair_color {v['wardrobe']['hair_color']}; top/pants/scarf colours ({v['wardrobe']['top']});
-top_style {v['wardrobe']['top_style']}; hat {v['hats']}.
+Return JSON:
+{{"title": short title, "youtube_titles": [3 honest curiosity-driven titles, max 70 chars], "description": 2 short paragraphs and a line
+ of 3-5 hashtags, "tags": [10-15], "pinned_comment": a question for viewers, "thumbnail_words": 2-4 bold words,
+ "idea": {{"definition": one sentence, "mechanism": how it works, "thinkers": who or what you cite, "turn": the key insight}},
+ "approach": one sentence on how this film shows the idea (e.g. "five strangers on one night", "one marriage over forty years",
+             "a lecture that keeps turning into real life"),
+ "cast": [{{"id": short lowercase id, "kind": "hero"|"friend"|"extra"|"demon", "hair": ..., "hair_color": ..., "top": colour,
+           "top_style": ..., "pants": colour, "scarf": colour, "hat": ..., "glasses": true|false, "hood": true|false}}],
+ "inner_voice": null or {{"represents": what the silhouette is, "color": "#hex"}},
+ "device": {{"type": "none" | "counter" | "days", "items": [{{"label": ..., "color": "#hex"}}]}} (usually none),
+ "music_prompt": instrumental style for an AI composer that fits THIS concept (instruments, mood arc, bpm),
+ "cold_open": optional line shown on black at the start, or "",
+ "ending": optional final line shown on black, or "",
+ "beats": [{{"idea": which idea this beat explains, "mode": one of {list(MODES)}, "seconds": 8-26,
+            "where": a named set or "scene", "scene": {{the built place}} when where is "scene",
+            "time": night|dawn|day|dusk, "weather": none|rain|snow, "grade": one of {list(v['grades'])},
+            "who": [cast ids on screen], "emotion": main mood, "what_happens": concrete visible action and acting,
+            "narration": [sentences, in order; [] for an unnarrated beat], "dialogue": [{{"who": id, "text": short lowercase line}}],
+            "inner_voice_line": optional 2-6 lowercase words, "big_text": optional word(s) shown large}}]}}
+
+LENGTH: {length}. Write 12-20 beats. Narration in total about {words} words: roughly two thirds of the beats are narrated with
+about {round(words / 10)} words each (usually 3-4 full explanatory sentences); the rest play without narration. Count narration words
+separately from what_happens, dialogue and metadata; if space is tight, shorten visual descriptions and metadata, never the narration.
+A narrated beat lasts at least as long as its narration takes to speak ({WPS} words per second) plus pauses.
+Producer notes describe creative intent; follow them.
+VOCABULARY: moods {v['moods']}; times {v['times']}; weather {v['weather']}; wardrobe: hair {v['wardrobe']['hair']},
+hair_color {v['wardrobe']['hair_color']}, top_style {v['wardrobe']['top_style']}, hat {v['hats']}, colours: {v['wardrobe']['top']}.
 """
 
 
@@ -161,45 +154,68 @@ def drop_end_cards(sheet):
     return len(beats) - len(keep)
 
 
+PHONEY = re.compile(r'\b(phone|scroll|feed|screen|notification|text message|social media|app|online|internet|instagram|tiktok)\b', re.I)
+STOCK = re.compile(r'\b(3:17|3am|3 am|2am|fridge|calendar|alarm clock)\b', re.I)
+
+
+def place_key(b):
+    if b.get('where') == 'scene' and isinstance(b.get('scene'), dict):
+        sc = b['scene']
+        return 'scene:' + str(sc.get('base')) + ':' + ','.join(sorted(str(e.get('type')) for e in sc.get('elements') or [] if isinstance(e, dict))[:4])
+    return str(b.get('where'))
+
+
 def check_concept(sheet, minutes):
     problems = []
     drop_end_cards(sheet)
     beats = sheet.get('beats') or []
-    if len(beats) < 10:
-        problems.append(f'only {len(beats)} beats; write 14-24')
+    if len(beats) < 9:
+        problems.append(f'only {len(beats)} beats; write 12-20')
     lo, hi = target_seconds(minutes)
-    total = 0.
-    words = 0
+    total, words = 0., 0
     for i, b in enumerate(beats):
         lines = beat_narration(b)
         if has_attributed_quotation(' '.join(lines)):
             problems.append(f'beat {i + 1} attributes a quotation to a real thinker without verified source evidence')
         w = sum(len(x.split()) for x in lines)
         words += w
-        secs = max(float(b.get('seconds') or 10), w / WPS + 1.5 * max(1, len(lines)) + 2)
-        total += secs
+        total += max(float(b.get('seconds') or 10), w / WPS + 1.5 * max(1, len(lines)) + 2)
         for line in lines:
             for pattern, why in BANNED:
                 if re.search(pattern, line, re.I):
                     problems.append(f'beat {i + 1} narration {why}: "{line[:80]}"')
         if b.get('where') not in VOCAB['sets']:
-            b['where'] = 'void'
-    total += 18                           # cold open and closing cards
+            b['where'] = 'scene' if isinstance(b.get('scene'), dict) else 'void'
+        if b.get('mode') not in MODES:
+            b['mode'] = 'story'
+    total += 8
     if minutes:
         if abs(total - lo) / lo > .25:
             problems.append(f'the film would run about {total / 60:.1f} minutes but {minutes:g} were asked; '
                             f'{"add" if total < lo else "remove"} beats or narration ({words} narration words now)')
     elif not lo * .85 <= total <= hi * 1.15:
         problems.append(f'the film would run about {total / 60:.1f} minutes with {words} narration words; aim for {lo // 60:.0f}-{hi / 60:.1f} minutes')
-    want = (lo + hi) / 2 * .5 * WPS if not minutes else lo * .5 * WPS
+    want = ((lo + hi) / 2 if not minutes else lo) * .55 * WPS
     if words < want * .7:
-        problems.append(f'only {words} narration words; the narrator should speak about {want:.0f} words (half the running time), '
-                        f'explaining the concept more fully')
-    narrated = sum(1 for b in beats if beat_narration(b))
-    if beats and not .35 <= narrated / len(beats) <= .85:
-        problems.append(f'{narrated} of {len(beats)} beats are narrated; narrate roughly half to two thirds of them')
-    if not any(b.get('demon_line') for b in beats):
-        problems.append('the inner voice never speaks; give it short lines in several beats')
+        problems.append(f'only {words} narration words; the narrator should speak about {want:.0f} words, explaining the concept more fully')
+    if beats:
+        modes = {b['mode'] for b in beats}
+        if len(modes) < 3:
+            problems.append(f'every beat uses the modes {sorted(modes)}; show the ideas in at least 3 different ways ({", ".join(MODES)})')
+        places = {place_key(b) for b in beats}
+        if len(places) < min(6, len(beats) // 2):
+            problems.append(f'only {len(places)} different places; build more places for the different ideas')
+        topic = ' '.join([str(sheet.get('_title', '')), str((sheet.get('idea') or {}).get('definition', ''))])
+        if not PHONEY.search(topic):
+            phone_beats = sum(1 for b in beats if PHONEY.search(str(b.get('what_happens', ''))))
+            if phone_beats > max(2, len(beats) // 5):
+                problems.append(f'{phone_beats} beats revolve around phones or screens, but this concept is not about them; find moments specific to the concept')
+        stock = sum(1 for b in beats if STOCK.search(str(b.get('what_happens', ''))))
+        if stock > 1:
+            problems.append('stock details (3am clocks, fridges, calendars, alarms) appear repeatedly; invent details specific to this concept')
+        demon_beats = sum(1 for b in beats if b.get('inner_voice_line'))
+        if demon_beats > len(beats) // 2:
+            problems.append('the silhouette speaks in most beats; use it only where it explains something')
     return problems, total
 
 
@@ -229,17 +245,24 @@ def stage_concept(title, minutes, out_dir, research=''):
     for p in sheet.get('cast') or []:
         raw = str(p.get('id', '')); clean = re.sub(r'[^a-z0-9_]', '', raw.lower())[:12] or 'friend'
         idmap[raw] = clean; p['id'] = clean
+    clean = lambda v: idmap.get(str(v), re.sub(r'[^a-z0-9_]', '', str(v or '').lower())[:12])
+    iv = sheet.get('inner_voice') if isinstance(sheet.get('inner_voice'), dict) else None
+    if iv and not any(p.get('kind') == 'demon' for p in sheet.get('cast') or []):
+        sheet.setdefault('cast', []).append({'id': 'demon', 'kind': 'demon'})
     for b in sheet.get('beats') or []:
         b['narration'] = beat_narration(b)
+        b['who'] = [clean(w) for w in (b.get('who') or [])]
+        if b.get('inner_voice_line'):
+            b['demon_line'] = b['inner_voice_line']
         for d in b.get('dialogue') or []:
-            d['who'] = idmap.get(str(d.get('who')), re.sub(r'[^a-z0-9_]', '', str(d.get('who', '')).lower())[:12])
+            d['who'] = clean(d.get('who'))
     (out / 'beats.json').write_text(json.dumps(sheet, indent=1, ensure_ascii=False))
     beats = sheet['beats']
-    notice('Concept', f"{sheet.get('title')}: {sheet.get('logline', '')} | inner voice: {sheet.get('inner_voice', '')} | "
+    notice('Concept', f"{sheet.get('title')}: {sheet.get('approach', '')} | {(sheet.get('idea') or {}).get('definition', '')} | "
                       f"{len(beats)} beats, about {report.get('estimated_seconds', 0) / 60:.1f} min, by {writer.used} in {(time.time() - t0):.0f}s")
     for k in range(0, len(beats), 6):
         notice(f'Beats {k + 1}-{min(len(beats), k + 6)}', ' || '.join(
-            f"{i + 1}. {b.get('where')}: {str(b.get('what_happens', ''))[:110]}" for i, b in enumerate(beats[k:k + 6], k)))
+            f"{i + 1}. [{b.get('mode')}] {place_key(b)}: {str(b.get('what_happens', ''))[:100]}" for i, b in enumerate(beats[k:k + 6], k)))
     return sheet
 
 
@@ -248,8 +271,8 @@ def shot_rules():
     v = VOCAB
     return f"""SHOT JSON (one object per shot):
 {{"dur": seconds 2-7,
- "set": one of {list(v['sets'])}, "time": one of {v['times']}, "weather": one of {v['weather']}, "grade": one of {list(v['grades'])},
- "clock": "03:17" (bedroom clock), "camera": {{"frame": one of {list(v['frames'])}, "on": actor id, "push": 0.03-0.12}},
+ "set": one of {list(v['sets'])}, "scene": the built place when set is "scene" (copy the beat's scene; you may move elements or add a few),
+ "time": one of {v['times']}, "weather": one of {v['weather']}, "grade": one of {list(v['grades'])}, "camera": {{"frame": one of {list(v['frames'])}, "on": actor id, "push": 0.03-0.12}},
  "actors": [{{"id": cast id, "x": 0-100, "to": 0-100 (walk/run target), "pose": one of {list(v['poses'])},
              "mood": one of {v['moods']}, "hold": one of {v['holds']}, "facing": -1|0|1, "seated": true,
              "target": id (lean/grab/hug/reachout), "at": seconds delay, "depth": "back", "scale": 0.4-1.2}}],
@@ -261,16 +284,20 @@ def shot_rules():
  "insert": {json.dumps(v['inserts'])},
  "items": [{{"type": one of {v['items']}, "x": 0-100, "on": "nightstand"|"desk"|"table"|"bed"}}],
  "door": [0, 1], "door_at": s, "music": one of {v['music_levels']}, "transition": one of {v['transitions']}}}
-SPOTS per set: {json.dumps({k: s['spots'] for k, s in v['sets'].items()})}
+SCENE PARTS: {scene_vocab()}
+SPOTS per named set: {json.dumps({k: s['spots'] for k, s in v['sets'].items() if s.get('spots')})}
 SEATS: {json.dumps({k: s.get('seat') for k, s in v['sets'].items() if s.get('seat')})}
 RULES:
 - NARRATION: each of the beat's narration sentences goes, in order, on its own shot as {{"who": "narrator", "text": the sentence, "at": 0.2}}.
   While the narrator speaks, the picture keeps acting: give that shot an action that matches the sentence. Never put two narration sentences on one shot.
-- Unnarrated shots are short (2-4 s) and full of acting: dialogue bubbles, the inner voice's lines, phones, inserts, reactions.
+- Unnarrated shots are short (2-4 s) and full of acting: dialogue bubbles, reactions, objects, movement.
+- Stage the beat's MODE: a montage is many short shots of different people/places; a metaphor uses built places and big words;
+  a lesson shows the idea directly; inner uses a void or dark room; contrast cuts between two situations.
 - Vary framing like an editor: never more than two "wide" in a row; "close" for reactions (detailed faces), "extreme" for a decision,
   "two" for two characters together, "medium" for actions, "phone"/"insert" for objects (no actors on those).
 - Characters move: use walk/run with "x" and "to"; use the set's seats for sit/type/lie; change poses from shot to shot.
-- The inner voice (id "demon") stands within 10-14 of the hero when it speaks, pose lean or grab with target "hero".
+- Put the beat's characters ("who") on screen. If the silhouette (id "demon") speaks, it stands within 10-14 of the person it targets,
+  pose lean or grab with "target".
 - Two people at a table or bench face each other: facing 1 on the left, -1 on the right.
 - Every actor gets a mood. Every shot of a beat uses the beat's set, time, weather and grade unless the beat moves.
 """
@@ -278,14 +305,14 @@ RULES:
 
 def shots_for(beats, first, sheet, writer, example):
     cast = ', '.join(f"{p.get('id')} ({p.get('kind')})" for p in sheet.get('cast', []) if p.get('id'))
-    system = FORMAT + '\n' + shot_rules() + f"""
-You are the storyboard artist. Turn EACH beat below into 2-6 shots (more shots for longer beats; one narration sentence per shot).
+    system = STYLE + '\n' + shot_rules() + f"""
+You are the storyboard artist. Turn EACH beat below into 2-6 shots (more for longer beats; one narration sentence per shot).
 Reply with JSON only: {{"beats": [{{"beat": beat number, "shots": [...]}}]}}.
-Cast: {cast}. Inner voice: {sheet.get('inner_voice', '')}. Story device: {json.dumps(sheet.get('device') or {})} - put counter values in hud.values.
-Example shots from a different film in this visual language (copy the JSON shape and craft, not the story):
-{example}"""
-    payload = [{'beat': first + i + 1, **{k: v for k, v in b.items() if k != 'seconds'}, 'seconds': b.get('seconds')} for i, b in enumerate(beats)]
-    user = f"Film: {sheet.get('title')} - {sheet.get('logline', '')}\nBeats:\n{json.dumps(payload, ensure_ascii=False)}"
+Film approach: {sheet.get('approach', '')}. Cast: {cast}. Silhouette: {json.dumps(sheet.get('inner_voice'))}.
+Story device: {json.dumps(sheet.get('device') or {})} - only if it is a counter, put values in hud.values.
+JSON shape example (content is illustrative only): {example}"""
+    payload = [{'beat': first + i + 1, **{k: v for k, v in b.items() if k not in ('seconds', 'idea')}, 'seconds': b.get('seconds')} for i, b in enumerate(beats)]
+    user = f"Film: {sheet.get('title')} - {(sheet.get('idea') or {}).get('definition', '')}\nBeats:\n{json.dumps(payload, ensure_ascii=False)}"
 
     def validate(data):
         groups = data.get('beats') if isinstance(data, dict) else None
@@ -322,8 +349,9 @@ def place_narration(beat, shots):
         if frame in ('phone', 'insert'):
             base.pop('phone', None); base.pop('insert', None)
             if not base.get('actors'):
-                base['actors'] = [{'id': 'hero', 'x': 50, 'pose': 'stand', 'mood': beat.get('emotion', 'neutral')}]
-        base['camera'] = {'frame': nxt, 'on': 'hero', 'push': .05}
+                base['actors'] = [{'id': lead(beat), 'x': 50, 'pose': 'stand', 'mood': beat.get('emotion', 'neutral')}]
+        on = (base.get('actors') or [{}])[0].get('id', lead(beat))
+        base['camera'] = {'frame': nxt, 'on': on, 'push': .05}
         base['lines'] = []
         shots.insert(shots.index(visual[-1]) + 1, base)
         visual.append(base)
@@ -337,26 +365,37 @@ def place_narration(beat, shots):
 
 
 def ensure_demon(beat, shots):
-    """If the beat's inner-voice line was not staged, add a shot of it beside the hero."""
+    """If the beat's silhouette line was not staged, add a shot of it beside the person it speaks to."""
     line = str(beat.get('demon_line') or '').strip()
     if not line or any(l.get('who') == 'demon' for s in shots for l in (s.get('lines') or [])):
         return shots
+    who = lead(beat)
     anchor = next((s for s in reversed(shots) if s.get('actors')), None)
-    hero = next((a for a in (anchor or {}).get('actors', []) if a.get('id') == 'hero'), None)
-    pose = hero.get('pose') if hero and hero.get('pose') in ('sit', 'slump', 'lie', 'phone', 'type', 'stand', 'hugknees', 'headhands') else 'stand'
-    x = float(hero.get('x', 50)) if hero else 50
-    base = {k: anchor[k] for k in ('set', 'time', 'weather', 'grade', 'clock') if anchor and k in anchor}
-    shots.append({**base, 'dur': 3.2, 'camera': {'frame': 'two', 'on': 'hero', 'push': .06},
-                  'actors': [{'id': 'demon', 'x': x - 12 if x > 30 else x + 12, 'pose': 'lean', 'target': 'hero'},
-                             {'id': 'hero', 'x': x, 'pose': pose, 'mood': beat.get('emotion', 'sad'),
-                              **({'seated': True} if pose == 'phone' and hero and hero.get('seated') else {})}],
+    person = next((a for a in (anchor or {}).get('actors', []) if a.get('id') == who), None)
+    pose = person.get('pose') if person and person.get('pose') in ('sit', 'slump', 'lie', 'phone', 'type', 'stand', 'hugknees', 'headhands') else 'stand'
+    x = float(person.get('x', 50)) if person else 50
+    base = {k: anchor[k] for k in ('set', 'scene', 'time', 'weather', 'grade') if anchor and k in anchor}
+    shots.append({**base, 'dur': 3.2, 'camera': {'frame': 'two', 'on': who, 'push': .06},
+                  'actors': [{'id': 'demon', 'x': x - 12 if x > 30 else x + 12, 'pose': 'lean', 'target': who},
+                             {'id': who, 'x': x, 'pose': pose, 'mood': beat.get('emotion', 'sad'),
+                              **({'seated': True} if person and person.get('seated') else {})}],
                   'lines': [{'who': 'demon', 'text': line, 'at': .7}], 'music': 'low'})
     return shots
 
 
 def example_shots():
-    ref = json.loads((ROOT / 'examples' / 'dayone-style-reference.json').read_text())
-    return json.dumps([ref['shots'][k] for k in (1, 3, 5, 9, 13, 16, 18)], ensure_ascii=False)
+    """Syntax only: two shots in a built place, with neutral placeholder content."""
+    return json.dumps([
+        {'dur': 4.2, 'set': 'scene', 'time': 'dusk', 'grade': 'sunset',
+         'scene': {'base': 'outside', 'backdrop': 'hills', 'ground': 'grass', 'elements': [{'type': 'bench', 'x': 40}, {'type': 'tree', 'x': 75}]},
+         'camera': {'frame': 'wide', 'push': .04},
+         'actors': [{'id': 'ana', 'x': 20, 'to': 38, 'pose': 'walk', 'mood': 'tired'}, {'id': 'leo', 'x': 46, 'pose': 'sit', 'mood': 'content'}],
+         'lines': [{'who': 'narrator', 'text': '<one narration sentence>', 'at': .25}]},
+        {'dur': 2.6, 'set': 'scene', 'time': 'dusk', 'grade': 'sunset',
+         'scene': {'base': 'outside', 'backdrop': 'hills', 'ground': 'grass', 'elements': [{'type': 'bench', 'x': 40}, {'type': 'tree', 'x': 75}]},
+         'camera': {'frame': 'two', 'on': 'ana'},
+         'actors': [{'id': 'ana', 'x': 38, 'pose': 'sit', 'mood': 'shy', 'facing': 1}, {'id': 'leo', 'x': 46, 'pose': 'sit', 'mood': 'happy', 'facing': -1}],
+         'lines': [{'who': 'leo', 'text': '<short line>', 'at': .5}]}], ensure_ascii=False)
 
 
 def stage_shots(out_dir, group=4):
@@ -388,19 +427,27 @@ def stage_shots(out_dir, group=4):
     notice('Storyboard', f'{sum(len(v) for v in result.values())} shots for {len(beats)} beats in {(time.time() - t0) / 60:.1f} min by {writer.used}')
 
 
+def lead(beat):
+    who = [w for w in (beat.get('who') or []) if w and w != 'demon']
+    return who[0] if who else 'hero'
+
+
 def fallback_shots(beat):
     """A plain but correct staging when the model cannot storyboard a beat."""
     mood = beat.get('emotion') if beat.get('emotion') in VOCAB['moods'] else 'neutral'
     base = {k: beat[k] for k in ('time', 'weather', 'grade') if beat.get(k)}
+    base['set'] = beat.get('where', 'void')
+    if base['set'] == 'scene':
+        base['scene'] = beat.get('scene') or {'base': 'void'}
     seat = VOCAB['sets'].get(beat.get('where'), {}).get('seat')
     pose = 'sit' if seat else 'stand'
-    shots = [{**base, 'dur': 3.5, 'set': beat.get('where', 'void'), 'camera': {'frame': 'wide', 'push': .04},
-              'actors': [{'id': 'hero', 'x': 48, 'pose': pose, 'mood': mood}]},
-             {**base, 'dur': 3.0, 'set': beat.get('where', 'void'), 'camera': {'frame': 'close', 'on': 'hero', 'push': .06},
-              'actors': [{'id': 'hero', 'x': 50, 'pose': pose, 'mood': mood}]}]
+    who = [w for w in (beat.get('who') or []) if w and w != 'demon'][:3] or ['hero']
+    people = [{'id': w, 'x': 50 + (k - (len(who) - 1) / 2) * 16, 'pose': pose, 'mood': mood} for k, w in enumerate(who)]
+    shots = [{**base, 'dur': 3.5, 'camera': {'frame': 'wide', 'push': .04}, 'actors': people},
+             {**base, 'dur': 3.0, 'camera': {'frame': 'close', 'on': who[0], 'push': .06}, 'actors': [dict(people[0], x=50)]}]
     if beat.get('demon_line'):
-        shots.append({**base, 'dur': 3.0, 'set': beat.get('where', 'void'), 'camera': {'frame': 'two', 'on': 'hero'},
-                      'actors': [{'id': 'demon', 'x': 38, 'pose': 'lean', 'target': 'hero'}, {'id': 'hero', 'x': 50, 'pose': pose, 'mood': mood}],
+        shots.append({**base, 'dur': 3.0, 'camera': {'frame': 'two', 'on': who[0]},
+                      'actors': [{'id': 'demon', 'x': 38, 'pose': 'lean', 'target': who[0]}, dict(people[0], x=50)],
                       'lines': [{'who': 'demon', 'text': beat['demon_line'], 'at': .6}]})
     return shots
 
@@ -415,6 +462,8 @@ def stage_merge(out_dir, out_path):
         for s in per.get(i) or place_narration(beat, fallback_shots(beat)):
             if not s.get('card') and (s.get('camera') or {}).get('frame') != 'insert':
                 s.setdefault('set', beat.get('where'))
+                if s.get('set') == 'scene' and not isinstance(s.get('scene'), dict):
+                    s['scene'] = beat.get('scene') or {'base': 'void'}
             for key in ('time', 'grade'):
                 if beat.get(key):
                     s.setdefault(key, beat[key])
@@ -424,36 +473,37 @@ def stage_merge(out_dir, out_path):
                 s['hud'].setdefault('alert', True)
             s['beat'] = i + 1
             shots.append(s)
-    cast = {'hero': {'kind': 'hero', 'hood': True}, 'demon': {'kind': 'demon'}}
+    cast = {}
     for p in sheet.get('cast') or []:
         pid = p.get('id')
         if not pid:
             continue
         entry = {k: v for k, v in p.items() if k != 'id' and v not in (None, '', 'none', False)}
-        if pid == 'demon':
+        if pid == 'demon' or entry.get('kind') == 'demon':
             entry = {'kind': 'demon'}
         cast[pid] = {**cast.get(pid, {}), **entry}
+    if not any(c.get('kind') == 'hero' for c in cast.values()):
+        first = next((k for k, c in cast.items() if c.get('kind') != 'demon'), 'hero')
+        cast.setdefault(first, {}).update(kind='hero')
     dev = sheet.get('device') or {}
     hud = {'items': dev.get('items')[:2]} if dev.get('type') == 'counter' and dev.get('items') else None
-    head = []
-    opening = str(sheet.get('opening_line') or '').strip()
+    head, tail = [], []
+    opening = str(sheet.get('cold_open') or sheet.get('opening_line') or '').strip()
     if opening:
         head.append({'dur': 3.4 + len(opening.split()) / WPS, 'music': 'low', 'card': {'style': 'line', 'lines': [opening]},
                      'lines': [{'who': 'narrator', 'text': opening, 'at': .3, 'hidden': True}]})
-    tail = []
-    q = [str(x) for x in (sheet.get('quote') or [])]
-    if len(q) >= 2:
-        tail.append({'dur': 6.0, 'music': 'high', 'card': {'style': 'quote', 'lines': q[:2]},
-                     'lines': [{'who': 'narrator', 'text': q[0], 'twist': q[1], 'at': .4, 'hidden': True}]})
-    logo = [str(x) for x in (sheet.get('logo') or [])]
-    if logo:
-        tail.append({'dur': 4.6, 'music': 'high', 'card': {'style': 'logo', 'lines': logo[:3]}})
-    tail.append({'dur': 4.4, 'music': 'mid', 'card': {'style': 'cta', 'lines': ['If this made you think, like and subscribe.']},
-                 'actors': [{'id': 'hero', 'x': 50, 'pose': 'wave', 'mood': 'happy', 'scale': .7}]})
-    film = {'title': sheet.get('title') or sheet.get('_title'), 'logline': sheet.get('logline', ''),
-            'demon_color': sheet.get('demon_color'), 'narrator': 'male', 'hud': hud,
+    ending = str(sheet.get('ending') or '').strip()
+    if ending:
+        tail.append({'dur': 3.6 + len(ending.split()) / WPS, 'music': 'high', 'card': {'style': 'line', 'lines': [ending]},
+                     'lines': [{'who': 'narrator', 'text': ending, 'at': .4, 'hidden': True}]})
+    hero = next((k for k, c in cast.items() if c.get('kind') == 'hero'), 'hero')
+    tail.append({'dur': 4.0, 'music': 'mid', 'card': {'style': 'cta', 'lines': ['If this made you think, like and subscribe.']},
+                 'actors': [{'id': hero, 'x': 50, 'pose': 'wave', 'mood': 'happy', 'scale': .7}]})
+    iv = sheet.get('inner_voice') if isinstance(sheet.get('inner_voice'), dict) else {}
+    film = {'title': sheet.get('title') or sheet.get('_title'), 'logline': sheet.get('approach', ''),
+            'demon_color': iv.get('color') or sheet.get('demon_color'), 'narrator': 'male', 'hud': hud,
             'music': {'prompt': sheet.get('music_prompt') or ''}, 'cast': cast, 'shots': head + shots + tail,
-            'publish': {k: sheet.get(k) for k in ('youtube_titles', 'description', 'tags', 'pinned_comment', 'thumbnail_words', 'idea', 'inner_voice')},
+            'publish': {k: sheet.get(k) for k in ('youtube_titles', 'description', 'tags', 'pinned_comment', 'thumbnail_words', 'idea', 'inner_voice', 'approach')},
             'writer': sheet.get('_writer')}
     film, notes = repair(film)
     Path(out_path).parent.mkdir(parents=True, exist_ok=True)

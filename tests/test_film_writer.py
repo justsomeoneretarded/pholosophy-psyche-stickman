@@ -30,7 +30,8 @@ def test_long_sentences_are_split_for_captions():
 
 
 def test_concept_checks_length_and_honesty():
-    beats = [dict(beat(3 if i % 3 else 0, 'go on.'), seconds=10) for i in range(12)]
+    modes = ['story', 'lesson', 'montage', 'metaphor', 'vignette', 'inner']
+    beats = [dict(beat(3 if i % 3 else 0, 'go on.' if i % 4 == 0 else ''), seconds=10, mode=modes[i % 6], where=['bedroom', 'park', 'cafe', 'rooftop', 'street', 'desk', 'hill'][i % 7]) for i in range(12)]
     for b in beats:
         b['narration'] = [x + ' And it keeps teaching him, night after night.' for x in b['narration']]
     ok, total = essay.check_concept({'beats': beats}, None)
@@ -39,6 +40,13 @@ def test_concept_checks_length_and_honesty():
     beats[1]['narration'] = ['Studies show that 80 percent of people relapse.']
     problems, _ = essay.check_concept({'beats': beats}, None)
     assert any('statistic' in p for p in problems) and any('research' in p for p in problems)
+
+
+def test_template_films_are_rejected():
+    beats = [dict(beat(3, ''), seconds=10, mode='story', where='bedroom', what_happens='he scrolls his phone at 3am') for _ in range(12)]
+    problems, _ = essay.check_concept({'beats': beats, '_title': 'Grief'}, None)
+    text = ' '.join(problems)
+    assert 'different ways' in text and 'different places' in text and 'phones' in text and 'stock details' in text
 
 
 def test_fallback_film_repairs_and_renders_contract():

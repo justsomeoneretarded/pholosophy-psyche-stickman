@@ -482,11 +482,14 @@ const SETS = {
   }
 };
 
-function drawItems(ctx, items, set, t) {
+function drawItems(ctx, items, shot, t) {
+  const set = shot.set, S = setFor(shot);
   for (const it of items || []) {
     const fn = ITEMS[it.type]; if (!fn) continue;
     const x = pct(it.x ?? 50);
-    let y = (SETS[set].ground || flatGround)(x);
+    let y = (S.ground || flatGround)(x);
+    if (it.on === 'table' || it.on === 'desk') { const d = S.desk ? S.desk(x) : 0; if (d) y = GROUND - d; }
+    if (it.on === 'bed') { const sh = S.seat ? S.seat(x) : 0; if (sh) y = GROUND - sh; }
     if (it.on === 'nightstand' && set === 'bedroom') y = GROUND - 100;
     if (it.on === 'desk' && set === 'desk') y = GROUND - 118;
     if (it.on === 'table' && set === 'cafe') y = GROUND - 108;

@@ -28,7 +28,7 @@ function setup(film, width = 1920) {
 function actorState(shot, a, u) {
   const cast = FILM.cast[a.id] || FILM.cast[a.kind] || {};
   const kind = a.kind || cast.kind || (a.id === 'demon' ? 'demon' : a.id === 'hero' ? 'hero' : 'extra');
-  const set = SETS[shot.set] || SETS.void, ground = set.ground || flatGround;
+  const set = setFor(shot), ground = set.ground || flatGround;
   const st = { ...cast, ...a, kind, seed: strHash(a.id) % 97 };
   let scale = (a.scale ?? cast.scale ?? (kind === 'demon' ? 1.12 : 1));
   if (a.depth === 'back') scale *= .7;
@@ -143,7 +143,7 @@ function applyGrade(ctx, name) {
 }
 
 function drawWorld(shot, u, t) {
-  const env = envFor(shot, u); const set = SETS[shot.set] || SETS.void;
+  const env = envFor(shot, u); const set = setFor(shot);
   const actors = (shot.actors || []).map(a => ({ ...actorState(shot, a, u), shot }));
   // targets for lean / grab
   for (const a of actors) {
@@ -161,7 +161,7 @@ function drawWorld(shot, u, t) {
   const back = actors.filter(a => a.st.depth === 'back');
   const front = actors.filter(a => a.st.depth !== 'back').sort((a, b) => (a.st.kind === 'demon' ? -1 : 0) - (b.st.kind === 'demon' ? -1 : 0));
   const heads = {};
-  const paintBg = (c) => { applyCam(c, cam); set.draw(c, env, t); drawItems(c, shot.items, shot.set, t); for (const a of back) drawActor(c, a, a.P, cam, u, t, heads); };
+  const paintBg = (c) => { applyCam(c, cam); set.draw(c, env, t); drawItems(c, shot.items, shot, t); for (const a of back) drawActor(c, a, a.P, cam, u, t, heads); };
   if (cam.dof) {
     BGX.setTransform(1, 0, 0, 1, 0, 0); BGX.clearRect(0, 0, BG.width, BG.height); paintBg(BGX);
     ctx.setTransform(1, 0, 0, 1, 0, 0);
@@ -177,7 +177,7 @@ function drawWorld(shot, u, t) {
     rr(ctx, a.st.wx - 78 * s, a.st.wy - (a.w.seat + 6) * s, 156 * s, 20 * s, 7 * s, set.seatFront[0], set.seatFront[1], 2.4 / cam.zoom);
   }
   if (set.fg) { applyCam(ctx, cam); set.fg(ctx, env, t); }
-  if (shot.weather === 'rain' && SETS[shot.set] && SETS[shot.set].outdoor) { applyCam(ctx, cam); rainFront(ctx, t); }
+  if (shot.weather === 'rain' && setFor(shot).outdoor) { applyCam(ctx, cam); rainFront(ctx, t); }
   applyGrade(ctx, shot.grade);
   // Lighting: vignette, plus a red pulse while the demon speaks
   ctx.setTransform(1, 0, 0, 1, 0, 0);

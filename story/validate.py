@@ -25,6 +25,34 @@ def _num(v, lo, hi, default):
         return default
 
 
+SCENE = VOCAB['scene']
+
+
+def clean_scene(sc, notes, i):
+    sc = dict(sc) if isinstance(sc, dict) else {}
+    out = {'base': sc.get('base') if sc.get('base') in SCENE['base'] else 'room'}
+    for key in ('wall', 'ground', 'backdrop', 'light'):
+        if sc.get(key) in SCENE[key]:
+            out[key] = sc[key]
+    els = []
+    for e in sc.get('elements') or []:
+        if not isinstance(e, dict) or e.get('type') not in SCENE['elements']:
+            if isinstance(e, dict) and e.get('type'):
+                notes.append(f'shot {i}: scene element {e.get("type")!r} is not drawable, skipped')
+            continue
+        e = {k: v for k, v in e.items() if k in ('type', 'x', 'y', 'w', 'h', 'label', 'color', 'on', 'open', 'front', 'size', 'count',
+                                                   'state', 'bottles', 'lamp', 'laptop', 'spin', 'strong', 'on_table')}
+        e['x'] = _num(e.get('x'), -5, 105, 50)
+        if 'label' in e:
+            e['label'] = str(e['label'])[:26]
+        for k in ('w', 'size', 'count', 'h', 'y'):
+            if k in e and not isinstance(e[k], (int, float)):
+                e.pop(k)
+        els.append(e)
+    out['elements'] = els[:14]
+    return out
+
+
 def repair(film: dict) -> tuple[dict, list[str]]:
     notes: list[str] = []
     film = dict(film)
@@ -66,6 +94,8 @@ def repair(film: dict) -> tuple[dict, list[str]]:
             continue
         s = dict(raw)
         s['dur'] = round(_num(s.get('dur'), 1.5, 14, 3.2), 2)
+        if s.get('set') == 'scene':
+            s['scene'] = clean_scene(s.get('scene'), notes, i)
         if s.get('set') not in VOCAB['sets']:
             if s.get('set') and not s.get('card'):
                 notes.append(f'shot {i}: unknown set {s.get("set")!r} -> void')
@@ -235,8 +265,6 @@ def repair(film: dict) -> tuple[dict, list[str]]:
         notes.append('added the closing like/subscribe card')
     shots[0].setdefault('transition', 'fade')
     film['shots'] = shots
-    if not any(l['who'] == 'demon' for s in shots for l in s['lines']):
-        notes.append('warning: the demon never speaks; the format relies on its red lines')
     film['duration'] = round(sum(s['dur'] for s in shots), 2)
     return film, notes
 
