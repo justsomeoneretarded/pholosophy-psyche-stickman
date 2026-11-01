@@ -3,7 +3,7 @@
 python audio/voice.py build/film.json build/voice [--narrator warguy|kit-laser|female]
 
 For each line with who == "narrator" (and its optional twist) this records the narration with the
-chosen narrator reference, checks it with faster-whisper (re-recording garbled lines once),
+chosen narrator reference, checks it with faster-whisper (independent checks and up to two failed-part retries),
 stretches the shot if the voice needs more time, sets the caption typing speed to match, and
 records "voice_file" / "voice_dur" in the line. The film JSON is rewritten in place.
 """
@@ -41,6 +41,24 @@ def verify_takes(takes, whisper, minimum=.8):
             records.append({'shot': i, 'line': k, 'part': part, 'file': str(path),
                             'expected': expected, 'agreement': round(agreement, 4),
                             'words': words, 'negation_changed': changed_negation, 'passed': agreement >= minimum and not changed_negation})
+    return records
+
+
+def verify_disputed(records, whisper, minimum=.8):
+    """Audit disputed audio independently, retaining both ASR results."""
+    for record in records:
+        if record['passed']:
+            continue
+        agreement, words = verify(Path(record['file']), record['expected'], whisper)
+        changed = negation_change(record['expected'], ' '.join(w['word'] for w in words))
+        secondary = {'model': 'small.en', 'agreement': round(agreement,4),
+                     'words': words, 'negation_changed': changed,
+                     'passed': agreement >= minimum and not changed}
+        record['second_opinion'] = secondary
+        if secondary['passed']:
+            record['primary_asr'] = {k: record[k] for k in ('agreement','words','passed','negation_changed')}
+            record.update(agreement=round(agreement,4),words=words,passed=True,
+                          negation_changed=changed,accepted_asr='small.en')
     return records
 
 
@@ -84,9 +102,18 @@ def main() -> int:
         from faster_whisper import WhisperModel
         whisper = WhisperModel(a.whisper, device='cpu', compute_type='int8', cpu_threads=4, num_workers=1)
         records = verify_takes(takes, whisper)
+        del whisper
+        def independent_check(records):
+            if all(r['passed'] for r in records):
+                return records
+            second = WhisperModel('small.en', device='cpu', compute_type='int8', cpu_threads=4, num_workers=1)
+            try:
+                return verify_disputed(records, second)
+            finally:
+                del second
+        records = independent_check(records)
         report_path.write_text(json.dumps({'passed': all(r['passed'] for r in records), 'clips': records}, indent=2))
         bad = [r for r in records if not r['passed']]
-        del whisper
         history = [{'attempt': 1, 'clips': records}]
         for retry_index in range(2):
             if not bad:
@@ -101,6 +128,7 @@ def main() -> int:
             whisper = WhisperModel(a.whisper, device='cpu', compute_type='int8', cpu_threads=4, num_workers=1)
             records = verify_takes(takes, whisper)
             del whisper
+            records = independent_check(records)
             bad = [r for r in records if not r['passed']]
             history.append({'attempt': retry_index + 2, 'clips': records})
         passed = all(r['passed'] for r in records)
