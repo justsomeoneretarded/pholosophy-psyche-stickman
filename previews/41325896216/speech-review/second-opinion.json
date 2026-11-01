@@ -1,0 +1,120 @@
+[
+  {
+    "original": {
+      "shot": 38,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-038-0-a.wav",
+      "expected": "Heartbreak fades, but its lessons linger like a soft echo.",
+      "agreement": 0.7619,
+      "words": [
+        {
+          "word": "Heartbreak",
+          "start": 0.0,
+          "end": 0.52
+        },
+        {
+          "word": "fates,",
+          "start": 0.52,
+          "end": 1.08
+        },
+        {
+          "word": "but",
+          "start": 1.22,
+          "end": 1.28
+        },
+        {
+          "word": "it's",
+          "start": 1.28,
+          "end": 1.48
+        },
+        {
+          "word": "lessons",
+          "start": 1.48,
+          "end": 1.66
+        },
+        {
+          "word": "linger",
+          "start": 1.66,
+          "end": 2.12
+        },
+        {
+          "word": "like",
+          "start": 2.12,
+          "end": 2.44
+        },
+        {
+          "word": "a",
+          "start": 2.44,
+          "end": 2.54
+        },
+        {
+          "word": "soft",
+          "start": 2.54,
+          "end": 2.78
+        },
+        {
+          "word": "echo.",
+          "start": 2.78,
+          "end": 3.12
+        }
+      ],
+      "passed": false
+    },
+    "independent_model": "small.en CPU INT8",
+    "agreement": 1.0,
+    "words": [
+      {
+        "word": "Heartbreak",
+        "start": 0.0,
+        "end": 0.6
+      },
+      {
+        "word": "fades,",
+        "start": 0.6,
+        "end": 0.98
+      },
+      {
+        "word": "but",
+        "start": 1.26,
+        "end": 1.32
+      },
+      {
+        "word": "its",
+        "start": 1.32,
+        "end": 1.48
+      },
+      {
+        "word": "lessons",
+        "start": 1.48,
+        "end": 1.84
+      },
+      {
+        "word": "linger",
+        "start": 1.84,
+        "end": 2.24
+      },
+      {
+        "word": "like",
+        "start": 2.24,
+        "end": 2.46
+      },
+      {
+        "word": "a",
+        "start": 2.46,
+        "end": 2.62
+      },
+      {
+        "word": "soft",
+        "start": 2.62,
+        "end": 2.88
+      },
+      {
+        "word": "echo.",
+        "start": 2.88,
+        "end": 3.2
+      }
+    ],
+    "negation_changed": false
+  }
+]
