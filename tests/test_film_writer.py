@@ -44,9 +44,11 @@ def test_concept_checks_length_and_honesty():
 
 def test_template_films_are_rejected():
     beats = [dict(beat(3, ''), seconds=10, mode='story', where='bedroom', what_happens='he scrolls his phone at 3am') for _ in range(12)]
-    problems, _ = essay.check_concept({'beats': beats, '_title': 'Grief'}, None)
+    sheet = {'beats': beats, '_title': 'Grief'}
+    problems, _ = essay.check_concept(sheet, None)
     text = ' '.join(problems)
-    assert 'different ways' in text and 'different places' in text and 'phones' in text and 'stock details' in text
+    assert 'phones' in text and 'stock details' in text and 'no people' in text
+    assert len(sheet['_visual_review_notes']) == 2
 
 
 def test_fallback_film_repairs_and_renders_contract():
