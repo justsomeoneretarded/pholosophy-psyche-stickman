@@ -1,0 +1,72 @@
+{
+ "title": "What If Nothing Really Matters?",
+ "idea": {
+  "definition": "The view that existence lacks inherent meaning or value.",
+  "mechanism": "Meaning is a human construct projected onto a indifferent universe.",
+  "turn": "Recognizing this can free us to create our own purpose.",
+  "thinkers": "Friedrich Nietzsche, Jean-Paul Sartre, Albert Camus"
+ },
+ "approach": "Explore the paradox of nihilism as both loss and liberation.",
+ "cast": [
+  {
+   "id": "alex",
+   "kind": "hero"
+  },
+  {
+   "id": "sam",
+   "kind": "friend"
+  },
+  {
+   "id": "silhouette",
+   "kind": "demon"
+  }
+ ],
+ "inner_voice": {
+  "represents": "existential doubt",
+  "color": "#4a148c"
+ },
+ "spine": [
+  {
+   "idea": "Introduce nihilistic claim",
+   "mode": "hook",
+   "where": "void with dim light",
+   "what_happens": "silhouette whispers “nothing matters”"
+  },
+  {
+   "idea": "Explain meaning as human projection",
+   "mode": "lesson",
+   "where": "desk with books",
+   "what_happens": "alex reads Nietzsche"
+  },
+  {
+   "idea": "Show everyday impact of nihilism",
+   "mode": "story",
+   "where": "cafe table",
+   "what_happens": "alex debates with sam"
+  },
+  {
+   "idea": "Present common objection – despair",
+   "mode": "contrast",
+   "where": "park bench vs. rooftop",
+   "what_happens": "sadness versus calm"
+  },
+  {
+   "idea": "Introduce existential freedom",
+   "mode": "metaphor",
+   "where": "stage with open door",
+   "what_happens": "silhouette fades, light floods"
+  },
+  {
+   "idea": "Illustrate self‑crafted purpose",
+   "mode": "vignette",
+   "where": "gym training",
+   "what_happens": "alex sets personal goal"
+  },
+  {
+   "idea": "Conclude with balanced view",
+   "mode": "inner",
+   "where": "mind void with word “choice”",
+   "what_happens": "inner_voice glows, Alex smiles"
+  }
+ ]
+}

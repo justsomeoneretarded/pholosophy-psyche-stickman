@@ -1,0 +1,252 @@
+[
+ {
+  "first_beat": 1,
+  "beats": [
+   {
+    "idea": "Introduce nihilistic claim",
+    "mode": "hook",
+    "where": "void with dim light",
+    "seconds": 20,
+    "who": [
+     "silhouette",
+     "alex"
+    ],
+    "emotion": "bleak",
+    "what_happens": "silhouette whispers “nothing matters”",
+    "narration": [
+     "In the empty void, a dark silhouette leans close, its eyes glowing with cold certainty.",
+     "It murmurs that the universe is indifferent, and every effort is ultimately meaningless."
+    ],
+    "time": "night",
+    "weather": "still",
+    "grade": "cool"
+   },
+   {
+    "idea": "Introduce nihilistic claim",
+    "mode": "metaphor",
+    "where": "scene",
+    "seconds": 20,
+    "who": [
+     "alex",
+     "silhouette"
+    ],
+    "emotion": "curious",
+    "what_happens": "alex steps toward a massive locked door, silhouette fades behind it",
+    "narration": [
+     "Alex reaches a towering door, its surface smooth and unmarked, while the silhouette recedes into shadow.",
+     "The silent question remains: if nothing matters, what will you choose to open?"
+    ]
+   }
+  ]
+ },
+ {
+  "first_beat": 3,
+  "beats": [
+   {
+    "idea": "Present common objection – despair",
+    "mode": "contrast",
+    "where": "park bench",
+    "seconds": 20,
+    "who": [
+     "alex",
+     "sam"
+    ],
+    "emotion": "sad",
+    "what_happens": "alex slumps, sam smiles on rooftop",
+    "narration": [
+     "Alex sits on a lonely park bench, feeling the weight of emptiness pressing his shoulders.",
+     "Across the city, Sam watches the sunrise from a rooftop, calm despite the same void."
+    ],
+    "time": "evening",
+    "weather": "clear",
+    "grade": "blue"
+   },
+   {
+    "idea": "Introduce existential freedom",
+    "mode": "metaphor",
+    "where": "stage",
+    "seconds": 20,
+    "who": [
+     "alex",
+     "silhouette"
+    ],
+    "emotion": "hopeful",
+    "what_happens": "silhouette fades, light floods stage",
+    "narration": [
+     "On an empty stage, the dark silhouette dissolves as a bright doorway swings open.",
+     "Alex steps through, realizing that meaning is a choice he can create."
+    ],
+    "time": "night",
+    "weather": "still",
+    "grade": "warm"
+   }
+  ]
+ },
+ {
+  "first_beat": 5,
+  "beats": [
+   {
+    "idea": "Introduce existential freedom",
+    "mode": "metaphor",
+    "where": "stage",
+    "seconds": 20,
+    "who": [
+     "alex",
+     "silhouette"
+    ],
+    "emotion": "hopeful",
+    "what_happens": "silhouette fades, light floods stage",
+    "narration": [
+     "A dark silhouette whispers doubt, then dissolves as a bright doorway swings open.",
+     "Alex steps through, feeling the weight lift and the choice to create meaning."
+    ],
+    "time": "night",
+    "weather": "still",
+    "grade": "warm"
+   },
+   {
+    "idea": "Illustrate self‑crafted purpose",
+    "mode": "vignette",
+    "where": "gym",
+    "seconds": 20,
+    "who": [
+     "alex"
+    ],
+    "emotion": "determined",
+    "what_happens": "alex sets personal goal",
+    "narration": [
+     "In the gym, Alex loads the bar, eyes fixed on a new personal record.",
+     "Each rep becomes a promise, proof that purpose can be forged through effort."
+    ],
+    "time": "morning",
+    "weather": "clear",
+    "grade": "neutral"
+   }
+  ]
+ },
+ {
+  "first_beat": 7,
+  "beats": [
+   {
+    "idea": "Present common objection – despair",
+    "mode": "contrast",
+    "where": "park bench vs. rooftop",
+    "seconds": 20,
+    "who": [
+     "alex",
+     "sam"
+    ],
+    "emotion": "conflicted",
+    "what_happens": "alex sighs on bench; sam watches sunrise on roof",
+    "narration": [
+     "On a lonely park bench, Alex feels the weight of meaninglessness pressing down.",
+     "Across the city, Sam watches a calm sunrise, reminding that emptiness can also be quiet freedom."
+    ],
+    "time": "dusk",
+    "weather": "windy",
+    "grade": "cool"
+   },
+   {
+    "idea": "Introduce existential freedom",
+    "mode": "metaphor",
+    "where": "stage",
+    "seconds": 20,
+    "who": [
+     "alex",
+     "silhouette"
+    ],
+    "emotion": "hopeful",
+    "what_happens": "silhouette fades, light floods stage",
+    "narration": [
+     "A dark silhouette whispers doubt, then dissolves as a bright doorway swings open.",
+     "Alex steps through, feeling the weight lift and the choice to create meaning."
+    ],
+    "time": "night",
+    "weather": "still",
+    "grade": "warm"
+   }
+  ]
+ },
+ {
+  "first_beat": 9,
+  "beats": [
+   {
+    "idea": "Illustrate self‑crafted purpose",
+    "mode": "vignette",
+    "where": "gym",
+    "seconds": 20,
+    "who": [
+     "alex"
+    ],
+    "emotion": "determined",
+    "what_happens": "alex lifts dumbbell, sets personal goal",
+    "narration": [
+     "In the gym, Alex grips the dumbbell, feeling his muscles tense with intention today.",
+     "He declares a personal goal, promising to train daily for growth and purpose."
+    ],
+    "time": "morning",
+    "weather": "clear",
+    "grade": "bright"
+   },
+   {
+    "idea": "Conclude with balanced view",
+    "mode": "inner",
+    "where": "mind void",
+    "seconds": 20,
+    "who": [
+     "alex"
+    ],
+    "emotion": "peaceful",
+    "what_happens": "inner_voice glows, Alex smiles",
+    "narration": [
+     "Inside Alex's mind, a dark void glows with the single word ‘choice’ hovering bright.",
+     "He smiles, realizing freedom lies in shaping his own meaning each day ahead."
+    ],
+    "time": "dawn",
+    "weather": "still",
+    "grade": "soft"
+   }
+  ]
+ },
+ {
+  "first_beat": 11,
+  "beats": [
+   {
+    "idea": "Illustrate self‑crafted purpose",
+    "mode": "vignette",
+    "where": "gym",
+    "seconds": 20,
+    "who": [
+     "alex"
+    ],
+    "emotion": "hopeful",
+    "what_happens": "alex ties shoes, runs toward treadmill, visualizes future achievement",
+    "narration": [
+     "Alex ties his shoes, steps onto the treadmill, and imagines a future where his strength fuels new possibilities.",
+     "He decides to train each morning, turning the empty gym into a workshop for his own meaning."
+    ],
+    "time": "morning",
+    "weather": "clear",
+    "grade": "bright"
+   },
+   {
+    "idea": "Conclude with balanced view",
+    "mode": "inner",
+    "where": "mind void",
+    "seconds": 20,
+    "who": [
+     "alex"
+    ],
+    "emotion": "calm",
+    "what_happens": "inner_voice glows, word “choice” pulses, Alex breathes slowly",
+    "narration": [
+     "Within Alex's mind a soft violet glow forms the word ‘choice,’ pulsing gently like a quiet heartbeat.",
+     "He inhales, feeling the calm certainty that meaning is a personal invitation, not a preset decree."
+    ],
+    "time": "dawn",
+    "weather": "still",
+    "grade": "soft"
+   }
+  ]
+ }
+]
