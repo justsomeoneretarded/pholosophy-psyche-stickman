@@ -1,0 +1,51 @@
+{
+  "context": "## Maladaptive Rumination as a Transdiagnostic Mediator of Vulnerability and Outcome in Psychopathology.\nSource: https://pubmed.ncbi.nlm.nih.gov/30841644/\nRetrieved abstract excerpt (preserve its population, uncertainty and limitations):\nMaladaptive rumination is a form of negative repetitive thinking which has attracted the interest of researchers, as it is considered a cognitive vulnerability to depression. Some of the original beliefs regarding rumination, in particular its exclusive link with depression, have been questioned in the light of research findings. At present, the very concept of rumination is still unclear, so research has been investigating this topic from different, and somewhat inconsistent, perspectives. A literature review was performed in order to outline some core characteristics of rumination, explain its determinants, and discuss its possible role as a transdiagnostic mediator of vulnerability and outcome in psychopathology. Maladaptive rumination could be interpreted as a dysfunctional coping strategy strictly linked to emotion regulation and metacognition that may occur in several psychopathological conditions, such as psychosis, eating disorders, and alcohol dependence. Evidence allows the interpretation of maladaptive rumination as a transdiagnostic mediator of vulnerability and outcome i\n\n## Development and Validation of a Measure of Self-Critical Rumination.\nSource: https://pubmed.ncbi.nlm.nih.gov/25712674/\nRetrieved abstract excerpt (preserve its population, uncertainty and limitations):\nSelf-criticism is a form of negative self-evaluation that has strong associations with many forms of psychopathology. Rumination is a maladaptive form of repetitive thinking that is associated with many psychological disorders. Although measures of several different types of rumination (e.g., general rumination, depressive rumination, anger rumination) have been developed, none focuses specifically on self-critical rumination. An initial pool of items addressing self-critical rumination was developed by adapting items from existing rumination measures and through a writing task administered to both student and clinical samples. Following an evaluation of content validity, 24 items were administered to a large sample of undergraduates along with measures of related constructs. The final 10-item version of the Self-Critical Rumination Scale showed excellent internal consistency, a clear single-factor structure, convergent relationships with related constructs, and incremental validity over other measures of self-criticism and rumination in predicting both general distress and features \n\n## Rumination (psychology)\nSource: https://en.wikipedia.org/wiki/Rumination_(psychology)\nRumination is the sustained focus on and repetition of negative thoughts and emotions. There are various psychological models of rumination, which focus on different aspects: negative emotions and/or the circumstances surrounding that emotion; discrepancies between one's current and desired status; and the negative themes of uncontrollability and harm in metacognitions.\nRumination is a mechanism that develops and sustains psychopathological conditions such as anxiety, depression, and other mental states. Multiple tools exist to measure ruminative thoughts. Treatments specifically addressing ruminative thought patterns are still in the early stages of development. However, recent meta analyses of randomized-controlled trials suggest that psychological interventions including mindfulness and mindfulness-based interventions can significantly reduce rumination.\n\n## Metacognition\nSource: https://en.wikipedia.org/wiki/Metacognition\nMetacognition is an awareness of one's thought processes and an understanding of the patterns behind them. In simple terms it is \"to think about one's own thinking\". The term comes from the root word meta, meaning \"beyond\", or \"on top of\". Metacognition can take many forms, such as reflecting on one's ways of thinking, and knowing when and how oneself and others use particular strategies for problem-solving. There are generally two components of metacognition: (1) cognitive conceptions and (2) a cognitive regulation system. Research has shown that both components of metacognition play key roles in metaconceptual knowledge and learning. Metamemory, defined as knowing about memory and mnemonic strategies, is an important aspect of metacognition.\nWritings on metacognition date back at least as far as two works by the Greek philosopher Aristotle (384\u2013322 BC): On the Soul and the Parva Naturalia.\n\n## Mindfulness\nSource: https://en.wikipedia.org/wiki/Mindfulness\nIn clinical psychology and well-being, mindfulness is the cognitive skill of, or state reached by intentionally maintaining moment-by-moment awareness of bodily sensations, feelings, thoughts, and immediate surroundings with a non-judgmental or equanimous attitude, counteracting [the mind's] automatic rumination and cognitive elaborations on one's experiences. The term mindfulness derives from the Pali word sati, a significant element of Buddhist traditions, and it incorporates elements from Theravada, Chan, and Tibetan Buddhist meditation techniques.\nMindfulness is a secularized form of meditation, the product of a mutual syncretism between eastern spiritual traditions influenced by western esotericism and religion, and western traditions and psychology influenced by these syncretized eastern traditions. In 1975 it was introduced in western medicine by Herbert Benson, and integrated in the 1970s and 1980s into health-programs and psychotherapy by Jon Kabat-Zinn, Zindel Segal, and Mark Williams. They and others in clinical psychology and psychiatry have developed a number of therapeutic applications based on mindfulness interventions for helping people experiencing a variety of psychological...",
+  "sources": [
+    {
+      "title": "Maladaptive Rumination as a Transdiagnostic Mediator of Vulnerability and Outcome in Psychopathology.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30841644/",
+      "source": "PubMed",
+      "pmid": "30841644",
+      "query": "rumination[Title/Abstract] AND (metacognition[Title/Abstract] OR repetitive thinking[Title/Abstract]) NOT (psychosis[Title] OR schizophrenia[Title] OR bipolar[Title])",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "evidence_type": "review",
+      "doi": "10.3390/jcm8030314"
+    },
+    {
+      "title": "Development and Validation of a Measure of Self-Critical Rumination.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25712674/",
+      "source": "PubMed",
+      "pmid": "25712674",
+      "query": "rumination[Title/Abstract] AND (metacognition[Title/Abstract] OR repetitive thinking[Title/Abstract]) NOT (psychosis[Title] OR schizophrenia[Title] OR bipolar[Title])",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "evidence_type": "review",
+      "doi": "10.1177/1073191115573300"
+    },
+    {
+      "title": "Rumination (psychology)",
+      "url": "https://en.wikipedia.org/wiki/Rumination_(psychology)",
+      "source": "Wikipedia",
+      "query": "rumination psychology metacognition"
+    },
+    {
+      "title": "Metacognition",
+      "url": "https://en.wikipedia.org/wiki/Metacognition",
+      "source": "Wikipedia",
+      "query": "rumination psychology metacognition"
+    },
+    {
+      "title": "Mindfulness",
+      "url": "https://en.wikipedia.org/wiki/Mindfulness",
+      "source": "Wikipedia",
+      "query": "rumination psychology metacognition"
+    }
+  ],
+  "warnings": [],
+  "query": "rumination psychology metacognition"
+}
