@@ -1,0 +1,92 @@
+name: Inspect generated story and staging
+on:
+  workflow_dispatch:
+    inputs:
+      run_id:
+        type: string
+        default: '41324973301'
+  push:
+    paths: ['.github/workflows/inspect-plan.yml']
+permissions:
+  contents: write
+  actions: read
+jobs:
+  inspect:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      SOURCE_RUN_ID: ${{ inputs.run_id || '41324973301' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: film-plan
+          path: build
+          run-id: ${{ env.SOURCE_RUN_ID }}
+          github-token: ${{ github.token }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Renderer
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+      - name: Prepare story review and representative shot times
+        run: |
+          python3 - <<'PY'
+          import json,os,shutil
+          from pathlib import Path
+          film=json.loads(Path('build/film.json').read_text())
+          out=Path('build/plan-review');out.mkdir(exist_ok=True)
+          candidates=[];cursor=0
+          for i,shot in enumerate(film['shots']):
+              if shot.get('actors') and not shot.get('card'):
+                  candidates.append({'shot':i,'time':round(cursor+shot['dur']*.55,3),'set':shot.get('set'),'actors':shot['actors'],'lines':shot.get('lines',[])})
+              cursor+=shot['dur']
+          indices=sorted(set(round(i*(len(candidates)-1)/7) for i in range(8))) if candidates else []
+          selected=[candidates[i] for i in indices]
+          if not selected:raise SystemExit('Film has no staged character shots to inspect')
+          (out/'selection.json').write_text(json.dumps({'run':os.environ['SOURCE_RUN_ID'],'duration':cursor,'selected':selected},indent=2))
+          Path('build/review-times.txt').write_text(','.join(str(s['time']) for s in selected))
+          for source in ['film.json','story.md']:
+              if Path('build',source).exists():shutil.copy2(Path('build',source),out/source)
+          if Path('build/writing/beats.json').exists():shutil.copy2('build/writing/beats.json',out/'beats.json')
+          print('Reviewing',len(film['shots']),'shots and',len(selected),'representative frames')
+          PY
+      - name: Render actual engine snapshots
+        run: |
+          TIMES=$(cat build/review-times.txt)
+          node render/render.mjs --film build/film.json --stills build/plan-review/frames --times "$TIMES" --width 1280
+          python3 - <<'PY'
+          import base64
+          from pathlib import Path
+          for p in Path('build/plan-review/frames').glob('*.jpg'):
+              p.with_suffix('.jpg.b64').write_text(base64.b64encode(p.read_bytes()).decode())
+          PY
+      - uses: actions/checkout@v4
+        with:
+          ref: previews
+          path: review-branch
+      - name: Publish staging review
+        run: |
+          python3 - <<'PY'
+          import os,shutil
+          from pathlib import Path
+          run=os.environ['SOURCE_RUN_ID']
+          if not run.isdigit():raise SystemExit('Invalid run id')
+          out=Path('review-branch/previews')/run/'plan-review'
+          shutil.copytree('build/plan-review',out,dirs_exist_ok=True)
+          PY
+          cd review-branch
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "previews/$SOURCE_RUN_ID/plan-review/"
+          if ! git diff --cached --quiet; then
+            git commit -m "Review generated script and staging for run $SOURCE_RUN_ID"
+            git push origin HEAD:previews
+          fi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: staging-review-${{ env.SOURCE_RUN_ID }}
+          path: build/plan-review/
+          retention-days: 7
