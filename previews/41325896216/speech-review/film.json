@@ -1,0 +1,1923 @@
+{
+ "title": "The Anatomy of Heartbreak",
+ "logline": "Maya’s story unfolds over three seasons, each revealing a layer of the heartbreak process.",
+ "demon_color": "#ff2a2a",
+ "narrator": "male",
+ "hud": null,
+ "music": {
+  "prompt": "soft piano with low synth pads, gentle strings, slow tempo 60‑70 bpm, building to a warm crescendo at the resolution."
+ },
+ "cast": {
+  "hero": {
+   "kind": "hero"
+  },
+  "demon": {
+   "kind": "demon"
+  },
+  "maya": {
+   "kind": "hero",
+   "hair": "long",
+   "hair_color": "brown",
+   "top": "cream",
+   "top_style": "hoodie",
+   "pants": "grey",
+   "hood": true
+  },
+  "leo": {
+   "kind": "friend",
+   "hair": "short",
+   "hair_color": "black",
+   "top": "navy",
+   "top_style": "shirt",
+   "pants": "blue"
+  },
+  "bowlby": {
+   "kind": "friend",
+   "hat": "beanie_green"
+  },
+  "lazarus": {
+   "kind": "friend",
+   "hat": "beanie_green"
+  }
+ },
+ "shots": [
+  {
+   "dur": 6.67,
+   "music": "low",
+   "card": {
+    "style": "line",
+    "lines": [
+     "When love ends, the mind sounds an alarm."
+    ]
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "When love ends, the mind sounds an alarm.",
+     "at": 0.3,
+     "hidden": true
+    }
+   ],
+   "set": "void",
+   "camera": {
+    "frame": "wide"
+   },
+   "actors": [],
+   "sfx": [],
+   "items": [],
+   "transition": "fade"
+  },
+  {
+   "dur": 4.65,
+   "set": "scene",
+   "time": "night",
+   "weather": "none",
+   "grade": "night",
+   "scene": {
+    "base": "void",
+    "wall": "dark",
+    "backdrop": "none",
+    "light": "dim",
+    "elements": [
+     {
+      "type": "word",
+      "x": 50.0,
+      "label": "BREAK",
+      "color": "#ff5555",
+      "w": 30
+     }
+    ]
+   },
+   "camera": {
+    "frame": "wide",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "maya",
+     "x": 50.0,
+     "pose": "stand",
+     "mood": "shocked",
+     "facing": 0,
+     "seated": false
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Heartbreak feels like an alarm ringing inside you.",
+     "at": 0.25
+    }
+   ],
+   "big": {
+    "text": "BREAK",
+    "at": 0.3
+   },
+   "music": "low",
+   "transition": "fade",
+   "beat": 1,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 5.05,
+   "set": "scene",
+   "time": "night",
+   "weather": "none",
+   "grade": "night",
+   "camera": {
+    "frame": "close",
+    "on": "maya",
+    "push": 0.07
+   },
+   "actors": [
+    {
+     "id": "maya",
+     "x": 50.0,
+     "pose": "stand",
+     "mood": "shocked",
+     "facing": 0,
+     "seated": false
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "It announces loss before the mind can process it.",
+     "at": 0.25
+    }
+   ],
+   "music": "low",
+   "transition": "cut",
+   "scene": {
+    "base": "void",
+    "wall": "dark",
+    "backdrop": "none",
+    "light": "dim",
+    "elements": [
+     {
+      "type": "word",
+      "x": 50.0,
+      "label": "BREAK",
+      "color": "#ff5555",
+      "w": 30
+     }
+    ]
+   },
+   "beat": 1,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 4.25,
+   "set": "scene",
+   "time": "night",
+   "weather": "none",
+   "grade": "night",
+   "camera": {
+    "frame": "extreme",
+    "push": 0.09
+   },
+   "actors": [
+    {
+     "id": "maya",
+     "x": 50.0,
+     "pose": "stand",
+     "mood": "shocked",
+     "facing": 0,
+     "seated": false
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The sound is both sudden and relentless.",
+     "at": 0.25
+    }
+   ],
+   "music": "low",
+   "transition": "fade",
+   "scene": {
+    "base": "void",
+    "wall": "dark",
+    "backdrop": "none",
+    "light": "dim",
+    "elements": [
+     {
+      "type": "word",
+      "x": 50.0,
+      "label": "BREAK",
+      "color": "#ff5555",
+      "w": 30
+     }
+    ]
+   },
+   "beat": 1,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 6.25,
+   "set": "bedroom",
+   "time": "dawn",
+   "weather": "none",
+   "grade": "warm",
+   "scene": {
+    "base": "room",
+    "wall": "cream",
+    "ground": "carpet",
+    "backdrop": "none",
+    "light": "warm",
+    "elements": [
+     {
+      "type": "bed",
+      "x": 30
+     },
+     {
+      "type": "window",
+      "x": 70
+     }
+    ]
+   },
+   "camera": {
+    "frame": "wide",
+    "push": 0.04
+   },
+   "actors": [
+    {
+     "id": "maya",
+     "x": 35.0,
+     "pose": "sit",
+     "mood": "sad",
+     "facing": -1,
+     "seated": true
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Maya’s partner left, and her body reacts as if a wound opened.",
+     "at": 0.25
+    }
+   ],
+   "music": "mid",
+   "transition": "cut",
+   "beat": 2,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 4.25,
+   "set": "bedroom",
+   "time": "dawn",
+   "weather": "none",
+   "grade": "warm",
+   "camera": {
+    "frame": "two",
+    "on": "leo",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "maya",
+     "x": 35.0,
+     "pose": "sit",
+     "mood": "sad",
+     "facing": -1,
+     "seated": true
+    },
+    {
+     "id": "leo",
+     "x": 55.0,
+     "pose": "walk",
+     "facing": 1,
+     "seated": false,
+     "to": 55.0
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Attachment bonds, once secure, now signal danger.",
+     "at": 0.25
+    },
+    {
+     "who": "leo",
+     "text": "you okay?",
+     "at": 0.5,
+     "style": "bubble"
+    }
+   ],
+   "music": "mid",
+   "transition": "cut",
+   "beat": 2,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 4.0,
+   "set": "bedroom",
+   "time": "dawn",
+   "weather": "none",
+   "grade": "warm",
+   "camera": {
+    "frame": "close",
+    "on": "maya",
+    "push": 0.07
+   },
+   "actors": [
+    {
+     "id": "maya",
+     "x": 35.0,
+     "pose": "sit",
+     "mood": "sad",
+     "facing": -1,
+     "seated": true
+    },
+    {
+     "id": "leo",
+     "x": 55.0,
+     "pose": "stand",
+     "facing": 1,
+     "seated": false,
+     "hold": "cup"
+    }
+   ],
+   "lines": [
+    {
+     "who": "maya",
+     "text": "just... empty",
+     "at": 0.5,
+     "style": "bubble"
+    }
+   ],
+   "music": "mid",
+   "transition": "cut",
+   "beat": 2,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 4.65,
+   "set": "bedroom",
+   "time": "dawn",
+   "weather": "none",
+   "grade": "warm",
+   "camera": {
+    "frame": "medium",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "maya",
+     "x": 35.0,
+     "pose": "stand",
+     "mood": "sad",
+     "facing": -1,
+     "seated": true
+    },
+    {
+     "id": "leo",
+     "x": 55.0,
+     "pose": "type",
+     "facing": 1,
+     "seated": false
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The brain releases cortisol, the hormone of stress.",
+     "at": 0.25
+    }
+   ],
+   "music": "mid",
+   "transition": "fade",
+   "beat": 2,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 5.0,
+   "set": "bedroom",
+   "time": "dawn",
+   "weather": "none",
+   "grade": "warm",
+   "camera": {
+    "frame": "close",
+    "on": "maya",
+    "push": 0.08
+   },
+   "actors": [
+    {
+     "id": "maya",
+     "x": 35.0,
+     "pose": "sit",
+     "mood": "sad",
+     "facing": -1,
+     "seated": true
+    }
+   ],
+   "lines": [],
+   "music": "mid",
+   "transition": "fade",
+   "beat": 2,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 5.45,
+   "set": "scene",
+   "time": "day",
+   "weather": "none",
+   "grade": "cold",
+   "scene": {
+    "base": "void",
+    "wall": "blue",
+    "backdrop": "none",
+    "light": "cold",
+    "elements": [
+     {
+      "type": "word",
+      "x": 20.0,
+      "label": "CORTISOL",
+      "color": "#88ccff",
+      "w": 20
+     },
+     {
+      "type": "word",
+      "x": 80.0,
+      "label": "RUMINATION",
+      "color": "#ffcc88",
+      "w": 25
+     }
+    ]
+   },
+   "camera": {
+    "frame": "wide",
+    "push": 0.04
+   },
+   "actors": [
+    {
+     "id": "demon",
+     "x": 50.0,
+     "pose": "stand",
+     "mood": "neutral",
+     "facing": 0,
+     "seated": false
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Cortisol spikes, sharpening attention to threat and amplifying emotional pain.",
+     "at": 0.25
+    }
+   ],
+   "music": "low",
+   "transition": "cut",
+   "beat": 3,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 6.65,
+   "set": "scene",
+   "time": "day",
+   "weather": "none",
+   "grade": "cold",
+   "camera": {
+    "frame": "close",
+    "on": "demon",
+    "push": 0.07
+   },
+   "actors": [
+    {
+     "id": "demon",
+     "x": 50.0,
+     "pose": "lean",
+     "mood": "neutral",
+     "facing": 0,
+     "seated": false,
+     "target": "word",
+     "at": 0.5
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Simultaneously, the default mode network lights up, looping memories of the lost bond.",
+     "at": 0.25
+    },
+    {
+     "who": "demon",
+     "text": "the alarm never stops",
+     "at": 0.5,
+     "style": "bubble"
+    }
+   ],
+   "big": {
+    "text": "STRESS LOOP",
+    "at": 0.3
+   },
+   "music": "low",
+   "transition": "cut",
+   "scene": {
+    "base": "void",
+    "wall": "blue",
+    "backdrop": "none",
+    "light": "cold",
+    "elements": [
+     {
+      "type": "word",
+      "x": 20.0,
+      "label": "CORTISOL",
+      "color": "#88ccff",
+      "w": 20
+     },
+     {
+      "type": "word",
+      "x": 80.0,
+      "label": "RUMINATION",
+      "color": "#ffcc88",
+      "w": 25
+     }
+    ]
+   },
+   "beat": 3,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 5.05,
+   "set": "scene",
+   "time": "day",
+   "weather": "none",
+   "grade": "cold",
+   "camera": {
+    "frame": "medium",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "demon",
+     "x": 50.0,
+     "pose": "stand",
+     "mood": "neutral",
+     "facing": 0,
+     "seated": false
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "This is why thoughts replay like a broken record.",
+     "at": 0.25
+    }
+   ],
+   "music": "low",
+   "transition": "fade",
+   "scene": {
+    "base": "void",
+    "wall": "blue",
+    "backdrop": "none",
+    "light": "cold",
+    "elements": [
+     {
+      "type": "word",
+      "x": 20.0,
+      "label": "CORTISOL",
+      "color": "#88ccff",
+      "w": 20
+     },
+     {
+      "type": "word",
+      "x": 80.0,
+      "label": "RUMINATION",
+      "color": "#ffcc88",
+      "w": 25
+     }
+    ]
+   },
+   "beat": 3,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 5.05,
+   "set": "scene",
+   "time": "day",
+   "weather": "none",
+   "grade": "neutral",
+   "scene": {
+    "base": "stage",
+    "wall": "grey",
+    "ground": "stage",
+    "backdrop": "none",
+    "light": "bright",
+    "elements": []
+   },
+   "camera": {
+    "frame": "wide",
+    "push": 0.04
+   },
+   "actors": [
+    {
+     "id": "demon",
+     "x": 50.0,
+     "pose": "stand",
+     "mood": "neutral",
+     "facing": 0,
+     "seated": false
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Bowlby taught us that bonds are evolutionary safety nets.",
+     "at": 0.25
+    }
+   ],
+   "music": "mid",
+   "transition": "cut",
+   "beat": 4,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 5.0,
+   "set": "scene",
+   "time": "day",
+   "weather": "none",
+   "grade": "neutral",
+   "camera": {
+    "frame": "two",
+    "on": "demon",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "demon",
+     "x": 50.0,
+     "pose": "stand",
+     "mood": "neutral",
+     "facing": 0,
+     "seated": false,
+     "target": "bowlby",
+     "at": 0.4
+    },
+    {
+     "id": "bowlby",
+     "x": 30.0,
+     "pose": "stand",
+     "mood": "neutral",
+     "facing": 1,
+     "seated": false
+    },
+    {
+     "id": "lazarus",
+     "x": 70.0,
+     "pose": "stand",
+     "mood": "neutral",
+     "facing": -1,
+     "seated": false
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Lazarus showed how appraisal turns loss into stress.",
+     "at": 0.25
+    }
+   ],
+   "music": "mid",
+   "transition": "cut",
+   "scene": {
+    "base": "stage",
+    "wall": "grey",
+    "ground": "stage",
+    "backdrop": "none",
+    "light": "bright",
+    "elements": []
+   },
+   "beat": 4,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 5.0,
+   "set": "scene",
+   "time": "day",
+   "weather": "none",
+   "grade": "neutral",
+   "camera": {
+    "frame": "close",
+    "on": "demon",
+    "push": 0.07
+   },
+   "actors": [
+    {
+     "id": "demon",
+     "x": 50.0,
+     "pose": "stand",
+     "mood": "neutral",
+     "facing": 0,
+     "seated": false
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Together they explain why heartbreak feels life‑threatening.",
+     "at": 0.25
+    }
+   ],
+   "music": "mid",
+   "transition": "fade",
+   "scene": {
+    "base": "stage",
+    "wall": "grey",
+    "ground": "stage",
+    "backdrop": "none",
+    "light": "bright",
+    "elements": []
+   },
+   "beat": 4,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 6.25,
+   "set": "cafe",
+   "time": "dusk",
+   "weather": "none",
+   "grade": "sunset",
+   "scene": {
+    "base": "outside",
+    "wall": "cream",
+    "ground": "pavement",
+    "backdrop": "city",
+    "light": "warm",
+    "elements": [
+     {
+      "type": "table",
+      "x": 40
+     },
+     {
+      "type": "chair",
+      "x": 45
+     },
+     {
+      "type": "chair",
+      "x": 55
+     }
+    ]
+   },
+   "camera": {
+    "frame": "wide",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "maya",
+     "x": 38.0,
+     "pose": "stand",
+     "mood": "hopeful",
+     "facing": 1
+    },
+    {
+     "id": "leo",
+     "x": 58.0,
+     "pose": "stand",
+     "mood": "content",
+     "facing": -1
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Seeing heartbreak as a survival alarm, not a flaw, changes the response.",
+     "at": 0.25
+    }
+   ],
+   "big": {
+    "text": "COMPASSION",
+    "at": 0.3
+   },
+   "beat": 5,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 4.65,
+   "set": "cafe",
+   "time": "dusk",
+   "weather": "none",
+   "grade": "sunset",
+   "camera": {
+    "frame": "close",
+    "on": "maya",
+    "push": 0.07
+   },
+   "actors": [
+    {
+     "id": "maya",
+     "x": 40.0,
+     "pose": "stand",
+     "mood": "hopeful",
+     "facing": 1
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Self‑compassion becomes the soothing hand that lowers cortisol.",
+     "at": 0.25
+    }
+   ],
+   "big": {
+    "text": "COMPASSION",
+    "at": 0.3
+   },
+   "beat": 5,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 5.05,
+   "set": "cafe",
+   "time": "dusk",
+   "weather": "none",
+   "grade": "sunset",
+   "camera": {
+    "frame": "medium",
+    "on": "maya",
+    "push": 0.06
+   },
+   "actors": [
+    {
+     "id": "maya",
+     "x": 45.0,
+     "pose": "stand",
+     "mood": "hopeful",
+     "facing": 1,
+     "hold": "cup"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The mind can then shift from rumination to repair.",
+     "at": 0.25
+    },
+    {
+     "who": "maya",
+     "text": "i can be kind to myself",
+     "at": 0.4,
+     "style": "bubble"
+    }
+   ],
+   "big": {
+    "text": "COMPASSION",
+    "at": 0.3
+   },
+   "beat": 5,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 2.5,
+   "set": "cafe",
+   "time": "dusk",
+   "weather": "none",
+   "grade": "sunset",
+   "camera": {
+    "frame": "two",
+    "on": "leo",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "maya",
+     "x": 44.0,
+     "pose": "sit",
+     "mood": "hopeful",
+     "facing": 1,
+     "hold": "cup"
+    },
+    {
+     "id": "leo",
+     "x": 56.0,
+     "pose": "sit",
+     "mood": "content",
+     "facing": -1
+    }
+   ],
+   "lines": [],
+   "big": {
+    "text": "COMPASSION",
+    "at": 0.3
+   },
+   "beat": 5,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "cafe",
+   "time": "dusk",
+   "weather": "none",
+   "grade": "sunset",
+   "dur": 3.2,
+   "camera": {
+    "frame": "two",
+    "on": "maya",
+    "push": 0.06
+   },
+   "actors": [
+    {
+     "id": "demon",
+     "x": 32.0,
+     "pose": "lean",
+     "target": "maya"
+    },
+    {
+     "id": "maya",
+     "x": 44.0,
+     "pose": "sit",
+     "mood": "hopeful"
+    }
+   ],
+   "lines": [
+    {
+     "who": "demon",
+     "text": "soften the alarm",
+     "at": 0.7
+    }
+   ],
+   "music": "low",
+   "beat": 5,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 6.65,
+   "set": "scene",
+   "time": "night",
+   "weather": "none",
+   "grade": "night",
+   "scene": {
+    "base": "void",
+    "wall": "black",
+    "backdrop": "none",
+    "light": "none",
+    "elements": [
+     {
+      "type": "word",
+      "x": 20.0,
+      "label": "PAIN",
+      "color": "#ff7777",
+      "w": 15
+     },
+     {
+      "type": "word",
+      "x": 80.0,
+      "label": "HEALING",
+      "color": "#77ff77",
+      "w": 20
+     }
+    ]
+   },
+   "camera": {
+    "frame": "wide",
+    "push": 0.04
+   },
+   "actors": [
+    {
+     "id": "demon",
+     "x": 30.0,
+     "pose": "lean",
+     "mood": "sad",
+     "facing": 1
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Neuroscience shows the same pathways light up for social loss and physical pain.",
+     "at": 0.25
+    }
+   ],
+   "big": {
+    "text": "REWIRE",
+    "at": 0.3
+   },
+   "beat": 6,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 5.85,
+   "set": "scene",
+   "time": "night",
+   "weather": "none",
+   "grade": "night",
+   "camera": {
+    "frame": "close",
+    "on": "demon",
+    "push": 0.07
+   },
+   "actors": [
+    {
+     "id": "demon",
+     "x": 50.0,
+     "pose": "lean",
+     "mood": "sad",
+     "facing": 1
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "As cortisol fades, oxytocin and dopamine begin to rebuild connection circuits.",
+     "at": 0.25
+    }
+   ],
+   "big": {
+    "text": "REWIRE",
+    "at": 0.3
+   },
+   "scene": {
+    "base": "void",
+    "wall": "black",
+    "backdrop": "none",
+    "light": "none",
+    "elements": [
+     {
+      "type": "word",
+      "x": 20.0,
+      "label": "PAIN",
+      "color": "#ff7777",
+      "w": 15
+     },
+     {
+      "type": "word",
+      "x": 80.0,
+      "label": "HEALING",
+      "color": "#77ff77",
+      "w": 20
+     }
+    ]
+   },
+   "beat": 6,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 4.25,
+   "set": "scene",
+   "time": "night",
+   "weather": "none",
+   "grade": "night",
+   "camera": {
+    "frame": "medium",
+    "on": "demon",
+    "push": 0.06
+   },
+   "actors": [
+    {
+     "id": "demon",
+     "x": 70.0,
+     "pose": "lean",
+     "mood": "sad",
+     "facing": 1
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Recovery is a rewiring, not a disappearance.",
+     "at": 0.25
+    }
+   ],
+   "big": {
+    "text": "REWIRE",
+    "at": 0.3
+   },
+   "scene": {
+    "base": "void",
+    "wall": "black",
+    "backdrop": "none",
+    "light": "none",
+    "elements": [
+     {
+      "type": "word",
+      "x": 20.0,
+      "label": "PAIN",
+      "color": "#ff7777",
+      "w": 15
+     },
+     {
+      "type": "word",
+      "x": 80.0,
+      "label": "HEALING",
+      "color": "#77ff77",
+      "w": 20
+     }
+    ]
+   },
+   "beat": 6,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 2.5,
+   "set": "scene",
+   "time": "night",
+   "weather": "none",
+   "grade": "night",
+   "camera": {
+    "frame": "insert"
+   },
+   "insert": {
+    "type": "note",
+    "text": "..."
+   },
+   "lines": [],
+   "beat": 6,
+   "scene": {
+    "base": "room",
+    "elements": []
+   },
+   "actors": [],
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "scene",
+   "time": "night",
+   "weather": "none",
+   "grade": "night",
+   "dur": 3.2,
+   "camera": {
+    "frame": "two",
+    "on": "hero",
+    "push": 0.06
+   },
+   "actors": [
+    {
+     "id": "demon",
+     "x": 38.0,
+     "pose": "lean",
+     "target": "hero"
+    },
+    {
+     "id": "hero",
+     "x": 50.0,
+     "pose": "stand",
+     "mood": "sad"
+    }
+   ],
+   "lines": [
+    {
+     "who": "demon",
+     "text": "pain becomes a bridge",
+     "at": 0.7
+    }
+   ],
+   "music": "low",
+   "scene": {
+    "base": "void",
+    "wall": "black",
+    "backdrop": "none",
+    "light": "none",
+    "elements": [
+     {
+      "type": "word",
+      "x": 20.0,
+      "label": "PAIN",
+      "color": "#ff7777",
+      "w": 15
+     },
+     {
+      "type": "word",
+      "x": 80.0,
+      "label": "HEALING",
+      "color": "#77ff77",
+      "w": 20
+     }
+    ]
+   },
+   "beat": 6,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 6.65,
+   "set": "scene",
+   "time": "day",
+   "weather": "none",
+   "grade": "neutral",
+   "scene": {
+    "base": "room",
+    "wall": "white",
+    "ground": "tile",
+    "backdrop": "none",
+    "light": "bright",
+    "elements": [
+     {
+      "type": "whiteboard",
+      "x": 50.0
+     }
+    ]
+   },
+   "camera": {
+    "frame": "wide",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "maya",
+     "x": 45.0,
+     "pose": "stand",
+     "mood": "content",
+     "facing": 1
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Ekman’s work on facial expression reminds us that tears signal need for help.",
+     "at": 0.25
+    }
+   ],
+   "big": {
+    "text": "MAP",
+    "at": 0.3
+   },
+   "beat": 7,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 5.05,
+   "set": "scene",
+   "time": "day",
+   "weather": "none",
+   "grade": "neutral",
+   "camera": {
+    "frame": "close",
+    "on": "maya",
+    "push": 0.07
+   },
+   "actors": [
+    {
+     "id": "maya",
+     "x": 50.0,
+     "pose": "stand",
+     "mood": "content",
+     "facing": 1
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Mapping the loop makes the invisible visible, empowering change.",
+     "at": 0.25
+    }
+   ],
+   "big": {
+    "text": "MAP",
+    "at": 0.3
+   },
+   "scene": {
+    "base": "room",
+    "wall": "white",
+    "ground": "tile",
+    "backdrop": "none",
+    "light": "bright",
+    "elements": [
+     {
+      "type": "whiteboard",
+      "x": 50.0
+     }
+    ]
+   },
+   "beat": 7,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 5.45,
+   "set": "park",
+   "time": "day",
+   "weather": "none",
+   "grade": "warm",
+   "scene": {
+    "base": "outside",
+    "wall": "green",
+    "ground": "grass",
+    "backdrop": "trees",
+    "light": "warm",
+    "elements": [
+     {
+      "type": "bench",
+      "x": 40
+     }
+    ]
+   },
+   "camera": {
+    "frame": "wide",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "maya",
+     "x": 38.0,
+     "pose": "sit",
+     "mood": "relieved",
+     "facing": 1
+    },
+    {
+     "id": "leo",
+     "x": 62.0,
+     "pose": "stand",
+     "mood": "happy",
+     "facing": -1
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Grounding techniques lower cortisol by activating the parasympathetic nervous system.",
+     "at": 0.25
+    }
+   ],
+   "big": {
+    "text": "BREATHE",
+    "at": 0.3
+   },
+   "beat": 8,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 5.45,
+   "set": "park",
+   "time": "day",
+   "weather": "none",
+   "grade": "warm",
+   "camera": {
+    "frame": "close",
+    "on": "maya",
+    "push": 0.07
+   },
+   "actors": [
+    {
+     "id": "maya",
+     "x": 40.0,
+     "pose": "stand",
+     "mood": "relieved",
+     "facing": 1
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Simple breath work can shrink the rumination loop within minutes.",
+     "at": 0.25
+    }
+   ],
+   "big": {
+    "text": "BREATHE",
+    "at": 0.3
+   },
+   "beat": 8,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 5.85,
+   "set": "park",
+   "time": "day",
+   "weather": "none",
+   "grade": "warm",
+   "camera": {
+    "frame": "two",
+    "on": "leo",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "maya",
+     "x": 42.0,
+     "pose": "stand",
+     "mood": "relieved",
+     "facing": 1
+    },
+    {
+     "id": "leo",
+     "x": 58.0,
+     "pose": "stand",
+     "mood": "happy",
+     "facing": -1
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "When the body calms, the mind can process loss without drowning.",
+     "at": 0.25
+    },
+    {
+     "who": "leo",
+     "text": "just breathe",
+     "at": 0.4,
+     "style": "bubble"
+    }
+   ],
+   "big": {
+    "text": "BREATHE",
+    "at": 0.3
+   },
+   "beat": 8,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 2.5,
+   "set": "park",
+   "time": "day",
+   "weather": "none",
+   "grade": "warm",
+   "camera": {
+    "frame": "close",
+    "on": "maya",
+    "push": 0.06
+   },
+   "actors": [
+    {
+     "id": "maya",
+     "x": 45.0,
+     "pose": "stand",
+     "mood": "relieved",
+     "facing": 1
+    }
+   ],
+   "lines": [],
+   "big": {
+    "text": "BREATHE",
+    "at": 0.3
+   },
+   "beat": 8,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "park",
+   "time": "day",
+   "weather": "none",
+   "grade": "warm",
+   "dur": 3.2,
+   "camera": {
+    "frame": "two",
+    "on": "maya",
+    "push": 0.06
+   },
+   "actors": [
+    {
+     "id": "demon",
+     "x": 33.0,
+     "pose": "lean",
+     "target": "maya"
+    },
+    {
+     "id": "maya",
+     "x": 45.0,
+     "pose": "stand",
+     "mood": "relieved"
+    }
+   ],
+   "lines": [
+    {
+     "who": "demon",
+     "text": "inhale, release",
+     "at": 0.7
+    }
+   ],
+   "music": "low",
+   "beat": 8,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 5.05,
+   "set": "scene",
+   "time": "night",
+   "weather": "none",
+   "grade": "grey",
+   "scene": {
+    "base": "void",
+    "wall": "purple",
+    "backdrop": "none",
+    "light": "dim",
+    "elements": [
+     {
+      "type": "word",
+      "x": 50.0,
+      "label": "RUMINATION",
+      "color": "#ffddaa",
+      "w": 25
+     }
+    ]
+   },
+   "camera": {
+    "frame": "medium",
+    "on": "demon",
+    "push": 0.08
+   },
+   "actors": [
+    {
+     "id": "demon",
+     "x": 45.0,
+     "to": 55.0,
+     "pose": "lean",
+     "mood": "worried",
+     "hold": "none",
+     "facing": 1
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Rumination is the brain’s attempt to predict future threat.",
+     "at": 0.25
+    }
+   ],
+   "big": {
+    "text": "REPEAT",
+    "at": 0.3
+   },
+   "hud": {
+    "chapter": "DAY 4"
+   },
+   "music": "mid",
+   "transition": "cut",
+   "beat": 10,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 6.25,
+   "set": "scene",
+   "time": "night",
+   "weather": "none",
+   "grade": "grey",
+   "scene": {
+    "base": "void",
+    "wall": "purple",
+    "backdrop": "none",
+    "light": "dim",
+    "elements": [
+     {
+      "type": "word",
+      "x": 50.0,
+      "label": "RUMINATION",
+      "color": "#ffddaa",
+      "w": 25
+     }
+    ]
+   },
+   "camera": {
+    "frame": "close",
+    "on": "demon",
+    "push": 0.07
+   },
+   "actors": [
+    {
+     "id": "demon",
+     "x": 50.0,
+     "pose": "lean",
+     "mood": "worried",
+     "hold": "none",
+     "facing": 1,
+     "target": "maya"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "When it repeats, it solidifies neural pathways, making the pain feel permanent.",
+     "at": 0.25
+    },
+    {
+     "who": "demon",
+     "text": "stop the replay",
+     "at": 0.4,
+     "style": "bubble"
+    }
+   ],
+   "hud": {
+    "chapter": "DAY 4"
+   },
+   "music": "mid",
+   "transition": "fade",
+   "beat": 10,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 6.25,
+   "set": "scene",
+   "time": "dusk",
+   "weather": "none",
+   "grade": "warm",
+   "scene": {
+    "base": "room",
+    "wall": "cream",
+    "ground": "tile",
+    "backdrop": "none",
+    "light": "warm",
+    "elements": [
+     {
+      "type": "plant",
+      "x": 70.0
+     }
+    ]
+   },
+   "camera": {
+    "frame": "wide",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "maya",
+     "x": 40.0,
+     "pose": "stand",
+     "mood": "love",
+     "hold": "none",
+     "facing": 1
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Acts of care create new positive associations, releasing dopamine and rebuilding self‑worth.",
+     "at": 0.25
+    }
+   ],
+   "big": {
+    "text": "NOURISH",
+    "at": 0.3
+   },
+   "hud": {
+    "chapter": "DAY 4"
+   },
+   "music": "low",
+   "transition": "cut",
+   "beat": 11,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 6.25,
+   "set": "scene",
+   "time": "dusk",
+   "weather": "none",
+   "grade": "warm",
+   "scene": {
+    "base": "room",
+    "wall": "cream",
+    "ground": "tile",
+    "backdrop": "none",
+    "light": "warm",
+    "elements": [
+     {
+      "type": "plant",
+      "x": 70.0
+     }
+    ]
+   },
+   "camera": {
+    "frame": "two",
+    "on": "maya",
+    "push": 0.06
+   },
+   "actors": [
+    {
+     "id": "maya",
+     "x": 45.0,
+     "pose": "type",
+     "mood": "love",
+     "hold": "none",
+     "facing": 1
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Each small kindness is a counter‑signal to the alarm, gradually quieting it.",
+     "at": 0.25
+    },
+    {
+     "who": "maya",
+     "text": "i’m feeding myself",
+     "at": 0.5,
+     "style": "bubble"
+    }
+   ],
+   "hud": {
+    "chapter": "DAY 4"
+   },
+   "music": "low",
+   "transition": "cut",
+   "beat": 11,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 6.25,
+   "set": "scene",
+   "time": "dusk",
+   "weather": "none",
+   "grade": "warm",
+   "scene": {
+    "base": "room",
+    "wall": "cream",
+    "ground": "tile",
+    "backdrop": "none",
+    "light": "warm",
+    "elements": [
+     {
+      "type": "plant",
+      "x": 70.0
+     }
+    ]
+   },
+   "camera": {
+    "frame": "close",
+    "push": 0.07
+   },
+   "actors": [
+    {
+     "id": "maya",
+     "x": 45.0,
+     "pose": "stand",
+     "mood": "love",
+     "hold": "none",
+     "facing": 1
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The heart learns to trust again, one gentle act at a time.",
+     "at": 0.25
+    }
+   ],
+   "hud": {
+    "chapter": "DAY 4"
+   },
+   "music": "low",
+   "transition": "fade",
+   "beat": 11,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "scene",
+   "scene": {
+    "base": "room",
+    "wall": "cream",
+    "ground": "tile",
+    "backdrop": "none",
+    "light": "warm",
+    "elements": [
+     {
+      "type": "plant",
+      "x": 70.0
+     }
+    ]
+   },
+   "time": "dusk",
+   "weather": "none",
+   "grade": "warm",
+   "dur": 3.2,
+   "camera": {
+    "frame": "two",
+    "on": "maya",
+    "push": 0.06
+   },
+   "actors": [
+    {
+     "id": "demon",
+     "x": 33.0,
+     "pose": "lean",
+     "target": "maya"
+    },
+    {
+     "id": "maya",
+     "x": 45.0,
+     "pose": "stand",
+     "mood": "love"
+    }
+   ],
+   "lines": [
+    {
+     "who": "demon",
+     "text": "nourish the self",
+     "at": 0.7
+    }
+   ],
+   "music": "low",
+   "beat": 11,
+   "sfx": [],
+   "items": [],
+   "hud": {
+    "chapter": "DAY 4"
+   }
+  },
+  {
+   "dur": 7.68,
+   "music": "high",
+   "card": {
+    "style": "line",
+    "lines": [
+     "Heartbreak fades, but its lessons linger like a "
+    ]
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Heartbreak fades, but its lessons linger like a soft echo.",
+     "at": 0.4,
+     "hidden": true
+    }
+   ],
+   "set": "void",
+   "camera": {
+    "frame": "wide"
+   },
+   "actors": [],
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 4.0,
+   "music": "mid",
+   "card": {
+    "style": "cta",
+    "lines": [
+     "If this made you think, like and subscribe."
+    ]
+   },
+   "actors": [
+    {
+     "id": "maya",
+     "x": 50.0,
+     "pose": "wave",
+     "mood": "happy",
+     "scale": 0.7
+    }
+   ],
+   "set": "void",
+   "camera": {
+    "frame": "wide"
+   },
+   "lines": [],
+   "sfx": [],
+   "items": []
+  }
+ ],
+ "publish": {
+  "youtube_titles": [
+   "Why Heartbreak Feels Like a Physical Wound",
+   "The Psychology Behind a Broken Heart Explained",
+   "What Happens Inside When Love Ends"
+  ],
+  "description": "Heartbreak isn’t just a poetic metaphor – it’s a cascade of psychological and physiological processes that reshape the mind and body. We follow Maya, a soft‑cream protagonist, as she navigates loss, discovers the brain’s grief circuitry, and learns how understanding these mechanisms can soften the pain.\n#Heartbreak #Psychology #Grief #Emotions #SelfHelp",
+  "tags": [
+   "heartbreak",
+   "grief",
+   "psychology",
+   "emotion regulation",
+   "attachment theory",
+   "loss",
+   "neuroscience",
+   "self‑compassion",
+   "relationship",
+   "mental health"
+  ],
+  "pinned_comment": "Which part of the heartbreak process surprised you the most? Share your experience below.",
+  "thumbnail_words": "Broken Heart",
+  "idea": {
+   "definition": "Heartbreak is the emotional and physiological response to the loss of a significant attachment.",
+   "mechanism": "The brain’s attachment system triggers a stress cascade, releasing cortisol and activating neural loops for rumination, while the body registers pain signals similar to physical injury.",
+   "thinkers": "John Bowlby’s attachment theory, Paul Ekman’s emotion research, and Helen Lazarus’s stress appraisal model.",
+   "turn": "Seeing heartbreak as a survival alarm rather than a personal flaw lets us treat it with care, not shame."
+  },
+  "inner_voice": null,
+  "approach": "Maya’s story unfolds over three seasons, each revealing a layer of the heartbreak process."
+ },
+ "writer": "groq:openai/gpt-oss-120b",
+ "duration": 200.15
+}

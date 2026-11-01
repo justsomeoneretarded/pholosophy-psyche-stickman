@@ -1,0 +1,1831 @@
+{
+  "passed": false,
+  "error": "RuntimeError: Narration still differs from the script after regeneration: build/voice/vo-038-0-a.wav (0.76)",
+  "clips": [
+    {
+      "shot": 0,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-000-0-a.wav",
+      "expected": "When love ends, the mind sounds an alarm.",
+      "agreement": 0.9333,
+      "words": [
+        {
+          "word": "When",
+          "start": 0.0,
+          "end": 0.18
+        },
+        {
+          "word": "love",
+          "start": 0.18,
+          "end": 0.38
+        },
+        {
+          "word": "ends,",
+          "start": 0.38,
+          "end": 0.8
+        },
+        {
+          "word": "the",
+          "start": 1.18,
+          "end": 1.24
+        },
+        {
+          "word": "mind",
+          "start": 1.24,
+          "end": 1.46
+        },
+        {
+          "word": "sounds",
+          "start": 1.46,
+          "end": 1.82
+        },
+        {
+          "word": "alarm.",
+          "start": 1.82,
+          "end": 2.26
+        }
+      ],
+      "passed": true
+    },
+    {
+      "shot": 1,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-001-0-a.wav",
+      "expected": "Heartbreak feels like an alarm ringing inside you.",
+      "agreement": 0.8235,
+      "words": [
+        {
+          "word": "Heartbreak",
+          "start": 0.0,
+          "end": 0.52
+        },
+        {
+          "word": "feels",
+          "start": 0.52,
+          "end": 0.9
+        },
+        {
+          "word": "like",
+          "start": 0.9,
+          "end": 1.18
+        },
+        {
+          "word": "I'm",
+          "start": 1.18,
+          "end": 1.32
+        },
+        {
+          "word": "alarm",
+          "start": 1.32,
+          "end": 1.6
+        },
+        {
+          "word": "ringing",
+          "start": 1.6,
+          "end": 2.02
+        },
+        {
+          "word": "inside",
+          "start": 2.02,
+          "end": 2.5
+        },
+        {
+          "word": "you.",
+          "start": 2.5,
+          "end": 2.9
+        }
+      ],
+      "passed": true
+    },
+    {
+      "shot": 2,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-002-0-a.wav",
+      "expected": "It announces loss before the mind can process it.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "It",
+          "start": 0.0,
+          "end": 0.16
+        },
+        {
+          "word": "announces",
+          "start": 0.16,
+          "end": 0.4
+        },
+        {
+          "word": "loss",
+          "start": 0.4,
+          "end": 0.9
+        },
+        {
+          "word": "before",
+          "start": 0.9,
+          "end": 1.28
+        },
+        {
+          "word": "the",
+          "start": 1.28,
+          "end": 1.46
+        },
+        {
+          "word": "mind",
+          "start": 1.46,
+          "end": 1.7
+        },
+        {
+          "word": "can",
+          "start": 1.7,
+          "end": 1.94
+        },
+        {
+          "word": "process",
+          "start": 1.94,
+          "end": 2.34
+        },
+        {
+          "word": "it.",
+          "start": 2.34,
+          "end": 2.76
+        }
+      ],
+      "passed": true
+    },
+    {
+      "shot": 3,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-003-0-a.wav",
+      "expected": "The sound is both sudden and relentless.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "The",
+          "start": 0.0,
+          "end": 0.08
+        },
+        {
+          "word": "sound",
+          "start": 0.08,
+          "end": 0.36
+        },
+        {
+          "word": "is",
+          "start": 0.36,
+          "end": 0.6
+        },
+        {
+          "word": "both",
+          "start": 0.6,
+          "end": 0.78
+        },
+        {
+          "word": "sudden",
+          "start": 0.78,
+          "end": 1.14
+        },
+        {
+          "word": "and",
+          "start": 1.14,
+          "end": 1.66
+        },
+        {
+          "word": "relentless.",
+          "start": 1.66,
+          "end": 2.02
+        }
+      ],
+      "passed": true
+    },
+    {
+      "shot": 4,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-004-0-a.wav",
+      "expected": "Maya\u2019s partner left, and her body reacts as if a wound opened.",
+      "agreement": 0.8,
+      "words": [
+        {
+          "word": "Myers",
+          "start": 0.0,
+          "end": 0.28
+        },
+        {
+          "word": "partner",
+          "start": 0.28,
+          "end": 0.58
+        },
+        {
+          "word": "left",
+          "start": 0.58,
+          "end": 1.06
+        },
+        {
+          "word": "and",
+          "start": 1.06,
+          "end": 1.64
+        },
+        {
+          "word": "her",
+          "start": 1.64,
+          "end": 1.74
+        },
+        {
+          "word": "body",
+          "start": 1.74,
+          "end": 2.06
+        },
+        {
+          "word": "reacts",
+          "start": 2.06,
+          "end": 2.5
+        },
+        {
+          "word": "as",
+          "start": 2.5,
+          "end": 2.88
+        },
+        {
+          "word": "if",
+          "start": 2.88,
+          "end": 3.1
+        },
+        {
+          "word": "her",
+          "start": 3.1,
+          "end": 3.2
+        },
+        {
+          "word": "wound",
+          "start": 3.2,
+          "end": 3.48
+        },
+        {
+          "word": "opened.",
+          "start": 3.48,
+          "end": 4.0
+        }
+      ],
+      "passed": true
+    },
+    {
+      "shot": 5,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-005-0-a.wav",
+      "expected": "Attachment bonds, once secure, now signal danger.",
+      "agreement": 0.8571,
+      "words": [
+        {
+          "word": "Attachment",
+          "start": 0.0,
+          "end": 0.38
+        },
+        {
+          "word": "bombs",
+          "start": 0.38,
+          "end": 0.68
+        },
+        {
+          "word": "once",
+          "start": 0.68,
+          "end": 1.32
+        },
+        {
+          "word": "secure,",
+          "start": 1.32,
+          "end": 1.76
+        },
+        {
+          "word": "now",
+          "start": 2.16,
+          "end": 2.28
+        },
+        {
+          "word": "signal",
+          "start": 2.28,
+          "end": 2.6
+        },
+        {
+          "word": "danger.",
+          "start": 2.6,
+          "end": 3.16
+        }
+      ],
+      "passed": true
+    },
+    {
+      "shot": 7,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-007-0-a.wav",
+      "expected": "The brain releases cortisol, the hormone of stress.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "The",
+          "start": 0.0,
+          "end": 0.08
+        },
+        {
+          "word": "brain",
+          "start": 0.08,
+          "end": 0.3
+        },
+        {
+          "word": "releases",
+          "start": 0.3,
+          "end": 0.78
+        },
+        {
+          "word": "cortisol,",
+          "start": 0.78,
+          "end": 1.26
+        },
+        {
+          "word": "the",
+          "start": 1.8,
+          "end": 1.86
+        },
+        {
+          "word": "hormone",
+          "start": 1.86,
+          "end": 2.12
+        },
+        {
+          "word": "of",
+          "start": 2.12,
+          "end": 2.48
+        },
+        {
+          "word": "stress.",
+          "start": 2.48,
+          "end": 2.74
+        }
+      ],
+      "passed": true
+    },
+    {
+      "shot": 9,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-009-0-a.wav",
+      "expected": "Cortisol spikes, sharpening attention to threat and amplifying emotional pain.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "Cortisol",
+          "start": 0.0,
+          "end": 0.5
+        },
+        {
+          "word": "spikes,",
+          "start": 0.5,
+          "end": 0.96
+        },
+        {
+          "word": "sharpening",
+          "start": 1.26,
+          "end": 1.74
+        },
+        {
+          "word": "attention",
+          "start": 1.74,
+          "end": 2.06
+        },
+        {
+          "word": "to",
+          "start": 2.06,
+          "end": 2.4
+        },
+        {
+          "word": "threat",
+          "start": 2.4,
+          "end": 2.68
+        },
+        {
+          "word": "and",
+          "start": 2.68,
+          "end": 2.9
+        },
+        {
+          "word": "amplifying",
+          "start": 2.9,
+          "end": 3.6
+        },
+        {
+          "word": "emotional",
+          "start": 3.6,
+          "end": 3.84
+        },
+        {
+          "word": "pain.",
+          "start": 3.84,
+          "end": 4.48
+        }
+      ],
+      "passed": true
+    },
+    {
+      "shot": 10,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-010-0-a.wav",
+      "expected": "Simultaneously, the default mode network lights up, looping memories of the lost bond.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "Simultaneously,",
+          "start": 0.0,
+          "end": 0.84
+        },
+        {
+          "word": "the",
+          "start": 1.0,
+          "end": 1.08
+        },
+        {
+          "word": "default",
+          "start": 1.08,
+          "end": 1.36
+        },
+        {
+          "word": "mode",
+          "start": 1.36,
+          "end": 1.64
+        },
+        {
+          "word": "network",
+          "start": 1.64,
+          "end": 2.06
+        },
+        {
+          "word": "lights",
+          "start": 2.06,
+          "end": 2.58
+        },
+        {
+          "word": "up,",
+          "start": 2.58,
+          "end": 2.92
+        },
+        {
+          "word": "looping",
+          "start": 3.24,
+          "end": 3.78
+        },
+        {
+          "word": "memories",
+          "start": 3.78,
+          "end": 4.18
+        },
+        {
+          "word": "of",
+          "start": 4.18,
+          "end": 4.56
+        },
+        {
+          "word": "the",
+          "start": 4.56,
+          "end": 4.66
+        },
+        {
+          "word": "lost",
+          "start": 4.66,
+          "end": 4.86
+        },
+        {
+          "word": "bond,",
+          "start": 4.86,
+          "end": 5.32
+        }
+      ],
+      "passed": true
+    },
+    {
+      "shot": 11,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-011-0-a.wav",
+      "expected": "This is why thoughts replay like a broken record.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "This",
+          "start": 0.0,
+          "end": 0.16
+        },
+        {
+          "word": "is",
+          "start": 0.16,
+          "end": 0.26
+        },
+        {
+          "word": "why",
+          "start": 0.26,
+          "end": 0.42
+        },
+        {
+          "word": "thoughts",
+          "start": 0.42,
+          "end": 0.78
+        },
+        {
+          "word": "replay",
+          "start": 0.78,
+          "end": 1.22
+        },
+        {
+          "word": "like",
+          "start": 1.22,
+          "end": 1.7
+        },
+        {
+          "word": "a",
+          "start": 1.7,
+          "end": 1.8
+        },
+        {
+          "word": "broken",
+          "start": 1.8,
+          "end": 2.02
+        },
+        {
+          "word": "record.",
+          "start": 2.02,
+          "end": 2.6
+        }
+      ],
+      "passed": true
+    },
+    {
+      "shot": 12,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-012-0-a.wav",
+      "expected": "Bowlby taught us that bonds are evolutionary safety nets.",
+      "agreement": 0.8421,
+      "words": [
+        {
+          "word": "bowl",
+          "start": 0.0,
+          "end": 0.18
+        },
+        {
+          "word": "be",
+          "start": 0.18,
+          "end": 0.36
+        },
+        {
+          "word": "taught",
+          "start": 0.36,
+          "end": 0.62
+        },
+        {
+          "word": "us",
+          "start": 0.62,
+          "end": 0.92
+        },
+        {
+          "word": "that",
+          "start": 0.92,
+          "end": 1.06
+        },
+        {
+          "word": "bonds",
+          "start": 1.06,
+          "end": 1.36
+        },
+        {
+          "word": "are",
+          "start": 1.36,
+          "end": 1.7
+        },
+        {
+          "word": "evolutionary",
+          "start": 1.7,
+          "end": 2.08
+        },
+        {
+          "word": "safety",
+          "start": 2.08,
+          "end": 2.94
+        },
+        {
+          "word": "nets.",
+          "start": 2.94,
+          "end": 3.26
+        }
+      ],
+      "passed": true
+    },
+    {
+      "shot": 13,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-013-0-a.wav",
+      "expected": "Lazarus showed how appraisal turns loss into stress.",
+      "agreement": 0.8235,
+      "words": [
+        {
+          "word": "Leather",
+          "start": 0.0,
+          "end": 0.22
+        },
+        {
+          "word": "has",
+          "start": 0.22,
+          "end": 0.38
+        },
+        {
+          "word": "showed",
+          "start": 0.38,
+          "end": 0.62
+        },
+        {
+          "word": "how",
+          "start": 0.62,
+          "end": 0.9
+        },
+        {
+          "word": "appraisal",
+          "start": 0.9,
+          "end": 1.26
+        },
+        {
+          "word": "turns",
+          "start": 1.26,
+          "end": 1.78
+        },
+        {
+          "word": "loss",
+          "start": 1.78,
+          "end": 2.18
+        },
+        {
+          "word": "into",
+          "start": 2.18,
+          "end": 2.62
+        },
+        {
+          "word": "stress.",
+          "start": 2.62,
+          "end": 3.0
+        }
+      ],
+      "passed": true
+    },
+    {
+      "shot": 14,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-014-0-a.wav",
+      "expected": "Together they explain why heartbreak feels life\u2011threatening.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "Together",
+          "start": 0.0,
+          "end": 0.32
+        },
+        {
+          "word": "they",
+          "start": 0.32,
+          "end": 0.58
+        },
+        {
+          "word": "explain",
+          "start": 0.58,
+          "end": 0.92
+        },
+        {
+          "word": "why",
+          "start": 0.92,
+          "end": 1.26
+        },
+        {
+          "word": "heartbreak",
+          "start": 1.26,
+          "end": 1.88
+        },
+        {
+          "word": "feels",
+          "start": 1.88,
+          "end": 2.18
+        },
+        {
+          "word": "life",
+          "start": 2.18,
+          "end": 2.5
+        },
+        {
+          "word": "-threatening.",
+          "start": 2.5,
+          "end": 2.86
+        }
+      ],
+      "passed": true
+    },
+    {
+      "shot": 15,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-015-0-a.wav",
+      "expected": "Seeing heartbreak as a survival alarm, not a flaw, changes the response.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "Seeing",
+          "start": 0.0,
+          "end": 0.2
+        },
+        {
+          "word": "heartbreak",
+          "start": 0.2,
+          "end": 0.84
+        },
+        {
+          "word": "as",
+          "start": 0.84,
+          "end": 1.08
+        },
+        {
+          "word": "a",
+          "start": 1.08,
+          "end": 1.2
+        },
+        {
+          "word": "survival",
+          "start": 1.2,
+          "end": 1.54
+        },
+        {
+          "word": "alarm,",
+          "start": 1.54,
+          "end": 1.98
+        },
+        {
+          "word": "not",
+          "start": 2.18,
+          "end": 2.28
+        },
+        {
+          "word": "a",
+          "start": 2.28,
+          "end": 2.34
+        },
+        {
+          "word": "flaw,",
+          "start": 2.34,
+          "end": 2.68
+        },
+        {
+          "word": "changes",
+          "start": 3.14,
+          "end": 3.62
+        },
+        {
+          "word": "the",
+          "start": 3.62,
+          "end": 3.84
+        },
+        {
+          "word": "response.",
+          "start": 3.84,
+          "end": 4.2
+        }
+      ],
+      "passed": true
+    },
+    {
+      "shot": 16,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-016-0-a.wav",
+      "expected": "Self\u2011compassion becomes the soothing hand that lowers cortisol.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "Self",
+          "start": 0.0,
+          "end": 0.2
+        },
+        {
+          "word": "-compassion",
+          "start": 0.2,
+          "end": 0.74
+        },
+        {
+          "word": "becomes",
+          "start": 0.74,
+          "end": 1.04
+        },
+        {
+          "word": "the",
+          "start": 1.04,
+          "end": 1.26
+        },
+        {
+          "word": "soothing",
+          "start": 1.26,
+          "end": 1.48
+        },
+        {
+          "word": "hand",
+          "start": 1.48,
+          "end": 1.88
+        },
+        {
+          "word": "that",
+          "start": 1.88,
+          "end": 2.14
+        },
+        {
+          "word": "lowers",
+          "start": 2.14,
+          "end": 2.4
+        },
+        {
+          "word": "cortisol.",
+          "start": 2.4,
+          "end": 2.86
+        }
+      ],
+      "passed": true
+    },
+    {
+      "shot": 17,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-017-0-a.wav",
+      "expected": "The mind can then shift from rumination to repair.",
+      "agreement": 0.8889,
+      "words": [
+        {
+          "word": "The",
+          "start": 0.0,
+          "end": 0.12
+        },
+        {
+          "word": "mine",
+          "start": 0.12,
+          "end": 0.34
+        },
+        {
+          "word": "can",
+          "start": 0.34,
+          "end": 0.56
+        },
+        {
+          "word": "then",
+          "start": 0.56,
+          "end": 0.74
+        },
+        {
+          "word": "shift",
+          "start": 0.74,
+          "end": 1.04
+        },
+        {
+          "word": "from",
+          "start": 1.04,
+          "end": 1.44
+        },
+        {
+          "word": "rumination",
+          "start": 1.44,
+          "end": 1.94
+        },
+        {
+          "word": "to",
+          "start": 1.94,
+          "end": 2.36
+        },
+        {
+          "word": "repair.",
+          "start": 2.36,
+          "end": 2.68
+        }
+      ],
+      "passed": true
+    },
+    {
+      "shot": 20,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-020-0-a.wav",
+      "expected": "Neuroscience shows the same pathways light up for social loss and physical pain.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "Neuroscience",
+          "start": 0.0,
+          "end": 0.28
+        },
+        {
+          "word": "shows",
+          "start": 0.28,
+          "end": 0.92
+        },
+        {
+          "word": "the",
+          "start": 0.92,
+          "end": 1.12
+        },
+        {
+          "word": "same",
+          "start": 1.12,
+          "end": 1.3
+        },
+        {
+          "word": "pathways",
+          "start": 1.3,
+          "end": 1.74
+        },
+        {
+          "word": "light",
+          "start": 1.74,
+          "end": 2.1
+        },
+        {
+          "word": "up",
+          "start": 2.1,
+          "end": 2.36
+        },
+        {
+          "word": "for",
+          "start": 2.36,
+          "end": 2.52
+        },
+        {
+          "word": "social",
+          "start": 2.52,
+          "end": 2.76
+        },
+        {
+          "word": "loss",
+          "start": 2.76,
+          "end": 3.18
+        },
+        {
+          "word": "and",
+          "start": 3.18,
+          "end": 3.58
+        },
+        {
+          "word": "physical",
+          "start": 3.58,
+          "end": 3.86
+        },
+        {
+          "word": "pain.",
+          "start": 3.86,
+          "end": 4.36
+        }
+      ],
+      "passed": true
+    },
+    {
+      "shot": 21,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-021-0-a.wav",
+      "expected": "As cortisol fades, oxytocin and dopamine begin to rebuild connection circuits.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "as",
+          "start": 0.0,
+          "end": 0.12
+        },
+        {
+          "word": "cortisol",
+          "start": 0.12,
+          "end": 0.32
+        },
+        {
+          "word": "fades,",
+          "start": 0.32,
+          "end": 0.82
+        },
+        {
+          "word": "oxytocin",
+          "start": 1.14,
+          "end": 1.88
+        },
+        {
+          "word": "and",
+          "start": 1.88,
+          "end": 1.96
+        },
+        {
+          "word": "dopamine",
+          "start": 1.96,
+          "end": 2.38
+        },
+        {
+          "word": "begin",
+          "start": 2.38,
+          "end": 2.9
+        },
+        {
+          "word": "to",
+          "start": 2.9,
+          "end": 3.08
+        },
+        {
+          "word": "rebuild",
+          "start": 3.08,
+          "end": 3.44
+        },
+        {
+          "word": "connection",
+          "start": 3.44,
+          "end": 3.78
+        },
+        {
+          "word": "circuits.",
+          "start": 3.78,
+          "end": 4.5
+        }
+      ],
+      "passed": true
+    },
+    {
+      "shot": 22,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-022-0-a.wav",
+      "expected": "Recovery is a rewiring, not a disappearance.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "Recovery",
+          "start": 0.0,
+          "end": 0.4
+        },
+        {
+          "word": "is",
+          "start": 0.4,
+          "end": 0.6
+        },
+        {
+          "word": "a",
+          "start": 0.6,
+          "end": 0.68
+        },
+        {
+          "word": "rewiring,",
+          "start": 0.68,
+          "end": 1.26
+        },
+        {
+          "word": "not",
+          "start": 1.46,
+          "end": 1.54
+        },
+        {
+          "word": "a",
+          "start": 1.54,
+          "end": 1.64
+        },
+        {
+          "word": "disappearance.",
+          "start": 1.64,
+          "end": 2.32
+        }
+      ],
+      "passed": true
+    },
+    {
+      "shot": 25,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-025-0-a.wav",
+      "expected": "Ekman\u2019s work on facial expression reminds us that tears signal need for help.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "Ekman's",
+          "start": 0.0,
+          "end": 0.38
+        },
+        {
+          "word": "work",
+          "start": 0.38,
+          "end": 0.58
+        },
+        {
+          "word": "on",
+          "start": 0.58,
+          "end": 0.78
+        },
+        {
+          "word": "facial",
+          "start": 0.78,
+          "end": 1.04
+        },
+        {
+          "word": "expression",
+          "start": 1.04,
+          "end": 1.62
+        },
+        {
+          "word": "reminds",
+          "start": 1.62,
+          "end": 2.04
+        },
+        {
+          "word": "us",
+          "start": 2.04,
+          "end": 2.38
+        },
+        {
+          "word": "that",
+          "start": 2.38,
+          "end": 2.62
+        },
+        {
+          "word": "tears",
+          "start": 2.62,
+          "end": 2.86
+        },
+        {
+          "word": "signal",
+          "start": 2.86,
+          "end": 3.46
+        },
+        {
+          "word": "need",
+          "start": 3.46,
+          "end": 3.8
+        },
+        {
+          "word": "for",
+          "start": 3.8,
+          "end": 4.22
+        },
+        {
+          "word": "help.",
+          "start": 4.22,
+          "end": 4.54
+        }
+      ],
+      "passed": true
+    },
+    {
+      "shot": 26,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-026-0-a.wav",
+      "expected": "Mapping the loop makes the invisible visible, empowering change.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "Mapping",
+          "start": 0.0,
+          "end": 0.28
+        },
+        {
+          "word": "the",
+          "start": 0.28,
+          "end": 0.48
+        },
+        {
+          "word": "loop",
+          "start": 0.48,
+          "end": 0.66
+        },
+        {
+          "word": "makes",
+          "start": 0.66,
+          "end": 0.88
+        },
+        {
+          "word": "the",
+          "start": 0.88,
+          "end": 1.08
+        },
+        {
+          "word": "invisible,",
+          "start": 1.08,
+          "end": 1.38
+        },
+        {
+          "word": "visible,",
+          "start": 1.64,
+          "end": 1.94
+        },
+        {
+          "word": "empowering",
+          "start": 2.3,
+          "end": 2.82
+        },
+        {
+          "word": "change.",
+          "start": 2.82,
+          "end": 3.44
+        }
+      ],
+      "passed": true
+    },
+    {
+      "shot": 27,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-027-0-a.wav",
+      "expected": "Grounding techniques lower cortisol by activating the parasympathetic nervous system.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "grounding",
+          "start": 0.0,
+          "end": 0.28
+        },
+        {
+          "word": "techniques",
+          "start": 0.28,
+          "end": 0.6
+        },
+        {
+          "word": "lower",
+          "start": 0.6,
+          "end": 0.96
+        },
+        {
+          "word": "cortisol",
+          "start": 0.96,
+          "end": 1.38
+        },
+        {
+          "word": "by",
+          "start": 1.38,
+          "end": 1.76
+        },
+        {
+          "word": "activating",
+          "start": 1.76,
+          "end": 2.24
+        },
+        {
+          "word": "the",
+          "start": 2.24,
+          "end": 2.56
+        },
+        {
+          "word": "parasympathetic",
+          "start": 2.56,
+          "end": 3.16
+        },
+        {
+          "word": "nervous",
+          "start": 3.16,
+          "end": 3.54
+        },
+        {
+          "word": "system.",
+          "start": 3.54,
+          "end": 3.98
+        }
+      ],
+      "passed": true
+    },
+    {
+      "shot": 28,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-028-0-a.wav",
+      "expected": "Simple breath work can shrink the rumination loop within minutes.",
+      "agreement": 0.8421,
+      "words": [
+        {
+          "word": "Simple",
+          "start": 0.0,
+          "end": 0.38
+        },
+        {
+          "word": "breathwork",
+          "start": 0.38,
+          "end": 1.04
+        },
+        {
+          "word": "can",
+          "start": 1.04,
+          "end": 1.22
+        },
+        {
+          "word": "shrink",
+          "start": 1.22,
+          "end": 1.46
+        },
+        {
+          "word": "the",
+          "start": 1.46,
+          "end": 1.72
+        },
+        {
+          "word": "rumination",
+          "start": 1.72,
+          "end": 2.14
+        },
+        {
+          "word": "loop",
+          "start": 2.14,
+          "end": 2.52
+        },
+        {
+          "word": "within",
+          "start": 2.52,
+          "end": 2.84
+        },
+        {
+          "word": "minutes.",
+          "start": 2.84,
+          "end": 3.18
+        }
+      ],
+      "passed": true
+    },
+    {
+      "shot": 29,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-029-0-a.wav",
+      "expected": "When the body calms, the mind can process loss without drowning.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "when",
+          "start": 0.0,
+          "end": 0.1
+        },
+        {
+          "word": "the",
+          "start": 0.1,
+          "end": 0.18
+        },
+        {
+          "word": "body",
+          "start": 0.18,
+          "end": 0.42
+        },
+        {
+          "word": "calms,",
+          "start": 0.42,
+          "end": 1.1
+        },
+        {
+          "word": "the",
+          "start": 1.26,
+          "end": 1.42
+        },
+        {
+          "word": "mind",
+          "start": 1.42,
+          "end": 1.72
+        },
+        {
+          "word": "can",
+          "start": 1.72,
+          "end": 1.96
+        },
+        {
+          "word": "process",
+          "start": 1.96,
+          "end": 2.36
+        },
+        {
+          "word": "loss",
+          "start": 2.36,
+          "end": 2.8
+        },
+        {
+          "word": "without",
+          "start": 2.8,
+          "end": 3.34
+        },
+        {
+          "word": "drowning.",
+          "start": 3.34,
+          "end": 3.9
+        }
+      ],
+      "passed": true
+    },
+    {
+      "shot": 32,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-032-0-a.wav",
+      "expected": "Rumination is the brain\u2019s attempt to predict future threat.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "Rumination",
+          "start": 0.0,
+          "end": 0.44
+        },
+        {
+          "word": "is",
+          "start": 0.44,
+          "end": 0.84
+        },
+        {
+          "word": "the",
+          "start": 0.84,
+          "end": 0.96
+        },
+        {
+          "word": "brain's",
+          "start": 0.96,
+          "end": 1.38
+        },
+        {
+          "word": "attempt",
+          "start": 1.38,
+          "end": 1.6
+        },
+        {
+          "word": "to",
+          "start": 1.6,
+          "end": 1.86
+        },
+        {
+          "word": "predict",
+          "start": 1.86,
+          "end": 2.16
+        },
+        {
+          "word": "future",
+          "start": 2.16,
+          "end": 2.68
+        },
+        {
+          "word": "threat.",
+          "start": 2.68,
+          "end": 3.18
+        }
+      ],
+      "passed": true
+    },
+    {
+      "shot": 33,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-033-0-a.wav",
+      "expected": "When it repeats, it solidifies neural pathways, making the pain feel permanent.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "when",
+          "start": 0.0,
+          "end": 0.1
+        },
+        {
+          "word": "it",
+          "start": 0.1,
+          "end": 0.16
+        },
+        {
+          "word": "repeats,",
+          "start": 0.16,
+          "end": 0.5
+        },
+        {
+          "word": "it",
+          "start": 0.84,
+          "end": 0.86
+        },
+        {
+          "word": "solidifies",
+          "start": 0.86,
+          "end": 1.6
+        },
+        {
+          "word": "neural",
+          "start": 1.6,
+          "end": 1.92
+        },
+        {
+          "word": "pathways,",
+          "start": 1.92,
+          "end": 2.48
+        },
+        {
+          "word": "making",
+          "start": 3.04,
+          "end": 3.24
+        },
+        {
+          "word": "the",
+          "start": 3.24,
+          "end": 3.44
+        },
+        {
+          "word": "pain",
+          "start": 3.44,
+          "end": 3.66
+        },
+        {
+          "word": "feel",
+          "start": 3.66,
+          "end": 4.1
+        },
+        {
+          "word": "permanent.",
+          "start": 4.1,
+          "end": 4.62
+        }
+      ],
+      "passed": true
+    },
+    {
+      "shot": 34,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-034-0-a.wav",
+      "expected": "Acts of care create new positive associations, releasing dopamine and rebuilding self\u2011worth.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "acts",
+          "start": 0.0,
+          "end": 0.2
+        },
+        {
+          "word": "of",
+          "start": 0.2,
+          "end": 0.36
+        },
+        {
+          "word": "care",
+          "start": 0.36,
+          "end": 0.58
+        },
+        {
+          "word": "create",
+          "start": 0.58,
+          "end": 0.92
+        },
+        {
+          "word": "new",
+          "start": 0.92,
+          "end": 1.24
+        },
+        {
+          "word": "positive",
+          "start": 1.24,
+          "end": 1.76
+        },
+        {
+          "word": "associations,",
+          "start": 1.76,
+          "end": 2.58
+        },
+        {
+          "word": "releasing",
+          "start": 2.96,
+          "end": 3.38
+        },
+        {
+          "word": "dopamine",
+          "start": 3.38,
+          "end": 3.8
+        },
+        {
+          "word": "and",
+          "start": 3.8,
+          "end": 4.2
+        },
+        {
+          "word": "rebuilding",
+          "start": 4.2,
+          "end": 4.52
+        },
+        {
+          "word": "self",
+          "start": 4.52,
+          "end": 5.1
+        },
+        {
+          "word": "-worth.",
+          "start": 5.1,
+          "end": 5.5
+        }
+      ],
+      "passed": true
+    },
+    {
+      "shot": 35,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-035-0-a.wav",
+      "expected": "Each small kindness is a counter\u2011signal to the alarm, gradually quieting it.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "Each",
+          "start": 0.0,
+          "end": 0.2
+        },
+        {
+          "word": "small",
+          "start": 0.2,
+          "end": 0.46
+        },
+        {
+          "word": "kindness",
+          "start": 0.46,
+          "end": 0.84
+        },
+        {
+          "word": "is",
+          "start": 0.84,
+          "end": 1.26
+        },
+        {
+          "word": "a",
+          "start": 1.26,
+          "end": 1.38
+        },
+        {
+          "word": "counter",
+          "start": 1.38,
+          "end": 1.74
+        },
+        {
+          "word": "signal",
+          "start": 1.74,
+          "end": 2.1
+        },
+        {
+          "word": "to",
+          "start": 2.1,
+          "end": 2.48
+        },
+        {
+          "word": "the",
+          "start": 2.48,
+          "end": 2.6
+        },
+        {
+          "word": "alarm,",
+          "start": 2.6,
+          "end": 2.9
+        },
+        {
+          "word": "gradually",
+          "start": 3.78,
+          "end": 3.8
+        },
+        {
+          "word": "quieting",
+          "start": 3.8,
+          "end": 4.84
+        },
+        {
+          "word": "it.",
+          "start": 4.84,
+          "end": 5.0
+        }
+      ],
+      "passed": true
+    },
+    {
+      "shot": 36,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-036-0-a.wav",
+      "expected": "The heart learns to trust again, one gentle act at a time.",
+      "agreement": 0.8333,
+      "words": [
+        {
+          "word": "The",
+          "start": 0.0,
+          "end": 0.12
+        },
+        {
+          "word": "heart",
+          "start": 0.12,
+          "end": 0.38
+        },
+        {
+          "word": "learns",
+          "start": 0.38,
+          "end": 0.76
+        },
+        {
+          "word": "to",
+          "start": 0.76,
+          "end": 1.04
+        },
+        {
+          "word": "trust",
+          "start": 1.04,
+          "end": 1.32
+        },
+        {
+          "word": "again,",
+          "start": 1.32,
+          "end": 1.78
+        },
+        {
+          "word": "one",
+          "start": 2.26,
+          "end": 2.36
+        },
+        {
+          "word": "gentle",
+          "start": 2.36,
+          "end": 2.8
+        },
+        {
+          "word": "act",
+          "start": 2.8,
+          "end": 3.14
+        },
+        {
+          "word": "to",
+          "start": 3.14,
+          "end": 3.36
+        },
+        {
+          "word": "the",
+          "start": 3.36,
+          "end": 3.46
+        },
+        {
+          "word": "time.",
+          "start": 3.46,
+          "end": 3.84
+        }
+      ],
+      "passed": true
+    },
+    {
+      "shot": 38,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-038-0-a.wav",
+      "expected": "Heartbreak fades, but its lessons linger like a soft echo.",
+      "agreement": 0.7619,
+      "words": [
+        {
+          "word": "Heartbreak",
+          "start": 0.0,
+          "end": 0.52
+        },
+        {
+          "word": "fates,",
+          "start": 0.52,
+          "end": 1.08
+        },
+        {
+          "word": "but",
+          "start": 1.22,
+          "end": 1.28
+        },
+        {
+          "word": "it's",
+          "start": 1.28,
+          "end": 1.48
+        },
+        {
+          "word": "lessons",
+          "start": 1.48,
+          "end": 1.66
+        },
+        {
+          "word": "linger",
+          "start": 1.66,
+          "end": 2.12
+        },
+        {
+          "word": "like",
+          "start": 2.12,
+          "end": 2.44
+        },
+        {
+          "word": "a",
+          "start": 2.44,
+          "end": 2.54
+        },
+        {
+          "word": "soft",
+          "start": 2.54,
+          "end": 2.78
+        },
+        {
+          "word": "echo.",
+          "start": 2.78,
+          "end": 3.12
+        }
+      ],
+      "passed": false
+    }
+  ]
+}
