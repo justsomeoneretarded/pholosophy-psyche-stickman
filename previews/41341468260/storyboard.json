@@ -1,0 +1,919 @@
+{
+ "_regression_fixture": true,
+ "title": "Why We Procrastinate",
+ "logline": "An uncomfortable first sentence, immediate relief, and a smaller practical experiment.",
+ "cast": {
+  "hero": {
+   "kind": "hero"
+  },
+  "demon": {
+   "kind": "demon"
+  },
+  "alex": {
+   "kind": "hero",
+   "top": "navy"
+  }
+ },
+ "hud": null,
+ "music": {
+  "prompt": "Quiet original procedural piano"
+ },
+ "publish": {
+  "youtube_titles": [
+   "Why We Procrastinate: The Relief That Costs Us Time"
+  ],
+  "description": "An everyday example of postponing discomfort, and a small experiment in starting. Delay can also reflect missing information, exhaustion or competing demands; this is educational, not a diagnosis.\n\n#Procrastination #Psychology #Habits",
+  "tags": [
+   "procrastination",
+   "starting",
+   "habits",
+   "psychology",
+   "avoidance"
+  ],
+  "pinned_comment": "What makes the first step difficult for you?",
+  "thumbnail_words": "STARTING IS HARD"
+ },
+ "sources": [],
+ "shots": [
+  {
+   "dur": 7.45,
+   "set": "desk",
+   "time": "day",
+   "grade": "warm",
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "think",
+     "seated": true,
+     "mood": "worried",
+     "facing": 1
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The document is open. Alex has even chosen a font. So why hasn't he started?",
+     "at": 0.25,
+     "speech_check": 0.875,
+     "speech_verified": true,
+     "voice_file": "vo-000-0.wav",
+     "voice_dur": 6.349,
+     "word_times": [
+      {
+       "word": "The",
+       "start": 0.0,
+       "end": 0.08,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "document",
+       "start": 0.08,
+       "end": 0.38,
+       "timing_source": "estimated_between_anchors"
+      },
+      {
+       "word": "is",
+       "start": 0.38,
+       "end": 1.02,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "open.",
+       "start": 1.02,
+       "end": 1.34,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "Alex",
+       "start": 2.02,
+       "end": 2.22,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "has",
+       "start": 2.22,
+       "end": 2.7,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "even",
+       "start": 2.7,
+       "end": 2.98,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "chosen",
+       "start": 2.98,
+       "end": 3.28,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 3.28,
+       "end": 3.5,
+       "timing_source": "estimated_between_anchors"
+      },
+      {
+       "word": "font.",
+       "start": 3.5,
+       "end": 3.72,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "So",
+       "start": 4.42,
+       "end": 4.68,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "why",
+       "start": 4.68,
+       "end": 4.92,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "hasn't",
+       "start": 4.92,
+       "end": 5.3,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "he",
+       "start": 5.3,
+       "end": 5.38,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "started?",
+       "start": 5.38,
+       "end": 5.84,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 13.01
+    }
+   ],
+   "music": "low",
+   "transition": "fade",
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 6.25,
+   "set": "desk",
+   "time": "day",
+   "grade": "warm",
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "phone",
+     "seated": true,
+     "mood": "relieved",
+     "facing": 1
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He reaches for his phone. For a moment, the uncomfortable task disappears.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-001-0.wav",
+     "voice_dur": 4.747,
+     "word_times": [
+      {
+       "word": "He",
+       "start": 0.0,
+       "end": 0.16,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "reaches",
+       "start": 0.16,
+       "end": 0.42,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "for",
+       "start": 0.42,
+       "end": 0.68,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "his",
+       "start": 0.68,
+       "end": 0.8,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "phone.",
+       "start": 0.8,
+       "end": 1.08,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "For",
+       "start": 1.78,
+       "end": 1.88,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 1.88,
+       "end": 1.96,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "moment,",
+       "start": 1.96,
+       "end": 2.24,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "the",
+       "start": 2.62,
+       "end": 2.68,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "uncomfortable",
+       "start": 2.68,
+       "end": 3.06,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "task",
+       "start": 3.06,
+       "end": 3.48,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "disappears.",
+       "start": 3.48,
+       "end": 4.08,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 16.94
+    }
+   ],
+   "music": "low",
+   "transition": "cut",
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 6.89,
+   "set": "desk",
+   "time": "day",
+   "grade": "warm",
+   "camera": {
+    "frame": "close",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "phone",
+     "seated": true,
+     "mood": "worried",
+     "facing": 1
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "That relief is real. The deadline is also real. It is now closer.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-002-0.wav",
+     "voice_dur": 6.095,
+     "word_times": [
+      {
+       "word": "That",
+       "start": 0.0,
+       "end": 0.16,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "relief",
+       "start": 0.16,
+       "end": 0.48,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "is",
+       "start": 0.48,
+       "end": 1.24,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "real.",
+       "start": 1.24,
+       "end": 1.56,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "The",
+       "start": 2.28,
+       "end": 2.3,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "deadline",
+       "start": 2.3,
+       "end": 2.56,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "is",
+       "start": 2.56,
+       "end": 2.92,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "also",
+       "start": 2.92,
+       "end": 3.36,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "real.",
+       "start": 3.36,
+       "end": 3.9,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "It",
+       "start": 4.7,
+       "end": 4.8,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "is",
+       "start": 4.8,
+       "end": 4.92,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "now",
+       "start": 4.92,
+       "end": 5.14,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "closer.",
+       "start": 5.14,
+       "end": 5.44,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 11.59
+    }
+   ],
+   "music": "low",
+   "transition": "cut",
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 6.25,
+   "set": "bedroom",
+   "time": "day",
+   "grade": "warm",
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "headhands",
+     "seated": true,
+     "mood": "tired",
+     "facing": 1
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Sometimes postponing a task is a way to postpone how it feels.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-003-0.wav",
+     "voice_dur": 4.418,
+     "word_times": [
+      {
+       "word": "Sometimes",
+       "start": 0.0,
+       "end": 0.38,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "postponing",
+       "start": 0.38,
+       "end": 1.24,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 1.24,
+       "end": 1.34,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "task",
+       "start": 1.34,
+       "end": 1.64,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "is",
+       "start": 1.64,
+       "end": 2.06,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 2.06,
+       "end": 2.16,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "way",
+       "start": 2.16,
+       "end": 2.32,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "to",
+       "start": 2.32,
+       "end": 2.48,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "postpone",
+       "start": 2.48,
+       "end": 2.78,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "how",
+       "start": 2.78,
+       "end": 3.42,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "it",
+       "start": 3.42,
+       "end": 3.54,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "feels.",
+       "start": 3.54,
+       "end": 3.88,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 15.25
+    }
+   ],
+   "music": "low",
+   "transition": "cut",
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 7.49,
+   "set": "park",
+   "time": "day",
+   "grade": "warm",
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "think",
+     "seated": true,
+     "mood": "neutral",
+     "facing": 1
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "But not every delay is avoidance. Missing information, exhaustion, and conflicting priorities can matter too.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-004-0.wav",
+     "voice_dur": 6.692,
+     "word_times": [
+      {
+       "word": "But",
+       "start": 0.0,
+       "end": 0.1,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "not",
+       "start": 0.1,
+       "end": 0.28,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "every",
+       "start": 0.28,
+       "end": 0.5,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "delay",
+       "start": 0.5,
+       "end": 0.84,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "is",
+       "start": 0.84,
+       "end": 1.16,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "avoidance.",
+       "start": 1.16,
+       "end": 1.6,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "Missing",
+       "start": 2.42,
+       "end": 2.58,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "information,",
+       "start": 2.58,
+       "end": 3.24,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "exhaustion,",
+       "start": 3.5,
+       "end": 3.94,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "and",
+       "start": 4.3,
+       "end": 4.36,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "conflicting",
+       "start": 4.36,
+       "end": 4.76,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "priorities",
+       "start": 4.76,
+       "end": 5.38,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "can",
+       "start": 5.38,
+       "end": 5.8,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "matter",
+       "start": 5.8,
+       "end": 5.98,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "too.",
+       "start": 5.98,
+       "end": 6.32,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 17.7
+    }
+   ],
+   "music": "low",
+   "transition": "cut",
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 6.65,
+   "set": "desk",
+   "time": "day",
+   "grade": "warm",
+   "camera": {
+    "frame": "close",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "think",
+     "seated": true,
+     "mood": "determined",
+     "facing": 1
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Alex asks a smaller question: what can I do before I feel ready?",
+     "at": 0.25,
+     "speech_check": 0.9231,
+     "speech_verified": true,
+     "voice_file": "vo-005-0.wav",
+     "voice_dur": 4.271,
+     "word_times": [
+      {
+       "word": "Alex",
+       "start": 0.0,
+       "end": 0.28,
+       "timing_source": "estimated_between_anchors"
+      },
+      {
+       "word": "asks",
+       "start": 0.28,
+       "end": 0.6,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 0.6,
+       "end": 0.92,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "smaller",
+       "start": 0.92,
+       "end": 1.18,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "question:",
+       "start": 1.18,
+       "end": 1.54,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "what",
+       "start": 2.14,
+       "end": 2.28,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "can",
+       "start": 2.28,
+       "end": 2.4,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "I",
+       "start": 2.4,
+       "end": 2.56,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "do",
+       "start": 2.56,
+       "end": 2.72,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "before",
+       "start": 2.72,
+       "end": 2.98,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "I",
+       "start": 2.98,
+       "end": 3.28,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "feel",
+       "start": 3.28,
+       "end": 3.52,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "ready?",
+       "start": 3.52,
+       "end": 3.86,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 16.29
+    }
+   ],
+   "music": "low",
+   "transition": "cut",
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 7.45,
+   "set": "desk",
+   "time": "day",
+   "grade": "warm",
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "type",
+     "seated": true,
+     "mood": "content",
+     "facing": 1
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He writes one rough sentence. It isn't good yet. Now there is something to improve.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-006-0.wav",
+     "voice_dur": 5.811,
+     "word_times": [
+      {
+       "word": "He",
+       "start": 0.0,
+       "end": 0.12,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "writes",
+       "start": 0.12,
+       "end": 0.3,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "one",
+       "start": 0.3,
+       "end": 0.58,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "rough",
+       "start": 0.58,
+       "end": 0.92,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "sentence.",
+       "start": 0.92,
+       "end": 1.36,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "It",
+       "start": 2.14,
+       "end": 2.26,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "isn't",
+       "start": 2.26,
+       "end": 2.52,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "good",
+       "start": 2.52,
+       "end": 2.66,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "yet.",
+       "start": 2.66,
+       "end": 2.9,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "Now",
+       "start": 3.52,
+       "end": 3.76,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "there",
+       "start": 3.76,
+       "end": 4.1,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "is",
+       "start": 4.1,
+       "end": 4.22,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "something",
+       "start": 4.22,
+       "end": 4.54,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "to",
+       "start": 4.54,
+       "end": 4.86,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "improve.",
+       "start": 4.86,
+       "end": 5.18,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 15.53
+    }
+   ],
+   "music": "low",
+   "transition": "cut",
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 3.0,
+   "set": "desk",
+   "time": "day",
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "type",
+     "mood": "content"
+    }
+   ],
+   "camera": {
+    "frame": "medium",
+    "push": 0
+   },
+   "lines": [],
+   "music": "low",
+   "card": {
+    "style": "cta",
+    "lines": [
+     "What makes starting difficult for you?"
+    ]
+   },
+   "sfx": [],
+   "items": []
+  }
+ ],
+ "demon_color": "#ff2a2a",
+ "narrator": "male",
+ "duration": 51.43,
+ "speech_verification": {
+  "passed": true,
+  "parts": 7,
+  "minimum_agreement": 0.875
+ },
+ "narrator_voice": "warguy",
+ "music_credit": "Synthesized score"
+}

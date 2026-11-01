@@ -1,0 +1,3 @@
+    I:         -13.8 LUFS
+    LRA:         5.8 LU
+    Peak:       -1.5 dBFS

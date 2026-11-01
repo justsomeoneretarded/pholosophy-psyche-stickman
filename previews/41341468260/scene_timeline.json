@@ -1,0 +1,50 @@
+[
+  {
+    "start": 0.0,
+    "end": 7.45,
+    "shot": 0,
+    "beat": null
+  },
+  {
+    "start": 7.45,
+    "end": 13.7,
+    "shot": 1,
+    "beat": null
+  },
+  {
+    "start": 13.7,
+    "end": 20.59,
+    "shot": 2,
+    "beat": null
+  },
+  {
+    "start": 20.59,
+    "end": 26.84,
+    "shot": 3,
+    "beat": null
+  },
+  {
+    "start": 26.84,
+    "end": 34.33,
+    "shot": 4,
+    "beat": null
+  },
+  {
+    "start": 34.33,
+    "end": 40.98,
+    "shot": 5,
+    "beat": null
+  },
+  {
+    "start": 40.98,
+    "end": 48.43,
+    "shot": 6,
+    "beat": null
+  },
+  {
+    "start": 48.43,
+    "end": 51.43,
+    "shot": 7,
+    "beat": null
+  }
+]

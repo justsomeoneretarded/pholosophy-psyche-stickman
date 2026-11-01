@@ -1,0 +1,1130 @@
+{
+  "passed": true,
+  "clips": [
+    {
+      "shot": 0,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-000-0-a.wav",
+      "expected": "The document is open. Alex has even chosen a font. So why hasn't he started?",
+      "agreement": 0.875,
+      "words": [
+        {
+          "word": "The",
+          "start": 0.0,
+          "end": 0.08
+        },
+        {
+          "word": "documents",
+          "start": 0.08,
+          "end": 0.38
+        },
+        {
+          "word": "is",
+          "start": 0.38,
+          "end": 1.02
+        },
+        {
+          "word": "open,",
+          "start": 1.02,
+          "end": 1.34
+        },
+        {
+          "word": "Alex",
+          "start": 2.02,
+          "end": 2.22
+        },
+        {
+          "word": "has",
+          "start": 2.22,
+          "end": 2.7
+        },
+        {
+          "word": "even",
+          "start": 2.7,
+          "end": 2.98
+        },
+        {
+          "word": "chosen",
+          "start": 2.98,
+          "end": 3.28
+        },
+        {
+          "word": "the",
+          "start": 3.28,
+          "end": 3.5
+        },
+        {
+          "word": "font,",
+          "start": 3.5,
+          "end": 3.72
+        },
+        {
+          "word": "so",
+          "start": 4.42,
+          "end": 4.68
+        },
+        {
+          "word": "why",
+          "start": 4.68,
+          "end": 4.92
+        },
+        {
+          "word": "hasn't",
+          "start": 4.92,
+          "end": 5.3
+        },
+        {
+          "word": "he",
+          "start": 5.3,
+          "end": 5.38
+        },
+        {
+          "word": "started?",
+          "start": 5.38,
+          "end": 5.84
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 1,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-001-0-a.wav",
+      "expected": "He reaches for his phone. For a moment, the uncomfortable task disappears.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "he",
+          "start": 0.0,
+          "end": 0.16
+        },
+        {
+          "word": "reaches",
+          "start": 0.16,
+          "end": 0.42
+        },
+        {
+          "word": "for",
+          "start": 0.42,
+          "end": 0.68
+        },
+        {
+          "word": "his",
+          "start": 0.68,
+          "end": 0.8
+        },
+        {
+          "word": "phone.",
+          "start": 0.8,
+          "end": 1.08
+        },
+        {
+          "word": "For",
+          "start": 1.78,
+          "end": 1.88
+        },
+        {
+          "word": "a",
+          "start": 1.88,
+          "end": 1.96
+        },
+        {
+          "word": "moment,",
+          "start": 1.96,
+          "end": 2.24
+        },
+        {
+          "word": "the",
+          "start": 2.62,
+          "end": 2.68
+        },
+        {
+          "word": "uncomfortable",
+          "start": 2.68,
+          "end": 3.06
+        },
+        {
+          "word": "task",
+          "start": 3.06,
+          "end": 3.48
+        },
+        {
+          "word": "disappears.",
+          "start": 3.48,
+          "end": 4.08
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 2,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-002-0-a.wav",
+      "expected": "That relief is real. The deadline is also real. It is now closer.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "that",
+          "start": 0.0,
+          "end": 0.16
+        },
+        {
+          "word": "relief",
+          "start": 0.16,
+          "end": 0.48
+        },
+        {
+          "word": "is",
+          "start": 0.48,
+          "end": 1.24
+        },
+        {
+          "word": "real.",
+          "start": 1.24,
+          "end": 1.56
+        },
+        {
+          "word": "The",
+          "start": 2.28,
+          "end": 2.3
+        },
+        {
+          "word": "deadline",
+          "start": 2.3,
+          "end": 2.56
+        },
+        {
+          "word": "is",
+          "start": 2.56,
+          "end": 2.92
+        },
+        {
+          "word": "also",
+          "start": 2.92,
+          "end": 3.36
+        },
+        {
+          "word": "real.",
+          "start": 3.36,
+          "end": 3.9
+        },
+        {
+          "word": "It",
+          "start": 4.7,
+          "end": 4.8
+        },
+        {
+          "word": "is",
+          "start": 4.8,
+          "end": 4.92
+        },
+        {
+          "word": "now",
+          "start": 4.92,
+          "end": 5.14
+        },
+        {
+          "word": "closer.",
+          "start": 5.14,
+          "end": 5.44
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 3,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-003-0-a.wav",
+      "expected": "Sometimes postponing a task is a way to postpone how it feels.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "Sometimes",
+          "start": 0.0,
+          "end": 0.38
+        },
+        {
+          "word": "postponing",
+          "start": 0.38,
+          "end": 1.24
+        },
+        {
+          "word": "a",
+          "start": 1.24,
+          "end": 1.34
+        },
+        {
+          "word": "task",
+          "start": 1.34,
+          "end": 1.64
+        },
+        {
+          "word": "is",
+          "start": 1.64,
+          "end": 2.06
+        },
+        {
+          "word": "a",
+          "start": 2.06,
+          "end": 2.16
+        },
+        {
+          "word": "way",
+          "start": 2.16,
+          "end": 2.32
+        },
+        {
+          "word": "to",
+          "start": 2.32,
+          "end": 2.48
+        },
+        {
+          "word": "postpone",
+          "start": 2.48,
+          "end": 2.78
+        },
+        {
+          "word": "how",
+          "start": 2.78,
+          "end": 3.42
+        },
+        {
+          "word": "it",
+          "start": 3.42,
+          "end": 3.54
+        },
+        {
+          "word": "feels.",
+          "start": 3.54,
+          "end": 3.88
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 4,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-004-0-a.wav",
+      "expected": "But not every delay is avoidance. Missing information, exhaustion, and conflicting priorities can matter too.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "but",
+          "start": 0.0,
+          "end": 0.1
+        },
+        {
+          "word": "not",
+          "start": 0.1,
+          "end": 0.28
+        },
+        {
+          "word": "every",
+          "start": 0.28,
+          "end": 0.5
+        },
+        {
+          "word": "delay",
+          "start": 0.5,
+          "end": 0.84
+        },
+        {
+          "word": "is",
+          "start": 0.84,
+          "end": 1.16
+        },
+        {
+          "word": "avoidance.",
+          "start": 1.16,
+          "end": 1.6
+        },
+        {
+          "word": "Missing",
+          "start": 2.42,
+          "end": 2.58
+        },
+        {
+          "word": "information,",
+          "start": 2.58,
+          "end": 3.24
+        },
+        {
+          "word": "exhaustion,",
+          "start": 3.5,
+          "end": 3.94
+        },
+        {
+          "word": "and",
+          "start": 4.3,
+          "end": 4.36
+        },
+        {
+          "word": "conflicting",
+          "start": 4.36,
+          "end": 4.76
+        },
+        {
+          "word": "priorities",
+          "start": 4.76,
+          "end": 5.38
+        },
+        {
+          "word": "can",
+          "start": 5.38,
+          "end": 5.8
+        },
+        {
+          "word": "matter",
+          "start": 5.8,
+          "end": 5.98
+        },
+        {
+          "word": "too.",
+          "start": 5.98,
+          "end": 6.32
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 5,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-005-0-a.wav",
+      "expected": "Alex asks a smaller question: what can I do before I feel ready?",
+      "agreement": 0.9231,
+      "words": [
+        {
+          "word": "Avix",
+          "start": 0.0,
+          "end": 0.28
+        },
+        {
+          "word": "asks",
+          "start": 0.28,
+          "end": 0.6
+        },
+        {
+          "word": "a",
+          "start": 0.6,
+          "end": 0.92
+        },
+        {
+          "word": "smaller",
+          "start": 0.92,
+          "end": 1.18
+        },
+        {
+          "word": "question,",
+          "start": 1.18,
+          "end": 1.54
+        },
+        {
+          "word": "what",
+          "start": 2.14,
+          "end": 2.28
+        },
+        {
+          "word": "can",
+          "start": 2.28,
+          "end": 2.4
+        },
+        {
+          "word": "I",
+          "start": 2.4,
+          "end": 2.56
+        },
+        {
+          "word": "do",
+          "start": 2.56,
+          "end": 2.72
+        },
+        {
+          "word": "before",
+          "start": 2.72,
+          "end": 2.98
+        },
+        {
+          "word": "I",
+          "start": 2.98,
+          "end": 3.28
+        },
+        {
+          "word": "feel",
+          "start": 3.28,
+          "end": 3.52
+        },
+        {
+          "word": "ready?",
+          "start": 3.52,
+          "end": 3.86
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 6,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-006-0-a.wav",
+      "expected": "He writes one rough sentence. It isn't good yet. Now there is something to improve.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "He",
+          "start": 0.0,
+          "end": 0.12
+        },
+        {
+          "word": "writes",
+          "start": 0.12,
+          "end": 0.3
+        },
+        {
+          "word": "one",
+          "start": 0.3,
+          "end": 0.58
+        },
+        {
+          "word": "rough",
+          "start": 0.58,
+          "end": 0.92
+        },
+        {
+          "word": "sentence.",
+          "start": 0.92,
+          "end": 1.36
+        },
+        {
+          "word": "It",
+          "start": 2.14,
+          "end": 2.26
+        },
+        {
+          "word": "isn't",
+          "start": 2.26,
+          "end": 2.52
+        },
+        {
+          "word": "good",
+          "start": 2.52,
+          "end": 2.66
+        },
+        {
+          "word": "yet.",
+          "start": 2.66,
+          "end": 2.9
+        },
+        {
+          "word": "Now",
+          "start": 3.52,
+          "end": 3.76
+        },
+        {
+          "word": "there",
+          "start": 3.76,
+          "end": 4.1
+        },
+        {
+          "word": "is",
+          "start": 4.1,
+          "end": 4.22
+        },
+        {
+          "word": "something",
+          "start": 4.22,
+          "end": 4.54
+        },
+        {
+          "word": "to",
+          "start": 4.54,
+          "end": 4.86
+        },
+        {
+          "word": "improve.",
+          "start": 4.86,
+          "end": 5.18
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    }
+  ],
+  "attempts": [
+    {
+      "attempt": 1,
+      "clips": [
+        {
+          "shot": 0,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-000-0-a.wav",
+          "expected": "The document is open. Alex has even chosen a font. So why hasn't he started?",
+          "agreement": 0.875,
+          "words": [
+            {
+              "word": "The",
+              "start": 0.0,
+              "end": 0.08
+            },
+            {
+              "word": "documents",
+              "start": 0.08,
+              "end": 0.38
+            },
+            {
+              "word": "is",
+              "start": 0.38,
+              "end": 1.02
+            },
+            {
+              "word": "open,",
+              "start": 1.02,
+              "end": 1.34
+            },
+            {
+              "word": "Alex",
+              "start": 2.02,
+              "end": 2.22
+            },
+            {
+              "word": "has",
+              "start": 2.22,
+              "end": 2.7
+            },
+            {
+              "word": "even",
+              "start": 2.7,
+              "end": 2.98
+            },
+            {
+              "word": "chosen",
+              "start": 2.98,
+              "end": 3.28
+            },
+            {
+              "word": "the",
+              "start": 3.28,
+              "end": 3.5
+            },
+            {
+              "word": "font,",
+              "start": 3.5,
+              "end": 3.72
+            },
+            {
+              "word": "so",
+              "start": 4.42,
+              "end": 4.68
+            },
+            {
+              "word": "why",
+              "start": 4.68,
+              "end": 4.92
+            },
+            {
+              "word": "hasn't",
+              "start": 4.92,
+              "end": 5.3
+            },
+            {
+              "word": "he",
+              "start": 5.3,
+              "end": 5.38
+            },
+            {
+              "word": "started?",
+              "start": 5.38,
+              "end": 5.84
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 1,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-001-0-a.wav",
+          "expected": "He reaches for his phone. For a moment, the uncomfortable task disappears.",
+          "agreement": 1.0,
+          "words": [
+            {
+              "word": "he",
+              "start": 0.0,
+              "end": 0.16
+            },
+            {
+              "word": "reaches",
+              "start": 0.16,
+              "end": 0.42
+            },
+            {
+              "word": "for",
+              "start": 0.42,
+              "end": 0.68
+            },
+            {
+              "word": "his",
+              "start": 0.68,
+              "end": 0.8
+            },
+            {
+              "word": "phone.",
+              "start": 0.8,
+              "end": 1.08
+            },
+            {
+              "word": "For",
+              "start": 1.78,
+              "end": 1.88
+            },
+            {
+              "word": "a",
+              "start": 1.88,
+              "end": 1.96
+            },
+            {
+              "word": "moment,",
+              "start": 1.96,
+              "end": 2.24
+            },
+            {
+              "word": "the",
+              "start": 2.62,
+              "end": 2.68
+            },
+            {
+              "word": "uncomfortable",
+              "start": 2.68,
+              "end": 3.06
+            },
+            {
+              "word": "task",
+              "start": 3.06,
+              "end": 3.48
+            },
+            {
+              "word": "disappears.",
+              "start": 3.48,
+              "end": 4.08
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 2,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-002-0-a.wav",
+          "expected": "That relief is real. The deadline is also real. It is now closer.",
+          "agreement": 1.0,
+          "words": [
+            {
+              "word": "that",
+              "start": 0.0,
+              "end": 0.16
+            },
+            {
+              "word": "relief",
+              "start": 0.16,
+              "end": 0.48
+            },
+            {
+              "word": "is",
+              "start": 0.48,
+              "end": 1.24
+            },
+            {
+              "word": "real.",
+              "start": 1.24,
+              "end": 1.56
+            },
+            {
+              "word": "The",
+              "start": 2.28,
+              "end": 2.3
+            },
+            {
+              "word": "deadline",
+              "start": 2.3,
+              "end": 2.56
+            },
+            {
+              "word": "is",
+              "start": 2.56,
+              "end": 2.92
+            },
+            {
+              "word": "also",
+              "start": 2.92,
+              "end": 3.36
+            },
+            {
+              "word": "real.",
+              "start": 3.36,
+              "end": 3.9
+            },
+            {
+              "word": "It",
+              "start": 4.7,
+              "end": 4.8
+            },
+            {
+              "word": "is",
+              "start": 4.8,
+              "end": 4.92
+            },
+            {
+              "word": "now",
+              "start": 4.92,
+              "end": 5.14
+            },
+            {
+              "word": "closer.",
+              "start": 5.14,
+              "end": 5.44
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 3,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-003-0-a.wav",
+          "expected": "Sometimes postponing a task is a way to postpone how it feels.",
+          "agreement": 1.0,
+          "words": [
+            {
+              "word": "Sometimes",
+              "start": 0.0,
+              "end": 0.38
+            },
+            {
+              "word": "postponing",
+              "start": 0.38,
+              "end": 1.24
+            },
+            {
+              "word": "a",
+              "start": 1.24,
+              "end": 1.34
+            },
+            {
+              "word": "task",
+              "start": 1.34,
+              "end": 1.64
+            },
+            {
+              "word": "is",
+              "start": 1.64,
+              "end": 2.06
+            },
+            {
+              "word": "a",
+              "start": 2.06,
+              "end": 2.16
+            },
+            {
+              "word": "way",
+              "start": 2.16,
+              "end": 2.32
+            },
+            {
+              "word": "to",
+              "start": 2.32,
+              "end": 2.48
+            },
+            {
+              "word": "postpone",
+              "start": 2.48,
+              "end": 2.78
+            },
+            {
+              "word": "how",
+              "start": 2.78,
+              "end": 3.42
+            },
+            {
+              "word": "it",
+              "start": 3.42,
+              "end": 3.54
+            },
+            {
+              "word": "feels.",
+              "start": 3.54,
+              "end": 3.88
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 4,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-004-0-a.wav",
+          "expected": "But not every delay is avoidance. Missing information, exhaustion, and conflicting priorities can matter too.",
+          "agreement": 1.0,
+          "words": [
+            {
+              "word": "but",
+              "start": 0.0,
+              "end": 0.1
+            },
+            {
+              "word": "not",
+              "start": 0.1,
+              "end": 0.28
+            },
+            {
+              "word": "every",
+              "start": 0.28,
+              "end": 0.5
+            },
+            {
+              "word": "delay",
+              "start": 0.5,
+              "end": 0.84
+            },
+            {
+              "word": "is",
+              "start": 0.84,
+              "end": 1.16
+            },
+            {
+              "word": "avoidance.",
+              "start": 1.16,
+              "end": 1.6
+            },
+            {
+              "word": "Missing",
+              "start": 2.42,
+              "end": 2.58
+            },
+            {
+              "word": "information,",
+              "start": 2.58,
+              "end": 3.24
+            },
+            {
+              "word": "exhaustion,",
+              "start": 3.5,
+              "end": 3.94
+            },
+            {
+              "word": "and",
+              "start": 4.3,
+              "end": 4.36
+            },
+            {
+              "word": "conflicting",
+              "start": 4.36,
+              "end": 4.76
+            },
+            {
+              "word": "priorities",
+              "start": 4.76,
+              "end": 5.38
+            },
+            {
+              "word": "can",
+              "start": 5.38,
+              "end": 5.8
+            },
+            {
+              "word": "matter",
+              "start": 5.8,
+              "end": 5.98
+            },
+            {
+              "word": "too.",
+              "start": 5.98,
+              "end": 6.32
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 5,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-005-0-a.wav",
+          "expected": "Alex asks a smaller question: what can I do before I feel ready?",
+          "agreement": 0.9231,
+          "words": [
+            {
+              "word": "Avix",
+              "start": 0.0,
+              "end": 0.28
+            },
+            {
+              "word": "asks",
+              "start": 0.28,
+              "end": 0.6
+            },
+            {
+              "word": "a",
+              "start": 0.6,
+              "end": 0.92
+            },
+            {
+              "word": "smaller",
+              "start": 0.92,
+              "end": 1.18
+            },
+            {
+              "word": "question,",
+              "start": 1.18,
+              "end": 1.54
+            },
+            {
+              "word": "what",
+              "start": 2.14,
+              "end": 2.28
+            },
+            {
+              "word": "can",
+              "start": 2.28,
+              "end": 2.4
+            },
+            {
+              "word": "I",
+              "start": 2.4,
+              "end": 2.56
+            },
+            {
+              "word": "do",
+              "start": 2.56,
+              "end": 2.72
+            },
+            {
+              "word": "before",
+              "start": 2.72,
+              "end": 2.98
+            },
+            {
+              "word": "I",
+              "start": 2.98,
+              "end": 3.28
+            },
+            {
+              "word": "feel",
+              "start": 3.28,
+              "end": 3.52
+            },
+            {
+              "word": "ready?",
+              "start": 3.52,
+              "end": 3.86
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 6,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-006-0-a.wav",
+          "expected": "He writes one rough sentence. It isn't good yet. Now there is something to improve.",
+          "agreement": 1.0,
+          "words": [
+            {
+              "word": "He",
+              "start": 0.0,
+              "end": 0.12
+            },
+            {
+              "word": "writes",
+              "start": 0.12,
+              "end": 0.3
+            },
+            {
+              "word": "one",
+              "start": 0.3,
+              "end": 0.58
+            },
+            {
+              "word": "rough",
+              "start": 0.58,
+              "end": 0.92
+            },
+            {
+              "word": "sentence.",
+              "start": 0.92,
+              "end": 1.36
+            },
+            {
+              "word": "It",
+              "start": 2.14,
+              "end": 2.26
+            },
+            {
+              "word": "isn't",
+              "start": 2.26,
+              "end": 2.52
+            },
+            {
+              "word": "good",
+              "start": 2.52,
+              "end": 2.66
+            },
+            {
+              "word": "yet.",
+              "start": 2.66,
+              "end": 2.9
+            },
+            {
+              "word": "Now",
+              "start": 3.52,
+              "end": 3.76
+            },
+            {
+              "word": "there",
+              "start": 3.76,
+              "end": 4.1
+            },
+            {
+              "word": "is",
+              "start": 4.1,
+              "end": 4.22
+            },
+            {
+              "word": "something",
+              "start": 4.22,
+              "end": 4.54
+            },
+            {
+              "word": "to",
+              "start": 4.54,
+              "end": 4.86
+            },
+            {
+              "word": "improve.",
+              "start": 4.86,
+              "end": 5.18
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        }
+      ]
+    }
+  ]
+}
