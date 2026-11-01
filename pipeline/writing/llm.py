@@ -14,7 +14,7 @@ import urllib.error
 import urllib.request
 from pathlib import Path
 
-DEFAULT_MODELS = 'groq:qwen/qwen3.8-27b,groq:openai/gpt-oss-120b,ollama:gemma4:12b'
+DEFAULT_MODELS = 'groq:openai/gpt-oss-20b,groq:openai/gpt-oss-120b,groq:qwen/qwen3.8-27b,ollama:qwen3:4b,ollama:gemma4:12b'
 GROQ = 'https://api.groq.com/openai/v1'
 # Groq sits behind Cloudflare, which refuses Python's default user-agent (error 1010).
 USER_AGENT = 'stickman-essay-studio/1.0 (+https://github.com/justsomeoneretarded/pholosophy-psyche-stickman)'
@@ -101,6 +101,8 @@ class Groq:
         return _post(GROQ + '/chat/completions', payload, {'Authorization': 'Bearer ' + self.key})
 
     def complete(self, system, user, temperature=.8, max_tokens=7000):
+        if time.time() < getattr(self, '_unavailable_until', 0):
+            raise WriterError(f'{self.model} is in a reported quota cooldown; trying another free model')
         budget = min(max_tokens, getattr(self, '_output_cap', max_tokens))
         base = {'model': self.model, 'temperature': temperature, 'max_tokens': budget,
                 'response_format': {'type': 'json_object'},
@@ -155,8 +157,11 @@ class Groq:
                 if status == 429 or (isinstance(status, int) and status >= 500) or status is None:
                     headers = getattr(getattr(exc, 'response', None), 'headers', {}) or {}
                     wait = float(headers.get('retry-after') or 0) or min(90, 15 * (attempt + 1))
-                    notice('Groq busy', f'{status}: {text[:160]}; waiting {wait:.0f}s', 'warning')
-                    time.sleep(min(wait, 120))
+                    if status == 429 and wait > 60:
+                        self._unavailable_until = time.time() + wait
+                        raise WriterError(f'{self.model} free quota requires a {wait:.0f}s wait; trying another model. {text[:450]}')
+                    notice('Groq busy', f'{status}: {text[:300]}; waiting {wait:.0f}s', 'warning')
+                    time.sleep(wait)
                     continue
                 raise WriterError(f'Groq error {status}: {text}')
         raise WriterError(f'Groq did not answer after retries ({self.model})')
@@ -204,8 +209,8 @@ class Writer:
         errors, best, answered = [], None, False
         specs = ([self.used] + [s for s in self.specs if s != self.used]) if self.used in self.specs else self.specs
         for spec in specs:
-            if spec.startswith('ollama:') and answered:
-                break               # Groq works; a slower, weaker local model will not do better
+            if spec.startswith('ollama:') and best is not None:
+                break               # A valid draft with only a length warning is preferable to repeating local inference
             try:
                 client = self._client(spec)
             except Exception as exc:  # noqa: BLE001

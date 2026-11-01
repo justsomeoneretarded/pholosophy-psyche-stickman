@@ -1,5 +1,5 @@
 name: Benchmark bounded writing with independent topic
-# Iteration 4: resume the valid draft and test focused single-beat editorial revisions.
+# Iteration 5: verify focused revisions and storyboards on the available free 20B model.
 on:
   workflow_dispatch:
   push:
@@ -13,7 +13,8 @@ jobs:
     timeout-minutes: 25
     env:
       GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-      WRITER_MODELS: groq:openai/gpt-oss-120b
+      WRITER_MODELS: groq:openai/gpt-oss-20b
+      STORYBOARD_MODELS: groq:openai/gpt-oss-20b
       TITLE: What If Nothing Really Matters?
       PYTHONUNBUFFERED: '1'
     steps:

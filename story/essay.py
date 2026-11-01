@@ -23,7 +23,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / 'story'))
 from validate import VOCAB, repair  # noqa: E402
-from pipeline.writing.llm import Writer, Rejected, notice  # noqa: E402
+from pipeline.writing.llm import Writer, Rejected, notice, DEFAULT_MODELS  # noqa: E402
 from pipeline.writing.quotation import has_attributed_quotation  # noqa: E402
 from story.planning import plan_in_parts
 from story.editor import review_concept  # noqa: E402
@@ -422,7 +422,7 @@ def stage_shots(out_dir, group=2):
     sheet = json.loads((out / 'beats.json').read_text())
     beats = sheet['beats']
     import os
-    writer = Writer(os.environ.get('STORYBOARD_MODELS', 'groq:openai/gpt-oss-120b,groq:qwen/qwen3.8-27b,ollama:gemma4:12b'))
+    writer = Writer(os.environ.get('STORYBOARD_MODELS') or ','.join(dict.fromkeys(filter(None,[sheet.get('_writer'),*DEFAULT_MODELS.split(',')]))))
     example = example_shots()
     result = {}
     t0 = time.time()

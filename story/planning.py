@@ -28,7 +28,7 @@ def supported_location(beat, require_scene=False):
     return beat
 
 def plan_in_parts(writer, system, user, validate, minutes, output_dir):
-    out=Path(output_dir)
+    out=Path(output_dir);out.mkdir(parents=True,exist_ok=True)
     duration=float(minutes or 4.5)*60
     count=max(12,min(20,round(duration/20)))
     brief=system.split('Return JSON:',1)[0]

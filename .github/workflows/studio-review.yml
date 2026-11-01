@@ -1,5 +1,5 @@
 name: Autonomous studio review
-# Iteration 6: focused editorial repair verified on the saved independent-topic draft.
+# Iteration 7: available free-model benchmark, then six-minute full production.
 on:
   workflow_dispatch:
   push:
@@ -18,7 +18,7 @@ jobs:
           REPOSITORY: ${{ github.repository }}
           REVISION: ${{ github.sha }}
           BENCHMARK_REVISION: ${{ github.sha }}
-          REVIEW_NOTES: "Develop an original four-minute animated essay about when useful reflection becomes an attempt to eliminate uncertainty. Challenge the idea that overthinking proves intelligence. Follow Alex revising an ordinary message to a friend after an awkward conversation. An initially helpful inner adviser gradually demands guarantees no message can provide. Escalate from checking clarity to trying to control the friend's reaction. Explain the distinction between collecting new information and rehearsing the same possibilities, without diagnosis or fabricated research. Include a counterargument: important, hard-to-reverse decisions deserve investigation. Alex chooses an honest, specific, respectful message and sends it while still uncertain. The friend replies with a small misunderstanding that they resolve through conversation. Let the adviser remain, now helping with the real reply. Prioritize expressive physical acting, plausible prop contact, pauses, and changing body language. Use the narrator to explain while the characters supply concrete situations and occasional natural dialogue. Do not force a villain, a magical cure, identical endings, or generic motivational advice. Preserve thoughtful nuance and restrained humor."
+          REVIEW_NOTES: "Develop an original six-minute animated essay about when useful reflection becomes an attempt to eliminate uncertainty. Challenge the idea that overthinking proves intelligence. Follow Alex revising an ordinary message to a friend after an awkward conversation. An initially helpful inner adviser gradually demands guarantees no message can provide. Escalate from checking clarity to trying to control the friend's reaction. Explain the distinction between collecting new information and rehearsing the same possibilities, without diagnosis or fabricated research. Include a counterargument: important, hard-to-reverse decisions deserve investigation. Alex chooses an honest, specific, respectful message and sends it while still uncertain. The friend replies with a small misunderstanding that they resolve through conversation. Let the adviser remain, now helping with the real reply. Prioritize expressive physical acting, plausible prop contact, pauses, and changing body language. Use the narrator to explain while the characters supply concrete situations and occasional natural dialogue. Do not force a villain, a magical cure, identical endings, or generic motivational advice. Preserve thoughtful nuance and restrained humor."
         run: |
           python - <<'PY'
           import os,json,time,urllib.request
@@ -50,6 +50,6 @@ jobs:
                   break
               time.sleep(15)
           else:raise SystemExit('Writing benchmark did not complete within thirty minutes')
-          request('/actions/workflows/generate-video.yml/dispatches',{'ref':'main','inputs':{'title':'Why Smart People Overthink Everything','narrator':'Warguy','duration_minutes':'4','notes':os.environ['REVIEW_NOTES']}})
+          request('/actions/workflows/generate-video.yml/dispatches',{'ref':'main','inputs':{'title':'Why Smart People Overthink Everything','narrator':'Warguy','duration_minutes':'6','notes':os.environ['REVIEW_NOTES']}})
           print('Dispatched complete title-to-video production for review')
           PY

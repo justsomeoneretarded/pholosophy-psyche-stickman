@@ -1,12 +1,15 @@
 name: Benchmark free model alternatives
+# Iteration 2: CPU-only continuation; provider access evidence is already preserved.
 on:
   workflow_dispatch:
   push:
     paths: ['.github/workflows/model-review.yml']
 permissions:
   contents: write
+  actions: write
 jobs:
   quota:
+    if: github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     env:
@@ -33,6 +36,19 @@ jobs:
     timeout-minutes: 35
     steps:
       - uses: actions/checkout@v4
+      - name: Stop the older CPU probe before model loading
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          python - <<'PY'
+          import os,urllib.request,urllib.error
+          request=urllib.request.Request('https://api.github.com/repos/'+os.environ['REPOSITORY']+'/actions/runs/41333677684/cancel',
+              data=b'{}',headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json'},method='POST')
+          try:urllib.request.urlopen(request,timeout=30).close()
+          except urllib.error.HTTPError as exc:
+              if exc.code!=409:raise
+          PY
       - name: Free disk space for local inference
         run: sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL
       - uses: actions/setup-python@v5
