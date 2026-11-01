@@ -18,6 +18,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from pipeline.speech.narrator import Narrator, verify, wav_seconds  # noqa: E402
+from pipeline.speech.verification import negation_change
 from pipeline.speech.caption_timing import align_caption_words  # noqa: E402
 
 GAP = .4          # pause between a line and its twist
@@ -36,9 +37,10 @@ def verify_takes(takes, whisper, minimum=.8):
             parts.append(('twist', twist_path, line['twist']))
         for part, path, expected in parts:
             agreement, words = verify(path, expected, whisper)
+            changed_negation = negation_change(expected, ' '.join(w['word'] for w in words))
             records.append({'shot': i, 'line': k, 'part': part, 'file': str(path),
                             'expected': expected, 'agreement': round(agreement, 4),
-                            'words': words, 'passed': agreement >= minimum})
+                            'words': words, 'negation_changed': changed_negation, 'passed': agreement >= minimum and not changed_negation})
     return records
 
 
@@ -85,19 +87,24 @@ def main() -> int:
         report_path.write_text(json.dumps({'passed': all(r['passed'] for r in records), 'clips': records}, indent=2))
         bad = [r for r in records if not r['passed']]
         del whisper
-        if bad:
+        history = [{'attempt': 1, 'clips': records}]
+        for retry_index in range(2):
+            if not bad:
+                break
             voice = Narrator(a.narrator)
             try:
                 for r in bad:
-                    record(r['expected'], Path(r['file']), seed=5)
+                    record(r['expected'], Path(r['file']), seed=5 + retry_index * 11)
             finally:
                 voice.close()
             notice('Narration re-recorded', f'{len(bad)} spoken parts were regenerated; checking the new takes')
             whisper = WhisperModel(a.whisper, device='cpu', compute_type='int8', cpu_threads=4, num_workers=1)
             records = verify_takes(takes, whisper)
             del whisper
+            bad = [r for r in records if not r['passed']]
+            history.append({'attempt': retry_index + 2, 'clips': records})
         passed = all(r['passed'] for r in records)
-        report_path.write_text(json.dumps({'passed': passed, 'clips': records}, indent=2))
+        report_path.write_text(json.dumps({'passed': passed, 'clips': records, 'attempts': history}, indent=2))
         if not passed:
             failed = [f"{r['file']} ({r['agreement']:.2f})" for r in records if not r['passed']]
             raise RuntimeError('Narration still differs from the script after regeneration: ' + ', '.join(failed))

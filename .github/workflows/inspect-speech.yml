@@ -1,4 +1,5 @@
 name: Inspect generated speech diagnostics
+# Compare the saved take with an independent small.en transcription.
 on:
   workflow_dispatch:
   push:
@@ -20,11 +21,38 @@ jobs:
           path: diagnostics
           run-id: '41325896216'
           github-token: ${{ github.token }}
+      - uses: actions/checkout@v4
+        with:
+          path: studio
+      - name: Transcribe the saved failed take independently
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg >/dev/null
+          python -m pip install -q faster-whisper==1.2.1 numpy
+          python - <<'PY'
+          import sys,json
+          from pathlib import Path
+          sys.path.insert(0,str(Path('studio').resolve()))
+          from faster_whisper import WhisperModel
+          from pipeline.speech.narrator import verify
+          from pipeline.speech.verification import negation_change
+          report=json.loads(Path('diagnostics/voice/verification.json').read_text())
+          model=WhisperModel('small.en',device='cpu',compute_type='int8',cpu_threads=4,num_workers=1)
+          output=[]
+          for failed in [c for c in report['clips'] if not c['passed']][:3]:
+              path=Path('diagnostics/voice')/Path(failed['file']).name
+              agreement,words=verify(path,failed['expected'],model)
+              output.append({'original':failed,'independent_model':'small.en CPU INT8','agreement':agreement,
+                  'words':words,'negation_changed':negation_change(failed['expected'],' '.join(w['word'] for w in words))})
+          Path('diagnostics/second-opinion.json').write_text(json.dumps(output,indent=2))
+          print(json.dumps(output,indent=2))
+          PY
       - name: Preserve the actual speech-check evidence for review
         run: |
           mkdir -p previews/41325896216/speech-review
           cp diagnostics/film.json previews/41325896216/speech-review/
           cp diagnostics/voice/verification.json previews/41325896216/speech-review/
+          cp diagnostics/second-opinion.json previews/41325896216/speech-review/
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add previews/41325896216/speech-review

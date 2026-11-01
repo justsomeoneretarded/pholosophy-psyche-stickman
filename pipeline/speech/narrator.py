@@ -179,7 +179,8 @@ def verify(path, expected, whisper):
     segments, _ = whisper.transcribe(audio, language='en', word_timestamps=True, beam_size=5, vad_filter=True,
                                      condition_on_previous_text=False)
     words = [{'word': w.word.strip(), 'start': w.start, 'end': w.end} for s in segments for w in (s.words or [])]
-    tok = lambda t: re.findall(r'[a-z0-9]+', t.lower())
+    from pipeline.speech.verification import speech_tokens
+    tok = speech_tokens
     agreement = SequenceMatcher(None, tok(spoken(expected)), tok(' '.join(w['word'] for w in words)), autojunk=False).ratio()
     return agreement, words
 
