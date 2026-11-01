@@ -8,7 +8,10 @@ import json
 import sys
 from pathlib import Path
 
+
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+from story.continuity import carry_counters
 VOCAB = json.loads((ROOT / 'engine' / 'vocab.json').read_text())
 CARD_STYLES = set(VOCAB['cards'])
 INSERTS = set(VOCAB['inserts'])
@@ -79,7 +82,8 @@ def repair(film: dict) -> tuple[dict, list[str]]:
     if isinstance(hud, dict) and hud.get('label') and not hud.get('items'):
         hud = {'items': [{'label': hud['label'], 'color': hud.get('color', '#ffd34a')}]}
     if isinstance(hud, dict) and isinstance(hud.get('items'), list):
-        items = [{'label': ' '.join(str(it.get('label', '')).replace('_', ' ').split())[:22], 'color': it.get('color') if HEX(it.get('color')) else '#ffd34a'}
+        items = [{'label': ' '.join(str(it.get('label', '')).replace('_', ' ').split())[:22], 'color': it.get('color') if HEX(it.get('color')) else '#ffd34a',
+                  'mode': 'cumulative' if it.get('mode') == 'cumulative' else 'value'}
                  for it in hud['items'][:2] if isinstance(it, dict) and it.get('label')]
         film['hud'] = {'items': items} if items else None
     else:
@@ -237,6 +241,8 @@ def repair(film: dict) -> tuple[dict, list[str]]:
             chap = (raw.get('hud') or {}).get('chapter')
             if chap:
                 h['chapter'] = str(chap)[:18]
+            if (raw.get('hud') or {}).get('reset') is True:
+                h['reset'] = True
             if (raw.get('hud') or {}).get('alert'):
                 h['alert'] = True
             if h:
@@ -265,6 +271,7 @@ def repair(film: dict) -> tuple[dict, list[str]]:
         notes.append('added the closing like/subscribe card')
     shots[0].setdefault('transition', 'fade')
     film['shots'] = shots
+    film = carry_counters(film, notes)
     film['duration'] = round(sum(s['dur'] for s in shots), 2)
     return film, notes
 

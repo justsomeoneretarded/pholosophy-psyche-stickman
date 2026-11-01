@@ -24,13 +24,13 @@ List only meaningful issues, not stylistic preferences. Do not invent research o
 BEAT_FIELDS = set("""name seconds where time weather grade emotion what_happens narration
 demon_line inner_voice_line dialogue phone insert big_text counter_values chapter relapse mode idea scene who""".split())
 META_FIELDS = set("""opening_line quote logo logline idea inner_voice description youtube_titles
-tags thumbnail_words pinned_comment cold_open ending approach""".split())
+tags thumbnail_words pinned_comment cold_open ending approach device""".split())
 
 
 def context(sheet, title):
     return {
         'topic_and_direction': title,
-        'idea': sheet.get('idea'), 'logline': sheet.get('logline'),
+        'idea': sheet.get('idea'), 'logline': sheet.get('logline'), 'device': sheet.get('device'),
         'inner_voice': sheet.get('inner_voice'), 'approach': sheet.get('approach'),
         'cold_open': sheet.get('cold_open'), 'ending': sheet.get('ending'), 'cast': sheet.get('cast'),
         'opening_line': sheet.get('opening_line'), 'quote': sheet.get('quote'),

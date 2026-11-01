@@ -126,7 +126,7 @@ Return JSON:
  "cast": [{{"id": short lowercase id, "kind": "hero"|"friend"|"extra"|"demon", "hair": ..., "hair_color": ..., "top": colour,
            "top_style": ..., "pants": colour, "scarf": colour, "hat": ..., "glasses": true|false, "hood": true|false}}],
  "inner_voice": null or {{"represents": what the silhouette is, "color": "#hex"}},
- "device": {{"type": "none" | "counter" | "days", "items": [{{"label": ..., "color": "#hex"}}]}} (usually none),
+ "device": {{"type": "none" | "counter" | "days", "items": [{{"label": ..., "color": "#hex", "mode": "cumulative"|"value"}}]}} (usually none),
  "music_prompt": instrumental style for an AI composer that fits THIS concept (instruments, mood arc, bpm),
  "cold_open": optional line shown on black at the start, or "",
  "ending": optional final line shown on black, or "",
@@ -323,6 +323,7 @@ You are the storyboard artist. Turn EACH beat below into 2-6 shots (more for lon
 Reply with JSON only: {{"beats": [{{"beat": beat number, "shots": [...]}}]}}.
 Film approach: {sheet.get('approach', '')}. Cast: {cast}. Silhouette: {json.dumps(sheet.get('inner_voice'))}.
 Story device: {json.dumps(sheet.get('device') or {})} - only if it is a counter, put values in hud.values.
+Cumulative counters track totals across the whole film; never reset at a new shot. Omit hud.values when unchanged. For a deliberate story reset use hud.reset=true. Values such as mood or a streak may fall and use mode=value.
 JSON shape example (content is illustrative only): {example}"""
     payload = [{'beat': first + i + 1, **{k: v for k, v in b.items() if k not in ('seconds', 'idea')}, 'seconds': b.get('seconds')} for i, b in enumerate(beats)]
     user = f"Film: {sheet.get('title')} - {(sheet.get('idea') or {}).get('definition', '')}\nBeats:\n{json.dumps(payload, ensure_ascii=False)}"
