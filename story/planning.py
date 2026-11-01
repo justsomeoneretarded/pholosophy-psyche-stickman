@@ -95,12 +95,12 @@ Advance ONLY the supplied spine_entries_to_advance. These are beats {indices} of
 do not skip to the ending or reuse a different spine entry. Use exact supported set IDs,
 not descriptive strings such as park bench or cafe table.
 Each beat needs about {words} spoken words in two complete explanatory sentences,
-lasting about {duration/count:.0f} seconds. The two beats advance the spine entry
+lasting about {duration/count:.0f} seconds. The requested beats advance the spine entry
 differently; do not repeat the same explanation or action. Preserve earlier events.
 Keep action descriptions to eight words, and omit unused optional fields.
 When where=scene include base and a few supported elements with x coordinates.
 Otherwise use the named set, without a redundant scene object.
-No metadata or publishing fields. Keep both beat objects below 800 output tokens.
+No metadata or publishing fields. Keep this response below 800 output tokens.
 """
         chunk=writer.json(prompt,json.dumps(payload,ensure_ascii=False),check_chunk,
                           max_tokens=900,temperature=.65,attempts=3)

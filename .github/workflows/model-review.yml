@@ -1,5 +1,5 @@
 name: Benchmark free model alternatives
-# Iteration 3: local single-beat requests with normalized object-form character references.
+# Iteration 4: consistent single-beat wording for the CPU probe.
 on:
   workflow_dispatch:
   push:
@@ -43,7 +43,7 @@ jobs:
         run: |
           python - <<'PY'
           import os,urllib.request,urllib.error
-          request=urllib.request.Request('https://api.github.com/repos/'+os.environ['REPOSITORY']+'/actions/runs/41333677684/cancel',
+          request=urllib.request.Request('https://api.github.com/repos/'+os.environ['REPOSITORY']+'/actions/runs/41336314780/cancel',
               data=b'{}',headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json'},method='POST')
           try:urllib.request.urlopen(request,timeout=30).close()
           except urllib.error.HTTPError as exc:
