@@ -1,6 +1,29 @@
 """Bounded concept, beat expansion and publishing requests for free model limits."""
-import copy,json
+import copy,json,re
 from pathlib import Path
+
+VOCAB=json.loads((Path(__file__).resolve().parents[1]/'engine/vocab.json').read_text())
+
+def supported_location(beat):
+    original=str(beat.get('where') or '')
+    if original in VOCAB['sets']:
+        return beat
+    if isinstance(beat.get('scene'),dict):
+        beat['where']='scene'
+    else:
+        choices=[]
+        for name in VOCAB['sets']:
+            if name=='scene':continue
+            match=re.search(r'(?<![a-z])'+re.escape(name).replace('_',r'[_ ]')+r'(?![a-z])',original.lower())
+            if match:choices.append((match.start(),name))
+        if choices:
+            beat['where']=min(choices)[1]
+        elif 'stage' in original.lower():
+            beat['where']='scene';beat.setdefault('scene',{'base':'stage','elements':[]})
+        else:
+            raise ValueError('Unsupported where='+repr(original)+'; choose an exact supported set ID or provide a scene object')
+    beat['_location_description']=original
+    return beat
 
 def plan_in_parts(writer, system, user, validate, minutes, output_dir):
     out=Path(output_dir)
@@ -25,6 +48,7 @@ Keep the complete outline comfortably below 750 output tokens."""
             raise ValueError('Outline needs 5-8 substantive spine entries')
         if not isinstance(data.get('cast'),list) or not data['cast']:
             raise ValueError('Outline needs its cast')
+        for entry in spine:supported_location(entry)
         return data
     outline=writer.json(outline_system,user,outline_check,max_tokens=900,temperature=.7,attempts=3)
     (out/'outline.json').write_text(json.dumps(outline,indent=1,ensure_ascii=False))
@@ -35,23 +59,32 @@ Keep the complete outline comfortably below 750 output tokens."""
     for start in range(0,count,2):
         indices=list(range(start+1,min(count,start+2)+1))
         slots=[spine[min(len(spine)-1,int((index-1)*len(spine)/count))] for index in indices]
-        payload={'topic':user,'outline':outline,'requested_indices':indices,
-                 'spine_entries_to_advance':slots,'previous_beats':sheet['beats'][-2:]}
+        payload={'topic':user,'argument_and_cast':{k:v for k,v in outline.items() if k not in ('spine','beats')},'requested_indices':indices,
+                 'total_beats':count,'spine_entries_to_advance':slots,'previous_beats':sheet['beats'][-2:]}
         def check_chunk(data):
             beats=data.get('beats')
             if not isinstance(beats,list) or len(beats)!=len(indices):
                 raise ValueError('Return exactly the requested beats')
+            prior={' '.join(' '.join(b.get('narration',[])).lower().split()) for b in sheet['beats']}
             for b in beats:
                 if not isinstance(b,dict) or not isinstance(b.get('narration'),list):
                     raise ValueError('Each beat needs narration as a sentence list')
                 if not b.get('who') or not b.get('what_happens'):
                     raise ValueError('Stage the characters and visible action')
+                supported_location(b)
+                text=' '.join(' '.join(b['narration']).lower().split())
+                if len(text.split())>=20 and text in prior:
+                    raise ValueError('This complete narrated beat duplicates an earlier beat; advance the requested idea instead')
+                prior.add(text)
             return beats
         prompt=brief+f"""
 EXPANSION REQUEST: Return ONLY {{"beats":[the {len(indices)} requested complete beat objects]}}.
 Each beat has: idea, mode, where, seconds, who (cast IDs), emotion, what_happens,
 narration (a list of complete sentences), time, weather, grade; optional dialogue
 [{{"who":"id","text":"short"}}], inner_voice_line and scene.
+Advance ONLY the supplied spine_entries_to_advance. These are beats {indices} of {count};
+do not skip to the ending or reuse a different spine entry. Use exact supported set IDs,
+not descriptive strings such as park bench or cafe table.
 Each beat needs about {words} spoken words in two complete explanatory sentences,
 lasting about {duration/count:.0f} seconds. The two beats advance the spine entry
 differently; do not repeat the same explanation or action. Preserve earlier events.

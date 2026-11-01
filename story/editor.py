@@ -13,6 +13,9 @@ Find substantive problems: unsupported empirical claims; contradictions; missing
 unearned cures or guarantees; a reply that does not answer the question actually asked;
 an ending that contradicts the argument; visual actions that do not carry the narration.
 Consider the producer's intent without copying their sample wording mechanically.
+Check that philosophical positions are framed as arguments rather than established universal facts.
+Look for a relevant objection and earned reasoning; a gym goal or optimistic slogan alone does not
+resolve a philosophical question. Detect repeated explanations and premature jumps to the ending.
 Do not forbid fictional dialogue, inner thoughts, complex subjects, humor, or creative structures.
 Do not demand generic disclaimers or remove informative depth. A hopeful fictional outcome is
 allowed; a universal psychological promise based on that outcome needs revision.

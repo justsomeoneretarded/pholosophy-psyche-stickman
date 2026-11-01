@@ -10,7 +10,7 @@ class Writer:
         payload=json.loads(user)
         if 'requested_indices' not in payload:
             return {'youtube_titles':['A thoughtful title'],'description':'A specific explanation.'}
-        return check({'beats':[{'who':['hero'],'what_happens':'He weighs the choice.',
+        return check({'beats':[{'where':'park','who':['hero'],'what_happens':'He weighs the choice.',
             'narration':['A complete explanatory sentence, preserved exactly.']} for _ in payload['requested_indices']]})
 def test_full_plan_uses_bounded_requests_and_still_runs_final_validation(tmp_path):
     writer=Writer();checked=[]
