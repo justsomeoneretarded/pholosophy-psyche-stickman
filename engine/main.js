@@ -305,6 +305,11 @@ function getCues() {
     if (shot.phone && shot.phone.app === 'off' && shot.camera && shot.camera.frame === 'phone') add(s0 + (shot.phone.off_at ?? 1.4), 'click', .9);
     for (const a of shot.actors || []) {
       const kind = (FILM.cast[a.id] || {}).kind || a.kind;
+      if (a.pose === 'write') {
+        for(let q=.6;q<Math.min(shot.dur,3.5);q+=.32) add(s0+q,'scribble',.22);
+      }
+      if (a.pose === 'type') for(let q=.35;q<shot.dur-.3;q+=.24) add(s0+q,'typing',.18);
+      if (a.pose === 'show' || a.pose === 'read') add(s0+.35,'page',.25);
       if (a.pose === 'fall') add(s0 + (a.at || 0) + .45, 'thud', 1);
       if (a.pose === 'walk' || a.pose === 'run' || (a.pose === 'umbrella' && a.to !== undefined)) {
         const x0 = pct(a.x ?? 50), x1 = pct(a.to ?? a.x ?? 50); const run = a.pose === 'run';

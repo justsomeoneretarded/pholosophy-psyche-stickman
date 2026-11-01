@@ -1,0 +1,33 @@
+"""Sample real production performances and object endpoints without browser rendering."""
+import json,subprocess
+from pathlib import Path
+ROOT=Path(__file__).resolve().parents[1]
+def test_new_performances_and_contact():
+    js=r"""
+const fs=require('fs'),vm=require('vm'),c={console,Math};vm.createContext(c);
+for(const f of ['core','character','performance'])vm.runInContext(fs.readFileSync('engine/'+f+'.js','utf8'),c);
+const result=vm.runInContext(`(()=>{
+ let maxPenError=0,transition=[];
+ for(const pose of ['write','read','show','think','talk','standup','sitdown']){
+  for(let u=0;u<=4;u+=.05){
+   const P=evalPose({pose,seed:1,facing:1,seated:true,artwork:'seedling'},u,5,{seat:62,desk:108,moving:false});
+   const coords=[...P.pelvis,...P.feet.flat(),...P.hands.flat()];
+   if(!coords.every(Number.isFinite))throw Error('Nonfinite '+pose);
+   if(P.feet.some(f=>f[1]>0))throw Error('Foot below floor '+pose);
+   if(pose==='write' && u>.6){
+    const target=artworkPoint(P.artwork,P.drawProgress);
+    const tip=[P.hands[1][0]-Math.sin(.6)*6.5,P.hands[1][1]+Math.cos(.6)*6.5];
+    maxPenError=Math.max(maxPenError,Math.hypot(tip[0]-P.paperX-target[0],tip[1]-P.paperY-target[1]));
+   }
+   if(pose==='standup')transition.push(P.pelvis[1]);
+  }
+ }
+ const seats=allocateSeatActors({actors:[{id:'a',pose:'sit',x:50},{id:'b',pose:'write',x:50}]},{seatAnchors:[19,31]});
+ return {maxPenError,transition,seats:seats.map(a=>a._seat_anchor)};
+})()`,c);console.log(JSON.stringify(result));
+"""
+    result=json.loads(subprocess.check_output(['node','-e',js],cwd=ROOT,text=True))
+    assert result['maxPenError']<1e-8
+    assert len(set(result['seats']))==2
+    assert result['transition'][0]>result['transition'][-1]
+    assert max(abs(a-b) for a,b in zip(result['transition'],result['transition'][1:]))<3

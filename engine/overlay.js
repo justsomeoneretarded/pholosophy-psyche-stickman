@@ -299,7 +299,14 @@ function drawCard(ctx, shot, u, t, K) {
   ctx.save(); ctx.scale(K, K);
   const style = cd.style || 'title';
   if (style === 'line') {
-    textShadowed(ctx, typed(lines[0] || '', u - .2, 22), 960, 520, 46, C.text, { font: FONT_UI });
+    const visible=typed(lines[0] || '',u-.2,22),rows=[];let row='';
+    ctx.font='46px '+FONT_UI;
+    for(const word of visible.split(/\s+/)){
+      const next=row?row+' '+word:word;
+      if(row && ctx.measureText(next).width>1500){rows.push(row);row=word;}else row=next;
+    }
+    if(row)rows.push(row);
+    rows.forEach((line,i)=>textShadowed(ctx,line,960,520+(i-(rows.length-1)/2)*64,46,C.text,{font:FONT_UI}));
   } else if (style === 'red') {
     textShadowed(ctx, lines[0] || '', 960, 440, 120 + (1 - k) * 30, accent, { glow: rgba(accent, .55), glowBlur: 30, font: FONT_UI, bold: true });
     if (lines[1]) { ctx.globalAlpha = clamp((u - .6) / .4, 0, 1); textShadowed(ctx, lines[1], 960, 545, 40, C.text, { font: FONT_UI }); }

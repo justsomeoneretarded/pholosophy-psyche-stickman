@@ -167,7 +167,7 @@ def repair(film: dict) -> tuple[dict, list[str]]:
             cd = s['card']
             if cd.get('style') not in CARD_STYLES:
                 cd['style'] = 'title'
-            cd['lines'] = [str(x)[:48] for x in (cd.get('lines') or [])][:3] or [film['title']]
+            cd['lines'] = [str(x) if cd['style'] in ('line','quote') else str(x)[:48] for x in (cd.get('lines') or [])][:3] or [film['title']]
         elif s.get('card') is not None:
             s.pop('card')
         actors = []
