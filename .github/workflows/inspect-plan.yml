@@ -13,7 +13,7 @@ permissions:
 jobs:
   inspect:
     runs-on: ubuntu-24.04
-    timeout-minutes: 30
+    timeout-minutes: 55
     env:
       SOURCE_RUN_ID: ${{ inputs.run_id || '41328327415' }}
     steps:
@@ -27,7 +27,7 @@ jobs:
           import os,json,time,urllib.request
           base='https://api.github.com/repos/'+os.environ['REPOSITORY']+'/actions/runs/'+os.environ['SOURCE_RUN_ID']
           headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json'}
-          for attempt in range(100):
+          for attempt in range(240):
               req=urllib.request.Request(base+'/artifacts',headers=headers)
               with urllib.request.urlopen(req,timeout=30) as response:data=json.load(response)
               if any(a['name']=='film-plan' for a in data['artifacts']):break

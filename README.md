@@ -1,12 +1,12 @@
 # Stickman philosophy & psychology studio
 
-Type a concept (love, heartbreak, addiction, nihilism, depression, envy...) and get a narrated animated film in the visual language of Day One Films: a cream blob hero living through the concept in ordinary places, a black inner voice with glowing eyes, other people, phones, notes and calendars, colour that follows the emotion, and a calm narrator explaining the idea over the story. Everything runs free on GitHub Actions.
+Enter a title or concept to generate a narrated vector animation with articulated characters, expressive faces, procedural environments, sound design and publishing files. Stories can use ordinary situations, visual metaphors, contrasting examples and an optional inner voice. Production runs on GitHub Actions with free model access; GitHub and model-provider usage limits still apply.
 
 ## Make a video
 
 1. **Actions → Generate Stickman Video → Run workflow** (branch `main`).
 2. Fill in: **Title** (e.g. `Addiction`), **Narrator** (Warguy by default, Kit Laser or Female), **Length** (Auto by default, or minutes), and optional **Notes** to steer the story.
-3. Download **philosophy-video** from the run's Artifacts: `video.mp4`, three thumbnails, `subtitles.srt`, titles, description, tags, pinned comment, `story.md` (the film shot by shot), `film.json` and a contact sheet.
+3. Download **philosophy-video** from the run's Artifacts: `video.mp4`, three thumbnails and `thumbnail.png`, `subtitles.srt` / `subtitles.vtt`, titles, description, tags, pinned comment, `script.txt`, `story.md`, `storyboard.json`, `scene_timeline.json`, research files, `speech-verification.json`, `quality_report.json` and a contact sheet.
 
 One-time setup: a free Groq API key in the repository secret `GROQ_API_KEY`.
 
@@ -22,6 +22,12 @@ One-time setup: a free Groq API key in the repository secret `GROQ_API_KEY`.
 
 Nothing is pre-scripted. Each shot is composed from the engine's vocabulary (`engine/vocab.json`): 13 sets with time of day and weather, 33 poses, 23 moods, props and held objects, phone screens (chat, calls, feed, alarm, power off), notes, calendars, photos, speech bubbles and thoughts, the inner voice, counters and day chapters, big words, colour grades, and wide / medium / close / extreme / two-shot / phone / insert framing. `story/validate.py` repairs anything the engine cannot draw.
 
+The writer now generates a compact outline and expands it in bounded requests, then saves editorial critiques and focused revisions. Quoted fictional speech and self-talk are allowed in narration. Unsupported attributed quotations are still rejected.
+
+Speech verification covers the main line and any twist. Disputed takes receive an independent `small.en` transcription without supplying the script as a recognition prompt. Failed takes are regenerated and checked again; changed negations remain a failure. Caption wording always comes from the script, with ASR timestamps where available and explicitly marked interpolation otherwise.
+
+The production canvas rig has world-space planted stance feet, continuous acceleration, two-bone limb IK, scale-aware seating, support geometry for otherwise unsupported sitting, expressive faces and hand-attached held items. Clean thumbnail passes remove video captions and counters before applying the thumbnail headline.
+
 ### Preview locally
 
 ```bash
@@ -29,7 +35,13 @@ npm install && npx playwright install chromium
 node render/render.mjs --film build/film.json --stills build/stills --every 3 --width 960
 ```
 
-## Animation engine
+## Production rig inspection
+
+`examples/rig-review.json` is rendered by the same canvas engine as generated films. The **Inspect production rig in motion** workflow exports a playable clip and real frame snapshots for walking, running, seated acting, falling/recovery, drinking and two-character gestures. This is separate from the legacy Python showcase below.
+
+[Review evidence and known limits](docs/review-2026-11-01.md) records actual runs and distinguishes successful encoding from editorial or animation quality.
+
+## Legacy Python animation engine
 
 The noir style (`pipeline/animation/noir.py`) sits on top of a general acting engine, which is also used by the older colourful style and the acting showcase (`python -m scripts.demo`).
 
@@ -52,4 +64,4 @@ The LLM emits validated data, never executable animation code. Actions, actors, 
 
 ## Licences
 
-Code: GPL-3.0-or-later. Fonts: SIL Open Font License (see `assets/fonts`). Music fallback: Scott Buckley, CC BY 4.0 (see `assets/music`). Narrator reference clips in `assets/voices` are excerpts published with the owner's approval. Chatterbox (MIT) adds an inaudible watermark to generated speech.
+Code: GPL-3.0-or-later. Fonts: SIL Open Font License (see `assets/fonts`). Current production music: ACE-Step-generated score, with an original procedural piano/pad fallback and synthesized effects. The legacy Python asset library also contains Scott Buckley music under CC BY 4.0 (see `assets/music`). Narrator reference clips in `assets/voices` are excerpts published with the owner's approval. Chatterbox (MIT) adds an inaudible watermark to generated speech.
