@@ -206,7 +206,9 @@ def check_concept(sheet, minutes):
             visual_notes.append('Few locations: preserve this if the story benefits, and inspect shot/acting variety')
         sheet['_visual_review_notes'] = visual_notes
         topic = ' '.join([str(sheet.get('_title', '')), str((sheet.get('idea') or {}).get('definition', ''))])
-        if not PHONEY.search(topic):
+        producer_notes = str(sheet.get('_title', '')).partition('Direction from the producer:')[2]
+        requested_screen_story = PHONEY.search(producer_notes) or re.search(r'\b(message|texting|reply|chat|email)\b', producer_notes, re.I)
+        if not PHONEY.search(topic) and not requested_screen_story:
             phone_beats = sum(1 for b in beats if PHONEY.search(str(b.get('what_happens', ''))))
             if phone_beats > max(2, len(beats) // 5):
                 problems.append(f'{phone_beats} beats revolve around phones or screens, but this concept is not about them; find moments specific to the concept')
