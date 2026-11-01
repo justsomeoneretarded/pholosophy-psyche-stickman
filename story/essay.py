@@ -25,6 +25,7 @@ sys.path.insert(0, str(ROOT / 'story'))
 from validate import VOCAB, repair  # noqa: E402
 from pipeline.writing.llm import Writer, Rejected, notice  # noqa: E402
 from pipeline.writing.quotation import has_attributed_quotation  # noqa: E402
+from story.planning import plan_in_parts
 from story.editor import review_concept  # noqa: E402
 
 WPS = 2.45            # narration words per second (Chatterbox, calm delivery)
@@ -249,7 +250,7 @@ def stage_concept(title, minutes, out_dir, research=''):
         return data
 
     t0 = time.time()
-    sheet = writer.json(system, user, validate, temperature=.85, max_tokens=6500)
+    sheet = plan_in_parts(writer, system, user, validate, minutes, out)
     notice('Editorial review', 'Checking argument, causal continuity and resolution before storyboarding')
     sheet = review_concept(sheet, writer, check_concept, title, minutes, out)
     sheet['_title'] = title

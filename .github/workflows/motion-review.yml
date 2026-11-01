@@ -1,4 +1,5 @@
 name: Inspect production rig in motion
+# Iteration 2: seating support and world-space contact.
 on:
   workflow_dispatch:
   push:

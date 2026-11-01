@@ -1,5 +1,5 @@
 name: Autonomous studio review
-# Iteration 2: editorial review, verified speech, timed captions and continuous music.
+# Iteration 3: bounded script planning, narration preservation, seating support and planted gait.
 on:
   workflow_dispatch:
   push:

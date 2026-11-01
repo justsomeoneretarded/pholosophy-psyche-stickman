@@ -334,6 +334,7 @@ const SETS = {
     }
   },
   cafe: {
+    seatAnchors: [19,31],
     seatFront: ['#2e2620', '#6a5440'],
     seat: x => (x > pct(14) && x < pct(37)) ? 62 : 0,
     desk: x => (x > pct(14) && x < pct(37)) ? 108 : 0,

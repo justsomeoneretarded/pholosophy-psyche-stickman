@@ -48,8 +48,24 @@ function actorState(shot, a, u) {
       : (q-ramp/2)/(1-ramp);
     x = lerp(x0, x1, e); walked = Math.abs(x - x0) / scale; isMoving = q > 0 && q < 1;
   }
+  const seated = ['sit','slump','type'].includes(a.pose) || a.seated === true;
+  let fallbackSeat = false;
+  if (seated) {
+    if (set.seatAnchors?.length) {
+      x = set.seatAnchors.map(pct).reduce((best,q)=>Math.abs(q-x)<Math.abs(best-x)?q:best);
+    } else if (!set.seat || !set.seat(x)) {
+      let best = null;
+      for (let q=20;q<STAGE_W-20;q+=4) {
+        if (set.seat && set.seat(q) && (best===null || Math.abs(q-x)<Math.abs(best-x))) best=q;
+      }
+      if (best!==null) x=best;
+      else fallbackSeat=true;
+    }
+  }
   st.wx = x; st.wy = ground(x) + (a.depth === 'back' ? -40 : 0);
-  return { st, w: { walked, moving: isMoving, dir: x1 >= x0 ? 1 : -1, seat: set.seat ? set.seat(x) : 0, desk: set.desk ? set.desk(x) : 0 } };
+  return { st, w: { walked, moving: isMoving, dir: x1 >= x0 ? 1 : -1,
+    seat: (fallbackSeat ? 58 : (set.seat ? set.seat(x) : 0))/scale,
+    desk: (set.desk ? set.desk(x) : 0)/scale, fallbackSeat } };
 }
 
 function camera(shot, actors, u, t) {
@@ -171,6 +187,14 @@ function drawWorld(shot, u, t) {
     const blur = clamp((cam.zoom - 1.2) * 7, 3, 22) * K;
     ctx.filter = `blur(${blur.toFixed(1)}px) brightness(0.8)`; ctx.drawImage(BG, 0, 0); ctx.filter = 'none';
   } else paintBg(ctx);
+  // A visible support is mandatory when an authored sitting action has no seat.
+  for (const a of front) if (a.w.fallbackSeat) {
+    applyCam(ctx,cam);
+    const x=a.st.wx,y=a.st.wy,s=a.st.scale,top=y-58;
+    ctx.strokeStyle='#6a6260';ctx.lineWidth=6;
+    for(const side of [-1,1]) {ctx.beginPath();ctx.moveTo(x+side*34*s,top);ctx.lineTo(x+side*34*s,y);ctx.stroke();}
+    rr(ctx,x-55*s,top-4,110*s,12*s,5*s,'#302a28','#71625a',2);
+  }
   for (const a of front) { applyCam(ctx, cam); drawActor(ctx, a, a.P, cam, u, t, heads); }
   // seat edge in front of seated hips: makes sitting read from a front view
   if (set.seatFront) for (const a of front) {

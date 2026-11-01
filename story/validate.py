@@ -8,10 +8,9 @@ import json
 import sys
 from pathlib import Path
 
+from story.continuity import carry_counters
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT))
-from story.continuity import carry_counters
 VOCAB = json.loads((ROOT / 'engine' / 'vocab.json').read_text())
 CARD_STYLES = set(VOCAB['cards'])
 INSERTS = set(VOCAB['inserts'])
@@ -212,7 +211,7 @@ def repair(film: dict) -> tuple[dict, list[str]]:
             if who not in ids and who not in ('caption', 'narrator'):
                 who = 'demon' if who == 'demon' else 'caption'
             limit = 150 if who == 'narrator' else 70
-            new = {'who': who, 'text': str(ln['text']).strip()[:limit], 'at': _num(ln.get('at'), 0, max(0, s['dur'] - .5), .4)}
+            new = {'who': who, 'text': str(ln['text']).strip() if who == 'narrator' else str(ln['text']).strip()[:limit], 'at': _num(ln.get('at'), 0, max(0, s['dur'] - .5), .4)}
             if ln.get('dur') is not None:
                 new['dur'] = _num(ln.get('dur'), .8, 9, None)
             if who == 'narrator':
