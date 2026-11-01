@@ -311,19 +311,15 @@ jobs:
         run: |
           dir="previews/${{ github.run_id }}"
           mkdir -p "$RUNNER_TEMP/p/$dir/frames"
-          for f in contact-sheet.jpg thumbnail-01.jpg thumbnail-02.jpg thumbnail-03.jpg story.md film.json recommended-title.txt description.txt subtitles.srt loudness.txt; do
+          for f in contact-sheet.jpg thumbnail-01.jpg thumbnail-02.jpg thumbnail-03.jpg story.md film.json script.txt storyboard.json scene_timeline.json recommended-title.txt description.txt subtitles.srt subtitles.vtt sources.json research_notes.md quality_report.json production_report.md speech-verification.json audio_licenses.json loudness.txt; do
             [ -f "out/$f" ] && cp "out/$f" "$RUNNER_TEMP/p/$dir/"
           done
           if [ -f out/video.mp4 ]; then
             ffmpeg -v error -y -i out/video.mp4 -vf scale=854:-2 -c:v libx264 -crf 31 -preset veryfast -c:a aac -b:a 96k "$RUNNER_TEMP/p/$dir/review.mp4"
             ffmpeg -v error -y -i out/video.mp4 -vf "fps=1/2,scale=480:-2,drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf:text='%{pts\\:hms}':x=6:y=6:fontsize=18:fontcolor=red,tile=4x6" "$RUNNER_TEMP/p/$dir/frames/sheet-%02d.jpg"
           fi
-          cd "$RUNNER_TEMP/p"
-          git init -q && git checkout -q -b previews
-          git config user.name "github-actions[bot]" && git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git remote add origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
-          git fetch -q --depth 1 origin previews && git reset -q --soft FETCH_HEAD || true
-          git add -A && git commit -q -m "Review copy for run $GITHUB_RUN_ID: $REVIEW_TITLE" && git push -q origin previews
+          echo 'Final encoded production review copy. See the production artifact for the native-resolution master.' > "$RUNNER_TEMP/p/$dir/REVIEW_STATUS.txt"
+          bash scripts/publish_review.sh "$RUNNER_TEMP/p/$dir" "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" "$GITHUB_RUN_ID" "$RUNNER_TEMP/review-publisher"
       - name: Preserve failed production diagnostics
         if: failure()
         uses: actions/upload-artifact@v4
