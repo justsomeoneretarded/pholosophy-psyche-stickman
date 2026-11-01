@@ -4,9 +4,11 @@ from pathlib import Path
 
 VOCAB=json.loads((Path(__file__).resolve().parents[1]/'engine/vocab.json').read_text())
 
-def supported_location(beat):
+def supported_location(beat, require_scene=False):
     original=str(beat.get('where') or '')
     if original in VOCAB['sets']:
+        if require_scene and original=='scene' and not isinstance(beat.get('scene'),dict):
+            raise ValueError('A composed scene needs a scene object; do not leave its environment unspecified')
         return beat
     if isinstance(beat.get('scene'),dict):
         beat['where']='scene'
@@ -69,9 +71,12 @@ Keep the complete outline comfortably below 750 output tokens."""
             for b in beats:
                 if not isinstance(b,dict) or not isinstance(b.get('narration'),list):
                     raise ValueError('Each beat needs narration as a sentence list')
-                if not b.get('who') or not b.get('what_happens'):
-                    raise ValueError('Stage the characters and visible action')
-                supported_location(b)
+                if not isinstance(b.get('who'),list) or not b.get('what_happens'):
+                    raise ValueError('Declare the visible cast (or [] for an intentional object shot) and action')
+                known={p['id'] for p in outline['cast']}
+                if any(w not in known for w in b['who']):
+                    raise ValueError('Use only the declared cast IDs: '+', '.join(sorted(known)))
+                supported_location(b, require_scene=True)
                 text=' '.join(' '.join(b['narration']).lower().split())
                 if len(text.split())>=20 and text in prior:
                     raise ValueError('This complete narrated beat duplicates an earlier beat; advance the requested idea instead')

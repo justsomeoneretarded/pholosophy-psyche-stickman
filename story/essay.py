@@ -260,8 +260,11 @@ def stage_concept(title, minutes, out_dir, research=''):
     sheet['_title'] = title
     sheet['_writer'] = writer.used
     idmap = {}
+    inner_id = next((p.get('id') for p in sheet.get('cast') or [] if p.get('kind') == 'demon'), None)
     for p in sheet.get('cast') or []:
         raw = str(p.get('id', '')); clean = re.sub(r'[^a-z0-9_]', '', raw.lower())[:12] or 'friend'
+        if raw == inner_id:
+            clean = 'demon'  # the renderer's inner-voice role, preserving all references below
         idmap[raw] = clean; p['id'] = clean
     clean = lambda v: idmap.get(str(v), re.sub(r'[^a-z0-9_]', '', str(v or '').lower())[:12])
     iv = sheet.get('inner_voice') if isinstance(sheet.get('inner_voice'), dict) else None
