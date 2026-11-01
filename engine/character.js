@@ -49,13 +49,19 @@ const POSES = {
   },
   pockets(P, a, u, d, w) { POSES.stand(P, a, u, d, w); P.hands = [[-44, -96], [44, -96]]; P.handsHidden = true; },
   walk(P, a, u, d, w, run) {
-    const stride = run ? 260 : 150, lift = run ? 34 : 17;
-    const phase = w.walked / stride, dir = w.dir;
+    const stride = run ? 190 : 120, lift = run ? 34 : 17;
+    const phase = w.walked / stride, dir = w.dir, stance = run ? .48 : .6;
     for (let i = 0; i < 2; i++) {
-      const ph = 2 * Math.PI * (phase + i * .5);
-      const fx = dir * Math.sin(ph) * (run ? 46 : 30);
-      const fy = -Math.max(0, Math.cos(ph)) * lift;
+      const cycle = ((phase + i * .5) % 1 + 1) % 1;
+      const swing = clamp((cycle-stance)/(1-stance),0,1);
+      // In stance, the foot moves back exactly as far as the root moves forward.
+      // walked is measured in character-local units, including character scale.
+      const fx = dir * (cycle < stance
+        ? stride * (stance/2-cycle)
+        : stride * stance * (-.5 + easeInOut(swing)));
+      const fy = cycle < stance ? 0 : -Math.sin(Math.PI*swing)*lift;
       P.feet[i] = [(i ? 9 : -9) + fx, fy];
+      const ph = 2 * Math.PI * (phase + i * .5);
       const sw = -dir * Math.sin(ph) * (run ? 30 : 18);
       P.hands[i] = run ? [(i ? 22 : -22) + sw, -150 + Math.abs(sw) * .3] : [(i ? 40 : -40) + sw, -106];
     }

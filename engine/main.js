@@ -42,8 +42,11 @@ function actorState(shot, a, u) {
     const start = a.at ?? 0, dist = Math.abs(x1 - x0), T = dist / speed;
     const q = clamp((u - start) / T, 0, 1);
     // gentle ease at both ends
-    const e = q < .1 ? q * q * 5 : q > .9 ? 1 - (1 - q) * (1 - q) * 5 : q;
-    x = lerp(x0, x1, e); walked = Math.abs(x - x0); isMoving = q > 0 && q < 1;
+    const ramp = .1;
+    const e = q < ramp ? q * q / (2 * ramp * (1-ramp))
+      : q > 1-ramp ? 1 - (1-q)*(1-q) / (2*ramp*(1-ramp))
+      : (q-ramp/2)/(1-ramp);
+    x = lerp(x0, x1, e); walked = Math.abs(x - x0) / scale; isMoving = q > 0 && q < 1;
   }
   st.wx = x; st.wy = ground(x) + (a.depth === 'back' ? -40 : 0);
   return { st, w: { walked, moving: isMoving, dir: x1 >= x0 ? 1 : -1, seat: set.seat ? set.seat(x) : 0, desk: set.desk ? set.desk(x) : 0 } };
