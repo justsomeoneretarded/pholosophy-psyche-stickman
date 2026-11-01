@@ -1,268 +1,172 @@
 {
-  "_regression_fixture": true,
   "title": "Why We Procrastinate",
-  "logline": "An uncomfortable first sentence, immediate relief, and a smaller practical experiment.",
-  "cast": {
-    "alex": {
-      "kind": "hero",
-      "top": "navy"
-    }
-  },
-  "hud": null,
-  "music": {
-    "prompt": "Quiet original procedural piano"
-  },
-  "publish": {
-    "youtube_titles": [
-      "Why We Procrastinate: The Relief That Costs Us Time"
-    ],
-    "description": "An everyday example of postponing discomfort, and a small experiment in starting. Delay can also reflect missing information, exhaustion or competing demands; this is educational, not a diagnosis.\n\n#Procrastination #Psychology #Habits",
-    "tags": [
-      "procrastination",
-      "starting",
-      "habits",
-      "psychology",
-      "avoidance"
-    ],
-    "pinned_comment": "What makes the first step difficult for you?",
-    "thumbnail_words": "STARTING IS HARD"
-  },
-  "sources": [],
-  "shots": [
+  "thesis": "A small beginning reveals useful information; delaying can offer immediate relief without resolving the task.",
+  "metaphor": "A blank document and an oversized box make delay visible.",
+  "framing": "philosophical_exploration",
+  "scenes": [
     {
-      "dur": 7.022448979591837,
-      "set": "desk",
-      "time": "day",
-      "grade": "warm",
-      "camera": {
-        "frame": "medium",
-        "on": "alex",
-        "push": 0.025
-      },
-      "actors": [
+      "id": "smoke_01",
+      "purpose": "ONE QUICK CHECK",
+      "narration": "The blank document is open. You reach for your phone, promising yourself that one quick check will make starting easier. Ten minutes later, the document is still blank.",
+      "duration": 12,
+      "environment": "office",
+      "mood": "reflective",
+      "camera": "push_in",
+      "characters": [
+        "main"
+      ],
+      "props": [
         {
-          "id": "alex",
-          "x": 50,
-          "pose": "think",
-          "seated": true,
-          "mood": "worried",
-          "facing": 1
+          "id": "phone",
+          "kind": "phone",
+          "x": 0.43,
+          "y": 0.65
+        },
+        {
+          "id": "computer",
+          "kind": "computer",
+          "x": 0.68,
+          "y": 0.72
         }
       ],
-      "lines": [
+      "actions": [
         {
-          "who": "narrator",
-          "text": "The document is open. Alex has even chosen a font. So why hasn't he started?",
-          "at": 0.25
+          "actor": "main",
+          "action": "use_phone",
+          "start": 0,
+          "end": 6,
+          "x": 0.35,
+          "target": "phone",
+          "anchor": null
+        },
+        {
+          "actor": "main",
+          "action": "facepalm",
+          "start": 6,
+          "end": 12,
+          "x": 0.35,
+          "target": null,
+          "anchor": null
         }
       ],
-      "music": "low",
+      "symbol": "thought",
+      "text": "ONE QUICK CHECK",
       "transition": "fade"
     },
     {
-      "dur": 5.797959183673469,
-      "set": "desk",
-      "time": "day",
-      "grade": "warm",
-      "camera": {
-        "frame": "medium",
-        "on": "alex",
-        "push": 0.025
-      },
-      "actors": [
+      "id": "smoke_02",
+      "purpose": "RELIEF NOW",
+      "narration": "One useful way to describe this moment is a bargain: you trade tomorrow's effort for a little relief now. That is an illustration, not a diagnosis.",
+      "duration": 12,
+      "environment": "mindscape",
+      "mood": "reflective",
+      "camera": "push_in",
+      "characters": [
+        "main"
+      ],
+      "props": [],
+      "actions": [
         {
-          "id": "alex",
-          "x": 50,
-          "pose": "phone",
-          "seated": true,
-          "mood": "relieved",
-          "facing": 1
+          "actor": "main",
+          "action": "shrug",
+          "start": 0,
+          "end": 5,
+          "x": 0.35,
+          "target": null,
+          "anchor": null
+        },
+        {
+          "actor": "main",
+          "action": "think",
+          "start": 5,
+          "end": 12,
+          "x": 0.35,
+          "target": null,
+          "anchor": null
         }
       ],
-      "lines": [
-        {
-          "who": "narrator",
-          "text": "He reaches for his phone. For a moment, the uncomfortable task disappears.",
-          "at": 0.25
-        }
-      ],
-      "music": "low",
-      "transition": "cut"
+      "symbol": "loop",
+      "text": "RELIEF NOW",
+      "transition": "fade"
     },
     {
-      "dur": 6.206122448979592,
-      "set": "desk",
-      "time": "day",
-      "grade": "warm",
-      "camera": {
-        "frame": "close",
-        "on": "alex",
-        "push": 0.025
-      },
-      "actors": [
+      "id": "smoke_03",
+      "purpose": "ONE VISIBLE FIRST MOVE",
+      "narration": "The task can feel like one enormous box. Instead of demanding that you finish it, define a visible first move: write one rough sentence, or open one page.",
+      "duration": 12,
+      "environment": "stage",
+      "mood": "reflective",
+      "camera": "push_in",
+      "characters": [
+        "main"
+      ],
+      "props": [
         {
-          "id": "alex",
-          "x": 50,
-          "pose": "phone",
-          "seated": true,
-          "mood": "worried",
-          "facing": 1
+          "id": "box",
+          "kind": "box",
+          "x": 0.48,
+          "y": 0.65
         }
       ],
-      "lines": [
+      "actions": [
         {
-          "who": "narrator",
-          "text": "That relief is real. The deadline is also real. It is now closer.",
-          "at": 0.25
+          "actor": "main",
+          "action": "point",
+          "start": 0,
+          "end": 5,
+          "x": 0.35,
+          "target": "box",
+          "anchor": null
+        },
+        {
+          "actor": "main",
+          "action": "celebrate",
+          "start": 5,
+          "end": 12,
+          "x": 0.35,
+          "target": null,
+          "anchor": null
         }
       ],
-      "music": "low",
-      "transition": "cut"
+      "symbol": "none",
+      "text": "ONE VISIBLE FIRST MOVE",
+      "transition": "fade"
     },
     {
-      "dur": 5.797959183673469,
-      "set": "bedroom",
-      "time": "day",
-      "grade": "warm",
-      "camera": {
-        "frame": "medium",
-        "on": "alex",
-        "push": 0.025
-      },
-      "actors": [
+      "id": "smoke_04",
+      "purpose": "BEGIN, THEN NOTICE",
+      "narration": "A small beginning does not solve every reason for delay. Sometimes you need rest, help, or a different plan. But it gives you information that waiting cannot.",
+      "duration": 12,
+      "environment": "park",
+      "mood": "reflective",
+      "camera": "push_in",
+      "characters": [
+        "main"
+      ],
+      "props": [],
+      "actions": [
         {
-          "id": "alex",
-          "x": 50,
-          "pose": "headhands",
-          "seated": true,
-          "mood": "tired",
-          "facing": 1
+          "actor": "main",
+          "action": "think",
+          "start": 0,
+          "end": 6,
+          "x": 0.35,
+          "target": null,
+          "anchor": null
+        },
+        {
+          "actor": "main",
+          "action": "wave",
+          "start": 6,
+          "end": 12,
+          "x": 0.35,
+          "target": null,
+          "anchor": null
         }
       ],
-      "lines": [
-        {
-          "who": "narrator",
-          "text": "Sometimes postponing a task is a way to postpone how it feels.",
-          "at": 0.25
-        }
-      ],
-      "music": "low",
-      "transition": "cut"
-    },
-    {
-      "dur": 7.022448979591837,
-      "set": "park",
-      "time": "day",
-      "grade": "warm",
-      "camera": {
-        "frame": "medium",
-        "on": "alex",
-        "push": 0.025
-      },
-      "actors": [
-        {
-          "id": "alex",
-          "x": 50,
-          "pose": "think",
-          "seated": true,
-          "mood": "neutral",
-          "facing": 1
-        }
-      ],
-      "lines": [
-        {
-          "who": "narrator",
-          "text": "But not every delay is avoidance. Missing information, exhaustion, and conflicting priorities can matter too.",
-          "at": 0.25
-        }
-      ],
-      "music": "low",
-      "transition": "cut"
-    },
-    {
-      "dur": 6.206122448979592,
-      "set": "desk",
-      "time": "day",
-      "grade": "warm",
-      "camera": {
-        "frame": "close",
-        "on": "alex",
-        "push": 0.025
-      },
-      "actors": [
-        {
-          "id": "alex",
-          "x": 50,
-          "pose": "think",
-          "seated": true,
-          "mood": "determined",
-          "facing": 1
-        }
-      ],
-      "lines": [
-        {
-          "who": "narrator",
-          "text": "Alex asks a smaller question: what can I do before I feel ready?",
-          "at": 0.25
-        }
-      ],
-      "music": "low",
-      "transition": "cut"
-    },
-    {
-      "dur": 7.022448979591837,
-      "set": "desk",
-      "time": "day",
-      "grade": "warm",
-      "camera": {
-        "frame": "medium",
-        "on": "alex",
-        "push": 0.025
-      },
-      "actors": [
-        {
-          "id": "alex",
-          "x": 50,
-          "pose": "type",
-          "seated": true,
-          "mood": "content",
-          "facing": 1
-        }
-      ],
-      "lines": [
-        {
-          "who": "narrator",
-          "text": "He writes one rough sentence. It isn't good yet. Now there is something to improve.",
-          "at": 0.25
-        }
-      ],
-      "music": "low",
-      "transition": "cut"
-    },
-    {
-      "dur": 3,
-      "set": "desk",
-      "time": "day",
-      "actors": [
-        {
-          "id": "alex",
-          "x": 50,
-          "pose": "type",
-          "mood": "content"
-        }
-      ],
-      "camera": {
-        "frame": "medium",
-        "push": 0
-      },
-      "lines": [],
-      "music": "low",
-      "card": {
-        "style": "cta",
-        "lines": [
-          "What makes starting difficult for you?"
-        ]
-      }
+      "symbol": "circles",
+      "text": "BEGIN, THEN NOTICE",
+      "transition": "fade"
     }
   ]
 }

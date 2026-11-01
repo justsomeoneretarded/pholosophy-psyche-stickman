@@ -1,8 +1,6 @@
 name: Complete procrastination smoke test
 on:
   workflow_dispatch:
-  push:
-    paths: ['.github/workflows/production-smoke.yml']
 permissions:
   contents: write
   actions: read
@@ -14,7 +12,7 @@ jobs:
       - name: Stage the explicit editorial regression fixture
         run: |
           mkdir -p build/writing
-          cp examples/procrastination-smoke.json build/film.json
+          cp examples/canvas-procrastination-smoke.json build/film.json
           echo '[]' > build/writing/sources.json
           echo 'An explicitly authored educational vignette. No empirical statistics or attributed quotations. This fixture tests production; fresh AI writing is tested separately.' > build/writing/research.txt
       - uses: actions/upload-artifact@v4

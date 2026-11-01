@@ -1,0 +1,268 @@
+{
+  "_regression_fixture": true,
+  "title": "Why We Procrastinate",
+  "logline": "An uncomfortable first sentence, immediate relief, and a smaller practical experiment.",
+  "cast": {
+    "alex": {
+      "kind": "hero",
+      "top": "navy"
+    }
+  },
+  "hud": null,
+  "music": {
+    "prompt": "Quiet original procedural piano"
+  },
+  "publish": {
+    "youtube_titles": [
+      "Why We Procrastinate: The Relief That Costs Us Time"
+    ],
+    "description": "An everyday example of postponing discomfort, and a small experiment in starting. Delay can also reflect missing information, exhaustion or competing demands; this is educational, not a diagnosis.\n\n#Procrastination #Psychology #Habits",
+    "tags": [
+      "procrastination",
+      "starting",
+      "habits",
+      "psychology",
+      "avoidance"
+    ],
+    "pinned_comment": "What makes the first step difficult for you?",
+    "thumbnail_words": "STARTING IS HARD"
+  },
+  "sources": [],
+  "shots": [
+    {
+      "dur": 7.022448979591837,
+      "set": "desk",
+      "time": "day",
+      "grade": "warm",
+      "camera": {
+        "frame": "medium",
+        "on": "alex",
+        "push": 0.025
+      },
+      "actors": [
+        {
+          "id": "alex",
+          "x": 50,
+          "pose": "think",
+          "seated": true,
+          "mood": "worried",
+          "facing": 1
+        }
+      ],
+      "lines": [
+        {
+          "who": "narrator",
+          "text": "The document is open. Alex has even chosen a font. So why hasn't he started?",
+          "at": 0.25
+        }
+      ],
+      "music": "low",
+      "transition": "fade"
+    },
+    {
+      "dur": 5.797959183673469,
+      "set": "desk",
+      "time": "day",
+      "grade": "warm",
+      "camera": {
+        "frame": "medium",
+        "on": "alex",
+        "push": 0.025
+      },
+      "actors": [
+        {
+          "id": "alex",
+          "x": 50,
+          "pose": "phone",
+          "seated": true,
+          "mood": "relieved",
+          "facing": 1
+        }
+      ],
+      "lines": [
+        {
+          "who": "narrator",
+          "text": "He reaches for his phone. For a moment, the uncomfortable task disappears.",
+          "at": 0.25
+        }
+      ],
+      "music": "low",
+      "transition": "cut"
+    },
+    {
+      "dur": 6.206122448979592,
+      "set": "desk",
+      "time": "day",
+      "grade": "warm",
+      "camera": {
+        "frame": "close",
+        "on": "alex",
+        "push": 0.025
+      },
+      "actors": [
+        {
+          "id": "alex",
+          "x": 50,
+          "pose": "phone",
+          "seated": true,
+          "mood": "worried",
+          "facing": 1
+        }
+      ],
+      "lines": [
+        {
+          "who": "narrator",
+          "text": "That relief is real. The deadline is also real. It is now closer.",
+          "at": 0.25
+        }
+      ],
+      "music": "low",
+      "transition": "cut"
+    },
+    {
+      "dur": 5.797959183673469,
+      "set": "bedroom",
+      "time": "day",
+      "grade": "warm",
+      "camera": {
+        "frame": "medium",
+        "on": "alex",
+        "push": 0.025
+      },
+      "actors": [
+        {
+          "id": "alex",
+          "x": 50,
+          "pose": "headhands",
+          "seated": true,
+          "mood": "tired",
+          "facing": 1
+        }
+      ],
+      "lines": [
+        {
+          "who": "narrator",
+          "text": "Sometimes postponing a task is a way to postpone how it feels.",
+          "at": 0.25
+        }
+      ],
+      "music": "low",
+      "transition": "cut"
+    },
+    {
+      "dur": 7.022448979591837,
+      "set": "park",
+      "time": "day",
+      "grade": "warm",
+      "camera": {
+        "frame": "medium",
+        "on": "alex",
+        "push": 0.025
+      },
+      "actors": [
+        {
+          "id": "alex",
+          "x": 50,
+          "pose": "think",
+          "seated": true,
+          "mood": "neutral",
+          "facing": 1
+        }
+      ],
+      "lines": [
+        {
+          "who": "narrator",
+          "text": "But not every delay is avoidance. Missing information, exhaustion, and conflicting priorities can matter too.",
+          "at": 0.25
+        }
+      ],
+      "music": "low",
+      "transition": "cut"
+    },
+    {
+      "dur": 6.206122448979592,
+      "set": "desk",
+      "time": "day",
+      "grade": "warm",
+      "camera": {
+        "frame": "close",
+        "on": "alex",
+        "push": 0.025
+      },
+      "actors": [
+        {
+          "id": "alex",
+          "x": 50,
+          "pose": "think",
+          "seated": true,
+          "mood": "determined",
+          "facing": 1
+        }
+      ],
+      "lines": [
+        {
+          "who": "narrator",
+          "text": "Alex asks a smaller question: what can I do before I feel ready?",
+          "at": 0.25
+        }
+      ],
+      "music": "low",
+      "transition": "cut"
+    },
+    {
+      "dur": 7.022448979591837,
+      "set": "desk",
+      "time": "day",
+      "grade": "warm",
+      "camera": {
+        "frame": "medium",
+        "on": "alex",
+        "push": 0.025
+      },
+      "actors": [
+        {
+          "id": "alex",
+          "x": 50,
+          "pose": "type",
+          "seated": true,
+          "mood": "content",
+          "facing": 1
+        }
+      ],
+      "lines": [
+        {
+          "who": "narrator",
+          "text": "He writes one rough sentence. It isn't good yet. Now there is something to improve.",
+          "at": 0.25
+        }
+      ],
+      "music": "low",
+      "transition": "cut"
+    },
+    {
+      "dur": 3,
+      "set": "desk",
+      "time": "day",
+      "actors": [
+        {
+          "id": "alex",
+          "x": 50,
+          "pose": "type",
+          "mood": "content"
+        }
+      ],
+      "camera": {
+        "frame": "medium",
+        "push": 0
+      },
+      "lines": [],
+      "music": "low",
+      "card": {
+        "style": "cta",
+        "lines": [
+          "What makes starting difficult for you?"
+        ]
+      }
+    }
+  ]
+}

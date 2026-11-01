@@ -185,9 +185,11 @@ class Ollama:
     def complete(self, system, user, temperature=.8, max_tokens=7000):
         payload = {'model': self.model, 'stream': False, 'format': 'json', 'think': False, 'keep_alive': '10m',
                    'messages': [{'role': 'system', 'content': system}, {'role': 'user', 'content': user}],
-                   'options': {'temperature': temperature, 'num_ctx': 16384, 'num_predict': max_tokens, 'num_gpu': 0}}
+                   'options': {'temperature': temperature, 'num_ctx': 8192, 'num_predict': max(1400,max_tokens), 'num_gpu': 0}}
         result = _post(self.url + '/api/chat', payload, {}, timeout=3600)
         self.last_stats = {k: result.get(k) for k in ('total_duration','load_duration','prompt_eval_count','prompt_eval_duration','eval_count','eval_duration')}
+        if result.get('done_reason') == 'length':
+            raise WriterError('Local model exhausted its output budget; refusing incomplete JSON')
         return result['message']['content']
 
 
