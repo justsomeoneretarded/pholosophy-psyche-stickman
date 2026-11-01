@@ -1,4 +1,5 @@
 name: Benchmark bounded writing with independent topic
+# Iteration 2: compact spine, beat expansions and publishing in separate requests.
 on:
   workflow_dispatch:
   push:

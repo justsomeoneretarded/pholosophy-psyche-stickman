@@ -115,7 +115,7 @@ HOW TO BUILD THIS FILM (think in this order):
    Invent specific, physical moments that belong to this concept only (what would a grieving person touch? what does pride look
    like at a dinner table?). Do not default to phones, 3am clocks, fridges or calendars unless the concept is about them.
 4. PLACES: any named set ({', '.join(k for k in v['sets'] if k != 'scene')}) or a place you BUILD with "scene"
-   ({scene_vocab()}). Use many different places; build what the idea needs (a hospital room, a wedding, a classroom, a beach, a
+   ({scene_vocab()}). Use the places the argument or story needs; preserve continuity and build what the idea needs (a hospital room, a wedding, a classroom, a beach, a
    church, a train, a stage, a graveyard, a family dinner, a void with one word on the wall...).
 
 Return JSON:
@@ -205,11 +205,13 @@ def check_concept(sheet, minutes):
         problems.append(f'only {words} narration words; the narrator should speak about {want:.0f} words, explaining the concept more fully')
     if beats:
         modes = {b['mode'] for b in beats}
+        visual_notes = []
         if len(modes) < 3:
-            problems.append(f'every beat uses the modes {sorted(modes)}; show the ideas in at least 3 different ways ({", ".join(MODES)})')
+            visual_notes.append('Limited visual modes: review whether the acting and framing progress meaningfully')
         places = {place_key(b) for b in beats}
-        if len(places) < min(6, len(beats) // 2):
-            problems.append(f'only {len(places)} different places; build more places for the different ideas')
+        if len(places) < 3:
+            visual_notes.append('Few locations: preserve this if the story benefits, and inspect shot/acting variety')
+        sheet['_visual_review_notes'] = visual_notes
         topic = ' '.join([str(sheet.get('_title', '')), str((sheet.get('idea') or {}).get('definition', ''))])
         if not PHONEY.search(topic):
             phone_beats = sum(1 for b in beats if PHONEY.search(str(b.get('what_happens', ''))))
@@ -251,6 +253,8 @@ def stage_concept(title, minutes, out_dir, research=''):
 
     t0 = time.time()
     sheet = plan_in_parts(writer, system, user, validate, minutes, out)
+    for warning in sheet.get('_visual_review_notes', []):
+        notice('Visual editorial review', warning, 'warning')
     notice('Editorial review', 'Checking argument, causal continuity and resolution before storyboarding')
     sheet = review_concept(sheet, writer, check_concept, title, minutes, out)
     sheet['_title'] = title

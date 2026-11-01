@@ -29,7 +29,7 @@ tags thumbnail_words pinned_comment cold_open ending approach device""".split())
 
 def context(sheet, title):
     return {
-        'topic_and_direction': title,
+        'topic_and_direction': title, 'visual_review_notes': sheet.get('_visual_review_notes', []),
         'idea': sheet.get('idea'), 'logline': sheet.get('logline'), 'device': sheet.get('device'),
         'inner_voice': sheet.get('inner_voice'), 'approach': sheet.get('approach'),
         'cold_open': sheet.get('cold_open'), 'ending': sheet.get('ending'), 'cast': sheet.get('cast'),

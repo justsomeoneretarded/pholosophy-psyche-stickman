@@ -1,5 +1,5 @@
 name: Autonomous studio review
-# Iteration 3: bounded script planning, narration preservation, seating support and planted gait.
+# Iteration 4: benchmark-gated full production after compact outline repair.
 on:
   workflow_dispatch:
   push:
@@ -10,7 +10,7 @@ permissions:
 jobs:
   launch:
     runs-on: ubuntu-24.04
-    timeout-minutes: 15
+    timeout-minutes: 45
     steps:
       - name: Wait for this revision's CI, then run complete production
         env:
@@ -28,6 +28,11 @@ jobs:
               with urllib.request.urlopen(req,timeout=30) as response:
                   body=response.read()
                   return json.loads(body) if body else None
+          try:
+              request('/actions/runs/41328327415/cancel',{})
+              print('Stopped the stalled test that used the oversized outline request')
+          except Exception as exc:
+              print('Older test already stopped or completed:',type(exc).__name__)
           for attempt in range(48):
               runs=request('/actions/workflows/test.yml/runs?head_sha='+os.environ['REVISION']+'&event=push&per_page=5')['workflow_runs']
               if runs and runs[0]['status']=='completed':
@@ -36,6 +41,14 @@ jobs:
                   break
               time.sleep(15)
           else:raise SystemExit('CI did not complete within twelve minutes')
+          for attempt in range(120):
+              runs=request('/actions/workflows/writing-review.yml/runs?head_sha='+os.environ['REVISION']+'&event=push&per_page=5')['workflow_runs']
+              if runs and runs[0]['status']=='completed':
+                  if runs[0]['conclusion']!='success':raise SystemExit('Actual writing benchmark failed; preserve evidence before launching a full render')
+                  print('Writing benchmark passed:',runs[0]['html_url'])
+                  break
+              time.sleep(15)
+          else:raise SystemExit('Writing benchmark did not complete within thirty minutes')
           request('/actions/workflows/generate-video.yml/dispatches',{'ref':'main','inputs':{'title':'Why Smart People Overthink Everything','narrator':'Warguy','duration_minutes':'4','notes':os.environ['REVIEW_NOTES']}})
           print('Dispatched complete title-to-video production for review')
           PY

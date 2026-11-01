@@ -201,7 +201,8 @@ class Writer:
 
     def json(self, system, user, validate=None, temperature=.8, max_tokens=None, attempts=4):
         errors, best, answered = [], None, False
-        for spec in self.specs:
+        specs = ([self.used] + [s for s in self.specs if s != self.used]) if self.used in self.specs else self.specs
+        for spec in specs:
             if spec.startswith('ollama:') and answered:
                 break               # Groq works; a slower, weaker local model will not do better
             try:
