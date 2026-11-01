@@ -1,0 +1,167 @@
+{
+  "run": "41324973301",
+  "duration": 212.85000000000005,
+  "selected": [
+    {
+      "shot": 1,
+      "time": 10.387,
+      "set": "bedroom",
+      "actors": [
+        {
+          "id": "hero",
+          "x": 48.0,
+          "pose": "sit",
+          "mood": "flat",
+          "hold": "phone"
+        },
+        {
+          "id": "demon",
+          "x": 62.0,
+          "pose": "lean",
+          "mood": "neutral",
+          "hold": "none",
+          "target": "hero"
+        }
+      ],
+      "lines": [
+        {
+          "who": "narrator",
+          "text": "We start with Alex, a smart but anxious mind, scrolling a text he just said out loud.",
+          "at": 0.25
+        },
+        {
+          "who": "demon",
+          "text": "just make it perfect.",
+          "at": 1.2
+        }
+      ]
+    },
+    {
+      "shot": 6,
+      "time": 37.75,
+      "set": "bedroom",
+      "actors": [
+        {
+          "id": "hero",
+          "x": 50.0,
+          "pose": "type",
+          "seated": true,
+          "mood": "worried",
+          "hold": "phone"
+        }
+      ],
+      "lines": []
+    },
+    {
+      "shot": 11,
+      "time": 61.65,
+      "set": "desk",
+      "actors": [
+        {
+          "id": "hero",
+          "x": 50.0,
+          "pose": "phone",
+          "seated": true,
+          "mood": "neutral",
+          "hold": "phone"
+        }
+      ],
+      "lines": []
+    },
+    {
+      "shot": 16,
+      "time": 83.2,
+      "set": "desk",
+      "actors": [
+        {
+          "id": "hero",
+          "x": 50.0,
+          "pose": "type",
+          "mood": "scared",
+          "hold": "phone",
+          "target": "demon",
+          "at": 0.5
+        }
+      ],
+      "lines": [
+        {
+          "who": "hero",
+          "text": "Did I say the right thing?",
+          "at": 0.6
+        }
+      ]
+    },
+    {
+      "shot": 23,
+      "time": 115.758,
+      "set": "kitchen",
+      "actors": [
+        {
+          "id": "hero",
+          "x": 70.0,
+          "pose": "phone",
+          "mood": "determined",
+          "hold": "phone"
+        }
+      ],
+      "lines": [
+        {
+          "who": "narrator",
+          "text": "Sending creates a tiny rupture in the loop.",
+          "at": 0.25
+        }
+      ]
+    },
+    {
+      "shot": 28,
+      "time": 140.65,
+      "set": "desk",
+      "actors": [
+        {
+          "id": "hero",
+          "x": 50.0,
+          "pose": "type",
+          "mood": "hopeful",
+          "seated": true
+        }
+      ],
+      "lines": []
+    },
+    {
+      "shot": 33,
+      "time": 167.608,
+      "set": "cafe",
+      "actors": [
+        {
+          "id": "hero",
+          "x": 40.0,
+          "pose": "stand",
+          "mood": "happy"
+        }
+      ],
+      "lines": [
+        {
+          "who": "narrator",
+          "text": "The overthinking loop dissolves when we accept that uncertainty is part of conversation.",
+          "at": 0.25
+        }
+      ]
+    },
+    {
+      "shot": 39,
+      "time": 195.75,
+      "set": "rooftop",
+      "actors": [
+        {
+          "id": "hero",
+          "x": 45.0,
+          "pose": "stand",
+          "mood": "hopeful",
+          "hold": "none",
+          "facing": 0
+        }
+      ],
+      "lines": []
+    }
+  ]
+}
