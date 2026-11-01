@@ -1,0 +1,1777 @@
+{
+ "title": "When Smart People Overthink",
+ "logline": "After a cringe conversation, Alex edits a text until his inner adviser demands guarantees, but a single honest send breaks the overthinking loop.",
+ "demon_color": "#ff6a00",
+ "narrator": "male",
+ "hud": {
+  "items": [
+   {
+    "label": "EDITS",
+    "color": "#ff6a00"
+   }
+  ]
+ },
+ "music": {
+  "prompt": "soft piano, subtle synth pads, gentle percussive clicks; calm to hopeful arc; 70‑80 bpm"
+ },
+ "cast": {
+  "hero": {
+   "kind": "hero",
+   "hood": true
+  },
+  "demon": {
+   "kind": "demon"
+  },
+  "friend": {
+   "kind": "friend",
+   "hair": "short",
+   "hair_color": "brown",
+   "top": "blue",
+   "top_style": "shirt",
+   "pants": "navy"
+  },
+  "barista": {
+   "kind": "extra",
+   "hair": "bob",
+   "hair_color": "black",
+   "top": "white",
+   "top_style": "shirt",
+   "pants": "black",
+   "glasses": true
+  }
+ },
+ "shots": [
+  {
+   "dur": 5.85,
+   "music": "low",
+   "card": {
+    "style": "line",
+    "lines": [
+     "the mind tries to edit reality."
+    ]
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "the mind tries to edit reality.",
+     "at": 0.3,
+     "hidden": true,
+     "speech_check": 1.0,
+     "voice_file": "vo-000-0.wav",
+     "voice_dur": 2.429,
+     "cps": 13.87
+    }
+   ],
+   "set": "void",
+   "camera": {
+    "frame": "wide"
+   },
+   "actors": [],
+   "sfx": [],
+   "items": [],
+   "transition": "fade"
+  },
+  {
+   "dur": 8.25,
+   "set": "bedroom",
+   "clock": "03:17",
+   "grade": "cold",
+   "music": "low",
+   "hud": {
+    "values": [
+     0,
+     0
+    ],
+    "chapter": "night‑text"
+   },
+   "camera": {
+    "frame": "wide",
+    "push": 0.06
+   },
+   "actors": [
+    {
+     "id": "hero",
+     "x": 48.0,
+     "pose": "sit",
+     "mood": "flat",
+     "hold": "phone"
+    },
+    {
+     "id": "demon",
+     "x": 62.0,
+     "pose": "lean",
+     "mood": "neutral",
+     "hold": "none",
+     "target": "hero"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "We start with Alex, a smart but anxious mind, scrolling a text he just said out loud.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "voice_file": "vo-001-0.wav",
+     "voice_dur": 6.073,
+     "cps": 15.21
+    },
+    {
+     "who": "demon",
+     "text": "just make it perfect.",
+     "at": 1.2
+    }
+   ],
+   "big": {
+    "text": "DAY 1",
+    "at": 0.3
+   },
+   "time": "night",
+   "beat": 1,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 5.0,
+   "set": "bedroom",
+   "grade": "cold",
+   "music": "low",
+   "camera": {
+    "frame": "close",
+    "on": "hero",
+    "push": 0.07
+   },
+   "actors": [
+    {
+     "id": "hero",
+     "x": 50.0,
+     "pose": "phone",
+     "seated": true,
+     "mood": "flat",
+     "hold": "phone"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The clock ticks, the room feels still.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "voice_file": "vo-002-0.wav",
+     "voice_dur": 3.183,
+     "cps": 12.98
+    }
+   ],
+   "time": "night",
+   "beat": 1,
+   "sfx": [],
+   "items": [],
+   "hud": {
+    "values": [
+     0,
+     0
+    ],
+    "chapter": "night‑text"
+   }
+  },
+  {
+   "dur": 5.0,
+   "set": "bedroom",
+   "grade": "cold",
+   "music": "low",
+   "camera": {
+    "frame": "medium",
+    "on": "hero",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "hero",
+     "x": 50.0,
+     "pose": "phone",
+     "seated": true,
+     "mood": "flat",
+     "hold": "phone"
+    }
+   ],
+   "lines": [],
+   "time": "night",
+   "beat": 1,
+   "sfx": [],
+   "items": [],
+   "hud": {
+    "values": [
+     0,
+     0
+    ],
+    "chapter": "night‑text"
+   }
+  },
+  {
+   "dur": 4.65,
+   "set": "bedroom",
+   "grade": "cold",
+   "music": "low",
+   "camera": {
+    "frame": "medium",
+    "on": "hero",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "hero",
+     "x": 48.0,
+     "pose": "sit",
+     "mood": "worried",
+     "hold": "none"
+    },
+    {
+     "id": "demon",
+     "x": 60.0,
+     "pose": "lean",
+     "mood": "neutral",
+     "hold": "none",
+     "target": "hero"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The inner adviser surfaces, offering a helpful edit.",
+     "at": 0.25,
+     "speech_check": 0.824,
+     "voice_file": "vo-004-0.wav",
+     "voice_dur": 3.389,
+     "cps": 16.68
+    },
+    {
+     "who": "demon",
+     "text": "what if they think you’re weird?",
+     "at": 0.8
+    }
+   ],
+   "hud": {
+    "values": [
+     0,
+     0
+    ]
+   },
+   "time": "night",
+   "beat": 2,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 6.25,
+   "set": "bedroom",
+   "grade": "cold",
+   "music": "low",
+   "camera": {
+    "frame": "close",
+    "on": "hero",
+    "push": 0.07
+   },
+   "actors": [
+    {
+     "id": "hero",
+     "x": 50.0,
+     "pose": "type",
+     "seated": true,
+     "mood": "worried",
+     "hold": "phone"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "It frames uncertainty as a flaw that must be fixed before sending.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "voice_file": "vo-005-0.wav",
+     "voice_dur": 4.339,
+     "cps": 16.53
+    }
+   ],
+   "time": "night",
+   "beat": 2,
+   "sfx": [],
+   "items": [],
+   "hud": {
+    "values": [
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "dur": 5.0,
+   "set": "bedroom",
+   "grade": "cold",
+   "music": "low",
+   "camera": {
+    "frame": "medium",
+    "on": "hero",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "hero",
+     "x": 50.0,
+     "pose": "type",
+     "seated": true,
+     "mood": "worried",
+     "hold": "phone"
+    }
+   ],
+   "lines": [],
+   "time": "night",
+   "beat": 2,
+   "sfx": [],
+   "items": [],
+   "hud": {
+    "values": [
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "dur": 4.0,
+   "set": "desk",
+   "grade": "grey",
+   "music": "low",
+   "camera": {
+    "frame": "wide",
+    "push": 0.06
+   },
+   "actors": [
+    {
+     "id": "hero",
+     "x": 45.0,
+     "pose": "walk",
+     "to": 55.0,
+     "mood": "bored",
+     "hold": "none"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He starts polishing language, seeking clarity.",
+     "at": 0.25,
+     "speech_check": 0.833,
+     "voice_file": "vo-007-0.wav",
+     "voice_dur": 2.963,
+     "cps": 16.88
+    }
+   ],
+   "hud": {
+    "values": [
+     0,
+     0
+    ]
+   },
+   "time": "night",
+   "beat": 3,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 5.0,
+   "set": "desk",
+   "grade": "grey",
+   "music": "low",
+   "camera": {
+    "frame": "close",
+    "on": "hero",
+    "push": 0.07
+   },
+   "actors": [
+    {
+     "id": "hero",
+     "x": 50.0,
+     "pose": "type",
+     "seated": true,
+     "mood": "bored",
+     "hold": "phone"
+    }
+   ],
+   "lines": [
+    {
+     "who": "hero",
+     "text": "maybe too formal?",
+     "at": 0.5
+    }
+   ],
+   "hud": {
+    "values": [
+     0,
+     0
+    ]
+   },
+   "time": "night",
+   "beat": 3,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 5.45,
+   "set": "desk",
+   "grade": "grey",
+   "music": "low",
+   "camera": {
+    "frame": "medium",
+    "on": "hero",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "hero",
+     "x": 50.0,
+     "pose": "type",
+     "seated": true,
+     "mood": "bored",
+     "hold": "phone"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Each rewrite feels like progress, yet the silence grows louder.",
+     "at": 0.25,
+     "speech_check": 0.9,
+     "voice_file": "vo-009-0.wav",
+     "voice_dur": 3.883,
+     "cps": 17.64
+    }
+   ],
+   "time": "night",
+   "beat": 3,
+   "sfx": [],
+   "items": [],
+   "hud": {
+    "values": [
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "dur": 5.0,
+   "set": "desk",
+   "grade": "grey",
+   "music": "low",
+   "camera": {
+    "frame": "close",
+    "on": "hero",
+    "push": 0.07
+   },
+   "actors": [
+    {
+     "id": "hero",
+     "x": 50.0,
+     "pose": "type",
+     "seated": true,
+     "mood": "bored",
+     "hold": "phone"
+    }
+   ],
+   "lines": [],
+   "time": "night",
+   "beat": 3,
+   "sfx": [],
+   "items": [],
+   "hud": {
+    "values": [
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "dur": 4.0,
+   "set": "desk",
+   "grade": "grey",
+   "music": "low",
+   "camera": {
+    "frame": "medium",
+    "on": "hero",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "hero",
+     "x": 50.0,
+     "pose": "phone",
+     "seated": true,
+     "mood": "neutral",
+     "hold": "phone"
+    }
+   ],
+   "lines": [],
+   "hud": {
+    "values": [
+     0,
+     0
+    ]
+   },
+   "time": "night",
+   "beat": 4,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 4.0,
+   "set": "desk",
+   "grade": "grey",
+   "music": "low",
+   "camera": {
+    "frame": "two",
+    "on": "hero",
+    "push": 0.06
+   },
+   "actors": [
+    {
+     "id": "hero",
+     "x": 48.0,
+     "pose": "phone",
+     "seated": true,
+     "mood": "neutral",
+     "hold": "phone"
+    },
+    {
+     "id": "friend",
+     "x": 72.0,
+     "pose": "stand",
+     "mood": "neutral",
+     "hold": "none",
+     "facing": -1
+    }
+   ],
+   "lines": [
+    {
+     "who": "friend",
+     "text": "...yeah.",
+     "at": 2.0
+    }
+   ],
+   "hud": {
+    "values": [
+     0,
+     0
+    ]
+   },
+   "time": "night",
+   "beat": 4,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 3.85,
+   "set": "desk",
+   "time": "night",
+   "weather": "none",
+   "grade": "cold",
+   "hud": {
+    "values": [
+     2,
+     0
+    ]
+   },
+   "camera": {
+    "frame": "medium",
+    "on": "hero",
+    "push": 0.07
+   },
+   "actors": [
+    {
+     "id": "hero",
+     "x": 48.0,
+     "pose": "type",
+     "mood": "scared",
+     "hold": "phone"
+    },
+    {
+     "id": "demon",
+     "x": 60.0,
+     "pose": "lean",
+     "mood": "flat",
+     "target": "hero"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Now the adviser asks for certainty.",
+     "at": 0.25,
+     "speech_check": 0.833,
+     "voice_file": "vo-013-0.wav",
+     "voice_dur": 2.386,
+     "cps": 15.94
+    },
+    {
+     "who": "demon",
+     "text": "you need a guarantee.",
+     "at": 0.8
+    }
+   ],
+   "music": "low",
+   "beat": 5,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 4.0,
+   "set": "desk",
+   "time": "night",
+   "weather": "none",
+   "grade": "cold",
+   "hud": {
+    "values": [
+     2,
+     0
+    ]
+   },
+   "camera": {
+    "frame": "close",
+    "on": "hero",
+    "push": 0.08
+   },
+   "actors": [
+    {
+     "id": "hero",
+     "x": 50.0,
+     "pose": "type",
+     "mood": "scared",
+     "hold": "phone"
+    }
+   ],
+   "lines": [],
+   "music": "low",
+   "beat": 5,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 6.25,
+   "set": "desk",
+   "time": "night",
+   "weather": "none",
+   "grade": "cold",
+   "hud": {
+    "values": [
+     2,
+     0
+    ]
+   },
+   "camera": {
+    "frame": "close",
+    "on": "hero",
+    "push": 0.08
+   },
+   "actors": [
+    {
+     "id": "hero",
+     "x": 50.0,
+     "pose": "type",
+     "mood": "scared",
+     "hold": "phone"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "It turns a simple clarification into a demand for a response script.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "voice_file": "vo-015-0.wav",
+     "voice_dur": 4.104,
+     "cps": 18.01
+    }
+   ],
+   "music": "low",
+   "beat": 5,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 3.0,
+   "set": "desk",
+   "time": "night",
+   "weather": "none",
+   "grade": "cold",
+   "hud": {
+    "values": [
+     3,
+     0
+    ]
+   },
+   "camera": {
+    "frame": "medium",
+    "on": "hero",
+    "push": 0.06
+   },
+   "actors": [
+    {
+     "id": "hero",
+     "x": 50.0,
+     "pose": "type",
+     "mood": "scared",
+     "hold": "phone",
+     "target": "demon",
+     "at": 0.5
+    }
+   ],
+   "lines": [
+    {
+     "who": "hero",
+     "text": "Did I say the right thing?",
+     "at": 0.6
+    }
+   ],
+   "music": "low",
+   "beat": 5,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 6.0,
+   "set": "desk",
+   "time": "night",
+   "weather": "none",
+   "grade": "cold",
+   "hud": {
+    "values": [
+     3,
+     0
+    ]
+   },
+   "camera": {
+    "frame": "insert"
+   },
+   "insert": {
+    "type": "note",
+    "text": "EDITS 3"
+   },
+   "music": "low",
+   "lines": [],
+   "beat": 6,
+   "actors": [],
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 4.65,
+   "set": "kitchen",
+   "time": "dawn",
+   "weather": "none",
+   "grade": "cold",
+   "hud": {
+    "values": [
+     3,
+     0
+    ]
+   },
+   "camera": {
+    "frame": "wide",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "hero",
+     "x": 30.0,
+     "pose": "walk",
+     "mood": "tired",
+     "to": 70.0
+    }
+   ],
+   "music": "low",
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "A pause in the night, a new light.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "voice_file": "vo-018-0.wav",
+     "voice_dur": 2.561,
+     "cps": 14.43
+    }
+   ],
+   "beat": 7,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 4.65,
+   "set": "kitchen",
+   "time": "dawn",
+   "weather": "none",
+   "grade": "cold",
+   "hud": {
+    "values": [
+     3,
+     0
+    ]
+   },
+   "camera": {
+    "frame": "medium",
+    "on": "hero",
+    "push": 0.07
+   },
+   "actors": [
+    {
+     "id": "hero",
+     "x": 70.0,
+     "pose": "stand",
+     "mood": "tired"
+    }
+   ],
+   "items": [],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The note reminds him that honesty beats perfection.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "voice_file": "vo-019-0.wav",
+     "voice_dur": 2.95,
+     "cps": 18.79
+    }
+   ],
+   "music": "low",
+   "beat": 7,
+   "sfx": []
+  },
+  {
+   "dur": 3.5,
+   "set": "kitchen",
+   "time": "dawn",
+   "weather": "none",
+   "grade": "cold",
+   "hud": {
+    "values": [
+     3,
+     0
+    ]
+   },
+   "camera": {
+    "frame": "close",
+    "on": "hero",
+    "push": 0.09
+   },
+   "actors": [
+    {
+     "id": "hero",
+     "x": 70.0,
+     "pose": "stand",
+     "mood": "tired"
+    }
+   ],
+   "insert": {
+    "type": "note",
+    "text": "be honest"
+   },
+   "music": "low",
+   "lines": [],
+   "beat": 7,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 5.85,
+   "set": "kitchen",
+   "time": "dawn",
+   "weather": "none",
+   "grade": "cold",
+   "hud": {
+    "values": [
+     3,
+     0
+    ]
+   },
+   "camera": {
+    "frame": "two",
+    "push": 0.06
+   },
+   "actors": [
+    {
+     "id": "hero",
+     "x": 70.0,
+     "pose": "stand",
+     "mood": "tired",
+     "seated": false
+    },
+    {
+     "id": "demon",
+     "x": 78.0,
+     "pose": "lean",
+     "mood": "flat",
+     "target": "hero"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He decides to send the version that feels true, not safe.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "voice_file": "vo-021-0.wav",
+     "voice_dur": 3.367,
+     "cps": 18.4
+    },
+    {
+     "who": "hero",
+     "text": "just send it.",
+     "at": 0.5
+    }
+   ],
+   "music": "low",
+   "beat": 7,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 4.0,
+   "set": "kitchen",
+   "time": "dawn",
+   "weather": "none",
+   "grade": "cold",
+   "hud": {
+    "values": [
+     3,
+     0
+    ]
+   },
+   "camera": {
+    "frame": "close",
+    "on": "hero",
+    "push": 0.08
+   },
+   "actors": [
+    {
+     "id": "hero",
+     "x": 70.0,
+     "pose": "stand",
+     "mood": "tired"
+    }
+   ],
+   "lines": [],
+   "music": "low",
+   "beat": 7,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 4.65,
+   "set": "kitchen",
+   "time": "dawn",
+   "weather": "none",
+   "grade": "warm",
+   "hud": {
+    "values": [
+     3,
+     0
+    ]
+   },
+   "camera": {
+    "frame": "extreme",
+    "on": "hero",
+    "push": 0.12
+   },
+   "actors": [
+    {
+     "id": "hero",
+     "x": 70.0,
+     "pose": "phone",
+     "mood": "determined",
+     "hold": "phone"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Sending creates a tiny rupture in the loop.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "voice_file": "vo-023-0.wav",
+     "voice_dur": 2.994,
+     "cps": 15.61
+    }
+   ],
+   "phone": {
+    "app": "chat",
+    "contact": "alex",
+    "time": "06:12",
+    "messages": [
+     {
+      "from": "me",
+      "text": "Did I say the right thing?",
+      "at": 0.5
+     }
+    ],
+    "typing": {
+     "text": "Did I say the right thing?",
+     "at": 0.2,
+     "action": "send"
+    }
+   },
+   "music": "mid",
+   "beat": 8,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 7.45,
+   "set": "kitchen",
+   "time": "dawn",
+   "weather": "none",
+   "grade": "warm",
+   "hud": {
+    "values": [
+     3,
+     0
+    ]
+   },
+   "camera": {
+    "frame": "close",
+    "on": "hero",
+    "push": 0.07
+   },
+   "actors": [
+    {
+     "id": "hero",
+     "x": 70.0,
+     "pose": "stand",
+     "mood": "determined"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The brain can no longer simulate the same outcome; it must wait for real feedback.",
+     "at": 0.25,
+     "speech_check": 0.933,
+     "voice_file": "vo-024-0.wav",
+     "voice_dur": 5.238,
+     "cps": 17.02
+    }
+   ],
+   "music": "mid",
+   "beat": 8,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 5.05,
+   "set": "desk",
+   "time": "day",
+   "weather": "none",
+   "grade": "warm",
+   "hud": {
+    "values": [
+     0,
+     0
+    ],
+    "chapter": "DAY 9"
+   },
+   "camera": {
+    "frame": "wide",
+    "push": 0.06
+   },
+   "actors": [
+    {
+     "id": "hero",
+     "x": 48.0,
+     "pose": "type",
+     "mood": "hopeful",
+     "hold": "phone",
+     "seated": true
+    },
+    {
+     "id": "demon",
+     "x": 62.0,
+     "pose": "lean",
+     "mood": "flat",
+     "target": "hero"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The reply is a small misunderstanding, not a disaster.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "voice_file": "vo-025-0.wav",
+     "voice_dur": 3.642,
+     "cps": 16.12
+    },
+    {
+     "who": "demon",
+     "text": "just send it.",
+     "at": 0.8,
+     "style": "bubble"
+    }
+   ],
+   "beat": 9,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 4.0,
+   "set": "desk",
+   "time": "day",
+   "weather": "none",
+   "grade": "warm",
+   "camera": {
+    "frame": "close",
+    "on": "hero",
+    "push": 0.07
+   },
+   "actors": [
+    {
+     "id": "hero",
+     "x": 50.0,
+     "pose": "phone",
+     "mood": "hopeful",
+     "seated": true
+    }
+   ],
+   "lines": [],
+   "hud": {
+    "values": [
+     0,
+     0
+    ]
+   },
+   "beat": 9,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 4.65,
+   "set": "desk",
+   "time": "day",
+   "weather": "none",
+   "grade": "warm",
+   "camera": {
+    "frame": "medium",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "hero",
+     "x": 50.0,
+     "pose": "type",
+     "mood": "hopeful",
+     "hold": "phone",
+     "seated": true
+    },
+    {
+     "id": "friend",
+     "x": 78.0,
+     "pose": "stand",
+     "mood": "neutral",
+     "hold": "none"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "It invites a brief conversation, not a crisis.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "voice_file": "vo-027-0.wav",
+     "voice_dur": 2.947,
+     "cps": 16.97
+    },
+    {
+     "who": "friend",
+     "text": "I thought you meant tomorrow.",
+     "at": 0.5,
+     "style": "bubble"
+    },
+    {
+     "who": "hero",
+     "text": "Oh! Let’s meet tomorrow then.",
+     "at": 2.5,
+     "style": "bubble"
+    }
+   ],
+   "hud": {
+    "values": [
+     0,
+     0
+    ]
+   },
+   "beat": 9,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 3.0,
+   "set": "desk",
+   "time": "day",
+   "weather": "none",
+   "grade": "warm",
+   "camera": {
+    "frame": "close",
+    "on": "hero",
+    "push": 0.07
+   },
+   "actors": [
+    {
+     "id": "hero",
+     "x": 50.0,
+     "pose": "type",
+     "mood": "hopeful",
+     "seated": true
+    }
+   ],
+   "lines": [],
+   "hud": {
+    "values": [
+     0,
+     0
+    ]
+   },
+   "beat": 9,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 7.05,
+   "set": "desk",
+   "time": "day",
+   "weather": "none",
+   "grade": "warm",
+   "camera": {
+    "frame": "medium",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "demon",
+     "x": 60.0,
+     "pose": "stand",
+     "mood": "flat",
+     "target": "hero"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The inner voice reverts to its original role: a factual adviser, not a perfectionist.",
+     "at": 0.25,
+     "speech_check": 0.929,
+     "voice_file": "vo-029-0.wav",
+     "voice_dur": 5.119,
+     "cps": 18.05
+    },
+    {
+     "who": "demon",
+     "text": "keep it clear.",
+     "at": 0.6,
+     "style": "bubble"
+    }
+   ],
+   "hud": {
+    "values": [
+     0,
+     0
+    ]
+   },
+   "beat": 10,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 5.05,
+   "set": "desk",
+   "time": "day",
+   "weather": "none",
+   "grade": "warm",
+   "camera": {
+    "frame": "close",
+    "on": "hero",
+    "push": 0.07
+   },
+   "actors": [
+    {
+     "id": "hero",
+     "x": 50.0,
+     "pose": "stand",
+     "mood": "content",
+     "seated": true
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "It helps craft the next message without demanding guarantees.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "voice_file": "vo-030-0.wav",
+     "voice_dur": 3.594,
+     "cps": 18.45
+    }
+   ],
+   "hud": {
+    "values": [
+     0,
+     0
+    ]
+   },
+   "beat": 10,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 4.0,
+   "set": "desk",
+   "time": "day",
+   "weather": "none",
+   "grade": "warm",
+   "camera": {
+    "frame": "medium",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "hero",
+     "x": 50.0,
+     "pose": "type",
+     "mood": "content",
+     "hold": "phone",
+     "seated": true
+    }
+   ],
+   "lines": [],
+   "hud": {
+    "values": [
+     0,
+     0
+    ]
+   },
+   "beat": 10,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 5.85,
+   "set": "cafe",
+   "time": "day",
+   "weather": "none",
+   "grade": "sunset",
+   "camera": {
+    "frame": "wide",
+    "push": 0.06
+   },
+   "actors": [
+    {
+     "id": "hero",
+     "x": 40.0,
+     "pose": "sit",
+     "mood": "happy",
+     "seated": true
+    },
+    {
+     "id": "friend",
+     "x": 70.0,
+     "pose": "sit",
+     "mood": "happy",
+     "seated": true
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Real interaction supplies the information the mind was trying to manufacture.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "voice_file": "vo-032-0.wav",
+     "voice_dur": 4.248,
+     "cps": 19.7
+    },
+    {
+     "who": "friend",
+     "text": "Thanks for clearing that up!",
+     "at": 1.0,
+     "style": "bubble"
+    },
+    {
+     "who": "hero",
+     "text": "Anytime.",
+     "at": 2.5,
+     "style": "bubble"
+    }
+   ],
+   "hud": {
+    "values": [
+     0,
+     0
+    ]
+   },
+   "beat": 11,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 6.65,
+   "set": "cafe",
+   "time": "day",
+   "weather": "none",
+   "grade": "sunset",
+   "camera": {
+    "frame": "close",
+    "on": "hero",
+    "push": 0.07
+   },
+   "actors": [
+    {
+     "id": "hero",
+     "x": 40.0,
+     "pose": "stand",
+     "mood": "happy"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The overthinking loop dissolves when we accept that uncertainty is part of conversation.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "voice_file": "vo-033-0.wav",
+     "voice_dur": 4.953,
+     "cps": 19.31
+    }
+   ],
+   "hud": {
+    "values": [
+     0,
+     0
+    ]
+   },
+   "beat": 11,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 5.0,
+   "set": "cafe",
+   "time": "day",
+   "weather": "none",
+   "grade": "sunset",
+   "camera": {
+    "frame": "extreme",
+    "on": "hero",
+    "push": 0.12
+   },
+   "actors": [
+    {
+     "id": "hero",
+     "x": 40.0,
+     "pose": "stand",
+     "mood": "happy"
+    }
+   ],
+   "lines": [],
+   "hud": {
+    "values": [
+     0,
+     0
+    ]
+   },
+   "beat": 11,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 4.0,
+   "set": "cafe",
+   "time": "dusk",
+   "weather": "none",
+   "grade": "sunset",
+   "camera": {
+    "frame": "insert"
+   },
+   "hud": {
+    "values": [
+     4,
+     0
+    ],
+    "chapter": "EDITS"
+   },
+   "insert": {
+    "type": "note",
+    "text": "EDITS 4"
+   },
+   "lines": [],
+   "beat": 12,
+   "actors": [],
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 4.0,
+   "set": "rooftop",
+   "time": "dusk",
+   "weather": "none",
+   "grade": "sunset",
+   "music": "low",
+   "hud": {
+    "values": [
+     0,
+     0
+    ]
+   },
+   "camera": {
+    "frame": "wide",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "hero",
+     "x": 45.0,
+     "pose": "stand",
+     "mood": "hopeful",
+     "facing": 0
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Overthinking thrives on endless loops.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "voice_file": "vo-036-0.wav",
+     "voice_dur": 2.547,
+     "cps": 16.22
+    }
+   ],
+   "beat": 13,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 4.0,
+   "set": "rooftop",
+   "time": "dusk",
+   "weather": "none",
+   "grade": "sunset",
+   "music": "low",
+   "hud": {
+    "values": [
+     0,
+     0
+    ]
+   },
+   "camera": {
+    "frame": "close",
+    "on": "hero",
+    "push": 0.07
+   },
+   "actors": [
+    {
+     "id": "hero",
+     "x": 45.0,
+     "pose": "stand",
+     "mood": "hopeful",
+     "seated": false,
+     "hold": "none",
+     "facing": 0
+    }
+   ],
+   "lines": [],
+   "beat": 13,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 7.05,
+   "set": "rooftop",
+   "time": "dusk",
+   "weather": "none",
+   "grade": "sunset",
+   "music": "low",
+   "hud": {
+    "values": [
+     0,
+     0
+    ]
+   },
+   "camera": {
+    "frame": "medium",
+    "push": 0.04
+   },
+   "actors": [
+    {
+     "id": "hero",
+     "x": 45.0,
+     "pose": "stand",
+     "mood": "hopeful",
+     "hold": "none",
+     "facing": 0
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "By acting with honest specificity, we let reality answer, and the mind can rest.",
+     "at": 0.25,
+     "speech_check": 0.897,
+     "voice_file": "vo-038-0.wav",
+     "voice_dur": 5.7,
+     "cps": 15.25
+    }
+   ],
+   "beat": 13,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 2.0,
+   "set": "rooftop",
+   "time": "dusk",
+   "weather": "none",
+   "grade": "sunset",
+   "music": "low",
+   "hud": {
+    "values": [
+     0,
+     0
+    ]
+   },
+   "camera": {
+    "frame": "extreme",
+    "on": "hero",
+    "push": 0.12
+   },
+   "actors": [
+    {
+     "id": "hero",
+     "x": 45.0,
+     "pose": "stand",
+     "mood": "hopeful",
+     "hold": "none",
+     "facing": 0
+    }
+   ],
+   "lines": [],
+   "beat": 13,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 7.2,
+   "music": "high",
+   "card": {
+    "style": "quote",
+    "lines": [
+     "Clarity is a verb, not a promise.",
+     "Perfection is a noun that never arrives."
+    ]
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Clarity is a verb, not a promise.",
+     "at": 0.4,
+     "twist": "Perfection is a noun that never arrives.",
+     "hidden": true,
+     "speech_check": 1.0,
+     "voice_file": "vo-040-0.wav",
+     "voice_dur": 5.894,
+     "cps": 14.14,
+     "twist_at": 2.937
+    }
+   ],
+   "set": "void",
+   "camera": {
+    "frame": "wide"
+   },
+   "actors": [],
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 4.6,
+   "music": "high",
+   "card": {
+    "style": "logo",
+    "lines": [
+     "OVERTHINKING VS ACTION.",
+     "Think less, act more."
+    ]
+   },
+   "set": "void",
+   "camera": {
+    "frame": "wide"
+   },
+   "actors": [],
+   "lines": [],
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 4.4,
+   "music": "mid",
+   "card": {
+    "style": "cta",
+    "lines": [
+     "If this made you think, like and subscribe."
+    ]
+   },
+   "actors": [
+    {
+     "id": "hero",
+     "x": 50.0,
+     "pose": "wave",
+     "mood": "happy",
+     "scale": 0.7
+    }
+   ],
+   "set": "void",
+   "camera": {
+    "frame": "wide"
+   },
+   "lines": [],
+   "sfx": [],
+   "items": []
+  }
+ ],
+ "publish": {
+  "youtube_titles": [
+   "Why Overthinking Isn’t Proof of Intelligence",
+   "The Hidden Cost of Too Much Reflection",
+   "Smart Minds, Stuck Thoughts – A Short Story"
+  ],
+  "description": "Alex rewrites a simple text after an awkward chat, and his inner adviser turns a helpful edit into a quest for certainty. The narrator shows how reflection becomes overthinking, when the brain stops seeking new information and starts rehearsing endless possibilities.\n\nWe also see why some decisions deserve careful review, and how an honest, specific message can break the cycle. The story balances nuance with a touch of humor.\n#overthinking #psychology #decisionmaking #selftalk #animation",
+  "tags": [
+   "overthinking",
+   "reflection vs rumination",
+   "cognitive bias",
+   "decision making",
+   "psychology",
+   "intelligence",
+   "inner voice",
+   "Alex text message",
+   "mental habits",
+   "self doubt",
+   "communication",
+   "mindfulness",
+   "psychology explained",
+   "animated essay"
+  ],
+  "pinned_comment": "When have you caught yourself editing a harmless message into a crisis? Share your story below!",
+  "thumbnail_words": "OVERTHINKING \nCYCLE",
+  "idea": {
+   "definition": "Overthinking is the shift from useful reflection to endless mental rehearsal that seeks certainty rather than new insight.",
+   "mechanism": "The brain treats uncertainty as threat, recruiting the prefrontal cortex to simulate outcomes. Early loops gather data; later loops replay the same scenarios, amplifying anxiety without adding information.",
+   "thinkers": "William James, Daniel Kahneman, and Matthew Crawford (on intellectual humility).",
+   "turn": "Real progress comes when we accept uncertainty, act with specific honesty, and let feedback, not perfect prediction, guide us."
+  },
+  "inner_voice": "The inner adviser, a well‑meaning but controlling rationalizer that turns helpful editing into a demand for certainty."
+ },
+ "writer": "groq:openai/gpt-oss-120b",
+ "duration": 212.85,
+ "narrator_voice": "warguy"
+}
