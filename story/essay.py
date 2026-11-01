@@ -126,6 +126,8 @@ never a generic or reused plot) and write the concept and beat sheet as JSON:
             "counter_values": numbers for the device, "chapter": optional, "relapse": true|false}}],
  "quote": [two lines, the second twists the first], "logo": ["X vs Y." or the concept in two or three words, "short tagline"]}}
 
+BEATS ARE THE STORY ONLY: the cold-open line, the quote card, the title card and like/subscribe are added automatically from
+"opening_line", "quote" and "logo" - never write beats for them.
 LENGTH: {length}. Write 14-20 beats. Narration in total about {words} words (roughly half the running time), spread over the film
 with some beats unnarrated. A narrated beat lasts at least as long as its narration takes to speak ({WPS} words per second) plus a pause.
 
@@ -137,8 +139,20 @@ top_style {v['wardrobe']['top_style']}; hat {v['hats']}.
 """
 
 
+END_CARD = re.compile(r'\b(subscribe|logo|tagline|title card|quote card|end card|credits)\b', re.I)
+
+
+def drop_end_cards(sheet):
+    """Remove beats that restage the automatic cards (logo, quote, like and subscribe)."""
+    beats = sheet.get('beats') or []
+    keep = [b for b in beats if not (END_CARD.search(str(b.get('what_happens', ''))) and not beat_narration(b))]
+    sheet['beats'] = keep
+    return len(beats) - len(keep)
+
+
 def check_concept(sheet, minutes):
     problems = []
+    drop_end_cards(sheet)
     beats = sheet.get('beats') or []
     if len(beats) < 10:
         problems.append(f'only {len(beats)} beats; write 14-24')
@@ -164,6 +178,10 @@ def check_concept(sheet, minutes):
                             f'{"add" if total < lo else "remove"} beats or narration ({words} narration words now)')
     elif not lo * .85 <= total <= hi * 1.15:
         problems.append(f'the film would run about {total / 60:.1f} minutes with {words} narration words; aim for {lo // 60:.0f}-{hi / 60:.1f} minutes')
+    want = (lo + hi) / 2 * .5 * WPS if not minutes else lo * .5 * WPS
+    if words < want * .7:
+        problems.append(f'only {words} narration words; the narrator should speak about {want:.0f} words (half the running time), '
+                        f'explaining the concept more fully')
     narrated = sum(1 for b in beats if beat_narration(b))
     if beats and not .35 <= narrated / len(beats) <= .85:
         problems.append(f'{narrated} of {len(beats)} beats are narrated; narrate roughly half to two thirds of them')
@@ -330,7 +348,8 @@ def stage_shots(out_dir, group=4):
     out = Path(out_dir)
     sheet = json.loads((out / 'beats.json').read_text())
     beats = sheet['beats']
-    writer = Writer()
+    import os
+    writer = Writer(os.environ.get('STORYBOARD_MODELS', 'groq:openai/gpt-oss-120b,groq:qwen/qwen3.8-27b,ollama:gemma4:12b'))
     example = example_shots()
     result = {}
     t0 = time.time()

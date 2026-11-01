@@ -108,6 +108,7 @@ class Groq:
             payload = {**base, **self.optional}
             try:
                 result = self._call(payload)
+                self._shrinks = 0
                 choice = result['choices'][0]
                 if choice.get('finish_reason') == 'length':
                     raise ValueError('Your answer was too long and was cut off. Write it again more concisely: '
@@ -127,6 +128,10 @@ class Groq:
                     base['messages'][1]['content'] = user + '\n\nReturn one valid JSON object only.'
                     continue
                 if status in (413, 429) and 'too large' in text.lower():
+                    shrinks = getattr(self, '_shrinks', 0) + 1
+                    self._shrinks = shrinks
+                    if shrinks > 2:
+                        raise WriterError(f'{self.model} cannot fit this request on the free tier: {text[:300]}')
                     # The prompt plus output budget exceed the per-minute limit: shrink the budget to fit.
                     nums = dict(re.findall(r'(Limit|Requested)\D{0,3}(\d+)', text))
                     if nums.get('Limit') and nums.get('Requested'):
@@ -134,7 +139,7 @@ class Groq:
                         base['max_tokens'] = max(1200, base['max_tokens'] - over - 150)
                     else:
                         base['max_tokens'] = max(1200, int(base['max_tokens'] * .75))
-                    notice('Groq budget', f'request too large; output budget now {base["max_tokens"]} tokens', 'warning')
+                    notice('Groq budget', f'request too large ({text[:220]}); output budget now {base["max_tokens"]} tokens', 'warning')
                     continue
                 if status == 429 or (isinstance(status, int) and status >= 500) or status is None:
                     headers = getattr(getattr(exc, 'response', None), 'headers', {}) or {}

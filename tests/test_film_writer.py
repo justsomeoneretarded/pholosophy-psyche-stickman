@@ -30,9 +30,12 @@ def test_long_sentences_are_split_for_captions():
 
 
 def test_concept_checks_length_and_honesty():
-    beats = [dict(beat(2 if i % 3 else 0, 'go on.'), seconds=14) for i in range(16)]
+    beats = [dict(beat(3 if i % 3 else 0, 'go on.'), seconds=10) for i in range(12)]
+    for b in beats:
+        b['narration'] = [x + ' And it keeps teaching him, night after night.' for x in b['narration']]
     ok, total = essay.check_concept({'beats': beats}, None)
-    assert ok == [] and 200 < total < 400
+    assert ok == [], ok
+    assert 180 < total < 400
     beats[1]['narration'] = ['Studies show that 80 percent of people relapse.']
     problems, _ = essay.check_concept({'beats': beats}, None)
     assert any('statistic' in p for p in problems) and any('research' in p for p in problems)
