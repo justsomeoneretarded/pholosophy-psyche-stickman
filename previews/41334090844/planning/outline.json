@@ -1,0 +1,70 @@
+{
+ "title": "Why We Procrastinate",
+ "idea": {
+  "definition": "The tendency to delay tasks despite knowing better, often due to emotional avoidance.",
+  "mechanism": "The brain prioritizes immediate emotional relief over long-term goals through the amygdala's influence on the prefrontal cortex.",
+  "turn": "Understanding that procrastination stems from emotional pain, not laziness, allows us to address the root cause.",
+  "thinkers": [
+   "Daniel Kahneman",
+   "Timothy Wilson"
+  ]
+ },
+ "approach": "Explain procrastination as an emotional response to fear of failure, not a lack of willpower.",
+ "cast": [
+  {
+   "id": "hero",
+   "kind": "hero"
+  },
+  {
+   "id": "demon",
+   "kind": "demon"
+  }
+ ],
+ "inner_voice": {
+  "represents": "fear_of_failure",
+  "color": "#e54d42"
+ },
+ "spine": [
+  {
+   "idea": "We feel overwhelmed by the task",
+   "mode": "vignette",
+   "where": "kitchen",
+   "what_happens": "Hero holds coffee cup, stares at unfinished puzzle"
+  },
+  {
+   "idea": "The task feels too big",
+   "mode": "metaphor",
+   "where": "scene",
+   "what_happens": "Huge puzzle pieces on stage, hero's hands small",
+   "scene": {
+    "base": "stage",
+    "elements": []
+   },
+   "_location_description": "stage"
+  },
+  {
+   "idea": "Emotional pain is the real task",
+   "mode": "inner",
+   "where": "void",
+   "what_happens": "Demon whispers 'failure' in hero's ear"
+  },
+  {
+   "idea": "The brain seeks relief now",
+   "mode": "contrast",
+   "where": "kitchen",
+   "what_happens": "Hero plays phone vs. puzzle pieces"
+  },
+  {
+   "idea": "Procrastination is a survival instinct",
+   "mode": "lesson",
+   "where": "desk",
+   "what_happens": "Hero writes 'emotional pain' on whiteboard"
+  },
+  {
+   "idea": "We can choose the task",
+   "mode": "story",
+   "where": "kitchen",
+   "what_happens": "Hero picks puzzle piece, eyes close"
+  }
+ ]
+}

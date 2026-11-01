@@ -1,0 +1,47 @@
+{
+  "model": "ollama:qwen3:4b",
+  "scope": "Production outline and first two-beat expansion only; not a complete script/video test",
+  "cpu_count": 4,
+  "memory_total": "MemTotal:       16367524 kB",
+  "calls": [
+    {
+      "request": 1,
+      "elapsed_seconds_including_any_model_setup": 313.063,
+      "production_schema_validated": true,
+      "inference_stats": {
+        "total_duration": 233229948661,
+        "load_duration": 6630166765,
+        "prompt_eval_count": 1453,
+        "prompt_eval_duration": 70983630000,
+        "eval_count": 517,
+        "eval_duration": 155601135000
+      }
+    }
+  ],
+  "status": "failed",
+  "error": "WriterError: No writer produced a valid script: ollama:qwen3:4b attempt 1: unhashable type: 'dict' | ollama:qwen3:4b attempt 2: unhashable type: 'dict' | ollama:qwen3:4b attempt 3: Return exactly the requested beats",
+  "loaded_models": {
+    "models": [
+      {
+        "name": "qwen3:4b",
+        "model": "qwen3:4b",
+        "size": 5113412320,
+        "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen3",
+          "families": [
+            "qwen3"
+          ],
+          "parameter_size": "4.0B",
+          "quantization_level": "Q4_K_M"
+        },
+        "expires_at": "2026-11-01T18:21:13.183714993Z",
+        "size_vram": 0,
+        "context_length": 16384,
+        "runner": "llamacpp"
+      }
+    ]
+  }
+}
