@@ -335,7 +335,7 @@ def mix(cues_path, music_path, out_path, ffmpeg='ffmpeg'):
             continue
         f = vdir / c['file']
         if not f.exists():
-            print(f'missing voice clip {f}'); continue
+            raise FileNotFoundError(f'Required narration clip is missing: {f}')
         v = load_wav(f)[:, 0]
         a = int(c['t'] * SR); L = min(len(v), n - a)
         if L > 0:

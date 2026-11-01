@@ -133,6 +133,16 @@ jobs:
           path: |
             build/film.json
             build/voice/vo-???-?.wav
+            build/voice/verification.json
+          retention-days: 3
+      - name: Preserve failed voice diagnostics
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: voice-diagnostics
+          path: |
+            build/film.json
+            build/voice/
           retention-days: 3
 
   music:
@@ -286,6 +296,8 @@ jobs:
           ffmpeg -v info -i out/video.mp4 -vn -af ebur128=peak=true -f null - 2>&1 | grep -E "^\s+(I|LRA|Peak):" | tee out/loudness.txt
           python -c "import json;f=json.load(open('build/film.json'));print('::notice title=Done::'+f['title']+': '+str(round(f['duration']/60,1))+' min, '+str(len(f['shots']))+' shots')"
       - name: Publish a review copy to the previews branch
+        env:
+          REVIEW_TITLE: ${{ inputs.title }}
         if: always()
         continue-on-error: true
         run: |
@@ -303,7 +315,7 @@ jobs:
           git config user.name "github-actions[bot]" && git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git remote add origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
           git fetch -q --depth 1 origin previews && git reset -q --soft FETCH_HEAD || true
-          git add -A && git commit -q -m "Review copy for run ${{ github.run_id }}: ${{ inputs.title }}" && git push -q origin previews
+          git add -A && git commit -q -m "Review copy for run $GITHUB_RUN_ID: $REVIEW_TITLE" && git push -q origin previews
       - uses: actions/upload-artifact@v4
         with:
           name: philosophy-video

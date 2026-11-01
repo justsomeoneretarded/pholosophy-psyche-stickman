@@ -26,6 +26,21 @@ def notice(title, message, level='notice'):
     print(f"::{level} title={title}::{message.replace(chr(10), ' ')[:900]}", flush=True)
 
 
+def verify_takes(takes, whisper, minimum=.8):
+    """Check every spoken part, including twists; retain evidence for review."""
+    records = []
+    for i, k, line, main_path, twist_path in takes:
+        parts = [('main', main_path, line['text'])]
+        if twist_path:
+            parts.append(('twist', twist_path, line['twist']))
+        for part, path, expected in parts:
+            agreement, words = verify(path, expected, whisper)
+            records.append({'shot': i, 'line': k, 'part': part, 'file': str(path),
+                            'expected': expected, 'agreement': round(agreement, 4),
+                            'words': words, 'passed': agreement >= minimum})
+    return records
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument('film'); ap.add_argument('out')
@@ -60,25 +75,40 @@ def main() -> int:
         if n % 5 == 0:
             print(f'narration {n + 1}/{len(jobs)}  {(time.time() - started) / 60:.1f} min', flush=True)
     voice.close()
-    # Check what was said; re-record lines that came out garbled.
+    # Verification is required, and a retry must itself pass a fresh transcription.
+    report_path = out_dir / 'verification.json'
     try:
         from faster_whisper import WhisperModel
         whisper = WhisperModel(a.whisper, device='cpu', compute_type='int8', cpu_threads=4, num_workers=1)
-        bad = []
-        for i, k, ln, p1, p2 in takes:
-            score, _ = verify(p1, ln['text'], whisper)
-            ln['speech_check'] = round(score, 3)
-            if score < .8:
-                bad.append((i, k, ln, p1))
+        records = verify_takes(takes, whisper)
+        report_path.write_text(json.dumps({'passed': all(r['passed'] for r in records), 'clips': records}, indent=2))
+        bad = [r for r in records if not r['passed']]
         del whisper
         if bad:
             voice = Narrator(a.narrator)
-            for i, k, ln, p1 in bad:
-                record(ln['text'], p1, seed=5)
-            voice.close()
-            notice('Narration re-recorded', f'{len(bad)} lines scored below 0.8 and were recorded again')
-    except Exception as exc:  # noqa: BLE001 -- verification is a safety net, not a requirement
-        notice('Speech check skipped', f'{type(exc).__name__}: {str(exc)[:200]}', 'warning')
+            try:
+                for r in bad:
+                    record(r['expected'], Path(r['file']), seed=5)
+            finally:
+                voice.close()
+            notice('Narration re-recorded', f'{len(bad)} spoken parts were regenerated; checking the new takes')
+            whisper = WhisperModel(a.whisper, device='cpu', compute_type='int8', cpu_threads=4, num_workers=1)
+            records = verify_takes(takes, whisper)
+            del whisper
+        passed = all(r['passed'] for r in records)
+        report_path.write_text(json.dumps({'passed': passed, 'clips': records}, indent=2))
+        if not passed:
+            failed = [f"{r['file']} ({r['agreement']:.2f})" for r in records if not r['passed']]
+            raise RuntimeError('Narration still differs from the script after regeneration: ' + ', '.join(failed))
+        for i, k, line, _, _ in takes:
+            parts = [r for r in records if r['shot'] == i and r['line'] == k]
+            line['speech_check'] = min(r['agreement'] for r in parts)
+            line['speech_verified'] = True
+        film['speech_verification'] = {'passed': True, 'parts': len(records), 'minimum_agreement': min(r['agreement'] for r in records)}
+    except Exception as exc:
+        report_path.write_text(json.dumps({'passed': False, 'error': f'{type(exc).__name__}: {exc}',
+                                          'clips': locals().get('records', [])}, indent=2))
+        raise RuntimeError('Speech verification did not pass; see voice/verification.json') from exc
     # Join line + twist, fit the shots and the caption speed to the voice.
     for i, k, ln, p1, p2 in takes:
         a1, sr = sf.read(str(p1), dtype='float32')
