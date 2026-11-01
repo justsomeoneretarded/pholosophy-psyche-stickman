@@ -1,0 +1,889 @@
+[
+ {
+  "round": 1,
+  "review": {
+   "issues": [
+    {
+     "severity": "major",
+     "beats": [
+      1
+     ],
+     "problem": "Beat 1 presents the billboard as a literal object that whispers, implying supernatural agency; this is an unsupported claim that the billboard itself communicates meaning. The narration also states \"the empty space whispers that meaning is not waiting,\" which is a metaphoric claim presented as fact. This conflates metaphor with empirical assertion.",
+     "repair": "Reframe the billboard as a symbol: describe Alex’s internal reaction to the empty billboard and have him think, \"The absence of words feels like a silence that demands I fill it.\" Remove any suggestion that the billboard itself speaks."
+    },
+    {
+     "severity": "major",
+     "beats": [
+      2
+     ],
+     "problem": "Beat 2 depicts a shadow that asks what purpose remains, implying a conscious entity. This personification of the Void is not grounded in the philosophical argument and introduces an unsubstantiated supernatural element.",
+     "repair": "Replace the shadow with Alex’s internal monologue: show his mind visualizing a dark silhouette and narrate his thoughts, \"I feel a void pressing in, asking what purpose I can create.\" Keep the visual but label it as a mental image, not a sentient being."
+    },
+    {
+     "severity": "minor",
+     "beats": [
+      3,
+      4
+     ],
+     "problem": "Beats 3 and 4 repeat the same lesson about meaning as a construct without adding new reasoning. The dialogue is absent, so the argument is not advanced.",
+     "repair": "Add a brief dialogue where Sam explicitly contrasts discovery vs. construction: \"Meaning isn’t out there; it’s the story we write. \" Then have Alex ask a probing question that leads to a deeper reflection on agency."
+    },
+    {
+     "severity": "minor",
+     "beats": [
+      5
+     ],
+     "problem": "Beat 5 claims that happiness comes from external approval and that these sounds fade when the room goes dark. This is an overgeneralization without nuance or evidence.",
+     "repair": "Qualify the claim: \"Many people feel that applause or likes give them a sense of worth, but those feelings can be fleeting when the external validation is gone. \" Add a brief reflection on the difference between external and internal validation."
+    },
+    {
+     "severity": "major",
+     "beats": [
+      6,
+      7
+     ],
+     "problem": "Beat 6 and 7 both depict the shadow as a separate entity that whispers or murmurs. This repeats the supernatural personification and also introduces a contradiction: the shadow both whispers and is a silent void. The narrative does not explain how the shadow influences Alex’s choice, leaving a logical gap.",
+     "repair": "Consolidate these beats: show Alex lighting a lamp and feeling the darkness recede as he decides to create. Use internal narration: \"The darkness feels less oppressive when I focus on a small project.\" Remove the shadow’s verbal interaction."
+    },
+    {
+     "severity": "minor",
+     "beats": [
+      8,
+      9
+     ],
+     "problem": "Beat 8 and 9 describe Alex drawing a seedling and showing it to Sam, but the argument that personal projects anchor meaning is not explicitly linked to the philosophical stance. The narrative jumps from action to emotional response without connecting to the thesis that self-made meaning is fulfilling.",
+     "repair": "Add a line where Sam comments on how the sketch gives Alex a sense of purpose, linking the act to the thesis: \"Seeing this, I realize that creating something gives me a reason to keep going.\""
+    }
+   ],
+   "strengths": [
+    "Clear visual metaphors that illustrate abstract concepts",
+    "Consistent focus on the protagonist’s internal journey",
+    "Use of dialogue (when present) to advance philosophical points",
+    "Ending that ties back to the opening theme of self‑made purpose"
+   ]
+  },
+  "edits": [
+   {
+    "beat": 1,
+    "changes": {
+     "narration": [
+      "Alex feels the weight of a silent sign, wondering why nothing is written.",
+      "The absence of words feels like a silence that demands I fill it."
+     ]
+    }
+   },
+   {
+    "beat": 2,
+    "changes": {
+     "idea": "Meaning as a human construct",
+     "mode": "inner",
+     "who": [
+      "alex"
+     ],
+     "what_happens": "Alex visualizes a dark silhouette in his mind, feeling a void pressing inward",
+     "narration": [
+      "Inside his mind, a dark silhouette presses in, asking what purpose can be forged when the world offers none.",
+      "Alex realizes that stories he builds become the light that fills the void."
+     ],
+     "scene": {
+      "base": "void",
+      "wall": "black",
+      "ground": "dark",
+      "elements": [
+       {
+        "type": "word",
+        "x": 50,
+        "label": "meaning",
+        "color": "white"
+       }
+      ]
+     }
+    }
+   },
+   {
+    "beat": 3,
+    "changes": {
+     "dialogue": [
+      "Sam: “Meaning isn’t out there; it’s the story we write.”",
+      "Alex: “So if I write the story, am I the author of my own purpose?”"
+     ]
+    }
+   },
+   {
+    "beat": 4,
+    "changes": {
+     "dialogue": [
+      "Sam: “Meaning isn’t out there; it’s the story we write.”",
+      "Alex: “So if I write the story, am I the author of my own purpose?”",
+      "Alex: “But what if the story feels empty? How do I know it matters?”",
+      "Sam: “The act of writing gives it weight, even if the ending is unknown.”"
+     ],
+     "narration": [
+      "Alex asks how a fleeting hobby can feel lasting, and Sam replies that personal projects anchor our self‑crafted purpose.",
+      "Sam expands: “It’s like building a garden—each seed you plant is a choice, and the growth shows the impact of that choice.”",
+      "Alex nods, realizing that the sketchbook becomes a living testament to his agency, and the act of drawing itself becomes a source of meaning."
+     ]
+    }
+   },
+   {
+    "beat": 5,
+    "changes": {
+     "narration": [
+      "Many think happiness comes from external approval, like applause or likes, but those feelings can be fleeting when the external validation is gone.",
+      "Alex feels the emptiness deepen, realizing the party’s glow cannot fill the silence inside."
+     ]
+    }
+   },
+   {
+    "beat": 6,
+    "changes": {
+     "narration": [
+      "When the void feels oppressive, Alex flicks on the desk lamp, letting a small, steady light cut through the darkness.",
+      "He thinks, “The darkness feels less oppressive when I focus on a small project.”",
+      "The act of creating a tangible goal turns the darkness into a quiet, purposeful light."
+     ],
+     "what_happens": "Alex lights a desk lamp, feeling the darkness recede as he decides to create."
+    }
+   },
+   {
+    "beat": 7,
+    "changes": {
+     "who": [
+      "alex"
+     ],
+     "what_happens": "Alex lights a desk lamp, feeling the darkness recede as he decides to create.",
+     "narration": [
+      "When the void feels oppressive, Alex flicks on the desk lamp, letting a small, steady light cut through the darkness.",
+      "He thinks, “The darkness feels less oppressive when I focus on a small project.”",
+      "The act of creating a tangible goal turns the darkness into a quiet, purposeful light."
+     ]
+    }
+   },
+   {
+    "beat": 8,
+    "changes": {
+     "dialogue": {
+      "alex": "I’m just sketching a seedling, Sam.",
+      "sam": "Seeing this, I realize that creating something gives me a reason to keep going."
+     },
+     "narration": [
+      "On a sun‑dappled bench, Alex spreads a sketchpad and begins tracing a blooming seedling.",
+      "Each line stitches meaning into the air, turning idle time into quiet fulfillment."
+     ]
+    }
+   },
+   {
+    "beat": 9,
+    "changes": {
+     "dialogue": {
+      "alex": "I’m just sketching a seedling, Sam.",
+      "sam": "Seeing this, I realize that creating something gives me a reason to keep going."
+     },
+     "narration": [
+      "Alex invites Sam to the bench, unveiling the sketch that now feels alive.",
+      "Together they discuss its colors, realizing a shared purpose can anchor fleeting thoughts."
+     ]
+    }
+   }
+  ],
+  "proposals": [
+   {
+    "beat": 1,
+    "data": {
+     "changes": {
+      "narration": [
+       "Alex feels the weight of a silent sign, wondering why nothing is written.",
+       "The absence of words feels like a silence that demands I fill it."
+      ]
+     }
+    }
+   },
+   {
+    "beat": 2,
+    "data": {
+     "changes": {
+      "idea": "Meaning as a human construct",
+      "mode": "inner",
+      "who": [
+       "alex"
+      ],
+      "what_happens": "Alex visualizes a dark silhouette in his mind, feeling a void pressing inward",
+      "narration": [
+       "Inside his mind, a dark silhouette presses in, asking what purpose can be forged when the world offers none.",
+       "Alex realizes that stories he builds become the light that fills the void."
+      ],
+      "scene": {
+       "base": "void",
+       "wall": "black",
+       "ground": "dark",
+       "elements": [
+        {
+         "type": "word",
+         "x": 50,
+         "label": "meaning",
+         "color": "white"
+        }
+       ]
+      }
+     }
+    }
+   },
+   {
+    "beat": 3,
+    "data": {
+     "changes": {
+      "dialogue": [
+       "Sam: “Meaning isn’t out there; it’s the story we write.”",
+       "Alex: “So if I write the story, am I the author of my own purpose?”"
+      ]
+     }
+    }
+   },
+   {
+    "beat": 4,
+    "data": {
+     "changes": {
+      "dialogue": [
+       "Sam: “Meaning isn’t out there; it’s the story we write.”",
+       "Alex: “So if I write the story, am I the author of my own purpose?”",
+       "Alex: “But what if the story feels empty? How do I know it matters?”",
+       "Sam: “The act of writing gives it weight, even if the ending is unknown.”"
+      ],
+      "narration": [
+       "Alex asks how a fleeting hobby can feel lasting, and Sam replies that personal projects anchor our self‑crafted purpose.",
+       "Sam expands: “It’s like building a garden—each seed you plant is a choice, and the growth shows the impact of that choice.”",
+       "Alex nods, realizing that the sketchbook becomes a living testament to his agency, and the act of drawing itself becomes a source of meaning."
+      ]
+     }
+    }
+   },
+   {
+    "beat": 5,
+    "data": {
+     "changes": {
+      "narration": [
+       "Many think happiness comes from external approval, like applause or likes, but those feelings can be fleeting when the external validation is gone.",
+       "Alex feels the emptiness deepen, realizing the party’s glow cannot fill the silence inside."
+      ]
+     }
+    }
+   },
+   {
+    "beat": 6,
+    "data": {
+     "changes": {
+      "beat": 6,
+      "narration": [
+       "When the void feels oppressive, Alex flicks on the desk lamp, letting a small, steady light cut through the darkness.",
+       "He thinks, “The darkness feels less oppressive when I focus on a small project.”",
+       "The act of creating a tangible goal turns the darkness into a quiet, purposeful light."
+      ],
+      "what_happens": "Alex lights a desk lamp, feeling the darkness recede as he decides to create."
+     }
+    }
+   },
+   {
+    "beat": 7,
+    "data": {
+     "changes": {
+      "beat": 7,
+      "who": [
+       "alex"
+      ],
+      "what_happens": "Alex lights a desk lamp, feeling the darkness recede as he decides to create.",
+      "narration": [
+       "When the void feels oppressive, Alex flicks on the desk lamp, letting a small, steady light cut through the darkness.",
+       "He thinks, “The darkness feels less oppressive when I focus on a small project.”",
+       "The act of creating a tangible goal turns the darkness into a quiet, purposeful light."
+      ]
+     }
+    }
+   },
+   {
+    "beat": 8,
+    "data": {
+     "changes": {
+      "beat": 8,
+      "dialogue": {
+       "alex": "I’m just sketching a seedling, Sam.",
+       "sam": "Seeing this, I realize that creating something gives me a reason to keep going."
+      },
+      "narration": [
+       "On a sun‑dappled bench, Alex spreads a sketchpad and begins tracing a blooming seedling.",
+       "Each line stitches meaning into the air, turning idle time into quiet fulfillment."
+      ]
+     }
+    }
+   },
+   {
+    "beat": 9,
+    "data": {
+     "changes": {
+      "dialogue": {
+       "alex": "I’m just sketching a seedling, Sam.",
+       "sam": "Seeing this, I realize that creating something gives me a reason to keep going."
+      },
+      "narration": [
+       "Alex invites Sam to the bench, unveiling the sketch that now feels alive.",
+       "Together they discuss its colors, realizing a shared purpose can anchor fleeting thoughts."
+      ]
+     }
+    }
+   }
+  ]
+ },
+ {
+  "round": 2,
+  "review": {
+   "issues": [
+    {
+     "severity": "major",
+     "beats": [
+      1
+     ],
+     "problem": "Beat 1 introduces existential nihilism but does not provide a clear argumentative stance or evidence; it merely states the claim without engaging with counterarguments or philosophical nuance.",
+     "repair": "Add a brief explanation of why nihilism is a philosophical position (e.g., reference to Sartre’s assertion that existence precedes essence) and present a counterpoint (e.g., Camus’ absurdism) to set up the debate."
+    },
+    {
+     "severity": "major",
+     "beats": [
+      2,
+      3,
+      4
+     ],
+     "problem": "Beats 2–4 repeat the same idea that meaning is a human construct without developing a logical progression; the dialogue is duplicated in beats 3 and 4, creating redundancy and missing deeper reasoning about how personal projects generate value.",
+     "repair": "Consolidate beats 3 and 4 into a single lesson beat that includes the dialogue once, and extend the narration to explain how agency in choosing projects leads to a coherent narrative structure, citing Sartre’s concept of self‑authorship."
+    },
+    {
+     "severity": "minor",
+     "beats": [
+      5
+     ],
+     "problem": "Beat 5 claims that external validation is fleeting but does not connect this observation to the central thesis or provide evidence from psychological research; it feels like an unsupported anecdote.",
+     "repair": "Replace the anecdote with a brief reference to the psychological literature on self‑determination theory, noting that intrinsic motivation is more sustainable than extrinsic approval."
+    },
+    {
+     "severity": "major",
+     "beats": [
+      6,
+      7
+     ],
+     "problem": "Beats 6 and 7 are identical in content and narration, duplicating the same scene and failing to differentiate the inner void personification from the act of creating; this repetition obscures the narrative arc.",
+     "repair": "Merge beats 6 and 7, keeping the inner void personification as a distinct visual element (e.g., a shadow that reacts to the lamp) and clarify how the lamp’s light symbolizes agency."
+    },
+    {
+     "severity": "minor",
+     "beats": [
+      8,
+      9
+     ],
+     "problem": "Beat 9 repeats the dialogue from beat 8, offering no new development; the interaction between Alex and Sam is superficial and does not explore the emotional impact of creation.",
+     "repair": "Rewrite beat 9 to include Sam’s reflection on how Alex’s sketch influences his own sense of purpose, adding a new line of dialogue that deepens the relational dynamic."
+    },
+    {
+     "severity": "major",
+     "beats": [
+      10,
+      11
+     ],
+     "problem": "Beats 10 and 11 present the same metaphorical stage scene with duplicated narration; the concept of “CHOICE” is introduced without linking it back to the earlier discussion of freedom and self‑authorship, leaving the metaphor underdeveloped.",
+     "repair": "Combine beats 10 and 11 into one stage scene, and explicitly tie the word CHOICE to Sartre’s idea that freedom is the basis of meaning, explaining how Alex’s decision to draw is an act of freedom."
+    },
+    {
+     "severity": "minor",
+     "beats": [
+      12
+     ],
+     "problem": "Beat 12 ends with a hopeful image but does not explicitly connect the sunrise to the philosophical conclusion; the ending feels abrupt and does not reinforce the argument that self‑made meaning can counter nihilism.",
+     "repair": "Add a final narration line that explicitly states, “In the quiet of dawn, Alex realizes that the meaning he crafts is as real as any cosmic promise, proving that purpose can be self‑generated.”"
+    }
+   ],
+   "strengths": [
+    "Clear visual metaphors (billboard, void, lamp, stage) that reinforce philosophical concepts; engaging dialogue between Alex and Sam that humanizes abstract ideas; consistent theme of self‑authorship and agency; use of animation to illustrate internal states; hopeful conclusion that aligns with the thesis of self‑made meaning."
+   ]
+  },
+  "edits": [
+   {
+    "beat": 1,
+    "changes": {
+     "narration": [
+      "Alex feels the weight of a silent sign, wondering why nothing is written.",
+      "The absence of words feels like a silence that demands I fill it.",
+      "In philosophy, existential nihilism argues that life has no inherent purpose—an idea first articulated by Sartre’s claim that existence precedes essence.",
+      "Yet Camus reminds us that the absurd can be embraced, turning the void into a canvas for personal meaning."
+     ]
+    }
+   },
+   {
+    "beat": 2,
+    "changes": {
+     "idea": "Meaning as a human construct",
+     "narration": [
+      "Inside his mind, a dark silhouette presses in, asking what purpose can be forged when the world offers none.",
+      "Alex realizes that stories he builds become the light that fills the void.",
+      "He remembers Sartre’s notion of self‑authorship: by choosing projects, he writes his own narrative, turning an empty canvas into a coherent life story."
+     ]
+    }
+   },
+   {
+    "beat": 3,
+    "changes": {
+     "narration": [
+      "Sam explains that meaning isn’t discovered but built, like stacking words into a story we choose to live.",
+      "Alex watches the steam rise, realizing each breath can become a deliberate chapter.",
+      "He recalls Sartre’s notion of self‑authorship: by selecting projects, he writes his own narrative, turning an empty canvas into a coherent life story."
+     ],
+     "dialogue": [
+      "Sam: “Meaning isn’t out there; it’s the story we write.”",
+      "Alex: “So if I write the story, am I the author of my own purpose?”",
+      "Alex: “By choosing what to create, I give my life a structure that feels real, even if the end is unknown.”",
+      "Sam: “Exactly. The act of choosing and doing gives weight to the narrative.”"
+     ]
+    }
+   },
+   {
+    "beat": 4,
+    "changes": {
+     "narration": [
+      "Alex asks how a fleeting hobby can feel lasting, and Sam replies that personal projects anchor our self‑crafted purpose.",
+      "Sam expands: “It’s like building a garden—each seed you plant is a choice, and the growth shows the impact of that choice.”",
+      "Alex nods, realizing that the sketchbook becomes a living testament to his agency, and the act of drawing itself becomes a source of meaning."
+     ],
+     "dialogue": [
+      "Sam: “Meaning isn’t out there; it’s the story we write.”",
+      "Alex: “So if I write the story, am I the author of my own purpose?”",
+      "Alex: “But what if the story feels empty? How do I know it matters?”",
+      "Sam: “The act of writing gives it weight, even if the ending is unknown.”"
+     ]
+    }
+   },
+   {
+    "beat": 5,
+    "changes": {
+     "narration": [
+      "Many think happiness comes from external approval, like applause or likes, but those feelings can be fleeting when the external validation is gone. Recent work in self‑determination theory shows that intrinsic motivation—pursuing activities for their own sake—leads to more lasting well‑being than chasing external praise.",
+      "Alex feels the emptiness deepen, realizing the party’s glow cannot fill the silence inside."
+     ]
+    }
+   },
+   {
+    "beat": 6,
+    "changes": {
+     "what_happens": "Alex flicks on the desk lamp; the dim glow pushes back the darkness, and the looming shadow on the wall shifts, as if reacting to the light. He decides to start drawing, turning the void into a canvas.",
+     "narration": [
+      "When the void feels oppressive, Alex flicks on the desk lamp, letting a steady light cut through the darkness.",
+      "The shadow on the wall ripples, a subtle movement that seems to acknowledge the lamp’s presence.",
+      "He thinks, “The darkness feels less oppressive when I focus on a small project.”",
+      "The act of creating a tangible goal turns the darkness into a quiet, purposeful light.",
+      "The shadow, once a looming emptiness, now hovers at the edge of the lamp’s glow, hinting that agency can shape even the void."
+     ],
+     "demon_line": "The shadow flinches as the lamp’s beam grows, as if surprised by the intrusion of light.",
+     "inner_voice_line": "Alex whispers, “Even the darkness can be guided.”"
+    }
+   },
+   {
+    "beat": 7,
+    "changes": {
+     "idea": "The inner void personified",
+     "mode": "inner",
+     "where": "void",
+     "seconds": 20,
+     "who": [
+      "alex"
+     ],
+     "emotion": "anxious",
+     "what_happens": "Alex lights the desk lamp; the beam pushes back the darkness, and the looming shadow on the wall ripples as if reacting to the light. He feels the void recede, and the shadow’s subtle movement reminds him that agency can shape even emptiness.",
+     "narration": [
+      "When the void feels oppressive, Alex flicks on the desk lamp, letting a small, steady light cut through the darkness.",
+      "The shadow on the wall ripples, a subtle movement that seems to acknowledge the lamp’s presence, as if surprised by the intrusion of light.",
+      "He thinks, “The darkness feels less oppressive when I focus on a small project.”",
+      "The act of creating a tangible goal turns the darkness into a quiet, purposeful light, and the shadow hovers at the edge of the glow, hinting that agency can shape even the void."
+     ],
+     "inner_voice_line": "Alex whispers, “Even the darkness can be guided.”"
+    }
+   },
+   {
+    "beat": 8,
+    "changes": {
+     "dialogue": {
+      "alex": "I’m just sketching a seedling, Sam.",
+      "sam": "Seeing this, I realize that creating something gives me a reason to keep going. And it reminds me that I can find purpose in the small things too."
+     },
+     "narration": [
+      "Alex invites Sam to the bench, unveiling the sketch that now feels alive.",
+      "Sam leans in, his eyes widening as he traces the delicate lines. \"This makes me think,\" he says, \"that even a simple drawing can spark a new sense of purpose. It’s like we’re building meaning together, one line at a time.\""
+     ]
+    }
+   },
+   {
+    "beat": 9,
+    "changes": {
+     "dialogue": {
+      "alex": "I’m just sketching a seedling, Sam.",
+      "sam": "Seeing this, I realize that creating something gives me a reason to keep going. And it reminds me that I can find purpose in the small things too."
+     },
+     "narration": [
+      "Alex invites Sam to the bench, unveiling the sketch that now feels alive.",
+      "Sam leans in, his eyes widening as he traces the delicate lines. \"This makes me think,\" he says, \"that even a simple drawing can spark a new sense of purpose. It’s like we’re building meaning together, one line at a time.\""
+     ]
+    }
+   },
+   {
+    "beat": 10,
+    "changes": {
+     "idea": "Turn: fulfillment without cosmic meaning",
+     "mode": "metaphor",
+     "where": "scene",
+     "seconds": 20,
+     "who": [
+      "alex"
+     ],
+     "emotion": "determined",
+     "what_happens": "Alex steps into the bright center of the stage; the word CHOICE materializes above him, a stark reminder of Sartre’s assertion that freedom is the foundation of meaning. As the shadow of the Void recedes, Alex feels the weight of his own decision lift, turning the absence of cosmic purpose into a personal act of creation.",
+     "narration": [
+      "Alex walks onto the illuminated stage, the word CHOICE blazing behind him, echoing Sartre’s claim that freedom is the source of meaning.",
+      "The shadow of the Void recedes, its glowing eyes dimming as purpose steadies his pulse."
+     ]
+    }
+   },
+   {
+    "beat": 11,
+    "changes": {
+     "idea": "Turn: fulfillment without cosmic meaning",
+     "mode": "metaphor",
+     "where": "scene",
+     "seconds": 20,
+     "who": [
+      "alex"
+     ],
+     "emotion": "determined",
+     "what_happens": "Alex steps into the illuminated center of the stage; the word CHOICE materializes above him, a stark reminder of Sartre’s assertion that freedom is the foundation of meaning. As the Void’s shadow recedes, Alex feels the weight of his own decision lift, turning the absence of cosmic purpose into a personal act of creation.",
+     "narration": [
+      "Alex walks onto the illuminated stage, the word CHOICE blazing behind him, echoing Sartre’s claim that freedom is the source of meaning.",
+      "The Void’s shadow recedes, its glowing eyes dimming as purpose steadies his pulse."
+     ],
+     "scene": {
+      "base": "stage",
+      "elements": [
+       {
+        "type": "word",
+        "x": 50,
+        "label": "CHOICE",
+        "color": "white"
+       }
+      ]
+     }
+    }
+   },
+   {
+    "beat": 12,
+    "changes": {
+     "narration": [
+      "At sunrise, Alex stands on the rooftop, the city waking below, his sketchbook warm in his hands.",
+      "He smiles, realizing each line he draws creates meaning beyond any cosmic void.",
+      "In the quiet of dawn, Alex realizes that the meaning he crafts is as real as any cosmic promise, proving that purpose can be self‑generated."
+     ]
+    }
+   }
+  ],
+  "proposals": [
+   {
+    "beat": 1,
+    "data": {
+     "changes": {
+      "narration": [
+       "Alex feels the weight of a silent sign, wondering why nothing is written.",
+       "The absence of words feels like a silence that demands I fill it.",
+       "In philosophy, existential nihilism argues that life has no inherent purpose—an idea first articulated by Sartre’s claim that existence precedes essence.",
+       "Yet Camus reminds us that the absurd can be embraced, turning the void into a canvas for personal meaning."
+      ]
+     }
+    }
+   },
+   {
+    "beat": 2,
+    "data": {
+     "changes": {
+      "idea": "Meaning as a human construct",
+      "narration": [
+       "Inside his mind, a dark silhouette presses in, asking what purpose can be forged when the world offers none.",
+       "Alex realizes that stories he builds become the light that fills the void.",
+       "He remembers Sartre’s notion of self‑authorship: by choosing projects, he writes his own narrative, turning an empty canvas into a coherent life story."
+      ]
+     }
+    }
+   },
+   {
+    "beat": 3,
+    "data": {
+     "changes": {
+      "narration": [
+       "Sam explains that meaning isn’t discovered but built, like stacking words into a story we choose to live.",
+       "Alex watches the steam rise, realizing each breath can become a deliberate chapter.",
+       "He recalls Sartre’s notion of self‑authorship: by selecting projects, he writes his own narrative, turning an empty canvas into a coherent life story."
+      ],
+      "dialogue": [
+       "Sam: “Meaning isn’t out there; it’s the story we write.”",
+       "Alex: “So if I write the story, am I the author of my own purpose?”",
+       "Alex: “By choosing what to create, I give my life a structure that feels real, even if the end is unknown.”",
+       "Sam: “Exactly. The act of choosing and doing gives weight to the narrative.”"
+      ]
+     }
+    }
+   },
+   {
+    "beat": 4,
+    "data": {
+     "changes": {
+      "narration": [
+       "Alex asks how a fleeting hobby can feel lasting, and Sam replies that personal projects anchor our self‑crafted purpose.",
+       "Sam expands: “It’s like building a garden—each seed you plant is a choice, and the growth shows the impact of that choice.”",
+       "Alex nods, realizing that the sketchbook becomes a living testament to his agency, and the act of drawing itself becomes a source of meaning."
+      ],
+      "dialogue": [
+       "Sam: “Meaning isn’t out there; it’s the story we write.”",
+       "Alex: “So if I write the story, am I the author of my own purpose?”",
+       "Alex: “But what if the story feels empty? How do I know it matters?”",
+       "Sam: “The act of writing gives it weight, even if the ending is unknown.”"
+      ]
+     }
+    }
+   },
+   {
+    "beat": 5,
+    "data": {
+     "changes": {
+      "narration": [
+       "Many think happiness comes from external approval, like applause or likes, but those feelings can be fleeting when the external validation is gone. Recent work in self‑determination theory shows that intrinsic motivation—pursuing activities for their own sake—leads to more lasting well‑being than chasing external praise.",
+       "Alex feels the emptiness deepen, realizing the party’s glow cannot fill the silence inside."
+      ]
+     }
+    }
+   },
+   {
+    "beat": 6,
+    "data": {
+     "changes": {
+      "idea": "Self‑made meaning",
+      "mode": "inner",
+      "where": "scene",
+      "seconds": 20,
+      "who": [
+       "alex",
+       "shadow"
+      ],
+      "emotion": "determined",
+      "what_happens": "Alex flicks on the desk lamp; the light pushes the dark silhouette—his inner void—back, and he feels a surge of agency as he decides to create.",
+      "narration": [
+       "When the void feels oppressive, Alex flicks on the desk lamp, letting a small, steady light cut through the darkness.",
+       "The shadow that once hovered over his desk recoils, its edges blurring as the lamp’s glow expands.",
+       "He thinks, “The darkness feels less oppressive when I focus on a small project.”",
+       "The act of creating a tangible goal turns the darkness into a quiet, purposeful light, and the shadow itself seems to lean toward the lamp, as if acknowledging his newfound agency."
+      ]
+     }
+    }
+   },
+   {
+    "beat": 6,
+    "data": {
+     "changes": {
+      "beat": 6,
+      "scene": "Alex's dim bedroom",
+      "what_happens": "Alex flicks on the desk lamp; a thin shaft of light cuts through the darkness, revealing a faint, shifting shadow that lingers on the wall. The shadow hovers, then recoils as the lamp’s glow grows, symbolizing his growing agency.",
+      "narration": [
+       "When the void feels oppressive, Alex flicks on the desk lamp, letting a small, steady light cut through the darkness.",
+       "The beam of light reveals a shifting silhouette on the wall—his inner void—watching as the lamp’s glow pushes it back.",
+       "He thinks, “The darkness feels less oppressive when I focus on a small project.”",
+       "The act of creating a tangible goal turns the darkness into a quiet, purposeful light."
+      ]
+     }
+    }
+   },
+   {
+    "beat": 6,
+    "data": {
+     "changes": {
+      "what_happens": "Alex flicks on the desk lamp; the dim glow pushes back the darkness, and the looming shadow on the wall shifts, as if reacting to the light. He decides to start drawing, turning the void into a canvas.",
+      "narration": [
+       "When the void feels oppressive, Alex flicks on the desk lamp, letting a steady light cut through the darkness.",
+       "The shadow on the wall ripples, a subtle movement that seems to acknowledge the lamp’s presence.",
+       "He thinks, “The darkness feels less oppressive when I focus on a small project.”",
+       "The act of creating a tangible goal turns the darkness into a quiet, purposeful light.",
+       "The shadow, once a looming emptiness, now hovers at the edge of the lamp’s glow, hinting that agency can shape even the void."
+      ],
+      "demon_line": "The shadow flinches as the lamp’s beam grows, as if surprised by the intrusion of light.",
+      "inner_voice_line": "Alex whispers, “Even the darkness can be guided.”"
+     }
+    }
+   },
+   {
+    "beat": 7,
+    "data": {
+     "changes": {
+      "idea": "The inner void personified",
+      "mode": "inner",
+      "where": "void",
+      "seconds": 20,
+      "who": [
+       "alex"
+      ],
+      "emotion": "anxious",
+      "what_happens": "Alex lights the desk lamp; the beam pushes back the darkness, and the looming shadow on the wall ripples as if reacting to the light. He feels the void recede, and the shadow’s subtle movement reminds him that agency can shape even emptiness.",
+      "narration": [
+       "When the void feels oppressive, Alex flicks on the desk lamp, letting a small, steady light cut through the darkness.",
+       "The shadow on the wall ripples, a subtle movement that seems to acknowledge the lamp’s presence, as if surprised by the intrusion of light.",
+       "He thinks, “The darkness feels less oppressive when I focus on a small project.”",
+       "The act of creating a tangible goal turns the darkness into a quiet, purposeful light, and the shadow hovers at the edge of the glow, hinting that agency can shape even the void."
+      ],
+      "inner_voice_line": "Alex whispers, “Even the darkness can be guided.”"
+     }
+    }
+   },
+   {
+    "beat": 8,
+    "data": {
+     "changes": {
+      "beat": 9,
+      "dialogue": {
+       "alex": "I’m just sketching a seedling, Sam.",
+       "sam": "Seeing this, I realize that creating something gives me a reason to keep going. I feel like I can shape my own story now."
+      },
+      "narration": [
+       "Alex shows Sam the sketch, and Sam’s eyes widen with a new sense of purpose. The simple drawing sparks a conversation about how their own projects can give them agency in a world that feels empty."
+      ]
+     }
+    }
+   },
+   {
+    "beat": 8,
+    "data": {
+     "changes": {
+      "dialogue": {
+       "alex": "I’m just sketching a seedling, Sam.",
+       "sam": "Seeing this, I realize that creating something gives me a reason to keep going. And it reminds me that I can find purpose in the small things too."
+      },
+      "narration": [
+       "Alex invites Sam to the bench, unveiling the sketch that now feels alive.",
+       "Sam leans in, his eyes widening as he traces the delicate lines. \"This makes me think,\" he says, \"that even a simple drawing can spark a new sense of purpose. It’s like we’re building meaning together, one line at a time.\""
+      ]
+     }
+    }
+   },
+   {
+    "beat": 9,
+    "data": {
+     "changes": {
+      "beat": 9,
+      "dialogue": {
+       "alex": "I’m just sketching a seedling, Sam.",
+       "sam": "Seeing this, I realize that creating something gives me a reason to keep going. And it reminds me that I can find purpose in the small things too."
+      },
+      "narration": [
+       "Alex invites Sam to the bench, unveiling the sketch that now feels alive.",
+       "Sam leans in, his eyes widening as he traces the delicate lines. \"This makes me think,\" he says, \"that even a simple drawing can spark a new sense of purpose. It’s like we’re building meaning together, one line at a time.\""
+      ]
+     }
+    }
+   },
+   {
+    "beat": 10,
+    "data": {
+     "changes": {
+      "idea": "Turn: fulfillment without cosmic meaning",
+      "mode": "metaphor",
+      "where": "scene",
+      "seconds": 20,
+      "who": [
+       "alex"
+      ],
+      "emotion": "determined",
+      "what_happens": "Alex steps into the bright center of the stage; the word CHOICE materializes above him, a stark reminder of Sartre’s assertion that freedom is the foundation of meaning. As the shadow of the Void recedes, Alex feels the weight of his own decision lift, turning the absence of cosmic purpose into a personal act of creation.",
+      "narration": [
+       "Alex walks onto the illuminated stage, the word CHOICE blazing behind him, echoing Sartre’s claim that freedom is the source of meaning.",
+       "The shadow of the Void recedes, its glowing eyes dimming as purpose steadies his pulse."
+      ]
+     }
+    }
+   },
+   {
+    "beat": 11,
+    "data": {
+     "changes": {
+      "idea": "Turn: fulfillment without cosmic meaning",
+      "mode": "metaphor",
+      "where": "scene",
+      "seconds": 20,
+      "who": [
+       "alex"
+      ],
+      "emotion": "determined",
+      "what_happens": "Alex steps into the illuminated center of the stage; the word CHOICE materializes above him, a stark reminder of Sartre’s assertion that freedom is the foundation of meaning. As the Void’s shadow recedes, Alex feels the weight of his own decision lift, turning the absence of cosmic purpose into a personal act of creation.",
+      "narration": [
+       "Alex walks onto the illuminated stage, the word CHOICE blazing behind him, echoing Sartre’s claim that freedom is the source of meaning.",
+       "The Void’s shadow recedes, its glowing eyes dimming as purpose steadies his pulse."
+      ],
+      "scene": {
+       "base": "stage",
+       "elements": [
+        {
+         "type": "word",
+         "x": 50,
+         "label": "CHOICE",
+         "color": "white"
+        }
+       ]
+      }
+     }
+    }
+   },
+   {
+    "beat": 12,
+    "data": {
+     "changes": {
+      "narration": [
+       "At sunrise, Alex stands on the rooftop, the city waking below, his sketchbook warm in his hands.",
+       "He smiles, realizing each line he draws creates meaning beyond any cosmic void.",
+       "In the quiet of dawn, Alex realizes that the meaning he crafts is as real as any cosmic promise, proving that purpose can be self‑generated."
+      ]
+     }
+    }
+   }
+  ]
+ },
+ {
+  "round": 3,
+  "review": {
+   "issues": [
+    {
+     "severity": "major",
+     "beats": [
+      1
+     ],
+     "problem": "The narration in Beat 1 presents an unsupported claim that Sartre first articulated existence precedes essence, while the claim is historically inaccurate and conflates Sartre with Heidegger. The beat also repeats the same philosophical point in later beats without new evidence or reasoning.",
+     "repair": "Replace the historical claim with a brief, accurate statement: \"Sartre famously argued that existence precedes essence, meaning we create our own essence through choices.\" Remove the redundant mention of Camus in this beat and move his reference to Beat 3 where the absurd is introduced."
+    },
+    {
+     "severity": "major",
+     "beats": [
+      5
+     ],
+     "problem": "Beat 5 cites \"Recent work in self‑determination theory\" as evidence for intrinsic motivation leading to lasting well‑being, yet no specific study or citation is provided, making the claim unsupported.",
+     "repair": "Rephrase to a general philosophical observation: \"Many thinkers note that pursuing activities for their own sake tends to foster lasting well‑being, whereas chasing external approval can feel fleeting.\" Remove the phrase \"Recent work in self‑determination theory\"."
+    },
+    {
+     "severity": "minor",
+     "beats": [
+      3,
+      4
+     ],
+     "problem": "Both Beat 3 and Beat 4 repeat the same dialogue lines verbatim, creating redundancy without advancing the narrative.",
+     "repair": "In Beat 4, replace the repeated dialogue with a new exchange that deepens the discussion about how small projects anchor purpose, e.g., Sam says, \"Even a sketch can become a monument to our choices.\""
+    }
+   ],
+   "strengths": [
+    "Clear narrative arc from confronting nihilism to embracing self‑made meaning; effective use of visual metaphors (billboard, shadow, stage); consistent philosophical framing; engaging dialogue that illustrates key concepts."
+   ]
+  },
+  "edits": []
+ }
+]
