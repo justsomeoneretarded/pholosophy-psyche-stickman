@@ -124,16 +124,27 @@ def subtitles(film, out):
     cues = []
     for t, s in shot_times(film):
         for ln in s.get('lines') or []:
-            text = ln['text'] + (' ' + ln['twist'] if ln.get('twist') else '')
+            if ln.get('who') not in ('narrator', 'caption'):
+                continue  # Unvoiced dialogue bubbles are on-screen acting, not narrated speech.
             start = t + (ln.get('at') or 0)
-            end = start + (ln.get('voice_dur') or ln.get('dur') or max(1.5, len(text.split()) / 2.6))
-            end = min(end, t + s['dur'])
-            if ln['who'] not in ('narrator', 'caption'):
-                text = text if ln['who'] != 'demon' else f'({text})'
-            cues.append((start, end, text))
+            timed = ln.get('word_times') or []
+            if timed:
+                for i in range(0, len(timed), 7):
+                    phrase = timed[i:i+7]
+                    a = start + phrase[0]['start']
+                    b = min(start + phrase[-1]['end'], t+s['dur'])
+                    if b > a:
+                        cues.append((a,b,' '.join(w['word'] for w in phrase)))
+            else:
+                text = ln['text'] + (' ' + ln['twist'] if ln.get('twist') else '')
+                end = min(start + (ln.get('voice_dur') or ln.get('dur') or max(1.5,len(text.split())/2.6)),t+s['dur'])
+                if end > start:
+                    cues.append((start,end,text))
     cues.sort()
-    srt = [f'{i + 1}\n{stamp(a)} --> {stamp(b)}\n{txt}\n' for i, (a, b, txt) in enumerate(cues)]
-    (Path(out) / 'subtitles.srt').write_text('\n'.join(srt))
+    srt = [f'{i+1}\n{stamp(a)} --> {stamp(b)}\n{txt}\n' for i,(a,b,txt) in enumerate(cues)]
+    vtt = [f'{stamp(a, ".")} --> {stamp(b, ".")}\n{txt}\n' for a,b,txt in cues]
+    (Path(out)/'subtitles.srt').write_text('\n'.join(srt))
+    (Path(out)/'subtitles.vtt').write_text('WEBVTT\n\n'+'\n'.join(vtt))
 
 
 def chapters(film):
@@ -174,6 +185,16 @@ def main():
     thumbnails(film, sys.argv[2], out)
     subtitles(film, out)
     publishing(film, out)
+    (out/'script.txt').write_text('\n\n'.join(l['text']+(' '+l['twist'] if l.get('twist') else '') for s in film['shots'] for l in s.get('lines',[]) if l.get('who')=='narrator'))
+    (out/'storyboard.json').write_text(json.dumps(film,indent=1,ensure_ascii=False))
+    (out/'scene_timeline.json').write_text(json.dumps([{'start':t,'end':t+s['dur'],'shot':i,'beat':s.get('beat')} for i,(t,s) in enumerate(shot_times(film))],indent=2))
+    for source,target in [('recommended-title.txt','youtube_title.txt'),('description.txt','youtube_description.txt'),('tags.txt','keywords.txt'),('pinned-comment.txt','pinned_comment.txt')]:
+        (out/target).write_text((out/source).read_text())
+    (out/'hashtags.txt').write_text(' '.join(re.findall(r'#[A-Za-z0-9_]+',(out/'description.txt').read_text())))
+    thumbs=sorted(out.glob('thumbnail-*.jpg'))
+    if thumbs:
+        from PIL import Image
+        Image.open(thumbs[0]).save(out/'thumbnail.png')
     print(f'package: {len(list(out.iterdir()))} files')
 
 

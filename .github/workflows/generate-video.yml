@@ -275,6 +275,10 @@ jobs:
         with:
           name: film-music
           path: build
+      - uses: actions/download-artifact@v4
+        with:
+          name: film-plan
+          path: build/plan
       - name: Install tools
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-dejavu-core >/dev/null
@@ -291,6 +295,10 @@ jobs:
           python story/package.py build/film.json build/poster out
           python -c "import sys,json;sys.path.insert(0,'story');from essay import script_md;from pathlib import Path;script_md(json.load(open('build/film.json')),Path('out/story.md'))"
           cp build/film.json build/contact-sheet.jpg out/
+          cp build/voice/verification.json out/speech-verification.json
+          cp build/plan/writing/sources.json out/sources.json
+          cp build/plan/writing/research.txt out/research_notes.md
+          python scripts/master_quality.py out/video.mp4 build/film.json out/quality_report.json
           ffmpeg -v error -i out/video.mp4 -f null - && echo "full decode: ok"
           ffprobe -v error -show_entries format=duration:stream=codec_type,width,height -of compact out/video.mp4 | tee build/probe.txt
           ffmpeg -v info -i out/video.mp4 -vn -af ebur128=peak=true -f null - 2>&1 | grep -E "^\s+(I|LRA|Peak):" | tee out/loudness.txt
@@ -316,6 +324,16 @@ jobs:
           git remote add origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
           git fetch -q --depth 1 origin previews && git reset -q --soft FETCH_HEAD || true
           git add -A && git commit -q -m "Review copy for run $GITHUB_RUN_ID: $REVIEW_TITLE" && git push -q origin previews
+      - name: Preserve failed production diagnostics
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: failed-production-diagnostics
+          path: |
+            out/
+            build/probe.txt
+            build/sound.txt
+          retention-days: 7
       - uses: actions/upload-artifact@v4
         with:
           name: philosophy-video
