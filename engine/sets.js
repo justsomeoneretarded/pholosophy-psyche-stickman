@@ -362,7 +362,10 @@ const SETS = {
       rr(ctx, x0, top, x1 - x0, 18, 6, '#3a2f25', '#7a6248', 2.4);
       fillRect(ctx, (x0 + x1) / 2 - 10, top + 18, 20, GROUND - top - 18, '#2a221b', '#4a3e32', 2);
       fillRect(ctx, (x0 + x1) / 2 - 70, GROUND - 8, 140, 8, '#2a221b');
-      for (const cx of [pct(17), pct(33)]) { ctx.save(); ctx.translate(cx, top); rr(ctx, -16, -30, 32, 30, 5, '#efeadf', '#8a8478', 2); ctx.fillStyle = '#6b4430'; ctx.fillRect(-16, -22, 32, 6); ctx.restore(); }
+      for (const cx of [pct(17), pct(33)]) {
+        const held=(env.heldCupX||[]).some(x=>[pct(17),pct(33)].reduce((best,q)=>Math.abs(q-x)<Math.abs(best-x)?q:best)===cx);
+        if(held) continue; // The cup attached to a hand must not remain duplicated on the table.
+        ctx.save(); ctx.translate(cx, top); rr(ctx, -16, -30, 32, 30, 5, '#efeadf', '#8a8478', 2); ctx.fillStyle = '#6b4430'; ctx.fillRect(-16, -22, 32, 6); ctx.restore(); }
     }
   },
   gym: {

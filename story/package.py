@@ -70,7 +70,7 @@ def headline(img, words, box, size, amber=None, align='left'):
         lw = d.textbbox((0, 0), line, font=f)[2]
         x = x0 if align == 'left' else x0 + (x1 - x0 - lw) / 2
         for word in line.split():
-            colour = amber if amber and word.strip('.,!?') == amber else (248, 245, 238)
+            colour = amber if amber and word.strip('.,!?') == words[-1].strip('.,!?') else (248, 245, 238)
             d.text((x, y), word, font=f, fill=colour, stroke_width=max(3, size // 18), stroke_fill=(8, 8, 10))
             x += d.textbbox((0, 0), word + ' ', font=f)[2]
         y += size * 1.12

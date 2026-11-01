@@ -164,6 +164,7 @@ function applyGrade(ctx, name) {
 function drawWorld(shot, u, t) {
   const env = envFor(shot, u); const set = setFor(shot);
   const actors = (shot.actors || []).map(a => ({ ...actorState(shot, a, u), shot }));
+  env.heldCupX = actors.filter(a=>a.st.pose==='drink' || a.st.hold==='cup').map(a=>a.st.wx);
   // targets for lean / grab
   for (const a of actors) {
     const tgt = actors.find(b => b.st.id === a.st.target) || actors.find(b => b !== a && b.st.kind === 'hero');
