@@ -1,0 +1,146 @@
+{
+  "title": "Production rig motion inspection",
+  "cast": {
+    "hero": {
+      "kind": "hero"
+    },
+    "friend": {
+      "kind": "friend",
+      "hat": "beanie_orange"
+    }
+  },
+  "shots": [
+    {
+      "dur": 5,
+      "set": "park",
+      "time": "day",
+      "actors": [
+        {
+          "id": "hero",
+          "pose": "walk",
+          "x": 18,
+          "to": 63,
+          "mood": "neutral"
+        }
+      ],
+      "camera": {
+        "frame": "wide",
+        "push": 0
+      }
+    },
+    {
+      "dur": 4,
+      "set": "street",
+      "time": "day",
+      "actors": [
+        {
+          "id": "hero",
+          "pose": "run",
+          "x": 12,
+          "to": 87,
+          "mood": "determined"
+        }
+      ],
+      "camera": {
+        "frame": "wide",
+        "push": 0
+      }
+    },
+    {
+      "dur": 3,
+      "set": "cafe",
+      "time": "day",
+      "actors": [
+        {
+          "id": "hero",
+          "pose": "sit",
+          "x": 50,
+          "facing": 1,
+          "mood": "tired"
+        }
+      ],
+      "camera": {
+        "frame": "medium",
+        "push": 0
+      }
+    },
+    {
+      "dur": 3,
+      "set": "park",
+      "time": "day",
+      "actors": [
+        {
+          "id": "hero",
+          "pose": "fall",
+          "x": 50,
+          "mood": "shocked"
+        }
+      ],
+      "camera": {
+        "frame": "medium",
+        "push": 0
+      }
+    },
+    {
+      "dur": 3,
+      "set": "park",
+      "time": "day",
+      "actors": [
+        {
+          "id": "hero",
+          "pose": "getup",
+          "x": 50,
+          "mood": "determined"
+        }
+      ],
+      "camera": {
+        "frame": "medium",
+        "push": 0
+      }
+    },
+    {
+      "dur": 4,
+      "set": "cafe",
+      "time": "day",
+      "actors": [
+        {
+          "id": "hero",
+          "pose": "drink",
+          "x": 50,
+          "seated": true,
+          "facing": 1,
+          "mood": "content"
+        }
+      ],
+      "camera": {
+        "frame": "medium",
+        "push": 0
+      }
+    },
+    {
+      "dur": 4,
+      "set": "park",
+      "time": "day",
+      "actors": [
+        {
+          "id": "hero",
+          "pose": "wave",
+          "x": 36,
+          "facing": 1,
+          "mood": "happy"
+        },
+        {
+          "id": "friend",
+          "pose": "shrug",
+          "x": 64,
+          "facing": -1,
+          "mood": "smirk"
+        }
+      ],
+      "camera": {
+        "frame": "two",
+        "push": 0
+      }
+    }
+  ]
+}

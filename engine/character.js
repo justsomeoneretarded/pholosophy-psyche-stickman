@@ -67,7 +67,7 @@ const POSES = {
     }
     if (!w.moving) { POSES.stand(P, a, u, d, w); P.faceDx = dir * .75; return; }
     P.profile = dir;
-    P.pelvis[1] = RIG.pelvisY - 3 + Math.abs(Math.cos(2 * Math.PI * phase)) * (run ? 9 : 4);
+    P.pelvis[1] = -86 + Math.abs(Math.cos(2 * Math.PI * phase)) * (run ? 6 : 3);
     P.lean = dir * (run ? .14 : .04);
     P.faceDx = dir * .85;
   },

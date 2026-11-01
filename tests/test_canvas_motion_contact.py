@@ -9,7 +9,7 @@ def test_walk_and_run_contact_stays_planted_at_different_scales():
 const fs=require('fs'),vm=require('vm');
 const c={console,Math,clamp:(x,a,b)=>Math.max(a,Math.min(b,x)),
 lerp:(a,b,t)=>a+(b-a)*t,easeInOut:t=>t*t*(3-2*t),noise1:()=>0};
-vm.createContext(c);vm.runInContext(fs.readFileSync('engine/character.js','utf8'),c);
+vm.createContext(c);vm.runInContext(fs.readFileSync('engine/core.js','utf8'),c);vm.runInContext(fs.readFileSync('engine/character.js','utf8'),c);
 const errors=[];
 for(const scale of [.6,1,1.4])for(const run of [false,true])for(const dir of [-1,1]){
  const stride=run?190:120,stance=run?.48:.6, xs=[];
@@ -18,7 +18,10 @@ for(const scale of [.6,1,1.4])for(const run of [false,true])for(const dir of [-1
   const P=vm.runInContext('basePose()',c);
   c.P=P;c.w={walked:distance,moving:true,dir};c.run=run;
   vm.runInContext('POSES.walk(P,{seed:1},1,4,w,run)',c);
-  xs.push(dir*distance*scale+P.feet[0][0]*scale);
+  c.P=P;
+  const endpoint=vm.runInContext(`(()=>{const hx=-RIG.hipX*.45*Math.cos(P.lean)+4*Math.sin(P.lean);const hy=P.pelvis[1]-RIG.hipX*.45*Math.sin(P.lean)-4*Math.cos(P.lean);return ik(hx,hy,P.feet[0][0],P.feet[0][1]-4,RIG.thigh,RIG.shin,-P.profile)})()`,c);
+  if(Math.abs(endpoint[3]+4)>1e-8)throw Error('IK could not reach planted foot');
+  xs.push(dir*distance*scale+endpoint[2]*scale);
   if(P.feet[0][1]!==0)throw Error('stance foot left floor');
  }
  errors.push(Math.max(...xs)-Math.min(...xs));
