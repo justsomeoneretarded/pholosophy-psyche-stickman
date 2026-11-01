@@ -339,11 +339,11 @@ JSON shape example (content is illustrative only): {example}"""
             if isinstance(g, dict) and isinstance(g.get('shots'), list) and g['shots']:
                 try:
                     index = int(g.get('beat')) - first - 1
-                    if index not in range(len(beats)) or index in got:
-                        raise ValueError('Return each requested beat exactly once, without extra beat numbers')
-                    got[index] = g['shots']
                 except (TypeError, ValueError):
-                    pass
+                    continue
+                if index not in range(len(beats)) or index in got:
+                    raise ValueError('Return each requested beat exactly once, without extra beat numbers')
+                got[index] = g['shots']
         missing = [first + i + 1 for i in range(len(beats)) if i not in got]
         if missing:
             raise ValueError(f'no shots for beats {missing}')
