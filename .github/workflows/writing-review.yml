@@ -1,5 +1,5 @@
 name: Benchmark bounded writing with independent topic
-# Iteration 8: separate affected beats from actual patch targets and normalize speaker aliases.
+# Iteration 9: compact shot data inherits scenery and references exact source sentences.
 on:
   workflow_dispatch:
   push:
@@ -43,8 +43,16 @@ jobs:
           Path('build/writing/sources.json').write_text(json.dumps(r['sources']))
           PY
           python story/essay.py concept --title "$TITLE" --minutes 4 --dir build/writing --research build/writing/research.txt --reuse-draft prior/writing/concept-before-editor.json
-          python story/essay.py shots --dir build/writing
-          python story/essay.py merge --dir build/writing --out build/film.json
+      - name: Preserve the successful writing checkpoint
+        uses: actions/upload-artifact@v4
+        with:
+          name: edited-script
+          path: build/writing/
+          retention-days: 7
+      - name: Direct compact shots with sentence references
+        run: python story/essay.py shots --dir build/writing
+      - name: Compile the exact narration and validated shot plan
+        run: python story/essay.py merge --dir build/writing --out build/film.json
       - name: Publish actual writing evidence, including failures
         if: always()
         run: |

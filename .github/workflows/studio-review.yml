@@ -1,5 +1,5 @@
 name: Autonomous studio review
-# Iteration 10: targeted editorial operations and normalized cast references.
+# Iteration 11: compact storyboards and preserved script checkpoints.
 on:
   workflow_dispatch:
   push:

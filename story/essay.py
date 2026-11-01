@@ -300,7 +300,8 @@ def shot_rules():
  "actors": [{{"id": cast id, "x": 0-100, "to": 0-100 (walk/run target), "pose": one of {list(v['poses'])},
              "mood": one of {v['moods']}, "hold": one of {v['holds']}, "facing": -1|0|1, "seated": true,
              "target": id (lean/grab/hug/reachout), "at": seconds delay, "depth": "back", "scale": 0.4-1.2}}],
- "lines": [{{"who": actor id | "narrator", "text": str, "twist": str (narrator only, optional), "at": seconds, "style": "bubble"|"float"|"thought"|"whisper"}}],
+ "narration_index": 0-based source sentence number (omit for unnarrated shots),
+ "lines": [{{"who": actor id, "text": str, "twist": str (narrator only, optional), "at": seconds, "style": "bubble"|"float"|"thought"|"whisper"}}],
  "hud": {{"values": [numbers or [from, to]], "chapter": "DAY 4", "alert": true}}, "big": {{"text": "DAY 1.", "at": 0.3}},
  "phone": {{"app": one of {list(v['phone_apps'])}, "contact": name, "time": "18:02", "messages": [{{"from": "them"|"me", "text": str, "at": s}}],
            "typing": {{"text": str, "at": s, "action": "delete"|"send"}}, "notifications": [{{"app": str, "text": str, "at": s}}],
@@ -313,8 +314,11 @@ SPOTS per named set: {json.dumps({k: s['spots'] for k, s in v['sets'].items() if
 SEATS: {json.dumps({k: s.get('seat') for k, s in v['sets'].items() if s.get('seat')})}
 RULES:
 - Return only fields used by this shot; omit unused optional props, phone screens, inserts and empty dictionaries.
-- NARRATION: each of the beat's narration sentences goes, in order, on its own shot as {{"who": "narrator", "text": the sentence, "at": 0.2}}.
-  While the narrator speaks, the picture keeps acting: give that shot an action that matches the sentence. Never put two narration sentences on one shot.
+- NARRATION: reference each source sentence by narration_index (0, 1, ...), in order, once.
+  Never echo its text or return narrator lines; the compiler inserts the exact script.
+  While the narrator speaks, give that shot an action matching the referenced sentence.
+- SCENES: omit scene/time/weather/grade when unchanged; the compiler inherits them from the beat.
+  Return a scene object only when its elements change. Do not copy the same environment into every shot.
 - Unnarrated shots are short (2-4 s) and full of acting: dialogue bubbles, reactions, objects, movement.
 - Stage the beat's MODE: a montage is many short shots of different people/places; a metaphor uses built places and big words;
   a lesson shows the idea directly; inner uses a void or dark room; contrast cuts between two situations.
@@ -353,6 +357,11 @@ JSON shape example (content is illustrative only): {example}"""
                     continue
                 if index not in range(len(beats)) or index in got:
                     raise ValueError('Return each requested beat exactly once, without extra beat numbers')
+                indices = [s.get('narration_index') for s in g['shots'] if isinstance(s,dict) and s.get('narration_index') is not None]
+                if indices:
+                    count = len(beat_narration(beats[index]))
+                    if any(type(n) is not int or not 0 <= n < count for n in indices) or indices != sorted(indices) or set(indices) != set(range(count)):
+                        raise ValueError(f'Use narration_index 0..{count-1} in source order, with every sentence represented')
                 got[index] = g['shots']
         missing = [first + i + 1 for i in range(len(beats)) if i not in got]
         if missing:
@@ -387,7 +396,8 @@ def place_narration(beat, shots):
     # spread sentences evenly over the visual shots
     step = len(visual) / len(sentences)
     for k, sentence in enumerate(sentences):
-        shot = visual[min(len(visual) - 1, int(k * step))]
+        explicit = [s for s in visual if s.get('narration_index') == k]
+        shot = explicit[0] if explicit else visual[min(len(visual) - 1, int(k * step))]
         shot['lines'].insert(0, {'who': 'narrator', 'text': sentence, 'at': .25})
         shot['dur'] = max(float(shot.get('dur') or 3), .25 + len(sentence.split()) / WPS + .8)
     return shots
@@ -419,7 +429,7 @@ def example_shots():
          'scene': {'base': 'outside', 'backdrop': 'hills', 'ground': 'grass', 'elements': [{'type': 'bench', 'x': 40}, {'type': 'tree', 'x': 75}]},
          'camera': {'frame': 'wide', 'push': .04},
          'actors': [{'id': 'ana', 'x': 20, 'to': 38, 'pose': 'walk', 'mood': 'tired'}, {'id': 'leo', 'x': 46, 'pose': 'sit', 'mood': 'content'}],
-         'lines': [{'who': 'narrator', 'text': '<one narration sentence>', 'at': .25}]},
+         'narration_index': 0, 'lines': []},
         {'dur': 2.6, 'set': 'scene', 'time': 'dusk', 'grade': 'sunset',
          'scene': {'base': 'outside', 'backdrop': 'hills', 'ground': 'grass', 'elements': [{'type': 'bench', 'x': 40}, {'type': 'tree', 'x': 75}]},
          'camera': {'frame': 'two', 'on': 'ana'},

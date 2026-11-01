@@ -68,6 +68,12 @@ jobs:
         run: |
           T="$TITLE"; if [ -n "$NOTES" ]; then T="$TITLE. Direction from the producer: $NOTES"; fi
           python story/essay.py concept --title "$T" --minutes "$MINUTES" --dir build/writing --research build/writing/research.txt
+      - name: Preserve the edited script checkpoint
+        uses: actions/upload-artifact@v4
+        with:
+          name: script-checkpoint
+          path: build/writing/
+          retention-days: 3
       - name: Storyboard
         run: python story/essay.py shots --dir build/writing
       - name: Assemble and check the shot list
