@@ -1,0 +1,33 @@
+{
+  "model": "ollama:qwen3:4b",
+  "scope": "Production outline and first beat-expansion request only; not a complete script/video test",
+  "cpu_count": 4,
+  "memory_total": "MemTotal:       16367524 kB",
+  "calls": [],
+  "status": "failed",
+  "error": "WriterError: No writer produced a valid script: ollama:qwen3:4b attempt 1: HTTP Error 500: Internal Server Error | ollama:qwen3:4b attempt 2: Unsupported where='classroom'; choose an exact supported set ID or provide a scene object | ollama:qwen3:4b attempt 3: Unsupported where='classroom'; choose an exact supported set ID or provide a scene object",
+  "loaded_models": {
+    "models": [
+      {
+        "name": "qwen3:4b",
+        "model": "qwen3:4b",
+        "size": 5113412320,
+        "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen3",
+          "families": [
+            "qwen3"
+          ],
+          "parameter_size": "4.0B",
+          "quantization_level": "Q4_K_M"
+        },
+        "expires_at": "2026-11-01T18:45:14.67219778Z",
+        "size_vram": 0,
+        "context_length": 16384,
+        "runner": "llamacpp"
+      }
+    ]
+  }
+}
