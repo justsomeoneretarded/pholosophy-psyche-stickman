@@ -1,0 +1,93 @@
+{
+  "available_model_ids": [
+    "openai/gpt-oss-safeguard-20b",
+    "canopylabs/orpheus-v1-english",
+    "meta-llama/llama-prompt-guard-2-22m",
+    "openai/gpt-oss-20b",
+    "canopylabs/orpheus-arabic-saudi",
+    "whisper-large-v3-turbo",
+    "meta-llama/llama-prompt-guard-2-86m",
+    "whisper-large-v3",
+    "qwen/qwen3.8-27b",
+    "allam-2-7b",
+    "openai/gpt-oss-120b"
+  ],
+  "probes": [
+    {
+      "model": "openai/gpt-oss-120b",
+      "status": "responded",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 23,
+        "prompt_tokens": 104,
+        "total_tokens": 127,
+        "completion_time": 0.047794608,
+        "completion_tokens_details": {
+          "reasoning_tokens": 9
+        },
+        "prompt_time": 0.004120152,
+        "prompt_tokens_details": null,
+        "queue_time": 0.083473977,
+        "total_time": 0.05191476
+      },
+      "rate_headers": {
+        "x-ratelimit-limit-requests": "1000",
+        "x-ratelimit-limit-tokens": "8000",
+        "x-ratelimit-remaining-requests": "998",
+        "x-ratelimit-remaining-tokens": "7768",
+        "x-ratelimit-reset-requests": "2m52.8s",
+        "x-ratelimit-reset-tokens": "1.74s"
+      }
+    },
+    {
+      "model": "qwen/qwen3.8-27b",
+      "status": "responded",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 21,
+        "total_tokens": 27,
+        "completion_time": 0.012062374,
+        "completion_tokens_details": null,
+        "prompt_time": 0.001596975,
+        "prompt_tokens_details": null,
+        "queue_time": 0.132144255,
+        "total_time": 0.013659349
+      },
+      "rate_headers": {
+        "x-ratelimit-limit-requests": "1000",
+        "x-ratelimit-limit-tokens": "8000",
+        "x-ratelimit-remaining-requests": "999",
+        "x-ratelimit-remaining-tokens": "7851",
+        "x-ratelimit-reset-requests": "1m26.4s",
+        "x-ratelimit-reset-tokens": "1.117s"
+      }
+    },
+    {
+      "model": "openai/gpt-oss-20b",
+      "status": "responded",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 36,
+        "prompt_tokens": 104,
+        "total_tokens": 140,
+        "completion_time": 0.039065634,
+        "completion_tokens_details": {
+          "reasoning_tokens": 22
+        },
+        "prompt_time": 0.005725505,
+        "prompt_tokens_details": null,
+        "queue_time": 0.352249257,
+        "total_time": 0.044791139
+      },
+      "rate_headers": {
+        "x-ratelimit-limit-requests": "1000",
+        "x-ratelimit-limit-tokens": "8000",
+        "x-ratelimit-remaining-requests": "999",
+        "x-ratelimit-remaining-tokens": "7768",
+        "x-ratelimit-reset-requests": "1m26.4s",
+        "x-ratelimit-reset-tokens": "1.74s"
+      }
+    }
+  ]
+}
