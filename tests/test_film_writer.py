@@ -24,9 +24,10 @@ def test_inner_voice_line_is_staged_when_missing():
     assert any(l['who'] == 'demon' and l['text'] == 'just one more.' for s in shots for l in s['lines'])
 
 
-def test_long_sentences_are_split_for_captions():
-    parts = essay.split_sentences('This is a very long sentence ' * 12 + 'that ends here.')
-    assert all(len(p) <= 150 for p in parts) and len(parts) > 1
+def test_spoken_sentences_are_not_split_to_fit_caption_character_limits():
+    text = 'This is a very long sentence ' * 12 + 'that ends here.'
+    assert essay.split_sentences(text) == [text]
+    assert essay.split_sentences('x' * 400) == ['x' * 400]
 
 
 def test_concept_checks_length_and_honesty():

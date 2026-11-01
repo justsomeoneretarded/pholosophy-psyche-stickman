@@ -63,15 +63,8 @@ def target_seconds(minutes):
 
 
 def split_sentences(text):
-    parts = [p.strip() for p in re.split(r'(?<=[.!?])\s+(?=[A-Z0-9"\'])', str(text or '').strip()) if p.strip()]
-    out = []
-    for p in parts:                       # keep each caption within two lines
-        while len(p) > 150:
-            cut = p.rfind(',', 0, 140)
-            cut = cut if cut > 50 else p.rfind(' ', 0, 140)
-            out.append(p[:cut + 1].strip()); p = p[cut + 1:].strip()
-        out.append(p)
-    return out
+    """Preserve spoken sentences; the caption renderer handles short visual phrases."""
+    return [p.strip() for p in re.split(r'(?<=[.!?])\s+(?=[A-Z0-9"\'])', str(text or '').strip()) if p.strip()]
 
 
 def beat_narration(beat):
@@ -309,6 +302,7 @@ SCENE PARTS: {scene_vocab()}
 SPOTS per named set: {json.dumps({k: s['spots'] for k, s in v['sets'].items() if s.get('spots')})}
 SEATS: {json.dumps({k: s.get('seat') for k, s in v['sets'].items() if s.get('seat')})}
 RULES:
+- Return only fields used by this shot; omit unused optional props, phone screens, inserts and empty dictionaries.
 - NARRATION: each of the beat's narration sentences goes, in order, on its own shot as {{"who": "narrator", "text": the sentence, "at": 0.2}}.
   While the narrator speaks, the picture keeps acting: give that shot an action that matches the sentence. Never put two narration sentences on one shot.
 - Unnarrated shots are short (2-4 s) and full of acting: dialogue bubbles, reactions, objects, movement.
@@ -344,7 +338,10 @@ JSON shape example (content is illustrative only): {example}"""
         for g in groups:
             if isinstance(g, dict) and isinstance(g.get('shots'), list) and g['shots']:
                 try:
-                    got[int(g.get('beat')) - first - 1] = g['shots']
+                    index = int(g.get('beat')) - first - 1
+                    if index not in range(len(beats)) or index in got:
+                        raise ValueError('Return each requested beat exactly once, without extra beat numbers')
+                    got[index] = g['shots']
                 except (TypeError, ValueError):
                     pass
         missing = [first + i + 1 for i in range(len(beats)) if i not in got]
@@ -420,7 +417,7 @@ def example_shots():
          'lines': [{'who': 'leo', 'text': '<short line>', 'at': .5}]}], ensure_ascii=False)
 
 
-def stage_shots(out_dir, group=4):
+def stage_shots(out_dir, group=2):
     out = Path(out_dir)
     sheet = json.loads((out / 'beats.json').read_text())
     beats = sheet['beats']
