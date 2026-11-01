@@ -141,6 +141,95 @@
         "frame": "two",
         "push": 0
       }
+    },
+    {
+      "dur": 5,
+      "set": "cafe",
+      "time": "day",
+      "actors": [
+        {
+          "id": "hero",
+          "pose": "write",
+          "hold": "pencil",
+          "artwork": "seedling",
+          "x": 19,
+          "facing": 1
+        },
+        {
+          "id": "friend",
+          "pose": "talk",
+          "seated": true,
+          "x": 31,
+          "facing": -1
+        }
+      ],
+      "camera": {
+        "frame": "two",
+        "on": "hero",
+        "push": 0
+      }
+    },
+    {
+      "dur": 4,
+      "set": "cafe",
+      "time": "day",
+      "actors": [
+        {
+          "id": "hero",
+          "pose": "show",
+          "hold": "book",
+          "artwork": "seedling",
+          "seated": true,
+          "x": 19,
+          "facing": 1,
+          "target": "friend"
+        },
+        {
+          "id": "friend",
+          "pose": "think",
+          "seated": true,
+          "x": 31,
+          "facing": -1
+        }
+      ],
+      "camera": {
+        "frame": "two",
+        "push": 0
+      }
+    },
+    {
+      "dur": 3,
+      "set": "cafe",
+      "time": "day",
+      "actors": [
+        {
+          "id": "hero",
+          "pose": "standup",
+          "x": 19,
+          "facing": 1
+        }
+      ],
+      "camera": {
+        "frame": "medium",
+        "push": 0
+      }
+    },
+    {
+      "dur": 3,
+      "set": "cafe",
+      "time": "day",
+      "actors": [
+        {
+          "id": "hero",
+          "pose": "sitdown",
+          "x": 19,
+          "facing": 1
+        }
+      ],
+      "camera": {
+        "frame": "medium",
+        "push": 0
+      }
     }
   ]
 }

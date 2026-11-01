@@ -457,7 +457,11 @@ def stage_shots(out_dir, group=2):
     out = Path(out_dir)
     sheet = json.loads((out / 'beats.json').read_text())
     beats = sheet['beats']
-    import os
+    if not os.environ.get('STORYBOARD_MODELS'):
+        result={i:ensure_demon(b,place_narration(b,fallback_shots(b))) for i,b in enumerate(beats)}
+        (out / 'shots.json').write_text(json.dumps(result,ensure_ascii=False))
+        notice('Storyboard',f'{sum(map(len,result.values()))} shots compiled from the writer physical directions')
+        return
     writer = Writer(os.environ.get('STORYBOARD_MODELS') or ','.join(dict.fromkeys(filter(None,[sheet.get('_writer'),*DEFAULT_MODELS.split(',')]))))
     example = example_shots()
     result = {}
@@ -488,23 +492,9 @@ def lead(beat):
 
 
 def fallback_shots(beat):
-    """A plain but correct staging when the model cannot storyboard a beat."""
-    mood = beat.get('emotion') if beat.get('emotion') in VOCAB['moods'] else 'neutral'
-    base = {k: beat[k] for k in ('time', 'weather', 'grade') if beat.get(k)}
-    base['set'] = beat.get('where', 'void')
-    if base['set'] == 'scene':
-        base['scene'] = beat.get('scene') or {'base': 'void'}
-    seat = VOCAB['sets'].get(beat.get('where'), {}).get('seat')
-    pose = 'sit' if seat else 'stand'
-    who = [w for w in (beat.get('who') or []) if w and w != 'demon'][:3] or ['hero']
-    people = [{'id': w, 'x': 50 + (k - (len(who) - 1) / 2) * 16, 'pose': pose, 'mood': mood} for k, w in enumerate(who)]
-    shots = [{**base, 'dur': 3.5, 'camera': {'frame': 'wide', 'push': .04}, 'actors': people},
-             {**base, 'dur': 3.0, 'camera': {'frame': 'close', 'on': who[0], 'push': .06}, 'actors': [dict(people[0], x=50)]}]
-    if beat.get('demon_line'):
-        shots.append({**base, 'dur': 3.0, 'camera': {'frame': 'two', 'on': who[0]},
-                      'actors': [{'id': 'demon', 'x': 38, 'pose': 'lean', 'target': who[0]}, dict(people[0], x=50)],
-                      'lines': [{'who': 'demon', 'text': beat['demon_line'], 'at': .6}]})
-    return shots
+    """Deterministically perform the writer's directions with supported rig motions."""
+    from story.director import direct_beat
+    return direct_beat(beat,VOCAB)
 
 
 # ---------------------------------------------------------------- stage 3: merge

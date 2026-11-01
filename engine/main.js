@@ -48,10 +48,14 @@ function actorState(shot, a, u) {
       : (q-ramp/2)/(1-ramp);
     x = lerp(x0, x1, e); walked = Math.abs(x - x0) / scale; isMoving = q > 0 && q < 1;
   }
-  const seated = ['sit','slump','type'].includes(a.pose) || a.seated === true;
+  const seated = ['sit','slump','type','write','standup','sitdown'].includes(a.pose) || a.seated === true;
   let fallbackSeat = false;
   if (seated) {
-    if (set.seatAnchors?.length) {
+    if (a._fallback_seat) {
+      fallbackSeat=true;
+    } else if (Number.isFinite(a._seat_anchor)) {
+      x=pct(a._seat_anchor);
+    } else if (set.seatAnchors?.length) {
       x = set.seatAnchors.map(pct).reduce((best,q)=>Math.abs(q-x)<Math.abs(best-x)?q:best);
     } else if (!set.seat || !set.seat(x)) {
       let best = null;
@@ -105,7 +109,7 @@ function envFor(shot, u) {
 
 function drawActor(ctx, a, P, cam, u, t, heads) {
   const st = a.st, demon = st.kind === 'demon';
-  const talking = (a.shot.lines || []).some(l => l.who === st.id && u >= (l.at ?? 0) && u <= (l.at ?? 0) + Math.min(l.text.length / 28 + .2, l.dur ?? 99));
+  const talking = P.speaking || (a.shot.lines || []).some(l => l.who === st.id && u >= (l.at ?? 0) && u <= (l.at ?? 0) + Math.min(l.text.length / 28 + .2, l.dur ?? 99));
   const blink = !demon && ((t + st.seed * .37) % 3.9) < .13;
   const dcol = demonColor();
   const opts = { demon, demonColor: dcol, skin: st.skin || (st.kind === 'extra' ? '#b9b4a6' : C.cream), zoom: cam.zoom, t, blink, talking,
@@ -163,7 +167,7 @@ function applyGrade(ctx, name) {
 
 function drawWorld(shot, u, t) {
   const env = envFor(shot, u); const set = setFor(shot);
-  const actors = (shot.actors || []).map(a => ({ ...actorState(shot, a, u), shot }));
+  const actors = allocateSeatActors(shot,set).map(a => ({ ...actorState(shot, a, u), shot }));
   env.heldCupX = actors.filter(a=>a.st.pose==='drink' || a.st.hold==='cup').map(a=>a.st.wx);
   // targets for lean / grab
   for (const a of actors) {

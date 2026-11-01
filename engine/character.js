@@ -491,6 +491,7 @@ function drawHold(ctx, item, P, hands, o) {
     ctx.translate(R[0], R[1]); ctx.rotate(.6);
     ctx.fillStyle = '#f1c232'; ctx.fillRect(-3, -30, 6, 34); ctx.fillStyle = '#333'; ctx.fillRect(-3, 4, 6, 5);
   } else if (item === 'book') {
+    if (P.bookOpen) { drawOpenBook(ctx,P,hands); ctx.restore(); return; }
     ctx.translate((L[0] + R[0]) / 2, (L[1] + R[1]) / 2 - 6);
     ctx.fillStyle = '#4f8a5e'; roundRect(ctx, -32, -24, 64, 44, 3); ctx.fill(); ctx.fillStyle = '#efe6d2'; ctx.fillRect(-29, -21, 58, 4);
   } else if (item === 'bag') {
@@ -615,7 +616,8 @@ function drawCharacter(ctx, a, P, o) {
   }
   ctx.restore();
   ctx.restore();
-  if (P.lapBook) { ctx.save(); ctx.translate(0, P.pelvis[1] - 18); lapBook(ctx); ctx.restore(); }
+  if (P.writingPad) drawWritingPad(ctx,P);
+  if (P.lapBook && !P.writingPad) { ctx.save(); ctx.translate(0, P.pelvis[1] - 18); lapBook(ctx); ctx.restore(); }
   // Arms
   const hands = [];
   const order = P.profile || P.sideSit ? ((P.profile || P.sideSit) > 0 ? [0, 1] : [1, 0]) : [0, 1];
