@@ -31,6 +31,7 @@ def physical_actions(beat):
     # Keep sentence order; the engine implements each motion.
     found=[]
     for clause in re.split(r"[.;]|\bthen\b",text,flags=re.I):
+        if re.match(r"^\s*(?:the|a|his|her)\s+(?:drawing|writing)\s+(?:is|was|represents)",clause,re.I): continue
         for pattern, pose in RULES:
             if re.search(pattern,clause,re.I):
                 found.append((pose,clause.strip())); break

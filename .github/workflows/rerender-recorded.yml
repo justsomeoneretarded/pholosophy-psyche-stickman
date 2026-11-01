@@ -1,0 +1,21 @@
+name: Rerender recorded film
+on:
+  workflow_dispatch:
+    inputs:
+      source_run_id:
+        type: string
+        default: '41338453000'
+        required: true
+  push:
+    paths: ['.github/workflows/rerender-recorded.yml']
+permissions:
+  contents: write
+  actions: read
+jobs:
+  produce:
+    uses: ./.github/workflows/generate-video.yml
+    with:
+      title: What If Nothing Really Matters?
+      duration_minutes: '4'
+      recorded_source_run: ${{ inputs.source_run_id || '41338453000' }}
+    secrets: inherit
