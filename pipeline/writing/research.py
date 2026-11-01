@@ -1,5 +1,5 @@
 """Topic-aware primary-review and encyclopedia background with real source URLs."""
-import json,re,urllib.parse,urllib.request
+import json,re,time,urllib.parse,urllib.request,urllib.error
 from pipeline.writing.evidence import reviews
 API='https://en.wikipedia.org/w/api.php'
 HEADERS={'User-Agent':'stickman-essay-studio/1.0 (GitHub Actions; educational video research)'}
@@ -21,9 +21,23 @@ def topic_queries(title):
     t=re.sub(r'\b(why|what|if|how|the|a|an|is|are|do|does|we|you|everything|really)\b',' ',t,flags=re.I)
     return (' '.join(t.split()) or title)+' psychology philosophy',None
 def topic_query(title):return topic_queries(title)[0]
+_LAST_WIKI_CALL=0.
 def _get(params):
+    global _LAST_WIKI_CALL
     url=API+'?'+urllib.parse.urlencode({**params,'format':'json','formatversion':2})
-    with urllib.request.urlopen(urllib.request.Request(url,headers=HEADERS),timeout=25) as response:return json.load(response)
+    for attempt in range(4):
+        time.sleep(max(0.,.7-(time.monotonic()-_LAST_WIKI_CALL)))
+        try:
+            with urllib.request.urlopen(urllib.request.Request(url,headers=HEADERS),timeout=25) as response:
+                data=json.load(response)
+            _LAST_WIKI_CALL=time.monotonic()
+            if data.get('error'):raise RuntimeError('Wikipedia API: '+str(data['error']))
+            return data
+        except urllib.error.HTTPError as exc:
+            _LAST_WIKI_CALL=time.monotonic()
+            if exc.code not in (429,500,502,503,504) or attempt==3:raise
+            time.sleep(min(60,float(exc.headers.get('Retry-After') or (2**attempt*2))))
+
 def entertainment_page(text):
     return bool(re.search(r'\b(?:is|was)\b.{0,100}\b(?:song|album|single|television series|video game)\b',text[:350],re.I))
 def research(title,max_chars=9000):
@@ -45,7 +59,7 @@ def research(title,max_chars=9000):
             pages=[]
             for requested_title in titles:
                 response=_get({'action':'query','prop':'extracts|info','inprop':'url',
-                    'explaintext':1,'exintro':1,'redirects':1,'titles':requested_title,'exchars':3500})
+                    'explaintext':1,'exintro':1,'redirects':1,'titles':requested_title,'exchars':1200})
                 pages.extend(response.get('query',{}).get('pages',[]))
             for page in pages:
                 text=re.sub(r'\n{2,}','\n',page.get('extract','')).strip()

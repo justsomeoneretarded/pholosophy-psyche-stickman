@@ -1,0 +1,54 @@
+name: Benchmark free model alternatives
+on:
+  workflow_dispatch:
+  push:
+    paths: ['.github/workflows/model-review.yml']
+permissions:
+  contents: write
+jobs:
+  quota:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -q -r requirements-core.txt
+      - name: Inspect available model quotas without exposing secrets
+        run: python scripts/model_quota_review.py
+      - name: Publish model access evidence
+        if: always()
+        run: bash scripts/publish_review.sh "$GITHUB_WORKSPACE/model-review" "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" "$GITHUB_RUN_ID" "$RUNNER_TEMP/quota-review"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: free-model-access
+          path: model-review/
+          retention-days: 7
+  cpu:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - name: Free disk space for local inference
+        run: sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -q -r requirements-core.txt
+      - name: Test local Qwen 4B on actual production requests
+        env:
+          CUDA_VISIBLE_DEVICES: ''
+        run: python scripts/cpu_writer_review.py
+      - name: Publish CPU feasibility evidence
+        if: always()
+        run: bash scripts/publish_review.sh "$GITHUB_WORKSPACE/model-review" "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" "$GITHUB_RUN_ID" "$RUNNER_TEMP/cpu-review"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cpu-writer-feasibility
+          path: model-review/
+          retention-days: 7

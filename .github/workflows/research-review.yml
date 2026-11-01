@@ -1,5 +1,5 @@
 name: Verify topic-aware source retrieval
-# Iteration 4: fetch canonical pages individually and record actual publication types.
+# Iteration 5: pace Wikipedia requests and honor transient rate limits.
 on:
   workflow_dispatch:
   push:
