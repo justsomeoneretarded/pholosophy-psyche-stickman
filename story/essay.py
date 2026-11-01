@@ -70,9 +70,20 @@ def split_sentences(text):
 
 def beat_narration(beat):
     n = beat.get('narration') or []
-    if isinstance(n, str):
-        n = split_sentences(n)
-    return [s for x in n for s in split_sentences(x)]
+    if isinstance(n,(str,dict)):
+        n=[n]
+    if not isinstance(n,list):
+        raise ValueError('narration must be a sentence list')
+    out=[]
+    for item in n:
+        if isinstance(item,dict):
+            item=item.get('text')
+        if not isinstance(item,str):
+            raise ValueError('narration entries must be strings or objects with a text string')
+        if re.match(r"^\s*\{\s*['\"]text['\"]\s*:",item):
+            raise ValueError('Narration contains serialized metadata; replay the raw edited draft instead')
+        out.extend(split_sentences(item))
+    return out
 
 
 # ---------------------------------------------------------------- stage 1: concept and beats
@@ -234,7 +245,9 @@ def check_concept(sheet, minutes):
     return problems, total
 
 
-def stage_concept(title, minutes, out_dir, research='', reuse_draft=None):
+def stage_concept(title, minutes, out_dir, research='', reuse_draft=None, review=True):
+    if not review and not reuse_draft:
+        raise ValueError('Skipping editorial inference requires an already edited draft checkpoint')
     out = Path(out_dir); out.mkdir(parents=True, exist_ok=True)
     writer = Writer()
     system = concept_prompt(title, minutes) + 'Return only JSON.'
@@ -258,10 +271,13 @@ def stage_concept(title, minutes, out_dir, research='', reuse_draft=None):
     for warning in sheet.get('_visual_review_notes', []):
         notice('Visual editorial review', warning, 'warning')
     notice('Editorial review', 'Checking argument, causal continuity and resolution before storyboarding')
-    reviewer = Writer(os.environ.get('REVIEW_MODELS', 'groq:qwen/qwen3.8-27b,groq:openai/gpt-oss-120b,groq:openai/gpt-oss-20b,ollama:qwen3:4b'))
-    sheet = review_concept(sheet, writer, check_concept, title, minutes, out, reviewer=reviewer)
+    if review:
+        reviewer = Writer(os.environ.get('REVIEW_MODELS', 'groq:qwen/qwen3.8-27b,groq:openai/gpt-oss-120b,groq:openai/gpt-oss-20b,ollama:qwen3:4b'))
+        sheet = review_concept(sheet, writer, check_concept, title, minutes, out, reviewer=reviewer)
+    else:
+        notice('Checkpoint replay', 'Reusing prior editorial work; running schema/content checks and exact-script compilation')
     sheet['_title'] = title
-    sheet['_writer'] = writer.used
+    sheet['_writer'] = writer.used or sheet.get('_writer')
     idmap = {}
     inner_id = next((p.get('id') for p in sheet.get('cast') or [] if p.get('kind') == 'demon'), None)
     for p in sheet.get('cast') or []:
@@ -498,7 +514,8 @@ def stage_merge(out_dir, out_path):
     per = {int(k): v for k, v in json.loads((out / 'shots.json').read_text()).items()}
     shots = []
     for i, beat in enumerate(sheet['beats']):
-        for s in per.get(i) or place_narration(beat, fallback_shots(beat)):
+        staged = ensure_demon(beat, place_narration(beat, per.get(i) or fallback_shots(beat)))
+        for s in staged:
             if not s.get('card') and (s.get('camera') or {}).get('frame') != 'insert':
                 s.setdefault('set', beat.get('where'))
                 if s.get('set') == 'scene' and not isinstance(s.get('scene'), dict):

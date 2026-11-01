@@ -1,5 +1,5 @@
 name: Benchmark bounded writing with independent topic
-# Iteration 9: compact shot data inherits scenery and references exact source sentences.
+# Iteration 10: replay completed editorial work, repair narration shapes, then test compact directing.
 on:
   workflow_dispatch:
   push:
@@ -26,23 +26,16 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: independent-topic-writing
-          run-id: '41330783972'
+          run-id: '41336314965'
           github-token: ${{ github.token }}
           path: prior
       - name: Install the actual writing pipeline
         run: python -m pip install -q -r requirements-core.txt
-      - name: Generate and edit a distinct philosophical script
+      - name: Replay the already edited philosophical draft
         run: |
-          mkdir -p build/writing
-          python - <<'PY'
-          import os,json
-          from pipeline.writing.research import research
-          from pathlib import Path
-          r=research(os.environ['TITLE'])
-          Path('build/writing/research.txt').write_text(r['context'])
-          Path('build/writing/sources.json').write_text(json.dumps(r['sources']))
-          PY
-          python story/essay.py concept --title "$TITLE" --minutes 4 --dir build/writing --research build/writing/research.txt --reuse-draft prior/writing/concept-before-editor.json
+          mkdir -p build
+          cp -R prior/writing build/writing
+          python scripts/replay_plan.py build --title "$TITLE" --minutes 4
       - name: Preserve the successful writing checkpoint
         uses: actions/upload-artifact@v4
         with:

@@ -1,5 +1,5 @@
 name: Autonomous studio review
-# Iteration 11: compact storyboards and preserved script checkpoints.
+# Iteration 12: render the validated philosophical plan without regenerating it.
 on:
   workflow_dispatch:
   push:
@@ -34,6 +34,9 @@ jobs:
               print('Stopped the stalled test that used the oversized outline request')
           except Exception as exc:
               print('Older test already stopped or completed:',type(exc).__name__)
+          for older in ['41337066507','41337066564']:
+              try:request('/actions/runs/'+older+'/cancel',{})
+              except Exception:pass
           for attempt in range(48):
               runs=request('/actions/workflows/test.yml/runs?head_sha='+os.environ['REVISION']+'&event=push&per_page=5')['workflow_runs']
               if runs and runs[0]['status']=='completed':
@@ -50,6 +53,6 @@ jobs:
                   break
               time.sleep(15)
           else:raise SystemExit('Writing benchmark did not complete within thirty minutes')
-          request('/actions/workflows/generate-video.yml/dispatches',{'ref':'main','inputs':{'title':'Why Smart People Overthink Everything','narrator':'Warguy','duration_minutes':'6','notes':os.environ['REVIEW_NOTES']}})
+          request('/actions/workflows/render-saved-plan.yml/dispatches',{'ref':'main','inputs':{'source_run_id':str(runs[0]['id']),'title':'What If Nothing Really Matters?','narrator':'Warguy','duration_minutes':'4'}})
           print('Dispatched complete title-to-video production for review')
           PY

@@ -7,6 +7,26 @@ name: Generate Stickman Video
 #   finish  - sound design and mix, assembly, thumbnails, publishing files, checks, review copy
 
 on:
+  workflow_call:
+    inputs:
+      title:
+        type: string
+        required: true
+      narrator:
+        type: string
+        default: Warguy
+      duration_minutes:
+        type: string
+        default: '6'
+      notes:
+        type: string
+        default: ''
+      plan_source_run:
+        type: string
+        default: ''
+    secrets:
+      GROQ_API_KEY:
+        required: false
   workflow_dispatch:
     inputs:
       title:
@@ -30,6 +50,7 @@ on:
 
 permissions:
   contents: read
+  actions: read
 
 concurrency:
   group: video-${{ github.run_id }}
@@ -47,6 +68,7 @@ jobs:
       TITLE: ${{ inputs.title }}
       NOTES: ${{ inputs.notes }}
       MINUTES: ${{ inputs.duration_minutes }}
+      PLAN_SOURCE_RUN: ${{ inputs.plan_source_run }}
     outputs:
       duration: ${{ steps.done.outputs.duration }}
     steps:
@@ -57,14 +79,28 @@ jobs:
           cache: pip
       - name: Install
         run: python -m pip install -q -r requirements-core.txt
+      - name: Download a saved validated plan
+        if: inputs.plan_source_run
+        uses: actions/download-artifact@v4
+        with:
+          name: independent-topic-writing
+          run-id: ${{ inputs.plan_source_run }}
+          github-token: ${{ github.token }}
+          path: build
+      - name: Recompile the saved edited draft without repeating model calls
+        if: inputs.plan_source_run
+        run: python scripts/replay_plan.py build --title "$TITLE" --minutes "$MINUTES"
       - name: Check Groq access
+        if: ${{ !inputs.plan_source_run }}
         continue-on-error: true
         run: python scripts/check_groq.py
       - name: Background reading (Wikipedia)
+        if: ${{ !inputs.plan_source_run }}
         run: |
           mkdir -p build/writing
           python -c "import os,json;from pipeline.writing.research import research;r=research(os.environ['TITLE']);open('build/writing/research.txt','w').write(r['context']);json.dump(r['sources'],open('build/writing/sources.json','w'));print(len(r['context']),'characters',r['warnings'])"
       - name: Concept and beats
+        if: ${{ !inputs.plan_source_run }}
         run: |
           T="$TITLE"; if [ -n "$NOTES" ]; then T="$TITLE. Direction from the producer: $NOTES"; fi
           python story/essay.py concept --title "$T" --minutes "$MINUTES" --dir build/writing --research build/writing/research.txt
@@ -75,11 +111,14 @@ jobs:
           path: build/writing/
           retention-days: 3
       - name: Storyboard
+        if: ${{ !inputs.plan_source_run }}
         run: python story/essay.py shots --dir build/writing
       - name: Assemble and check the shot list
         id: done
         run: |
-          python story/essay.py merge --dir build/writing --out build/film.json
+          if [ -z "$PLAN_SOURCE_RUN" ]; then
+            python story/essay.py merge --dir build/writing --out build/film.json
+          fi
           echo "duration=$(python -c "import json;print(json.load(open('build/film.json'))['duration'])")" >> "$GITHUB_OUTPUT"
           { echo '### Story'; cat build/story.md; } >> "$GITHUB_STEP_SUMMARY"
       - uses: actions/upload-artifact@v4

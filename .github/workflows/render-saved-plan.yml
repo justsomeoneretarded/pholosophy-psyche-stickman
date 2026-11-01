@@ -1,0 +1,29 @@
+name: Render saved validated plan
+on:
+  workflow_dispatch:
+    inputs:
+      source_run_id:
+        description: Run containing the validated independent-topic-writing artifact
+        required: true
+        type: string
+      title:
+        required: true
+        type: string
+      narrator:
+        type: string
+        default: Warguy
+      duration_minutes:
+        type: string
+        default: '4'
+permissions:
+  contents: write
+  actions: read
+jobs:
+  produce:
+    uses: ./.github/workflows/generate-video.yml
+    with:
+      title: ${{ inputs.title }}
+      narrator: ${{ inputs.narrator }}
+      duration_minutes: ${{ inputs.duration_minutes }}
+      plan_source_run: ${{ inputs.source_run_id }}
+    secrets: inherit
