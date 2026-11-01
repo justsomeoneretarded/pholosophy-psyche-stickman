@@ -1,0 +1,83 @@
+name: Review completed picture and narration
+on:
+  workflow_dispatch:
+    inputs:
+      run_id:
+        type: string
+        default: '41324973301'
+  push:
+    paths: ['.github/workflows/review-assembly.yml']
+permissions:
+  actions: write
+  contents: write
+jobs:
+  review:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    env:
+      SOURCE_RUN: ${{ inputs.run_id || '41324973301' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: film-final
+          path: build
+          run-id: ${{ env.SOURCE_RUN }}
+          github-token: ${{ github.token }}
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: film-part-*
+          merge-multiple: true
+          path: build
+          run-id: ${{ env.SOURCE_RUN }}
+          github-token: ${{ github.token }}
+      - name: Assemble an interim review with narration, effects and procedural music
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg >/dev/null
+          python -m pip install -q numpy scipy
+          python audio/sound.py --cues build/cues.json --out build/soundtrack.wav
+          python - <<'PY'
+          from pathlib import Path
+          Path('build/parts.txt').write_text(''.join("file 'part-%d.mp4'\n"%i for i in range(4)))
+          PY
+          ffmpeg -y -v error -f concat -safe 0 -i build/parts.txt -c copy build/picture.mp4
+          mkdir -p review
+          ffmpeg -y -v error -i build/picture.mp4 -i build/soundtrack.wav -map 0:v:0 -map 1:a:0 -vf scale=854:-2 -c:v libx264 -crf 27 -preset veryfast -c:a aac -b:a 128k -shortest -movflags +faststart review/review.mp4
+          ffmpeg -v error -i review/review.mp4 -f null -
+          cp build/film.json review/
+          echo 'Interim picture/narration review. Procedural score used for review while ACE-Step composes separately. Not the final production package.' > review/REVIEW_STATUS.txt
+      - name: Publish interim review without replacing other files
+        run: |
+          git worktree add --detach "$RUNNER_TEMP/review-branch"
+          cd "$RUNNER_TEMP/review-branch"
+          git fetch origin previews
+          git checkout -B previews FETCH_HEAD
+          mkdir -p "previews/$SOURCE_RUN"
+          cp "$GITHUB_WORKSPACE"/review/* "previews/$SOURCE_RUN/"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "previews/$SOURCE_RUN/"
+          git commit -m "Interim picture and narration review for $SOURCE_RUN"
+          git pull --rebase origin previews
+          git push origin HEAD:previews
+      - name: Launch real frame and audio inspection
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          python - <<'PY'
+          import os,json,urllib.request
+          url='https://api.github.com/repos/'+os.environ['REPOSITORY']+'/actions/workflows/inspect-output.yml/dispatches'
+          data=json.dumps({'ref':'main','inputs':{'run_id':os.environ['SOURCE_RUN']}}).encode()
+          request=urllib.request.Request(url,data=data,headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json'},method='POST')
+          urllib.request.urlopen(request,timeout=30).close()
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: interim-review-${{ env.SOURCE_RUN }}
+          path: review/
+          retention-days: 7

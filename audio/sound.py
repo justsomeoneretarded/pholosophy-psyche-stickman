@@ -300,7 +300,7 @@ def automation(segments, n):
         a, b = int(seg['start'] * SR), int(seg['end'] * SR)
         g[a:b] = LEVEL.get(seg['level'], .58)
     k = int(.6 * SR)
-    return np.convolve(g, np.ones(k) / k, mode='same')
+    return signal.fftconvolve(g, np.ones(k) / k, mode='same')
 
 
 def load_wav(path):
