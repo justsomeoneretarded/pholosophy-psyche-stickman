@@ -43,5 +43,9 @@ def main():
     p=argparse.ArgumentParser();p.add_argument('video');p.add_argument('film');p.add_argument('report');a=p.parse_args()
     report=inspect(Path(a.video),json.loads(Path(a.film).read_text()))
     Path(a.report).write_text(json.dumps(report,indent=2))
+    text = f"# Production evidence\n\nDuration: {report['duration_seconds']:.3f} seconds.\n\nFull decode: {report['full_decode']}.\n\nIntegrated loudness: {report['loudness_lufs']} LUFS. True peak: {report['true_peak_dbfs']} dBFS.\n\n"
+    text += "Warnings:\n" + "\n".join("- "+w for w in report['warnings']) + "\n\n"
+    text += report['review_scope']+"\n"
+    Path(a.report).with_name('production_report.md').write_text(text)
     if report['failures']:raise SystemExit('; '.join(report['failures']))
 if __name__=='__main__':main()

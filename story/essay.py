@@ -520,6 +520,8 @@ def stage_merge(out_dir, out_path):
             'music': {'prompt': sheet.get('music_prompt') or ''}, 'cast': cast, 'shots': head + shots + tail,
             'publish': {k: sheet.get(k) for k in ('youtube_titles', 'description', 'tags', 'pinned_comment', 'thumbnail_words', 'idea', 'inner_voice', 'approach')},
             'writer': sheet.get('_writer')}
+    if (out / 'sources.json').exists():
+        film['sources'] = json.loads((out / 'sources.json').read_text())
     film, notes = repair(film)
     Path(out_path).parent.mkdir(parents=True, exist_ok=True)
     Path(out_path).write_text(json.dumps(film, indent=1, ensure_ascii=False))

@@ -294,7 +294,7 @@ jobs:
           python -c "import json;f=json.load(open('build/film.json'));f['music_credit']='Original score generated with ACE-Step 1.5 (MIT)' if 'ACE-Step' in open('build/sound.txt').read() else 'Synthesized score';json.dump(f,open('build/film.json','w'))"
           python story/package.py build/film.json build/poster out
           python -c "import sys,json;sys.path.insert(0,'story');from essay import script_md;from pathlib import Path;script_md(json.load(open('build/film.json')),Path('out/story.md'))"
-          cp build/film.json build/contact-sheet.jpg out/
+          cp build/film.json build/contact-sheet.jpg build/narration.wav build/audio_licenses.json out/
           cp build/voice/verification.json out/speech-verification.json
           cp build/plan/writing/sources.json out/sources.json
           cp build/plan/writing/research.txt out/research_notes.md

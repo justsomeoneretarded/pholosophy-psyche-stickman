@@ -167,6 +167,11 @@ def publishing(film, out):
     (out / 'pinned-comment.txt').write_text(str(pub.get('pinned_comment') or '') + '\n')
     music = film.get('music_credit') or 'Original score generated with ACE-Step 1.5 (MIT)'
     desc = str(pub.get('description') or film.get('logline') or '').strip()
+    sources = film.get('sources') or []
+    reading = '\n'.join(str(s.get('title','Source')) + ': ' + str(s['url']) for s in sources if isinstance(s,dict) and str(s.get('url','')).startswith('https://'))
+    if reading:
+        desc += '\n\nBackground reading:\n' + reading
+    (out / 'sources.json').write_text(json.dumps(sources,indent=2))
     (out / 'description.txt').write_text(f'{desc}\n\nMusic: {music}\n')
     idea = pub.get('idea') or {}
     (out / 'sources-and-credits.txt').write_text('\n'.join([

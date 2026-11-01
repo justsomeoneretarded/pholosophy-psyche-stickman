@@ -340,6 +340,7 @@ def mix(cues_path, music_path, out_path, ffmpeg='ffmpeg'):
         a = int(c['t'] * SR); L = min(len(v), n - a)
         if L > 0:
             voice[a:a + L] += v[:L]
+    wavfile.write(Path(out_path).with_name('narration.wav'), SR, (np.clip(voice,-1,1)*32767).astype(np.int16))
     has_voice = np.abs(voice) > 1e-4
     # duck the music while the demon speaks or the narrator talks
     duck = np.ones(n)
@@ -398,6 +399,7 @@ def mix(cues_path, music_path, out_path, ffmpeg='ffmpeg'):
            f"measured_LRA={js['input_lra']}:measured_thresh={js['input_thresh']}:offset={js['target_offset']}:linear=true")
     subprocess.run([ffmpeg, '-y', '-v', 'error', '-i', str(pre), '-af', flt, '-ar', str(SR), str(out_path)], check=True)
     pre.unlink()
+    Path(out_path).with_name('audio_licenses.json').write_text(json.dumps({'music_source':source,'effects':'Original procedural synthesis in audio/sound.py','third_party_samples':[],'code_license':'GPL-3.0-or-later','model_license':'ACE-Step 1.5 MIT when used'},indent=2))
     print(f'soundtrack: {out_path}  music={source}  cues={len(meta["cues"])}')
     return source
 
