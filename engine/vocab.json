@@ -1,0 +1,351 @@
+{
+ "_about": "The shared contract between the story writer, the validator and the renderer. Positions (x) are 0-100 percent across the stage, left to right.",
+ "sets": {
+  "bedroom": {
+   "about": "dark bedroom: bed, nightstand with a red digital clock, window, door",
+   "spots": {
+    "bed": [
+     36,
+     62
+    ],
+    "nightstand": 28,
+    "window": 80,
+    "door": 8
+   },
+   "seat": "bed 36-62 (sit or lie)"
+  },
+  "desk": {
+   "about": "room with a desk, chair, laptop and a warm desk lamp; window behind",
+   "spots": {
+    "chair": 50,
+    "window": 20,
+    "shelf": 82
+   },
+   "seat": "chair at 50 (sit / type / draw)"
+  },
+  "kitchen": {
+   "about": "dark kitchen with a fridge that throws light when open, counter",
+   "spots": {
+    "fridge": 30,
+    "counter": 62
+   }
+  },
+  "street": {
+   "about": "night street: shopfronts (CAFE, LAUNDRY), lit windows, streetlights",
+   "spots": {
+    "cafe_door": 62,
+    "lamp": 30
+   }
+  },
+  "park": {
+   "about": "park at night: wooden bench under a lamp post, trees, fence",
+   "spots": {
+    "bench": [
+     42,
+     60
+    ],
+    "lamp": 70
+   },
+   "seat": "bench 42-60"
+  },
+  "cafe": {
+   "about": "cafe interior: counter, menu board, pendant lamp, barista behind counter",
+   "spots": {
+    "counter": 62,
+    "table": 25
+   },
+   "seat": "table stool at 25"
+  },
+  "gym": {
+   "about": "dark gym with a spotlight, squat rack, dumbbells",
+   "spots": {
+    "rack": 50
+   }
+  },
+  "hill": {
+   "about": "a long slope rising left to right over a distant city, good for climbing / running metaphors",
+   "spots": {
+    "bottom": 10,
+    "middle": 50,
+    "top": 88
+   }
+  },
+  "rooftop": {
+   "about": "rooftop ledge over a city skyline; sky changes with time of day",
+   "spots": {
+    "ledge": [
+     30,
+     70
+    ]
+   },
+   "seat": "ledge 30-70"
+  },
+  "hallway": {
+   "about": "dark hallway with a door; light spills when it opens",
+   "spots": {
+    "door": 70
+   }
+  },
+  "void": {
+   "about": "black emptiness with a single spotlight; inner thoughts, title cards",
+   "spots": {
+    "center": 50
+   }
+  },
+  "bus_stop": {
+   "about": "bus shelter on a city street with a bench and a lit roof; great in rain",
+   "spots": {
+    "bench": [
+     44,
+     66
+    ],
+    "sign": 80
+   },
+   "seat": "bench 44-66"
+  },
+  "office": {
+   "about": "open office: cubicles, monitors, fluorescent lights; desk in the foreground like 'desk'",
+   "spots": {
+    "chair": 50
+   },
+   "seat": "chair at 50 (sit / type)"
+  }
+ },
+ "times": [
+  "night",
+  "dawn",
+  "day",
+  "dusk"
+ ],
+ "weather": [
+  "none",
+  "rain",
+  "snow"
+ ],
+ "poses": {
+  "stand": "standing idle, breathing",
+  "walk": "walks from x to 'to'",
+  "run": "runs from x to 'to'",
+  "sit": "sits on the set's seat at x; with facing -1 or 1 the character sits side-on (use at tables, facing each other)",
+  "slump": "sits hunched over, head down",
+  "lie": "lies down (bed or floor)",
+  "phone": "looks at a phone held in front of the chest (stand or sit with 'seated': true)",
+  "type": "sits typing / drawing at the desk",
+  "reach": "reaches one arm up high",
+  "wave": "waves",
+  "fall": "collapses to hands and knees",
+  "kneel": "kneels, head down",
+  "getup": "rises from kneeling to standing",
+  "lift": "lifts a barbell overhead (gym)",
+  "crossarms": "stands with arms crossed",
+  "headhands": "holds head in hands, stressed",
+  "shrug": "shrugs",
+  "point": "points toward 'face' direction",
+  "celebrate": "jumps with arms up",
+  "lean": "leans toward the target actor, looming (best for the demon)",
+  "grab": "puts a hand on the target actor's shoulder (best for the demon)",
+  "pockets": "stands with hands in pockets",
+  "hugknees": "sits on the floor hugging knees",
+  "call": "holds a phone to the ear",
+  "drink": "sips a coffee (standing or seated)",
+  "reachout": "reaches a hand toward the target actor",
+  "knock": "knocks on a door in the 'facing' direction",
+  "facepalm": "hand over face, embarrassed",
+  "cry": "hands to face, shoulders shaking",
+  "laugh": "laughs, shoulders bouncing",
+  "hug": "hugs the target actor (put them about 8 apart)",
+  "umbrella": "holds an umbrella overhead (can walk with x/to)"
+ },
+ "moods": [
+  "neutral",
+  "flat",
+  "bored",
+  "sad",
+  "hurt",
+  "crying",
+  "worried",
+  "nervous",
+  "scared",
+  "shocked",
+  "happy",
+  "content",
+  "laughing",
+  "shy",
+  "love",
+  "hopeful",
+  "relieved",
+  "determined",
+  "angry",
+  "smirk",
+  "suspicious",
+  "tired",
+  "asleep"
+ ],
+ "holds": [
+  "phone",
+  "cup",
+  "coffee",
+  "pencil",
+  "book",
+  "bag",
+  "flower",
+  "letter",
+  "umbrella",
+  "none"
+ ],
+ "items": [
+  "pizza_box",
+  "cupcake",
+  "cans",
+  "laundry",
+  "books",
+  "trophy",
+  "sketchbook",
+  "plant",
+  "gift",
+  "dumbbell",
+  "trash_bag",
+  "guitar"
+ ],
+ "kinds": {
+  "hero": "the protagonist",
+  "friend": "a friendly character (hat colour sets them apart)",
+  "demon": "the black inner voice with a red glow; says cruel lines in red",
+  "extra": "background person"
+ },
+ "hats": [
+  "none",
+  "beanie_orange",
+  "beanie_green",
+  "beanie_blue",
+  "beanie_red",
+  "cap_grey",
+  "cap_red"
+ ],
+ "frames": {
+  "wide": "whole set",
+  "medium": "subject from the knees up",
+  "close": "subject's head and shoulders, background blurred",
+  "extreme": "eyes only",
+  "two": "frames the first two actors",
+  "phone": "point-of-view phone screen held in hands (needs 'phone')",
+  "card": "text card on black (needs 'card')",
+  "insert": "close-up of an object (needs 'insert'): a note being written, a calendar being marked, a photo, a letter"
+ },
+ "phone_apps": {
+  "chat": "messages appear; optional typing that can be deleted or sent",
+  "call": "incoming call screen; can be declined or answered",
+  "lock": "lock screen with time and notifications",
+  "feed": "social feed scrolling past other people having fun",
+  "alarm": "alarm screen",
+  "off": "lock screen, then the thumb presses the side button and the screen goes black (off_at seconds)"
+ },
+ "sfx": [
+  "alarm",
+  "blip",
+  "breath",
+  "buzz",
+  "chime",
+  "click",
+  "clock",
+  "crowd",
+  "door",
+  "drone",
+  "footsteps",
+  "heartbeat",
+  "impact",
+  "knock",
+  "laugh",
+  "notification",
+  "page",
+  "pop",
+  "rain",
+  "rain_heavy",
+  "riser",
+  "scribble",
+  "send",
+  "sigh",
+  "thud",
+  "typing",
+  "whoosh",
+  "wind"
+ ],
+ "music_levels": [
+  "off",
+  "low",
+  "mid",
+  "high"
+ ],
+ "transitions": [
+  "cut",
+  "fade",
+  "flash"
+ ],
+ "inserts": {
+  "note": "{type:'note', text:'look up sometimes :)'} handwriting appears on a notebook page",
+  "calendar": "{type:'calendar', month:'NOV', days:30, from:1, marked:14, mark:'check'|'x'} days get marked",
+  "photo": "{type:'photo', who:['hero','mia'], text:'saturday'} a polaroid of characters",
+  "letter": "{type:'letter', text:'...'} like a note"
+ },
+ "grades": {
+  "neutral": "no grade",
+  "cold": "blue, lonely",
+  "grey": "desaturated, numb",
+  "warm": "amber, safe and cosy",
+  "pink": "pink, temptation/lust",
+  "sunset": "orange glow, endings and hope",
+  "night": "deep blue night",
+  "green": "sickly green, envy",
+  "red": "red, anger or danger"
+ },
+ "line_styles": {
+  "bubble": "white speech bubble (default for people)",
+  "float": "plain white text above the head",
+  "thought": "(italic thought in brackets)",
+  "whisper": "small faint text",
+  "narrator": "who:'narrator' -> spoken by the voiceover and shown at the bottom; optional 'twist' second line in bold"
+ },
+ "cards": {
+  "line": "one narration line typed on black (great cold open)",
+  "quote": "two lines, the second bold (the twist)",
+  "red": "imperative in the theme colour, e.g. LOOK UP. / Right now.",
+  "logo": "the film's title card, e.g. 'LUST vs LOVE.' + 1-2 tagline lines",
+  "title": "plain title",
+  "cta": "like and subscribe"
+ },
+ "big": "{text:'DAY 1.', at:0.3} huge words in the scene",
+ "hud": "optional on-screen counters: film.hud = {items:[{label:'SEEN', color:'#ff4fa0'}, {label:'KNOWN', color:'#ffd34a'}]}; per shot hud = {values:[1003, 0], chapter:'DAY 1', alert:true}. Use a counter only when the story is about a measurable thing; a chapter alone ('DAY 4') also works; or no hud at all.",
+ "wardrobe": {
+  "hair": [
+   "none",
+   "bob",
+   "short",
+   "spiky",
+   "long",
+   "ponytail",
+   "bun",
+   "curly"
+  ],
+  "hair_color": [
+   "black",
+   "brown",
+   "blonde",
+   "red",
+   "grey",
+   "blue",
+   "pink"
+  ],
+  "top": "colour name: grey, charcoal, green, olive, navy, blue, red, maroon, yellow, mustard, orange, brown, beige, white, black, pink, purple, teal",
+  "top_style": [
+   "hoodie",
+   "coat",
+   "sweater",
+   "shirt"
+  ],
+  "pants": "colour name",
+  "scarf": "colour name",
+  "hood": "true = hood collar",
+  "glasses": "true",
+  "umbrella_color": "#hex"
+ }
+}

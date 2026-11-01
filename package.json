@@ -1,0 +1,11 @@
+{
+  "name": "new-animation",
+  "private": true,
+  "type": "module",
+  "description": "Day One-style animated shorts from a written brief",
+  "scripts": {
+    "stills": "node render/render.mjs --film examples/the-sketchbook.json --stills build/stills --every 2 --width 1280",
+    "render": "node render/render.mjs --film examples/the-sketchbook.json --out build/picture.mp4"
+  },
+  "dependencies": { "playwright": "1.63.0" }
+}

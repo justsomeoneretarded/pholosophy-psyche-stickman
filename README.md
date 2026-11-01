@@ -1,48 +1,32 @@
 # Stickman philosophy & psychology studio
 
-Type a topic, get a finished minimalist stickman video essay: black, white and grey, faceless figures, a spotlight, film grain, and one warm amber colour for moments of meaning. Narration where an idea needs explaining; silent passages with music and image elsewhere. Everything runs free on GitHub Actions.
+Type a concept (love, heartbreak, addiction, nihilism, depression, envy...) and get a narrated animated film in the visual language of Day One Films: a cream blob hero living through the concept in ordinary places, a black inner voice with glowing eyes, other people, phones, notes and calendars, colour that follows the emotion, and a calm narrator explaining the idea over the story. Everything runs free on GitHub Actions.
 
 ## Make a video
 
 1. **Actions → Generate Stickman Video → Run workflow** (branch `main`).
-2. Fill in the form:
-   - **Title**, e.g. `Nihilism - belief in nothing`
-   - **Narrator**: Warguy (default), Kit Laser or Female
-   - **Length**: Auto (default, the writer chooses, usually 5-8 minutes) or a number of minutes
-   - **Format**: 16:9 or 9:16; optionally burn captions into the picture
-3. When the run finishes, download **philosophy-video** from the run's Artifacts.
+2. Fill in: **Title** (e.g. `Addiction`), **Narrator** (Warguy by default, Kit Laser or Female), **Length** (Auto by default, or minutes), and optional **Notes** to steer the story.
+3. Download **philosophy-video** from the run's Artifacts: `video.mp4`, three thumbnails, `subtitles.srt`, titles, description, tags, pinned comment, `story.md` (the film shot by shot), `film.json` and a contact sheet.
 
 One-time setup: a free Groq API key in the repository secret `GROQ_API_KEY`.
 
-### What's in the package
+## How a film is made
 
-`video.mp4` (1080p, 30 fps, -14 LUFS), `thumbnail-01..03.jpg`, `subtitles.srt/.vtt`, `recommended-title.txt`, `title-options.txt`, `description.txt` (with music credit), `tags.txt`, `pinned-comment.txt`, `script.txt`, `sources-and-credits.txt`, `contact-sheet.jpg` and `review.html`.
+| Job | What runs |
+|---|---|
+| Write and storyboard | Wikipedia background reading; **qwen3.8-27b on Groq** invents an original story that dramatizes the concept, writes the narration that explains it, then storyboards every beat into shots (falls back to gpt-oss-120b, then local Gemma 4 12B). `story/essay.py` |
+| Record the narration | **Chatterbox Turbo** (CPU) with the chosen narrator reference; faster-whisper checks every line; shots stretch to fit the voice. `audio/voice.py` |
+| Compose the score | **ACE-Step 1.5** composes from the writer's music prompt, in parallel with the voice. `audio/music.py` |
+| Picture | The canvas engine (`engine/`) renders the film in four parallel parts with headless Chromium. |
+| Sound, edit and package | Sound effects and ambience from what happens on screen, music ducking under voices, -14 LUFS master (`audio/sound.py`); thumbnails and publishing files (`story/package.py`); a review copy on the `previews` branch. |
 
-## How it works
+Nothing is pre-scripted. Each shot is composed from the engine's vocabulary (`engine/vocab.json`): 13 sets with time of day and weather, 33 poses, 23 moods, props and held objects, phone screens (chat, calls, feed, alarm, power off), notes, calendars, photos, speech bubbles and thoughts, the inner voice, counters and day chapters, big words, colour grades, and wide / medium / close / extreme / two-shot / phone / insert framing. `story/validate.py` repairs anything the engine cannot draw.
 
-| Job | What runs | Notes |
-|---|---|---|
-| plan | Wikipedia background reading, then **qwen3.8-27b on Groq** writes the script as beats | Falls back to **gpt-oss-120b on Groq**, then **Gemma 4 12B** locally via Ollama |
-| music | **ACE-Step 1.5** (MIT) composes a contemplative and a hopeful score | Runs in parallel; falls back to bundled Scott Buckley tracks (CC BY 4.0, credited automatically) |
-| voice | **Chatterbox Turbo** on CPU with the chosen narrator reference; **faster-whisper** checks every line | Dramatic lines use the expressive Chatterbox model; failed lines are re-recorded |
-| produce | The animation engine renders every beat in parallel; music swells in silent beats and ducks under the voice; two-pass loudness to -14 LUFS | Thumbnails, metadata, review page and video checks |
-
-### The script
-
-The writer returns **beats**. Each beat is *narrated* (voice-over) or *silent* (music and picture, at most one line of on-screen text), and picks one of 20 symbolic set pieces with a few labels:
-
-`word_wall`, `routine_loop`, `crowd`, `pillar`, `fall`, `desert`, `shadow_companion`, `sisyphus`, `chalk_door`, `chains`, `giant_hand`, `stairs`, `doors`, `mirror`, `scale`, `flower`, `title_card`, `thinker`, `clock`, `cage`
-
-The set piece supplies the staging and camera (`pipeline/animation/setpieces.py`), so the language model never choreographs joints. Scripts are rejected and rewritten if they invent quotes, statistics or "studies show" claims, miss the length, or overuse a set piece. `examples/nihilism-script.json` is a hand-written example; run the plan stage with `--script` to use a fixed script.
-
-### Run locally
+### Preview locally
 
 ```bash
-pip install -r requirements-core.txt
-python -m pipeline.essay plan --title "Nihilism - belief in nothing" --script examples/nihilism-script.json
-# voice needs CPU torch 2.6.0 + requirements-voice.txt
-python -m pipeline.essay voice --narrator warguy
-python -m pipeline.essay produce --quality standard
+npm install && npx playwright install chromium
+node render/render.mjs --film build/film.json --stills build/stills --every 3 --width 960
 ```
 
 ## Animation engine

@@ -110,11 +110,12 @@ class Groq:
                 result = self._call(payload)
                 choice = result['choices'][0]
                 if choice.get('finish_reason') == 'length':
-                    raise WriterError('Reply was cut off by the output limit')
+                    raise ValueError('Your answer was too long and was cut off. Write it again more concisely: '
+                                     'shorter fields, no extra keys, the same structure.')
                 usage = result.get('usage', {})
                 notice('Writer', f'{self.model}: {usage.get("prompt_tokens")} prompt + {usage.get("completion_tokens")} output tokens')
                 return choice['message']['content']
-            except WriterError:
+            except (WriterError, ValueError):
                 raise
             except Exception as exc:  # noqa: BLE001
                 status = getattr(exc, 'status_code', None) or getattr(exc, 'code', None)
@@ -124,6 +125,16 @@ class Groq:
                     continue
                 if status == 400 and 'json' in text.lower() and attempt < 2:
                     base['messages'][1]['content'] = user + '\n\nReturn one valid JSON object only.'
+                    continue
+                if status in (413, 429) and 'too large' in text.lower():
+                    # The prompt plus output budget exceed the per-minute limit: shrink the budget to fit.
+                    nums = dict(re.findall(r'(Limit|Requested)\D{0,3}(\d+)', text))
+                    if nums.get('Limit') and nums.get('Requested'):
+                        over = int(nums['Requested']) - int(nums['Limit'])
+                        base['max_tokens'] = max(1200, base['max_tokens'] - over - 150)
+                    else:
+                        base['max_tokens'] = max(1200, int(base['max_tokens'] * .75))
+                    notice('Groq budget', f'request too large; output budget now {base["max_tokens"]} tokens', 'warning')
                     continue
                 if status == 429 or (isinstance(status, int) and status >= 500) or status is None:
                     headers = getattr(getattr(exc, 'response', None), 'headers', {}) or {}
@@ -172,7 +183,7 @@ class Writer:
             self.clients[spec] = Groq(model) if provider == 'groq' else Ollama(model)
         return self.clients[spec]
 
-    def json(self, system, user, validate=None, temperature=.8):
+    def json(self, system, user, validate=None, temperature=.8, max_tokens=None, attempts=4):
         errors, best, answered = [], None, False
         for spec in self.specs:
             if spec.startswith('ollama:') and answered:
@@ -184,9 +195,13 @@ class Writer:
                 notice('Writer unavailable', f'{spec}: {exc}', 'warning')
                 continue
             feedback = ''
-            for attempt in range(4):
+            for attempt in range(attempts):
                 try:
-                    reply = client.complete(system, user + feedback, temperature=temperature)
+                    budget = max_tokens or 7000
+                    if spec.startswith('groq:'):
+                        # Groq's free tier rejects requests whose prompt + output budget exceed the per-minute token limit.
+                        budget = max(1500, min(budget, int(os.environ.get('GROQ_TPM', '8000')) - 250 - int(len(system + user + feedback) / 3.4)))
+                    reply = client.complete(system, user + feedback, temperature=temperature, max_tokens=budget)
                     answered = True
                     data = parse_json(reply)
                     result = validate(data) if validate else data
