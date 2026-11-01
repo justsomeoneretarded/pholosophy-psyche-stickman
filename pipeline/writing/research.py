@@ -4,7 +4,7 @@ from pipeline.writing.evidence import reviews
 API='https://en.wikipedia.org/w/api.php'
 HEADERS={'User-Agent':'stickman-essay-studio/1.0 (GitHub Actions; educational video research)'}
 THEMES=[
- (r'overthink|ruminat', 'rumination psychology metacognition','rumination[Title/Abstract] AND metacognition[Title/Abstract]'),
+ (r'overthink|ruminat', 'rumination psychology metacognition','rumination[Title/Abstract] AND (metacognition[Title/Abstract] OR repetitive thinking[Title/Abstract]) NOT (psychosis[Title] OR schizophrenia[Title] OR bipolar[Title])'),
  (r'procrastinat', 'procrastination self regulation','procrastination[Title/Abstract]'),
  (r'lonel|alone|isolat', 'loneliness social connection psychology','loneliness[Title/Abstract] AND social[Title/Abstract]'),
  (r'nothing.*matter|nihilis|meaning.*life|existential', 'existential nihilism meaning of life',None),
@@ -36,7 +36,10 @@ def research(title,max_chars=9000):
         except Exception as exc:warnings.append(f'Primary research unavailable: {type(exc).__name__}: {exc}')
     try:
         hits=_get({'action':'query','list':'search','srsearch':query,'srlimit':5}).get('query',{}).get('search',[])
-        titles=[h['title'] for h in hits][:5]
+        anchors={'rumination psychology metacognition':['Rumination (psychology)','Metacognition'],
+                 'existential nihilism meaning of life':['Existential nihilism','Meaning of life'],
+                 'procrastination self regulation':['Procrastination','Temporal motivation theory']}
+        titles=list(dict.fromkeys(anchors.get(query,[])+[h['title'] for h in hits]))[:5]
         if titles:
             pages=_get({'action':'query','prop':'extracts|info','inprop':'url','explaintext':1,
                 'exsectionformat':'plain','titles':'|'.join(titles),'exchars':3500}).get('query',{}).get('pages',[])
