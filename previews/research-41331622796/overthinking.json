@@ -1,0 +1,29 @@
+{
+  "context": "## Maladaptive Rumination as a Transdiagnostic Mediator of Vulnerability and Outcome in Psychopathology.\nSource: https://pubmed.ncbi.nlm.nih.gov/30841644/\nReview abstract excerpt (preserve its population, uncertainty and limitations):\nMaladaptive rumination is a form of negative repetitive thinking which has attracted the interest of researchers, as it is considered a cognitive vulnerability to depression. Some of the original beliefs regarding rumination, in particular its exclusive link with depression, have been questioned in the light of research findings. At present, the very concept of rumination is still unclear, so research has been investigating this topic from different, and somewhat inconsistent, perspectives. A literature review was performed in order to outline some core characteristics of rumination, explain its determinants, and discuss its possible role as a transdiagnostic mediator of vulnerability and outcome in psychopathology. Maladaptive rumination could be interpreted as a dysfunctional coping strategy strictly linked to emotion regulation and metacognition that may occur in several psychopathological conditions, such as psychosis, eating disorders, and alcohol dependence. Evidence allows the interpretation of maladaptive rumination as a transdiagnostic mediator of vulnerability and outcome i\n\n## Are experiences of psychosis associated with unhelpful metacognitive coping strategies? A systematic review of the evidence.\nSource: https://pubmed.ncbi.nlm.nih.gov/28833863/\nReview abstract excerpt (preserve its population, uncertainty and limitations):\nThis review investigated whether unhelpful metacognitive coping strategies, such as attentional biases, worry, rumination, and thought control, are associated with experiences of psychosis. These processes, known collectively as the Cognitive Attentional Syndrome (CAS), form a central tenet of the Self-Regulatory Executive Function model. Three research questions based on assumptions underlying the CAS were addressed. It was predicted that processes of (a) self-focused processing, (b) negative perseverative thinking (worry and rumination), and (c) counterproductive thought control would be associated with experiences of psychosis. A comprehensive search of the literature identified 51 eligible studies: 17 investigated self-focused attention, 25 investigated perseverative processing (worry: n\u00a0=\u00a018; rumination: n\u00a0=\u00a010), and 9 investigated thought control strategies. Findings indicated that unhelpful metacognitive coping strategies associated with the CAS are related to experiences of psychosis and appear to share important relationships with distress. Implications for future research a\n\n## Marcantonio M. Spada\nSource: https://en.wikipedia.org/wiki/Marcantonio_M._Spada\nMarcantonio M. Spada (born 13 November 1970 in Rome, Italy) is an Italian-British academic psychologist, psychological therapy practitioner, and executive.\nEducation\nSpada was educated at St. George's British International School and then attended the University of Bristol (BSc), the London School of Economics (MSc), and University College London (PgDip and MA). He received his PhD from the University of Manchester in 2006 under the supervision of Adrian Wells.\nCareer\nSpada is currently Chief Clinical Officer and Executive Board member at Onebright Mental Health, and Emeritus Professor of Addictive Behaviours and Mental Health at London South Bank University.\nHe is also the editor-in-chief of the addictions psychology and psychiatry journal Addictive Behaviors, and the founder and former editor-in-chief of its sister journal Addictive Behaviors Reports, both published by Elsevier. In addition, he has served as associate editor of Clinical Psychology & Psychotherapy, published by John Wiley & Sons.\nSpada has been elected a fellow of the British Psychological Society and the British Association for Behavioural and Cognitive Psychotherapies for his contribution to the advancement...",
+  "sources": [
+    {
+      "title": "Maladaptive Rumination as a Transdiagnostic Mediator of Vulnerability and Outcome in Psychopathology.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30841644/",
+      "source": "PubMed-indexed review",
+      "pmid": "30841644",
+      "query": "rumination[Title/Abstract] AND metacognition[Title/Abstract]",
+      "doi": "10.3390/jcm8030314"
+    },
+    {
+      "title": "Are experiences of psychosis associated with unhelpful metacognitive coping strategies? A systematic review of the evidence.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28833863/",
+      "source": "PubMed-indexed review",
+      "pmid": "28833863",
+      "query": "rumination[Title/Abstract] AND metacognition[Title/Abstract]",
+      "doi": "10.1002/cpp.2132"
+    },
+    {
+      "title": "Marcantonio M. Spada",
+      "url": "https://en.wikipedia.org/wiki/Marcantonio_M._Spada",
+      "source": "Wikipedia",
+      "query": "rumination psychology metacognition"
+    }
+  ],
+  "warnings": [],
+  "query": "rumination psychology metacognition"
+}
