@@ -31,7 +31,7 @@ def test_long_sentences_are_split_for_captions():
 
 def test_concept_checks_length_and_honesty():
     modes = ['story', 'lesson', 'montage', 'metaphor', 'vignette', 'inner']
-    beats = [dict(beat(3 if i % 3 else 0, 'go on.' if i % 4 == 0 else ''), seconds=10, mode=modes[i % 6], where=['bedroom', 'park', 'cafe', 'rooftop', 'street', 'desk', 'hill'][i % 7]) for i in range(12)]
+    beats = [dict(beat(3 if i % 3 else 0, 'go on.' if i % 4 == 0 else ''), seconds=10, mode=modes[i % 6], who=['hero'], where=['bedroom', 'park', 'cafe', 'rooftop', 'street', 'desk', 'hill'][i % 7]) for i in range(12)]
     for b in beats:
         b['narration'] = [x + ' And it keeps teaching him, night after night.' for x in b['narration']]
     ok, total = essay.check_concept({'beats': beats}, None)

@@ -107,6 +107,9 @@ HOW TO BUILD THIS FILM (think in this order):
    fictional dialogue, self-talk and inner thoughts; quotation marks alone are allowed.
 3. THE PICTURE for each idea: pick the visual mode that makes THIS idea clearest, and vary the modes across the film:
 {modes}
+   ONLY what the engine can draw appears on screen: people (poses, moods, held objects {VOCAB['holds']}), the place parts below,
+   props {VOCAB['items']}, phones, notes/letters/photos/calendars, speech bubbles and big words. Anything else (a shattered glass,
+   a wilted flower, a script with a title) will simply not appear, so stage ideas through PEOPLE doing things.
    Invent specific, physical moments that belong to this concept only (what would a grieving person touch? what does pride look
    like at a dinner table?). Do not default to phones, 3am clocks, fridges or calendars unless the concept is about them.
 4. PLACES: any named set ({', '.join(k for k in v['sets'] if k != 'scene')}) or a place you BUILD with "scene"
@@ -213,6 +216,12 @@ def check_concept(sheet, minutes):
         stock = sum(1 for b in beats if STOCK.search(str(b.get('what_happens', ''))))
         if stock > 1:
             problems.append('stock details (3am clocks, fridges, calendars, alarms) appear repeatedly; invent details specific to this concept')
+        abstract = sum(1 for b in beats if (b.get('scene') or {}).get('base') == 'void' or b.get('where') == 'void')
+        if abstract > max(2, len(beats) // 4):
+            problems.append(f'{abstract} beats happen in an empty void; show most ideas through people in real or built places')
+        empty = sum(1 for b in beats if not [w for w in (b.get('who') or []) if w != 'demon'])
+        if empty > len(beats) // 4:
+            problems.append(f'{empty} beats have no people on screen ("who"); the film is acted by people')
         demon_beats = sum(1 for b in beats if b.get('inner_voice_line'))
         if demon_beats > len(beats) // 2:
             problems.append('the silhouette speaks in most beats; use it only where it explains something')
