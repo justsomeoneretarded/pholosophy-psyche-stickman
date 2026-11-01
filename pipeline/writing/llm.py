@@ -68,7 +68,7 @@ class Groq:
         except ImportError:
             self.client = None
         self.model = self._resolve(model)
-        self.optional = {'reasoning_format': 'hidden'} if 'qwen' in self.model else {'reasoning_effort': 'medium'}
+        self.optional = {'reasoning_format': 'hidden'} if 'qwen' in self.model else {'reasoning_effort': 'low'}
 
     def _list(self):
         if self.client is not None:
@@ -101,7 +101,8 @@ class Groq:
         return _post(GROQ + '/chat/completions', payload, {'Authorization': 'Bearer ' + self.key})
 
     def complete(self, system, user, temperature=.8, max_tokens=7000):
-        base = {'model': self.model, 'temperature': temperature, 'max_tokens': max_tokens,
+        budget = min(max_tokens, getattr(self, '_output_cap', max_tokens))
+        base = {'model': self.model, 'temperature': temperature, 'max_tokens': budget,
                 'response_format': {'type': 'json_object'},
                 'messages': [{'role': 'system', 'content': system}, {'role': 'user', 'content': user}]}
         for attempt in range(6):
@@ -111,8 +112,10 @@ class Groq:
                 self._shrinks = 0
                 choice = result['choices'][0]
                 if choice.get('finish_reason') == 'length':
-                    raise ValueError('Your answer was too long and was cut off. Write it again more concisely: '
-                                     'shorter fields, no extra keys, the same structure.')
+                    if getattr(self, '_output_cap', None):
+                        raise WriterError(f'{self.model} truncated the reply at its {self._output_cap}-token output cap; use a model with more capacity or split this stage into smaller requests')
+                    raise ValueError('The reply was cut off. Preserve the required narration word count and JSON structure; '
+                                     'shorten visual descriptions and metadata, not the spoken explanation.')
                 usage = result.get('usage', {})
                 notice('Writer', f'{self.model}: {usage.get("prompt_tokens")} prompt + {usage.get("completion_tokens")} output tokens')
                 return choice['message']['content']
@@ -132,13 +135,21 @@ class Groq:
                     self._shrinks = shrinks
                     if shrinks > 2:
                         raise WriterError(f'{self.model} cannot fit this request on the free tier: {text[:300]}')
-                    # The prompt plus output budget exceed the per-minute limit: shrink the budget to fit.
                     nums = dict(re.findall(r'(Limit|Requested)\D{0,3}(\d+)', text))
+                    old_budget = base['max_tokens']
                     if nums.get('Limit') and nums.get('Requested'):
-                        over = int(nums['Requested']) - int(nums['Limit'])
-                        base['max_tokens'] = max(1200, base['max_tokens'] - over - 150)
+                        limit, requested = int(nums['Limit']), int(nums['Requested'])
+                        if 'OTPM' in text or 'output tokens per minute' in text.lower():
+                            # An output cap is independent of prompt size. Never impose a floor above it.
+                            self._output_cap = max(1, limit - min(32, max(0, limit // 10)))
+                            new_budget = min(old_budget - 1, self._output_cap)
+                        else:
+                            new_budget = old_budget - max(0, requested - limit) - 150
                     else:
-                        base['max_tokens'] = max(1200, int(base['max_tokens'] * .75))
+                        new_budget = int(old_budget * .75)
+                    if new_budget < 128 or new_budget >= old_budget:
+                        raise WriterError(f'{self.model} cannot fit the prompt/output budget within its reported free-tier limit: {text[:300]}')
+                    base['max_tokens'] = new_budget
                     notice('Groq budget', f'request too large ({text[:220]}); output budget now {base["max_tokens"]} tokens', 'warning')
                     continue
                 if status == 429 or (isinstance(status, int) and status >= 500) or status is None:

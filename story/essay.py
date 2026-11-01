@@ -102,6 +102,8 @@ def concept_prompt(title, minutes):
     length = (f'about {minutes:g} minutes ({lo:.0f} seconds) in total' if minutes else
               f'the length this concept deserves: {lo // 60:.0f}-{hi // 60:.1f} minutes ({lo}-{hi} seconds) in total')
     words = round((lo + hi) / 2 * .5 * WPS)
+    narration_beats = 10
+    per_beat = round(words / narration_beats)
     return FORMAT + f"""
 You are the writer-director. For the topic below, invent an ORIGINAL story that dramatizes it (a new hero, new places, new situation;
 never a generic or reused plot) and write the concept and beat sheet as JSON:
@@ -129,7 +131,14 @@ never a generic or reused plot) and write the concept and beat sheet as JSON:
 BEATS ARE THE STORY ONLY: the cold-open line, the quote card, the title card and like/subscribe are added automatically from
 "opening_line", "quote" and "logo" - never write beats for them.
 LENGTH: {length}. Write 14-20 beats. Narration in total about {words} words (roughly half the running time), spread over the film
-with some beats unnarrated. A narrated beat lasts at least as long as its narration takes to speak ({WPS} words per second) plus a pause.
+with some beats unnarrated.
+Plan 16 story beats: about {narration_beats} narrated beats and 6 acting/dialogue-only beats with narration: [].
+Each narrated beat needs about {per_beat} narration words, usually 3-4 full explanatory sentences. Short individual sentences do not mean
+a short total explanation. Count narration words separately from what_happens, dialogue and metadata.
+Producer notes describe creative intent. Put quoted character speech in dialogue or demon_line, never in narration.
+When notes supply sample lines, paraphrase the narrator's meaning in your own words; do not copy quotation marks into narration.
+If space is tight, shorten visual descriptions, cast details and publishing metadata rather than deleting required narration.
+A narrated beat lasts at least as long as its narration takes to speak ({WPS} words per second) plus a pause.
 
 VOCABULARY - use only these:
 sets: {sets_text()}
@@ -201,6 +210,8 @@ def stage_concept(title, minutes, out_dir, research=''):
         problems, total = check_concept(data, minutes)
         report['estimated_seconds'] = total
         if problems:
+            with (out / 'rejected-concepts.jsonl').open('a') as rejected:
+                rejected.write(json.dumps({'problems': problems, 'response': data}, ensure_ascii=False) + '\n')
             length_only = all('minutes' in p for p in problems)
             target = target_seconds(minutes)[0] if minutes else sum(target_seconds(None)) / 2
             raise Rejected('; '.join(problems[:8]), data if length_only else None, abs(total - target))
