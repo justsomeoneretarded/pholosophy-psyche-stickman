@@ -17,6 +17,8 @@ from pathlib import Path
 import numpy as np
 from scipy import signal
 from scipy.io import wavfile
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from audio.looping import loop_music
 
 SR = 48000
 RNG = np.random.default_rng(11)
@@ -320,9 +322,7 @@ def mix(cues_path, music_path, out_path, ffmpeg='ffmpeg'):
     # music
     if music_path and Path(music_path).exists():
         m = load_wav(music_path); source = 'ACE-Step score'
-        if len(m) < n:  # loop with a crossfade
-            reps = int(np.ceil(n / len(m))) + 1; m = np.concatenate([m] * reps)
-        m = m[:n]
+        m = loop_music(m, n, SR)
     else:
         mono = fallback_music(dur + .5); m = np.stack([mono, mono], 1)[:n]; source = 'synthesized fallback'
     m = m / (np.max(np.abs(m)) or 1) * .8
@@ -348,9 +348,9 @@ def mix(cues_path, music_path, out_path, ffmpeg='ffmpeg'):
             a = int(c['t'] * SR); duck[a:a + int(1.8 * SR)] = .55
     if has_voice.any():
         k = int(.25 * SR)
-        busy = np.convolve(has_voice.astype(float), np.ones(k), mode='same') > 0
+        busy = signal.fftconvolve(has_voice.astype(float), np.ones(k), mode='same') > .5
         duck[busy] = np.minimum(duck[busy], .38)
-    duck = np.convolve(duck, np.ones(int(.3 * SR)) / int(.3 * SR), mode='same')
+    duck = signal.fftconvolve(duck, np.ones(int(.3 * SR)) / int(.3 * SR), mode='same')
     fade = np.ones(n); fl = int(1.2 * SR); fade[-fl:] = np.linspace(1, 0, fl); fade[:int(.4 * SR)] = np.linspace(0, 1, int(.4 * SR))
     out += m * (g * duck * fade)[:, None]
     # ambience beds, crossfaded per shot
