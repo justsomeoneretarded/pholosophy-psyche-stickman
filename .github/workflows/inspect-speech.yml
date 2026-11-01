@@ -1,0 +1,33 @@
+name: Inspect generated speech diagnostics
+on:
+  workflow_dispatch:
+  push:
+    paths: ['.github/workflows/inspect-speech.yml']
+permissions:
+  actions: read
+  contents: write
+jobs:
+  inspect:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: previews
+      - uses: actions/download-artifact@v4
+        with:
+          name: voice-diagnostics
+          path: diagnostics
+          run-id: '41325896216'
+          github-token: ${{ github.token }}
+      - name: Preserve the actual speech-check evidence for review
+        run: |
+          mkdir -p previews/41325896216/speech-review
+          cp diagnostics/film.json previews/41325896216/speech-review/
+          cp diagnostics/voice/verification.json previews/41325896216/speech-review/
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add previews/41325896216/speech-review
+          git commit -m "Speech verification evidence for run 41325896216"
+          git pull --rebase origin previews
+          git push origin HEAD:previews
