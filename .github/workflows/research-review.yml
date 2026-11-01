@@ -1,0 +1,48 @@
+name: Verify topic-aware source retrieval
+on:
+  workflow_dispatch:
+  push:
+    paths: ['.github/workflows/research-review.yml']
+permissions:
+  contents: write
+jobs:
+  research:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch actual relevant sources
+        run: |
+          mkdir -p research-review
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          from pipeline.writing.research import research
+          for name,title in [('overthinking','Why Smart People Overthink Everything'),('nihilism','What If Nothing Really Matters?')]:
+              r=research(title)
+              Path('research-review',name+'.json').write_text(json.dumps(r,indent=2))
+              print(title,json.dumps({'sources':r['sources'],'warnings':r['warnings']},indent=2))
+              assert r['sources'],'No topical sources were retrieved'
+              assert all('Nothing Else Matters' not in s['title'] for s in r['sources'])
+              if name=='nihilism':assert any('nihilism' in s['title'].lower() or 'meaning' in s['title'].lower() for s in r['sources'])
+          PY
+      - name: Preserve actual source evidence
+        if: always()
+        run: |
+          git fetch origin previews
+          git worktree add -b research-inspection "$RUNNER_TEMP/research" FETCH_HEAD
+          mkdir -p "$RUNNER_TEMP/research/previews/research-$GITHUB_RUN_ID"
+          cp research-review/* "$RUNNER_TEMP/research/previews/research-$GITHUB_RUN_ID/"
+          cd "$RUNNER_TEMP/research"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "previews/research-$GITHUB_RUN_ID"
+          git commit -m "Actual topic-aware research evidence $GITHUB_RUN_ID"
+          git pull --rebase origin previews
+          git push origin HEAD:previews
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: topic-research-evidence
+          path: research-review/
+          retention-days: 7
