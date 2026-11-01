@@ -1,0 +1,29 @@
+{
+  "context": "## Maladaptive Rumination as a Transdiagnostic Mediator of Vulnerability and Outcome in Psychopathology.\nSource: https://pubmed.ncbi.nlm.nih.gov/30841644/\nReview abstract excerpt (preserve its population, uncertainty and limitations):\nMaladaptive rumination is a form of negative repetitive thinking which has attracted the interest of researchers, as it is considered a cognitive vulnerability to depression. Some of the original beliefs regarding rumination, in particular its exclusive link with depression, have been questioned in the light of research findings. At present, the very concept of rumination is still unclear, so research has been investigating this topic from different, and somewhat inconsistent, perspectives. A literature review was performed in order to outline some core characteristics of rumination, explain its determinants, and discuss its possible role as a transdiagnostic mediator of vulnerability and outcome in psychopathology. Maladaptive rumination could be interpreted as a dysfunctional coping strategy strictly linked to emotion regulation and metacognition that may occur in several psychopathological conditions, such as psychosis, eating disorders, and alcohol dependence. Evidence allows the interpretation of maladaptive rumination as a transdiagnostic mediator of vulnerability and outcome i\n\n## Development and Validation of a Measure of Self-Critical Rumination.\nSource: https://pubmed.ncbi.nlm.nih.gov/25712674/\nReview abstract excerpt (preserve its population, uncertainty and limitations):\nSelf-criticism is a form of negative self-evaluation that has strong associations with many forms of psychopathology. Rumination is a maladaptive form of repetitive thinking that is associated with many psychological disorders. Although measures of several different types of rumination (e.g., general rumination, depressive rumination, anger rumination) have been developed, none focuses specifically on self-critical rumination. An initial pool of items addressing self-critical rumination was developed by adapting items from existing rumination measures and through a writing task administered to both student and clinical samples. Following an evaluation of content validity, 24 items were administered to a large sample of undergraduates along with measures of related constructs. The final 10-item version of the Self-Critical Rumination Scale showed excellent internal consistency, a clear single-factor structure, convergent relationships with related constructs, and incremental validity over other measures of self-criticism and rumination in predicting both general distress and features \n\n## Marcantonio M. Spada\nSource: https://en.wikipedia.org/wiki/Marcantonio_M._Spada\nMarcantonio M. Spada (born 13 November 1970 in Rome, Italy) is an Italian-British academic psychologist, psychological therapy practitioner, and executive.\nEducation\nSpada was educated at St. George's British International School and then attended the University of Bristol (BSc), the London School of Economics (MSc), and University College London (PgDip and MA). He received his PhD from the University of Manchester in 2006 under the supervision of Adrian Wells.\nCareer\nSpada is currently Chief Clinical Officer and Executive Board member at Onebright Mental Health, and Emeritus Professor of Addictive Behaviours and Mental Health at London South Bank University.\nHe is also the editor-in-chief of the addictions psychology and psychiatry journal Addictive Behaviors, and the founder and former editor-in-chief of its sister journal Addictive Behaviors Reports, both published by Elsevier. In addition, he has served as associate editor of Clinical Psychology & Psychotherapy, published by John Wiley & Sons.\nSpada has been elected a fellow of the British Psychological Society and the British Association for Behavioural and Cognitive Psychotherapies for his contribution to the advancement...",
+  "sources": [
+    {
+      "title": "Maladaptive Rumination as a Transdiagnostic Mediator of Vulnerability and Outcome in Psychopathology.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30841644/",
+      "source": "PubMed-indexed review",
+      "pmid": "30841644",
+      "query": "rumination[Title/Abstract] AND (metacognition[Title/Abstract] OR repetitive thinking[Title/Abstract]) NOT (psychosis[Title] OR schizophrenia[Title] OR bipolar[Title])",
+      "doi": "10.3390/jcm8030314"
+    },
+    {
+      "title": "Development and Validation of a Measure of Self-Critical Rumination.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25712674/",
+      "source": "PubMed-indexed review",
+      "pmid": "25712674",
+      "query": "rumination[Title/Abstract] AND (metacognition[Title/Abstract] OR repetitive thinking[Title/Abstract]) NOT (psychosis[Title] OR schizophrenia[Title] OR bipolar[Title])",
+      "doi": "10.1177/1073191115573300"
+    },
+    {
+      "title": "Marcantonio M. Spada",
+      "url": "https://en.wikipedia.org/wiki/Marcantonio_M._Spada",
+      "source": "Wikipedia",
+      "query": "rumination psychology metacognition"
+    }
+  ],
+  "warnings": [],
+  "query": "rumination psychology metacognition"
+}
