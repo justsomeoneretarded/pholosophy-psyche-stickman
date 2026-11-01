@@ -1,0 +1,83 @@
+{
+ "title": "What If Nothing Really Matters?",
+ "idea": {
+  "definition": "Existential nihilism claims life lacks inherent meaning or value.",
+  "mechanism": "Meaning is a human construct; without external purpose, we create our own narratives.",
+  "turn": "Even if meaning is self‑made, it can still generate genuine fulfillment.",
+  "thinkers": "Friedrich Nietzsche, Jean-Paul Sartre, Albert Camus"
+ },
+ "approach": "Show a character confronting the idea and discovering how personal projects become sources of value.",
+ "cast": [
+  {
+   "id": "alex",
+   "kind": "hero"
+  },
+  {
+   "id": "sam",
+   "kind": "friend"
+  },
+  {
+   "id": "shadow",
+   "kind": "demon"
+  }
+ ],
+ "inner_voice": {
+  "represents": "the Void of Meaning",
+  "color": "#2b2b2b"
+ },
+ "spine": [
+  {
+   "idea": "Introducing existential nihilism",
+   "mode": "hook",
+   "where": "street",
+   "what_happens": "Alex stares at empty billboard",
+   "_location_description": "city street at dusk, lone figure under a streetlamp"
+  },
+  {
+   "idea": "Meaning as human construct",
+   "mode": "lesson",
+   "where": "kitchen",
+   "what_happens": "Sam explains meaning‑making",
+   "_location_description": "cozy kitchen, Alex and Sam over coffee"
+  },
+  {
+   "idea": "Common misconceptions",
+   "mode": "contrast",
+   "where": "bedroom",
+   "what_happens": "Party celebrates; Alex feels empty",
+   "_location_description": "split screen: party scene vs. Alex alone in bedroom"
+  },
+  {
+   "idea": "The inner void personified",
+   "mode": "inner",
+   "where": "void",
+   "what_happens": "Shadow whispers “nothing matters”",
+   "_location_description": "void interior, shadow silhouette with glowing eyes"
+  },
+  {
+   "idea": "Self‑created projects as value",
+   "mode": "story",
+   "where": "park",
+   "what_happens": "He starts drawing, feels purpose",
+   "_location_description": "park bench, Alex sketches a mural"
+  },
+  {
+   "idea": "Turn: fulfillment without cosmic meaning",
+   "mode": "metaphor",
+   "where": "scene",
+   "what_happens": "Alex steps into light, silhouette fades",
+   "scene": {
+    "base": "stage",
+    "elements": []
+   },
+   "_location_description": "stage, word \"CHOICE\" lights up"
+  },
+  {
+   "idea": "Conclusion: embracing freedom",
+   "mode": "vignette",
+   "where": "rooftop",
+   "what_happens": "He smiles, holds sketchbook",
+   "_location_description": "rooftop sunrise, Alex watches city awaken"
+  }
+ ]
+}
