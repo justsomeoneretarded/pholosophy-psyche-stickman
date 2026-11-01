@@ -1,5 +1,5 @@
 name: Verify topic-aware source retrieval
-# Verify canonical concept pages and exclude unrelated clinical specialties.
+# Iteration 3: request extracts for every page and filter specialized review populations.
 on:
   workflow_dispatch:
   push:
@@ -25,7 +25,8 @@ jobs:
               print(title,json.dumps({'sources':r['sources'],'warnings':r['warnings']},indent=2))
               assert r['sources'],'No topical sources were retrieved'
               assert all('Nothing Else Matters' not in s['title'] for s in r['sources'])
-              if name=='nihilism':assert any(any(term in s['title'].lower() for term in ['nihilism','meaning','existential']) for s in r['sources'])
+              if name=='nihilism':assert any(s['title'] in ['Nihilism','Meaning of life'] for s in r['sources'])
+              if name=='overthinking':assert any(s['title'] in ['Rumination (psychology)','Metacognition'] for s in r['sources'])
           PY
       - name: Preserve actual source evidence
         if: always()

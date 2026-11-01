@@ -31,18 +31,18 @@ def research(title,max_chars=9000):
     query,pubmed=topic_queries(title)
     if pubmed:
         try:
-            primary,abstracts=reviews(pubmed);sources.extend(primary);notes.extend(abstracts)
+            primary,abstracts=reviews(pubmed,title);sources.extend(primary);notes.extend(abstracts)
             if not primary:warnings.append('No matching PubMed reviews were retrieved')
         except Exception as exc:warnings.append(f'Primary research unavailable: {type(exc).__name__}: {exc}')
     try:
         hits=_get({'action':'query','list':'search','srsearch':query,'srlimit':5}).get('query',{}).get('search',[])
         anchors={'rumination psychology metacognition':['Rumination (psychology)','Metacognition'],
-                 'existential nihilism meaning of life':['Existential nihilism','Meaning of life'],
+                 'existential nihilism meaning of life':['Nihilism','Meaning of life'],
                  'procrastination self regulation':['Procrastination','Temporal motivation theory']}
         titles=list(dict.fromkeys(anchors.get(query,[])+[h['title'] for h in hits]))[:5]
         if titles:
             pages=_get({'action':'query','prop':'extracts|info','inprop':'url','explaintext':1,
-                'exsectionformat':'plain','titles':'|'.join(titles),'exchars':3500}).get('query',{}).get('pages',[])
+                'exsectionformat':'plain','titles':'|'.join(titles),'exchars':3500,'exlimit':'max','redirects':1}).get('query',{}).get('pages',[])
             order={t:i for i,t in enumerate(titles)}
             for page in sorted(pages,key=lambda p:order.get(p.get('title'),9)):
                 text=re.sub(r'\n{2,}','\n',page.get('extract','')).strip()

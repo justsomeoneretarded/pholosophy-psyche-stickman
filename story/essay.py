@@ -229,7 +229,7 @@ def stage_concept(title, minutes, out_dir, research='', reuse_draft=None):
     out = Path(out_dir); out.mkdir(parents=True, exist_ok=True)
     writer = Writer()
     system = concept_prompt(title, minutes) + 'Return only JSON.'
-    user = f'TOPIC: {title}\n\nBACKGROUND READING (for accuracy, do not copy):\n{research[:2200] or "(none)"}\n\nWrite the JSON now.'
+    user = f'TOPIC: {title}\n\nBACKGROUND READING (for accuracy, do not copy):\n{research[:3600] or "(none)"}\n\nWrite the JSON now.'
     report = {}
 
     def validate(data):
