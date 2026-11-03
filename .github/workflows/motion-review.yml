@@ -1,5 +1,5 @@
 name: Inspect production rig in motion
-# Iteration 4: drawing, showing a sketch, conversation, and articulated chair transitions.
+# Iteration 5: smooth starts and stops, grounded recovery, and revised prop contact.
 on:
   workflow_dispatch:
   push:

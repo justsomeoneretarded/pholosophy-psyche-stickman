@@ -49,6 +49,7 @@ const POSES = {
   },
   pockets(P, a, u, d, w) { POSES.stand(P, a, u, d, w); P.hands = [[-44, -96], [44, -96]]; P.handsHidden = true; },
   walk(P, a, u, d, w, run) {
+    if (!w.moving) {POSES.stand(P,a,u,d,w);P.feet=[[-24,0],[24,0]];P.faceDx=w.dir*.75;return;}
     const stride = run ? 190 : 120, lift = run ? 34 : 17;
     const phase = w.walked / stride, dir = w.dir, stance = run ? .48 : .6;
     for (let i = 0; i < 2; i++) {
@@ -70,6 +71,9 @@ const POSES = {
     P.pelvis[1] = -86 + Math.abs(Math.cos(2 * Math.PI * phase)) * (run ? 6 : 3);
     P.lean = dir * (run ? .14 : .04);
     P.faceDx = dir * .85;
+    const blend=Math.min(w.startBlend??1,1-(w.stopBlend??0));
+    P.pelvis[1]=lerp(RIG.pelvisY,P.pelvis[1],blend);P.lean*=blend;
+    for(let i=0;i<2;i++){P.feet[i]=[lerp(i?24:-24,P.feet[i][0],blend),P.feet[i][1]*blend];P.hands[i]=[lerp(i?53:-53,P.hands[i][0],blend),lerp(-106,P.hands[i][1],blend)];}
   },
   run(P, a, u, d, w) { POSES.walk(P, a, u, d, w, true); },
   sit(P, a, u, d, w) {

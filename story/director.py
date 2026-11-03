@@ -47,6 +47,7 @@ def apply_performance(shot, beat, phase=0, force=False):
         semantic=" ".join([str(beat.get("what_happens") or ""),*[(n.get("text","") if isinstance(n,dict) else str(n)) for n in beat.get("narration") or []]])
         phone_context=bool(re.search(r"\b(?:phone|text|message|reply|chat)\b",semantic,re.I)) and not re.search(r"\b(?:laptop|computer|keyboard)\b",semantic,re.I)
         if a.get("pose") in {"type","read","write"} and phone_context:
+            if a["pose"] in {"type","write"}:a["seated"]=True
             a["pose"]="phone";a["hold"]="phone"
         if not force and a.get("pose","stand") not in IDLE: continue
         actor_id=str(a.get("id",""))

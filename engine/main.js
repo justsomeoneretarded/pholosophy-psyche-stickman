@@ -37,10 +37,13 @@ function actorState(shot, a, u) {
   const mover = a.pose === 'walk' || a.pose === 'run' || (a.pose === 'umbrella' && a.to !== undefined);
   const moving = mover && Math.abs(x1 - x0) > 1;
   let x = x0, walked = u * (a.pose === 'run' ? 420 : 175), isMoving = a.pose === 'walk' || a.pose === 'run';
+  let startBlend=1,stopBlend=0;
+  if (mover && a.to!==undefined && !moving) {isMoving=false;walked=0;}
   if (moving) {
     const speed = (a.pose === 'run' ? 430 : 170) * scale * (a.speed || 1);
     const start = a.at ?? 0, dist = Math.abs(x1 - x0), T = dist / speed;
     const q = clamp((u - start) / T, 0, 1);
+    startBlend=clamp((u-start)/.25,0,1);stopBlend=clamp((u-start-Math.max(0,T-.28))/.28,0,1);
     // gentle ease at both ends
     const ramp = .1;
     const e = q < ramp ? q * q / (2 * ramp * (1-ramp))
@@ -67,7 +70,7 @@ function actorState(shot, a, u) {
     }
   }
   st.wx = x; st.wy = ground(x) + (a.depth === 'back' ? -40 : 0);
-  return { st, w: { walked, moving: isMoving, dir: x1 >= x0 ? 1 : -1,
+  return { st, w: { walked, startBlend, stopBlend, moving: isMoving, dir: x1 >= x0 ? 1 : -1,
     seat: (fallbackSeat ? 58 : (set.seat ? set.seat(x) : 0))/scale,
     desk: (set.desk ? set.desk(x) : 0)/scale, fallbackSeat } };
 }
