@@ -201,6 +201,9 @@ def repair(film: dict) -> tuple[dict, list[str]]:
                     if a[key] is None:
                         a.pop(key)
             actors.append(a)
+        if (s.get('card') or {}).get('style') == 'cta':
+            # Keep the actor out of the centered text/buttons; desk-only poses have no support on a card.
+            actors=[dict(a,pose='wave',x=18+12*k,scale=.6,seated=False) for k,a in enumerate(actors[:2])]
         s['actors'] = actors[:5]
         lines = []
         ids = {a['id'] for a in actors}

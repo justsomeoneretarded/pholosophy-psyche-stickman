@@ -35,7 +35,11 @@ def inspect(video,film):
         for a in s.get('actors',[]):poses[a.get('pose','stand')]=poses.get(a.get('pose','stand'),0)+1
     if sum(poses.get(p,0) for p in ['walk','run','reachout','drink','wave','point','getup','fall','type','write','read','show','think','talk','standup','sitdown'])<3:
         warnings.append('Limited active character staging; review the film for excessive idle acting')
-    return {'passed':not failures,'failures':failures,'warnings':warnings,'duration_seconds':duration,
+    total_actor_seconds=sum(float(s['dur'])*len(s.get('actors',[])) for s in film['shots'] if not s.get('card'))
+    idle_actor_seconds=sum(float(s['dur']) for s in film['shots'] if not s.get('card') for a in s.get('actors',[]) if a.get('pose','stand') in ('stand','sit','pockets'))
+    if total_actor_seconds and idle_actor_seconds/total_actor_seconds>.6:
+        warnings.append(f'{idle_actor_seconds:.1f} of {total_actor_seconds:.1f} actor-seconds use idle rigs; inspect whether the quiet acting is justified')
+    return {'idle_actor_seconds':idle_actor_seconds,'total_actor_seconds':total_actor_seconds,'passed':not failures,'failures':failures,'warnings':warnings,'duration_seconds':duration,
             'loudness_lufs':loudness,'true_peak_dbfs':peak,'pose_usage':poses,'full_decode':'passed','probe':probe,
             'review_scope':'Technical evidence only. Script quality, believable acting and natural voice require separate review.'}
 
