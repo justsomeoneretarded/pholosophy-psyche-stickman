@@ -1,0 +1,103 @@
+name: Recover completed production package
+on:
+  workflow_dispatch:
+  push:
+    paths: ['.github/workflows/recover-production.yml']
+permissions:
+  contents: write
+  actions: read
+jobs:
+  recover:
+    name: Sound, edit and package
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      contents: write          # only to push the review copy to the 'previews' branch
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - uses: actions/download-artifact@v4
+        with:
+          name: film-final
+          run-id: '41634217001'
+          github-token: ${{ github.token }}
+          path: build
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: film-part-*
+          run-id: '41634217001'
+          github-token: ${{ github.token }}
+          path: build
+          merge-multiple: true
+      - uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          name: film-music
+          run-id: '41634217001'
+          github-token: ${{ github.token }}
+          path: build
+      - uses: actions/download-artifact@v4
+        with:
+          name: film-plan
+          run-id: '41634217001'
+          github-token: ${{ github.token }}
+          path: build/plan
+      - name: Install tools
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-dejavu-core >/dev/null
+          python -m pip install -q numpy scipy Pillow
+      - name: Mix the soundtrack
+        run: python audio/sound.py --cues build/cues.json --music build/music.wav --out build/soundtrack.wav | tee build/sound.txt
+      - name: Assemble the film and the package
+        run: |
+          for i in 0 1 2 3; do echo "file 'part-$i.mp4'"; done > build/parts.txt
+          ffmpeg -y -v error -f concat -safe 0 -i build/parts.txt -c copy build/picture.mp4
+          mkdir -p out
+          ffmpeg -y -v error -i build/picture.mp4 -i build/soundtrack.wav -map 0:v:0 -map 1:a:0 -c:v copy -c:a aac -b:a 256k -shortest -movflags +faststart out/video.mp4
+          python -c "import json;f=json.load(open('build/film.json'));f['music_credit']='Original score generated with ACE-Step 1.5 (MIT)' if 'ACE-Step' in open('build/sound.txt').read() else 'Synthesized score';json.dump(f,open('build/film.json','w'))"
+          python story/package.py build/film.json build/poster out
+          python -c "import sys,json;sys.path.insert(0,'story');from essay import script_md;from pathlib import Path;script_md(json.load(open('build/film.json')),Path('out/story.md'))"
+          cp build/film.json build/contact-sheet.jpg build/narration.wav build/audio_licenses.json out/
+          cp build/voice/verification.json out/speech-verification.json
+          cp build/plan/writing/sources.json out/sources.json
+          cp build/plan/writing/research.txt out/research_notes.md
+          python scripts/master_quality.py out/video.mp4 build/film.json out/quality_report.json
+          ffmpeg -v error -i out/video.mp4 -f null - && echo "full decode: ok"
+          ffprobe -v error -show_entries format=duration:stream=codec_type,width,height -of compact out/video.mp4 | tee build/probe.txt
+          ffmpeg -v info -i out/video.mp4 -vn -af ebur128=peak=true -f null - 2>&1 | grep -E "^\s+(I|LRA|Peak):" | tee out/loudness.txt
+          python -c "import json;f=json.load(open('build/film.json'));print('::notice title=Done::'+f['title']+': '+str(round(f['duration']/60,1))+' min, '+str(len(f['shots']))+' shots')"
+      - name: Publish a review copy to the previews branch
+        env:
+          REVIEW_TITLE: Why Smart People Overthink Everything
+        if: always()
+        continue-on-error: true
+        run: |
+          dir="previews/${{ github.run_id }}"
+          mkdir -p "$RUNNER_TEMP/p/$dir/frames"
+          for f in contact-sheet.jpg thumbnail-01.jpg thumbnail-02.jpg thumbnail-03.jpg story.md film.json script.txt storyboard.json scene_timeline.json recommended-title.txt description.txt subtitles.srt subtitles.vtt sources.json research_notes.md quality_report.json production_report.md speech-verification.json audio_licenses.json loudness.txt; do
+            [ -f "out/$f" ] && cp "out/$f" "$RUNNER_TEMP/p/$dir/"
+          done
+          if [ -f out/video.mp4 ]; then
+            ffmpeg -v error -y -i out/video.mp4 -vf scale=854:-2 -c:v libx264 -crf 31 -preset veryfast -c:a aac -b:a 96k "$RUNNER_TEMP/p/$dir/review.mp4"
+            ffmpeg -v error -y -i out/video.mp4 -vf "fps=1/2,scale=480:-2,drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf:text='%{pts\\:hms}':x=6:y=6:fontsize=18:fontcolor=red,tile=4x6" "$RUNNER_TEMP/p/$dir/frames/sheet-%02d.jpg"
+          fi
+          echo 'Final encoded production review copy. See the production artifact for the native-resolution master.' > "$RUNNER_TEMP/p/$dir/REVIEW_STATUS.txt"
+          bash scripts/publish_review.sh "$RUNNER_TEMP/p/$dir" "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" "$GITHUB_RUN_ID" "$RUNNER_TEMP/review-publisher"
+      - name: Preserve failed production diagnostics
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: failed-production-diagnostics
+          path: |
+            out/
+            build/probe.txt
+            build/sound.txt
+          retention-days: 7
+      - uses: actions/upload-artifact@v4
+        with:
+          name: philosophy-video
+          path: out/
+          retention-days: 7

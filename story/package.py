@@ -76,12 +76,19 @@ def headline(img, words, box, size, amber=None, align='left'):
         y += size * 1.12
 
 
+def publishing_text(value, fallback=''):
+    """Accept a text string or an explicit list of words; never stringify metadata."""
+    if value is None or value == '':return fallback
+    if isinstance(value,str):return value.strip()
+    if isinstance(value,list) and all(isinstance(x,str) for x in value):return ' '.join(value).strip() or fallback
+    raise ValueError('Publishing text must be a string or list of strings')
+
 def thumbnails(film, poster_dir, out):
     from PIL import Image
     stills = sorted(Path(poster_dir).glob('*.jpg'))
     if not stills:
         return []
-    words = ((film.get('publish') or {}).get('thumbnail_words') or film['title']).strip()
+    words = publishing_text((film.get('publish') or {}).get('thumbnail_words'),film['title'])
     key = words.upper().split()[-1].strip('.,!?') if words else None
     accent = film.get('demon_color') or '#ff4fa0'
     accent = tuple(int(accent[i:i + 2], 16) for i in (1, 3, 5))
