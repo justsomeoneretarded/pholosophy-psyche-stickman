@@ -1,0 +1,53 @@
+name: Finalize the verified editorial production
+on:
+  workflow_dispatch:
+  push:
+    paths: ['.github/workflows/final-editorial-render.yml']
+permissions:
+  contents: write
+  actions: write
+jobs:
+  ready:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    env:
+      GH_TOKEN: ${{ github.token }}
+      REPO: ${{ github.repository }}
+    steps:
+      - name: Require tested renderer and a verified narration checkpoint
+        run: |
+          python - <<'PY'
+          import os,json,time,urllib.request,urllib.error
+          base='https://api.github.com/repos/'+os.environ['REPO']
+          headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json','Content-Type':'application/json'}
+          def request(path,payload=None):
+              with urllib.request.urlopen(urllib.request.Request(base+path,data=None if payload is None else json.dumps(payload).encode(),headers=headers,method='GET' if payload is None else 'POST'),timeout=30) as r:
+                  body=r.read()
+                  return json.loads(body) if body else None
+          for run in ['41686946497','41686946785']:
+              assert request('/actions/runs/'+run)['conclusion']=='success','Renderer preflight or code checks did not pass'
+          for _ in range(60):
+              artifacts=request('/actions/runs/41684999340/artifacts')['artifacts']
+              if any(a['name']=='film-final' and a['size_in_bytes']>0 and not a['expired'] for a in artifacts):
+                  print('Verified narration checkpoint is available; retaining it for the final renderer')
+                  break
+              source=request('/actions/runs/41684999340')
+              if source['status']=='completed':raise SystemExit('Source ended without a verified narration artifact')
+              time.sleep(20)
+          else:raise SystemExit('Narration is still running; final rendering has not passed')
+          try:
+              request('/actions/runs/41684999340/cancel',{})
+              print('Stopped the obsolete renderer revision after preserving its verified audio')
+          except urllib.error.HTTPError as e:
+              if e.code!=409:raise
+              print('Source already completed')
+          PY
+  produce:
+    needs: ready
+    uses: ./.github/workflows/generate-video.yml
+    with:
+      title: Why Smart People Overthink Everything
+      duration_minutes: '6'
+      recorded_source_run: '41684999340'
+      score_source_run: '41678117704'
+    secrets: inherit
