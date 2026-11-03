@@ -11,6 +11,7 @@ def replay(source,title,minutes):
         if data.get('_regression_fixture') is True:
             from story.validate import repair
             from story.essay import script_md
+            data.setdefault('writer','Explicit editorial regression fixture')
             data,notes=repair(data)
             fixture.write_text(json.dumps(data,indent=1))
             script_md(data,source/'story.md')
@@ -21,6 +22,11 @@ def replay(source,title,minutes):
     data=json.loads(raw.read_text())
     previous=json.loads((writing/'beats.json').read_text()) if (writing/'beats.json').exists() else {}
     data['_writer']=data.get('_writer') or previous.get('_writer')
+    review_file=writing/'editorial-review.json'
+    if review_file.exists():
+        history=json.loads(review_file.read_text())
+        if history and any(issue.get('severity')=='major' for issue in history[-1]['review']['issues']):
+            raise ValueError('Saved draft has unresolved major editorial findings; revise the checkpoint before production')
     repaired=writing/'replay-input.json';repaired.write_text(json.dumps(data,indent=1,ensure_ascii=False))
     research=(writing/'research.txt').read_text() if (writing/'research.txt').exists() else ''
     direction=str(previous.get('_title','')).partition('Direction from the producer:')[2]
