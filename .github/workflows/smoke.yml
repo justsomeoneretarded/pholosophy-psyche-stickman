@@ -1,5 +1,5 @@
 name: Integrated speech and animation smoke
-# Revision 2: explicit FFmpeg decoding avoids incompatible PyAV open arguments.
+# Revision 3: adapt the legacy consumer to the shared structured research result.
 on:
   workflow_dispatch:
   push:

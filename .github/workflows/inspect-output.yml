@@ -14,8 +14,11 @@ jobs:
   inspect:
     runs-on: ubuntu-24.04
     timeout-minutes: 35
+    strategy:
+      matrix:
+        source: ['41341144570', '41341468260']
     env:
-      SOURCE_RUN: ${{ inputs.source_run_id || '41341144570' }}
+      SOURCE_RUN: ${{ inputs.source_run_id || matrix.source }}
       GH_TOKEN: ${{ github.token }}
       REPO: ${{ github.repository }}
     steps:
@@ -44,9 +47,12 @@ jobs:
           sudo apt-get install -y -qq ffmpeg >/dev/null
           python scripts/inspect_encoded.py review
       - name: Publish inspection
-        run: bash scripts/publish_review.sh review "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" "encoded-$SOURCE_RUN" "$RUNNER_TEMP/inspection-publisher"
+        run: |
+          mkdir -p inspection
+          cp -r review/encoded-frames review/inspection.json inspection/
+          bash scripts/publish_review.sh inspection "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" "$SOURCE_RUN" "$RUNNER_TEMP/inspection-publisher"
       - uses: actions/upload-artifact@v4
         with:
-          name: encoded-output-inspection
+          name: encoded-output-inspection-${{ matrix.source }}
           path: review/
           retention-days: 7

@@ -20,11 +20,11 @@ def run(config,out,story=None,whisper_model='base.en',voice_path=None):
     save(manifest,config.model_dump());metrics=[]
     (out/'SUCCESS.json').unlink(missing_ok=True)
     if story:
-        episode=Episode.model_validate_json(Path(story).read_text());sources,warnings=research(config.title)
+        episode=Episode.model_validate_json(Path(story).read_text());reading=research(config.title);sources,warnings=reading['sources'],reading['warnings']
     elif (out/'storyboard.original.json').exists():
         episode=Episode.model_validate_json((out/'storyboard.original.json').read_text());sources=json.loads((out/'sources.json').read_text());warnings=['Resumed validated storyboard']
     else:
-        sources,warnings=research(config.title);save(out/'sources.json',sources)
+        reading=research(config.title);sources,warnings=reading['sources'],reading['warnings'];save(out/'sources.json',sources)
         episode,metrics=create(config.title,config.duration_minutes,sources,config.seed,config.style,os.environ.get('OLLAMA_MODEL','qwen3:4b'),checkpoint_dir=out/'writing_checkpoints')
     if episode.title!=config.title:raise ValueError('Storyboard title differs from requested title')
     repairs=prepare(episode,config.size);save(out/'scene_repairs.json',repairs)
