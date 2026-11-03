@@ -16,7 +16,7 @@ jobs:
     timeout-minutes: 35
     strategy:
       matrix:
-        source: ['41634684988', '41341468260']
+        source: ['41670031050']
     env:
       SOURCE_RUN: ${{ inputs.source_run_id || matrix.source }}
       GH_TOKEN: ${{ github.token }}
@@ -54,5 +54,5 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: encoded-output-inspection-${{ matrix.source }}
-          path: review/
+          path: inspection/
           retention-days: 7

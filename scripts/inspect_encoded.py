@@ -12,4 +12,6 @@ for i,at in selected:
     dest=folder/f'shot-{i:03d}-t{at:07.2f}.jpg'
     subprocess.run(['ffmpeg','-v','error','-y','-ss',str(at),'-i',str(p/'video.mp4'),'-frames:v','1','-vf','scale=960:-2',str(dest)],check=True)
     dest.with_suffix('.jpg.b64').write_text(base64.b64encode(dest.read_bytes()).decode())
+for thumbnail in p.glob('thumbnail-*.jpg'):
+    (folder/(thumbnail.name+'.b64')).write_text(base64.b64encode(thumbnail.read_bytes()).decode())
 (p/'inspection.json').write_text(json.dumps({'source':'decoded final MP4','selected':selected,'pose_usage':json.loads((p/'quality_report.json').read_text())['pose_usage']},indent=2))
