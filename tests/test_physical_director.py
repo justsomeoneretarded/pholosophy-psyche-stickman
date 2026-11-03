@@ -22,3 +22,13 @@ def test_recipient_does_not_copy_the_givers_action():
     s=direct_beat({'who':['alex','sam'],'where':'cafe','what_happens':'Alex shows sketch to Sam.'},V)[0]
     assert s['actors'][0]['pose']=='show'
     assert s['actors'][1]['pose'] in {'sit','stand'}
+
+def test_walk_continues_from_previous_shot_endpoint():
+    shots=direct_beat({'who':['alex'],'where':'street','seconds':10,'what_happens':'Alex walks toward the café.'},V)
+    assert shots[1]['actors'][0]['x']==shots[0]['actors'][0]['to']
+def test_extra_narration_angle_does_not_replay_a_walk():
+    from story.essay import place_narration
+    shots=[{'dur':3,'set':'park','actors':[{'id':'alex','pose':'walk','x':20,'to':40}],'camera':{'frame':'wide'}}]
+    result=place_narration({'who':['alex'],'narration':['He walks to the bench.','He waits for an answer.']},shots)
+    assert result[1]['actors'][0]['x']==40
+    assert result[1]['actors'][0]['pose']=='stand'

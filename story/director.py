@@ -99,6 +99,11 @@ def direct_beat(beat,vocab):
               "camera":{"frame":"two" if len(who)>1 else ("wide" if phase==0 else "medium"),"on":who[0],"push":.025},
               "actors":actors,"lines":[]}
         if phase==0: shot["lines"]=copy.deepcopy(beat.get("dialogue") or [])
+        if shots:
+            prior={a["id"]:a for a in shots[-1]["actors"]}
+            for actor in actors:
+                before=prior.get(actor["id"],{})
+                actor["x"]=before.get("to",before.get("x",actor["x"]))
         shot["acting_changes"]=apply_performance(shot,beat,phase)
         shots.append(shot)
     return shots

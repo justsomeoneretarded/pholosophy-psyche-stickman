@@ -406,6 +406,11 @@ def place_narration(beat, shots):
                 base['actors'] = [{'id': lead(beat), 'x': 50, 'pose': 'stand', 'mood': beat.get('emotion', 'neutral')}]
         on = (base.get('actors') or [{}])[0].get('id', lead(beat))
         base['camera'] = {'frame': nxt, 'on': on, 'push': .05}
+        # Continue from the preceding physical endpoint when extending narration.
+        # Replaying x->to would teleport the actor backward at every new angle.
+        for actor in base.get('actors') or []:
+            if actor.get('pose') in ('walk','run') and 'to' in actor:
+                actor['x']=actor.pop('to');actor['pose']='stand'
         base['lines'] = []
         shots.insert(shots.index(visual[-1]) + 1, base)
         visual.append(base)
