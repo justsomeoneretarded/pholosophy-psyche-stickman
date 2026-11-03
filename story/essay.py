@@ -570,6 +570,11 @@ def stage_merge(out_dir, out_path):
         film['sources'] = json.loads((out / 'sources.json').read_text())
     from story.director import enrich_film
     film = enrich_film(film,sheet)
+    film['editorial_origin']=sheet.get('_editorial_origin')
+    review_file=out/'editorial-review.json'
+    if review_file.exists():
+        history=json.loads(review_file.read_text());last=history[-1]
+        film['script_review']={'reviewer':last.get('reviewer'),'issues':last['review']['issues'],'major_findings_resolved':not any(issue.get('severity')=='major' for issue in last['review']['issues'])}
     film, notes = repair(film)
     Path(out_path).parent.mkdir(parents=True, exist_ok=True)
     Path(out_path).write_text(json.dumps(film, indent=1, ensure_ascii=False))

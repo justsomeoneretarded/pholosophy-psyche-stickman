@@ -1,0 +1,42 @@
+name: Produce the AI editorial revision
+on:
+  workflow_dispatch:
+  push:
+    paths: ['.github/workflows/editorial-production.yml']
+permissions:
+  contents: write
+  actions: read
+jobs:
+  review:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    env:
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -q -r requirements-core.txt
+      - uses: actions/download-artifact@v4
+        with:
+          name: film-plan
+          run-id: '41671268205'
+          github-token: ${{ github.token }}
+          path: build
+      - name: Independently review the revision and compile supported performances
+        run: python scripts/prepare_reviewed_episode.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: independent-topic-writing
+          path: build/
+          retention-days: 7
+  produce:
+    needs: review
+    uses: ./.github/workflows/generate-video.yml
+    with:
+      title: Why Smart People Overthink Everything
+      duration_minutes: '6'
+      plan_source_run: ${{ github.run_id }}
+    secrets: inherit
