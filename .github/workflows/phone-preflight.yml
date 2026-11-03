@@ -1,0 +1,60 @@
+name: Preflight the accepted phone scenes
+on:
+  workflow_dispatch:
+  push:
+    paths: ['.github/workflows/phone-preflight.yml']
+permissions:
+  contents: write
+  actions: read
+jobs:
+  inspect:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: film-plan
+          run-id: '41678117704'
+          github-token: ${{ github.token }}
+          path: build
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install production renderer
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+          sudo apt-get install -y -qq ffmpeg >/dev/null
+      - name: Sample the real phone compositor
+        run: |
+          mkdir -p preflight/frames
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          f=json.load(open('build/film.json'));t=0;times=[];first=None
+          for shot in f['shots']:
+              if shot.get('camera',{}).get('frame')=='phone':
+                  if first is None:first=t
+                  times.extend([t+2,t+min(7,shot['dur']-.5)])
+              t+=shot['dur']
+          assert first is not None
+          with open('preflight.env','w') as out:
+              out.write('TIMES='+','.join(map(str,times))+'\nSTART='+str(first)+'\nEND='+str(first+8)+'\n')
+          PY
+          source preflight.env
+          node render/render.mjs --film build/film.json --stills preflight/frames --times "$TIMES" --width 1280
+          node render/render.mjs --film build/film.json --out preflight/phone.mp4 --start "$START" --end "$END" --width 1920 --fps 30
+          python - <<'PY'
+          import base64
+          from pathlib import Path
+          for p in Path('preflight/frames').glob('*.jpg'):p.with_suffix('.jpg.b64').write_text(base64.b64encode(p.read_bytes()).decode())
+          PY
+          echo 'Production-engine phone compositor preflight before voice fitting; not the final master.' > preflight/REVIEW_STATUS.txt
+      - name: Publish inspection
+        run: bash scripts/publish_review.sh preflight "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" "$GITHUB_RUN_ID" "$RUNNER_TEMP/phone-publisher"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: phone-compositor-preflight
+          path: preflight/
+          retention-days: 7
