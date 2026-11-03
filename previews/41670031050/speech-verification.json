@@ -1,0 +1,7010 @@
+{
+  "passed": true,
+  "clips": [
+    {
+      "shot": 0,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-000-0-a.wav",
+      "expected": "A close\u2011up of Alex\u2019s thumb hovering over the send button, the screen flashing the same three drafts.",
+      "agreement": 0.8889,
+      "words": [
+        {
+          "word": "A",
+          "start": 0.0,
+          "end": 0.08
+        },
+        {
+          "word": "close",
+          "start": 0.08,
+          "end": 0.24
+        },
+        {
+          "word": "-up",
+          "start": 0.24,
+          "end": 0.52
+        },
+        {
+          "word": "of",
+          "start": 0.52,
+          "end": 0.64
+        },
+        {
+          "word": "Alex's",
+          "start": 0.64,
+          "end": 1.18
+        },
+        {
+          "word": "thumb",
+          "start": 1.18,
+          "end": 1.48
+        },
+        {
+          "word": "hovering",
+          "start": 1.48,
+          "end": 1.74
+        },
+        {
+          "word": "over",
+          "start": 1.74,
+          "end": 2.18
+        },
+        {
+          "word": "the",
+          "start": 2.18,
+          "end": 2.32
+        },
+        {
+          "word": "Send",
+          "start": 2.32,
+          "end": 2.52
+        },
+        {
+          "word": "button",
+          "start": 2.52,
+          "end": 2.94
+        },
+        {
+          "word": "to",
+          "start": 2.94,
+          "end": 3.4
+        },
+        {
+          "word": "screen",
+          "start": 3.4,
+          "end": 3.66
+        },
+        {
+          "word": "fleshing",
+          "start": 3.66,
+          "end": 4.28
+        },
+        {
+          "word": "the",
+          "start": 4.28,
+          "end": 4.44
+        },
+        {
+          "word": "same",
+          "start": 4.44,
+          "end": 4.66
+        },
+        {
+          "word": "three",
+          "start": 4.66,
+          "end": 4.96
+        },
+        {
+          "word": "drafts.",
+          "start": 4.96,
+          "end": 5.26
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 1,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-001-0-a.wav",
+      "expected": "Alex watches the coffee steam swirl, feeling the weight of the unfinished words.",
+      "agreement": 0.9231,
+      "words": [
+        {
+          "word": "Alex",
+          "start": 0.0,
+          "end": 0.24
+        },
+        {
+          "word": "watches",
+          "start": 0.24,
+          "end": 0.7
+        },
+        {
+          "word": "the",
+          "start": 0.7,
+          "end": 0.98
+        },
+        {
+          "word": "coffee",
+          "start": 0.98,
+          "end": 1.16
+        },
+        {
+          "word": "steam",
+          "start": 1.16,
+          "end": 1.52
+        },
+        {
+          "word": "swell,",
+          "start": 1.52,
+          "end": 1.88
+        },
+        {
+          "word": "feeling",
+          "start": 2.3,
+          "end": 2.6
+        },
+        {
+          "word": "the",
+          "start": 2.6,
+          "end": 2.84
+        },
+        {
+          "word": "weight",
+          "start": 2.84,
+          "end": 3.04
+        },
+        {
+          "word": "of",
+          "start": 3.04,
+          "end": 3.34
+        },
+        {
+          "word": "the",
+          "start": 3.34,
+          "end": 3.46
+        },
+        {
+          "word": "unfinished",
+          "start": 3.46,
+          "end": 3.94
+        },
+        {
+          "word": "words.",
+          "start": 3.94,
+          "end": 4.46
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 2,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-002-0-a.wav",
+      "expected": "He wonders if rehearsing the same reply will ever become a clear answer.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "he",
+          "start": 0.0,
+          "end": 0.1
+        },
+        {
+          "word": "wonders",
+          "start": 0.1,
+          "end": 0.36
+        },
+        {
+          "word": "if",
+          "start": 0.36,
+          "end": 0.64
+        },
+        {
+          "word": "rehearsing",
+          "start": 0.64,
+          "end": 1.22
+        },
+        {
+          "word": "the",
+          "start": 1.22,
+          "end": 1.34
+        },
+        {
+          "word": "same",
+          "start": 1.34,
+          "end": 1.54
+        },
+        {
+          "word": "reply",
+          "start": 1.54,
+          "end": 1.88
+        },
+        {
+          "word": "will",
+          "start": 1.88,
+          "end": 2.16
+        },
+        {
+          "word": "ever",
+          "start": 2.16,
+          "end": 2.4
+        },
+        {
+          "word": "become",
+          "start": 2.4,
+          "end": 2.82
+        },
+        {
+          "word": "a",
+          "start": 2.82,
+          "end": 2.96
+        },
+        {
+          "word": "clear",
+          "start": 2.96,
+          "end": 3.18
+        },
+        {
+          "word": "answer.",
+          "start": 3.18,
+          "end": 3.62
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 3,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-003-0-a.wav",
+      "expected": "He watches the coffee steam swirl, the screen glowing with his half\u2011written reply.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "He",
+          "start": 0.0,
+          "end": 0.08
+        },
+        {
+          "word": "watches",
+          "start": 0.08,
+          "end": 0.4
+        },
+        {
+          "word": "the",
+          "start": 0.4,
+          "end": 0.72
+        },
+        {
+          "word": "coffee",
+          "start": 0.72,
+          "end": 0.86
+        },
+        {
+          "word": "steam",
+          "start": 0.86,
+          "end": 1.3
+        },
+        {
+          "word": "swirl,",
+          "start": 1.3,
+          "end": 1.66
+        },
+        {
+          "word": "the",
+          "start": 2.14,
+          "end": 2.28
+        },
+        {
+          "word": "screen",
+          "start": 2.28,
+          "end": 2.58
+        },
+        {
+          "word": "glowing",
+          "start": 2.58,
+          "end": 3.04
+        },
+        {
+          "word": "with",
+          "start": 3.04,
+          "end": 3.34
+        },
+        {
+          "word": "his",
+          "start": 3.34,
+          "end": 3.48
+        },
+        {
+          "word": "half",
+          "start": 3.48,
+          "end": 3.7
+        },
+        {
+          "word": "-written",
+          "start": 3.7,
+          "end": 4.0
+        },
+        {
+          "word": "reply.",
+          "start": 4.0,
+          "end": 4.52
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 4,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-004-0-a.wav",
+      "expected": "A quick glance at the chat shows his friend\u2019s last line was ambiguous, sparking a fresh question rather than another loop.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "A",
+          "start": 0.0,
+          "end": 0.1
+        },
+        {
+          "word": "quick",
+          "start": 0.1,
+          "end": 0.32
+        },
+        {
+          "word": "glance",
+          "start": 0.32,
+          "end": 0.62
+        },
+        {
+          "word": "at",
+          "start": 0.62,
+          "end": 0.88
+        },
+        {
+          "word": "the",
+          "start": 0.88,
+          "end": 0.98
+        },
+        {
+          "word": "chat",
+          "start": 0.98,
+          "end": 1.16
+        },
+        {
+          "word": "shows",
+          "start": 1.16,
+          "end": 1.64
+        },
+        {
+          "word": "his",
+          "start": 1.64,
+          "end": 1.82
+        },
+        {
+          "word": "friend's",
+          "start": 1.82,
+          "end": 2.36
+        },
+        {
+          "word": "last",
+          "start": 2.36,
+          "end": 2.52
+        },
+        {
+          "word": "line",
+          "start": 2.52,
+          "end": 3.02
+        },
+        {
+          "word": "was",
+          "start": 3.02,
+          "end": 3.24
+        },
+        {
+          "word": "ambiguous,",
+          "start": 3.24,
+          "end": 3.66
+        },
+        {
+          "word": "sparking",
+          "start": 4.4,
+          "end": 4.68
+        },
+        {
+          "word": "a",
+          "start": 4.68,
+          "end": 5.04
+        },
+        {
+          "word": "fresh",
+          "start": 5.04,
+          "end": 5.34
+        },
+        {
+          "word": "question",
+          "start": 5.34,
+          "end": 5.86
+        },
+        {
+          "word": "rather",
+          "start": 5.86,
+          "end": 6.16
+        },
+        {
+          "word": "than",
+          "start": 6.16,
+          "end": 6.46
+        },
+        {
+          "word": "another",
+          "start": 6.46,
+          "end": 6.68
+        },
+        {
+          "word": "loop.",
+          "start": 6.68,
+          "end": 7.0
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 5,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-005-0-a.wav",
+      "expected": "Alex types a concise apology, then pauses, realizing he\u2019s merely replaying the same worry instead of checking his friend\u2019s last reply.",
+      "agreement": 0.9524,
+      "words": [
+        {
+          "word": "Alex",
+          "start": 0.0,
+          "end": 0.16
+        },
+        {
+          "word": "types",
+          "start": 0.16,
+          "end": 0.48
+        },
+        {
+          "word": "of",
+          "start": 0.48,
+          "end": 0.68
+        },
+        {
+          "word": "concise",
+          "start": 0.68,
+          "end": 1.02
+        },
+        {
+          "word": "apology,",
+          "start": 1.02,
+          "end": 1.68
+        },
+        {
+          "word": "then",
+          "start": 2.22,
+          "end": 2.22
+        },
+        {
+          "word": "pauses,",
+          "start": 2.22,
+          "end": 2.54
+        },
+        {
+          "word": "realizing",
+          "start": 3.1,
+          "end": 3.42
+        },
+        {
+          "word": "he's",
+          "start": 3.42,
+          "end": 3.96
+        },
+        {
+          "word": "merely",
+          "start": 3.96,
+          "end": 4.18
+        },
+        {
+          "word": "replaying",
+          "start": 4.18,
+          "end": 4.86
+        },
+        {
+          "word": "the",
+          "start": 4.86,
+          "end": 5.08
+        },
+        {
+          "word": "same",
+          "start": 5.08,
+          "end": 5.3
+        },
+        {
+          "word": "worry",
+          "start": 5.3,
+          "end": 5.66
+        },
+        {
+          "word": "instead",
+          "start": 5.66,
+          "end": 6.12
+        },
+        {
+          "word": "of",
+          "start": 6.12,
+          "end": 6.28
+        },
+        {
+          "word": "checking",
+          "start": 6.28,
+          "end": 6.48
+        },
+        {
+          "word": "his",
+          "start": 6.48,
+          "end": 6.78
+        },
+        {
+          "word": "friend's",
+          "start": 6.78,
+          "end": 7.24
+        },
+        {
+          "word": "last",
+          "start": 7.24,
+          "end": 7.4
+        },
+        {
+          "word": "reply.",
+          "start": 7.4,
+          "end": 7.88
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 6,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-006-0-a.wav",
+      "expected": "He deletes the extra lines, adds a question that actually asks for the missing detail, and sends it, breaking the rumination loop.",
+      "agreement": 0.8636,
+      "words": [
+        {
+          "word": "It",
+          "start": 0.0,
+          "end": 0.1
+        },
+        {
+          "word": "leads",
+          "start": 0.1,
+          "end": 0.24
+        },
+        {
+          "word": "the",
+          "start": 0.24,
+          "end": 0.48
+        },
+        {
+          "word": "extra",
+          "start": 0.48,
+          "end": 0.68
+        },
+        {
+          "word": "lines",
+          "start": 0.68,
+          "end": 1.04
+        },
+        {
+          "word": "and",
+          "start": 1.04,
+          "end": 1.6
+        },
+        {
+          "word": "a",
+          "start": 1.6,
+          "end": 1.72
+        },
+        {
+          "word": "question",
+          "start": 1.72,
+          "end": 2.1
+        },
+        {
+          "word": "that",
+          "start": 2.1,
+          "end": 2.42
+        },
+        {
+          "word": "actually",
+          "start": 2.42,
+          "end": 2.72
+        },
+        {
+          "word": "asks",
+          "start": 2.72,
+          "end": 3.26
+        },
+        {
+          "word": "for",
+          "start": 3.26,
+          "end": 3.6
+        },
+        {
+          "word": "the",
+          "start": 3.6,
+          "end": 3.66
+        },
+        {
+          "word": "missing",
+          "start": 3.66,
+          "end": 3.98
+        },
+        {
+          "word": "detail",
+          "start": 3.98,
+          "end": 4.4
+        },
+        {
+          "word": "and",
+          "start": 4.4,
+          "end": 5.08
+        },
+        {
+          "word": "sends",
+          "start": 5.08,
+          "end": 5.36
+        },
+        {
+          "word": "it,",
+          "start": 5.36,
+          "end": 5.7
+        },
+        {
+          "word": "breaking",
+          "start": 6.0,
+          "end": 6.44
+        },
+        {
+          "word": "the",
+          "start": 6.44,
+          "end": 6.78
+        },
+        {
+          "word": "rumination",
+          "start": 6.78,
+          "end": 7.18
+        },
+        {
+          "word": "loop.",
+          "start": 7.18,
+          "end": 7.68
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 7,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-007-0-a.wav",
+      "expected": "Alex types a sentence, deletes it, and feels the same doubt looping back.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "Alex",
+          "start": 0.0,
+          "end": 0.2
+        },
+        {
+          "word": "types",
+          "start": 0.2,
+          "end": 0.46
+        },
+        {
+          "word": "a",
+          "start": 0.46,
+          "end": 0.72
+        },
+        {
+          "word": "sentence,",
+          "start": 0.72,
+          "end": 1.14
+        },
+        {
+          "word": "deletes",
+          "start": 1.46,
+          "end": 1.88
+        },
+        {
+          "word": "it",
+          "start": 1.88,
+          "end": 1.98
+        },
+        {
+          "word": "and",
+          "start": 1.98,
+          "end": 2.18
+        },
+        {
+          "word": "feels",
+          "start": 2.18,
+          "end": 2.42
+        },
+        {
+          "word": "the",
+          "start": 2.42,
+          "end": 2.7
+        },
+        {
+          "word": "same",
+          "start": 2.7,
+          "end": 2.94
+        },
+        {
+          "word": "doubt",
+          "start": 2.94,
+          "end": 3.34
+        },
+        {
+          "word": "looping",
+          "start": 3.34,
+          "end": 3.94
+        },
+        {
+          "word": "back.",
+          "start": 3.94,
+          "end": 4.22
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 8,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-008-0-a.wav",
+      "expected": "He realizes he's not gathering any new facts, just rehearsing the same worry.",
+      "agreement": 0.9231,
+      "words": [
+        {
+          "word": "He",
+          "start": 0.0,
+          "end": 0.1
+        },
+        {
+          "word": "realises",
+          "start": 0.1,
+          "end": 0.58
+        },
+        {
+          "word": "he's",
+          "start": 0.58,
+          "end": 0.92
+        },
+        {
+          "word": "not",
+          "start": 0.92,
+          "end": 1.14
+        },
+        {
+          "word": "gathering",
+          "start": 1.14,
+          "end": 1.56
+        },
+        {
+          "word": "any",
+          "start": 1.56,
+          "end": 1.94
+        },
+        {
+          "word": "new",
+          "start": 1.94,
+          "end": 2.28
+        },
+        {
+          "word": "facts,",
+          "start": 2.28,
+          "end": 2.5
+        },
+        {
+          "word": "just",
+          "start": 3.22,
+          "end": 3.22
+        },
+        {
+          "word": "rehearsing",
+          "start": 3.22,
+          "end": 3.92
+        },
+        {
+          "word": "the",
+          "start": 3.92,
+          "end": 4.04
+        },
+        {
+          "word": "same",
+          "start": 4.04,
+          "end": 4.26
+        },
+        {
+          "word": "worry.",
+          "start": 4.26,
+          "end": 4.6
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 9,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-009-0-a.wav",
+      "expected": "He stops, looks at his phone, and decides a walk outside might break the cycle.",
+      "agreement": 0.9333,
+      "words": [
+        {
+          "word": "He",
+          "start": 0.0,
+          "end": 0.08
+        },
+        {
+          "word": "stops,",
+          "start": 0.08,
+          "end": 0.38
+        },
+        {
+          "word": "looks",
+          "start": 0.76,
+          "end": 1.02
+        },
+        {
+          "word": "at",
+          "start": 1.02,
+          "end": 1.24
+        },
+        {
+          "word": "his",
+          "start": 1.24,
+          "end": 1.34
+        },
+        {
+          "word": "fan,",
+          "start": 1.34,
+          "end": 1.56
+        },
+        {
+          "word": "and",
+          "start": 2.02,
+          "end": 2.18
+        },
+        {
+          "word": "decides",
+          "start": 2.18,
+          "end": 2.42
+        },
+        {
+          "word": "a",
+          "start": 2.42,
+          "end": 2.68
+        },
+        {
+          "word": "walk",
+          "start": 2.68,
+          "end": 2.88
+        },
+        {
+          "word": "outside",
+          "start": 2.88,
+          "end": 3.26
+        },
+        {
+          "word": "might",
+          "start": 3.26,
+          "end": 3.7
+        },
+        {
+          "word": "break",
+          "start": 3.7,
+          "end": 3.98
+        },
+        {
+          "word": "the",
+          "start": 3.98,
+          "end": 4.18
+        },
+        {
+          "word": "cycle.",
+          "start": 4.18,
+          "end": 4.52
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 10,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-010-0-a.wav",
+      "expected": "Alex leaves the cafe, walks toward the park, rehearsing the same apology silently.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "Alex",
+          "start": 0.0,
+          "end": 0.22
+        },
+        {
+          "word": "leaves",
+          "start": 0.22,
+          "end": 0.56
+        },
+        {
+          "word": "the",
+          "start": 0.56,
+          "end": 0.82
+        },
+        {
+          "word": "cafe,",
+          "start": 0.82,
+          "end": 1.04
+        },
+        {
+          "word": "walks",
+          "start": 1.58,
+          "end": 1.8
+        },
+        {
+          "word": "toward",
+          "start": 1.8,
+          "end": 2.08
+        },
+        {
+          "word": "the",
+          "start": 2.08,
+          "end": 2.24
+        },
+        {
+          "word": "park,",
+          "start": 2.24,
+          "end": 2.48
+        },
+        {
+          "word": "rehearsing",
+          "start": 2.84,
+          "end": 3.4
+        },
+        {
+          "word": "the",
+          "start": 3.4,
+          "end": 3.5
+        },
+        {
+          "word": "same",
+          "start": 3.5,
+          "end": 3.8
+        },
+        {
+          "word": "apology",
+          "start": 3.8,
+          "end": 4.24
+        },
+        {
+          "word": "silently.",
+          "start": 4.24,
+          "end": 4.7
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 11,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-011-0-a.wav",
+      "expected": "He stops, looks up, and decides to ask directly, ending the mental loop.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "He",
+          "start": 0.0,
+          "end": 0.12
+        },
+        {
+          "word": "stops,",
+          "start": 0.12,
+          "end": 0.44
+        },
+        {
+          "word": "looks",
+          "start": 0.44,
+          "end": 1.06
+        },
+        {
+          "word": "up",
+          "start": 1.06,
+          "end": 1.32
+        },
+        {
+          "word": "and",
+          "start": 1.32,
+          "end": 1.68
+        },
+        {
+          "word": "decides",
+          "start": 1.68,
+          "end": 1.94
+        },
+        {
+          "word": "to",
+          "start": 1.94,
+          "end": 2.24
+        },
+        {
+          "word": "ask",
+          "start": 2.24,
+          "end": 2.56
+        },
+        {
+          "word": "directly,",
+          "start": 2.56,
+          "end": 2.94
+        },
+        {
+          "word": "ending",
+          "start": 3.4,
+          "end": 3.6
+        },
+        {
+          "word": "the",
+          "start": 3.6,
+          "end": 3.86
+        },
+        {
+          "word": "mental",
+          "start": 3.86,
+          "end": 4.0
+        },
+        {
+          "word": "loop.",
+          "start": 4.0,
+          "end": 4.54
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 12,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-012-0-a.wav",
+      "expected": "The dark silhouette repeats the same three drafts, each variation ending with the same doubt, showing how rumination stalls progress.",
+      "agreement": 0.95,
+      "words": [
+        {
+          "word": "The",
+          "start": 0.0,
+          "end": 0.1
+        },
+        {
+          "word": "dot",
+          "start": 0.1,
+          "end": 0.38
+        },
+        {
+          "word": "silhouette",
+          "start": 0.38,
+          "end": 0.64
+        },
+        {
+          "word": "repeats",
+          "start": 0.64,
+          "end": 1.18
+        },
+        {
+          "word": "the",
+          "start": 1.18,
+          "end": 1.5
+        },
+        {
+          "word": "same",
+          "start": 1.5,
+          "end": 1.72
+        },
+        {
+          "word": "three",
+          "start": 1.72,
+          "end": 1.98
+        },
+        {
+          "word": "drafts,",
+          "start": 1.98,
+          "end": 2.34
+        },
+        {
+          "word": "each",
+          "start": 3.02,
+          "end": 3.06
+        },
+        {
+          "word": "variation",
+          "start": 3.06,
+          "end": 3.52
+        },
+        {
+          "word": "ending",
+          "start": 3.52,
+          "end": 4.12
+        },
+        {
+          "word": "with",
+          "start": 4.12,
+          "end": 4.44
+        },
+        {
+          "word": "the",
+          "start": 4.44,
+          "end": 4.58
+        },
+        {
+          "word": "same",
+          "start": 4.58,
+          "end": 4.8
+        },
+        {
+          "word": "doubt,",
+          "start": 4.8,
+          "end": 5.18
+        },
+        {
+          "word": "showing",
+          "start": 5.56,
+          "end": 5.98
+        },
+        {
+          "word": "how",
+          "start": 5.98,
+          "end": 6.24
+        },
+        {
+          "word": "rumination",
+          "start": 6.24,
+          "end": 6.68
+        },
+        {
+          "word": "stalls",
+          "start": 6.68,
+          "end": 7.28
+        },
+        {
+          "word": "progress.",
+          "start": 7.28,
+          "end": 7.8
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 13,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-013-0-a.wav",
+      "expected": "Recognizing the loop lets Alex see that no new insight is gained, so he can step out of the cycle and act.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "Recognizing",
+          "start": 0.0,
+          "end": 0.66
+        },
+        {
+          "word": "the",
+          "start": 0.66,
+          "end": 0.84
+        },
+        {
+          "word": "loop",
+          "start": 0.84,
+          "end": 1.12
+        },
+        {
+          "word": "lets",
+          "start": 1.12,
+          "end": 1.64
+        },
+        {
+          "word": "Alex",
+          "start": 1.64,
+          "end": 1.92
+        },
+        {
+          "word": "see",
+          "start": 1.92,
+          "end": 2.32
+        },
+        {
+          "word": "that",
+          "start": 2.32,
+          "end": 2.56
+        },
+        {
+          "word": "no",
+          "start": 2.56,
+          "end": 2.86
+        },
+        {
+          "word": "new",
+          "start": 2.86,
+          "end": 3.16
+        },
+        {
+          "word": "insight",
+          "start": 3.16,
+          "end": 3.64
+        },
+        {
+          "word": "is",
+          "start": 3.64,
+          "end": 3.98
+        },
+        {
+          "word": "gained",
+          "start": 3.98,
+          "end": 4.2
+        },
+        {
+          "word": "so",
+          "start": 4.2,
+          "end": 4.86
+        },
+        {
+          "word": "he",
+          "start": 4.86,
+          "end": 5.02
+        },
+        {
+          "word": "can",
+          "start": 5.02,
+          "end": 5.14
+        },
+        {
+          "word": "step",
+          "start": 5.14,
+          "end": 5.4
+        },
+        {
+          "word": "out",
+          "start": 5.4,
+          "end": 5.64
+        },
+        {
+          "word": "of",
+          "start": 5.64,
+          "end": 5.76
+        },
+        {
+          "word": "the",
+          "start": 5.76,
+          "end": 5.86
+        },
+        {
+          "word": "cycle",
+          "start": 5.86,
+          "end": 6.18
+        },
+        {
+          "word": "and",
+          "start": 6.18,
+          "end": 6.42
+        },
+        {
+          "word": "act.",
+          "start": 6.42,
+          "end": 6.72
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 14,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-014-0-a.wav",
+      "expected": "Alex types a draft, each sentence circling the same doubt as the demon watches.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "Alex",
+          "start": 0.0,
+          "end": 0.22
+        },
+        {
+          "word": "types",
+          "start": 0.22,
+          "end": 0.62
+        },
+        {
+          "word": "a",
+          "start": 0.62,
+          "end": 0.9
+        },
+        {
+          "word": "draft,",
+          "start": 0.9,
+          "end": 1.08
+        },
+        {
+          "word": "each",
+          "start": 1.7,
+          "end": 1.82
+        },
+        {
+          "word": "sentence",
+          "start": 1.82,
+          "end": 2.26
+        },
+        {
+          "word": "circling",
+          "start": 2.26,
+          "end": 2.78
+        },
+        {
+          "word": "the",
+          "start": 2.78,
+          "end": 3.18
+        },
+        {
+          "word": "same",
+          "start": 3.18,
+          "end": 3.48
+        },
+        {
+          "word": "doubt",
+          "start": 3.48,
+          "end": 3.82
+        },
+        {
+          "word": "as",
+          "start": 3.82,
+          "end": 4.16
+        },
+        {
+          "word": "the",
+          "start": 4.16,
+          "end": 4.26
+        },
+        {
+          "word": "demon",
+          "start": 4.26,
+          "end": 4.54
+        },
+        {
+          "word": "watches.",
+          "start": 4.54,
+          "end": 4.96
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 15,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-015-0-a.wav",
+      "expected": "He notices no new insight, then sends a clear, honest apology to friend.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "He",
+          "start": 0.0,
+          "end": 0.12
+        },
+        {
+          "word": "notices",
+          "start": 0.12,
+          "end": 0.5
+        },
+        {
+          "word": "no",
+          "start": 0.5,
+          "end": 0.94
+        },
+        {
+          "word": "new",
+          "start": 0.94,
+          "end": 1.16
+        },
+        {
+          "word": "insight,",
+          "start": 1.16,
+          "end": 1.64
+        },
+        {
+          "word": "then",
+          "start": 2.0,
+          "end": 2.16
+        },
+        {
+          "word": "sends",
+          "start": 2.16,
+          "end": 2.4
+        },
+        {
+          "word": "a",
+          "start": 2.4,
+          "end": 2.66
+        },
+        {
+          "word": "clear,",
+          "start": 2.66,
+          "end": 2.96
+        },
+        {
+          "word": "honest",
+          "start": 2.96,
+          "end": 3.52
+        },
+        {
+          "word": "apology",
+          "start": 3.52,
+          "end": 3.9
+        },
+        {
+          "word": "to",
+          "start": 3.9,
+          "end": 4.38
+        },
+        {
+          "word": "friend.",
+          "start": 4.38,
+          "end": 4.64
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 16,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-016-0-a.wav",
+      "expected": "He walks down the street, rereading each draft without finding new information, illustrating how rumination repeats the same doubts.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "He",
+          "start": 0.0,
+          "end": 0.08
+        },
+        {
+          "word": "walks",
+          "start": 0.08,
+          "end": 0.26
+        },
+        {
+          "word": "down",
+          "start": 0.26,
+          "end": 0.54
+        },
+        {
+          "word": "the",
+          "start": 0.54,
+          "end": 0.68
+        },
+        {
+          "word": "street,",
+          "start": 0.68,
+          "end": 1.0
+        },
+        {
+          "word": "rereading",
+          "start": 1.38,
+          "end": 1.84
+        },
+        {
+          "word": "each",
+          "start": 1.84,
+          "end": 2.34
+        },
+        {
+          "word": "draft",
+          "start": 2.34,
+          "end": 2.66
+        },
+        {
+          "word": "without",
+          "start": 2.66,
+          "end": 2.98
+        },
+        {
+          "word": "finding",
+          "start": 2.98,
+          "end": 3.58
+        },
+        {
+          "word": "new",
+          "start": 3.58,
+          "end": 3.92
+        },
+        {
+          "word": "information,",
+          "start": 3.92,
+          "end": 4.66
+        },
+        {
+          "word": "illustrating",
+          "start": 5.0,
+          "end": 5.44
+        },
+        {
+          "word": "how",
+          "start": 5.44,
+          "end": 5.86
+        },
+        {
+          "word": "rumination",
+          "start": 5.86,
+          "end": 6.48
+        },
+        {
+          "word": "repeats",
+          "start": 6.48,
+          "end": 6.98
+        },
+        {
+          "word": "the",
+          "start": 6.98,
+          "end": 7.36
+        },
+        {
+          "word": "same",
+          "start": 7.36,
+          "end": 7.56
+        },
+        {
+          "word": "doubts.",
+          "start": 7.56,
+          "end": 7.96
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 17,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-017-0-a.wav",
+      "expected": "The motion shows that physical movement alone doesn\u2019t replace gathering fresh perspectives, so the loop persists.",
+      "agreement": 0.9412,
+      "words": [
+        {
+          "word": "The",
+          "start": 0.0,
+          "end": 0.08
+        },
+        {
+          "word": "motion",
+          "start": 0.08,
+          "end": 0.24
+        },
+        {
+          "word": "shows",
+          "start": 0.24,
+          "end": 0.62
+        },
+        {
+          "word": "the",
+          "start": 0.62,
+          "end": 0.84
+        },
+        {
+          "word": "physical",
+          "start": 0.84,
+          "end": 1.16
+        },
+        {
+          "word": "movement",
+          "start": 1.16,
+          "end": 1.64
+        },
+        {
+          "word": "alone",
+          "start": 1.64,
+          "end": 2.0
+        },
+        {
+          "word": "doesn't",
+          "start": 2.0,
+          "end": 2.58
+        },
+        {
+          "word": "replace",
+          "start": 2.58,
+          "end": 2.84
+        },
+        {
+          "word": "gathering",
+          "start": 2.84,
+          "end": 3.24
+        },
+        {
+          "word": "fresh",
+          "start": 3.24,
+          "end": 3.6
+        },
+        {
+          "word": "perspectives,",
+          "start": 3.6,
+          "end": 4.08
+        },
+        {
+          "word": "so",
+          "start": 4.68,
+          "end": 4.76
+        },
+        {
+          "word": "the",
+          "start": 4.76,
+          "end": 4.92
+        },
+        {
+          "word": "loop",
+          "start": 4.92,
+          "end": 5.1
+        },
+        {
+          "word": "persists.",
+          "start": 5.1,
+          "end": 5.4
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 18,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-018-0-a.wav",
+      "expected": "He stops for a moment, phone in hand, the drafts still looping, but a hint of resolve appears as he thinks about reaching out for fresh input.",
+      "agreement": 0.9818,
+      "words": [
+        {
+          "word": "He",
+          "start": 0.0,
+          "end": 0.08
+        },
+        {
+          "word": "stops",
+          "start": 0.08,
+          "end": 0.26
+        },
+        {
+          "word": "for",
+          "start": 0.26,
+          "end": 0.56
+        },
+        {
+          "word": "a",
+          "start": 0.56,
+          "end": 0.66
+        },
+        {
+          "word": "moment,",
+          "start": 0.66,
+          "end": 0.98
+        },
+        {
+          "word": "phone",
+          "start": 1.32,
+          "end": 1.44
+        },
+        {
+          "word": "in",
+          "start": 1.44,
+          "end": 1.6
+        },
+        {
+          "word": "hand,",
+          "start": 1.6,
+          "end": 1.84
+        },
+        {
+          "word": "the",
+          "start": 2.3,
+          "end": 2.4
+        },
+        {
+          "word": "draft's",
+          "start": 2.4,
+          "end": 2.88
+        },
+        {
+          "word": "still",
+          "start": 2.88,
+          "end": 3.1
+        },
+        {
+          "word": "looping,",
+          "start": 3.1,
+          "end": 3.56
+        },
+        {
+          "word": "but",
+          "start": 3.76,
+          "end": 3.76
+        },
+        {
+          "word": "a",
+          "start": 3.76,
+          "end": 3.86
+        },
+        {
+          "word": "hint",
+          "start": 3.86,
+          "end": 4.1
+        },
+        {
+          "word": "of",
+          "start": 4.1,
+          "end": 4.28
+        },
+        {
+          "word": "resolve",
+          "start": 4.28,
+          "end": 4.7
+        },
+        {
+          "word": "appears",
+          "start": 4.7,
+          "end": 5.14
+        },
+        {
+          "word": "as",
+          "start": 5.14,
+          "end": 5.56
+        },
+        {
+          "word": "he",
+          "start": 5.56,
+          "end": 5.68
+        },
+        {
+          "word": "thinks",
+          "start": 5.68,
+          "end": 5.9
+        },
+        {
+          "word": "about",
+          "start": 5.9,
+          "end": 6.14
+        },
+        {
+          "word": "reaching",
+          "start": 6.14,
+          "end": 6.52
+        },
+        {
+          "word": "out",
+          "start": 6.52,
+          "end": 6.8
+        },
+        {
+          "word": "for",
+          "start": 6.8,
+          "end": 6.98
+        },
+        {
+          "word": "a",
+          "start": 6.98,
+          "end": 7.04
+        },
+        {
+          "word": "fresh",
+          "start": 7.04,
+          "end": 7.24
+        },
+        {
+          "word": "input.",
+          "start": 7.24,
+          "end": 7.72
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 20,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-020-0-a.wav",
+      "expected": "Alex tells his friend he\u2019s stuck replaying the same worries, not learning anything new, so his mind feels trapped in a loop.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "Alex",
+          "start": 0.0,
+          "end": 0.2
+        },
+        {
+          "word": "tells",
+          "start": 0.2,
+          "end": 0.48
+        },
+        {
+          "word": "his",
+          "start": 0.48,
+          "end": 0.74
+        },
+        {
+          "word": "friend",
+          "start": 0.74,
+          "end": 0.98
+        },
+        {
+          "word": "he's",
+          "start": 0.98,
+          "end": 1.28
+        },
+        {
+          "word": "stuck",
+          "start": 1.28,
+          "end": 1.52
+        },
+        {
+          "word": "replaying",
+          "start": 1.52,
+          "end": 2.04
+        },
+        {
+          "word": "the",
+          "start": 2.04,
+          "end": 2.24
+        },
+        {
+          "word": "same",
+          "start": 2.24,
+          "end": 2.46
+        },
+        {
+          "word": "worries,",
+          "start": 2.46,
+          "end": 2.82
+        },
+        {
+          "word": "not",
+          "start": 3.3,
+          "end": 3.52
+        },
+        {
+          "word": "learning",
+          "start": 3.52,
+          "end": 3.84
+        },
+        {
+          "word": "anything",
+          "start": 3.84,
+          "end": 4.28
+        },
+        {
+          "word": "new,",
+          "start": 4.28,
+          "end": 4.6
+        },
+        {
+          "word": "so",
+          "start": 5.02,
+          "end": 5.12
+        },
+        {
+          "word": "his",
+          "start": 5.12,
+          "end": 5.26
+        },
+        {
+          "word": "mind",
+          "start": 5.26,
+          "end": 5.54
+        },
+        {
+          "word": "feels",
+          "start": 5.54,
+          "end": 5.82
+        },
+        {
+          "word": "trapped",
+          "start": 5.82,
+          "end": 6.22
+        },
+        {
+          "word": "in",
+          "start": 6.22,
+          "end": 6.56
+        },
+        {
+          "word": "a",
+          "start": 6.56,
+          "end": 6.64
+        },
+        {
+          "word": "loop.",
+          "start": 6.64,
+          "end": 6.86
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 21,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-021-0-a.wav",
+      "expected": "His friend listens, asks for specifics, and gently points out that new information could break the cycle, showing the value of real dialogue.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "His",
+          "start": 0.0,
+          "end": 0.14
+        },
+        {
+          "word": "friend",
+          "start": 0.14,
+          "end": 0.32
+        },
+        {
+          "word": "listens,",
+          "start": 0.32,
+          "end": 0.64
+        },
+        {
+          "word": "asks",
+          "start": 1.6,
+          "end": 1.6
+        },
+        {
+          "word": "for",
+          "start": 1.6,
+          "end": 1.88
+        },
+        {
+          "word": "specifics",
+          "start": 1.88,
+          "end": 2.26
+        },
+        {
+          "word": "and",
+          "start": 2.26,
+          "end": 2.98
+        },
+        {
+          "word": "gently",
+          "start": 2.98,
+          "end": 3.3
+        },
+        {
+          "word": "points",
+          "start": 3.3,
+          "end": 3.84
+        },
+        {
+          "word": "out",
+          "start": 3.84,
+          "end": 4.14
+        },
+        {
+          "word": "that",
+          "start": 4.14,
+          "end": 4.36
+        },
+        {
+          "word": "new",
+          "start": 4.36,
+          "end": 4.6
+        },
+        {
+          "word": "information",
+          "start": 4.6,
+          "end": 5.04
+        },
+        {
+          "word": "could",
+          "start": 5.04,
+          "end": 5.72
+        },
+        {
+          "word": "break",
+          "start": 5.72,
+          "end": 5.92
+        },
+        {
+          "word": "the",
+          "start": 5.92,
+          "end": 6.1
+        },
+        {
+          "word": "cycle,",
+          "start": 6.1,
+          "end": 6.46
+        },
+        {
+          "word": "showing",
+          "start": 6.8,
+          "end": 7.1
+        },
+        {
+          "word": "the",
+          "start": 7.1,
+          "end": 7.4
+        },
+        {
+          "word": "value",
+          "start": 7.4,
+          "end": 7.76
+        },
+        {
+          "word": "of",
+          "start": 7.76,
+          "end": 7.98
+        },
+        {
+          "word": "real",
+          "start": 7.98,
+          "end": 8.12
+        },
+        {
+          "word": "dialogue.",
+          "start": 8.12,
+          "end": 8.88
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 22,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-022-0-a.wav",
+      "expected": "He lets the friend\u2019s point settle, recognizing that adding fresh details\u2014not re\u2011phrasing fear\u2014will break the loop.",
+      "agreement": 0.9189,
+      "words": [
+        {
+          "word": "he",
+          "start": 0.0,
+          "end": 0.08
+        },
+        {
+          "word": "lets",
+          "start": 0.08,
+          "end": 0.24
+        },
+        {
+          "word": "the",
+          "start": 0.24,
+          "end": 0.52
+        },
+        {
+          "word": "friend's",
+          "start": 0.52,
+          "end": 0.96
+        },
+        {
+          "word": "point",
+          "start": 0.96,
+          "end": 1.18
+        },
+        {
+          "word": "settle.",
+          "start": 1.18,
+          "end": 1.78
+        },
+        {
+          "word": "Recognizing",
+          "start": 2.46,
+          "end": 3.14
+        },
+        {
+          "word": "that",
+          "start": 3.14,
+          "end": 3.36
+        },
+        {
+          "word": "adding",
+          "start": 3.36,
+          "end": 3.66
+        },
+        {
+          "word": "fresh",
+          "start": 3.66,
+          "end": 4.0
+        },
+        {
+          "word": "details,",
+          "start": 4.0,
+          "end": 4.38
+        },
+        {
+          "word": "not",
+          "start": 5.2,
+          "end": 5.34
+        },
+        {
+          "word": "rephrasing",
+          "start": 5.34,
+          "end": 6.06
+        },
+        {
+          "word": "fear,",
+          "start": 6.06,
+          "end": 6.46
+        },
+        {
+          "word": "will",
+          "start": 6.88,
+          "end": 7.12
+        },
+        {
+          "word": "break",
+          "start": 7.12,
+          "end": 7.44
+        },
+        {
+          "word": "the",
+          "start": 7.44,
+          "end": 7.78
+        },
+        {
+          "word": "loop.",
+          "start": 7.78,
+          "end": 8.04
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 23,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-023-0-a.wav",
+      "expected": "With that clarity, he composes a brief, straightforward text.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "With",
+          "start": 0.0,
+          "end": 0.16
+        },
+        {
+          "word": "that",
+          "start": 0.16,
+          "end": 0.28
+        },
+        {
+          "word": "clarity,",
+          "start": 0.28,
+          "end": 0.66
+        },
+        {
+          "word": "he",
+          "start": 0.94,
+          "end": 0.98
+        },
+        {
+          "word": "composes",
+          "start": 0.98,
+          "end": 1.5
+        },
+        {
+          "word": "a",
+          "start": 1.5,
+          "end": 1.74
+        },
+        {
+          "word": "brief",
+          "start": 1.74,
+          "end": 2.02
+        },
+        {
+          "word": "straightforward",
+          "start": 2.02,
+          "end": 2.78
+        },
+        {
+          "word": "text.",
+          "start": 2.78,
+          "end": 3.28
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 24,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-024-0-a.wav",
+      "expected": "Alex sends the revised note, plainly stating his feelings while admitting lingering doubt.",
+      "agreement": 0.8889,
+      "words": [
+        {
+          "word": "Alex",
+          "start": 0.0,
+          "end": 0.2
+        },
+        {
+          "word": "sends",
+          "start": 0.2,
+          "end": 0.46
+        },
+        {
+          "word": "the",
+          "start": 0.46,
+          "end": 0.7
+        },
+        {
+          "word": "revised",
+          "start": 0.7,
+          "end": 0.84
+        },
+        {
+          "word": "note,",
+          "start": 0.84,
+          "end": 1.54
+        },
+        {
+          "word": "playing",
+          "start": 1.74,
+          "end": 1.96
+        },
+        {
+          "word": "me",
+          "start": 1.96,
+          "end": 2.12
+        },
+        {
+          "word": "stating",
+          "start": 2.12,
+          "end": 2.38
+        },
+        {
+          "word": "his",
+          "start": 2.38,
+          "end": 2.7
+        },
+        {
+          "word": "feelings",
+          "start": 2.7,
+          "end": 3.04
+        },
+        {
+          "word": "while",
+          "start": 3.04,
+          "end": 3.46
+        },
+        {
+          "word": "admitting",
+          "start": 3.46,
+          "end": 3.78
+        },
+        {
+          "word": "lingering",
+          "start": 3.78,
+          "end": 4.54
+        },
+        {
+          "word": "doubt.",
+          "start": 4.54,
+          "end": 4.9
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 25,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-025-0-a.wav",
+      "expected": "His friend reads it, replies, clearing the mix\u2011up and showing uncertainty can guide action.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "his",
+          "start": 0.0,
+          "end": 0.12
+        },
+        {
+          "word": "friend",
+          "start": 0.12,
+          "end": 0.34
+        },
+        {
+          "word": "reads",
+          "start": 0.34,
+          "end": 0.66
+        },
+        {
+          "word": "it,",
+          "start": 0.66,
+          "end": 0.94
+        },
+        {
+          "word": "replies,",
+          "start": 1.08,
+          "end": 1.4
+        },
+        {
+          "word": "clearing",
+          "start": 1.86,
+          "end": 2.24
+        },
+        {
+          "word": "the",
+          "start": 2.24,
+          "end": 2.56
+        },
+        {
+          "word": "mix",
+          "start": 2.56,
+          "end": 2.68
+        },
+        {
+          "word": "up",
+          "start": 2.68,
+          "end": 2.98
+        },
+        {
+          "word": "and",
+          "start": 2.98,
+          "end": 3.38
+        },
+        {
+          "word": "showing",
+          "start": 3.38,
+          "end": 3.66
+        },
+        {
+          "word": "uncertainty",
+          "start": 3.66,
+          "end": 4.54
+        },
+        {
+          "word": "can",
+          "start": 4.54,
+          "end": 4.86
+        },
+        {
+          "word": "guide",
+          "start": 4.86,
+          "end": 5.16
+        },
+        {
+          "word": "action.",
+          "start": 5.16,
+          "end": 5.58
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 26,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-026-0-a.wav",
+      "expected": "Alex sketches a simple scale, marking \"high stakes\" to show why careful probing matters for irreversible choices.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "Alex",
+          "start": 0.0,
+          "end": 0.22
+        },
+        {
+          "word": "sketches",
+          "start": 0.22,
+          "end": 0.6
+        },
+        {
+          "word": "a",
+          "start": 0.6,
+          "end": 0.92
+        },
+        {
+          "word": "simple",
+          "start": 0.92,
+          "end": 1.1
+        },
+        {
+          "word": "scale,",
+          "start": 1.1,
+          "end": 1.64
+        },
+        {
+          "word": "marking",
+          "start": 2.04,
+          "end": 2.32
+        },
+        {
+          "word": "high",
+          "start": 2.32,
+          "end": 2.62
+        },
+        {
+          "word": "stakes",
+          "start": 2.62,
+          "end": 3.02
+        },
+        {
+          "word": "to",
+          "start": 3.02,
+          "end": 3.54
+        },
+        {
+          "word": "show",
+          "start": 3.54,
+          "end": 3.72
+        },
+        {
+          "word": "why",
+          "start": 3.72,
+          "end": 3.92
+        },
+        {
+          "word": "careful",
+          "start": 3.92,
+          "end": 4.26
+        },
+        {
+          "word": "probing",
+          "start": 4.26,
+          "end": 4.76
+        },
+        {
+          "word": "matters",
+          "start": 4.76,
+          "end": 5.06
+        },
+        {
+          "word": "for",
+          "start": 5.06,
+          "end": 5.42
+        },
+        {
+          "word": "irreversible",
+          "start": 5.42,
+          "end": 5.72
+        },
+        {
+          "word": "choices.",
+          "start": 5.72,
+          "end": 6.58
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 27,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-027-0-a.wav",
+      "expected": "He notes that once enough facts fill the scale, lingering rumination should end, allowing decisive action.",
+      "agreement": 0.875,
+      "words": [
+        {
+          "word": "He",
+          "start": 0.0,
+          "end": 0.08
+        },
+        {
+          "word": "notes",
+          "start": 0.08,
+          "end": 0.28
+        },
+        {
+          "word": "that",
+          "start": 0.28,
+          "end": 0.62
+        },
+        {
+          "word": "once",
+          "start": 0.62,
+          "end": 0.82
+        },
+        {
+          "word": "enough",
+          "start": 0.82,
+          "end": 1.12
+        },
+        {
+          "word": "facts",
+          "start": 1.12,
+          "end": 1.38
+        },
+        {
+          "word": "filled",
+          "start": 1.38,
+          "end": 1.8
+        },
+        {
+          "word": "a",
+          "start": 1.8,
+          "end": 1.9
+        },
+        {
+          "word": "scale,",
+          "start": 1.9,
+          "end": 2.22
+        },
+        {
+          "word": "lingering",
+          "start": 2.66,
+          "end": 2.96
+        },
+        {
+          "word": "rumination",
+          "start": 2.96,
+          "end": 3.64
+        },
+        {
+          "word": "should",
+          "start": 3.64,
+          "end": 4.1
+        },
+        {
+          "word": "end,",
+          "start": 4.1,
+          "end": 4.48
+        },
+        {
+          "word": "allowing",
+          "start": 4.82,
+          "end": 5.14
+        },
+        {
+          "word": "decisive",
+          "start": 5.14,
+          "end": 5.44
+        },
+        {
+          "word": "action.",
+          "start": 5.44,
+          "end": 6.08
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 28,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-028-0-a.wav",
+      "expected": "Alex recalls the scale he drew, reminding himself that while some choices feel high\u2011stakes, endless analysis still traps him.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "Alex",
+          "start": 0.0,
+          "end": 0.2
+        },
+        {
+          "word": "recalls",
+          "start": 0.2,
+          "end": 0.68
+        },
+        {
+          "word": "the",
+          "start": 0.68,
+          "end": 0.92
+        },
+        {
+          "word": "scale",
+          "start": 0.92,
+          "end": 1.16
+        },
+        {
+          "word": "he",
+          "start": 1.16,
+          "end": 1.36
+        },
+        {
+          "word": "drew,",
+          "start": 1.36,
+          "end": 1.6
+        },
+        {
+          "word": "reminding",
+          "start": 1.76,
+          "end": 2.08
+        },
+        {
+          "word": "himself",
+          "start": 2.08,
+          "end": 2.46
+        },
+        {
+          "word": "that",
+          "start": 2.46,
+          "end": 2.78
+        },
+        {
+          "word": "while",
+          "start": 2.78,
+          "end": 2.94
+        },
+        {
+          "word": "some",
+          "start": 2.94,
+          "end": 3.16
+        },
+        {
+          "word": "choices",
+          "start": 3.16,
+          "end": 3.48
+        },
+        {
+          "word": "feel",
+          "start": 3.48,
+          "end": 3.98
+        },
+        {
+          "word": "high",
+          "start": 3.98,
+          "end": 4.3
+        },
+        {
+          "word": "stakes,",
+          "start": 4.3,
+          "end": 4.72
+        },
+        {
+          "word": "endless",
+          "start": 5.32,
+          "end": 5.7
+        },
+        {
+          "word": "analysis",
+          "start": 5.7,
+          "end": 6.32
+        },
+        {
+          "word": "still",
+          "start": 6.32,
+          "end": 6.76
+        },
+        {
+          "word": "traps",
+          "start": 6.76,
+          "end": 7.14
+        },
+        {
+          "word": "him.",
+          "start": 7.14,
+          "end": 7.46
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 30,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-030-0-a.wav",
+      "expected": "Alex types a brief, honest note, acknowledging his doubts without over\u2011explaining to his friend.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "Alex",
+          "start": 0.0,
+          "end": 0.24
+        },
+        {
+          "word": "types",
+          "start": 0.24,
+          "end": 0.56
+        },
+        {
+          "word": "a",
+          "start": 0.56,
+          "end": 0.78
+        },
+        {
+          "word": "brief,",
+          "start": 0.78,
+          "end": 1.04
+        },
+        {
+          "word": "honest",
+          "start": 1.38,
+          "end": 1.64
+        },
+        {
+          "word": "note,",
+          "start": 1.64,
+          "end": 1.98
+        },
+        {
+          "word": "acknowledging",
+          "start": 2.3,
+          "end": 2.7
+        },
+        {
+          "word": "his",
+          "start": 2.7,
+          "end": 3.06
+        },
+        {
+          "word": "doubts",
+          "start": 3.06,
+          "end": 3.28
+        },
+        {
+          "word": "without",
+          "start": 3.28,
+          "end": 3.56
+        },
+        {
+          "word": "over",
+          "start": 3.56,
+          "end": 3.94
+        },
+        {
+          "word": "-explaining",
+          "start": 3.94,
+          "end": 4.44
+        },
+        {
+          "word": "to",
+          "start": 4.44,
+          "end": 4.7
+        },
+        {
+          "word": "his",
+          "start": 4.7,
+          "end": 4.84
+        },
+        {
+          "word": "friend.",
+          "start": 4.84,
+          "end": 5.12
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 31,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-031-0-a.wav",
+      "expected": "He hits send, exhales, and accepts that some uncertainty will remain for now.",
+      "agreement": 0.9231,
+      "words": [
+        {
+          "word": "He",
+          "start": 0.0,
+          "end": 0.12
+        },
+        {
+          "word": "had",
+          "start": 0.12,
+          "end": 0.24
+        },
+        {
+          "word": "send,",
+          "start": 0.24,
+          "end": 0.52
+        },
+        {
+          "word": "exhales",
+          "start": 0.9,
+          "end": 1.44
+        },
+        {
+          "word": "and",
+          "start": 1.44,
+          "end": 1.78
+        },
+        {
+          "word": "accepts",
+          "start": 1.78,
+          "end": 2.08
+        },
+        {
+          "word": "that",
+          "start": 2.08,
+          "end": 2.4
+        },
+        {
+          "word": "some",
+          "start": 2.4,
+          "end": 2.68
+        },
+        {
+          "word": "uncertainty",
+          "start": 2.68,
+          "end": 3.3
+        },
+        {
+          "word": "will",
+          "start": 3.3,
+          "end": 3.68
+        },
+        {
+          "word": "remain",
+          "start": 3.68,
+          "end": 4.0
+        },
+        {
+          "word": "for",
+          "start": 4.0,
+          "end": 4.32
+        },
+        {
+          "word": "now.",
+          "start": 4.32,
+          "end": 4.58
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 32,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-032-0-a.wav",
+      "expected": "Alex taps send, watches the little 'sent' check appear, and lets out a breath he didn\u2019t realize he\u2019d been holding.",
+      "agreement": 0.8571,
+      "words": [
+        {
+          "word": "Alex",
+          "start": 0.0,
+          "end": 0.26
+        },
+        {
+          "word": "Taps",
+          "start": 0.26,
+          "end": 0.66
+        },
+        {
+          "word": "send,",
+          "start": 0.66,
+          "end": 0.9
+        },
+        {
+          "word": "watches",
+          "start": 1.5,
+          "end": 1.54
+        },
+        {
+          "word": "the",
+          "start": 1.54,
+          "end": 1.88
+        },
+        {
+          "word": "little",
+          "start": 1.88,
+          "end": 2.1
+        },
+        {
+          "word": "scent",
+          "start": 2.1,
+          "end": 2.38
+        },
+        {
+          "word": "check",
+          "start": 2.38,
+          "end": 2.68
+        },
+        {
+          "word": "appear,",
+          "start": 2.68,
+          "end": 3.06
+        },
+        {
+          "word": "and",
+          "start": 3.56,
+          "end": 3.7
+        },
+        {
+          "word": "that's",
+          "start": 3.7,
+          "end": 4.0
+        },
+        {
+          "word": "out",
+          "start": 4.0,
+          "end": 4.12
+        },
+        {
+          "word": "of",
+          "start": 4.12,
+          "end": 4.22
+        },
+        {
+          "word": "breath",
+          "start": 4.22,
+          "end": 4.44
+        },
+        {
+          "word": "he",
+          "start": 4.44,
+          "end": 4.7
+        },
+        {
+          "word": "didn't",
+          "start": 4.7,
+          "end": 5.0
+        },
+        {
+          "word": "realize",
+          "start": 5.0,
+          "end": 5.24
+        },
+        {
+          "word": "he'd",
+          "start": 5.24,
+          "end": 5.68
+        },
+        {
+          "word": "been",
+          "start": 5.68,
+          "end": 5.78
+        },
+        {
+          "word": "holding.",
+          "start": 5.78,
+          "end": 6.08
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 33,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-033-0-a.wav",
+      "expected": "A subtle shift occurs inside him\u2014the repetitive doubts quiet down, making room for forward motion rather than endless rehearsal.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "A",
+          "start": 0.0,
+          "end": 0.08
+        },
+        {
+          "word": "subtle",
+          "start": 0.08,
+          "end": 0.32
+        },
+        {
+          "word": "shift",
+          "start": 0.32,
+          "end": 0.7
+        },
+        {
+          "word": "occurs",
+          "start": 0.7,
+          "end": 1.04
+        },
+        {
+          "word": "inside",
+          "start": 1.04,
+          "end": 1.5
+        },
+        {
+          "word": "him,",
+          "start": 1.5,
+          "end": 1.9
+        },
+        {
+          "word": "the",
+          "start": 2.26,
+          "end": 2.34
+        },
+        {
+          "word": "repetitive",
+          "start": 2.34,
+          "end": 2.7
+        },
+        {
+          "word": "doubts",
+          "start": 2.7,
+          "end": 3.24
+        },
+        {
+          "word": "quiet",
+          "start": 3.24,
+          "end": 3.56
+        },
+        {
+          "word": "down,",
+          "start": 3.56,
+          "end": 3.98
+        },
+        {
+          "word": "making",
+          "start": 4.3,
+          "end": 4.66
+        },
+        {
+          "word": "room",
+          "start": 4.66,
+          "end": 4.94
+        },
+        {
+          "word": "for",
+          "start": 4.94,
+          "end": 5.22
+        },
+        {
+          "word": "forward",
+          "start": 5.22,
+          "end": 5.52
+        },
+        {
+          "word": "motion",
+          "start": 5.52,
+          "end": 5.94
+        },
+        {
+          "word": "rather",
+          "start": 5.94,
+          "end": 6.36
+        },
+        {
+          "word": "than",
+          "start": 6.36,
+          "end": 6.64
+        },
+        {
+          "word": "endless",
+          "start": 6.64,
+          "end": 7.02
+        },
+        {
+          "word": "rehearsal.",
+          "start": 7.02,
+          "end": 7.52
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 34,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-034-0-a.wav",
+      "expected": "Friend reads Alex's note, sees the honesty, and replies, clearing the small misunderstanding.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "Friend",
+          "start": 0.0,
+          "end": 0.26
+        },
+        {
+          "word": "reads",
+          "start": 0.26,
+          "end": 0.56
+        },
+        {
+          "word": "Alex's",
+          "start": 0.56,
+          "end": 1.06
+        },
+        {
+          "word": "note,",
+          "start": 1.06,
+          "end": 1.38
+        },
+        {
+          "word": "sees",
+          "start": 1.58,
+          "end": 1.78
+        },
+        {
+          "word": "the",
+          "start": 1.78,
+          "end": 2.02
+        },
+        {
+          "word": "honesty",
+          "start": 2.02,
+          "end": 2.24
+        },
+        {
+          "word": "and",
+          "start": 2.24,
+          "end": 2.62
+        },
+        {
+          "word": "replies,",
+          "start": 2.62,
+          "end": 2.98
+        },
+        {
+          "word": "clearing",
+          "start": 3.38,
+          "end": 3.62
+        },
+        {
+          "word": "the",
+          "start": 3.62,
+          "end": 3.9
+        },
+        {
+          "word": "small",
+          "start": 3.9,
+          "end": 4.1
+        },
+        {
+          "word": "misunderstanding.",
+          "start": 4.1,
+          "end": 4.68
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 35,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-035-0-a.wav",
+      "expected": "Both smile, feeling that a brief, focused edit was enough and the conversation moves forward.",
+      "agreement": 0.9333,
+      "words": [
+        {
+          "word": "boat",
+          "start": 0.0,
+          "end": 0.16
+        },
+        {
+          "word": "smile,",
+          "start": 0.16,
+          "end": 0.52
+        },
+        {
+          "word": "feeling",
+          "start": 0.88,
+          "end": 1.26
+        },
+        {
+          "word": "that",
+          "start": 1.26,
+          "end": 1.46
+        },
+        {
+          "word": "a",
+          "start": 1.46,
+          "end": 1.54
+        },
+        {
+          "word": "brief",
+          "start": 1.54,
+          "end": 1.8
+        },
+        {
+          "word": "focused",
+          "start": 1.8,
+          "end": 2.26
+        },
+        {
+          "word": "edit",
+          "start": 2.26,
+          "end": 2.62
+        },
+        {
+          "word": "was",
+          "start": 2.62,
+          "end": 2.92
+        },
+        {
+          "word": "enough,",
+          "start": 2.92,
+          "end": 3.22
+        },
+        {
+          "word": "and",
+          "start": 3.66,
+          "end": 3.7
+        },
+        {
+          "word": "the",
+          "start": 3.7,
+          "end": 3.8
+        },
+        {
+          "word": "conversation",
+          "start": 3.8,
+          "end": 4.22
+        },
+        {
+          "word": "moves",
+          "start": 4.22,
+          "end": 4.84
+        },
+        {
+          "word": "forward.",
+          "start": 4.84,
+          "end": 5.22
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 36,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-036-0-a.wav",
+      "expected": "Alex puts his phone down, feeling the weight lift as the misunderstanding is resolved.",
+      "agreement": 0.8571,
+      "words": [
+        {
+          "word": "Alex",
+          "start": 0.0,
+          "end": 0.2
+        },
+        {
+          "word": "puts",
+          "start": 0.2,
+          "end": 0.5
+        },
+        {
+          "word": "his",
+          "start": 0.5,
+          "end": 0.7
+        },
+        {
+          "word": "find",
+          "start": 0.7,
+          "end": 0.92
+        },
+        {
+          "word": "-down",
+          "start": 0.92,
+          "end": 1.22
+        },
+        {
+          "word": "feeling",
+          "start": 1.22,
+          "end": 1.52
+        },
+        {
+          "word": "the",
+          "start": 1.52,
+          "end": 1.78
+        },
+        {
+          "word": "weight",
+          "start": 1.78,
+          "end": 1.96
+        },
+        {
+          "word": "lift",
+          "start": 1.96,
+          "end": 2.24
+        },
+        {
+          "word": "as",
+          "start": 2.24,
+          "end": 2.52
+        },
+        {
+          "word": "a",
+          "start": 2.52,
+          "end": 2.64
+        },
+        {
+          "word": "misunderstanding",
+          "start": 2.64,
+          "end": 3.26
+        },
+        {
+          "word": "is",
+          "start": 3.26,
+          "end": 3.66
+        },
+        {
+          "word": "resolved.",
+          "start": 3.66,
+          "end": 4.06
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 37,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-037-0-a.wav",
+      "expected": "He steps out of the cafe, the day bright and clear, ready to move forward without overthinking.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "He",
+          "start": 0.0,
+          "end": 0.1
+        },
+        {
+          "word": "steps",
+          "start": 0.1,
+          "end": 0.32
+        },
+        {
+          "word": "out",
+          "start": 0.32,
+          "end": 0.6
+        },
+        {
+          "word": "of",
+          "start": 0.6,
+          "end": 0.7
+        },
+        {
+          "word": "the",
+          "start": 0.7,
+          "end": 0.8
+        },
+        {
+          "word": "cafe,",
+          "start": 0.8,
+          "end": 1.1
+        },
+        {
+          "word": "the",
+          "start": 1.54,
+          "end": 1.62
+        },
+        {
+          "word": "day",
+          "start": 1.62,
+          "end": 1.74
+        },
+        {
+          "word": "bright",
+          "start": 1.74,
+          "end": 2.0
+        },
+        {
+          "word": "and",
+          "start": 2.0,
+          "end": 2.24
+        },
+        {
+          "word": "clear,",
+          "start": 2.24,
+          "end": 2.46
+        },
+        {
+          "word": "ready",
+          "start": 2.86,
+          "end": 3.04
+        },
+        {
+          "word": "to",
+          "start": 3.04,
+          "end": 3.24
+        },
+        {
+          "word": "move",
+          "start": 3.24,
+          "end": 3.38
+        },
+        {
+          "word": "forward",
+          "start": 3.38,
+          "end": 3.74
+        },
+        {
+          "word": "without",
+          "start": 3.74,
+          "end": 4.06
+        },
+        {
+          "word": "overthinking.",
+          "start": 4.06,
+          "end": 4.58
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 38,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-038-0-a.wav",
+      "expected": "He hits send, exhales, and the conversation moves forward.",
+      "agreement": 0.8889,
+      "words": [
+        {
+          "word": "He",
+          "start": 0.0,
+          "end": 0.14
+        },
+        {
+          "word": "hit",
+          "start": 0.14,
+          "end": 0.28
+        },
+        {
+          "word": "send,",
+          "start": 0.28,
+          "end": 0.58
+        },
+        {
+          "word": "exhales",
+          "start": 1.16,
+          "end": 1.52
+        },
+        {
+          "word": "and",
+          "start": 1.52,
+          "end": 1.88
+        },
+        {
+          "word": "the",
+          "start": 1.88,
+          "end": 1.96
+        },
+        {
+          "word": "conversation",
+          "start": 1.96,
+          "end": 2.44
+        },
+        {
+          "word": "moves",
+          "start": 2.44,
+          "end": 2.82
+        },
+        {
+          "word": "forward.",
+          "start": 2.82,
+          "end": 3.26
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    }
+  ],
+  "attempts": [
+    {
+      "attempt": 1,
+      "clips": [
+        {
+          "shot": 0,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-000-0-a.wav",
+          "expected": "A close\u2011up of Alex\u2019s thumb hovering over the send button, the screen flashing the same three drafts.",
+          "agreement": 0.8889,
+          "words": [
+            {
+              "word": "A",
+              "start": 0.0,
+              "end": 0.08
+            },
+            {
+              "word": "close",
+              "start": 0.08,
+              "end": 0.24
+            },
+            {
+              "word": "-up",
+              "start": 0.24,
+              "end": 0.52
+            },
+            {
+              "word": "of",
+              "start": 0.52,
+              "end": 0.64
+            },
+            {
+              "word": "Alex's",
+              "start": 0.64,
+              "end": 1.18
+            },
+            {
+              "word": "thumb",
+              "start": 1.18,
+              "end": 1.48
+            },
+            {
+              "word": "hovering",
+              "start": 1.48,
+              "end": 1.74
+            },
+            {
+              "word": "over",
+              "start": 1.74,
+              "end": 2.18
+            },
+            {
+              "word": "the",
+              "start": 2.18,
+              "end": 2.32
+            },
+            {
+              "word": "Send",
+              "start": 2.32,
+              "end": 2.52
+            },
+            {
+              "word": "button",
+              "start": 2.52,
+              "end": 2.94
+            },
+            {
+              "word": "to",
+              "start": 2.94,
+              "end": 3.4
+            },
+            {
+              "word": "screen",
+              "start": 3.4,
+              "end": 3.66
+            },
+            {
+              "word": "fleshing",
+              "start": 3.66,
+              "end": 4.28
+            },
+            {
+              "word": "the",
+              "start": 4.28,
+              "end": 4.44
+            },
+            {
+              "word": "same",
+              "start": 4.44,
+              "end": 4.66
+            },
+            {
+              "word": "three",
+              "start": 4.66,
+              "end": 4.96
+            },
+            {
+              "word": "drafts.",
+              "start": 4.96,
+              "end": 5.26
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 1,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-001-0-a.wav",
+          "expected": "Alex watches the coffee steam swirl, feeling the weight of the unfinished words.",
+          "agreement": 0.9231,
+          "words": [
+            {
+              "word": "Alex",
+              "start": 0.0,
+              "end": 0.24
+            },
+            {
+              "word": "watches",
+              "start": 0.24,
+              "end": 0.7
+            },
+            {
+              "word": "the",
+              "start": 0.7,
+              "end": 0.98
+            },
+            {
+              "word": "coffee",
+              "start": 0.98,
+              "end": 1.16
+            },
+            {
+              "word": "steam",
+              "start": 1.16,
+              "end": 1.52
+            },
+            {
+              "word": "swell,",
+              "start": 1.52,
+              "end": 1.88
+            },
+            {
+              "word": "feeling",
+              "start": 2.3,
+              "end": 2.6
+            },
+            {
+              "word": "the",
+              "start": 2.6,
+              "end": 2.84
+            },
+            {
+              "word": "weight",
+              "start": 2.84,
+              "end": 3.04
+            },
+            {
+              "word": "of",
+              "start": 3.04,
+              "end": 3.34
+            },
+            {
+              "word": "the",
+              "start": 3.34,
+              "end": 3.46
+            },
+            {
+              "word": "unfinished",
+              "start": 3.46,
+              "end": 3.94
+            },
+            {
+              "word": "words.",
+              "start": 3.94,
+              "end": 4.46
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 2,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-002-0-a.wav",
+          "expected": "He wonders if rehearsing the same reply will ever become a clear answer.",
+          "agreement": 1.0,
+          "words": [
+            {
+              "word": "he",
+              "start": 0.0,
+              "end": 0.1
+            },
+            {
+              "word": "wonders",
+              "start": 0.1,
+              "end": 0.36
+            },
+            {
+              "word": "if",
+              "start": 0.36,
+              "end": 0.64
+            },
+            {
+              "word": "rehearsing",
+              "start": 0.64,
+              "end": 1.22
+            },
+            {
+              "word": "the",
+              "start": 1.22,
+              "end": 1.34
+            },
+            {
+              "word": "same",
+              "start": 1.34,
+              "end": 1.54
+            },
+            {
+              "word": "reply",
+              "start": 1.54,
+              "end": 1.88
+            },
+            {
+              "word": "will",
+              "start": 1.88,
+              "end": 2.16
+            },
+            {
+              "word": "ever",
+              "start": 2.16,
+              "end": 2.4
+            },
+            {
+              "word": "become",
+              "start": 2.4,
+              "end": 2.82
+            },
+            {
+              "word": "a",
+              "start": 2.82,
+              "end": 2.96
+            },
+            {
+              "word": "clear",
+              "start": 2.96,
+              "end": 3.18
+            },
+            {
+              "word": "answer.",
+              "start": 3.18,
+              "end": 3.62
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 3,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-003-0-a.wav",
+          "expected": "He watches the coffee steam swirl, the screen glowing with his half\u2011written reply.",
+          "agreement": 1.0,
+          "words": [
+            {
+              "word": "He",
+              "start": 0.0,
+              "end": 0.08
+            },
+            {
+              "word": "watches",
+              "start": 0.08,
+              "end": 0.4
+            },
+            {
+              "word": "the",
+              "start": 0.4,
+              "end": 0.72
+            },
+            {
+              "word": "coffee",
+              "start": 0.72,
+              "end": 0.86
+            },
+            {
+              "word": "steam",
+              "start": 0.86,
+              "end": 1.3
+            },
+            {
+              "word": "swirl,",
+              "start": 1.3,
+              "end": 1.66
+            },
+            {
+              "word": "the",
+              "start": 2.14,
+              "end": 2.28
+            },
+            {
+              "word": "screen",
+              "start": 2.28,
+              "end": 2.58
+            },
+            {
+              "word": "glowing",
+              "start": 2.58,
+              "end": 3.04
+            },
+            {
+              "word": "with",
+              "start": 3.04,
+              "end": 3.34
+            },
+            {
+              "word": "his",
+              "start": 3.34,
+              "end": 3.48
+            },
+            {
+              "word": "half",
+              "start": 3.48,
+              "end": 3.7
+            },
+            {
+              "word": "-written",
+              "start": 3.7,
+              "end": 4.0
+            },
+            {
+              "word": "reply.",
+              "start": 4.0,
+              "end": 4.52
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 4,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-004-0-a.wav",
+          "expected": "A quick glance at the chat shows his friend\u2019s last line was ambiguous, sparking a fresh question rather than another loop.",
+          "agreement": 1.0,
+          "words": [
+            {
+              "word": "A",
+              "start": 0.0,
+              "end": 0.1
+            },
+            {
+              "word": "quick",
+              "start": 0.1,
+              "end": 0.32
+            },
+            {
+              "word": "glance",
+              "start": 0.32,
+              "end": 0.62
+            },
+            {
+              "word": "at",
+              "start": 0.62,
+              "end": 0.88
+            },
+            {
+              "word": "the",
+              "start": 0.88,
+              "end": 0.98
+            },
+            {
+              "word": "chat",
+              "start": 0.98,
+              "end": 1.16
+            },
+            {
+              "word": "shows",
+              "start": 1.16,
+              "end": 1.64
+            },
+            {
+              "word": "his",
+              "start": 1.64,
+              "end": 1.82
+            },
+            {
+              "word": "friend's",
+              "start": 1.82,
+              "end": 2.36
+            },
+            {
+              "word": "last",
+              "start": 2.36,
+              "end": 2.52
+            },
+            {
+              "word": "line",
+              "start": 2.52,
+              "end": 3.02
+            },
+            {
+              "word": "was",
+              "start": 3.02,
+              "end": 3.24
+            },
+            {
+              "word": "ambiguous,",
+              "start": 3.24,
+              "end": 3.66
+            },
+            {
+              "word": "sparking",
+              "start": 4.4,
+              "end": 4.68
+            },
+            {
+              "word": "a",
+              "start": 4.68,
+              "end": 5.04
+            },
+            {
+              "word": "fresh",
+              "start": 5.04,
+              "end": 5.34
+            },
+            {
+              "word": "question",
+              "start": 5.34,
+              "end": 5.86
+            },
+            {
+              "word": "rather",
+              "start": 5.86,
+              "end": 6.16
+            },
+            {
+              "word": "than",
+              "start": 6.16,
+              "end": 6.46
+            },
+            {
+              "word": "another",
+              "start": 6.46,
+              "end": 6.68
+            },
+            {
+              "word": "loop.",
+              "start": 6.68,
+              "end": 7.0
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 5,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-005-0-a.wav",
+          "expected": "Alex types a concise apology, then pauses, realizing he\u2019s merely replaying the same worry instead of checking his friend\u2019s last reply.",
+          "agreement": 0.9524,
+          "words": [
+            {
+              "word": "Alex",
+              "start": 0.0,
+              "end": 0.16
+            },
+            {
+              "word": "types",
+              "start": 0.16,
+              "end": 0.48
+            },
+            {
+              "word": "of",
+              "start": 0.48,
+              "end": 0.68
+            },
+            {
+              "word": "concise",
+              "start": 0.68,
+              "end": 1.02
+            },
+            {
+              "word": "apology,",
+              "start": 1.02,
+              "end": 1.68
+            },
+            {
+              "word": "then",
+              "start": 2.22,
+              "end": 2.22
+            },
+            {
+              "word": "pauses,",
+              "start": 2.22,
+              "end": 2.54
+            },
+            {
+              "word": "realizing",
+              "start": 3.1,
+              "end": 3.42
+            },
+            {
+              "word": "he's",
+              "start": 3.42,
+              "end": 3.96
+            },
+            {
+              "word": "merely",
+              "start": 3.96,
+              "end": 4.18
+            },
+            {
+              "word": "replaying",
+              "start": 4.18,
+              "end": 4.86
+            },
+            {
+              "word": "the",
+              "start": 4.86,
+              "end": 5.08
+            },
+            {
+              "word": "same",
+              "start": 5.08,
+              "end": 5.3
+            },
+            {
+              "word": "worry",
+              "start": 5.3,
+              "end": 5.66
+            },
+            {
+              "word": "instead",
+              "start": 5.66,
+              "end": 6.12
+            },
+            {
+              "word": "of",
+              "start": 6.12,
+              "end": 6.28
+            },
+            {
+              "word": "checking",
+              "start": 6.28,
+              "end": 6.48
+            },
+            {
+              "word": "his",
+              "start": 6.48,
+              "end": 6.78
+            },
+            {
+              "word": "friend's",
+              "start": 6.78,
+              "end": 7.24
+            },
+            {
+              "word": "last",
+              "start": 7.24,
+              "end": 7.4
+            },
+            {
+              "word": "reply.",
+              "start": 7.4,
+              "end": 7.88
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 6,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-006-0-a.wav",
+          "expected": "He deletes the extra lines, adds a question that actually asks for the missing detail, and sends it, breaking the rumination loop.",
+          "agreement": 0.8636,
+          "words": [
+            {
+              "word": "It",
+              "start": 0.0,
+              "end": 0.1
+            },
+            {
+              "word": "leads",
+              "start": 0.1,
+              "end": 0.24
+            },
+            {
+              "word": "the",
+              "start": 0.24,
+              "end": 0.48
+            },
+            {
+              "word": "extra",
+              "start": 0.48,
+              "end": 0.68
+            },
+            {
+              "word": "lines",
+              "start": 0.68,
+              "end": 1.04
+            },
+            {
+              "word": "and",
+              "start": 1.04,
+              "end": 1.6
+            },
+            {
+              "word": "a",
+              "start": 1.6,
+              "end": 1.72
+            },
+            {
+              "word": "question",
+              "start": 1.72,
+              "end": 2.1
+            },
+            {
+              "word": "that",
+              "start": 2.1,
+              "end": 2.42
+            },
+            {
+              "word": "actually",
+              "start": 2.42,
+              "end": 2.72
+            },
+            {
+              "word": "asks",
+              "start": 2.72,
+              "end": 3.26
+            },
+            {
+              "word": "for",
+              "start": 3.26,
+              "end": 3.6
+            },
+            {
+              "word": "the",
+              "start": 3.6,
+              "end": 3.66
+            },
+            {
+              "word": "missing",
+              "start": 3.66,
+              "end": 3.98
+            },
+            {
+              "word": "detail",
+              "start": 3.98,
+              "end": 4.4
+            },
+            {
+              "word": "and",
+              "start": 4.4,
+              "end": 5.08
+            },
+            {
+              "word": "sends",
+              "start": 5.08,
+              "end": 5.36
+            },
+            {
+              "word": "it,",
+              "start": 5.36,
+              "end": 5.7
+            },
+            {
+              "word": "breaking",
+              "start": 6.0,
+              "end": 6.44
+            },
+            {
+              "word": "the",
+              "start": 6.44,
+              "end": 6.78
+            },
+            {
+              "word": "rumination",
+              "start": 6.78,
+              "end": 7.18
+            },
+            {
+              "word": "loop.",
+              "start": 7.18,
+              "end": 7.68
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 7,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-007-0-a.wav",
+          "expected": "Alex types a sentence, deletes it, and feels the same doubt looping back.",
+          "agreement": 1.0,
+          "words": [
+            {
+              "word": "Alex",
+              "start": 0.0,
+              "end": 0.2
+            },
+            {
+              "word": "types",
+              "start": 0.2,
+              "end": 0.46
+            },
+            {
+              "word": "a",
+              "start": 0.46,
+              "end": 0.72
+            },
+            {
+              "word": "sentence,",
+              "start": 0.72,
+              "end": 1.14
+            },
+            {
+              "word": "deletes",
+              "start": 1.46,
+              "end": 1.88
+            },
+            {
+              "word": "it",
+              "start": 1.88,
+              "end": 1.98
+            },
+            {
+              "word": "and",
+              "start": 1.98,
+              "end": 2.18
+            },
+            {
+              "word": "feels",
+              "start": 2.18,
+              "end": 2.42
+            },
+            {
+              "word": "the",
+              "start": 2.42,
+              "end": 2.7
+            },
+            {
+              "word": "same",
+              "start": 2.7,
+              "end": 2.94
+            },
+            {
+              "word": "doubt",
+              "start": 2.94,
+              "end": 3.34
+            },
+            {
+              "word": "looping",
+              "start": 3.34,
+              "end": 3.94
+            },
+            {
+              "word": "back.",
+              "start": 3.94,
+              "end": 4.22
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 8,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-008-0-a.wav",
+          "expected": "He realizes he's not gathering any new facts, just rehearsing the same worry.",
+          "agreement": 0.9231,
+          "words": [
+            {
+              "word": "He",
+              "start": 0.0,
+              "end": 0.1
+            },
+            {
+              "word": "realises",
+              "start": 0.1,
+              "end": 0.58
+            },
+            {
+              "word": "he's",
+              "start": 0.58,
+              "end": 0.92
+            },
+            {
+              "word": "not",
+              "start": 0.92,
+              "end": 1.14
+            },
+            {
+              "word": "gathering",
+              "start": 1.14,
+              "end": 1.56
+            },
+            {
+              "word": "any",
+              "start": 1.56,
+              "end": 1.94
+            },
+            {
+              "word": "new",
+              "start": 1.94,
+              "end": 2.28
+            },
+            {
+              "word": "facts,",
+              "start": 2.28,
+              "end": 2.5
+            },
+            {
+              "word": "just",
+              "start": 3.22,
+              "end": 3.22
+            },
+            {
+              "word": "rehearsing",
+              "start": 3.22,
+              "end": 3.92
+            },
+            {
+              "word": "the",
+              "start": 3.92,
+              "end": 4.04
+            },
+            {
+              "word": "same",
+              "start": 4.04,
+              "end": 4.26
+            },
+            {
+              "word": "worry.",
+              "start": 4.26,
+              "end": 4.6
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 9,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-009-0-a.wav",
+          "expected": "He stops, looks at his phone, and decides a walk outside might break the cycle.",
+          "agreement": 0.9333,
+          "words": [
+            {
+              "word": "He",
+              "start": 0.0,
+              "end": 0.08
+            },
+            {
+              "word": "stops,",
+              "start": 0.08,
+              "end": 0.38
+            },
+            {
+              "word": "looks",
+              "start": 0.76,
+              "end": 1.02
+            },
+            {
+              "word": "at",
+              "start": 1.02,
+              "end": 1.24
+            },
+            {
+              "word": "his",
+              "start": 1.24,
+              "end": 1.34
+            },
+            {
+              "word": "fan,",
+              "start": 1.34,
+              "end": 1.56
+            },
+            {
+              "word": "and",
+              "start": 2.02,
+              "end": 2.18
+            },
+            {
+              "word": "decides",
+              "start": 2.18,
+              "end": 2.42
+            },
+            {
+              "word": "a",
+              "start": 2.42,
+              "end": 2.68
+            },
+            {
+              "word": "walk",
+              "start": 2.68,
+              "end": 2.88
+            },
+            {
+              "word": "outside",
+              "start": 2.88,
+              "end": 3.26
+            },
+            {
+              "word": "might",
+              "start": 3.26,
+              "end": 3.7
+            },
+            {
+              "word": "break",
+              "start": 3.7,
+              "end": 3.98
+            },
+            {
+              "word": "the",
+              "start": 3.98,
+              "end": 4.18
+            },
+            {
+              "word": "cycle.",
+              "start": 4.18,
+              "end": 4.52
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 10,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-010-0-a.wav",
+          "expected": "Alex leaves the cafe, walks toward the park, rehearsing the same apology silently.",
+          "agreement": 1.0,
+          "words": [
+            {
+              "word": "Alex",
+              "start": 0.0,
+              "end": 0.22
+            },
+            {
+              "word": "leaves",
+              "start": 0.22,
+              "end": 0.56
+            },
+            {
+              "word": "the",
+              "start": 0.56,
+              "end": 0.82
+            },
+            {
+              "word": "cafe,",
+              "start": 0.82,
+              "end": 1.04
+            },
+            {
+              "word": "walks",
+              "start": 1.58,
+              "end": 1.8
+            },
+            {
+              "word": "toward",
+              "start": 1.8,
+              "end": 2.08
+            },
+            {
+              "word": "the",
+              "start": 2.08,
+              "end": 2.24
+            },
+            {
+              "word": "park,",
+              "start": 2.24,
+              "end": 2.48
+            },
+            {
+              "word": "rehearsing",
+              "start": 2.84,
+              "end": 3.4
+            },
+            {
+              "word": "the",
+              "start": 3.4,
+              "end": 3.5
+            },
+            {
+              "word": "same",
+              "start": 3.5,
+              "end": 3.8
+            },
+            {
+              "word": "apology",
+              "start": 3.8,
+              "end": 4.24
+            },
+            {
+              "word": "silently.",
+              "start": 4.24,
+              "end": 4.7
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 11,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-011-0-a.wav",
+          "expected": "He stops, looks up, and decides to ask directly, ending the mental loop.",
+          "agreement": 1.0,
+          "words": [
+            {
+              "word": "He",
+              "start": 0.0,
+              "end": 0.12
+            },
+            {
+              "word": "stops,",
+              "start": 0.12,
+              "end": 0.44
+            },
+            {
+              "word": "looks",
+              "start": 0.44,
+              "end": 1.06
+            },
+            {
+              "word": "up",
+              "start": 1.06,
+              "end": 1.32
+            },
+            {
+              "word": "and",
+              "start": 1.32,
+              "end": 1.68
+            },
+            {
+              "word": "decides",
+              "start": 1.68,
+              "end": 1.94
+            },
+            {
+              "word": "to",
+              "start": 1.94,
+              "end": 2.24
+            },
+            {
+              "word": "ask",
+              "start": 2.24,
+              "end": 2.56
+            },
+            {
+              "word": "directly,",
+              "start": 2.56,
+              "end": 2.94
+            },
+            {
+              "word": "ending",
+              "start": 3.4,
+              "end": 3.6
+            },
+            {
+              "word": "the",
+              "start": 3.6,
+              "end": 3.86
+            },
+            {
+              "word": "mental",
+              "start": 3.86,
+              "end": 4.0
+            },
+            {
+              "word": "loop.",
+              "start": 4.0,
+              "end": 4.54
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 12,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-012-0-a.wav",
+          "expected": "The dark silhouette repeats the same three drafts, each variation ending with the same doubt, showing how rumination stalls progress.",
+          "agreement": 0.95,
+          "words": [
+            {
+              "word": "The",
+              "start": 0.0,
+              "end": 0.1
+            },
+            {
+              "word": "dot",
+              "start": 0.1,
+              "end": 0.38
+            },
+            {
+              "word": "silhouette",
+              "start": 0.38,
+              "end": 0.64
+            },
+            {
+              "word": "repeats",
+              "start": 0.64,
+              "end": 1.18
+            },
+            {
+              "word": "the",
+              "start": 1.18,
+              "end": 1.5
+            },
+            {
+              "word": "same",
+              "start": 1.5,
+              "end": 1.72
+            },
+            {
+              "word": "three",
+              "start": 1.72,
+              "end": 1.98
+            },
+            {
+              "word": "drafts,",
+              "start": 1.98,
+              "end": 2.34
+            },
+            {
+              "word": "each",
+              "start": 3.02,
+              "end": 3.06
+            },
+            {
+              "word": "variation",
+              "start": 3.06,
+              "end": 3.52
+            },
+            {
+              "word": "ending",
+              "start": 3.52,
+              "end": 4.12
+            },
+            {
+              "word": "with",
+              "start": 4.12,
+              "end": 4.44
+            },
+            {
+              "word": "the",
+              "start": 4.44,
+              "end": 4.58
+            },
+            {
+              "word": "same",
+              "start": 4.58,
+              "end": 4.8
+            },
+            {
+              "word": "doubt,",
+              "start": 4.8,
+              "end": 5.18
+            },
+            {
+              "word": "showing",
+              "start": 5.56,
+              "end": 5.98
+            },
+            {
+              "word": "how",
+              "start": 5.98,
+              "end": 6.24
+            },
+            {
+              "word": "rumination",
+              "start": 6.24,
+              "end": 6.68
+            },
+            {
+              "word": "stalls",
+              "start": 6.68,
+              "end": 7.28
+            },
+            {
+              "word": "progress.",
+              "start": 7.28,
+              "end": 7.8
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 13,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-013-0-a.wav",
+          "expected": "Recognizing the loop lets Alex see that no new insight is gained, so he can step out of the cycle and act.",
+          "agreement": 1.0,
+          "words": [
+            {
+              "word": "Recognizing",
+              "start": 0.0,
+              "end": 0.66
+            },
+            {
+              "word": "the",
+              "start": 0.66,
+              "end": 0.84
+            },
+            {
+              "word": "loop",
+              "start": 0.84,
+              "end": 1.12
+            },
+            {
+              "word": "lets",
+              "start": 1.12,
+              "end": 1.64
+            },
+            {
+              "word": "Alex",
+              "start": 1.64,
+              "end": 1.92
+            },
+            {
+              "word": "see",
+              "start": 1.92,
+              "end": 2.32
+            },
+            {
+              "word": "that",
+              "start": 2.32,
+              "end": 2.56
+            },
+            {
+              "word": "no",
+              "start": 2.56,
+              "end": 2.86
+            },
+            {
+              "word": "new",
+              "start": 2.86,
+              "end": 3.16
+            },
+            {
+              "word": "insight",
+              "start": 3.16,
+              "end": 3.64
+            },
+            {
+              "word": "is",
+              "start": 3.64,
+              "end": 3.98
+            },
+            {
+              "word": "gained",
+              "start": 3.98,
+              "end": 4.2
+            },
+            {
+              "word": "so",
+              "start": 4.2,
+              "end": 4.86
+            },
+            {
+              "word": "he",
+              "start": 4.86,
+              "end": 5.02
+            },
+            {
+              "word": "can",
+              "start": 5.02,
+              "end": 5.14
+            },
+            {
+              "word": "step",
+              "start": 5.14,
+              "end": 5.4
+            },
+            {
+              "word": "out",
+              "start": 5.4,
+              "end": 5.64
+            },
+            {
+              "word": "of",
+              "start": 5.64,
+              "end": 5.76
+            },
+            {
+              "word": "the",
+              "start": 5.76,
+              "end": 5.86
+            },
+            {
+              "word": "cycle",
+              "start": 5.86,
+              "end": 6.18
+            },
+            {
+              "word": "and",
+              "start": 6.18,
+              "end": 6.42
+            },
+            {
+              "word": "act.",
+              "start": 6.42,
+              "end": 6.72
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 14,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-014-0-a.wav",
+          "expected": "Alex types a draft, each sentence circling the same doubt as the demon watches.",
+          "agreement": 1.0,
+          "words": [
+            {
+              "word": "Alex",
+              "start": 0.0,
+              "end": 0.22
+            },
+            {
+              "word": "types",
+              "start": 0.22,
+              "end": 0.62
+            },
+            {
+              "word": "a",
+              "start": 0.62,
+              "end": 0.9
+            },
+            {
+              "word": "draft,",
+              "start": 0.9,
+              "end": 1.08
+            },
+            {
+              "word": "each",
+              "start": 1.7,
+              "end": 1.82
+            },
+            {
+              "word": "sentence",
+              "start": 1.82,
+              "end": 2.26
+            },
+            {
+              "word": "circling",
+              "start": 2.26,
+              "end": 2.78
+            },
+            {
+              "word": "the",
+              "start": 2.78,
+              "end": 3.18
+            },
+            {
+              "word": "same",
+              "start": 3.18,
+              "end": 3.48
+            },
+            {
+              "word": "doubt",
+              "start": 3.48,
+              "end": 3.82
+            },
+            {
+              "word": "as",
+              "start": 3.82,
+              "end": 4.16
+            },
+            {
+              "word": "the",
+              "start": 4.16,
+              "end": 4.26
+            },
+            {
+              "word": "demon",
+              "start": 4.26,
+              "end": 4.54
+            },
+            {
+              "word": "watches.",
+              "start": 4.54,
+              "end": 4.96
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 15,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-015-0-a.wav",
+          "expected": "He notices no new insight, then sends a clear, honest apology to friend.",
+          "agreement": 1.0,
+          "words": [
+            {
+              "word": "He",
+              "start": 0.0,
+              "end": 0.12
+            },
+            {
+              "word": "notices",
+              "start": 0.12,
+              "end": 0.5
+            },
+            {
+              "word": "no",
+              "start": 0.5,
+              "end": 0.94
+            },
+            {
+              "word": "new",
+              "start": 0.94,
+              "end": 1.16
+            },
+            {
+              "word": "insight,",
+              "start": 1.16,
+              "end": 1.64
+            },
+            {
+              "word": "then",
+              "start": 2.0,
+              "end": 2.16
+            },
+            {
+              "word": "sends",
+              "start": 2.16,
+              "end": 2.4
+            },
+            {
+              "word": "a",
+              "start": 2.4,
+              "end": 2.66
+            },
+            {
+              "word": "clear,",
+              "start": 2.66,
+              "end": 2.96
+            },
+            {
+              "word": "honest",
+              "start": 2.96,
+              "end": 3.52
+            },
+            {
+              "word": "apology",
+              "start": 3.52,
+              "end": 3.9
+            },
+            {
+              "word": "to",
+              "start": 3.9,
+              "end": 4.38
+            },
+            {
+              "word": "friend.",
+              "start": 4.38,
+              "end": 4.64
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 16,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-016-0-a.wav",
+          "expected": "He walks down the street, rereading each draft without finding new information, illustrating how rumination repeats the same doubts.",
+          "agreement": 1.0,
+          "words": [
+            {
+              "word": "He",
+              "start": 0.0,
+              "end": 0.08
+            },
+            {
+              "word": "walks",
+              "start": 0.08,
+              "end": 0.26
+            },
+            {
+              "word": "down",
+              "start": 0.26,
+              "end": 0.54
+            },
+            {
+              "word": "the",
+              "start": 0.54,
+              "end": 0.68
+            },
+            {
+              "word": "street,",
+              "start": 0.68,
+              "end": 1.0
+            },
+            {
+              "word": "rereading",
+              "start": 1.38,
+              "end": 1.84
+            },
+            {
+              "word": "each",
+              "start": 1.84,
+              "end": 2.34
+            },
+            {
+              "word": "draft",
+              "start": 2.34,
+              "end": 2.66
+            },
+            {
+              "word": "without",
+              "start": 2.66,
+              "end": 2.98
+            },
+            {
+              "word": "finding",
+              "start": 2.98,
+              "end": 3.58
+            },
+            {
+              "word": "new",
+              "start": 3.58,
+              "end": 3.92
+            },
+            {
+              "word": "information,",
+              "start": 3.92,
+              "end": 4.66
+            },
+            {
+              "word": "illustrating",
+              "start": 5.0,
+              "end": 5.44
+            },
+            {
+              "word": "how",
+              "start": 5.44,
+              "end": 5.86
+            },
+            {
+              "word": "rumination",
+              "start": 5.86,
+              "end": 6.48
+            },
+            {
+              "word": "repeats",
+              "start": 6.48,
+              "end": 6.98
+            },
+            {
+              "word": "the",
+              "start": 6.98,
+              "end": 7.36
+            },
+            {
+              "word": "same",
+              "start": 7.36,
+              "end": 7.56
+            },
+            {
+              "word": "doubts.",
+              "start": 7.56,
+              "end": 7.96
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 17,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-017-0-a.wav",
+          "expected": "The motion shows that physical movement alone doesn\u2019t replace gathering fresh perspectives, so the loop persists.",
+          "agreement": 0.9412,
+          "words": [
+            {
+              "word": "The",
+              "start": 0.0,
+              "end": 0.08
+            },
+            {
+              "word": "motion",
+              "start": 0.08,
+              "end": 0.24
+            },
+            {
+              "word": "shows",
+              "start": 0.24,
+              "end": 0.62
+            },
+            {
+              "word": "the",
+              "start": 0.62,
+              "end": 0.84
+            },
+            {
+              "word": "physical",
+              "start": 0.84,
+              "end": 1.16
+            },
+            {
+              "word": "movement",
+              "start": 1.16,
+              "end": 1.64
+            },
+            {
+              "word": "alone",
+              "start": 1.64,
+              "end": 2.0
+            },
+            {
+              "word": "doesn't",
+              "start": 2.0,
+              "end": 2.58
+            },
+            {
+              "word": "replace",
+              "start": 2.58,
+              "end": 2.84
+            },
+            {
+              "word": "gathering",
+              "start": 2.84,
+              "end": 3.24
+            },
+            {
+              "word": "fresh",
+              "start": 3.24,
+              "end": 3.6
+            },
+            {
+              "word": "perspectives,",
+              "start": 3.6,
+              "end": 4.08
+            },
+            {
+              "word": "so",
+              "start": 4.68,
+              "end": 4.76
+            },
+            {
+              "word": "the",
+              "start": 4.76,
+              "end": 4.92
+            },
+            {
+              "word": "loop",
+              "start": 4.92,
+              "end": 5.1
+            },
+            {
+              "word": "persists.",
+              "start": 5.1,
+              "end": 5.4
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 18,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-018-0-a.wav",
+          "expected": "He stops for a moment, phone in hand, the drafts still looping, but a hint of resolve appears as he thinks about reaching out for fresh input.",
+          "agreement": 0.9818,
+          "words": [
+            {
+              "word": "He",
+              "start": 0.0,
+              "end": 0.08
+            },
+            {
+              "word": "stops",
+              "start": 0.08,
+              "end": 0.26
+            },
+            {
+              "word": "for",
+              "start": 0.26,
+              "end": 0.56
+            },
+            {
+              "word": "a",
+              "start": 0.56,
+              "end": 0.66
+            },
+            {
+              "word": "moment,",
+              "start": 0.66,
+              "end": 0.98
+            },
+            {
+              "word": "phone",
+              "start": 1.32,
+              "end": 1.44
+            },
+            {
+              "word": "in",
+              "start": 1.44,
+              "end": 1.6
+            },
+            {
+              "word": "hand,",
+              "start": 1.6,
+              "end": 1.84
+            },
+            {
+              "word": "the",
+              "start": 2.3,
+              "end": 2.4
+            },
+            {
+              "word": "draft's",
+              "start": 2.4,
+              "end": 2.88
+            },
+            {
+              "word": "still",
+              "start": 2.88,
+              "end": 3.1
+            },
+            {
+              "word": "looping,",
+              "start": 3.1,
+              "end": 3.56
+            },
+            {
+              "word": "but",
+              "start": 3.76,
+              "end": 3.76
+            },
+            {
+              "word": "a",
+              "start": 3.76,
+              "end": 3.86
+            },
+            {
+              "word": "hint",
+              "start": 3.86,
+              "end": 4.1
+            },
+            {
+              "word": "of",
+              "start": 4.1,
+              "end": 4.28
+            },
+            {
+              "word": "resolve",
+              "start": 4.28,
+              "end": 4.7
+            },
+            {
+              "word": "appears",
+              "start": 4.7,
+              "end": 5.14
+            },
+            {
+              "word": "as",
+              "start": 5.14,
+              "end": 5.56
+            },
+            {
+              "word": "he",
+              "start": 5.56,
+              "end": 5.68
+            },
+            {
+              "word": "thinks",
+              "start": 5.68,
+              "end": 5.9
+            },
+            {
+              "word": "about",
+              "start": 5.9,
+              "end": 6.14
+            },
+            {
+              "word": "reaching",
+              "start": 6.14,
+              "end": 6.52
+            },
+            {
+              "word": "out",
+              "start": 6.52,
+              "end": 6.8
+            },
+            {
+              "word": "for",
+              "start": 6.8,
+              "end": 6.98
+            },
+            {
+              "word": "a",
+              "start": 6.98,
+              "end": 7.04
+            },
+            {
+              "word": "fresh",
+              "start": 7.04,
+              "end": 7.24
+            },
+            {
+              "word": "input.",
+              "start": 7.24,
+              "end": 7.72
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 20,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-020-0-a.wav",
+          "expected": "Alex tells his friend he\u2019s stuck replaying the same worries, not learning anything new, so his mind feels trapped in a loop.",
+          "agreement": 1.0,
+          "words": [
+            {
+              "word": "Alex",
+              "start": 0.0,
+              "end": 0.2
+            },
+            {
+              "word": "tells",
+              "start": 0.2,
+              "end": 0.48
+            },
+            {
+              "word": "his",
+              "start": 0.48,
+              "end": 0.74
+            },
+            {
+              "word": "friend",
+              "start": 0.74,
+              "end": 0.98
+            },
+            {
+              "word": "he's",
+              "start": 0.98,
+              "end": 1.28
+            },
+            {
+              "word": "stuck",
+              "start": 1.28,
+              "end": 1.52
+            },
+            {
+              "word": "replaying",
+              "start": 1.52,
+              "end": 2.04
+            },
+            {
+              "word": "the",
+              "start": 2.04,
+              "end": 2.24
+            },
+            {
+              "word": "same",
+              "start": 2.24,
+              "end": 2.46
+            },
+            {
+              "word": "worries,",
+              "start": 2.46,
+              "end": 2.82
+            },
+            {
+              "word": "not",
+              "start": 3.3,
+              "end": 3.52
+            },
+            {
+              "word": "learning",
+              "start": 3.52,
+              "end": 3.84
+            },
+            {
+              "word": "anything",
+              "start": 3.84,
+              "end": 4.28
+            },
+            {
+              "word": "new,",
+              "start": 4.28,
+              "end": 4.6
+            },
+            {
+              "word": "so",
+              "start": 5.02,
+              "end": 5.12
+            },
+            {
+              "word": "his",
+              "start": 5.12,
+              "end": 5.26
+            },
+            {
+              "word": "mind",
+              "start": 5.26,
+              "end": 5.54
+            },
+            {
+              "word": "feels",
+              "start": 5.54,
+              "end": 5.82
+            },
+            {
+              "word": "trapped",
+              "start": 5.82,
+              "end": 6.22
+            },
+            {
+              "word": "in",
+              "start": 6.22,
+              "end": 6.56
+            },
+            {
+              "word": "a",
+              "start": 6.56,
+              "end": 6.64
+            },
+            {
+              "word": "loop.",
+              "start": 6.64,
+              "end": 6.86
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 21,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-021-0-a.wav",
+          "expected": "His friend listens, asks for specifics, and gently points out that new information could break the cycle, showing the value of real dialogue.",
+          "agreement": 1.0,
+          "words": [
+            {
+              "word": "His",
+              "start": 0.0,
+              "end": 0.14
+            },
+            {
+              "word": "friend",
+              "start": 0.14,
+              "end": 0.32
+            },
+            {
+              "word": "listens,",
+              "start": 0.32,
+              "end": 0.64
+            },
+            {
+              "word": "asks",
+              "start": 1.6,
+              "end": 1.6
+            },
+            {
+              "word": "for",
+              "start": 1.6,
+              "end": 1.88
+            },
+            {
+              "word": "specifics",
+              "start": 1.88,
+              "end": 2.26
+            },
+            {
+              "word": "and",
+              "start": 2.26,
+              "end": 2.98
+            },
+            {
+              "word": "gently",
+              "start": 2.98,
+              "end": 3.3
+            },
+            {
+              "word": "points",
+              "start": 3.3,
+              "end": 3.84
+            },
+            {
+              "word": "out",
+              "start": 3.84,
+              "end": 4.14
+            },
+            {
+              "word": "that",
+              "start": 4.14,
+              "end": 4.36
+            },
+            {
+              "word": "new",
+              "start": 4.36,
+              "end": 4.6
+            },
+            {
+              "word": "information",
+              "start": 4.6,
+              "end": 5.04
+            },
+            {
+              "word": "could",
+              "start": 5.04,
+              "end": 5.72
+            },
+            {
+              "word": "break",
+              "start": 5.72,
+              "end": 5.92
+            },
+            {
+              "word": "the",
+              "start": 5.92,
+              "end": 6.1
+            },
+            {
+              "word": "cycle,",
+              "start": 6.1,
+              "end": 6.46
+            },
+            {
+              "word": "showing",
+              "start": 6.8,
+              "end": 7.1
+            },
+            {
+              "word": "the",
+              "start": 7.1,
+              "end": 7.4
+            },
+            {
+              "word": "value",
+              "start": 7.4,
+              "end": 7.76
+            },
+            {
+              "word": "of",
+              "start": 7.76,
+              "end": 7.98
+            },
+            {
+              "word": "real",
+              "start": 7.98,
+              "end": 8.12
+            },
+            {
+              "word": "dialogue.",
+              "start": 8.12,
+              "end": 8.88
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 22,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-022-0-a.wav",
+          "expected": "He lets the friend\u2019s point settle, recognizing that adding fresh details\u2014not re\u2011phrasing fear\u2014will break the loop.",
+          "agreement": 0.9189,
+          "words": [
+            {
+              "word": "he",
+              "start": 0.0,
+              "end": 0.08
+            },
+            {
+              "word": "lets",
+              "start": 0.08,
+              "end": 0.24
+            },
+            {
+              "word": "the",
+              "start": 0.24,
+              "end": 0.52
+            },
+            {
+              "word": "friend's",
+              "start": 0.52,
+              "end": 0.96
+            },
+            {
+              "word": "point",
+              "start": 0.96,
+              "end": 1.18
+            },
+            {
+              "word": "settle.",
+              "start": 1.18,
+              "end": 1.78
+            },
+            {
+              "word": "Recognizing",
+              "start": 2.46,
+              "end": 3.14
+            },
+            {
+              "word": "that",
+              "start": 3.14,
+              "end": 3.36
+            },
+            {
+              "word": "adding",
+              "start": 3.36,
+              "end": 3.66
+            },
+            {
+              "word": "fresh",
+              "start": 3.66,
+              "end": 4.0
+            },
+            {
+              "word": "details,",
+              "start": 4.0,
+              "end": 4.38
+            },
+            {
+              "word": "not",
+              "start": 5.2,
+              "end": 5.34
+            },
+            {
+              "word": "rephrasing",
+              "start": 5.34,
+              "end": 6.06
+            },
+            {
+              "word": "fear,",
+              "start": 6.06,
+              "end": 6.46
+            },
+            {
+              "word": "will",
+              "start": 6.88,
+              "end": 7.12
+            },
+            {
+              "word": "break",
+              "start": 7.12,
+              "end": 7.44
+            },
+            {
+              "word": "the",
+              "start": 7.44,
+              "end": 7.78
+            },
+            {
+              "word": "loop.",
+              "start": 7.78,
+              "end": 8.04
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 23,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-023-0-a.wav",
+          "expected": "With that clarity, he composes a brief, straightforward text.",
+          "agreement": 1.0,
+          "words": [
+            {
+              "word": "With",
+              "start": 0.0,
+              "end": 0.16
+            },
+            {
+              "word": "that",
+              "start": 0.16,
+              "end": 0.28
+            },
+            {
+              "word": "clarity,",
+              "start": 0.28,
+              "end": 0.66
+            },
+            {
+              "word": "he",
+              "start": 0.94,
+              "end": 0.98
+            },
+            {
+              "word": "composes",
+              "start": 0.98,
+              "end": 1.5
+            },
+            {
+              "word": "a",
+              "start": 1.5,
+              "end": 1.74
+            },
+            {
+              "word": "brief",
+              "start": 1.74,
+              "end": 2.02
+            },
+            {
+              "word": "straightforward",
+              "start": 2.02,
+              "end": 2.78
+            },
+            {
+              "word": "text.",
+              "start": 2.78,
+              "end": 3.28
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 24,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-024-0-a.wav",
+          "expected": "Alex sends the revised note, plainly stating his feelings while admitting lingering doubt.",
+          "agreement": 0.8889,
+          "words": [
+            {
+              "word": "Alex",
+              "start": 0.0,
+              "end": 0.2
+            },
+            {
+              "word": "sends",
+              "start": 0.2,
+              "end": 0.46
+            },
+            {
+              "word": "the",
+              "start": 0.46,
+              "end": 0.7
+            },
+            {
+              "word": "revised",
+              "start": 0.7,
+              "end": 0.84
+            },
+            {
+              "word": "note,",
+              "start": 0.84,
+              "end": 1.54
+            },
+            {
+              "word": "playing",
+              "start": 1.74,
+              "end": 1.96
+            },
+            {
+              "word": "me",
+              "start": 1.96,
+              "end": 2.12
+            },
+            {
+              "word": "stating",
+              "start": 2.12,
+              "end": 2.38
+            },
+            {
+              "word": "his",
+              "start": 2.38,
+              "end": 2.7
+            },
+            {
+              "word": "feelings",
+              "start": 2.7,
+              "end": 3.04
+            },
+            {
+              "word": "while",
+              "start": 3.04,
+              "end": 3.46
+            },
+            {
+              "word": "admitting",
+              "start": 3.46,
+              "end": 3.78
+            },
+            {
+              "word": "lingering",
+              "start": 3.78,
+              "end": 4.54
+            },
+            {
+              "word": "doubt.",
+              "start": 4.54,
+              "end": 4.9
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 25,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-025-0-a.wav",
+          "expected": "His friend reads it, replies, clearing the mix\u2011up and showing uncertainty can guide action.",
+          "agreement": 1.0,
+          "words": [
+            {
+              "word": "his",
+              "start": 0.0,
+              "end": 0.12
+            },
+            {
+              "word": "friend",
+              "start": 0.12,
+              "end": 0.34
+            },
+            {
+              "word": "reads",
+              "start": 0.34,
+              "end": 0.66
+            },
+            {
+              "word": "it,",
+              "start": 0.66,
+              "end": 0.94
+            },
+            {
+              "word": "replies,",
+              "start": 1.08,
+              "end": 1.4
+            },
+            {
+              "word": "clearing",
+              "start": 1.86,
+              "end": 2.24
+            },
+            {
+              "word": "the",
+              "start": 2.24,
+              "end": 2.56
+            },
+            {
+              "word": "mix",
+              "start": 2.56,
+              "end": 2.68
+            },
+            {
+              "word": "up",
+              "start": 2.68,
+              "end": 2.98
+            },
+            {
+              "word": "and",
+              "start": 2.98,
+              "end": 3.38
+            },
+            {
+              "word": "showing",
+              "start": 3.38,
+              "end": 3.66
+            },
+            {
+              "word": "uncertainty",
+              "start": 3.66,
+              "end": 4.54
+            },
+            {
+              "word": "can",
+              "start": 4.54,
+              "end": 4.86
+            },
+            {
+              "word": "guide",
+              "start": 4.86,
+              "end": 5.16
+            },
+            {
+              "word": "action.",
+              "start": 5.16,
+              "end": 5.58
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 26,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-026-0-a.wav",
+          "expected": "Alex sketches a simple scale, marking \"high stakes\" to show why careful probing matters for irreversible choices.",
+          "agreement": 1.0,
+          "words": [
+            {
+              "word": "Alex",
+              "start": 0.0,
+              "end": 0.22
+            },
+            {
+              "word": "sketches",
+              "start": 0.22,
+              "end": 0.6
+            },
+            {
+              "word": "a",
+              "start": 0.6,
+              "end": 0.92
+            },
+            {
+              "word": "simple",
+              "start": 0.92,
+              "end": 1.1
+            },
+            {
+              "word": "scale,",
+              "start": 1.1,
+              "end": 1.64
+            },
+            {
+              "word": "marking",
+              "start": 2.04,
+              "end": 2.32
+            },
+            {
+              "word": "high",
+              "start": 2.32,
+              "end": 2.62
+            },
+            {
+              "word": "stakes",
+              "start": 2.62,
+              "end": 3.02
+            },
+            {
+              "word": "to",
+              "start": 3.02,
+              "end": 3.54
+            },
+            {
+              "word": "show",
+              "start": 3.54,
+              "end": 3.72
+            },
+            {
+              "word": "why",
+              "start": 3.72,
+              "end": 3.92
+            },
+            {
+              "word": "careful",
+              "start": 3.92,
+              "end": 4.26
+            },
+            {
+              "word": "probing",
+              "start": 4.26,
+              "end": 4.76
+            },
+            {
+              "word": "matters",
+              "start": 4.76,
+              "end": 5.06
+            },
+            {
+              "word": "for",
+              "start": 5.06,
+              "end": 5.42
+            },
+            {
+              "word": "irreversible",
+              "start": 5.42,
+              "end": 5.72
+            },
+            {
+              "word": "choices.",
+              "start": 5.72,
+              "end": 6.58
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 27,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-027-0-a.wav",
+          "expected": "He notes that once enough facts fill the scale, lingering rumination should end, allowing decisive action.",
+          "agreement": 0.875,
+          "words": [
+            {
+              "word": "He",
+              "start": 0.0,
+              "end": 0.08
+            },
+            {
+              "word": "notes",
+              "start": 0.08,
+              "end": 0.28
+            },
+            {
+              "word": "that",
+              "start": 0.28,
+              "end": 0.62
+            },
+            {
+              "word": "once",
+              "start": 0.62,
+              "end": 0.82
+            },
+            {
+              "word": "enough",
+              "start": 0.82,
+              "end": 1.12
+            },
+            {
+              "word": "facts",
+              "start": 1.12,
+              "end": 1.38
+            },
+            {
+              "word": "filled",
+              "start": 1.38,
+              "end": 1.8
+            },
+            {
+              "word": "a",
+              "start": 1.8,
+              "end": 1.9
+            },
+            {
+              "word": "scale,",
+              "start": 1.9,
+              "end": 2.22
+            },
+            {
+              "word": "lingering",
+              "start": 2.66,
+              "end": 2.96
+            },
+            {
+              "word": "rumination",
+              "start": 2.96,
+              "end": 3.64
+            },
+            {
+              "word": "should",
+              "start": 3.64,
+              "end": 4.1
+            },
+            {
+              "word": "end,",
+              "start": 4.1,
+              "end": 4.48
+            },
+            {
+              "word": "allowing",
+              "start": 4.82,
+              "end": 5.14
+            },
+            {
+              "word": "decisive",
+              "start": 5.14,
+              "end": 5.44
+            },
+            {
+              "word": "action.",
+              "start": 5.44,
+              "end": 6.08
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 28,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-028-0-a.wav",
+          "expected": "Alex recalls the scale he drew, reminding himself that while some choices feel high\u2011stakes, endless analysis still traps him.",
+          "agreement": 1.0,
+          "words": [
+            {
+              "word": "Alex",
+              "start": 0.0,
+              "end": 0.2
+            },
+            {
+              "word": "recalls",
+              "start": 0.2,
+              "end": 0.68
+            },
+            {
+              "word": "the",
+              "start": 0.68,
+              "end": 0.92
+            },
+            {
+              "word": "scale",
+              "start": 0.92,
+              "end": 1.16
+            },
+            {
+              "word": "he",
+              "start": 1.16,
+              "end": 1.36
+            },
+            {
+              "word": "drew,",
+              "start": 1.36,
+              "end": 1.6
+            },
+            {
+              "word": "reminding",
+              "start": 1.76,
+              "end": 2.08
+            },
+            {
+              "word": "himself",
+              "start": 2.08,
+              "end": 2.46
+            },
+            {
+              "word": "that",
+              "start": 2.46,
+              "end": 2.78
+            },
+            {
+              "word": "while",
+              "start": 2.78,
+              "end": 2.94
+            },
+            {
+              "word": "some",
+              "start": 2.94,
+              "end": 3.16
+            },
+            {
+              "word": "choices",
+              "start": 3.16,
+              "end": 3.48
+            },
+            {
+              "word": "feel",
+              "start": 3.48,
+              "end": 3.98
+            },
+            {
+              "word": "high",
+              "start": 3.98,
+              "end": 4.3
+            },
+            {
+              "word": "stakes,",
+              "start": 4.3,
+              "end": 4.72
+            },
+            {
+              "word": "endless",
+              "start": 5.32,
+              "end": 5.7
+            },
+            {
+              "word": "analysis",
+              "start": 5.7,
+              "end": 6.32
+            },
+            {
+              "word": "still",
+              "start": 6.32,
+              "end": 6.76
+            },
+            {
+              "word": "traps",
+              "start": 6.76,
+              "end": 7.14
+            },
+            {
+              "word": "him.",
+              "start": 7.14,
+              "end": 7.46
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 30,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-030-0-a.wav",
+          "expected": "Alex types a brief, honest note, acknowledging his doubts without over\u2011explaining to his friend.",
+          "agreement": 1.0,
+          "words": [
+            {
+              "word": "Alex",
+              "start": 0.0,
+              "end": 0.24
+            },
+            {
+              "word": "types",
+              "start": 0.24,
+              "end": 0.56
+            },
+            {
+              "word": "a",
+              "start": 0.56,
+              "end": 0.78
+            },
+            {
+              "word": "brief,",
+              "start": 0.78,
+              "end": 1.04
+            },
+            {
+              "word": "honest",
+              "start": 1.38,
+              "end": 1.64
+            },
+            {
+              "word": "note,",
+              "start": 1.64,
+              "end": 1.98
+            },
+            {
+              "word": "acknowledging",
+              "start": 2.3,
+              "end": 2.7
+            },
+            {
+              "word": "his",
+              "start": 2.7,
+              "end": 3.06
+            },
+            {
+              "word": "doubts",
+              "start": 3.06,
+              "end": 3.28
+            },
+            {
+              "word": "without",
+              "start": 3.28,
+              "end": 3.56
+            },
+            {
+              "word": "over",
+              "start": 3.56,
+              "end": 3.94
+            },
+            {
+              "word": "-explaining",
+              "start": 3.94,
+              "end": 4.44
+            },
+            {
+              "word": "to",
+              "start": 4.44,
+              "end": 4.7
+            },
+            {
+              "word": "his",
+              "start": 4.7,
+              "end": 4.84
+            },
+            {
+              "word": "friend.",
+              "start": 4.84,
+              "end": 5.12
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 31,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-031-0-a.wav",
+          "expected": "He hits send, exhales, and accepts that some uncertainty will remain for now.",
+          "agreement": 0.9231,
+          "words": [
+            {
+              "word": "He",
+              "start": 0.0,
+              "end": 0.12
+            },
+            {
+              "word": "had",
+              "start": 0.12,
+              "end": 0.24
+            },
+            {
+              "word": "send,",
+              "start": 0.24,
+              "end": 0.52
+            },
+            {
+              "word": "exhales",
+              "start": 0.9,
+              "end": 1.44
+            },
+            {
+              "word": "and",
+              "start": 1.44,
+              "end": 1.78
+            },
+            {
+              "word": "accepts",
+              "start": 1.78,
+              "end": 2.08
+            },
+            {
+              "word": "that",
+              "start": 2.08,
+              "end": 2.4
+            },
+            {
+              "word": "some",
+              "start": 2.4,
+              "end": 2.68
+            },
+            {
+              "word": "uncertainty",
+              "start": 2.68,
+              "end": 3.3
+            },
+            {
+              "word": "will",
+              "start": 3.3,
+              "end": 3.68
+            },
+            {
+              "word": "remain",
+              "start": 3.68,
+              "end": 4.0
+            },
+            {
+              "word": "for",
+              "start": 4.0,
+              "end": 4.32
+            },
+            {
+              "word": "now.",
+              "start": 4.32,
+              "end": 4.58
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 32,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-032-0-a.wav",
+          "expected": "Alex taps send, watches the little 'sent' check appear, and lets out a breath he didn\u2019t realize he\u2019d been holding.",
+          "agreement": 0.8571,
+          "words": [
+            {
+              "word": "Alex",
+              "start": 0.0,
+              "end": 0.26
+            },
+            {
+              "word": "Taps",
+              "start": 0.26,
+              "end": 0.66
+            },
+            {
+              "word": "send,",
+              "start": 0.66,
+              "end": 0.9
+            },
+            {
+              "word": "watches",
+              "start": 1.5,
+              "end": 1.54
+            },
+            {
+              "word": "the",
+              "start": 1.54,
+              "end": 1.88
+            },
+            {
+              "word": "little",
+              "start": 1.88,
+              "end": 2.1
+            },
+            {
+              "word": "scent",
+              "start": 2.1,
+              "end": 2.38
+            },
+            {
+              "word": "check",
+              "start": 2.38,
+              "end": 2.68
+            },
+            {
+              "word": "appear,",
+              "start": 2.68,
+              "end": 3.06
+            },
+            {
+              "word": "and",
+              "start": 3.56,
+              "end": 3.7
+            },
+            {
+              "word": "that's",
+              "start": 3.7,
+              "end": 4.0
+            },
+            {
+              "word": "out",
+              "start": 4.0,
+              "end": 4.12
+            },
+            {
+              "word": "of",
+              "start": 4.12,
+              "end": 4.22
+            },
+            {
+              "word": "breath",
+              "start": 4.22,
+              "end": 4.44
+            },
+            {
+              "word": "he",
+              "start": 4.44,
+              "end": 4.7
+            },
+            {
+              "word": "didn't",
+              "start": 4.7,
+              "end": 5.0
+            },
+            {
+              "word": "realize",
+              "start": 5.0,
+              "end": 5.24
+            },
+            {
+              "word": "he'd",
+              "start": 5.24,
+              "end": 5.68
+            },
+            {
+              "word": "been",
+              "start": 5.68,
+              "end": 5.78
+            },
+            {
+              "word": "holding.",
+              "start": 5.78,
+              "end": 6.08
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 33,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-033-0-a.wav",
+          "expected": "A subtle shift occurs inside him\u2014the repetitive doubts quiet down, making room for forward motion rather than endless rehearsal.",
+          "agreement": 1.0,
+          "words": [
+            {
+              "word": "A",
+              "start": 0.0,
+              "end": 0.08
+            },
+            {
+              "word": "subtle",
+              "start": 0.08,
+              "end": 0.32
+            },
+            {
+              "word": "shift",
+              "start": 0.32,
+              "end": 0.7
+            },
+            {
+              "word": "occurs",
+              "start": 0.7,
+              "end": 1.04
+            },
+            {
+              "word": "inside",
+              "start": 1.04,
+              "end": 1.5
+            },
+            {
+              "word": "him,",
+              "start": 1.5,
+              "end": 1.9
+            },
+            {
+              "word": "the",
+              "start": 2.26,
+              "end": 2.34
+            },
+            {
+              "word": "repetitive",
+              "start": 2.34,
+              "end": 2.7
+            },
+            {
+              "word": "doubts",
+              "start": 2.7,
+              "end": 3.24
+            },
+            {
+              "word": "quiet",
+              "start": 3.24,
+              "end": 3.56
+            },
+            {
+              "word": "down,",
+              "start": 3.56,
+              "end": 3.98
+            },
+            {
+              "word": "making",
+              "start": 4.3,
+              "end": 4.66
+            },
+            {
+              "word": "room",
+              "start": 4.66,
+              "end": 4.94
+            },
+            {
+              "word": "for",
+              "start": 4.94,
+              "end": 5.22
+            },
+            {
+              "word": "forward",
+              "start": 5.22,
+              "end": 5.52
+            },
+            {
+              "word": "motion",
+              "start": 5.52,
+              "end": 5.94
+            },
+            {
+              "word": "rather",
+              "start": 5.94,
+              "end": 6.36
+            },
+            {
+              "word": "than",
+              "start": 6.36,
+              "end": 6.64
+            },
+            {
+              "word": "endless",
+              "start": 6.64,
+              "end": 7.02
+            },
+            {
+              "word": "rehearsal.",
+              "start": 7.02,
+              "end": 7.52
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 34,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-034-0-a.wav",
+          "expected": "Friend reads Alex's note, sees the honesty, and replies, clearing the small misunderstanding.",
+          "agreement": 1.0,
+          "words": [
+            {
+              "word": "Friend",
+              "start": 0.0,
+              "end": 0.26
+            },
+            {
+              "word": "reads",
+              "start": 0.26,
+              "end": 0.56
+            },
+            {
+              "word": "Alex's",
+              "start": 0.56,
+              "end": 1.06
+            },
+            {
+              "word": "note,",
+              "start": 1.06,
+              "end": 1.38
+            },
+            {
+              "word": "sees",
+              "start": 1.58,
+              "end": 1.78
+            },
+            {
+              "word": "the",
+              "start": 1.78,
+              "end": 2.02
+            },
+            {
+              "word": "honesty",
+              "start": 2.02,
+              "end": 2.24
+            },
+            {
+              "word": "and",
+              "start": 2.24,
+              "end": 2.62
+            },
+            {
+              "word": "replies,",
+              "start": 2.62,
+              "end": 2.98
+            },
+            {
+              "word": "clearing",
+              "start": 3.38,
+              "end": 3.62
+            },
+            {
+              "word": "the",
+              "start": 3.62,
+              "end": 3.9
+            },
+            {
+              "word": "small",
+              "start": 3.9,
+              "end": 4.1
+            },
+            {
+              "word": "misunderstanding.",
+              "start": 4.1,
+              "end": 4.68
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 35,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-035-0-a.wav",
+          "expected": "Both smile, feeling that a brief, focused edit was enough and the conversation moves forward.",
+          "agreement": 0.9333,
+          "words": [
+            {
+              "word": "boat",
+              "start": 0.0,
+              "end": 0.16
+            },
+            {
+              "word": "smile,",
+              "start": 0.16,
+              "end": 0.52
+            },
+            {
+              "word": "feeling",
+              "start": 0.88,
+              "end": 1.26
+            },
+            {
+              "word": "that",
+              "start": 1.26,
+              "end": 1.46
+            },
+            {
+              "word": "a",
+              "start": 1.46,
+              "end": 1.54
+            },
+            {
+              "word": "brief",
+              "start": 1.54,
+              "end": 1.8
+            },
+            {
+              "word": "focused",
+              "start": 1.8,
+              "end": 2.26
+            },
+            {
+              "word": "edit",
+              "start": 2.26,
+              "end": 2.62
+            },
+            {
+              "word": "was",
+              "start": 2.62,
+              "end": 2.92
+            },
+            {
+              "word": "enough,",
+              "start": 2.92,
+              "end": 3.22
+            },
+            {
+              "word": "and",
+              "start": 3.66,
+              "end": 3.7
+            },
+            {
+              "word": "the",
+              "start": 3.7,
+              "end": 3.8
+            },
+            {
+              "word": "conversation",
+              "start": 3.8,
+              "end": 4.22
+            },
+            {
+              "word": "moves",
+              "start": 4.22,
+              "end": 4.84
+            },
+            {
+              "word": "forward.",
+              "start": 4.84,
+              "end": 5.22
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 36,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-036-0-a.wav",
+          "expected": "Alex puts his phone down, feeling the weight lift as the misunderstanding is resolved.",
+          "agreement": 0.8571,
+          "words": [
+            {
+              "word": "Alex",
+              "start": 0.0,
+              "end": 0.2
+            },
+            {
+              "word": "puts",
+              "start": 0.2,
+              "end": 0.5
+            },
+            {
+              "word": "his",
+              "start": 0.5,
+              "end": 0.7
+            },
+            {
+              "word": "find",
+              "start": 0.7,
+              "end": 0.92
+            },
+            {
+              "word": "-down",
+              "start": 0.92,
+              "end": 1.22
+            },
+            {
+              "word": "feeling",
+              "start": 1.22,
+              "end": 1.52
+            },
+            {
+              "word": "the",
+              "start": 1.52,
+              "end": 1.78
+            },
+            {
+              "word": "weight",
+              "start": 1.78,
+              "end": 1.96
+            },
+            {
+              "word": "lift",
+              "start": 1.96,
+              "end": 2.24
+            },
+            {
+              "word": "as",
+              "start": 2.24,
+              "end": 2.52
+            },
+            {
+              "word": "a",
+              "start": 2.52,
+              "end": 2.64
+            },
+            {
+              "word": "misunderstanding",
+              "start": 2.64,
+              "end": 3.26
+            },
+            {
+              "word": "is",
+              "start": 3.26,
+              "end": 3.66
+            },
+            {
+              "word": "resolved.",
+              "start": 3.66,
+              "end": 4.06
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 37,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-037-0-a.wav",
+          "expected": "He steps out of the cafe, the day bright and clear, ready to move forward without overthinking.",
+          "agreement": 1.0,
+          "words": [
+            {
+              "word": "He",
+              "start": 0.0,
+              "end": 0.1
+            },
+            {
+              "word": "steps",
+              "start": 0.1,
+              "end": 0.32
+            },
+            {
+              "word": "out",
+              "start": 0.32,
+              "end": 0.6
+            },
+            {
+              "word": "of",
+              "start": 0.6,
+              "end": 0.7
+            },
+            {
+              "word": "the",
+              "start": 0.7,
+              "end": 0.8
+            },
+            {
+              "word": "cafe,",
+              "start": 0.8,
+              "end": 1.1
+            },
+            {
+              "word": "the",
+              "start": 1.54,
+              "end": 1.62
+            },
+            {
+              "word": "day",
+              "start": 1.62,
+              "end": 1.74
+            },
+            {
+              "word": "bright",
+              "start": 1.74,
+              "end": 2.0
+            },
+            {
+              "word": "and",
+              "start": 2.0,
+              "end": 2.24
+            },
+            {
+              "word": "clear,",
+              "start": 2.24,
+              "end": 2.46
+            },
+            {
+              "word": "ready",
+              "start": 2.86,
+              "end": 3.04
+            },
+            {
+              "word": "to",
+              "start": 3.04,
+              "end": 3.24
+            },
+            {
+              "word": "move",
+              "start": 3.24,
+              "end": 3.38
+            },
+            {
+              "word": "forward",
+              "start": 3.38,
+              "end": 3.74
+            },
+            {
+              "word": "without",
+              "start": 3.74,
+              "end": 4.06
+            },
+            {
+              "word": "overthinking.",
+              "start": 4.06,
+              "end": 4.58
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 38,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-038-0-a.wav",
+          "expected": "He hits send, exhales, and the conversation moves forward.",
+          "agreement": 0.8889,
+          "words": [
+            {
+              "word": "He",
+              "start": 0.0,
+              "end": 0.14
+            },
+            {
+              "word": "hit",
+              "start": 0.14,
+              "end": 0.28
+            },
+            {
+              "word": "send,",
+              "start": 0.28,
+              "end": 0.58
+            },
+            {
+              "word": "exhales",
+              "start": 1.16,
+              "end": 1.52
+            },
+            {
+              "word": "and",
+              "start": 1.52,
+              "end": 1.88
+            },
+            {
+              "word": "the",
+              "start": 1.88,
+              "end": 1.96
+            },
+            {
+              "word": "conversation",
+              "start": 1.96,
+              "end": 2.44
+            },
+            {
+              "word": "moves",
+              "start": 2.44,
+              "end": 2.82
+            },
+            {
+              "word": "forward.",
+              "start": 2.82,
+              "end": 3.26
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        }
+      ]
+    }
+  ]
+}

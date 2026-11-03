@@ -1,0 +1,7 @@
+{
+  "music_source": "ACE-Step score",
+  "effects": "Original procedural synthesis in audio/sound.py",
+  "third_party_samples": [],
+  "code_license": "GPL-3.0-or-later",
+  "model_license": "ACE-Step 1.5 MIT when used"
+}
