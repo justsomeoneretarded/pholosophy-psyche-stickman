@@ -1,4 +1,5 @@
 name: Revise and produce the reviewed screenplay
+# Iteration 2: use the stronger free editor writer on the saved failed revision.
 on:
   workflow_dispatch:
   push:
@@ -12,6 +13,7 @@ jobs:
     timeout-minutes: 60
     env:
       GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+      EDITOR_WRITER_MODELS: groq:openai/gpt-oss-120b,groq:openai/gpt-oss-20b,ollama:qwen3:4b
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -20,8 +22,8 @@ jobs:
       - run: python -m pip install -q -r requirements-core.txt
       - uses: actions/download-artifact@v4
         with:
-          name: film-plan
-          run-id: '41671268205'
+          name: independent-topic-writing
+          run-id: '41673715347'
           github-token: ${{ github.token }}
           path: build
       - name: Stop the obsolete production with unresolved editorial findings

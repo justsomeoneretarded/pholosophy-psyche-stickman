@@ -95,6 +95,7 @@ For a nonzero requested_beat return {"changes":{only changed beat fields}}.
 For requested_beat=0 return {"metadata":{only changed publishing/opening/ending fields}}.
 The application applies changes to that fixed part; never return edits to other beats.
 Preserve cast, premise, useful distinctions, informative depth and physical acting.
+Track who originally said each message. Never copy a recipient's reply into the sender's outgoing message as though the sender said it. Apply the shared chronological repair across the requested scene and keep completed invitations/agreements completed.
 Do not delete a beat or replace fields with null. If exposition repeats, advance its
 reasoning or use the slot for a concrete objection/example instead of erasing the slot.
 Preserve approximately the current amount of narration. Fictional dialogue is allowed.
@@ -134,7 +135,7 @@ Use existing cast IDs and supported locations. Dialogue is a list of {who: cast 
                 return {'sheet':candidate,'patch':patch}
             revised=writer.json(system,json.dumps(payload,ensure_ascii=False),validate_patch,
                                 temperature=.5,max_tokens=900,attempts=3)
-            sheet=revised['sheet'];history[-1]['edits'].append(revised['patch']);save()
+            sheet=revised['sheet'];history[-1]['edits'].append({**revised['patch'],'writer':getattr(writer,'used',None)});save()
     if report['issues']:
         print('::warning title=Editorial findings remain::'+str(len(report['issues']))+' findings remain in editorial-review.json',flush=True)
     major=[issue for issue in report['issues'] if issue.get('severity')=='major']
