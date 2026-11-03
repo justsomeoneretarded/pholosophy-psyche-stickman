@@ -17,6 +17,12 @@ try{
   drawFrame(time);const second=document.getElementById('film').toDataURL('image/png');
   return {first,second,fonts:[...document.fonts].map(face=>({family:face.family,status:face.status}))};
  },[film,time]);
+ if(process.argv[3]){
+  const folder=path.dirname(process.argv[3]);fs.mkdirSync(folder,{recursive:true});
+  for(const [name,value] of [['first',result.first],['second',result.second]]){
+   fs.writeFileSync(path.join(folder,name+'.png.b64'),value.split(',')[1]);
+  }
+ }
  if(result.first!==result.second)throw new Error('Repeated rendering of the same timeline position changed pixels');
  const report={passed:true,time,sha256:createHash('sha256').update(result.first).digest('hex'),fonts:result.fonts};
  if(process.argv[3])fs.writeFileSync(process.argv[3],JSON.stringify(report,null,2));

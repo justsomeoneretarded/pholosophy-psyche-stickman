@@ -6,7 +6,7 @@ def test_editor_rejection_names_unknown_fields_for_an_actionable_retry(tmp_path)
         count=0
         def json(self,system,user,validate,**kwargs):
             self.count+=1
-            if self.count==1:return validate({'issues':[{'severity':'minor','beats':[1],'problem':'Needs a distinction','repair':'Add a specific distinction'}]})
+            if self.count==1:return validate({'issues':[{'severity':'major','beats':[1],'problem':'Needs a distinction','repair':'Add a specific distinction'}]})
             if self.count==2:
                 assert 'Allowed beat fields:' in system
                 with pytest.raises(ValueError,match='unknown_field'):

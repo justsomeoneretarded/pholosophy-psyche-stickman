@@ -229,6 +229,8 @@ function drawWorld(shot, u, t) {
 }
 
 function drawFrame(t) {
+  // Capturing a timeline position must not inherit text, clipping or paint state.
+  for(const context of [CTX,BGX,GLOWX])context.reset();
   const shot = TL.at(t); const u = t - shot.start;
   const ctx = CTX;
   let heads = {};
