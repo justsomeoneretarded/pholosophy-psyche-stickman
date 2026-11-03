@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import shutil
 import sys
 import time
 from pathlib import Path
@@ -62,11 +63,53 @@ def verify_disputed(records, whisper, minimum=.8):
     return records
 
 
+def reusable_takes(source, narrator):
+    """Reuse only verified, exact-text, same-voice passages from a production checkpoint."""
+    if not source:return {}
+    root=Path(source);film=json.loads((root/'film.json').read_text())
+    if film.get('narrator_voice')!=narrator or not (film.get('speech_verification') or {}).get('passed'):return {}
+    index={}
+    for shot in film.get('shots',[]):
+        for line in shot.get('lines',[]):
+            path=root/'voice'/str(line.get('voice_file') or '')
+            if line.get('who')=='narrator' and line.get('speech_verified') and not line.get('twist') and path.is_file() and path.stat().st_size:
+                index[line['text']]=path
+    return index
+
+def action_minimum(shot):
+    duration=1.8
+    for actor in shot.get('actors',[]):
+        at=float(actor.get('at') or 0);pose=actor.get('pose')
+        if pose in ('walk','run') and 'to' in actor:
+            scale=float(actor.get('scale') or 1)*(.7 if actor.get('depth')=='back' else 1)
+            speed=(430 if pose=='run' else 170)*scale*float(actor.get('speed') or 1)
+            duration=max(duration,at+abs(float(actor['to'])-float(actor.get('x',50)))*19.2/speed+.35)
+        elif pose in ('sitdown','standup'):duration=max(duration,at+1.85)
+        elif pose=='write':duration=max(duration,at+3.8)
+    phone=shot.get('phone') or {}
+    typing=phone.get('typing')
+    if typing:
+        duration=max(duration,float(typing.get('at',.3))+len(typing.get('text',''))/float(typing.get('cps',11))+1.2)
+    for message in phone.get('messages',[]):
+        duration=max(duration,float(message.get('at') or 0)+.6)
+    return duration
+
+def fit_recorded_timeline(film):
+    """Measured speech is authoritative; preserve enough time to finish physical actions."""
+    for shot in film['shots']:
+        lines=[line for line in shot.get('lines',[]) if line.get('who')=='narrator' and line.get('voice_dur')]
+        if lines:
+            need=max(float(line.get('at') or 0)+float(line['voice_dur'])+.75 for line in lines)
+            shot['dur']=round(max(need,action_minimum(shot)),3)
+    film['duration']=round(sum(shot['dur'] for shot in film['shots']),3)
+    return film
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument('film'); ap.add_argument('out')
     ap.add_argument('--narrator', default='warguy')
     ap.add_argument('--whisper', default='base.en')
+    ap.add_argument('--reuse-source')
     a = ap.parse_args()
     film_path, out_dir = Path(a.film), Path(a.out)
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -84,10 +127,14 @@ def main() -> int:
         delivery = 'dramatic' if text.rstrip().endswith('!') else 'calm'
         return voice.speak(text, path, delivery, seed=seed)
 
+    cached=reusable_takes(a.reuse_source,a.narrator);reused=0
     takes = []
     for n, (i, k, ln) in enumerate(jobs):
         main_path = out_dir / f'vo-{i:03d}-{k}-a.wav'
-        record(ln['text'], main_path)
+        if ln['text'] in cached and not ln.get('twist'):
+            shutil.copyfile(cached[ln['text']],main_path);reused+=1
+        else:
+            record(ln['text'], main_path)
         twist_path = None
         if ln.get('twist'):
             twist_path = out_dir / f'vo-{i:03d}-{k}-b.wav'
@@ -96,6 +143,7 @@ def main() -> int:
         if n % 5 == 0:
             print(f'narration {n + 1}/{len(jobs)}  {(time.time() - started) / 60:.1f} min', flush=True)
     voice.close()
+    notice('Narration checkpoint',f'Reused {reused} exact verified passages; generated {len(jobs)-reused} new passages. All takes are transcribed again.')
     # Verification is required, and a retry must itself pass a fresh transcription.
     report_path = out_dir / 'verification.json'
     try:
@@ -173,7 +221,7 @@ def main() -> int:
         need = (ln.get('at') or 0) + dur + .55
         if shot['dur'] < need:
             shot['dur'] = round(need, 2)
-    film['duration'] = round(sum(s['dur'] for s in film['shots']), 2)
+    fit_recorded_timeline(film)
     film['narrator_voice'] = a.narrator
     film_path.write_text(json.dumps(film, indent=1, ensure_ascii=False))
     spoken = sum(t[2]['voice_dur'] for t in takes)

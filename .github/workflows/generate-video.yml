@@ -24,6 +24,9 @@ on:
       procedural_music:
         type: boolean
         default: false
+      narration_source_run:
+        type: string
+        default: ''
       recorded_source_run:
         type: string
         default: ''
@@ -154,6 +157,7 @@ jobs:
     timeout-minutes: 150
     env:
       NARRATOR: ${{ inputs.narrator }}
+      NARRATION_SOURCE_RUN: ${{ inputs.narration_source_run }}
       TTS_MODEL: ${{ vars.TTS_MODEL || 'turbo' }}
       HF_HOME: ${{ github.workspace }}/.cache/huggingface
     outputs:
@@ -200,12 +204,22 @@ jobs:
         if: inputs.recorded_source_run
         id: reused
         run: echo "duration=$(python -c "import json;print(json.load(open('build/film.json'))['duration'])")" >> "$GITHUB_OUTPUT"
+      - name: Download verified passages for a revised screenplay
+        if: inputs.narration_source_run
+        uses: actions/download-artifact@v4
+        with:
+          name: film-final
+          run-id: ${{ inputs.narration_source_run }}
+          github-token: ${{ github.token }}
+          path: build/reuse
       - name: Record and fit the narration
         if: ${{ !inputs.recorded_source_run }}
         id: done
         run: |
           N=$(echo "$NARRATOR" | tr '[:upper:] ' '[:lower:]-')
-          python audio/voice.py build/film.json build/voice --narrator "$N"
+          REUSE_ARGS=()
+          if [ -n "$NARRATION_SOURCE_RUN" ]; then REUSE_ARGS=(--reuse-source build/reuse); fi
+          python audio/voice.py build/film.json build/voice --narrator "$N" "${REUSE_ARGS[@]}"
           echo "duration=$(python -c "import json;print(json.load(open('build/film.json'))['duration'])")" >> "$GITHUB_OUTPUT"
       - uses: actions/upload-artifact@v4
         with:

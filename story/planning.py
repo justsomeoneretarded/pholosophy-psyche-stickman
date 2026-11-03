@@ -67,7 +67,7 @@ Keep the complete outline comfortably below 750 output tokens."""
     sheet=copy.deepcopy(outline);sheet.pop('spine',None);sheet['beats']=[]
     # Expand each argument point once. Repeating a spine entry created duplicate resolutions.
     count=len(spine)
-    words=max(20,round(duration*.55*2.45/count))
+    words=max(20,round(duration*.85*2.7/count))
     history=[]
     local_only=bool(getattr(writer,'specs',None)) and all(s.startswith('ollama:') for s in writer.specs)
     batch_size=1  # One complete beat fits the smallest free-provider response budgets.
