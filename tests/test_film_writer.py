@@ -43,13 +43,13 @@ def test_concept_checks_length_and_honesty():
     assert any('statistic' in p for p in problems) and any('research' in p for p in problems)
 
 
-def test_template_films_are_rejected():
+def test_template_visual_findings_are_actionable_warnings():
     beats = [dict(beat(3, ''), seconds=10, mode='story', where='bedroom', what_happens='he scrolls his phone at 3am') for _ in range(12)]
     sheet = {'beats': beats, '_title': 'Grief'}
     problems, _ = essay.check_concept(sheet, None)
-    text = ' '.join(problems)
+    text = ' '.join(sheet['_visual_review_notes'])
     assert 'phones' in text and 'stock details' in text and 'no people' in text
-    assert len(sheet['_visual_review_notes']) == 2
+    assert not any('phones' in p or 'stock details' in p or 'no people' in p for p in problems)
 
 
 def test_fallback_film_repairs_and_renders_contract():

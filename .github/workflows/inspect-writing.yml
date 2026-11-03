@@ -4,7 +4,7 @@ on:
     inputs:
       source_run:
         type: string
-        default: '41671268205'
+        default: '41678117704'
   push:
     paths: ['.github/workflows/inspect-writing.yml']
 permissions:
@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     env:
-      SOURCE_RUN: ${{ inputs.source_run || '41671268205' }}
+      SOURCE_RUN: ${{ inputs.source_run || '41678117704' }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/download-artifact@v4
