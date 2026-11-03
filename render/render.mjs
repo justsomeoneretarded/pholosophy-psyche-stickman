@@ -31,7 +31,7 @@ const browser = await chromium.launch({ args: ['--disable-gpu-vsync', '--force-d
 const page = await browser.newPage({ viewport: { width: 640, height: 360 } });
 page.on('pageerror', e => { console.error('page error:', e.message); process.exitCode = 1; });
 await page.goto(pathToFileURL(path.join(root, 'engine', 'index.html')).href);
-await page.evaluate(() => document.fonts.ready);
+await page.evaluate(() => loadFilmFonts());
 const duration = await page.evaluate(([f, w]) => setup(f, w), [film, width]);
 console.log(`film: ${film.title} — ${duration.toFixed(2)} s, ${film.shots.length} shots`);
 
