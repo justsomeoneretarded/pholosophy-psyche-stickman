@@ -352,9 +352,19 @@ jobs:
           path: build
           merge-multiple: true
       - uses: actions/download-artifact@v4
+        if: ${{ !inputs.recorded_source_run }}
         continue-on-error: true
         with:
           name: film-music
+          path: build
+      - name: Reuse the recorded production score
+        if: inputs.recorded_source_run
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          name: film-music
+          run-id: ${{ inputs.recorded_source_run }}
+          github-token: ${{ github.token }}
           path: build
       - uses: actions/download-artifact@v4
         with:
@@ -387,6 +397,7 @@ jobs:
       - name: Publish a review copy to the previews branch
         env:
           REVIEW_TITLE: ${{ inputs.title }}
+          REVIEW_RUN_STATUS: ${{ job.status }}
         if: always()
         continue-on-error: true
         run: |
@@ -399,7 +410,11 @@ jobs:
             ffmpeg -v error -y -i out/video.mp4 -vf scale=854:-2 -c:v libx264 -crf 31 -preset veryfast -c:a aac -b:a 96k "$RUNNER_TEMP/p/$dir/review.mp4"
             ffmpeg -v error -y -i out/video.mp4 -vf "fps=1/2,scale=480:-2,drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf:text='%{pts\\:hms}':x=6:y=6:fontsize=18:fontcolor=red,tile=4x6" "$RUNNER_TEMP/p/$dir/frames/sheet-%02d.jpg"
           fi
-          echo 'Final encoded production review copy. See the production artifact for the native-resolution master.' > "$RUNNER_TEMP/p/$dir/REVIEW_STATUS.txt"
+          if [ "$REVIEW_RUN_STATUS" = success ] && [ -f out/quality_report.json ]; then
+            echo 'Technically verified encoded production. Inspect script_review and production notes separately.' > "$RUNNER_TEMP/p/$dir/REVIEW_STATUS.txt"
+          else
+            echo 'Failed-production diagnostics. This is not a finished or approved video.' > "$RUNNER_TEMP/p/$dir/REVIEW_STATUS.txt"
+          fi
           bash scripts/publish_review.sh "$RUNNER_TEMP/p/$dir" "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" "$GITHUB_RUN_ID" "$RUNNER_TEMP/review-publisher"
       - name: Preserve failed production diagnostics
         if: failure()
