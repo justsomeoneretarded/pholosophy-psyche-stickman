@@ -23,7 +23,9 @@ def replay(source,title,minutes):
     data['_writer']=data.get('_writer') or previous.get('_writer')
     repaired=writing/'replay-input.json';repaired.write_text(json.dumps(data,indent=1,ensure_ascii=False))
     research=(writing/'research.txt').read_text() if (writing/'research.txt').exists() else ''
-    stage_concept(title,minutes_value(minutes),writing,research,repaired,review=False)
+    direction=str(previous.get('_title','')).partition('Direction from the producer:')[2]
+    validation_title=title+('. Direction from the producer: '+direction if direction else '')
+    stage_concept(validation_title,minutes_value(minutes),writing,research,repaired,review=False)
     if not (writing/'shots.json').exists():raise ValueError('Saved plan has no completed storyboard')
     return stage_merge(writing,source/'film.json')
 if __name__=='__main__':

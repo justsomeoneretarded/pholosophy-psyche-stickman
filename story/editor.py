@@ -50,7 +50,7 @@ def context(sheet, title):
     }
 
 
-def review_concept(sheet, writer, check, title, minutes, output_dir, rounds=2, reviewer=None):
+def review_concept(sheet, writer, check, title, minutes, output_dir, rounds=3, reviewer=None):
     reviewer=reviewer or writer
     output=Path(output_dir);output.mkdir(parents=True,exist_ok=True)
     original=copy.deepcopy(sheet)
@@ -137,4 +137,7 @@ Use existing cast IDs and supported locations. Dialogue is a list of {who: cast 
             sheet=revised['sheet'];history[-1]['edits'].append(revised['patch']);save()
     if report['issues']:
         print('::warning title=Editorial findings remain::'+str(len(report['issues']))+' findings remain in editorial-review.json',flush=True)
+    major=[issue for issue in report['issues'] if issue.get('severity')=='major']
+    if major:
+        raise ValueError('Editorial review still has major continuity/content issues; see editorial-review.json: '+str(major[0]['problem'])[:500])
     return sheet

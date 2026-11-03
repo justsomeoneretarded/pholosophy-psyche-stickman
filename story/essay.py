@@ -421,6 +421,15 @@ def place_narration(beat, shots):
         shot = explicit[0] if explicit else visual[min(len(visual) - 1, int(k * step))]
         shot['lines'].insert(0, {'who': 'narrator', 'text': sentence, 'at': .25})
         shot['dur'] = max(float(shot.get('dur') or 3), .25 + len(sentence.split()) / WPS + .8)
+    # Distribute the beat budget after adding narration angles. A cloned angle must
+    # not inherit the entire prior shot duration and multiply a six-minute plan.
+    minimum=[]
+    for shot in visual:
+        words=sum(len(line['text'].split()) for line in shot.get('lines',[]) if line.get('who')=='narrator')
+        minimum.append(max(2.8,.25+words/WPS+.8))
+    target=max(float(beat.get('seconds') or 0),sum(minimum))
+    extra=max(0,target-sum(minimum))/len(visual)
+    for shot,need in zip(visual,minimum):shot['dur']=round(need+extra,3)
     return shots
 
 
