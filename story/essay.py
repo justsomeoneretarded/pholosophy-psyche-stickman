@@ -274,7 +274,8 @@ def stage_concept(title, minutes, out_dir, research='', reuse_draft=None, review
     if review:
         reviewer = Writer(os.environ.get('REVIEW_MODELS', 'groq:qwen/qwen3.8-27b,groq:openai/gpt-oss-120b,groq:openai/gpt-oss-20b,ollama:qwen3:4b'))
         patcher = Writer(os.environ.get('EDITOR_WRITER_MODELS','groq:openai/gpt-oss-120b,groq:openai/gpt-oss-20b,ollama:qwen3:4b'))
-        sheet = review_concept(sheet, patcher, check_concept, title, minutes, out, reviewer=reviewer)
+        adjudicator = Writer(os.environ.get('EDITOR_CHECK_MODELS','groq:openai/gpt-oss-120b,groq:openai/gpt-oss-20b,ollama:qwen3:4b'))
+        sheet = review_concept(sheet, patcher, check_concept, title, minutes, out, reviewer=reviewer, adjudicator=adjudicator)
     else:
         notice('Checkpoint replay', 'Reusing prior editorial work; running schema/content checks and exact-script compilation')
     sheet['_title'] = title

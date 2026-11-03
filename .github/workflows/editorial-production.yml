@@ -1,5 +1,5 @@
 name: Produce the AI editorial revision
-# Iteration 2: fuller explanation, measured pacing and verified-take reuse.
+# Iteration 3: confirm major findings before revising a coherent script.
 on:
   workflow_dispatch:
   push:

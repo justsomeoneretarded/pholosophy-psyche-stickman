@@ -50,7 +50,34 @@ def context(sheet, title):
     }
 
 
-def review_concept(sheet, writer, check, title, minutes, output_dir, rounds=3, reviewer=None):
+ADJUDICATOR_SYSTEM = """Check whether the proposed major editorial findings are actually established by the supplied screenplay.
+Confirm demonstrable contradictions, lost message ownership, unsupported empirical claims, or missing essential reasoning.
+Do not confirm an issue merely because a different story might be preferable.
+Knowing some external facts does not establish another person's intention; asking what someone meant can remain useful after checking a schedule.
+Do not infer omniscience, a guaranteed outcome, or a clinical claim from a fictional character's limited knowledge or a clearly marked counterfactual.
+For each supplied issue return {"judgments":[{"index":the supplied issue index,"confirmed":true|false,"reason":"specific evidence and reasoning"}]}.
+Return every supplied index exactly once. Preserve genuine problems; reject unsupported inferences by the critic. Return JSON only."""
+
+def adjudicate(report,sheet,title,model):
+    indices=[i for i,issue in enumerate(report['issues']) if issue['severity']=='major']
+    if not indices:return report,None
+    payload={'story':context(sheet,title),'proposed_major_findings':[{'index':i,**report['issues'][i]} for i in indices]}
+    def validate(data):
+        rows=data.get('judgments')
+        if not isinstance(rows,list) or len(rows)!=len(indices):raise ValueError('Return every supplied major issue once')
+        if {row.get('index') for row in rows}!=set(indices):raise ValueError('Judgment indices differ from the supplied issues')
+        if any(type(row.get('confirmed')) is not bool or not row.get('reason') for row in rows):raise ValueError('Each judgment needs confirmed boolean and evidence')
+        return rows
+    judgments=model.json(ADJUDICATOR_SYSTEM,json.dumps(payload,ensure_ascii=False),validate,temperature=.15,max_tokens=900,attempts=2)
+    result=copy.deepcopy(report)
+    for row in judgments:
+        issue=result['issues'][row['index']]
+        issue['confirmation']={'model':getattr(model,'used',None),**row}
+        if not row['confirmed']:
+            issue['original_severity']='major';issue['severity']='minor';issue['actionable']=False
+    return result,judgments
+
+def review_concept(sheet, writer, check, title, minutes, output_dir, rounds=3, reviewer=None, adjudicator=None):
     reviewer=reviewer or writer
     output=Path(output_dir);output.mkdir(parents=True,exist_ok=True)
     original=copy.deepcopy(sheet)
@@ -74,11 +101,16 @@ def review_concept(sheet, writer, check, title, minutes, output_dir, rounds=3, r
         report=reviewer.json(EDITOR_SYSTEM,json.dumps(context(sheet,title),ensure_ascii=False),
                            validate_review,temperature=.25,max_tokens=900,attempts=3)
         history.append({'round':round_index+1,'reviewer':getattr(reviewer,'used',None),'review':report,'edits':[]});save()
-        if not report['issues'] or round_index==rounds:break
-        selected=sorted({i for issue in report['issues'] for i in issue.get('revise',issue['beats']) if i})
-        if any(0 in issue.get('revise',issue['beats']) for issue in report['issues']):selected.append(0)
+        if adjudicator and any(issue['severity']=='major' for issue in report['issues']):
+            history[-1]['original_review']=copy.deepcopy(report);save()
+            report,judgments=adjudicate(report,sheet,title,adjudicator)
+            history[-1]['review']=report;history[-1]['confirmation']=judgments;save()
+        actionable=[issue for issue in report['issues'] if issue['severity']=='major' and issue.get('actionable',True)]
+        if not actionable or round_index==rounds:break
+        selected=sorted({i for issue in actionable for i in issue.get('revise',issue['beats']) if i})
+        if any(0 in issue.get('revise',issue['beats']) for issue in actionable):selected.append(0)
         for index in selected:
-            issues=[issue for issue in report['issues'] if index in issue.get('revise',issue['beats'])]
+            issues=[issue for issue in actionable if index in issue.get('revise',issue['beats'])]
             payload={'topic_and_direction':title,'argument':sheet.get('idea'),'approach':sheet.get('approach'),
                      'cast':sheet.get('cast'),'requested_beat':index,
                      'story_map':[{'beat':i+1,'idea':b.get('idea'),'action':b.get('what_happens')} for i,b in enumerate(sheet['beats'])],
