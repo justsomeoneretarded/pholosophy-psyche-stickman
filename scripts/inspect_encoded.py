@@ -4,7 +4,7 @@ from pathlib import Path
 p=Path(sys.argv[1]); film=json.loads((p/'film.json').read_text());selected=[];t=0
 for i,s in enumerate(film['shots']):
     poses={a.get('pose') for a in s.get('actors',[])}
-    if i%5==0 or poses & {'write','show','walk','standup','sitdown','talk'}:
+    if len(film['shots'])<=15 or i%5==0 or poses & {'write','show','walk','standup','sitdown','talk'}:
         selected.append((i,round(t+min(float(s['dur'])/2,2),2)))
     t+=float(s['dur'])
 folder=p/'encoded-frames';folder.mkdir(exist_ok=True)

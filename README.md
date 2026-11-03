@@ -5,22 +5,22 @@ Enter a title or concept to generate a narrated vector animation with articulate
 ## Make a video
 
 1. **Actions → Generate Stickman Video → Run workflow** (branch `main`).
-2. Fill in: **Title** (e.g. `Addiction`), **Narrator** (Warguy by default, Kit Laser or Female), **Length** (Auto by default, or minutes), and optional **Notes** to steer the story.
+2. Fill in: **Title** (e.g. `Addiction`), **Narrator** (Warguy by default, Kit Laser or Female), **Length** (6 minutes by default, or Auto), and optional **Notes** to steer the story.
 3. Download **philosophy-video** from the run's Artifacts: `video.mp4`, three thumbnails and `thumbnail.png`, `subtitles.srt` / `subtitles.vtt`, titles, description, tags, pinned comment, `script.txt`, `story.md`, `storyboard.json`, `scene_timeline.json`, research files, `speech-verification.json`, `quality_report.json` and a contact sheet.
 
-One-time setup: a free Groq API key in the repository secret `GROQ_API_KEY`.
+A free Groq API key in repository secret `GROQ_API_KEY` enables hosted writing. Local Ollama Qwen3 4B is the CPU fallback; complete local-only long-form writing remains unverified. Free-provider rate limits can stop a run.
 
 ## How a film is made
 
 | Job | What runs |
 |---|---|
-| Write and storyboard | Wikipedia background reading; **qwen3.8-27b on Groq** invents an original story that dramatizes the concept, writes the narration that explains it, then storyboards every beat into shots (falls back to gpt-oss-120b, then local Gemma 4 12B). `story/essay.py` |
+| Write and storyboard | Topic-aware Wikipedia and PubMed metadata; **gpt-oss-20b on free Groq**, with 120b/Qwen and local fallbacks, develops the narrative. A separate reviewer critiques it. Supported physical directions compile into rig performances; experimental AI shot generation can be selected with `STORYBOARD_MODELS`. `story/essay.py` |
 | Record the narration | **Chatterbox Turbo** (CPU) with the chosen narrator reference; faster-whisper checks every line; shots stretch to fit the voice. `audio/voice.py` |
-| Compose the score | **ACE-Step 1.5** composes from the writer's music prompt, in parallel with the voice. `audio/music.py` |
+| Compose the score | **ACE-Step 1.5** attempts a 45-second CPU score from the writer's prompt, looped with crossfades. An original procedural piano bed is used if generation fails. The previous 240-second setting exceeded the upstream 600-second timeout in one run. `audio/music.py` |
 | Picture | The canvas engine (`engine/`) renders the film in four parallel parts with headless Chromium. |
 | Sound, edit and package | Sound effects and ambience from what happens on screen, music ducking under voices, -14 LUFS master (`audio/sound.py`); thumbnails and publishing files (`story/package.py`); a review copy on the `previews` branch. |
 
-Nothing is pre-scripted. Each shot is composed from the engine's vocabulary (`engine/vocab.json`): 13 sets with time of day and weather, 33 poses, 23 moods, props and held objects, phone screens (chat, calls, feed, alarm, power off), notes, calendars, photos, speech bubbles and thoughts, the inner voice, counters and day chapters, big words, colour grades, and wide / medium / close / extreme / two-shot / phone / insert framing. `story/validate.py` repairs anything the engine cannot draw.
+Ordinary title-driven runs create a new script. Explicit regression fixtures are kept separately and are not evidence of fresh AI writing. Each shot is composed from the engine's vocabulary (`engine/vocab.json`): named sets with time of day and weather, supported articulated performances and facial moods, props and held objects, phone screens (chat, calls, feed, alarm, power off), notes, calendars, photos, speech bubbles and thoughts, the inner voice, counters and day chapters, big words, colour grades, and wide / medium / close / extreme / two-shot / phone / insert framing. `story/validate.py` repairs anything the engine cannot draw.
 
 The writer now generates a compact outline and expands it in bounded requests, then saves editorial critiques and focused revisions. Quoted fictional speech and self-talk are allowed in narration. Unsupported attributed quotations are still rejected.
 
@@ -65,3 +65,13 @@ The LLM emits validated data, never executable animation code. Actions, actors, 
 ## Licences
 
 Code: GPL-3.0-or-later. Fonts: SIL Open Font License (see `assets/fonts`). Current production music: ACE-Step-generated score, with an original procedural piano/pad fallback and synthesized effects. The legacy Python asset library also contains Scott Buckley music under CC BY 4.0 (see `assets/music`). Narrator reference clips in `assets/voices` are excerpts published with the owner's approval. Chatterbox (MIT) adds an inaudible watermark to generated speech.
+
+## Verified outputs and review limits
+
+The [51.43-second production smoke test](https://github.com/justsomeoneretarded/pholosophy-psyche-stickman/actions/runs/41341468260) passed with native 1920×1080/30 FPS H.264/AAC, verified Chatterbox narration, captions, procedural music/effects, thumbnails and metadata. Its script is an explicitly authored regression fixture, not a title-only writing benchmark.
+
+The [253.47-second philosophical rerender](https://github.com/justsomeoneretarded/pholosophy-psyche-stickman/actions/runs/41341144570) passed encoding and speech checks, but retains an excessive-idle-acting warning and weak editorial passages. It is review evidence, not artistic acceptance. Final-MP4 snapshots exposed recipient/action and cast-identity problems that prompted further corrections.
+
+[Encoded-output inspection](https://github.com/justsomeoneretarded/pholosophy-psyche-stickman/actions/runs/41634124340) now publishes decoded MP4 frames beside each run on the previews branch. [The fresh six-minute production review](https://github.com/justsomeoneretarded/pholosophy-psyche-stickman/actions/runs/41634217001) is a separate test; check its conclusion before assuming a full-length video exists.
+
+Production rig coverage includes drawing with a visible pen and page, showing/reading a book, conversation, thinking and articulated chair transitions. Numerical tests check actual rendered IK pen endpoints, planted feet and distinct seat allocation. Complex arbitrary pickup/handover, collision-free blocking in every composed environment, vertical production, full local-only writing, and consistent editorial quality are not certified.
