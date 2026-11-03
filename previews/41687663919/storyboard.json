@@ -1,0 +1,6860 @@
+{
+ "title": "Why Smart People Overthink Everything",
+ "logline": "One ambiguous comment about Friday becomes a conversation about a specific unfinished review; the distinction between rehearsal and investigation drives each advance.",
+ "demon_color": "#ff2a2a",
+ "narrator": "male",
+ "hud": null,
+ "music": {
+  "prompt": "Restrained thoughtful felt piano and warm ambient textures, 72 bpm, instrumental, gentle tension resolving into calm focus."
+ },
+ "cast": {
+  "hero": {
+   "kind": "hero"
+  },
+  "demon": {
+   "kind": "demon"
+  },
+  "alex": {
+   "kind": "hero",
+   "hair": "short",
+   "top": "charcoal"
+  },
+  "jamie": {
+   "kind": "friend",
+   "hair": "long",
+   "top": "blue"
+  }
+ },
+ "shots": [
+  {
+   "set": "cafe",
+   "time": "day",
+   "grade": "warm",
+   "dur": 6.959,
+   "camera": {
+    "frame": "two",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "think",
+     "x": 19.0,
+     "seated": true,
+     "facing": 1,
+     "mood": "neutral"
+    },
+    {
+     "id": "jamie",
+     "pose": "talk",
+     "x": 31.0,
+     "seated": true,
+     "facing": -1,
+     "mood": "neutral"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "When Jamie said, “Friday looks tight,” Alex heard a different sentence: “You’ve let everyone down.”",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-000-0.wav",
+     "voice_dur": 5.959,
+     "word_times": [
+      {
+       "word": "When",
+       "start": 0.0,
+       "end": 0.12,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "Jamie",
+       "start": 0.12,
+       "end": 0.28,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "said,",
+       "start": 0.28,
+       "end": 0.72,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "“Friday",
+       "start": 0.72,
+       "end": 1.16,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "looks",
+       "start": 1.16,
+       "end": 1.58,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "tight,”",
+       "start": 1.58,
+       "end": 1.98,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "Alex",
+       "start": 2.38,
+       "end": 2.5,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "heard",
+       "start": 2.5,
+       "end": 2.78,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 2.78,
+       "end": 2.94,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "different",
+       "start": 2.94,
+       "end": 3.16,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "sentence:",
+       "start": 3.16,
+       "end": 3.48,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "“You’ve",
+       "start": 4.1,
+       "end": 4.46,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "let",
+       "start": 4.46,
+       "end": 4.62,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "everyone",
+       "start": 4.62,
+       "end": 5.02,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "down.”",
+       "start": 5.02,
+       "end": 5.54,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 18.06
+    },
+    {
+     "who": "jamie",
+     "text": "Friday looks tight.",
+     "at": 0.4
+    }
+   ],
+   "narration_index": 0,
+   "beat": 1,
+   "sfx": [],
+   "items": [],
+   "transition": "fade"
+  },
+  {
+   "set": "desk",
+   "time": "day",
+   "grade": "warm",
+   "dur": 7.346,
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "phone",
+     "x": 50.0,
+     "seated": true,
+     "mood": "worried"
+    }
+   ],
+   "narration_index": 1,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "At home, he begins a reply, writes an apology, deletes it, and replaces it with a longer one.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-001-0.wav",
+     "voice_dur": 6.346,
+     "word_times": [
+      {
+       "word": "At",
+       "start": 0.0,
+       "end": 0.16,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "home,",
+       "start": 0.16,
+       "end": 0.36,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "he",
+       "start": 0.84,
+       "end": 0.86,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "begins",
+       "start": 0.86,
+       "end": 1.14,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 1.14,
+       "end": 1.4,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "reply,",
+       "start": 1.4,
+       "end": 1.62,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "writes",
+       "start": 2.06,
+       "end": 2.36,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "an",
+       "start": 2.36,
+       "end": 2.62,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "apology,",
+       "start": 2.62,
+       "end": 2.82,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "deletes",
+       "start": 3.36,
+       "end": 3.88,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "it,",
+       "start": 3.88,
+       "end": 3.98,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "and",
+       "start": 4.32,
+       "end": 4.44,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "replaces",
+       "start": 4.44,
+       "end": 4.86,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "it",
+       "start": 4.86,
+       "end": 5.18,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "with",
+       "start": 5.18,
+       "end": 5.36,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 5.36,
+       "end": 5.44,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "longer",
+       "start": 5.44,
+       "end": 5.66,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "one.",
+       "start": 5.66,
+       "end": 6.0,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 15.93
+    }
+   ],
+   "beat": 1,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "desk",
+   "time": "day",
+   "grade": "warm",
+   "dur": 7.94,
+   "camera": {
+    "frame": "close",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "phone",
+     "x": 50.0,
+     "seated": true,
+     "mood": "nervous"
+    }
+   ],
+   "narration_index": 2,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Perhaps a warmer opening or a more confident ending will help; soon he is editing a conversation that hasn’t happened.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-002-0.wav",
+     "voice_dur": 6.94,
+     "word_times": [
+      {
+       "word": "Perhaps",
+       "start": 0.0,
+       "end": 0.22,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 0.22,
+       "end": 0.42,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "warmer",
+       "start": 0.42,
+       "end": 0.62,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "opening",
+       "start": 0.62,
+       "end": 1.12,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "or",
+       "start": 1.12,
+       "end": 1.34,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 1.34,
+       "end": 1.4,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "more",
+       "start": 1.4,
+       "end": 1.56,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "confident",
+       "start": 1.56,
+       "end": 2.0,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "ending",
+       "start": 2.0,
+       "end": 2.5,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "will",
+       "start": 2.5,
+       "end": 2.76,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "help;",
+       "start": 2.76,
+       "end": 3.04,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "soon",
+       "start": 3.8,
+       "end": 3.92,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "he",
+       "start": 3.92,
+       "end": 4.14,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "is",
+       "start": 4.14,
+       "end": 4.26,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "editing",
+       "start": 4.26,
+       "end": 4.6,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 4.6,
+       "end": 4.8,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "conversation",
+       "start": 4.8,
+       "end": 5.2,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "that",
+       "start": 5.2,
+       "end": 5.76,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "hasn’t",
+       "start": 5.76,
+       "end": 6.16,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "happened.",
+       "start": 6.16,
+       "end": 6.48,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 18.48
+    }
+   ],
+   "beat": 1,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "desk",
+   "time": "day",
+   "grade": "warm",
+   "dur": 6.427,
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "think",
+     "x": 50.0,
+     "seated": true,
+     "mood": "tired"
+    }
+   ],
+   "narration_index": 3,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The problem isn’t that he has run out of answers; he can imagine so many that none feels safe.",
+     "at": 0.25,
+     "speech_check": 0.85,
+     "speech_verified": true,
+     "voice_file": "vo-003-0.wav",
+     "voice_dur": 5.427,
+     "word_times": [
+      {
+       "word": "The",
+       "start": 0.0,
+       "end": 0.08,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "problem",
+       "start": 0.08,
+       "end": 0.34,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "isn’t",
+       "start": 0.34,
+       "end": 0.74,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "that",
+       "start": 0.74,
+       "end": 0.84,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "he",
+       "start": 0.84,
+       "end": 1.0,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "has",
+       "start": 1.0,
+       "end": 1.13,
+       "timing_source": "estimated_between_anchors"
+      },
+      {
+       "word": "run",
+       "start": 1.13,
+       "end": 1.26,
+       "timing_source": "estimated_between_anchors"
+      },
+      {
+       "word": "out",
+       "start": 1.26,
+       "end": 1.42,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "of",
+       "start": 1.42,
+       "end": 1.54,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "answers;",
+       "start": 1.54,
+       "end": 1.86,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "he",
+       "start": 2.46,
+       "end": 2.56,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "can",
+       "start": 2.56,
+       "end": 2.7,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "imagine",
+       "start": 2.7,
+       "end": 2.98,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "so",
+       "start": 2.98,
+       "end": 3.3,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "many",
+       "start": 3.3,
+       "end": 3.56,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "that",
+       "start": 3.56,
+       "end": 3.82,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "none",
+       "start": 3.82,
+       "end": 4.1,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "feels",
+       "start": 4.1,
+       "end": 4.48,
+       "timing_source": "estimated_between_anchors"
+      },
+      {
+       "word": "safe.",
+       "start": 4.48,
+       "end": 4.92,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 18.83
+    }
+   ],
+   "beat": 1,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "desk",
+   "time": "day",
+   "grade": "warm",
+   "dur": 9.56,
+   "camera": {
+    "frame": "close",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "think",
+     "x": 50.0,
+     "seated": true,
+     "mood": "worried"
+    }
+   ],
+   "narration_index": 4,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Being clever can help generate possibilities, but it doesn’t turn those possibilities into evidence, and overthinking is no proof of intelligence.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-004-0.wav",
+     "voice_dur": 8.56,
+     "word_times": [
+      {
+       "word": "Being",
+       "start": 0.0,
+       "end": 0.16,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "clever",
+       "start": 0.16,
+       "end": 0.42,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "can",
+       "start": 0.42,
+       "end": 0.78,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "help",
+       "start": 0.78,
+       "end": 1.0,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "generate",
+       "start": 1.0,
+       "end": 1.4,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "possibilities,",
+       "start": 1.4,
+       "end": 1.94,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "but",
+       "start": 2.7,
+       "end": 2.8,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "it",
+       "start": 2.8,
+       "end": 2.88,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "doesn’t",
+       "start": 2.88,
+       "end": 3.28,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "turn",
+       "start": 3.28,
+       "end": 3.52,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "those",
+       "start": 3.52,
+       "end": 3.74,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "possibilities",
+       "start": 3.74,
+       "end": 4.12,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "into",
+       "start": 4.12,
+       "end": 4.82,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "evidence,",
+       "start": 4.82,
+       "end": 5.2,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "and",
+       "start": 5.62,
+       "end": 5.82,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "overthinking",
+       "start": 5.82,
+       "end": 6.38,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "is",
+       "start": 6.38,
+       "end": 6.74,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "no",
+       "start": 6.74,
+       "end": 6.96,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "proof",
+       "start": 6.96,
+       "end": 7.26,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "of",
+       "start": 7.26,
+       "end": 7.5,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "intelligence.",
+       "start": 7.5,
+       "end": 7.86,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 18.54
+    }
+   ],
+   "beat": 1,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 9.128,
+   "set": "desk",
+   "time": "day",
+   "grade": "warm",
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "think",
+     "x": 50.0,
+     "seated": true,
+     "facing": 1,
+     "mood": "neutral"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "A mind can make a prediction sound convincing simply by supplying detail; Alex can picture the raised eyebrow without having seen one.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-005-0.wav",
+     "voice_dur": 8.128,
+     "word_times": [
+      {
+       "word": "A",
+       "start": 0.0,
+       "end": 0.08,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "mind",
+       "start": 0.08,
+       "end": 0.3,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "can",
+       "start": 0.3,
+       "end": 0.54,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "make",
+       "start": 0.54,
+       "end": 0.72,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 0.72,
+       "end": 0.86,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "prediction",
+       "start": 0.86,
+       "end": 1.12,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "sound",
+       "start": 1.12,
+       "end": 1.62,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "convincing",
+       "start": 1.62,
+       "end": 2.1,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "simply",
+       "start": 2.1,
+       "end": 2.78,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "by",
+       "start": 2.78,
+       "end": 3.04,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "supplying",
+       "start": 3.04,
+       "end": 3.42,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "detail;",
+       "start": 3.42,
+       "end": 3.92,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "Alex",
+       "start": 4.76,
+       "end": 5.0,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "can",
+       "start": 5.0,
+       "end": 5.32,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "picture",
+       "start": 5.32,
+       "end": 5.7,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "the",
+       "start": 5.7,
+       "end": 5.9,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "raised",
+       "start": 5.9,
+       "end": 6.12,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "eyebrow",
+       "start": 6.12,
+       "end": 6.46,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "without",
+       "start": 6.46,
+       "end": 6.92,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "having",
+       "start": 6.92,
+       "end": 7.24,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "seen",
+       "start": 7.24,
+       "end": 7.5,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "one.",
+       "start": 7.5,
+       "end": 7.8,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 17.92
+    }
+   ],
+   "narration_index": 5,
+   "beat": 1,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 8.039,
+   "set": "desk",
+   "time": "day",
+   "grade": "warm",
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "phone",
+     "x": 50.0,
+     "seated": true,
+     "facing": 1,
+     "mood": "neutral"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "His imagination has produced a scene, not a response from Jamie, so polishing that scene cannot tell him what she meant.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-006-0.wav",
+     "voice_dur": 7.039,
+     "word_times": [
+      {
+       "word": "His",
+       "start": 0.0,
+       "end": 0.12,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "imagination",
+       "start": 0.12,
+       "end": 0.54,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "has",
+       "start": 0.54,
+       "end": 0.94,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "produced",
+       "start": 0.94,
+       "end": 1.32,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 1.32,
+       "end": 1.64,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "scene,",
+       "start": 1.64,
+       "end": 1.94,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "not",
+       "start": 2.38,
+       "end": 2.5,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 2.5,
+       "end": 2.56,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "response",
+       "start": 2.56,
+       "end": 2.94,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "from",
+       "start": 2.94,
+       "end": 3.26,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "Jamie,",
+       "start": 3.26,
+       "end": 3.5,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "so",
+       "start": 4.04,
+       "end": 4.12,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "polishing",
+       "start": 4.12,
+       "end": 4.58,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "that",
+       "start": 4.58,
+       "end": 4.76,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "scene",
+       "start": 4.76,
+       "end": 5.08,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "cannot",
+       "start": 5.08,
+       "end": 5.34,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "tell",
+       "start": 5.34,
+       "end": 5.8,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "him",
+       "start": 5.8,
+       "end": 5.98,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "what",
+       "start": 5.98,
+       "end": 6.14,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "she",
+       "start": 6.14,
+       "end": 6.36,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "meant.",
+       "start": 6.36,
+       "end": 6.6,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 18.53
+    }
+   ],
+   "narration_index": 6,
+   "beat": 1,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "office",
+   "time": "day",
+   "grade": "warm",
+   "dur": 7.797,
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "phone",
+     "x": 50.0,
+     "facing": 1,
+     "mood": "neutral",
+     "seated": true,
+     "hold": "phone"
+    }
+   ],
+   "narration_index": 0,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Next morning, Alex opens the project schedule and finds one unfinished review, while the other tasks are where they should be.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-007-0.wav",
+     "voice_dur": 6.797,
+     "word_times": [
+      {
+       "word": "Next",
+       "start": 0.0,
+       "end": 0.16,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "morning,",
+       "start": 0.16,
+       "end": 0.46,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "Alex",
+       "start": 0.72,
+       "end": 0.82,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "opens",
+       "start": 0.82,
+       "end": 1.28,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "the",
+       "start": 1.28,
+       "end": 1.5,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "project",
+       "start": 1.5,
+       "end": 1.8,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "schedule",
+       "start": 1.8,
+       "end": 2.12,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "and",
+       "start": 2.12,
+       "end": 2.48,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "finds",
+       "start": 2.48,
+       "end": 2.72,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "one",
+       "start": 2.72,
+       "end": 3.02,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "unfinished",
+       "start": 3.02,
+       "end": 3.3,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "review,",
+       "start": 3.3,
+       "end": 4.0,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "while",
+       "start": 4.42,
+       "end": 4.64,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "the",
+       "start": 4.64,
+       "end": 4.8,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "other",
+       "start": 4.8,
+       "end": 4.96,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "tasks",
+       "start": 4.96,
+       "end": 5.28,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "are",
+       "start": 5.28,
+       "end": 5.64,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "where",
+       "start": 5.64,
+       "end": 5.8,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "they",
+       "start": 5.8,
+       "end": 5.96,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "should",
+       "start": 5.96,
+       "end": 6.18,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "be.",
+       "start": 6.18,
+       "end": 6.44,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 20.15
+    }
+   ],
+   "beat": 2,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "office",
+   "time": "day",
+   "grade": "warm",
+   "dur": 8.605,
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "think",
+     "x": 50.0,
+     "seated": true,
+     "mood": "hopeful"
+    }
+   ],
+   "narration_index": 1,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "That check changes the problem: he now knows what might delay Friday, instead of treating the entire project as a disaster.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-008-0.wav",
+     "voice_dur": 7.605,
+     "word_times": [
+      {
+       "word": "That",
+       "start": 0.0,
+       "end": 0.12,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "check",
+       "start": 0.12,
+       "end": 0.38,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "changes",
+       "start": 0.38,
+       "end": 0.96,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "the",
+       "start": 0.96,
+       "end": 1.12,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "problem:",
+       "start": 1.12,
+       "end": 1.48,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "he",
+       "start": 2.12,
+       "end": 2.2,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "now",
+       "start": 2.2,
+       "end": 2.36,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "knows",
+       "start": 2.36,
+       "end": 2.7,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "what",
+       "start": 2.7,
+       "end": 2.84,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "might",
+       "start": 2.84,
+       "end": 3.0,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "delay",
+       "start": 3.0,
+       "end": 3.26,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "Friday,",
+       "start": 3.26,
+       "end": 3.66,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "instead",
+       "start": 4.24,
+       "end": 4.44,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "of",
+       "start": 4.44,
+       "end": 4.64,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "treating",
+       "start": 4.64,
+       "end": 4.9,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "the",
+       "start": 4.9,
+       "end": 5.28,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "entire",
+       "start": 5.28,
+       "end": 5.58,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "project",
+       "start": 5.58,
+       "end": 6.16,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "as",
+       "start": 6.16,
+       "end": 6.6,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 6.6,
+       "end": 6.7,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "disaster.",
+       "start": 6.7,
+       "end": 7.08,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 17.58
+    }
+   ],
+   "beat": 2,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "office",
+   "time": "day",
+   "grade": "warm",
+   "dur": 9.068,
+   "camera": {
+    "frame": "close",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "phone",
+     "x": 50.0,
+     "facing": 1,
+     "mood": "worried",
+     "seated": true,
+     "hold": "phone"
+    }
+   ],
+   "narration_index": 2,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Then he imagines Jamie’s face when she reads his reply, changes a word, imagines another expression, and changes it back.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-009-0.wav",
+     "voice_dur": 8.068,
+     "word_times": [
+      {
+       "word": "Then",
+       "start": 0.0,
+       "end": 0.16,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "he",
+       "start": 0.16,
+       "end": 0.26,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "imagines",
+       "start": 0.26,
+       "end": 0.78,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "Jamie’s",
+       "start": 0.78,
+       "end": 1.24,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "face",
+       "start": 1.24,
+       "end": 1.48,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "when",
+       "start": 1.48,
+       "end": 1.78,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "she",
+       "start": 1.78,
+       "end": 1.96,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "reads",
+       "start": 1.96,
+       "end": 2.22,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "his",
+       "start": 2.22,
+       "end": 2.46,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "reply,",
+       "start": 2.46,
+       "end": 2.84,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "changes",
+       "start": 3.32,
+       "end": 3.62,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 3.62,
+       "end": 3.88,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "word,",
+       "start": 3.88,
+       "end": 4.2,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "imagines",
+       "start": 4.56,
+       "end": 5.14,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "another",
+       "start": 5.14,
+       "end": 5.46,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "expression,",
+       "start": 5.46,
+       "end": 5.86,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "and",
+       "start": 6.5,
+       "end": 6.62,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "changes",
+       "start": 6.62,
+       "end": 6.96,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "it",
+       "start": 6.96,
+       "end": 7.28,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "back.",
+       "start": 7.28,
+       "end": 7.52,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 16.3
+    }
+   ],
+   "beat": 2,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "office",
+   "time": "day",
+   "grade": "warm",
+   "dur": 7.133,
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "think",
+     "x": 50.0,
+     "seated": true,
+     "mood": "tired"
+    }
+   ],
+   "narration_index": 3,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Nothing new has entered the picture; his activity has changed, but his information has not.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-010-0.wav",
+     "voice_dur": 6.133,
+     "word_times": [
+      {
+       "word": "Nothing",
+       "start": 0.0,
+       "end": 0.3,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "new",
+       "start": 0.3,
+       "end": 0.64,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "has",
+       "start": 0.64,
+       "end": 0.92,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "entered",
+       "start": 0.92,
+       "end": 1.06,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "the",
+       "start": 1.06,
+       "end": 1.32,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "picture;",
+       "start": 1.32,
+       "end": 1.7,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "his",
+       "start": 2.24,
+       "end": 2.26,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "activity",
+       "start": 2.26,
+       "end": 2.62,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "has",
+       "start": 2.62,
+       "end": 3.04,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "changed,",
+       "start": 3.04,
+       "end": 3.38,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "but",
+       "start": 3.38,
+       "end": 4.06,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "his",
+       "start": 4.06,
+       "end": 4.18,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "information",
+       "start": 4.18,
+       "end": 4.7,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "has",
+       "start": 4.7,
+       "end": 5.3,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "not.",
+       "start": 5.3,
+       "end": 5.68,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 16.13
+    }
+   ],
+   "beat": 2,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "office",
+   "time": "day",
+   "grade": "warm",
+   "dur": 7.825,
+   "camera": {
+    "frame": "close",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "think",
+     "x": 50.0,
+     "seated": true,
+     "mood": "determined"
+    }
+   ],
+   "narration_index": 4,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Instead of asking whether he has thought hard enough, he can ask what this round of thinking has let him learn.",
+     "at": 0.25,
+     "speech_check": 0.9524,
+     "speech_verified": true,
+     "voice_file": "vo-011-0.wav",
+     "voice_dur": 6.825,
+     "word_times": [
+      {
+       "word": "Instead",
+       "start": 0.0,
+       "end": 0.32,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "of",
+       "start": 0.32,
+       "end": 0.5,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "asking",
+       "start": 0.5,
+       "end": 0.8,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "whether",
+       "start": 0.8,
+       "end": 1.2,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "he",
+       "start": 1.2,
+       "end": 1.38,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "has",
+       "start": 1.38,
+       "end": 1.56,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "thought",
+       "start": 1.56,
+       "end": 1.92,
+       "timing_source": "estimated_between_anchors"
+      },
+      {
+       "word": "hard",
+       "start": 1.92,
+       "end": 2.3,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "enough,",
+       "start": 2.3,
+       "end": 2.6,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "he",
+       "start": 3.26,
+       "end": 3.38,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "can",
+       "start": 3.38,
+       "end": 3.5,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "ask",
+       "start": 3.5,
+       "end": 3.7,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "what",
+       "start": 3.7,
+       "end": 4.02,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "this",
+       "start": 4.02,
+       "end": 4.22,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "round",
+       "start": 4.22,
+       "end": 4.52,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "of",
+       "start": 4.52,
+       "end": 4.74,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "thinking",
+       "start": 4.74,
+       "end": 5.0,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "has",
+       "start": 5.0,
+       "end": 5.36,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "let",
+       "start": 5.36,
+       "end": 5.7,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "him",
+       "start": 5.7,
+       "end": 5.96,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "learn.",
+       "start": 5.96,
+       "end": 6.36,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 17.68
+    }
+   ],
+   "beat": 2,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 9.275,
+   "set": "office",
+   "time": "day",
+   "grade": "warm",
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "phone",
+     "x": 50.0,
+     "seated": true,
+     "facing": 1,
+     "mood": "neutral"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Sometimes another revision really does uncover a mistake, which is why a useful check needs a specific question rather than a ban on editing.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-012-0.wav",
+     "voice_dur": 8.275,
+     "word_times": [
+      {
+       "word": "Sometimes",
+       "start": 0.0,
+       "end": 0.36,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "another",
+       "start": 0.36,
+       "end": 0.72,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "revision",
+       "start": 0.72,
+       "end": 0.98,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "really",
+       "start": 0.98,
+       "end": 1.48,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "does",
+       "start": 1.48,
+       "end": 1.7,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "uncover",
+       "start": 1.7,
+       "end": 2.14,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 2.14,
+       "end": 2.38,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "mistake,",
+       "start": 2.38,
+       "end": 2.64,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "which",
+       "start": 3.24,
+       "end": 3.28,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "is",
+       "start": 3.28,
+       "end": 3.4,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "why",
+       "start": 3.4,
+       "end": 3.6,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 3.6,
+       "end": 3.8,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "useful",
+       "start": 3.8,
+       "end": 4.1,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "check",
+       "start": 4.1,
+       "end": 4.36,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "needs",
+       "start": 4.36,
+       "end": 4.74,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 4.74,
+       "end": 4.96,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "specific",
+       "start": 4.96,
+       "end": 5.3,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "question",
+       "start": 5.3,
+       "end": 6.02,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "rather",
+       "start": 6.34,
+       "end": 6.62,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "than",
+       "start": 6.62,
+       "end": 6.88,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 6.88,
+       "end": 6.9,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "ban",
+       "start": 6.9,
+       "end": 7.26,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "on",
+       "start": 7.26,
+       "end": 7.48,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "editing.",
+       "start": 7.48,
+       "end": 7.76,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 18.52
+    }
+   ],
+   "narration_index": 5,
+   "beat": 2,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 8.426,
+   "set": "office",
+   "time": "day",
+   "grade": "warm",
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "think",
+     "x": 50.0,
+     "seated": true,
+     "facing": 1,
+     "mood": "neutral"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "For Alex, the next useful question is whether Jamie meant this one review or the whole deadline; the schedule alone cannot answer that.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-013-0.wav",
+     "voice_dur": 7.426,
+     "word_times": [
+      {
+       "word": "For",
+       "start": 0.0,
+       "end": 0.1,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "Alex,",
+       "start": 0.1,
+       "end": 0.32,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "the",
+       "start": 0.82,
+       "end": 0.9,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "next",
+       "start": 0.9,
+       "end": 1.18,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "useful",
+       "start": 1.18,
+       "end": 1.46,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "question",
+       "start": 1.46,
+       "end": 1.92,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "is",
+       "start": 1.92,
+       "end": 2.26,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "whether",
+       "start": 2.26,
+       "end": 2.42,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "Jamie",
+       "start": 2.42,
+       "end": 2.72,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "meant",
+       "start": 2.72,
+       "end": 3.06,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "this",
+       "start": 3.06,
+       "end": 3.26,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "one",
+       "start": 3.26,
+       "end": 3.4,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "review",
+       "start": 3.4,
+       "end": 3.66,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "or",
+       "start": 3.66,
+       "end": 3.98,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "the",
+       "start": 3.98,
+       "end": 4.16,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "whole",
+       "start": 4.16,
+       "end": 4.32,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "deadline;",
+       "start": 4.32,
+       "end": 4.76,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "the",
+       "start": 5.24,
+       "end": 5.36,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "schedule",
+       "start": 5.36,
+       "end": 5.6,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "alone",
+       "start": 5.6,
+       "end": 6.06,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "cannot",
+       "start": 6.06,
+       "end": 6.34,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "answer",
+       "start": 6.34,
+       "end": 6.82,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "that.",
+       "start": 6.82,
+       "end": 7.08,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 19.76
+    }
+   ],
+   "narration_index": 6,
+   "beat": 2,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "street",
+   "time": "day",
+   "grade": "warm",
+   "dur": 7.516,
+   "camera": {
+    "frame": "wide",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "walk",
+     "x": 18.0,
+     "to": 50.0,
+     "mood": "neutral"
+    }
+   ],
+   "narration_index": 0,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Acting quickly is not always wiser, because some choices really do deserve slow, uncomfortable investigation.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-014-0.wav",
+     "voice_dur": 6.516,
+     "word_times": [
+      {
+       "word": "Acting",
+       "start": 0.0,
+       "end": 0.18,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "quickly",
+       "start": 0.18,
+       "end": 0.48,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "is",
+       "start": 0.48,
+       "end": 0.78,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "not",
+       "start": 0.78,
+       "end": 0.96,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "always",
+       "start": 0.96,
+       "end": 1.1,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "wiser,",
+       "start": 1.1,
+       "end": 1.84,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "because",
+       "start": 1.84,
+       "end": 2.4,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "some",
+       "start": 2.4,
+       "end": 2.64,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "choices",
+       "start": 2.64,
+       "end": 3.0,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "really",
+       "start": 3.0,
+       "end": 3.42,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "do",
+       "start": 3.42,
+       "end": 3.7,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "deserve",
+       "start": 3.7,
+       "end": 4.08,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "slow,",
+       "start": 4.08,
+       "end": 4.52,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "uncomfortable",
+       "start": 4.68,
+       "end": 5.12,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "investigation.",
+       "start": 5.64,
+       "end": 6.0,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 18.18
+    }
+   ],
+   "beat": 3,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "street",
+   "time": "day",
+   "grade": "warm",
+   "dur": 8.537,
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "think",
+     "x": 50.0,
+     "mood": "neutral"
+    }
+   ],
+   "narration_index": 1,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Before an expensive commitment or a difficult-to-reverse decision, checking assumptions can save more trouble than it costs.",
+     "at": 0.25,
+     "speech_check": 0.9474,
+     "speech_verified": true,
+     "voice_file": "vo-015-0.wav",
+     "voice_dur": 7.537,
+     "word_times": [
+      {
+       "word": "Before",
+       "start": 0.0,
+       "end": 0.32,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "an",
+       "start": 0.32,
+       "end": 0.48,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "expensive",
+       "start": 0.48,
+       "end": 0.96,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "commitment",
+       "start": 0.96,
+       "end": 1.44,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "or",
+       "start": 1.44,
+       "end": 1.86,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 1.86,
+       "end": 1.98,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "difficult-to-reverse",
+       "start": 1.98,
+       "end": 2.96,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "decision,",
+       "start": 2.96,
+       "end": 3.54,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "checking",
+       "start": 3.96,
+       "end": 4.22,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "assumptions",
+       "start": 4.22,
+       "end": 4.66,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "can",
+       "start": 4.66,
+       "end": 5.24,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "save",
+       "start": 5.24,
+       "end": 5.56,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "more",
+       "start": 5.56,
+       "end": 5.86,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "trouble",
+       "start": 5.86,
+       "end": 6.24,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "than",
+       "start": 6.24,
+       "end": 6.5,
+       "timing_source": "estimated_between_anchors"
+      },
+      {
+       "word": "it",
+       "start": 6.5,
+       "end": 6.58,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "costs.",
+       "start": 6.58,
+       "end": 6.86,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 17.88
+    }
+   ],
+   "beat": 3,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "street",
+   "time": "day",
+   "grade": "warm",
+   "dur": 9.307,
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "talk",
+     "x": 50.0,
+     "facing": 1,
+     "mood": "neutral"
+    }
+   ],
+   "narration_index": 2,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The distinction is what the extra time is doing: checking a fact, comparing a real option, or seeking a perspective you lack.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-016-0.wav",
+     "voice_dur": 8.307,
+     "word_times": [
+      {
+       "word": "The",
+       "start": 0.0,
+       "end": 0.1,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "distinction",
+       "start": 0.1,
+       "end": 0.46,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "is",
+       "start": 0.46,
+       "end": 1.04,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "what",
+       "start": 1.04,
+       "end": 1.2,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "the",
+       "start": 1.2,
+       "end": 1.34,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "extra",
+       "start": 1.34,
+       "end": 1.58,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "time",
+       "start": 1.58,
+       "end": 2.1,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "is",
+       "start": 2.1,
+       "end": 2.3,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "doing:",
+       "start": 2.3,
+       "end": 2.7,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "checking",
+       "start": 3.26,
+       "end": 3.54,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 3.54,
+       "end": 3.74,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "fact,",
+       "start": 3.74,
+       "end": 4.0,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "comparing",
+       "start": 4.52,
+       "end": 4.84,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 4.84,
+       "end": 5.22,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "real",
+       "start": 5.22,
+       "end": 5.4,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "option,",
+       "start": 5.4,
+       "end": 5.84,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "or",
+       "start": 5.84,
+       "end": 6.4,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "seeking",
+       "start": 6.4,
+       "end": 6.62,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 6.62,
+       "end": 6.88,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "perspective",
+       "start": 6.88,
+       "end": 7.24,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "you",
+       "start": 7.24,
+       "end": 7.66,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "lack.",
+       "start": 7.66,
+       "end": 7.9,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 16.36
+    }
+   ],
+   "beat": 3,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "street",
+   "time": "day",
+   "grade": "warm",
+   "dur": 5.912,
+   "camera": {
+    "frame": "close",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "think",
+     "x": 50.0,
+     "mood": "worried"
+    }
+   ],
+   "narration_index": 3,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Or perhaps you are asking the same facts to promise a feeling of certainty they cannot supply.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-017-0.wav",
+     "voice_dur": 4.912,
+     "word_times": [
+      {
+       "word": "Or",
+       "start": 0.0,
+       "end": 0.1,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "perhaps",
+       "start": 0.1,
+       "end": 0.34,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "you",
+       "start": 0.34,
+       "end": 0.6,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "are",
+       "start": 0.6,
+       "end": 0.7,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "asking",
+       "start": 0.7,
+       "end": 1.02,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "the",
+       "start": 1.02,
+       "end": 1.2,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "same",
+       "start": 1.2,
+       "end": 1.42,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "facts",
+       "start": 1.42,
+       "end": 1.66,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "to",
+       "start": 1.66,
+       "end": 1.94,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "promise",
+       "start": 1.94,
+       "end": 2.16,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 2.16,
+       "end": 2.32,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "feeling",
+       "start": 2.32,
+       "end": 2.54,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "of",
+       "start": 2.54,
+       "end": 2.76,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "certainty",
+       "start": 2.76,
+       "end": 3.28,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "they",
+       "start": 3.28,
+       "end": 3.6,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "cannot",
+       "start": 3.6,
+       "end": 3.86,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "supply.",
+       "start": 3.86,
+       "end": 4.34,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 20.8
+    }
+   ],
+   "beat": 3,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "street",
+   "time": "day",
+   "grade": "warm",
+   "dur": 10.173,
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "phone",
+     "x": 50.0,
+     "mood": "determined"
+    }
+   ],
+   "narration_index": 4,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Alex needs a stopping condition, not carelessness: identify the unfinished review, ask what Jamie meant, and make one specific proposal.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-018-0.wav",
+     "voice_dur": 9.173,
+     "word_times": [
+      {
+       "word": "Alex",
+       "start": 0.0,
+       "end": 0.2,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "needs",
+       "start": 0.2,
+       "end": 0.44,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 0.44,
+       "end": 0.66,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "stopping",
+       "start": 0.66,
+       "end": 0.88,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "condition,",
+       "start": 0.88,
+       "end": 1.36,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "not",
+       "start": 1.96,
+       "end": 2.0,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "carelessness:",
+       "start": 2.0,
+       "end": 2.5,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "identify",
+       "start": 3.18,
+       "end": 3.4,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "the",
+       "start": 3.4,
+       "end": 3.98,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "unfinished",
+       "start": 3.98,
+       "end": 4.26,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "review,",
+       "start": 4.26,
+       "end": 4.72,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "ask",
+       "start": 5.42,
+       "end": 5.56,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "what",
+       "start": 5.56,
+       "end": 5.8,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "Jamie",
+       "start": 5.8,
+       "end": 6.02,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "meant,",
+       "start": 6.02,
+       "end": 6.44,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "and",
+       "start": 6.44,
+       "end": 6.82,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "make",
+       "start": 6.82,
+       "end": 7.02,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "one",
+       "start": 7.02,
+       "end": 7.36,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "specific",
+       "start": 7.36,
+       "end": 7.76,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "proposal.",
+       "start": 7.76,
+       "end": 8.62,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 16.11
+    }
+   ],
+   "beat": 3,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 8.991,
+   "set": "street",
+   "time": "day",
+   "grade": "warm",
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "phone",
+     "x": 50.0,
+     "seated": false,
+     "facing": 1,
+     "mood": "neutral"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "A stopping condition is provisional: if the review reveals a serious new problem, he can investigate again with that new evidence.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-019-0.wav",
+     "voice_dur": 7.991,
+     "word_times": [
+      {
+       "word": "A",
+       "start": 0.0,
+       "end": 0.08,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "stopping",
+       "start": 0.08,
+       "end": 0.3,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "condition",
+       "start": 0.3,
+       "end": 0.7,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "is",
+       "start": 0.7,
+       "end": 1.22,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "provisional:",
+       "start": 1.22,
+       "end": 1.64,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "if",
+       "start": 2.46,
+       "end": 2.46,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "the",
+       "start": 2.46,
+       "end": 2.62,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "review",
+       "start": 2.62,
+       "end": 2.9,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "reveals",
+       "start": 2.9,
+       "end": 3.54,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 3.54,
+       "end": 3.54,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "serious",
+       "start": 3.54,
+       "end": 4.16,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "new",
+       "start": 4.16,
+       "end": 4.44,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "problem,",
+       "start": 4.44,
+       "end": 4.76,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "he",
+       "start": 5.28,
+       "end": 5.34,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "can",
+       "start": 5.34,
+       "end": 5.48,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "investigate",
+       "start": 5.48,
+       "end": 5.76,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "again",
+       "start": 5.76,
+       "end": 6.48,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "with",
+       "start": 6.48,
+       "end": 6.68,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "that",
+       "start": 6.68,
+       "end": 6.84,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "new",
+       "start": 6.84,
+       "end": 7.04,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "evidence.",
+       "start": 7.04,
+       "end": 7.36,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 17.68
+    }
+   ],
+   "narration_index": 5,
+   "beat": 3,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 7.091,
+   "set": "street",
+   "time": "day",
+   "grade": "warm",
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "think",
+     "x": 50.0,
+     "seated": false,
+     "facing": 1,
+     "mood": "neutral"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "It marks what this decision needs now, rather than making him promise never to reconsider anything.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-020-0.wav",
+     "voice_dur": 6.091,
+     "word_times": [
+      {
+       "word": "It",
+       "start": 0.0,
+       "end": 0.1,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "marks",
+       "start": 0.1,
+       "end": 0.36,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "what",
+       "start": 0.36,
+       "end": 0.64,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "this",
+       "start": 0.64,
+       "end": 0.78,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "decision",
+       "start": 0.78,
+       "end": 1.1,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "needs",
+       "start": 1.1,
+       "end": 1.46,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "now,",
+       "start": 1.46,
+       "end": 1.94,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "rather",
+       "start": 2.4,
+       "end": 2.64,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "than",
+       "start": 2.64,
+       "end": 2.86,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "making",
+       "start": 2.86,
+       "end": 3.12,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "him",
+       "start": 3.12,
+       "end": 3.32,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "promise",
+       "start": 3.32,
+       "end": 3.66,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "never",
+       "start": 3.66,
+       "end": 4.1,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "to",
+       "start": 4.1,
+       "end": 4.4,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "reconsider",
+       "start": 4.4,
+       "end": 4.88,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "anything.",
+       "start": 4.88,
+       "end": 5.52,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 17.67
+    }
+   ],
+   "narration_index": 6,
+   "beat": 3,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "park",
+   "time": "day",
+   "grade": "warm",
+   "dur": 7.82,
+   "camera": {
+    "frame": "wide",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "walk",
+     "x": 18.0,
+     "to": 42.0,
+     "mood": "worried"
+    }
+   ],
+   "narration_index": 0,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "On his walk, Alex notices that every draft has a hidden demand: make Jamie react exactly as he hopes.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-021-0.wav",
+     "voice_dur": 6.82,
+     "word_times": [
+      {
+       "word": "On",
+       "start": 0.0,
+       "end": 0.1,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "his",
+       "start": 0.1,
+       "end": 0.22,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "walk,",
+       "start": 0.22,
+       "end": 0.48,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "Alex",
+       "start": 0.68,
+       "end": 0.84,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "notices",
+       "start": 0.84,
+       "end": 1.14,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "that",
+       "start": 1.14,
+       "end": 1.66,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "every",
+       "start": 1.66,
+       "end": 1.86,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "draft",
+       "start": 1.86,
+       "end": 2.12,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "has",
+       "start": 2.12,
+       "end": 2.5,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 2.5,
+       "end": 2.64,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "hidden",
+       "start": 2.64,
+       "end": 2.88,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "demand:",
+       "start": 2.88,
+       "end": 3.34,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "make",
+       "start": 3.88,
+       "end": 4.08,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "Jamie",
+       "start": 4.08,
+       "end": 4.28,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "react",
+       "start": 4.28,
+       "end": 4.78,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "exactly",
+       "start": 4.78,
+       "end": 5.3,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "as",
+       "start": 5.3,
+       "end": 5.78,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "he",
+       "start": 5.78,
+       "end": 6.0,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "hopes.",
+       "start": 6.0,
+       "end": 6.3,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 16.1
+    }
+   ],
+   "beat": 4,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "park",
+   "time": "day",
+   "grade": "warm",
+   "dur": 8.487,
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "sitdown",
+     "x": 42.0,
+     "facing": 1,
+     "mood": "neutral"
+    }
+   ],
+   "narration_index": 1,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "No wording can guarantee that, because another person brings a mood, a history, and information he does not have.",
+     "at": 0.25,
+     "speech_check": 0.9474,
+     "speech_verified": true,
+     "voice_file": "vo-022-0.wav",
+     "voice_dur": 7.487,
+     "word_times": [
+      {
+       "word": "No",
+       "start": 0.0,
+       "end": 0.22,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "wording",
+       "start": 0.22,
+       "end": 0.72,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "can",
+       "start": 0.72,
+       "end": 1.08,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "guarantee",
+       "start": 1.08,
+       "end": 1.4,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "that,",
+       "start": 1.4,
+       "end": 1.86,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "because",
+       "start": 1.86,
+       "end": 2.26,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "another",
+       "start": 2.26,
+       "end": 2.58,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "person",
+       "start": 2.58,
+       "end": 3.2,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "brings",
+       "start": 3.2,
+       "end": 3.56,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 3.56,
+       "end": 3.76,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "mood,",
+       "start": 3.76,
+       "end": 4.02,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 4.54,
+       "end": 4.56,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "history,",
+       "start": 4.56,
+       "end": 4.92,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "and",
+       "start": 4.92,
+       "end": 5.44,
+       "timing_source": "estimated_between_anchors"
+      },
+      {
+       "word": "information",
+       "start": 5.44,
+       "end": 5.98,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "he",
+       "start": 5.98,
+       "end": 6.4,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "does",
+       "start": 6.4,
+       "end": 6.56,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "not",
+       "start": 6.56,
+       "end": 6.8,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "have.",
+       "start": 6.8,
+       "end": 7.12,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 16.4
+    }
+   ],
+   "beat": 4,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "park",
+   "time": "day",
+   "grade": "warm",
+   "dur": 8.359,
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "phone",
+     "x": 42.0,
+     "seated": true,
+     "mood": "neutral"
+    }
+   ],
+   "narration_index": 2,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He can still be honest and considerate; those are choices about his message, not guarantees about her response.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-023-0.wav",
+     "voice_dur": 7.359,
+     "word_times": [
+      {
+       "word": "He",
+       "start": 0.0,
+       "end": 0.1,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "can",
+       "start": 0.1,
+       "end": 0.2,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "still",
+       "start": 0.2,
+       "end": 0.48,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "be",
+       "start": 0.48,
+       "end": 0.68,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "honest",
+       "start": 0.68,
+       "end": 1.02,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "and",
+       "start": 1.02,
+       "end": 1.36,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "considerate;",
+       "start": 1.36,
+       "end": 2.08,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "those",
+       "start": 2.7,
+       "end": 2.76,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "are",
+       "start": 2.76,
+       "end": 2.96,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "choices",
+       "start": 2.96,
+       "end": 3.22,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "about",
+       "start": 3.22,
+       "end": 3.7,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "his",
+       "start": 3.7,
+       "end": 3.94,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "message,",
+       "start": 3.94,
+       "end": 4.34,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "not",
+       "start": 4.76,
+       "end": 5.02,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "guarantees",
+       "start": 5.02,
+       "end": 5.36,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "about",
+       "start": 5.36,
+       "end": 6.12,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "her",
+       "start": 6.12,
+       "end": 6.34,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "response.",
+       "start": 6.34,
+       "end": 6.72,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 16.39
+    }
+   ],
+   "beat": 4,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "park",
+   "time": "day",
+   "grade": "warm",
+   "dur": 7.413,
+   "camera": {
+    "frame": "phone",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "phone",
+     "x": 42.0,
+     "seated": true
+    }
+   ],
+   "phone": {
+    "app": "chat",
+    "contact": "Jamie",
+    "messages": [
+     {
+      "from": "them",
+      "text": "Friday looks tight.",
+      "at": 0
+     }
+    ],
+    "typing": {
+     "text": "I may have misread: did you mean the review?",
+     "at": 0.5,
+     "action": "hold"
+    }
+   },
+   "narration_index": 3,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He writes, “I may have misread: did you mean the review?”—a question Jamie can actually answer.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-024-0.wav",
+     "voice_dur": 6.413,
+     "word_times": [
+      {
+       "word": "He",
+       "start": 0.0,
+       "end": 0.08,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "writes,",
+       "start": 0.08,
+       "end": 0.32,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "“I",
+       "start": 0.86,
+       "end": 1.0,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "may",
+       "start": 1.0,
+       "end": 1.18,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "have",
+       "start": 1.18,
+       "end": 1.34,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "misread:",
+       "start": 1.34,
+       "end": 1.78,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "did",
+       "start": 2.42,
+       "end": 2.46,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "you",
+       "start": 2.46,
+       "end": 2.62,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "mean",
+       "start": 2.62,
+       "end": 2.84,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "the",
+       "start": 2.84,
+       "end": 3.14,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "review?”—a",
+       "start": 3.14,
+       "end": 4.2,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "question",
+       "start": 4.2,
+       "end": 4.56,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "Jamie",
+       "start": 4.56,
+       "end": 4.86,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "can",
+       "start": 4.86,
+       "end": 5.22,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "actually",
+       "start": 5.22,
+       "end": 5.54,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "answer.",
+       "start": 5.54,
+       "end": 5.98,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 16.1
+    }
+   ],
+   "beat": 4,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "park",
+   "time": "day",
+   "grade": "warm",
+   "dur": 8.32,
+   "camera": {
+    "frame": "phone",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "phone",
+     "x": 42.0,
+     "seated": true,
+     "mood": "nervous"
+    }
+   ],
+   "phone": {
+    "app": "chat",
+    "contact": "Jamie",
+    "messages": [
+     {
+      "from": "them",
+      "text": "Friday looks tight.",
+      "at": 0
+     },
+     {
+      "from": "me",
+      "text": "I may have misread: did you mean the review?",
+      "at": 0.7
+     }
+    ]
+   },
+   "narration_index": 4,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He presses send while the doubt remains; this time, sending begins the conversation instead of pretending to finish it.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-025-0.wav",
+     "voice_dur": 7.32,
+     "word_times": [
+      {
+       "word": "He",
+       "start": 0.0,
+       "end": 0.1,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "presses",
+       "start": 0.1,
+       "end": 0.4,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "send",
+       "start": 0.4,
+       "end": 0.76,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "while",
+       "start": 0.76,
+       "end": 1.22,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "the",
+       "start": 1.22,
+       "end": 1.44,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "doubt",
+       "start": 1.44,
+       "end": 1.52,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "remains;",
+       "start": 1.52,
+       "end": 2.1,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "this",
+       "start": 2.94,
+       "end": 2.96,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "time,",
+       "start": 2.96,
+       "end": 3.24,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "sending",
+       "start": 3.24,
+       "end": 3.82,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "begins",
+       "start": 3.82,
+       "end": 4.26,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "the",
+       "start": 4.26,
+       "end": 4.58,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "conversation",
+       "start": 4.58,
+       "end": 5.0,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "instead",
+       "start": 5.0,
+       "end": 5.62,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "of",
+       "start": 5.62,
+       "end": 5.82,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "pretending",
+       "start": 5.82,
+       "end": 6.12,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "to",
+       "start": 6.12,
+       "end": 6.56,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "finish",
+       "start": 6.56,
+       "end": 6.78,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "it.",
+       "start": 6.78,
+       "end": 7.04,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 17.67
+    }
+   ],
+   "beat": 4,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 9.893,
+   "set": "park",
+   "time": "day",
+   "grade": "warm",
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "phone",
+     "x": 42.0,
+     "seated": true,
+     "facing": 1,
+     "mood": "neutral"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He has made the message answerable, not invulnerable; Jamie could still be busy, distracted, or unhappy about something he cannot see.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-026-0.wav",
+     "voice_dur": 8.893,
+     "word_times": [
+      {
+       "word": "He",
+       "start": 0.0,
+       "end": 0.12,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "has",
+       "start": 0.12,
+       "end": 0.28,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "made",
+       "start": 0.28,
+       "end": 0.56,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "the",
+       "start": 0.56,
+       "end": 0.86,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "message",
+       "start": 0.86,
+       "end": 1.22,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "answerable,",
+       "start": 1.22,
+       "end": 1.98,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "not",
+       "start": 2.52,
+       "end": 2.6,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "invulnerable;",
+       "start": 2.6,
+       "end": 3.24,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "Jamie",
+       "start": 4.0,
+       "end": 4.14,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "could",
+       "start": 4.14,
+       "end": 4.48,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "still",
+       "start": 4.48,
+       "end": 4.74,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "be",
+       "start": 4.74,
+       "end": 4.92,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "busy,",
+       "start": 4.92,
+       "end": 5.26,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "distracted,",
+       "start": 5.4,
+       "end": 5.8,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "or",
+       "start": 5.8,
+       "end": 6.36,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "unhappy",
+       "start": 6.36,
+       "end": 6.72,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "about",
+       "start": 6.72,
+       "end": 7.16,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "something",
+       "start": 7.16,
+       "end": 7.54,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "he",
+       "start": 7.54,
+       "end": 7.74,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "cannot",
+       "start": 7.74,
+       "end": 8.0,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "see.",
+       "start": 8.0,
+       "end": 8.42,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 16.38
+    }
+   ],
+   "narration_index": 5,
+   "beat": 4,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 7.901,
+   "set": "park",
+   "time": "day",
+   "grade": "warm",
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "phone",
+     "x": 42.0,
+     "seated": true,
+     "facing": 1,
+     "mood": "neutral"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "If the reply takes time, he can let it remain unknown instead of composing both sides of the conversation himself.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-027-0.wav",
+     "voice_dur": 6.901,
+     "word_times": [
+      {
+       "word": "If",
+       "start": 0.0,
+       "end": 0.12,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "the",
+       "start": 0.12,
+       "end": 0.22,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "reply",
+       "start": 0.22,
+       "end": 0.4,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "takes",
+       "start": 0.4,
+       "end": 0.86,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "time,",
+       "start": 0.86,
+       "end": 1.2,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "he",
+       "start": 1.62,
+       "end": 1.7,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "can",
+       "start": 1.7,
+       "end": 1.82,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "let",
+       "start": 1.82,
+       "end": 2.04,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "it",
+       "start": 2.04,
+       "end": 2.14,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "remain",
+       "start": 2.14,
+       "end": 2.5,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "unknown",
+       "start": 2.5,
+       "end": 2.84,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "instead",
+       "start": 2.84,
+       "end": 3.6,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "of",
+       "start": 3.6,
+       "end": 3.74,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "composing",
+       "start": 3.74,
+       "end": 4.12,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "both",
+       "start": 4.12,
+       "end": 4.58,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "sides",
+       "start": 4.58,
+       "end": 5.0,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "of",
+       "start": 5.0,
+       "end": 5.24,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "the",
+       "start": 5.24,
+       "end": 5.34,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "conversation",
+       "start": 5.34,
+       "end": 5.8,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "himself.",
+       "start": 5.8,
+       "end": 6.3,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 17.96
+    }
+   ],
+   "narration_index": 6,
+   "beat": 4,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "park",
+   "time": "day",
+   "grade": "warm",
+   "dur": 6.363,
+   "camera": {
+    "frame": "phone",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "phone",
+     "x": 42.0,
+     "seated": true,
+     "mood": "shocked"
+    }
+   ],
+   "phone": {
+    "app": "chat",
+    "contact": "Jamie",
+    "messages": [
+     {
+      "from": "me",
+      "text": "I may have misread: did you mean the review?",
+      "at": 0
+     },
+     {
+      "from": "them",
+      "text": "Just the review. I thought you were waiting for me.",
+      "at": 0.5
+     }
+    ]
+   },
+   "narration_index": 0,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Jamie replies, “Just the review—I thought you were waiting for me,” and Alex reads it twice.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-028-0.wav",
+     "voice_dur": 5.363,
+     "word_times": [
+      {
+       "word": "Jamie",
+       "start": 0.0,
+       "end": 0.24,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "replies,",
+       "start": 0.24,
+       "end": 0.58,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "“Just",
+       "start": 1.18,
+       "end": 1.3,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "the",
+       "start": 1.3,
+       "end": 1.44,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "review—I",
+       "start": 1.44,
+       "end": 2.24,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "thought",
+       "start": 2.24,
+       "end": 2.48,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "you",
+       "start": 2.48,
+       "end": 2.68,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "were",
+       "start": 2.68,
+       "end": 2.78,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "waiting",
+       "start": 2.78,
+       "end": 3.08,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "for",
+       "start": 3.08,
+       "end": 3.36,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "me,”",
+       "start": 3.36,
+       "end": 3.56,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "and",
+       "start": 3.56,
+       "end": 3.92,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "Alex",
+       "start": 3.92,
+       "end": 4.08,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "reads",
+       "start": 4.08,
+       "end": 4.4,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "it",
+       "start": 4.4,
+       "end": 4.62,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "twice.",
+       "start": 4.62,
+       "end": 4.86,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 18.65
+    }
+   ],
+   "beat": 5,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "park",
+   "time": "day",
+   "grade": "warm",
+   "dur": 8.015,
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "think",
+     "x": 42.0,
+     "seated": true,
+     "mood": "relieved"
+    }
+   ],
+   "narration_index": 1,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He had interpreted her comment as a judgment, while she had interpreted his silence as a request for time.",
+     "at": 0.25,
+     "speech_check": 0.9474,
+     "speech_verified": true,
+     "voice_file": "vo-029-0.wav",
+     "voice_dur": 7.015,
+     "word_times": [
+      {
+       "word": "He",
+       "start": 0.0,
+       "end": 0.14,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "had",
+       "start": 0.14,
+       "end": 0.26,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "interpreted",
+       "start": 0.26,
+       "end": 0.72,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "her",
+       "start": 0.72,
+       "end": 1.1,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "comment",
+       "start": 1.1,
+       "end": 1.48,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "as",
+       "start": 1.48,
+       "end": 1.92,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 1.92,
+       "end": 2.0,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "judgment,",
+       "start": 2.0,
+       "end": 3.02,
+       "timing_source": "estimated_between_anchors"
+      },
+      {
+       "word": "while",
+       "start": 3.02,
+       "end": 3.16,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "she",
+       "start": 3.16,
+       "end": 3.4,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "had",
+       "start": 3.4,
+       "end": 3.6,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "interpreted",
+       "start": 3.6,
+       "end": 4.04,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "his",
+       "start": 4.04,
+       "end": 4.4,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "silence",
+       "start": 4.4,
+       "end": 4.74,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "as",
+       "start": 4.74,
+       "end": 5.44,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 5.44,
+       "end": 5.5,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "request",
+       "start": 5.5,
+       "end": 5.82,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "for",
+       "start": 5.82,
+       "end": 6.16,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "time.",
+       "start": 6.16,
+       "end": 6.56,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 16.42
+    }
+   ],
+   "beat": 5,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "cafe",
+   "time": "day",
+   "grade": "warm",
+   "dur": 7.008,
+   "camera": {
+    "frame": "wide",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "think",
+     "x": 19.0,
+     "seated": true,
+     "facing": 1
+    },
+    {
+     "id": "jamie",
+     "pose": "walk",
+     "x": 65.0,
+     "to": 31.0,
+     "facing": -1
+    }
+   ],
+   "narration_index": 2,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Neither explanation was hidden inside the original sentence; they needed another exchange to find out.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-030-0.wav",
+     "voice_dur": 6.008,
+     "word_times": [
+      {
+       "word": "Neither",
+       "start": 0.0,
+       "end": 0.18,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "explanation",
+       "start": 0.18,
+       "end": 0.62,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "was",
+       "start": 0.62,
+       "end": 1.16,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "hidden",
+       "start": 1.16,
+       "end": 1.38,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "inside",
+       "start": 1.38,
+       "end": 1.8,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "the",
+       "start": 1.8,
+       "end": 2.06,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "original",
+       "start": 2.06,
+       "end": 2.26,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "sentence;",
+       "start": 2.26,
+       "end": 2.74,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "they",
+       "start": 3.32,
+       "end": 3.42,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "needed",
+       "start": 3.42,
+       "end": 3.68,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "another",
+       "start": 3.68,
+       "end": 4.08,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "exchange",
+       "start": 4.08,
+       "end": 4.42,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "to",
+       "start": 4.42,
+       "end": 5.04,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "find",
+       "start": 5.04,
+       "end": 5.28,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "out.",
+       "start": 5.28,
+       "end": 5.56,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 18.45
+    }
+   ],
+   "beat": 5,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "cafe",
+   "time": "day",
+   "grade": "warm",
+   "dur": 6.865,
+   "camera": {
+    "frame": "two",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "talk",
+     "x": 19.0,
+     "seated": true,
+     "facing": 1,
+     "mood": "neutral"
+    },
+    {
+     "id": "jamie",
+     "pose": "sitdown",
+     "x": 31.0,
+     "seated": true,
+     "facing": -1,
+     "mood": "neutral"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "They meet at the café and agree that Alex will send a draft today, and Jamie will review it tomorrow.",
+     "at": 0.25,
+     "speech_check": 0.95,
+     "speech_verified": true,
+     "voice_file": "vo-031-0.wav",
+     "voice_dur": 5.865,
+     "word_times": [
+      {
+       "word": "They",
+       "start": 0.0,
+       "end": 0.14,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "meet",
+       "start": 0.14,
+       "end": 0.3,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "at",
+       "start": 0.3,
+       "end": 0.5,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "the",
+       "start": 0.5,
+       "end": 0.6,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "café",
+       "start": 0.6,
+       "end": 0.9,
+       "timing_source": "estimated_between_anchors"
+      },
+      {
+       "word": "and",
+       "start": 0.9,
+       "end": 1.56,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "agree",
+       "start": 1.56,
+       "end": 1.82,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "that",
+       "start": 1.82,
+       "end": 2.06,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "Alex",
+       "start": 2.06,
+       "end": 2.26,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "will",
+       "start": 2.26,
+       "end": 2.58,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "send",
+       "start": 2.58,
+       "end": 2.82,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 2.82,
+       "end": 2.96,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "draft",
+       "start": 2.96,
+       "end": 3.16,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "today,",
+       "start": 3.16,
+       "end": 3.56,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "and",
+       "start": 3.56,
+       "end": 4.08,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "Jamie",
+       "start": 4.08,
+       "end": 4.3,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "will",
+       "start": 4.3,
+       "end": 4.6,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "review",
+       "start": 4.6,
+       "end": 4.9,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "it",
+       "start": 4.9,
+       "end": 5.06,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "tomorrow.",
+       "start": 5.06,
+       "end": 5.32,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 18.72
+    },
+    {
+     "who": "alex",
+     "text": "Draft today, review tomorrow?",
+     "at": 0.5
+    }
+   ],
+   "narration_index": 3,
+   "beat": 5,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "cafe",
+   "time": "day",
+   "grade": "warm",
+   "dur": 10.375,
+   "camera": {
+    "frame": "two",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "think",
+     "x": 19.0,
+     "seated": true,
+     "facing": 1,
+     "mood": "neutral"
+    },
+    {
+     "id": "jamie",
+     "pose": "talk",
+     "x": 31.0,
+     "seated": true,
+     "facing": -1,
+     "mood": "neutral"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "This doesn’t prove every difficult conversation ends kindly; it shows what this particular exchange made possible: information that rehearsal couldn’t provide.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-032-0.wav",
+     "voice_dur": 9.375,
+     "word_times": [
+      {
+       "word": "This",
+       "start": 0.0,
+       "end": 0.1,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "doesn’t",
+       "start": 0.1,
+       "end": 0.4,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "prove",
+       "start": 0.4,
+       "end": 0.64,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "every",
+       "start": 0.64,
+       "end": 0.94,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "difficult",
+       "start": 0.94,
+       "end": 1.34,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "conversation",
+       "start": 1.34,
+       "end": 1.82,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "ends",
+       "start": 1.82,
+       "end": 2.24,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "kindly;",
+       "start": 2.24,
+       "end": 2.68,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "it",
+       "start": 3.32,
+       "end": 3.38,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "shows",
+       "start": 3.38,
+       "end": 3.62,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "what",
+       "start": 3.62,
+       "end": 3.98,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "this",
+       "start": 3.98,
+       "end": 4.18,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "particular",
+       "start": 4.18,
+       "end": 4.74,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "exchange",
+       "start": 4.74,
+       "end": 5.12,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "made",
+       "start": 5.12,
+       "end": 5.62,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "possible:",
+       "start": 5.62,
+       "end": 6.0,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "information",
+       "start": 6.62,
+       "end": 7.0,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "that",
+       "start": 7.0,
+       "end": 7.44,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "rehearsal",
+       "start": 7.44,
+       "end": 7.82,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "couldn’t",
+       "start": 7.82,
+       "end": 8.52,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "provide.",
+       "start": 8.52,
+       "end": 8.86,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 18.43
+    },
+    {
+     "who": "jamie",
+     "text": "That works for me.",
+     "at": 0.5
+    }
+   ],
+   "narration_index": 4,
+   "beat": 5,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 9.148,
+   "set": "cafe",
+   "time": "day",
+   "grade": "warm",
+   "camera": {
+    "frame": "two",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "think",
+     "x": 19.0,
+     "seated": true,
+     "facing": 1,
+     "mood": "neutral"
+    },
+    {
+     "id": "jamie",
+     "pose": "think",
+     "x": 31.0,
+     "seated": true,
+     "facing": -1,
+     "mood": "neutral"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "If Jamie had disagreed, he would have had a real disagreement to discuss, which is different from repeatedly arguing with an imagined opponent.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-033-0.wav",
+     "voice_dur": 8.148,
+     "word_times": [
+      {
+       "word": "If",
+       "start": 0.0,
+       "end": 0.14,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "Jamie",
+       "start": 0.14,
+       "end": 0.4,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "had",
+       "start": 0.4,
+       "end": 0.84,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "disagreed,",
+       "start": 0.84,
+       "end": 1.26,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "he",
+       "start": 1.86,
+       "end": 1.94,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "would",
+       "start": 1.94,
+       "end": 2.08,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "have",
+       "start": 2.08,
+       "end": 2.18,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "had",
+       "start": 2.18,
+       "end": 2.3,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 2.3,
+       "end": 2.42,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "real",
+       "start": 2.42,
+       "end": 2.66,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "disagreement",
+       "start": 2.66,
+       "end": 3.26,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "to",
+       "start": 3.26,
+       "end": 3.6,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "discuss,",
+       "start": 3.6,
+       "end": 3.9,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "which",
+       "start": 4.34,
+       "end": 4.44,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "is",
+       "start": 4.44,
+       "end": 4.58,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "different",
+       "start": 4.58,
+       "end": 4.94,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "from",
+       "start": 4.94,
+       "end": 5.3,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "repeatedly",
+       "start": 5.3,
+       "end": 5.72,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "arguing",
+       "start": 5.72,
+       "end": 6.32,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "with",
+       "start": 6.32,
+       "end": 6.74,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "an",
+       "start": 6.74,
+       "end": 6.84,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "imagined",
+       "start": 6.84,
+       "end": 7.12,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "opponent.",
+       "start": 7.12,
+       "end": 7.64,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 19.08
+    }
+   ],
+   "narration_index": 5,
+   "beat": 5,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 8.745,
+   "set": "cafe",
+   "time": "day",
+   "grade": "warm",
+   "camera": {
+    "frame": "two",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "think",
+     "x": 19.0,
+     "seated": true,
+     "facing": 1,
+     "mood": "neutral"
+    },
+    {
+     "id": "jamie",
+     "pose": "talk",
+     "x": 31.0,
+     "seated": true,
+     "facing": -1,
+     "mood": "neutral"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "An answer need not be comforting to be useful; it can reveal a limit, a missing fact, or a choice that needs more work.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-034-0.wav",
+     "voice_dur": 7.745,
+     "word_times": [
+      {
+       "word": "An",
+       "start": 0.0,
+       "end": 0.12,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "answer",
+       "start": 0.12,
+       "end": 0.28,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "need",
+       "start": 0.28,
+       "end": 0.62,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "not",
+       "start": 0.62,
+       "end": 0.84,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "be",
+       "start": 0.84,
+       "end": 0.98,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "comforting",
+       "start": 0.98,
+       "end": 1.34,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "to",
+       "start": 1.34,
+       "end": 1.68,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "be",
+       "start": 1.68,
+       "end": 1.82,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "useful;",
+       "start": 1.82,
+       "end": 2.08,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "it",
+       "start": 2.78,
+       "end": 2.84,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "can",
+       "start": 2.84,
+       "end": 2.98,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "reveal",
+       "start": 2.98,
+       "end": 3.28,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 3.28,
+       "end": 3.56,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "limit,",
+       "start": 3.56,
+       "end": 3.86,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 4.32,
+       "end": 4.34,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "missing",
+       "start": 4.34,
+       "end": 4.62,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "fact,",
+       "start": 4.62,
+       "end": 5.08,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "or",
+       "start": 5.46,
+       "end": 5.66,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 5.66,
+       "end": 5.78,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "choice",
+       "start": 5.78,
+       "end": 6.12,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "that",
+       "start": 6.12,
+       "end": 6.42,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "needs",
+       "start": 6.42,
+       "end": 6.62,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "more",
+       "start": 6.62,
+       "end": 6.94,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "work.",
+       "start": 6.94,
+       "end": 7.3,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 16.7
+    }
+   ],
+   "narration_index": 6,
+   "beat": 5,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "desk",
+   "time": "day",
+   "grade": "warm",
+   "dur": 8.599,
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "think",
+     "x": 50.0,
+     "seated": true,
+     "mood": "worried"
+    }
+   ],
+   "narration_index": 0,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Alex’s habit of imagining consequences hasn’t vanished; later, it helps him notice that a page is missing from the draft.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-035-0.wav",
+     "voice_dur": 7.599,
+     "word_times": [
+      {
+       "word": "Alex’s",
+       "start": 0.0,
+       "end": 0.32,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "habit",
+       "start": 0.32,
+       "end": 0.6,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "of",
+       "start": 0.6,
+       "end": 0.84,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "imagining",
+       "start": 0.84,
+       "end": 1.22,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "consequences",
+       "start": 1.22,
+       "end": 1.74,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "hasn’t",
+       "start": 1.74,
+       "end": 2.54,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "vanished;",
+       "start": 2.54,
+       "end": 2.78,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "later,",
+       "start": 3.76,
+       "end": 4.0,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "it",
+       "start": 4.34,
+       "end": 4.5,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "helps",
+       "start": 4.5,
+       "end": 4.68,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "him",
+       "start": 4.68,
+       "end": 4.88,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "notice",
+       "start": 4.88,
+       "end": 5.2,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "that",
+       "start": 5.2,
+       "end": 5.54,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 5.54,
+       "end": 5.62,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "page",
+       "start": 5.62,
+       "end": 5.9,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "is",
+       "start": 5.9,
+       "end": 6.18,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "missing",
+       "start": 6.18,
+       "end": 6.34,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "from",
+       "start": 6.34,
+       "end": 6.68,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "the",
+       "start": 6.68,
+       "end": 6.8,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "draft.",
+       "start": 6.8,
+       "end": 7.04,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 17.31
+    }
+   ],
+   "beat": 6,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "desk",
+   "time": "day",
+   "grade": "warm",
+   "dur": 7.959,
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "type",
+     "x": 50.0,
+     "facing": 1,
+     "mood": "determined"
+    }
+   ],
+   "narration_index": 1,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "This time there is something concrete to check, so he adds the page, checks the attachment, and sends the work they agreed on.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-036-0.wav",
+     "voice_dur": 6.959,
+     "word_times": [
+      {
+       "word": "This",
+       "start": 0.0,
+       "end": 0.14,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "time",
+       "start": 0.14,
+       "end": 0.38,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "there",
+       "start": 0.38,
+       "end": 0.6,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "is",
+       "start": 0.6,
+       "end": 0.72,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "something",
+       "start": 0.72,
+       "end": 0.98,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "concrete",
+       "start": 0.98,
+       "end": 1.44,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "to",
+       "start": 1.44,
+       "end": 1.76,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "check,",
+       "start": 1.76,
+       "end": 1.96,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "so",
+       "start": 2.3,
+       "end": 2.4,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "he",
+       "start": 2.4,
+       "end": 2.5,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "adds",
+       "start": 2.5,
+       "end": 2.7,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "the",
+       "start": 2.7,
+       "end": 2.9,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "page,",
+       "start": 2.9,
+       "end": 3.16,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "checks",
+       "start": 3.54,
+       "end": 3.78,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "the",
+       "start": 3.78,
+       "end": 4.02,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "attachment,",
+       "start": 4.02,
+       "end": 4.2,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "and",
+       "start": 5.06,
+       "end": 5.16,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "sends",
+       "start": 5.16,
+       "end": 5.36,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "the",
+       "start": 5.36,
+       "end": 5.64,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "work",
+       "start": 5.64,
+       "end": 5.84,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "they",
+       "start": 5.84,
+       "end": 6.08,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "agreed",
+       "start": 6.08,
+       "end": 6.3,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "on.",
+       "start": 6.3,
+       "end": 6.62,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 19.68
+    }
+   ],
+   "beat": 6,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "desk",
+   "time": "day",
+   "grade": "warm",
+   "dur": 5.839,
+   "camera": {
+    "frame": "close",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "think",
+     "x": 50.0,
+     "seated": true,
+     "mood": "neutral"
+    }
+   ],
+   "narration_index": 2,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "When another worried prediction appears, he does not have to defeat it before continuing.",
+     "at": 0.25,
+     "speech_check": 0.9286,
+     "speech_verified": true,
+     "voice_file": "vo-037-0.wav",
+     "voice_dur": 4.839,
+     "word_times": [
+      {
+       "word": "When",
+       "start": 0.0,
+       "end": 0.14,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "another",
+       "start": 0.14,
+       "end": 0.42,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "worried",
+       "start": 0.42,
+       "end": 0.68,
+       "timing_source": "estimated_between_anchors"
+      },
+      {
+       "word": "prediction",
+       "start": 0.68,
+       "end": 1.18,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "appears,",
+       "start": 1.18,
+       "end": 1.74,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "he",
+       "start": 2.12,
+       "end": 2.2,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "does",
+       "start": 2.2,
+       "end": 2.42,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "not",
+       "start": 2.42,
+       "end": 2.68,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "have",
+       "start": 2.68,
+       "end": 2.9,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "to",
+       "start": 2.9,
+       "end": 3.04,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "defeat",
+       "start": 3.04,
+       "end": 3.36,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "it",
+       "start": 3.36,
+       "end": 3.54,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "before",
+       "start": 3.54,
+       "end": 3.74,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "continuing.",
+       "start": 3.74,
+       "end": 4.38,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 19.99
+    }
+   ],
+   "beat": 6,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "desk",
+   "time": "day",
+   "grade": "warm",
+   "dur": 7.532,
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "talk",
+     "x": 50.0,
+     "seated": true,
+     "facing": 1,
+     "mood": "neutral"
+    }
+   ],
+   "narration_index": 3,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He can ask whether it points to a task he can perform, a question he can ask, or an outcome he cannot control.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-038-0.wav",
+     "voice_dur": 6.532,
+     "word_times": [
+      {
+       "word": "He",
+       "start": 0.0,
+       "end": 0.1,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "can",
+       "start": 0.1,
+       "end": 0.28,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "ask",
+       "start": 0.28,
+       "end": 0.46,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "whether",
+       "start": 0.46,
+       "end": 0.72,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "it",
+       "start": 0.72,
+       "end": 0.94,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "points",
+       "start": 0.94,
+       "end": 1.14,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "to",
+       "start": 1.14,
+       "end": 1.46,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 1.46,
+       "end": 1.52,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "task",
+       "start": 1.52,
+       "end": 1.76,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "he",
+       "start": 1.76,
+       "end": 2.04,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "can",
+       "start": 2.04,
+       "end": 2.18,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "perform,",
+       "start": 2.18,
+       "end": 2.48,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 3.08,
+       "end": 3.14,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "question",
+       "start": 3.14,
+       "end": 3.44,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "he",
+       "start": 3.44,
+       "end": 3.74,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "can",
+       "start": 3.74,
+       "end": 3.88,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "ask,",
+       "start": 3.88,
+       "end": 4.18,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "or",
+       "start": 4.5,
+       "end": 4.68,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "an",
+       "start": 4.68,
+       "end": 4.78,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "outcome",
+       "start": 4.78,
+       "end": 4.94,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "he",
+       "start": 4.94,
+       "end": 5.32,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "cannot",
+       "start": 5.32,
+       "end": 5.56,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "control.",
+       "start": 5.56,
+       "end": 5.96,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 18.3
+    }
+   ],
+   "beat": 6,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 8.155,
+   "set": "desk",
+   "time": "day",
+   "grade": "warm",
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "think",
+     "x": 50.0,
+     "seated": true,
+     "facing": 1,
+     "mood": "neutral"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Some worries return even after a useful decision, so the return of discomfort does not automatically mean the decision was wrong.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-039-0.wav",
+     "voice_dur": 7.155,
+     "word_times": [
+      {
+       "word": "Some",
+       "start": 0.0,
+       "end": 0.24,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "worries",
+       "start": 0.24,
+       "end": 0.44,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "return",
+       "start": 0.44,
+       "end": 0.78,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "even",
+       "start": 0.78,
+       "end": 1.22,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "after",
+       "start": 1.22,
+       "end": 1.46,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 1.46,
+       "end": 1.46,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "useful",
+       "start": 1.46,
+       "end": 1.88,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "decision,",
+       "start": 1.88,
+       "end": 2.38,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "so",
+       "start": 2.96,
+       "end": 3.02,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "the",
+       "start": 3.02,
+       "end": 3.12,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "return",
+       "start": 3.12,
+       "end": 3.4,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "of",
+       "start": 3.4,
+       "end": 3.62,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "discomfort",
+       "start": 3.62,
+       "end": 4.12,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "does",
+       "start": 4.12,
+       "end": 4.4,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "not",
+       "start": 4.4,
+       "end": 4.58,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "automatically",
+       "start": 4.58,
+       "end": 5.0,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "mean",
+       "start": 5.0,
+       "end": 5.66,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "the",
+       "start": 5.66,
+       "end": 5.84,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "decision",
+       "start": 5.84,
+       "end": 6.1,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "was",
+       "start": 6.1,
+       "end": 6.46,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "wrong.",
+       "start": 6.46,
+       "end": 6.72,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 19.6
+    }
+   ],
+   "narration_index": 4,
+   "beat": 6,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 9.793,
+   "set": "desk",
+   "time": "day",
+   "grade": "warm",
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "type",
+     "x": 50.0,
+     "seated": true,
+     "facing": 1,
+     "mood": "neutral"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Alex can notice the feeling, check whether anything has actually changed, and choose whether this moment calls for another task or a pause.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-040-0.wav",
+     "voice_dur": 8.793,
+     "word_times": [
+      {
+       "word": "Alex",
+       "start": 0.0,
+       "end": 0.2,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "can",
+       "start": 0.2,
+       "end": 0.48,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "notice",
+       "start": 0.48,
+       "end": 0.82,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "the",
+       "start": 0.82,
+       "end": 1.14,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "feeling,",
+       "start": 1.14,
+       "end": 1.46,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "check",
+       "start": 1.88,
+       "end": 2.12,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "whether",
+       "start": 2.12,
+       "end": 2.48,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "anything",
+       "start": 2.48,
+       "end": 2.86,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "has",
+       "start": 2.86,
+       "end": 3.12,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "actually",
+       "start": 3.12,
+       "end": 3.46,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "changed,",
+       "start": 3.46,
+       "end": 3.98,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "and",
+       "start": 3.98,
+       "end": 4.52,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "choose",
+       "start": 4.52,
+       "end": 4.9,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "whether",
+       "start": 4.9,
+       "end": 5.4,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "this",
+       "start": 5.4,
+       "end": 5.64,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "moment",
+       "start": 5.64,
+       "end": 5.94,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "calls",
+       "start": 5.94,
+       "end": 6.26,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "for",
+       "start": 6.26,
+       "end": 6.64,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "another",
+       "start": 6.64,
+       "end": 6.8,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "task",
+       "start": 6.8,
+       "end": 7.16,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "or",
+       "start": 7.16,
+       "end": 7.82,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 7.82,
+       "end": 7.92,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "pause.",
+       "start": 7.92,
+       "end": 8.24,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 17.18
+    }
+   ],
+   "narration_index": 5,
+   "beat": 6,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "desk",
+   "time": "day",
+   "grade": "warm",
+   "dur": 9.056,
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "standup",
+     "x": 50.0,
+     "facing": 1,
+     "mood": "relieved"
+    }
+   ],
+   "narration_index": 6,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Thinking becomes useful again when it serves those distinctions; the goal is not an empty mind, but a mind that can finish a job.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-041-0.wav",
+     "voice_dur": 8.056,
+     "word_times": [
+      {
+       "word": "Thinking",
+       "start": 0.0,
+       "end": 0.2,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "becomes",
+       "start": 0.2,
+       "end": 0.46,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "useful",
+       "start": 0.46,
+       "end": 0.94,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "again",
+       "start": 0.94,
+       "end": 1.4,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "when",
+       "start": 1.4,
+       "end": 1.66,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "it",
+       "start": 1.66,
+       "end": 1.8,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "serves",
+       "start": 1.8,
+       "end": 2.06,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "those",
+       "start": 2.06,
+       "end": 2.48,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "distinctions;",
+       "start": 2.48,
+       "end": 2.96,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "the",
+       "start": 4.08,
+       "end": 4.14,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "goal",
+       "start": 4.14,
+       "end": 4.34,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "is",
+       "start": 4.34,
+       "end": 4.66,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "not",
+       "start": 4.66,
+       "end": 4.82,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "an",
+       "start": 4.82,
+       "end": 4.94,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "empty",
+       "start": 4.94,
+       "end": 5.2,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "mind,",
+       "start": 5.2,
+       "end": 5.42,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "but",
+       "start": 5.92,
+       "end": 6.08,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 6.08,
+       "end": 6.16,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "mind",
+       "start": 6.16,
+       "end": 6.44,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "that",
+       "start": 6.44,
+       "end": 6.64,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "can",
+       "start": 6.64,
+       "end": 6.8,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "finish",
+       "start": 6.8,
+       "end": 7.1,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 7.1,
+       "end": 7.34,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "job.",
+       "start": 7.34,
+       "end": 7.62,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 17.41
+    }
+   ],
+   "beat": 6,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 4.0,
+   "music": "mid",
+   "card": {
+    "style": "cta",
+    "lines": [
+     "If this made you think, like and subscribe."
+    ]
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 18,
+     "pose": "wave",
+     "mood": "happy",
+     "scale": 0.6,
+     "seated": false
+    }
+   ],
+   "set": "void",
+   "camera": {
+    "frame": "wide"
+   },
+   "lines": [],
+   "sfx": [],
+   "items": []
+  }
+ ],
+ "publish": {
+  "youtube_titles": [
+   "Why Smart People Overthink Everything",
+   "When Thinking Stops Helping",
+   "Overthinking: Rehearsal Is Not Research"
+  ],
+  "description": "An ambiguous comment about a deadline sends Alex into a loop of imagined replies. A specific question reveals what more rehearsal could not.\n\nThis fictional educational essay distinguishes useful investigation from repeated prediction. Overthinking is not proof of intelligence, and an uncertain conversation is not a diagnosis.\n\n#Overthinking #Psychology #DecisionMaking",
+  "tags": [
+   "overthinking",
+   "decision making",
+   "uncertainty",
+   "rumination",
+   "communication",
+   "psychology"
+  ],
+  "pinned_comment": "What helps you notice when thinking has stopped adding information?",
+  "thumbnail_words": "REHEARSAL OR REALITY?",
+  "idea": {
+   "definition": "Overthinking is explored as repeated rehearsal that stops adding useful information, not evidence of intelligence.",
+   "mechanism": "Imagined reactions can multiply while the actual evidence remains unchanged.",
+   "turn": "Careful thinking needs a question, new information, or a concrete task; certainty about another person's response is unavailable.",
+   "thinkers": "No attributed quotations or empirical statistics."
+  },
+  "inner_voice": null,
+  "approach": "One ambiguous comment about Friday becomes a conversation about a specific unfinished review; the distinction between rehearsal and investigation drives each advance."
+ },
+ "writer": "AI editorial revision of the generated checkpoint",
+ "sources": [
+  {
+   "title": "Maladaptive Rumination as a Transdiagnostic Mediator of Vulnerability and Outcome in Psychopathology.",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/30841644/",
+   "source": "PubMed",
+   "pmid": "30841644",
+   "query": "rumination[Title/Abstract] AND (metacognition[Title/Abstract] OR repetitive thinking[Title/Abstract]) NOT (psychosis[Title] OR schizophrenia[Title] OR bipolar[Title])",
+   "publication_types": [
+    "Journal Article",
+    "Review"
+   ],
+   "evidence_type": "review",
+   "doi": "10.3390/jcm8030314"
+  },
+  {
+   "title": "Development and Validation of a Measure of Self-Critical Rumination.",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/25712674/",
+   "source": "PubMed",
+   "pmid": "25712674",
+   "query": "rumination[Title/Abstract] AND (metacognition[Title/Abstract] OR repetitive thinking[Title/Abstract]) NOT (psychosis[Title] OR schizophrenia[Title] OR bipolar[Title])",
+   "publication_types": [
+    "Journal Article",
+    "Review"
+   ],
+   "evidence_type": "review",
+   "doi": "10.1177/1073191115573300"
+  },
+  {
+   "title": "Rumination (psychology)",
+   "url": "https://en.wikipedia.org/wiki/Rumination_(psychology)",
+   "source": "Wikipedia",
+   "query": "rumination psychology metacognition"
+  },
+  {
+   "title": "Metacognition",
+   "url": "https://en.wikipedia.org/wiki/Metacognition",
+   "source": "Wikipedia",
+   "query": "rumination psychology metacognition"
+  },
+  {
+   "title": "Mindfulness",
+   "url": "https://en.wikipedia.org/wiki/Mindfulness",
+   "source": "Wikipedia",
+   "query": "rumination psychology metacognition"
+  }
+ ],
+ "acting_report": {
+  "director": "verified physical-action compiler",
+  "changes": [],
+  "limitations": [
+   "Unsupported physical detail is not simulated; inspect scene meaning in the contact sheet.",
+   "Thoughtful standing and sitting are permitted, not counted as new performances."
+  ]
+ },
+ "editorial_origin": "AI editorial revision during autonomous review of the generated episode; not evidence that unattended writing passed. Expanded after measured CPU narration timing; exact verified takes are reused and rechecked.",
+ "script_review": {
+  "reviewer": "groq:qwen/qwen3.8-27b",
+  "issues": [
+   {
+    "severity": "minor",
+    "beats": [
+     1
+    ],
+    "revise": [
+     1
+    ],
+    "problem": "The narration states Alex 'checks a reply at home,' but the plot indicates he is drafting and deleting messages, not checking a received reply. This phrasing blurs the distinction between active rehearsal and passive waiting, which is central to the essay's argument.",
+    "repair": "Change 'checks a reply at home' to 're-reads his own drafts at home' to accurately reflect that he is generating content, not receiving it."
+   },
+   {
+    "severity": "minor",
+    "beats": [
+     4
+    ],
+    "revise": [
+     4
+    ],
+    "problem": "The narration says Alex 'checks the message' before sending. Since he is the one composing the new question, 'checking' implies verifying a received item or a previous state, which is slightly ambiguous. He is reviewing his own draft.",
+    "repair": "Change 'checks the message' to 'reviews his draft' to clarify that he is inspecting his own composition before sending."
+   }
+  ],
+  "major_findings_resolved": true
+ },
+ "duration": 346.7,
+ "speech_verification": {
+  "passed": true,
+  "parts": 42,
+  "minimum_agreement": 0.85
+ },
+ "narrator_voice": "warguy",
+ "music_credit": "Original score generated with ACE-Step 1.5 (MIT)"
+}
