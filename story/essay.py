@@ -98,7 +98,7 @@ def concept_prompt(title, minutes):
     v = VOCAB
     length = (f'about {minutes:g} minutes ({lo:.0f} seconds) in total' if minutes else
               f'the length this concept deserves: {lo // 60:.0f}-{hi / 60:.1f} minutes ({lo}-{hi} seconds) in total')
-    words = round((lo + hi) / 2 * .55 * WPS) if not minutes else round(lo * .55 * WPS)
+    words = round((lo + hi) / 2 * .85 * 2.7) if not minutes else round(lo * .85 * 2.7)
     modes = '\n'.join(f'  - {k}: {d}' for k, d in MODES.items())
     return f"""You write and direct narrated animated video essays that explain one concept from psychology or philosophy.
 {STYLE}
@@ -109,7 +109,7 @@ HOW TO BUILD THIS FILM (think in this order):
    turn, and what changes when you understand it? Choose the 5-8 ideas THIS concept needs, in the order that builds understanding.
    The order is yours; it must not follow a stock template (no default "hero is stuck, relapses, then wins" arc).
 2. THE NARRATION for each idea: calm, intelligent, concrete spoken sentences of 6-18 words, tied to what is on screen. It carries
-   the explanation; roughly half the running time is spoken. NO fabricated or unverified quotations attributed to real people
+   the explanation; most of the running time is spoken, with purposeful short acting pauses. NO fabricated or unverified quotations attributed to real people
    (paraphrase their ideas), NO statistics or percentages, NO "studies show", NO diagnosing the viewer. The narrator MAY recount
    fictional dialogue, self-talk and inner thoughts; quotation marks alone are allowed.
 3. THE PICTURE for each idea: pick the visual mode that makes THIS idea clearest, and vary the modes across the film:

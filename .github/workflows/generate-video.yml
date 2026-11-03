@@ -24,6 +24,9 @@ on:
       procedural_music:
         type: boolean
         default: false
+      score_source_run:
+        type: string
+        default: ''
       narration_source_run:
         type: string
         default: ''
@@ -240,7 +243,7 @@ jobs:
           retention-days: 3
 
   music:
-    if: ${{ !inputs.recorded_source_run && !inputs.procedural_music }}
+    if: ${{ !inputs.recorded_source_run && !inputs.procedural_music && !inputs.score_source_run }}
     name: Compose the score
     needs: write
     runs-on: ubuntu-24.04
@@ -366,18 +369,18 @@ jobs:
           path: build
           merge-multiple: true
       - uses: actions/download-artifact@v4
-        if: ${{ !inputs.recorded_source_run }}
+        if: ${{ !inputs.recorded_source_run && !inputs.score_source_run }}
         continue-on-error: true
         with:
           name: film-music
           path: build
       - name: Reuse the recorded production score
-        if: inputs.recorded_source_run
+        if: ${{ inputs.recorded_source_run || inputs.score_source_run }}
         uses: actions/download-artifact@v4
         continue-on-error: true
         with:
           name: film-music
-          run-id: ${{ inputs.recorded_source_run }}
+          run-id: ${{ inputs.score_source_run || inputs.recorded_source_run }}
           github-token: ${{ github.token }}
           path: build
       - uses: actions/download-artifact@v4

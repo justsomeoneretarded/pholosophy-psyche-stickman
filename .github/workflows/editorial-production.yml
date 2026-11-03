@@ -1,4 +1,5 @@
 name: Produce the AI editorial revision
+# Iteration 2: fuller explanation, measured pacing and verified-take reuse.
 on:
   workflow_dispatch:
   push:
@@ -39,4 +40,6 @@ jobs:
       title: Why Smart People Overthink Everything
       duration_minutes: '6'
       plan_source_run: ${{ github.run_id }}
+      narration_source_run: '41678117704'
+      score_source_run: '41678117704'
     secrets: inherit

@@ -124,6 +124,52 @@
       ],
       "narration_index": 4,
       "lines": []
+    },
+    {
+      "dur": 8,
+      "set": "desk",
+      "time": "day",
+      "grade": "warm",
+      "camera": {
+        "frame": "medium",
+        "on": "alex",
+        "push": 0.025
+      },
+      "actors": [
+        {
+          "id": "alex",
+          "pose": "think",
+          "x": 50,
+          "seated": true,
+          "facing": 1,
+          "mood": "neutral"
+        }
+      ],
+      "lines": [],
+      "narration_index": 5
+    },
+    {
+      "dur": 8,
+      "set": "desk",
+      "time": "day",
+      "grade": "warm",
+      "camera": {
+        "frame": "medium",
+        "on": "alex",
+        "push": 0.025
+      },
+      "actors": [
+        {
+          "id": "alex",
+          "pose": "phone",
+          "x": 50,
+          "seated": true,
+          "facing": 1,
+          "mood": "neutral"
+        }
+      ],
+      "lines": [],
+      "narration_index": 6
     }
   ],
   "1": [
@@ -236,6 +282,52 @@
       ],
       "narration_index": 4,
       "lines": []
+    },
+    {
+      "dur": 8,
+      "set": "office",
+      "time": "day",
+      "grade": "warm",
+      "camera": {
+        "frame": "medium",
+        "on": "alex",
+        "push": 0.025
+      },
+      "actors": [
+        {
+          "id": "alex",
+          "pose": "phone",
+          "x": 50,
+          "seated": true,
+          "facing": 1,
+          "mood": "neutral"
+        }
+      ],
+      "lines": [],
+      "narration_index": 5
+    },
+    {
+      "dur": 8,
+      "set": "office",
+      "time": "day",
+      "grade": "warm",
+      "camera": {
+        "frame": "medium",
+        "on": "alex",
+        "push": 0.025
+      },
+      "actors": [
+        {
+          "id": "alex",
+          "pose": "think",
+          "x": 50,
+          "seated": true,
+          "facing": 1,
+          "mood": "neutral"
+        }
+      ],
+      "lines": [],
+      "narration_index": 6
     }
   ],
   "2": [
@@ -345,6 +437,52 @@
       ],
       "narration_index": 4,
       "lines": []
+    },
+    {
+      "dur": 8,
+      "set": "street",
+      "time": "day",
+      "grade": "warm",
+      "camera": {
+        "frame": "medium",
+        "on": "alex",
+        "push": 0.025
+      },
+      "actors": [
+        {
+          "id": "alex",
+          "pose": "phone",
+          "x": 50,
+          "seated": false,
+          "facing": 1,
+          "mood": "neutral"
+        }
+      ],
+      "lines": [],
+      "narration_index": 5
+    },
+    {
+      "dur": 8,
+      "set": "street",
+      "time": "day",
+      "grade": "warm",
+      "camera": {
+        "frame": "medium",
+        "on": "alex",
+        "push": 0.025
+      },
+      "actors": [
+        {
+          "id": "alex",
+          "pose": "think",
+          "x": 50,
+          "seated": false,
+          "facing": 1,
+          "mood": "neutral"
+        }
+      ],
+      "lines": [],
+      "narration_index": 6
     }
   ],
   "3": [
@@ -488,6 +626,52 @@
       },
       "narration_index": 4,
       "lines": []
+    },
+    {
+      "dur": 8,
+      "set": "park",
+      "time": "day",
+      "grade": "warm",
+      "camera": {
+        "frame": "medium",
+        "on": "alex",
+        "push": 0.025
+      },
+      "actors": [
+        {
+          "id": "alex",
+          "pose": "phone",
+          "x": 42,
+          "seated": true,
+          "facing": 1,
+          "mood": "neutral"
+        }
+      ],
+      "lines": [],
+      "narration_index": 5
+    },
+    {
+      "dur": 8,
+      "set": "park",
+      "time": "day",
+      "grade": "warm",
+      "camera": {
+        "frame": "medium",
+        "on": "alex",
+        "push": 0.025
+      },
+      "actors": [
+        {
+          "id": "alex",
+          "pose": "phone",
+          "x": 42,
+          "seated": true,
+          "facing": 1,
+          "mood": "neutral"
+        }
+      ],
+      "lines": [],
+      "narration_index": 6
     }
   ],
   "4": [
@@ -653,6 +837,68 @@
         }
       ],
       "narration_index": 4
+    },
+    {
+      "dur": 8,
+      "set": "cafe",
+      "time": "day",
+      "grade": "warm",
+      "camera": {
+        "frame": "two",
+        "on": "alex",
+        "push": 0.025
+      },
+      "actors": [
+        {
+          "id": "alex",
+          "pose": "think",
+          "x": 19,
+          "seated": true,
+          "facing": 1,
+          "mood": "neutral"
+        },
+        {
+          "id": "jamie",
+          "pose": "think",
+          "x": 31,
+          "seated": true,
+          "facing": -1,
+          "mood": "neutral"
+        }
+      ],
+      "lines": [],
+      "narration_index": 5
+    },
+    {
+      "dur": 8,
+      "set": "cafe",
+      "time": "day",
+      "grade": "warm",
+      "camera": {
+        "frame": "two",
+        "on": "alex",
+        "push": 0.025
+      },
+      "actors": [
+        {
+          "id": "alex",
+          "pose": "think",
+          "x": 19,
+          "seated": true,
+          "facing": 1,
+          "mood": "neutral"
+        },
+        {
+          "id": "jamie",
+          "pose": "talk",
+          "x": 31,
+          "seated": true,
+          "facing": -1,
+          "mood": "neutral"
+        }
+      ],
+      "lines": [],
+      "narration_index": 6
     }
   ],
   "5": [
@@ -746,6 +992,52 @@
       "lines": []
     },
     {
+      "dur": 8,
+      "set": "desk",
+      "time": "day",
+      "grade": "warm",
+      "camera": {
+        "frame": "medium",
+        "on": "alex",
+        "push": 0.025
+      },
+      "actors": [
+        {
+          "id": "alex",
+          "pose": "think",
+          "x": 50,
+          "seated": true,
+          "facing": 1,
+          "mood": "neutral"
+        }
+      ],
+      "lines": [],
+      "narration_index": 4
+    },
+    {
+      "dur": 8,
+      "set": "desk",
+      "time": "day",
+      "grade": "warm",
+      "camera": {
+        "frame": "medium",
+        "on": "alex",
+        "push": 0.025
+      },
+      "actors": [
+        {
+          "id": "alex",
+          "pose": "type",
+          "x": 50,
+          "seated": true,
+          "facing": 1,
+          "mood": "neutral"
+        }
+      ],
+      "lines": [],
+      "narration_index": 5
+    },
+    {
       "set": "desk",
       "time": "day",
       "grade": "warm",
@@ -764,7 +1056,7 @@
           "mood": "relieved"
         }
       ],
-      "narration_index": 4,
+      "narration_index": 6,
       "lines": []
     }
   ]

@@ -66,7 +66,9 @@
         "At home, he begins a reply, writes an apology, deletes it, and replaces it with a longer one.",
         "Perhaps a warmer opening or a more confident ending will help; soon he is editing a conversation that hasn’t happened.",
         "The problem isn’t that he has run out of answers; he can imagine so many that none feels safe.",
-        "Being clever can help generate possibilities, but it doesn’t turn those possibilities into evidence, and overthinking is no proof of intelligence."
+        "Being clever can help generate possibilities, but it doesn’t turn those possibilities into evidence, and overthinking is no proof of intelligence.",
+        "A mind can make a prediction sound convincing simply by supplying detail; Alex can picture the raised eyebrow without having seen one.",
+        "His imagination has produced a scene, not a response from Jamie, so polishing that scene cannot tell him what she meant."
       ],
       "dialogue": []
     },
@@ -88,7 +90,9 @@
         "That check changes the problem: he now knows what might delay Friday, instead of treating the entire project as a disaster.",
         "Then he imagines Jamie’s face when she reads his reply, changes a word, imagines another expression, and changes it back.",
         "Nothing new has entered the picture; his activity has changed, but his information has not.",
-        "Instead of asking whether he has thought hard enough, he can ask what this round of thinking has let him learn."
+        "Instead of asking whether he has thought hard enough, he can ask what this round of thinking has let him learn.",
+        "Sometimes another revision really does uncover a mistake, which is why a useful check needs a specific question rather than a ban on editing.",
+        "For Alex, the next useful question is whether Jamie meant this one review or the whole deadline; the schedule alone cannot answer that."
       ],
       "dialogue": []
     },
@@ -110,7 +114,9 @@
         "Before an expensive commitment or a difficult-to-reverse decision, checking assumptions can save more trouble than it costs.",
         "The distinction is what the extra time is doing: checking a fact, comparing a real option, or seeking a perspective you lack.",
         "Or perhaps you are asking the same facts to promise a feeling of certainty they cannot supply.",
-        "Alex needs a stopping condition, not carelessness: identify the unfinished review, ask what Jamie meant, and make one specific proposal."
+        "Alex needs a stopping condition, not carelessness: identify the unfinished review, ask what Jamie meant, and make one specific proposal.",
+        "A stopping condition is provisional: if the review reveals a serious new problem, he can investigate again with that new evidence.",
+        "It marks what this decision needs now, rather than making him promise never to reconsider anything."
       ],
       "dialogue": []
     },
@@ -132,7 +138,9 @@
         "No wording can guarantee that, because another person brings a mood, a history, and information he does not have.",
         "He can still be honest and considerate; those are choices about his message, not guarantees about her response.",
         "He writes, “I may have misread: did you mean the review?”—a question Jamie can actually answer.",
-        "He presses send while the doubt remains; this time, sending begins the conversation instead of pretending to finish it."
+        "He presses send while the doubt remains; this time, sending begins the conversation instead of pretending to finish it.",
+        "He has made the message answerable, not invulnerable; Jamie could still be busy, distracted, or unhappy about something he cannot see.",
+        "If the reply takes time, he can let it remain unknown instead of composing both sides of the conversation himself."
       ],
       "dialogue": []
     },
@@ -155,7 +163,9 @@
         "He had interpreted her comment as a judgment, while she had interpreted his silence as a request for time.",
         "Neither explanation was hidden inside the original sentence; they needed another exchange to find out.",
         "They meet at the café and agree that Alex will send a draft today, and Jamie will review it tomorrow.",
-        "This doesn’t prove every difficult conversation ends kindly; it shows what this particular exchange made possible: information that rehearsal couldn’t provide."
+        "This doesn’t prove every difficult conversation ends kindly; it shows what this particular exchange made possible: information that rehearsal couldn’t provide.",
+        "If Jamie had disagreed, he would have had a real disagreement to discuss, which is different from repeatedly arguing with an imagined opponent.",
+        "An answer need not be comforting to be useful; it can reveal a limit, a missing fact, or a choice that needs more work."
       ],
       "dialogue": []
     },
@@ -177,10 +187,12 @@
         "This time there is something concrete to check, so he adds the page, checks the attachment, and sends the work they agreed on.",
         "When another worried prediction appears, he does not have to defeat it before continuing.",
         "He can ask whether it points to a task he can perform, a question he can ask, or an outcome he cannot control.",
+        "Some worries return even after a useful decision, so the return of discomfort does not automatically mean the decision was wrong.",
+        "Alex can notice the feeling, check whether anything has actually changed, and choose whether this moment calls for another task or a pause.",
         "Thinking becomes useful again when it serves those distinctions; the goal is not an empty mind, but a mind that can finish a job."
       ],
       "dialogue": []
     }
   ],
-  "_editorial_origin": "AI editorial revision during autonomous review of the generated episode; not evidence that unattended writing passed."
+  "_editorial_origin": "AI editorial revision during autonomous review of the generated episode; not evidence that unattended writing passed. Expanded after measured CPU narration timing; exact verified takes are reused and rechecked."
 }
