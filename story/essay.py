@@ -558,6 +558,8 @@ def stage_merge(out_dir, out_path):
             'writer': sheet.get('_writer')}
     if (out / 'sources.json').exists():
         film['sources'] = json.loads((out / 'sources.json').read_text())
+    from story.director import enrich_film
+    film = enrich_film(film,sheet)
     film, notes = repair(film)
     Path(out_path).parent.mkdir(parents=True, exist_ok=True)
     Path(out_path).write_text(json.dumps(film, indent=1, ensure_ascii=False))

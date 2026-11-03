@@ -110,12 +110,15 @@ def direct_beat(beat,vocab):
 
 def enrich_film(film,sheet):
     report=[]
-    phases={}
+    phases={};artwork={}
     for i,shot in enumerate(film["shots"]):
         index=int(shot.get("beat",0))-1
         if index<0 or index>=len(sheet.get("beats",[])) or shot.get("card"):continue
         phase=phases.get(index,0); phases[index]=phase+1
         changed=apply_performance(shot,sheet["beats"][index],phase)
+        for actor in shot.get("actors",[]):
+            if actor.get("artwork"):artwork[actor["id"]]=actor["artwork"]
+            elif actor.get("pose") in ("read","show") and actor["id"] in artwork:actor["artwork"]=artwork[actor["id"]]
         if changed: report.append({"shot":i,"beat":index+1,"changes":changed})
     film["acting_report"]={"director":"verified physical-action compiler","changes":report,
       "limitations":["Unsupported physical detail is not simulated; inspect scene meaning in the contact sheet.",

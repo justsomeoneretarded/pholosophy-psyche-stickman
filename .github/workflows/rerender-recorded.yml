@@ -1,4 +1,5 @@
 name: Rerender recorded film
+# Iteration 2: distinct cast, reachable sketch contact, and recipient acting.
 on:
   workflow_dispatch:
     inputs:

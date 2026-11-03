@@ -33,13 +33,15 @@ function drawOpenBook(ctx,P,hands) {
 Object.assign(POSES,{
   write(P,a,u,d,w) {
     POSES.sit(P,a,u,d,w);
-    P.paperX=(P.sideSit||0)*48;P.paperY=w.desk?-w.desk-20:P.pelvis[1]-18;
+    P.paperX=(P.sideSit||0)*48;P.paperY=w.desk?-w.desk-20:P.pelvis[1]-38;
     P.artwork=a.artwork==='seedling'?'seedling':'writing';
     P.drawProgress=clamp((u-.55)/Math.max(1,Math.min(3,d-.8)),0,1);
     const point=artworkPoint(P.artwork,P.drawProgress),k=easeOut(u/.55);
     const target=[P.paperX+point[0]+Math.sin(.6)*6.5,P.paperY+point[1]-Math.cos(.6)*6.5];
-    P.hands[1]=[lerp(P.hands[1][0],target[0],k),lerp(P.hands[1][1],target[1],k)];
-    P.hands[0]=[lerp(P.hands[0][0],P.paperX-44,k),lerp(P.hands[0][1],P.paperY+10,k)];
+    P.penHand=P.sideSit<0?0:1;const supporting=1-P.penHand;
+    P.hands[P.penHand]=[lerp(P.hands[P.penHand][0],target[0],k),lerp(P.hands[P.penHand][1],target[1],k)];
+    const supportX=P.paperX+(P.penHand===1?-44:44);
+    P.hands[supporting]=[lerp(P.hands[supporting][0],supportX,k),lerp(P.hands[supporting][1],P.paperY+10,k)];
     P.writingPad=true;P.hold='pencil';P.look=[(P.sideSit||0)*.4,4];P.headDy=4;
   },
   read(P,a,u,d,w) {

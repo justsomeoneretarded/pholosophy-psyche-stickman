@@ -8,7 +8,7 @@ const DEFAULT_CAST = {
 };
 
 function setup(film, width = 1920) {
-  FILM = film; FILM.cast = { ...DEFAULT_CAST, ...(film.cast || {}) };
+  FILM = film; FILM.cast = Object.fromEntries(Object.entries({ ...DEFAULT_CAST, ...(film.cast || {}) }).map(([id,c])=>[id,{...(DEFAULT_CAST[c.kind]||{}),...c}]));
   TL = new Timeline(film);
   K = width / STAGE_W;
   const mk = () => { const c = document.createElement('canvas'); c.width = width; c.height = Math.round(width * 9 / 16); return c; };

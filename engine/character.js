@@ -488,7 +488,7 @@ function drawHold(ctx, item, P, hands, o) {
     ctx.strokeStyle = 'rgba(230,230,230,.45)'; ctx.lineWidth = 2.5; const t = o.t || 0;
     for (const k of [-4, 4]) { ctx.beginPath(); ctx.moveTo(k, -30); ctx.bezierCurveTo(k + 8 * Math.sin(t * 2 + k), -45, k - 8, -55, k + 4 * Math.sin(t * 3), -70); ctx.stroke(); }
   } else if (item === 'pencil') {
-    ctx.translate(R[0], R[1]); ctx.rotate(.6);
+    const pen=hands[P.penHand??1];ctx.translate(pen[0],pen[1]); ctx.rotate(.6);
     ctx.fillStyle = '#f1c232'; ctx.fillRect(-3, -30, 6, 34); ctx.fillStyle = '#333'; ctx.fillRect(-3, 4, 6, 5);
   } else if (item === 'book') {
     if (P.bookOpen) { drawOpenBook(ctx,P,hands); ctx.restore(); return; }
@@ -616,7 +616,6 @@ function drawCharacter(ctx, a, P, o) {
   }
   ctx.restore();
   ctx.restore();
-  if (P.writingPad) drawWritingPad(ctx,P);
   if (P.lapBook && !P.writingPad) { ctx.save(); ctx.translate(0, P.pelvis[1] - 18); lapBook(ctx); ctx.restore(); }
   // Arms
   const hands = [];
@@ -635,6 +634,7 @@ function drawCharacter(ctx, a, P, o) {
     limb(ctx, [sx, sy, k[0], k[1], k[2], k[3]], RIG.armW, col, out, lw);
     if (top && a.sleeves !== false && !o.demon) { ctx.fillStyle = skin; ctx.strokeStyle = out; ctx.lineWidth = lw * 2; ctx.beginPath(); ctx.arc(k[2], k[3], RIG.armW / 2 + 1, 0, Math.PI * 2); ctx.stroke(); ctx.fill(); }
   }
+  if (P.writingPad) drawWritingPad(ctx,P);
   if (P.hold) drawHold(ctx, P.hold, P, hands, { ...o, umbrella: a.umbrella_color });
   ctx.restore();
   return { hands, head: [a.wx + (px + hx) * s, a.wy + (py + hy - P.lift) * s] };
