@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "time": 218.55999999999997,
+  "sha256": "8cde32250e7c77c79fb523344cccdf1fb2af5c4b8441eeec42df986100cb50fa",
+  "fonts": [
+    {
+      "family": "FilmHand",
+      "status": "loaded"
+    },
+    {
+      "family": "FilmDigit",
+      "status": "loaded"
+    },
+    {
+      "family": "FilmRound",
+      "status": "loaded"
+    }
+  ]
+}
