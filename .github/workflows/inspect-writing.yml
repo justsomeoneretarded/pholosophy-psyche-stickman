@@ -1,0 +1,30 @@
+name: Inspect screenplay checkpoint
+on:
+  workflow_dispatch:
+    inputs:
+      source_run:
+        type: string
+        default: '41671268205'
+  push:
+    paths: ['.github/workflows/inspect-writing.yml']
+permissions:
+  contents: write
+  actions: read
+jobs:
+  inspect:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      SOURCE_RUN: ${{ inputs.source_run || '41671268205' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: film-plan
+          run-id: ${{ env.SOURCE_RUN }}
+          github-token: ${{ github.token }}
+          path: checkpoint
+      - name: Mark as a screenplay checkpoint, not a finished film
+        run: echo 'Validated screenplay checkpoint before narration and encoding. This is not a finished-video claim.' > checkpoint/REVIEW_STATUS.txt
+      - name: Publish readable script and editorial evidence
+        run: bash scripts/publish_review.sh checkpoint "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" "$SOURCE_RUN" "$RUNNER_TEMP/script-publisher"
