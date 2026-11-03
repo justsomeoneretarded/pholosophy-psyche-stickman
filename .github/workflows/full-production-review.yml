@@ -1,0 +1,17 @@
+name: Full six-minute production review
+on:
+  workflow_dispatch:
+  push:
+    paths: ['.github/workflows/full-production-review.yml']
+permissions:
+  contents: write
+  actions: read
+jobs:
+  produce:
+    uses: ./.github/workflows/generate-video.yml
+    with:
+      title: Why Smart People Overthink Everything
+      duration_minutes: '6'
+      narrator: Warguy
+      notes: "Challenge the premise that overthinking proves intelligence. Follow Alex revising a message after an awkward conversation. Distinguish gathering new information from rehearsing the same possibilities. Show actual typing, reaching, reading, walking and conversation. Include the objection that important hard-to-reverse decisions deserve investigation. Alex sends a specific honest message while still uncertain. A small misunderstanding is resolved through conversation, not a magical cure. Explain reasons and consequences, not atmospheric slogans. Preserve natural fictional dialogue. Do not invent statistics, attributed quotations or diagnoses."
+    secrets: inherit
