@@ -71,7 +71,9 @@ def reusable_takes(source, narrator):
     index={}
     for shot in film.get('shots',[]):
         for line in shot.get('lines',[]):
-            path=root/'voice'/str(line.get('voice_file') or '')
+            name=str(line.get('voice_file') or '')
+            if Path(name).name!=name or not name.endswith('.wav'):continue
+            path=root/'voice'/name
             if line.get('who')=='narrator' and line.get('speech_verified') and not line.get('twist') and path.is_file() and path.stat().st_size:
                 index[line['text']]=path
     return index
