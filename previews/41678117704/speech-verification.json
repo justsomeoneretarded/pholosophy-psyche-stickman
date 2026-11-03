@@ -1,0 +1,6452 @@
+{
+  "passed": true,
+  "clips": [
+    {
+      "shot": 0,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-000-0-a.wav",
+      "expected": "When Jamie said, \u201cFriday looks tight,\u201d Alex heard a different sentence: \u201cYou\u2019ve let everyone down.\u201d",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "When",
+          "start": 0.0,
+          "end": 0.12
+        },
+        {
+          "word": "Jamie",
+          "start": 0.12,
+          "end": 0.28
+        },
+        {
+          "word": "said",
+          "start": 0.28,
+          "end": 0.72
+        },
+        {
+          "word": "Friday",
+          "start": 0.72,
+          "end": 1.16
+        },
+        {
+          "word": "looks",
+          "start": 1.16,
+          "end": 1.58
+        },
+        {
+          "word": "tight,",
+          "start": 1.58,
+          "end": 1.98
+        },
+        {
+          "word": "Alex",
+          "start": 2.38,
+          "end": 2.5
+        },
+        {
+          "word": "heard",
+          "start": 2.5,
+          "end": 2.78
+        },
+        {
+          "word": "a",
+          "start": 2.78,
+          "end": 2.94
+        },
+        {
+          "word": "different",
+          "start": 2.94,
+          "end": 3.16
+        },
+        {
+          "word": "sentence,",
+          "start": 3.16,
+          "end": 3.48
+        },
+        {
+          "word": "you've",
+          "start": 4.1,
+          "end": 4.46
+        },
+        {
+          "word": "let",
+          "start": 4.46,
+          "end": 4.62
+        },
+        {
+          "word": "everyone",
+          "start": 4.62,
+          "end": 5.02
+        },
+        {
+          "word": "down.",
+          "start": 5.02,
+          "end": 5.54
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 1,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-001-0-a.wav",
+      "expected": "At home, he begins a reply, writes an apology, deletes it, and replaces it with a longer one.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "At",
+          "start": 0.0,
+          "end": 0.16
+        },
+        {
+          "word": "home,",
+          "start": 0.16,
+          "end": 0.36
+        },
+        {
+          "word": "he",
+          "start": 0.84,
+          "end": 0.86
+        },
+        {
+          "word": "begins",
+          "start": 0.86,
+          "end": 1.14
+        },
+        {
+          "word": "a",
+          "start": 1.14,
+          "end": 1.4
+        },
+        {
+          "word": "reply,",
+          "start": 1.4,
+          "end": 1.62
+        },
+        {
+          "word": "writes",
+          "start": 2.06,
+          "end": 2.36
+        },
+        {
+          "word": "an",
+          "start": 2.36,
+          "end": 2.62
+        },
+        {
+          "word": "apology,",
+          "start": 2.62,
+          "end": 2.82
+        },
+        {
+          "word": "deletes",
+          "start": 3.36,
+          "end": 3.88
+        },
+        {
+          "word": "it,",
+          "start": 3.88,
+          "end": 3.98
+        },
+        {
+          "word": "and",
+          "start": 4.32,
+          "end": 4.44
+        },
+        {
+          "word": "replaces",
+          "start": 4.44,
+          "end": 4.86
+        },
+        {
+          "word": "it",
+          "start": 4.86,
+          "end": 5.18
+        },
+        {
+          "word": "with",
+          "start": 5.18,
+          "end": 5.36
+        },
+        {
+          "word": "a",
+          "start": 5.36,
+          "end": 5.44
+        },
+        {
+          "word": "longer",
+          "start": 5.44,
+          "end": 5.66
+        },
+        {
+          "word": "one.",
+          "start": 5.66,
+          "end": 6.0
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 2,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-002-0-a.wav",
+      "expected": "Perhaps a warmer opening or a more confident ending will help; soon he is editing a conversation that hasn\u2019t happened.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "perhaps",
+          "start": 0.0,
+          "end": 0.22
+        },
+        {
+          "word": "a",
+          "start": 0.22,
+          "end": 0.42
+        },
+        {
+          "word": "warmer",
+          "start": 0.42,
+          "end": 0.62
+        },
+        {
+          "word": "opening",
+          "start": 0.62,
+          "end": 1.12
+        },
+        {
+          "word": "or",
+          "start": 1.12,
+          "end": 1.34
+        },
+        {
+          "word": "a",
+          "start": 1.34,
+          "end": 1.4
+        },
+        {
+          "word": "more",
+          "start": 1.4,
+          "end": 1.56
+        },
+        {
+          "word": "confident",
+          "start": 1.56,
+          "end": 2.0
+        },
+        {
+          "word": "ending",
+          "start": 2.0,
+          "end": 2.5
+        },
+        {
+          "word": "will",
+          "start": 2.5,
+          "end": 2.76
+        },
+        {
+          "word": "help.",
+          "start": 2.76,
+          "end": 3.04
+        },
+        {
+          "word": "Soon",
+          "start": 3.8,
+          "end": 3.92
+        },
+        {
+          "word": "he",
+          "start": 3.92,
+          "end": 4.14
+        },
+        {
+          "word": "is",
+          "start": 4.14,
+          "end": 4.26
+        },
+        {
+          "word": "editing",
+          "start": 4.26,
+          "end": 4.6
+        },
+        {
+          "word": "a",
+          "start": 4.6,
+          "end": 4.8
+        },
+        {
+          "word": "conversation",
+          "start": 4.8,
+          "end": 5.2
+        },
+        {
+          "word": "that",
+          "start": 5.2,
+          "end": 5.76
+        },
+        {
+          "word": "hasn't",
+          "start": 5.76,
+          "end": 6.16
+        },
+        {
+          "word": "happened.",
+          "start": 6.16,
+          "end": 6.48
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 3,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-003-0-a.wav",
+      "expected": "The problem isn\u2019t that he has run out of answers; he can imagine so many that none feels safe.",
+      "agreement": 0.85,
+      "words": [
+        {
+          "word": "The",
+          "start": 0.0,
+          "end": 0.08
+        },
+        {
+          "word": "problem",
+          "start": 0.08,
+          "end": 0.34
+        },
+        {
+          "word": "isn't",
+          "start": 0.34,
+          "end": 0.74
+        },
+        {
+          "word": "that",
+          "start": 0.74,
+          "end": 0.84
+        },
+        {
+          "word": "he",
+          "start": 0.84,
+          "end": 1.0
+        },
+        {
+          "word": "is",
+          "start": 1.0,
+          "end": 1.1
+        },
+        {
+          "word": "one",
+          "start": 1.1,
+          "end": 1.26
+        },
+        {
+          "word": "out",
+          "start": 1.26,
+          "end": 1.42
+        },
+        {
+          "word": "of",
+          "start": 1.42,
+          "end": 1.54
+        },
+        {
+          "word": "answers.",
+          "start": 1.54,
+          "end": 1.86
+        },
+        {
+          "word": "He",
+          "start": 2.46,
+          "end": 2.56
+        },
+        {
+          "word": "can",
+          "start": 2.56,
+          "end": 2.7
+        },
+        {
+          "word": "imagine",
+          "start": 2.7,
+          "end": 2.98
+        },
+        {
+          "word": "so",
+          "start": 2.98,
+          "end": 3.3
+        },
+        {
+          "word": "many",
+          "start": 3.3,
+          "end": 3.56
+        },
+        {
+          "word": "that",
+          "start": 3.56,
+          "end": 3.82
+        },
+        {
+          "word": "none",
+          "start": 3.82,
+          "end": 4.1
+        },
+        {
+          "word": "feel",
+          "start": 4.1,
+          "end": 4.48
+        },
+        {
+          "word": "safe.",
+          "start": 4.48,
+          "end": 4.92
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 4,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-004-0-a.wav",
+      "expected": "Being clever can help generate possibilities, but it doesn\u2019t turn those possibilities into evidence, and overthinking is no proof of intelligence.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "Being",
+          "start": 0.0,
+          "end": 0.16
+        },
+        {
+          "word": "clever",
+          "start": 0.16,
+          "end": 0.42
+        },
+        {
+          "word": "can",
+          "start": 0.42,
+          "end": 0.78
+        },
+        {
+          "word": "help",
+          "start": 0.78,
+          "end": 1.0
+        },
+        {
+          "word": "generate",
+          "start": 1.0,
+          "end": 1.4
+        },
+        {
+          "word": "possibilities,",
+          "start": 1.4,
+          "end": 1.94
+        },
+        {
+          "word": "but",
+          "start": 2.7,
+          "end": 2.8
+        },
+        {
+          "word": "it",
+          "start": 2.8,
+          "end": 2.88
+        },
+        {
+          "word": "doesn't",
+          "start": 2.88,
+          "end": 3.28
+        },
+        {
+          "word": "turn",
+          "start": 3.28,
+          "end": 3.52
+        },
+        {
+          "word": "those",
+          "start": 3.52,
+          "end": 3.74
+        },
+        {
+          "word": "possibilities",
+          "start": 3.74,
+          "end": 4.12
+        },
+        {
+          "word": "into",
+          "start": 4.12,
+          "end": 4.82
+        },
+        {
+          "word": "evidence,",
+          "start": 4.82,
+          "end": 5.2
+        },
+        {
+          "word": "and",
+          "start": 5.62,
+          "end": 5.82
+        },
+        {
+          "word": "overthinking",
+          "start": 5.82,
+          "end": 6.38
+        },
+        {
+          "word": "is",
+          "start": 6.38,
+          "end": 6.74
+        },
+        {
+          "word": "no",
+          "start": 6.74,
+          "end": 6.96
+        },
+        {
+          "word": "proof",
+          "start": 6.96,
+          "end": 7.26
+        },
+        {
+          "word": "of",
+          "start": 7.26,
+          "end": 7.5
+        },
+        {
+          "word": "intelligence.",
+          "start": 7.5,
+          "end": 7.86
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 5,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-005-0-a.wav",
+      "expected": "Next morning, Alex opens the project schedule and finds one unfinished review, while the other tasks are where they should be.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "Next",
+          "start": 0.0,
+          "end": 0.16
+        },
+        {
+          "word": "morning,",
+          "start": 0.16,
+          "end": 0.46
+        },
+        {
+          "word": "Alex",
+          "start": 0.72,
+          "end": 0.82
+        },
+        {
+          "word": "opens",
+          "start": 0.82,
+          "end": 1.28
+        },
+        {
+          "word": "the",
+          "start": 1.28,
+          "end": 1.5
+        },
+        {
+          "word": "project",
+          "start": 1.5,
+          "end": 1.8
+        },
+        {
+          "word": "schedule",
+          "start": 1.8,
+          "end": 2.12
+        },
+        {
+          "word": "and",
+          "start": 2.12,
+          "end": 2.48
+        },
+        {
+          "word": "finds",
+          "start": 2.48,
+          "end": 2.72
+        },
+        {
+          "word": "one",
+          "start": 2.72,
+          "end": 3.02
+        },
+        {
+          "word": "unfinished",
+          "start": 3.02,
+          "end": 3.3
+        },
+        {
+          "word": "review,",
+          "start": 3.3,
+          "end": 4.0
+        },
+        {
+          "word": "while",
+          "start": 4.42,
+          "end": 4.64
+        },
+        {
+          "word": "the",
+          "start": 4.64,
+          "end": 4.8
+        },
+        {
+          "word": "other",
+          "start": 4.8,
+          "end": 4.96
+        },
+        {
+          "word": "tasks",
+          "start": 4.96,
+          "end": 5.28
+        },
+        {
+          "word": "are",
+          "start": 5.28,
+          "end": 5.64
+        },
+        {
+          "word": "where",
+          "start": 5.64,
+          "end": 5.8
+        },
+        {
+          "word": "they",
+          "start": 5.8,
+          "end": 5.96
+        },
+        {
+          "word": "should",
+          "start": 5.96,
+          "end": 6.18
+        },
+        {
+          "word": "be.",
+          "start": 6.18,
+          "end": 6.44
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 6,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-006-0-a.wav",
+      "expected": "That check changes the problem: he now knows what might delay Friday, instead of treating the entire project as a disaster.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "that",
+          "start": 0.0,
+          "end": 0.12
+        },
+        {
+          "word": "check",
+          "start": 0.12,
+          "end": 0.38
+        },
+        {
+          "word": "changes",
+          "start": 0.38,
+          "end": 0.96
+        },
+        {
+          "word": "the",
+          "start": 0.96,
+          "end": 1.12
+        },
+        {
+          "word": "problem.",
+          "start": 1.12,
+          "end": 1.48
+        },
+        {
+          "word": "He",
+          "start": 2.12,
+          "end": 2.2
+        },
+        {
+          "word": "now",
+          "start": 2.2,
+          "end": 2.36
+        },
+        {
+          "word": "knows",
+          "start": 2.36,
+          "end": 2.7
+        },
+        {
+          "word": "what",
+          "start": 2.7,
+          "end": 2.84
+        },
+        {
+          "word": "might",
+          "start": 2.84,
+          "end": 3.0
+        },
+        {
+          "word": "delay",
+          "start": 3.0,
+          "end": 3.26
+        },
+        {
+          "word": "Friday,",
+          "start": 3.26,
+          "end": 3.66
+        },
+        {
+          "word": "instead",
+          "start": 4.24,
+          "end": 4.44
+        },
+        {
+          "word": "of",
+          "start": 4.44,
+          "end": 4.64
+        },
+        {
+          "word": "treating",
+          "start": 4.64,
+          "end": 4.9
+        },
+        {
+          "word": "the",
+          "start": 4.9,
+          "end": 5.28
+        },
+        {
+          "word": "entire",
+          "start": 5.28,
+          "end": 5.58
+        },
+        {
+          "word": "project",
+          "start": 5.58,
+          "end": 6.16
+        },
+        {
+          "word": "as",
+          "start": 6.16,
+          "end": 6.6
+        },
+        {
+          "word": "a",
+          "start": 6.6,
+          "end": 6.7
+        },
+        {
+          "word": "disaster.",
+          "start": 6.7,
+          "end": 7.08
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 7,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-007-0-a.wav",
+      "expected": "Then he imagines Jamie\u2019s face when she reads his reply, changes a word, imagines another expression, and changes it back.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "Then",
+          "start": 0.0,
+          "end": 0.16
+        },
+        {
+          "word": "he",
+          "start": 0.16,
+          "end": 0.26
+        },
+        {
+          "word": "imagines",
+          "start": 0.26,
+          "end": 0.78
+        },
+        {
+          "word": "Jamie's",
+          "start": 0.78,
+          "end": 1.24
+        },
+        {
+          "word": "face",
+          "start": 1.24,
+          "end": 1.48
+        },
+        {
+          "word": "when",
+          "start": 1.48,
+          "end": 1.78
+        },
+        {
+          "word": "she",
+          "start": 1.78,
+          "end": 1.96
+        },
+        {
+          "word": "reads",
+          "start": 1.96,
+          "end": 2.22
+        },
+        {
+          "word": "his",
+          "start": 2.22,
+          "end": 2.46
+        },
+        {
+          "word": "reply,",
+          "start": 2.46,
+          "end": 2.84
+        },
+        {
+          "word": "changes",
+          "start": 3.32,
+          "end": 3.62
+        },
+        {
+          "word": "a",
+          "start": 3.62,
+          "end": 3.88
+        },
+        {
+          "word": "word,",
+          "start": 3.88,
+          "end": 4.2
+        },
+        {
+          "word": "imagines",
+          "start": 4.56,
+          "end": 5.14
+        },
+        {
+          "word": "another",
+          "start": 5.14,
+          "end": 5.46
+        },
+        {
+          "word": "expression,",
+          "start": 5.46,
+          "end": 5.86
+        },
+        {
+          "word": "and",
+          "start": 6.5,
+          "end": 6.62
+        },
+        {
+          "word": "changes",
+          "start": 6.62,
+          "end": 6.96
+        },
+        {
+          "word": "it",
+          "start": 6.96,
+          "end": 7.28
+        },
+        {
+          "word": "back.",
+          "start": 7.28,
+          "end": 7.52
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 8,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-008-0-a.wav",
+      "expected": "Nothing new has entered the picture; his activity has changed, but his information has not.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "Nothing",
+          "start": 0.0,
+          "end": 0.3
+        },
+        {
+          "word": "new",
+          "start": 0.3,
+          "end": 0.64
+        },
+        {
+          "word": "has",
+          "start": 0.64,
+          "end": 0.92
+        },
+        {
+          "word": "entered",
+          "start": 0.92,
+          "end": 1.06
+        },
+        {
+          "word": "the",
+          "start": 1.06,
+          "end": 1.32
+        },
+        {
+          "word": "picture.",
+          "start": 1.32,
+          "end": 1.7
+        },
+        {
+          "word": "His",
+          "start": 2.24,
+          "end": 2.26
+        },
+        {
+          "word": "activity",
+          "start": 2.26,
+          "end": 2.62
+        },
+        {
+          "word": "has",
+          "start": 2.62,
+          "end": 3.04
+        },
+        {
+          "word": "changed,",
+          "start": 3.04,
+          "end": 3.38
+        },
+        {
+          "word": "but",
+          "start": 3.38,
+          "end": 4.06
+        },
+        {
+          "word": "his",
+          "start": 4.06,
+          "end": 4.18
+        },
+        {
+          "word": "information",
+          "start": 4.18,
+          "end": 4.7
+        },
+        {
+          "word": "has",
+          "start": 4.7,
+          "end": 5.3
+        },
+        {
+          "word": "not.",
+          "start": 5.3,
+          "end": 5.68
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 9,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-009-0-a.wav",
+      "expected": "Instead of asking whether he has thought hard enough, he can ask what this round of thinking has let him learn.",
+      "agreement": 0.9524,
+      "words": [
+        {
+          "word": "Instead",
+          "start": 0.0,
+          "end": 0.32
+        },
+        {
+          "word": "of",
+          "start": 0.32,
+          "end": 0.5
+        },
+        {
+          "word": "asking",
+          "start": 0.5,
+          "end": 0.8
+        },
+        {
+          "word": "whether",
+          "start": 0.8,
+          "end": 1.2
+        },
+        {
+          "word": "he",
+          "start": 1.2,
+          "end": 1.38
+        },
+        {
+          "word": "has",
+          "start": 1.38,
+          "end": 1.56
+        },
+        {
+          "word": "daught",
+          "start": 1.56,
+          "end": 1.92
+        },
+        {
+          "word": "hard",
+          "start": 1.92,
+          "end": 2.3
+        },
+        {
+          "word": "enough,",
+          "start": 2.3,
+          "end": 2.6
+        },
+        {
+          "word": "he",
+          "start": 3.26,
+          "end": 3.38
+        },
+        {
+          "word": "can",
+          "start": 3.38,
+          "end": 3.5
+        },
+        {
+          "word": "ask",
+          "start": 3.5,
+          "end": 3.7
+        },
+        {
+          "word": "what",
+          "start": 3.7,
+          "end": 4.02
+        },
+        {
+          "word": "this",
+          "start": 4.02,
+          "end": 4.22
+        },
+        {
+          "word": "round",
+          "start": 4.22,
+          "end": 4.52
+        },
+        {
+          "word": "of",
+          "start": 4.52,
+          "end": 4.74
+        },
+        {
+          "word": "thinking",
+          "start": 4.74,
+          "end": 5.0
+        },
+        {
+          "word": "has",
+          "start": 5.0,
+          "end": 5.36
+        },
+        {
+          "word": "let",
+          "start": 5.36,
+          "end": 5.7
+        },
+        {
+          "word": "him",
+          "start": 5.7,
+          "end": 5.96
+        },
+        {
+          "word": "learn.",
+          "start": 5.96,
+          "end": 6.36
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 10,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-010-0-a.wav",
+      "expected": "Acting quickly is not always wiser, because some choices really do deserve slow, uncomfortable investigation.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "Acting",
+          "start": 0.0,
+          "end": 0.18
+        },
+        {
+          "word": "quickly",
+          "start": 0.18,
+          "end": 0.48
+        },
+        {
+          "word": "is",
+          "start": 0.48,
+          "end": 0.78
+        },
+        {
+          "word": "not",
+          "start": 0.78,
+          "end": 0.96
+        },
+        {
+          "word": "always",
+          "start": 0.96,
+          "end": 1.1
+        },
+        {
+          "word": "wiser",
+          "start": 1.1,
+          "end": 1.84
+        },
+        {
+          "word": "because",
+          "start": 1.84,
+          "end": 2.4
+        },
+        {
+          "word": "some",
+          "start": 2.4,
+          "end": 2.64
+        },
+        {
+          "word": "choices",
+          "start": 2.64,
+          "end": 3.0
+        },
+        {
+          "word": "really",
+          "start": 3.0,
+          "end": 3.42
+        },
+        {
+          "word": "do",
+          "start": 3.42,
+          "end": 3.7
+        },
+        {
+          "word": "deserve",
+          "start": 3.7,
+          "end": 4.08
+        },
+        {
+          "word": "slow,",
+          "start": 4.08,
+          "end": 4.52
+        },
+        {
+          "word": "uncomfortable",
+          "start": 4.68,
+          "end": 5.12
+        },
+        {
+          "word": "investigation.",
+          "start": 5.64,
+          "end": 6.0
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 11,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-011-0-a.wav",
+      "expected": "Before an expensive commitment or a difficult-to-reverse decision, checking assumptions can save more trouble than it costs.",
+      "agreement": 0.9474,
+      "words": [
+        {
+          "word": "Before",
+          "start": 0.0,
+          "end": 0.32
+        },
+        {
+          "word": "an",
+          "start": 0.32,
+          "end": 0.48
+        },
+        {
+          "word": "expensive",
+          "start": 0.48,
+          "end": 0.96
+        },
+        {
+          "word": "commitment",
+          "start": 0.96,
+          "end": 1.44
+        },
+        {
+          "word": "or",
+          "start": 1.44,
+          "end": 1.86
+        },
+        {
+          "word": "a",
+          "start": 1.86,
+          "end": 1.98
+        },
+        {
+          "word": "difficult",
+          "start": 1.98,
+          "end": 2.46
+        },
+        {
+          "word": "to",
+          "start": 2.46,
+          "end": 2.7
+        },
+        {
+          "word": "reverse",
+          "start": 2.7,
+          "end": 2.96
+        },
+        {
+          "word": "decision,",
+          "start": 2.96,
+          "end": 3.54
+        },
+        {
+          "word": "checking",
+          "start": 3.96,
+          "end": 4.22
+        },
+        {
+          "word": "assumptions",
+          "start": 4.22,
+          "end": 4.66
+        },
+        {
+          "word": "can",
+          "start": 4.66,
+          "end": 5.24
+        },
+        {
+          "word": "save",
+          "start": 5.24,
+          "end": 5.56
+        },
+        {
+          "word": "more",
+          "start": 5.56,
+          "end": 5.86
+        },
+        {
+          "word": "trouble",
+          "start": 5.86,
+          "end": 6.24
+        },
+        {
+          "word": "in",
+          "start": 6.24,
+          "end": 6.5
+        },
+        {
+          "word": "it",
+          "start": 6.5,
+          "end": 6.58
+        },
+        {
+          "word": "costs.",
+          "start": 6.58,
+          "end": 6.86
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 12,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-012-0-a.wav",
+      "expected": "The distinction is what the extra time is doing: checking a fact, comparing a real option, or seeking a perspective you lack.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "The",
+          "start": 0.0,
+          "end": 0.1
+        },
+        {
+          "word": "distinction",
+          "start": 0.1,
+          "end": 0.46
+        },
+        {
+          "word": "is",
+          "start": 0.46,
+          "end": 1.04
+        },
+        {
+          "word": "what",
+          "start": 1.04,
+          "end": 1.2
+        },
+        {
+          "word": "the",
+          "start": 1.2,
+          "end": 1.34
+        },
+        {
+          "word": "extra",
+          "start": 1.34,
+          "end": 1.58
+        },
+        {
+          "word": "time",
+          "start": 1.58,
+          "end": 2.1
+        },
+        {
+          "word": "is",
+          "start": 2.1,
+          "end": 2.3
+        },
+        {
+          "word": "doing,",
+          "start": 2.3,
+          "end": 2.7
+        },
+        {
+          "word": "checking",
+          "start": 3.26,
+          "end": 3.54
+        },
+        {
+          "word": "a",
+          "start": 3.54,
+          "end": 3.74
+        },
+        {
+          "word": "fact,",
+          "start": 3.74,
+          "end": 4.0
+        },
+        {
+          "word": "comparing",
+          "start": 4.52,
+          "end": 4.84
+        },
+        {
+          "word": "a",
+          "start": 4.84,
+          "end": 5.22
+        },
+        {
+          "word": "real",
+          "start": 5.22,
+          "end": 5.4
+        },
+        {
+          "word": "option",
+          "start": 5.4,
+          "end": 5.84
+        },
+        {
+          "word": "or",
+          "start": 5.84,
+          "end": 6.4
+        },
+        {
+          "word": "seeking",
+          "start": 6.4,
+          "end": 6.62
+        },
+        {
+          "word": "a",
+          "start": 6.62,
+          "end": 6.88
+        },
+        {
+          "word": "perspective",
+          "start": 6.88,
+          "end": 7.24
+        },
+        {
+          "word": "you",
+          "start": 7.24,
+          "end": 7.66
+        },
+        {
+          "word": "lack.",
+          "start": 7.66,
+          "end": 7.9
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 13,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-013-0-a.wav",
+      "expected": "Or perhaps you are asking the same facts to promise a feeling of certainty they cannot supply.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "or",
+          "start": 0.0,
+          "end": 0.1
+        },
+        {
+          "word": "perhaps",
+          "start": 0.1,
+          "end": 0.34
+        },
+        {
+          "word": "you",
+          "start": 0.34,
+          "end": 0.6
+        },
+        {
+          "word": "are",
+          "start": 0.6,
+          "end": 0.7
+        },
+        {
+          "word": "asking",
+          "start": 0.7,
+          "end": 1.02
+        },
+        {
+          "word": "the",
+          "start": 1.02,
+          "end": 1.2
+        },
+        {
+          "word": "same",
+          "start": 1.2,
+          "end": 1.42
+        },
+        {
+          "word": "facts",
+          "start": 1.42,
+          "end": 1.66
+        },
+        {
+          "word": "to",
+          "start": 1.66,
+          "end": 1.94
+        },
+        {
+          "word": "promise",
+          "start": 1.94,
+          "end": 2.16
+        },
+        {
+          "word": "a",
+          "start": 2.16,
+          "end": 2.32
+        },
+        {
+          "word": "feeling",
+          "start": 2.32,
+          "end": 2.54
+        },
+        {
+          "word": "of",
+          "start": 2.54,
+          "end": 2.76
+        },
+        {
+          "word": "certainty",
+          "start": 2.76,
+          "end": 3.28
+        },
+        {
+          "word": "they",
+          "start": 3.28,
+          "end": 3.6
+        },
+        {
+          "word": "cannot",
+          "start": 3.6,
+          "end": 3.86
+        },
+        {
+          "word": "supply.",
+          "start": 3.86,
+          "end": 4.34
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 14,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-014-0-a.wav",
+      "expected": "Alex needs a stopping condition, not carelessness: identify the unfinished review, ask what Jamie meant, and make one specific proposal.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "Alex",
+          "start": 0.0,
+          "end": 0.2
+        },
+        {
+          "word": "needs",
+          "start": 0.2,
+          "end": 0.44
+        },
+        {
+          "word": "a",
+          "start": 0.44,
+          "end": 0.66
+        },
+        {
+          "word": "stopping",
+          "start": 0.66,
+          "end": 0.88
+        },
+        {
+          "word": "condition,",
+          "start": 0.88,
+          "end": 1.36
+        },
+        {
+          "word": "not",
+          "start": 1.96,
+          "end": 2.0
+        },
+        {
+          "word": "carelessness,",
+          "start": 2.0,
+          "end": 2.5
+        },
+        {
+          "word": "identify",
+          "start": 3.18,
+          "end": 3.4
+        },
+        {
+          "word": "the",
+          "start": 3.4,
+          "end": 3.98
+        },
+        {
+          "word": "unfinished",
+          "start": 3.98,
+          "end": 4.26
+        },
+        {
+          "word": "review,",
+          "start": 4.26,
+          "end": 4.72
+        },
+        {
+          "word": "ask",
+          "start": 5.42,
+          "end": 5.56
+        },
+        {
+          "word": "what",
+          "start": 5.56,
+          "end": 5.8
+        },
+        {
+          "word": "Jamie",
+          "start": 5.8,
+          "end": 6.02
+        },
+        {
+          "word": "meant",
+          "start": 6.02,
+          "end": 6.44
+        },
+        {
+          "word": "and",
+          "start": 6.44,
+          "end": 6.82
+        },
+        {
+          "word": "make",
+          "start": 6.82,
+          "end": 7.02
+        },
+        {
+          "word": "one",
+          "start": 7.02,
+          "end": 7.36
+        },
+        {
+          "word": "specific",
+          "start": 7.36,
+          "end": 7.76
+        },
+        {
+          "word": "proposal.",
+          "start": 7.76,
+          "end": 8.62
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 15,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-015-0-a.wav",
+      "expected": "On his walk, Alex notices that every draft has a hidden demand: make Jamie react exactly as he hopes.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "On",
+          "start": 0.0,
+          "end": 0.1
+        },
+        {
+          "word": "his",
+          "start": 0.1,
+          "end": 0.22
+        },
+        {
+          "word": "walk,",
+          "start": 0.22,
+          "end": 0.48
+        },
+        {
+          "word": "Alex",
+          "start": 0.68,
+          "end": 0.84
+        },
+        {
+          "word": "notices",
+          "start": 0.84,
+          "end": 1.14
+        },
+        {
+          "word": "that",
+          "start": 1.14,
+          "end": 1.66
+        },
+        {
+          "word": "every",
+          "start": 1.66,
+          "end": 1.86
+        },
+        {
+          "word": "draft",
+          "start": 1.86,
+          "end": 2.12
+        },
+        {
+          "word": "has",
+          "start": 2.12,
+          "end": 2.5
+        },
+        {
+          "word": "a",
+          "start": 2.5,
+          "end": 2.64
+        },
+        {
+          "word": "hidden",
+          "start": 2.64,
+          "end": 2.88
+        },
+        {
+          "word": "demand,",
+          "start": 2.88,
+          "end": 3.34
+        },
+        {
+          "word": "make",
+          "start": 3.88,
+          "end": 4.08
+        },
+        {
+          "word": "Jamie",
+          "start": 4.08,
+          "end": 4.28
+        },
+        {
+          "word": "react",
+          "start": 4.28,
+          "end": 4.78
+        },
+        {
+          "word": "exactly",
+          "start": 4.78,
+          "end": 5.3
+        },
+        {
+          "word": "as",
+          "start": 5.3,
+          "end": 5.78
+        },
+        {
+          "word": "he",
+          "start": 5.78,
+          "end": 6.0
+        },
+        {
+          "word": "hopes.",
+          "start": 6.0,
+          "end": 6.3
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 16,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-016-0-a.wav",
+      "expected": "No wording can guarantee that, because another person brings a mood, a history, and information he does not have.",
+      "agreement": 0.9474,
+      "words": [
+        {
+          "word": "No",
+          "start": 0.0,
+          "end": 0.22
+        },
+        {
+          "word": "wording",
+          "start": 0.22,
+          "end": 0.72
+        },
+        {
+          "word": "can",
+          "start": 0.72,
+          "end": 1.08
+        },
+        {
+          "word": "guarantee",
+          "start": 1.08,
+          "end": 1.4
+        },
+        {
+          "word": "that",
+          "start": 1.4,
+          "end": 1.86
+        },
+        {
+          "word": "because",
+          "start": 1.86,
+          "end": 2.26
+        },
+        {
+          "word": "another",
+          "start": 2.26,
+          "end": 2.58
+        },
+        {
+          "word": "person",
+          "start": 2.58,
+          "end": 3.2
+        },
+        {
+          "word": "brings",
+          "start": 3.2,
+          "end": 3.56
+        },
+        {
+          "word": "a",
+          "start": 3.56,
+          "end": 3.76
+        },
+        {
+          "word": "mood,",
+          "start": 3.76,
+          "end": 4.02
+        },
+        {
+          "word": "a",
+          "start": 4.54,
+          "end": 4.56
+        },
+        {
+          "word": "history,",
+          "start": 4.56,
+          "end": 4.92
+        },
+        {
+          "word": "an",
+          "start": 5.42,
+          "end": 5.44
+        },
+        {
+          "word": "information",
+          "start": 5.44,
+          "end": 5.98
+        },
+        {
+          "word": "he",
+          "start": 5.98,
+          "end": 6.4
+        },
+        {
+          "word": "does",
+          "start": 6.4,
+          "end": 6.56
+        },
+        {
+          "word": "not",
+          "start": 6.56,
+          "end": 6.8
+        },
+        {
+          "word": "have.",
+          "start": 6.8,
+          "end": 7.12
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 17,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-017-0-a.wav",
+      "expected": "He can still be honest and considerate; those are choices about his message, not guarantees about her response.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "He",
+          "start": 0.0,
+          "end": 0.1
+        },
+        {
+          "word": "can",
+          "start": 0.1,
+          "end": 0.2
+        },
+        {
+          "word": "still",
+          "start": 0.2,
+          "end": 0.48
+        },
+        {
+          "word": "be",
+          "start": 0.48,
+          "end": 0.68
+        },
+        {
+          "word": "honest",
+          "start": 0.68,
+          "end": 1.02
+        },
+        {
+          "word": "and",
+          "start": 1.02,
+          "end": 1.36
+        },
+        {
+          "word": "considerate.",
+          "start": 1.36,
+          "end": 2.08
+        },
+        {
+          "word": "Those",
+          "start": 2.7,
+          "end": 2.76
+        },
+        {
+          "word": "are",
+          "start": 2.76,
+          "end": 2.96
+        },
+        {
+          "word": "choices",
+          "start": 2.96,
+          "end": 3.22
+        },
+        {
+          "word": "about",
+          "start": 3.22,
+          "end": 3.7
+        },
+        {
+          "word": "his",
+          "start": 3.7,
+          "end": 3.94
+        },
+        {
+          "word": "message,",
+          "start": 3.94,
+          "end": 4.34
+        },
+        {
+          "word": "not",
+          "start": 4.76,
+          "end": 5.02
+        },
+        {
+          "word": "guarantees",
+          "start": 5.02,
+          "end": 5.36
+        },
+        {
+          "word": "about",
+          "start": 5.36,
+          "end": 6.12
+        },
+        {
+          "word": "her",
+          "start": 6.12,
+          "end": 6.34
+        },
+        {
+          "word": "response.",
+          "start": 6.34,
+          "end": 6.72
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 18,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-018-0-a.wav",
+      "expected": "He writes, \u201cI may have misread: did you mean the review?\u201d\u2014a question Jamie can actually answer.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "he",
+          "start": 0.0,
+          "end": 0.08
+        },
+        {
+          "word": "writes,",
+          "start": 0.08,
+          "end": 0.32
+        },
+        {
+          "word": "I",
+          "start": 0.86,
+          "end": 1.0
+        },
+        {
+          "word": "may",
+          "start": 1.0,
+          "end": 1.18
+        },
+        {
+          "word": "have",
+          "start": 1.18,
+          "end": 1.34
+        },
+        {
+          "word": "misread.",
+          "start": 1.34,
+          "end": 1.78
+        },
+        {
+          "word": "Did",
+          "start": 2.42,
+          "end": 2.46
+        },
+        {
+          "word": "you",
+          "start": 2.46,
+          "end": 2.62
+        },
+        {
+          "word": "mean",
+          "start": 2.62,
+          "end": 2.84
+        },
+        {
+          "word": "the",
+          "start": 2.84,
+          "end": 3.14
+        },
+        {
+          "word": "review?",
+          "start": 3.14,
+          "end": 3.34
+        },
+        {
+          "word": "A",
+          "start": 4.12,
+          "end": 4.2
+        },
+        {
+          "word": "question",
+          "start": 4.2,
+          "end": 4.56
+        },
+        {
+          "word": "Jamie",
+          "start": 4.56,
+          "end": 4.86
+        },
+        {
+          "word": "can",
+          "start": 4.86,
+          "end": 5.22
+        },
+        {
+          "word": "actually",
+          "start": 5.22,
+          "end": 5.54
+        },
+        {
+          "word": "answer.",
+          "start": 5.54,
+          "end": 5.98
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 19,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-019-0-a.wav",
+      "expected": "He presses send while the doubt remains; this time, sending begins the conversation instead of pretending to finish it.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "He",
+          "start": 0.0,
+          "end": 0.1
+        },
+        {
+          "word": "presses",
+          "start": 0.1,
+          "end": 0.4
+        },
+        {
+          "word": "send",
+          "start": 0.4,
+          "end": 0.76
+        },
+        {
+          "word": "while",
+          "start": 0.76,
+          "end": 1.22
+        },
+        {
+          "word": "the",
+          "start": 1.22,
+          "end": 1.44
+        },
+        {
+          "word": "doubt",
+          "start": 1.44,
+          "end": 1.52
+        },
+        {
+          "word": "remains.",
+          "start": 1.52,
+          "end": 2.1
+        },
+        {
+          "word": "This",
+          "start": 2.94,
+          "end": 2.96
+        },
+        {
+          "word": "time,",
+          "start": 2.96,
+          "end": 3.24
+        },
+        {
+          "word": "sending",
+          "start": 3.24,
+          "end": 3.82
+        },
+        {
+          "word": "begins",
+          "start": 3.82,
+          "end": 4.26
+        },
+        {
+          "word": "the",
+          "start": 4.26,
+          "end": 4.58
+        },
+        {
+          "word": "conversation",
+          "start": 4.58,
+          "end": 5.0
+        },
+        {
+          "word": "instead",
+          "start": 5.0,
+          "end": 5.62
+        },
+        {
+          "word": "of",
+          "start": 5.62,
+          "end": 5.82
+        },
+        {
+          "word": "pretending",
+          "start": 5.82,
+          "end": 6.12
+        },
+        {
+          "word": "to",
+          "start": 6.12,
+          "end": 6.56
+        },
+        {
+          "word": "finish",
+          "start": 6.56,
+          "end": 6.78
+        },
+        {
+          "word": "it.",
+          "start": 6.78,
+          "end": 7.04
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 20,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-020-0-a.wav",
+      "expected": "Jamie replies, \u201cJust the review\u2014I thought you were waiting for me,\u201d and Alex reads it twice.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "Jamie",
+          "start": 0.0,
+          "end": 0.24
+        },
+        {
+          "word": "replies,",
+          "start": 0.24,
+          "end": 0.58
+        },
+        {
+          "word": "just",
+          "start": 1.18,
+          "end": 1.3
+        },
+        {
+          "word": "the",
+          "start": 1.3,
+          "end": 1.44
+        },
+        {
+          "word": "review.",
+          "start": 1.44,
+          "end": 1.68
+        },
+        {
+          "word": "I",
+          "start": 2.2,
+          "end": 2.24
+        },
+        {
+          "word": "thought",
+          "start": 2.24,
+          "end": 2.48
+        },
+        {
+          "word": "you",
+          "start": 2.48,
+          "end": 2.68
+        },
+        {
+          "word": "were",
+          "start": 2.68,
+          "end": 2.78
+        },
+        {
+          "word": "waiting",
+          "start": 2.78,
+          "end": 3.08
+        },
+        {
+          "word": "for",
+          "start": 3.08,
+          "end": 3.36
+        },
+        {
+          "word": "me",
+          "start": 3.36,
+          "end": 3.56
+        },
+        {
+          "word": "and",
+          "start": 3.56,
+          "end": 3.92
+        },
+        {
+          "word": "Alex",
+          "start": 3.92,
+          "end": 4.08
+        },
+        {
+          "word": "reads",
+          "start": 4.08,
+          "end": 4.4
+        },
+        {
+          "word": "it",
+          "start": 4.4,
+          "end": 4.62
+        },
+        {
+          "word": "twice.",
+          "start": 4.62,
+          "end": 4.86
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 21,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-021-0-a.wav",
+      "expected": "He had interpreted her comment as a judgment, while she had interpreted his silence as a request for time.",
+      "agreement": 0.9474,
+      "words": [
+        {
+          "word": "he",
+          "start": 0.0,
+          "end": 0.14
+        },
+        {
+          "word": "had",
+          "start": 0.14,
+          "end": 0.26
+        },
+        {
+          "word": "interpreted",
+          "start": 0.26,
+          "end": 0.72
+        },
+        {
+          "word": "her",
+          "start": 0.72,
+          "end": 1.1
+        },
+        {
+          "word": "comment",
+          "start": 1.1,
+          "end": 1.48
+        },
+        {
+          "word": "as",
+          "start": 1.48,
+          "end": 1.92
+        },
+        {
+          "word": "a",
+          "start": 1.92,
+          "end": 2.0
+        },
+        {
+          "word": "judgement,",
+          "start": 2.0,
+          "end": 2.28
+        },
+        {
+          "word": "while",
+          "start": 3.02,
+          "end": 3.16
+        },
+        {
+          "word": "she",
+          "start": 3.16,
+          "end": 3.4
+        },
+        {
+          "word": "had",
+          "start": 3.4,
+          "end": 3.6
+        },
+        {
+          "word": "interpreted",
+          "start": 3.6,
+          "end": 4.04
+        },
+        {
+          "word": "his",
+          "start": 4.04,
+          "end": 4.4
+        },
+        {
+          "word": "silence",
+          "start": 4.4,
+          "end": 4.74
+        },
+        {
+          "word": "as",
+          "start": 4.74,
+          "end": 5.44
+        },
+        {
+          "word": "a",
+          "start": 5.44,
+          "end": 5.5
+        },
+        {
+          "word": "request",
+          "start": 5.5,
+          "end": 5.82
+        },
+        {
+          "word": "for",
+          "start": 5.82,
+          "end": 6.16
+        },
+        {
+          "word": "time.",
+          "start": 6.16,
+          "end": 6.56
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 22,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-022-0-a.wav",
+      "expected": "Neither explanation was hidden inside the original sentence; they needed another exchange to find out.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "Neither",
+          "start": 0.0,
+          "end": 0.18
+        },
+        {
+          "word": "explanation",
+          "start": 0.18,
+          "end": 0.62
+        },
+        {
+          "word": "was",
+          "start": 0.62,
+          "end": 1.16
+        },
+        {
+          "word": "hidden",
+          "start": 1.16,
+          "end": 1.38
+        },
+        {
+          "word": "inside",
+          "start": 1.38,
+          "end": 1.8
+        },
+        {
+          "word": "the",
+          "start": 1.8,
+          "end": 2.06
+        },
+        {
+          "word": "original",
+          "start": 2.06,
+          "end": 2.26
+        },
+        {
+          "word": "sentence.",
+          "start": 2.26,
+          "end": 2.74
+        },
+        {
+          "word": "They",
+          "start": 3.32,
+          "end": 3.42
+        },
+        {
+          "word": "needed",
+          "start": 3.42,
+          "end": 3.68
+        },
+        {
+          "word": "another",
+          "start": 3.68,
+          "end": 4.08
+        },
+        {
+          "word": "exchange",
+          "start": 4.08,
+          "end": 4.42
+        },
+        {
+          "word": "to",
+          "start": 4.42,
+          "end": 5.04
+        },
+        {
+          "word": "find",
+          "start": 5.04,
+          "end": 5.28
+        },
+        {
+          "word": "out.",
+          "start": 5.28,
+          "end": 5.56
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 23,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-023-0-a.wav",
+      "expected": "They meet at the caf\u00e9 and agree that Alex will send a draft today, and Jamie will review it tomorrow.",
+      "agreement": 0.95,
+      "words": [
+        {
+          "word": "They",
+          "start": 0.0,
+          "end": 0.14
+        },
+        {
+          "word": "meet",
+          "start": 0.14,
+          "end": 0.3
+        },
+        {
+          "word": "at",
+          "start": 0.3,
+          "end": 0.5
+        },
+        {
+          "word": "the",
+          "start": 0.5,
+          "end": 0.6
+        },
+        {
+          "word": "cafe",
+          "start": 0.6,
+          "end": 0.9
+        },
+        {
+          "word": "and",
+          "start": 0.9,
+          "end": 1.56
+        },
+        {
+          "word": "agree",
+          "start": 1.56,
+          "end": 1.82
+        },
+        {
+          "word": "that",
+          "start": 1.82,
+          "end": 2.06
+        },
+        {
+          "word": "Alex",
+          "start": 2.06,
+          "end": 2.26
+        },
+        {
+          "word": "will",
+          "start": 2.26,
+          "end": 2.58
+        },
+        {
+          "word": "send",
+          "start": 2.58,
+          "end": 2.82
+        },
+        {
+          "word": "a",
+          "start": 2.82,
+          "end": 2.96
+        },
+        {
+          "word": "draft",
+          "start": 2.96,
+          "end": 3.16
+        },
+        {
+          "word": "today",
+          "start": 3.16,
+          "end": 3.56
+        },
+        {
+          "word": "and",
+          "start": 3.56,
+          "end": 4.08
+        },
+        {
+          "word": "Jamie",
+          "start": 4.08,
+          "end": 4.3
+        },
+        {
+          "word": "will",
+          "start": 4.3,
+          "end": 4.6
+        },
+        {
+          "word": "review",
+          "start": 4.6,
+          "end": 4.9
+        },
+        {
+          "word": "it",
+          "start": 4.9,
+          "end": 5.06
+        },
+        {
+          "word": "tomorrow.",
+          "start": 5.06,
+          "end": 5.32
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 24,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-024-0-a.wav",
+      "expected": "This doesn\u2019t prove every difficult conversation ends kindly; it shows what this particular exchange made possible: information that rehearsal couldn\u2019t provide.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "this",
+          "start": 0.0,
+          "end": 0.1
+        },
+        {
+          "word": "doesn't",
+          "start": 0.1,
+          "end": 0.4
+        },
+        {
+          "word": "prove",
+          "start": 0.4,
+          "end": 0.64
+        },
+        {
+          "word": "every",
+          "start": 0.64,
+          "end": 0.94
+        },
+        {
+          "word": "difficult",
+          "start": 0.94,
+          "end": 1.34
+        },
+        {
+          "word": "conversation",
+          "start": 1.34,
+          "end": 1.82
+        },
+        {
+          "word": "ends",
+          "start": 1.82,
+          "end": 2.24
+        },
+        {
+          "word": "kindly,",
+          "start": 2.24,
+          "end": 2.68
+        },
+        {
+          "word": "it",
+          "start": 3.32,
+          "end": 3.38
+        },
+        {
+          "word": "shows",
+          "start": 3.38,
+          "end": 3.62
+        },
+        {
+          "word": "what",
+          "start": 3.62,
+          "end": 3.98
+        },
+        {
+          "word": "this",
+          "start": 3.98,
+          "end": 4.18
+        },
+        {
+          "word": "particular",
+          "start": 4.18,
+          "end": 4.74
+        },
+        {
+          "word": "exchange",
+          "start": 4.74,
+          "end": 5.12
+        },
+        {
+          "word": "made",
+          "start": 5.12,
+          "end": 5.62
+        },
+        {
+          "word": "possible,",
+          "start": 5.62,
+          "end": 6.0
+        },
+        {
+          "word": "information",
+          "start": 6.62,
+          "end": 7.0
+        },
+        {
+          "word": "that",
+          "start": 7.0,
+          "end": 7.44
+        },
+        {
+          "word": "rehearsal",
+          "start": 7.44,
+          "end": 7.82
+        },
+        {
+          "word": "couldn't",
+          "start": 7.82,
+          "end": 8.52
+        },
+        {
+          "word": "provide.",
+          "start": 8.52,
+          "end": 8.86
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 25,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-025-0-a.wav",
+      "expected": "Alex\u2019s habit of imagining consequences hasn\u2019t vanished; later, it helps him notice that a page is missing from the draft.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "Alex's",
+          "start": 0.0,
+          "end": 0.32
+        },
+        {
+          "word": "habit",
+          "start": 0.32,
+          "end": 0.6
+        },
+        {
+          "word": "of",
+          "start": 0.6,
+          "end": 0.84
+        },
+        {
+          "word": "imagining",
+          "start": 0.84,
+          "end": 1.22
+        },
+        {
+          "word": "consequences",
+          "start": 1.22,
+          "end": 1.74
+        },
+        {
+          "word": "hasn't",
+          "start": 1.74,
+          "end": 2.54
+        },
+        {
+          "word": "vanished.",
+          "start": 2.54,
+          "end": 2.78
+        },
+        {
+          "word": "Later,",
+          "start": 3.76,
+          "end": 4.0
+        },
+        {
+          "word": "it",
+          "start": 4.34,
+          "end": 4.5
+        },
+        {
+          "word": "helps",
+          "start": 4.5,
+          "end": 4.68
+        },
+        {
+          "word": "him",
+          "start": 4.68,
+          "end": 4.88
+        },
+        {
+          "word": "notice",
+          "start": 4.88,
+          "end": 5.2
+        },
+        {
+          "word": "that",
+          "start": 5.2,
+          "end": 5.54
+        },
+        {
+          "word": "a",
+          "start": 5.54,
+          "end": 5.62
+        },
+        {
+          "word": "page",
+          "start": 5.62,
+          "end": 5.9
+        },
+        {
+          "word": "is",
+          "start": 5.9,
+          "end": 6.18
+        },
+        {
+          "word": "missing",
+          "start": 6.18,
+          "end": 6.34
+        },
+        {
+          "word": "from",
+          "start": 6.34,
+          "end": 6.68
+        },
+        {
+          "word": "the",
+          "start": 6.68,
+          "end": 6.8
+        },
+        {
+          "word": "draft.",
+          "start": 6.8,
+          "end": 7.04
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 26,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-026-0-a.wav",
+      "expected": "This time there is something concrete to check, so he adds the page, checks the attachment, and sends the work they agreed on.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "this",
+          "start": 0.0,
+          "end": 0.14
+        },
+        {
+          "word": "time",
+          "start": 0.14,
+          "end": 0.38
+        },
+        {
+          "word": "there",
+          "start": 0.38,
+          "end": 0.6
+        },
+        {
+          "word": "is",
+          "start": 0.6,
+          "end": 0.72
+        },
+        {
+          "word": "something",
+          "start": 0.72,
+          "end": 0.98
+        },
+        {
+          "word": "concrete",
+          "start": 0.98,
+          "end": 1.44
+        },
+        {
+          "word": "to",
+          "start": 1.44,
+          "end": 1.76
+        },
+        {
+          "word": "check,",
+          "start": 1.76,
+          "end": 1.96
+        },
+        {
+          "word": "so",
+          "start": 2.3,
+          "end": 2.4
+        },
+        {
+          "word": "he",
+          "start": 2.4,
+          "end": 2.5
+        },
+        {
+          "word": "adds",
+          "start": 2.5,
+          "end": 2.7
+        },
+        {
+          "word": "the",
+          "start": 2.7,
+          "end": 2.9
+        },
+        {
+          "word": "page,",
+          "start": 2.9,
+          "end": 3.16
+        },
+        {
+          "word": "checks",
+          "start": 3.54,
+          "end": 3.78
+        },
+        {
+          "word": "the",
+          "start": 3.78,
+          "end": 4.02
+        },
+        {
+          "word": "attachment,",
+          "start": 4.02,
+          "end": 4.2
+        },
+        {
+          "word": "and",
+          "start": 5.06,
+          "end": 5.16
+        },
+        {
+          "word": "sends",
+          "start": 5.16,
+          "end": 5.36
+        },
+        {
+          "word": "the",
+          "start": 5.36,
+          "end": 5.64
+        },
+        {
+          "word": "work",
+          "start": 5.64,
+          "end": 5.84
+        },
+        {
+          "word": "they",
+          "start": 5.84,
+          "end": 6.08
+        },
+        {
+          "word": "agreed",
+          "start": 6.08,
+          "end": 6.3
+        },
+        {
+          "word": "on.",
+          "start": 6.3,
+          "end": 6.62
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 27,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-027-0-a.wav",
+      "expected": "When another worried prediction appears, he does not have to defeat it before continuing.",
+      "agreement": 0.9286,
+      "words": [
+        {
+          "word": "When",
+          "start": 0.0,
+          "end": 0.14
+        },
+        {
+          "word": "another",
+          "start": 0.14,
+          "end": 0.42
+        },
+        {
+          "word": "worry",
+          "start": 0.42,
+          "end": 0.68
+        },
+        {
+          "word": "prediction",
+          "start": 0.68,
+          "end": 1.18
+        },
+        {
+          "word": "appears,",
+          "start": 1.18,
+          "end": 1.74
+        },
+        {
+          "word": "he",
+          "start": 2.12,
+          "end": 2.2
+        },
+        {
+          "word": "does",
+          "start": 2.2,
+          "end": 2.42
+        },
+        {
+          "word": "not",
+          "start": 2.42,
+          "end": 2.68
+        },
+        {
+          "word": "have",
+          "start": 2.68,
+          "end": 2.9
+        },
+        {
+          "word": "to",
+          "start": 2.9,
+          "end": 3.04
+        },
+        {
+          "word": "defeat",
+          "start": 3.04,
+          "end": 3.36
+        },
+        {
+          "word": "it",
+          "start": 3.36,
+          "end": 3.54
+        },
+        {
+          "word": "before",
+          "start": 3.54,
+          "end": 3.74
+        },
+        {
+          "word": "continuing.",
+          "start": 3.74,
+          "end": 4.38
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 28,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-028-0-a.wav",
+      "expected": "He can ask whether it points to a task he can perform, a question he can ask, or an outcome he cannot control.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "He",
+          "start": 0.0,
+          "end": 0.1
+        },
+        {
+          "word": "can",
+          "start": 0.1,
+          "end": 0.28
+        },
+        {
+          "word": "ask",
+          "start": 0.28,
+          "end": 0.46
+        },
+        {
+          "word": "whether",
+          "start": 0.46,
+          "end": 0.72
+        },
+        {
+          "word": "it",
+          "start": 0.72,
+          "end": 0.94
+        },
+        {
+          "word": "points",
+          "start": 0.94,
+          "end": 1.14
+        },
+        {
+          "word": "to",
+          "start": 1.14,
+          "end": 1.46
+        },
+        {
+          "word": "a",
+          "start": 1.46,
+          "end": 1.52
+        },
+        {
+          "word": "task",
+          "start": 1.52,
+          "end": 1.76
+        },
+        {
+          "word": "he",
+          "start": 1.76,
+          "end": 2.04
+        },
+        {
+          "word": "can",
+          "start": 2.04,
+          "end": 2.18
+        },
+        {
+          "word": "perform,",
+          "start": 2.18,
+          "end": 2.48
+        },
+        {
+          "word": "a",
+          "start": 3.08,
+          "end": 3.14
+        },
+        {
+          "word": "question",
+          "start": 3.14,
+          "end": 3.44
+        },
+        {
+          "word": "he",
+          "start": 3.44,
+          "end": 3.74
+        },
+        {
+          "word": "can",
+          "start": 3.74,
+          "end": 3.88
+        },
+        {
+          "word": "ask,",
+          "start": 3.88,
+          "end": 4.18
+        },
+        {
+          "word": "or",
+          "start": 4.5,
+          "end": 4.68
+        },
+        {
+          "word": "an",
+          "start": 4.68,
+          "end": 4.78
+        },
+        {
+          "word": "outcome",
+          "start": 4.78,
+          "end": 4.94
+        },
+        {
+          "word": "he",
+          "start": 4.94,
+          "end": 5.32
+        },
+        {
+          "word": "cannot",
+          "start": 5.32,
+          "end": 5.56
+        },
+        {
+          "word": "control.",
+          "start": 5.56,
+          "end": 5.96
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    },
+    {
+      "shot": 29,
+      "line": 0,
+      "part": "main",
+      "file": "build/voice/vo-029-0-a.wav",
+      "expected": "Thinking becomes useful again when it serves those distinctions; the goal is not an empty mind, but a mind that can finish a job.",
+      "agreement": 1.0,
+      "words": [
+        {
+          "word": "Thinking",
+          "start": 0.0,
+          "end": 0.2
+        },
+        {
+          "word": "becomes",
+          "start": 0.2,
+          "end": 0.46
+        },
+        {
+          "word": "useful",
+          "start": 0.46,
+          "end": 0.94
+        },
+        {
+          "word": "again",
+          "start": 0.94,
+          "end": 1.4
+        },
+        {
+          "word": "when",
+          "start": 1.4,
+          "end": 1.66
+        },
+        {
+          "word": "it",
+          "start": 1.66,
+          "end": 1.8
+        },
+        {
+          "word": "serves",
+          "start": 1.8,
+          "end": 2.06
+        },
+        {
+          "word": "those",
+          "start": 2.06,
+          "end": 2.48
+        },
+        {
+          "word": "distinctions.",
+          "start": 2.48,
+          "end": 2.96
+        },
+        {
+          "word": "The",
+          "start": 4.08,
+          "end": 4.14
+        },
+        {
+          "word": "goal",
+          "start": 4.14,
+          "end": 4.34
+        },
+        {
+          "word": "is",
+          "start": 4.34,
+          "end": 4.66
+        },
+        {
+          "word": "not",
+          "start": 4.66,
+          "end": 4.82
+        },
+        {
+          "word": "an",
+          "start": 4.82,
+          "end": 4.94
+        },
+        {
+          "word": "empty",
+          "start": 4.94,
+          "end": 5.2
+        },
+        {
+          "word": "mind,",
+          "start": 5.2,
+          "end": 5.42
+        },
+        {
+          "word": "but",
+          "start": 5.92,
+          "end": 6.08
+        },
+        {
+          "word": "a",
+          "start": 6.08,
+          "end": 6.16
+        },
+        {
+          "word": "mind",
+          "start": 6.16,
+          "end": 6.44
+        },
+        {
+          "word": "that",
+          "start": 6.44,
+          "end": 6.64
+        },
+        {
+          "word": "can",
+          "start": 6.64,
+          "end": 6.8
+        },
+        {
+          "word": "finish",
+          "start": 6.8,
+          "end": 7.1
+        },
+        {
+          "word": "a",
+          "start": 7.1,
+          "end": 7.34
+        },
+        {
+          "word": "job.",
+          "start": 7.34,
+          "end": 7.62
+        }
+      ],
+      "negation_changed": false,
+      "passed": true
+    }
+  ],
+  "attempts": [
+    {
+      "attempt": 1,
+      "clips": [
+        {
+          "shot": 0,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-000-0-a.wav",
+          "expected": "When Jamie said, \u201cFriday looks tight,\u201d Alex heard a different sentence: \u201cYou\u2019ve let everyone down.\u201d",
+          "agreement": 1.0,
+          "words": [
+            {
+              "word": "When",
+              "start": 0.0,
+              "end": 0.12
+            },
+            {
+              "word": "Jamie",
+              "start": 0.12,
+              "end": 0.28
+            },
+            {
+              "word": "said",
+              "start": 0.28,
+              "end": 0.72
+            },
+            {
+              "word": "Friday",
+              "start": 0.72,
+              "end": 1.16
+            },
+            {
+              "word": "looks",
+              "start": 1.16,
+              "end": 1.58
+            },
+            {
+              "word": "tight,",
+              "start": 1.58,
+              "end": 1.98
+            },
+            {
+              "word": "Alex",
+              "start": 2.38,
+              "end": 2.5
+            },
+            {
+              "word": "heard",
+              "start": 2.5,
+              "end": 2.78
+            },
+            {
+              "word": "a",
+              "start": 2.78,
+              "end": 2.94
+            },
+            {
+              "word": "different",
+              "start": 2.94,
+              "end": 3.16
+            },
+            {
+              "word": "sentence,",
+              "start": 3.16,
+              "end": 3.48
+            },
+            {
+              "word": "you've",
+              "start": 4.1,
+              "end": 4.46
+            },
+            {
+              "word": "let",
+              "start": 4.46,
+              "end": 4.62
+            },
+            {
+              "word": "everyone",
+              "start": 4.62,
+              "end": 5.02
+            },
+            {
+              "word": "down.",
+              "start": 5.02,
+              "end": 5.54
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 1,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-001-0-a.wav",
+          "expected": "At home, he begins a reply, writes an apology, deletes it, and replaces it with a longer one.",
+          "agreement": 1.0,
+          "words": [
+            {
+              "word": "At",
+              "start": 0.0,
+              "end": 0.16
+            },
+            {
+              "word": "home,",
+              "start": 0.16,
+              "end": 0.36
+            },
+            {
+              "word": "he",
+              "start": 0.84,
+              "end": 0.86
+            },
+            {
+              "word": "begins",
+              "start": 0.86,
+              "end": 1.14
+            },
+            {
+              "word": "a",
+              "start": 1.14,
+              "end": 1.4
+            },
+            {
+              "word": "reply,",
+              "start": 1.4,
+              "end": 1.62
+            },
+            {
+              "word": "writes",
+              "start": 2.06,
+              "end": 2.36
+            },
+            {
+              "word": "an",
+              "start": 2.36,
+              "end": 2.62
+            },
+            {
+              "word": "apology,",
+              "start": 2.62,
+              "end": 2.82
+            },
+            {
+              "word": "deletes",
+              "start": 3.36,
+              "end": 3.88
+            },
+            {
+              "word": "it,",
+              "start": 3.88,
+              "end": 3.98
+            },
+            {
+              "word": "and",
+              "start": 4.32,
+              "end": 4.44
+            },
+            {
+              "word": "replaces",
+              "start": 4.44,
+              "end": 4.86
+            },
+            {
+              "word": "it",
+              "start": 4.86,
+              "end": 5.18
+            },
+            {
+              "word": "with",
+              "start": 5.18,
+              "end": 5.36
+            },
+            {
+              "word": "a",
+              "start": 5.36,
+              "end": 5.44
+            },
+            {
+              "word": "longer",
+              "start": 5.44,
+              "end": 5.66
+            },
+            {
+              "word": "one.",
+              "start": 5.66,
+              "end": 6.0
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 2,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-002-0-a.wav",
+          "expected": "Perhaps a warmer opening or a more confident ending will help; soon he is editing a conversation that hasn\u2019t happened.",
+          "agreement": 1.0,
+          "words": [
+            {
+              "word": "perhaps",
+              "start": 0.0,
+              "end": 0.22
+            },
+            {
+              "word": "a",
+              "start": 0.22,
+              "end": 0.42
+            },
+            {
+              "word": "warmer",
+              "start": 0.42,
+              "end": 0.62
+            },
+            {
+              "word": "opening",
+              "start": 0.62,
+              "end": 1.12
+            },
+            {
+              "word": "or",
+              "start": 1.12,
+              "end": 1.34
+            },
+            {
+              "word": "a",
+              "start": 1.34,
+              "end": 1.4
+            },
+            {
+              "word": "more",
+              "start": 1.4,
+              "end": 1.56
+            },
+            {
+              "word": "confident",
+              "start": 1.56,
+              "end": 2.0
+            },
+            {
+              "word": "ending",
+              "start": 2.0,
+              "end": 2.5
+            },
+            {
+              "word": "will",
+              "start": 2.5,
+              "end": 2.76
+            },
+            {
+              "word": "help.",
+              "start": 2.76,
+              "end": 3.04
+            },
+            {
+              "word": "Soon",
+              "start": 3.8,
+              "end": 3.92
+            },
+            {
+              "word": "he",
+              "start": 3.92,
+              "end": 4.14
+            },
+            {
+              "word": "is",
+              "start": 4.14,
+              "end": 4.26
+            },
+            {
+              "word": "editing",
+              "start": 4.26,
+              "end": 4.6
+            },
+            {
+              "word": "a",
+              "start": 4.6,
+              "end": 4.8
+            },
+            {
+              "word": "conversation",
+              "start": 4.8,
+              "end": 5.2
+            },
+            {
+              "word": "that",
+              "start": 5.2,
+              "end": 5.76
+            },
+            {
+              "word": "hasn't",
+              "start": 5.76,
+              "end": 6.16
+            },
+            {
+              "word": "happened.",
+              "start": 6.16,
+              "end": 6.48
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 3,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-003-0-a.wav",
+          "expected": "The problem isn\u2019t that he has run out of answers; he can imagine so many that none feels safe.",
+          "agreement": 0.85,
+          "words": [
+            {
+              "word": "The",
+              "start": 0.0,
+              "end": 0.08
+            },
+            {
+              "word": "problem",
+              "start": 0.08,
+              "end": 0.34
+            },
+            {
+              "word": "isn't",
+              "start": 0.34,
+              "end": 0.74
+            },
+            {
+              "word": "that",
+              "start": 0.74,
+              "end": 0.84
+            },
+            {
+              "word": "he",
+              "start": 0.84,
+              "end": 1.0
+            },
+            {
+              "word": "is",
+              "start": 1.0,
+              "end": 1.1
+            },
+            {
+              "word": "one",
+              "start": 1.1,
+              "end": 1.26
+            },
+            {
+              "word": "out",
+              "start": 1.26,
+              "end": 1.42
+            },
+            {
+              "word": "of",
+              "start": 1.42,
+              "end": 1.54
+            },
+            {
+              "word": "answers.",
+              "start": 1.54,
+              "end": 1.86
+            },
+            {
+              "word": "He",
+              "start": 2.46,
+              "end": 2.56
+            },
+            {
+              "word": "can",
+              "start": 2.56,
+              "end": 2.7
+            },
+            {
+              "word": "imagine",
+              "start": 2.7,
+              "end": 2.98
+            },
+            {
+              "word": "so",
+              "start": 2.98,
+              "end": 3.3
+            },
+            {
+              "word": "many",
+              "start": 3.3,
+              "end": 3.56
+            },
+            {
+              "word": "that",
+              "start": 3.56,
+              "end": 3.82
+            },
+            {
+              "word": "none",
+              "start": 3.82,
+              "end": 4.1
+            },
+            {
+              "word": "feel",
+              "start": 4.1,
+              "end": 4.48
+            },
+            {
+              "word": "safe.",
+              "start": 4.48,
+              "end": 4.92
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 4,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-004-0-a.wav",
+          "expected": "Being clever can help generate possibilities, but it doesn\u2019t turn those possibilities into evidence, and overthinking is no proof of intelligence.",
+          "agreement": 1.0,
+          "words": [
+            {
+              "word": "Being",
+              "start": 0.0,
+              "end": 0.16
+            },
+            {
+              "word": "clever",
+              "start": 0.16,
+              "end": 0.42
+            },
+            {
+              "word": "can",
+              "start": 0.42,
+              "end": 0.78
+            },
+            {
+              "word": "help",
+              "start": 0.78,
+              "end": 1.0
+            },
+            {
+              "word": "generate",
+              "start": 1.0,
+              "end": 1.4
+            },
+            {
+              "word": "possibilities,",
+              "start": 1.4,
+              "end": 1.94
+            },
+            {
+              "word": "but",
+              "start": 2.7,
+              "end": 2.8
+            },
+            {
+              "word": "it",
+              "start": 2.8,
+              "end": 2.88
+            },
+            {
+              "word": "doesn't",
+              "start": 2.88,
+              "end": 3.28
+            },
+            {
+              "word": "turn",
+              "start": 3.28,
+              "end": 3.52
+            },
+            {
+              "word": "those",
+              "start": 3.52,
+              "end": 3.74
+            },
+            {
+              "word": "possibilities",
+              "start": 3.74,
+              "end": 4.12
+            },
+            {
+              "word": "into",
+              "start": 4.12,
+              "end": 4.82
+            },
+            {
+              "word": "evidence,",
+              "start": 4.82,
+              "end": 5.2
+            },
+            {
+              "word": "and",
+              "start": 5.62,
+              "end": 5.82
+            },
+            {
+              "word": "overthinking",
+              "start": 5.82,
+              "end": 6.38
+            },
+            {
+              "word": "is",
+              "start": 6.38,
+              "end": 6.74
+            },
+            {
+              "word": "no",
+              "start": 6.74,
+              "end": 6.96
+            },
+            {
+              "word": "proof",
+              "start": 6.96,
+              "end": 7.26
+            },
+            {
+              "word": "of",
+              "start": 7.26,
+              "end": 7.5
+            },
+            {
+              "word": "intelligence.",
+              "start": 7.5,
+              "end": 7.86
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 5,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-005-0-a.wav",
+          "expected": "Next morning, Alex opens the project schedule and finds one unfinished review, while the other tasks are where they should be.",
+          "agreement": 1.0,
+          "words": [
+            {
+              "word": "Next",
+              "start": 0.0,
+              "end": 0.16
+            },
+            {
+              "word": "morning,",
+              "start": 0.16,
+              "end": 0.46
+            },
+            {
+              "word": "Alex",
+              "start": 0.72,
+              "end": 0.82
+            },
+            {
+              "word": "opens",
+              "start": 0.82,
+              "end": 1.28
+            },
+            {
+              "word": "the",
+              "start": 1.28,
+              "end": 1.5
+            },
+            {
+              "word": "project",
+              "start": 1.5,
+              "end": 1.8
+            },
+            {
+              "word": "schedule",
+              "start": 1.8,
+              "end": 2.12
+            },
+            {
+              "word": "and",
+              "start": 2.12,
+              "end": 2.48
+            },
+            {
+              "word": "finds",
+              "start": 2.48,
+              "end": 2.72
+            },
+            {
+              "word": "one",
+              "start": 2.72,
+              "end": 3.02
+            },
+            {
+              "word": "unfinished",
+              "start": 3.02,
+              "end": 3.3
+            },
+            {
+              "word": "review,",
+              "start": 3.3,
+              "end": 4.0
+            },
+            {
+              "word": "while",
+              "start": 4.42,
+              "end": 4.64
+            },
+            {
+              "word": "the",
+              "start": 4.64,
+              "end": 4.8
+            },
+            {
+              "word": "other",
+              "start": 4.8,
+              "end": 4.96
+            },
+            {
+              "word": "tasks",
+              "start": 4.96,
+              "end": 5.28
+            },
+            {
+              "word": "are",
+              "start": 5.28,
+              "end": 5.64
+            },
+            {
+              "word": "where",
+              "start": 5.64,
+              "end": 5.8
+            },
+            {
+              "word": "they",
+              "start": 5.8,
+              "end": 5.96
+            },
+            {
+              "word": "should",
+              "start": 5.96,
+              "end": 6.18
+            },
+            {
+              "word": "be.",
+              "start": 6.18,
+              "end": 6.44
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 6,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-006-0-a.wav",
+          "expected": "That check changes the problem: he now knows what might delay Friday, instead of treating the entire project as a disaster.",
+          "agreement": 1.0,
+          "words": [
+            {
+              "word": "that",
+              "start": 0.0,
+              "end": 0.12
+            },
+            {
+              "word": "check",
+              "start": 0.12,
+              "end": 0.38
+            },
+            {
+              "word": "changes",
+              "start": 0.38,
+              "end": 0.96
+            },
+            {
+              "word": "the",
+              "start": 0.96,
+              "end": 1.12
+            },
+            {
+              "word": "problem.",
+              "start": 1.12,
+              "end": 1.48
+            },
+            {
+              "word": "He",
+              "start": 2.12,
+              "end": 2.2
+            },
+            {
+              "word": "now",
+              "start": 2.2,
+              "end": 2.36
+            },
+            {
+              "word": "knows",
+              "start": 2.36,
+              "end": 2.7
+            },
+            {
+              "word": "what",
+              "start": 2.7,
+              "end": 2.84
+            },
+            {
+              "word": "might",
+              "start": 2.84,
+              "end": 3.0
+            },
+            {
+              "word": "delay",
+              "start": 3.0,
+              "end": 3.26
+            },
+            {
+              "word": "Friday,",
+              "start": 3.26,
+              "end": 3.66
+            },
+            {
+              "word": "instead",
+              "start": 4.24,
+              "end": 4.44
+            },
+            {
+              "word": "of",
+              "start": 4.44,
+              "end": 4.64
+            },
+            {
+              "word": "treating",
+              "start": 4.64,
+              "end": 4.9
+            },
+            {
+              "word": "the",
+              "start": 4.9,
+              "end": 5.28
+            },
+            {
+              "word": "entire",
+              "start": 5.28,
+              "end": 5.58
+            },
+            {
+              "word": "project",
+              "start": 5.58,
+              "end": 6.16
+            },
+            {
+              "word": "as",
+              "start": 6.16,
+              "end": 6.6
+            },
+            {
+              "word": "a",
+              "start": 6.6,
+              "end": 6.7
+            },
+            {
+              "word": "disaster.",
+              "start": 6.7,
+              "end": 7.08
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 7,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-007-0-a.wav",
+          "expected": "Then he imagines Jamie\u2019s face when she reads his reply, changes a word, imagines another expression, and changes it back.",
+          "agreement": 1.0,
+          "words": [
+            {
+              "word": "Then",
+              "start": 0.0,
+              "end": 0.16
+            },
+            {
+              "word": "he",
+              "start": 0.16,
+              "end": 0.26
+            },
+            {
+              "word": "imagines",
+              "start": 0.26,
+              "end": 0.78
+            },
+            {
+              "word": "Jamie's",
+              "start": 0.78,
+              "end": 1.24
+            },
+            {
+              "word": "face",
+              "start": 1.24,
+              "end": 1.48
+            },
+            {
+              "word": "when",
+              "start": 1.48,
+              "end": 1.78
+            },
+            {
+              "word": "she",
+              "start": 1.78,
+              "end": 1.96
+            },
+            {
+              "word": "reads",
+              "start": 1.96,
+              "end": 2.22
+            },
+            {
+              "word": "his",
+              "start": 2.22,
+              "end": 2.46
+            },
+            {
+              "word": "reply,",
+              "start": 2.46,
+              "end": 2.84
+            },
+            {
+              "word": "changes",
+              "start": 3.32,
+              "end": 3.62
+            },
+            {
+              "word": "a",
+              "start": 3.62,
+              "end": 3.88
+            },
+            {
+              "word": "word,",
+              "start": 3.88,
+              "end": 4.2
+            },
+            {
+              "word": "imagines",
+              "start": 4.56,
+              "end": 5.14
+            },
+            {
+              "word": "another",
+              "start": 5.14,
+              "end": 5.46
+            },
+            {
+              "word": "expression,",
+              "start": 5.46,
+              "end": 5.86
+            },
+            {
+              "word": "and",
+              "start": 6.5,
+              "end": 6.62
+            },
+            {
+              "word": "changes",
+              "start": 6.62,
+              "end": 6.96
+            },
+            {
+              "word": "it",
+              "start": 6.96,
+              "end": 7.28
+            },
+            {
+              "word": "back.",
+              "start": 7.28,
+              "end": 7.52
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 8,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-008-0-a.wav",
+          "expected": "Nothing new has entered the picture; his activity has changed, but his information has not.",
+          "agreement": 1.0,
+          "words": [
+            {
+              "word": "Nothing",
+              "start": 0.0,
+              "end": 0.3
+            },
+            {
+              "word": "new",
+              "start": 0.3,
+              "end": 0.64
+            },
+            {
+              "word": "has",
+              "start": 0.64,
+              "end": 0.92
+            },
+            {
+              "word": "entered",
+              "start": 0.92,
+              "end": 1.06
+            },
+            {
+              "word": "the",
+              "start": 1.06,
+              "end": 1.32
+            },
+            {
+              "word": "picture.",
+              "start": 1.32,
+              "end": 1.7
+            },
+            {
+              "word": "His",
+              "start": 2.24,
+              "end": 2.26
+            },
+            {
+              "word": "activity",
+              "start": 2.26,
+              "end": 2.62
+            },
+            {
+              "word": "has",
+              "start": 2.62,
+              "end": 3.04
+            },
+            {
+              "word": "changed,",
+              "start": 3.04,
+              "end": 3.38
+            },
+            {
+              "word": "but",
+              "start": 3.38,
+              "end": 4.06
+            },
+            {
+              "word": "his",
+              "start": 4.06,
+              "end": 4.18
+            },
+            {
+              "word": "information",
+              "start": 4.18,
+              "end": 4.7
+            },
+            {
+              "word": "has",
+              "start": 4.7,
+              "end": 5.3
+            },
+            {
+              "word": "not.",
+              "start": 5.3,
+              "end": 5.68
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 9,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-009-0-a.wav",
+          "expected": "Instead of asking whether he has thought hard enough, he can ask what this round of thinking has let him learn.",
+          "agreement": 0.9524,
+          "words": [
+            {
+              "word": "Instead",
+              "start": 0.0,
+              "end": 0.32
+            },
+            {
+              "word": "of",
+              "start": 0.32,
+              "end": 0.5
+            },
+            {
+              "word": "asking",
+              "start": 0.5,
+              "end": 0.8
+            },
+            {
+              "word": "whether",
+              "start": 0.8,
+              "end": 1.2
+            },
+            {
+              "word": "he",
+              "start": 1.2,
+              "end": 1.38
+            },
+            {
+              "word": "has",
+              "start": 1.38,
+              "end": 1.56
+            },
+            {
+              "word": "daught",
+              "start": 1.56,
+              "end": 1.92
+            },
+            {
+              "word": "hard",
+              "start": 1.92,
+              "end": 2.3
+            },
+            {
+              "word": "enough,",
+              "start": 2.3,
+              "end": 2.6
+            },
+            {
+              "word": "he",
+              "start": 3.26,
+              "end": 3.38
+            },
+            {
+              "word": "can",
+              "start": 3.38,
+              "end": 3.5
+            },
+            {
+              "word": "ask",
+              "start": 3.5,
+              "end": 3.7
+            },
+            {
+              "word": "what",
+              "start": 3.7,
+              "end": 4.02
+            },
+            {
+              "word": "this",
+              "start": 4.02,
+              "end": 4.22
+            },
+            {
+              "word": "round",
+              "start": 4.22,
+              "end": 4.52
+            },
+            {
+              "word": "of",
+              "start": 4.52,
+              "end": 4.74
+            },
+            {
+              "word": "thinking",
+              "start": 4.74,
+              "end": 5.0
+            },
+            {
+              "word": "has",
+              "start": 5.0,
+              "end": 5.36
+            },
+            {
+              "word": "let",
+              "start": 5.36,
+              "end": 5.7
+            },
+            {
+              "word": "him",
+              "start": 5.7,
+              "end": 5.96
+            },
+            {
+              "word": "learn.",
+              "start": 5.96,
+              "end": 6.36
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 10,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-010-0-a.wav",
+          "expected": "Acting quickly is not always wiser, because some choices really do deserve slow, uncomfortable investigation.",
+          "agreement": 1.0,
+          "words": [
+            {
+              "word": "Acting",
+              "start": 0.0,
+              "end": 0.18
+            },
+            {
+              "word": "quickly",
+              "start": 0.18,
+              "end": 0.48
+            },
+            {
+              "word": "is",
+              "start": 0.48,
+              "end": 0.78
+            },
+            {
+              "word": "not",
+              "start": 0.78,
+              "end": 0.96
+            },
+            {
+              "word": "always",
+              "start": 0.96,
+              "end": 1.1
+            },
+            {
+              "word": "wiser",
+              "start": 1.1,
+              "end": 1.84
+            },
+            {
+              "word": "because",
+              "start": 1.84,
+              "end": 2.4
+            },
+            {
+              "word": "some",
+              "start": 2.4,
+              "end": 2.64
+            },
+            {
+              "word": "choices",
+              "start": 2.64,
+              "end": 3.0
+            },
+            {
+              "word": "really",
+              "start": 3.0,
+              "end": 3.42
+            },
+            {
+              "word": "do",
+              "start": 3.42,
+              "end": 3.7
+            },
+            {
+              "word": "deserve",
+              "start": 3.7,
+              "end": 4.08
+            },
+            {
+              "word": "slow,",
+              "start": 4.08,
+              "end": 4.52
+            },
+            {
+              "word": "uncomfortable",
+              "start": 4.68,
+              "end": 5.12
+            },
+            {
+              "word": "investigation.",
+              "start": 5.64,
+              "end": 6.0
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 11,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-011-0-a.wav",
+          "expected": "Before an expensive commitment or a difficult-to-reverse decision, checking assumptions can save more trouble than it costs.",
+          "agreement": 0.9474,
+          "words": [
+            {
+              "word": "Before",
+              "start": 0.0,
+              "end": 0.32
+            },
+            {
+              "word": "an",
+              "start": 0.32,
+              "end": 0.48
+            },
+            {
+              "word": "expensive",
+              "start": 0.48,
+              "end": 0.96
+            },
+            {
+              "word": "commitment",
+              "start": 0.96,
+              "end": 1.44
+            },
+            {
+              "word": "or",
+              "start": 1.44,
+              "end": 1.86
+            },
+            {
+              "word": "a",
+              "start": 1.86,
+              "end": 1.98
+            },
+            {
+              "word": "difficult",
+              "start": 1.98,
+              "end": 2.46
+            },
+            {
+              "word": "to",
+              "start": 2.46,
+              "end": 2.7
+            },
+            {
+              "word": "reverse",
+              "start": 2.7,
+              "end": 2.96
+            },
+            {
+              "word": "decision,",
+              "start": 2.96,
+              "end": 3.54
+            },
+            {
+              "word": "checking",
+              "start": 3.96,
+              "end": 4.22
+            },
+            {
+              "word": "assumptions",
+              "start": 4.22,
+              "end": 4.66
+            },
+            {
+              "word": "can",
+              "start": 4.66,
+              "end": 5.24
+            },
+            {
+              "word": "save",
+              "start": 5.24,
+              "end": 5.56
+            },
+            {
+              "word": "more",
+              "start": 5.56,
+              "end": 5.86
+            },
+            {
+              "word": "trouble",
+              "start": 5.86,
+              "end": 6.24
+            },
+            {
+              "word": "in",
+              "start": 6.24,
+              "end": 6.5
+            },
+            {
+              "word": "it",
+              "start": 6.5,
+              "end": 6.58
+            },
+            {
+              "word": "costs.",
+              "start": 6.58,
+              "end": 6.86
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 12,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-012-0-a.wav",
+          "expected": "The distinction is what the extra time is doing: checking a fact, comparing a real option, or seeking a perspective you lack.",
+          "agreement": 1.0,
+          "words": [
+            {
+              "word": "The",
+              "start": 0.0,
+              "end": 0.1
+            },
+            {
+              "word": "distinction",
+              "start": 0.1,
+              "end": 0.46
+            },
+            {
+              "word": "is",
+              "start": 0.46,
+              "end": 1.04
+            },
+            {
+              "word": "what",
+              "start": 1.04,
+              "end": 1.2
+            },
+            {
+              "word": "the",
+              "start": 1.2,
+              "end": 1.34
+            },
+            {
+              "word": "extra",
+              "start": 1.34,
+              "end": 1.58
+            },
+            {
+              "word": "time",
+              "start": 1.58,
+              "end": 2.1
+            },
+            {
+              "word": "is",
+              "start": 2.1,
+              "end": 2.3
+            },
+            {
+              "word": "doing,",
+              "start": 2.3,
+              "end": 2.7
+            },
+            {
+              "word": "checking",
+              "start": 3.26,
+              "end": 3.54
+            },
+            {
+              "word": "a",
+              "start": 3.54,
+              "end": 3.74
+            },
+            {
+              "word": "fact,",
+              "start": 3.74,
+              "end": 4.0
+            },
+            {
+              "word": "comparing",
+              "start": 4.52,
+              "end": 4.84
+            },
+            {
+              "word": "a",
+              "start": 4.84,
+              "end": 5.22
+            },
+            {
+              "word": "real",
+              "start": 5.22,
+              "end": 5.4
+            },
+            {
+              "word": "option",
+              "start": 5.4,
+              "end": 5.84
+            },
+            {
+              "word": "or",
+              "start": 5.84,
+              "end": 6.4
+            },
+            {
+              "word": "seeking",
+              "start": 6.4,
+              "end": 6.62
+            },
+            {
+              "word": "a",
+              "start": 6.62,
+              "end": 6.88
+            },
+            {
+              "word": "perspective",
+              "start": 6.88,
+              "end": 7.24
+            },
+            {
+              "word": "you",
+              "start": 7.24,
+              "end": 7.66
+            },
+            {
+              "word": "lack.",
+              "start": 7.66,
+              "end": 7.9
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 13,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-013-0-a.wav",
+          "expected": "Or perhaps you are asking the same facts to promise a feeling of certainty they cannot supply.",
+          "agreement": 1.0,
+          "words": [
+            {
+              "word": "or",
+              "start": 0.0,
+              "end": 0.1
+            },
+            {
+              "word": "perhaps",
+              "start": 0.1,
+              "end": 0.34
+            },
+            {
+              "word": "you",
+              "start": 0.34,
+              "end": 0.6
+            },
+            {
+              "word": "are",
+              "start": 0.6,
+              "end": 0.7
+            },
+            {
+              "word": "asking",
+              "start": 0.7,
+              "end": 1.02
+            },
+            {
+              "word": "the",
+              "start": 1.02,
+              "end": 1.2
+            },
+            {
+              "word": "same",
+              "start": 1.2,
+              "end": 1.42
+            },
+            {
+              "word": "facts",
+              "start": 1.42,
+              "end": 1.66
+            },
+            {
+              "word": "to",
+              "start": 1.66,
+              "end": 1.94
+            },
+            {
+              "word": "promise",
+              "start": 1.94,
+              "end": 2.16
+            },
+            {
+              "word": "a",
+              "start": 2.16,
+              "end": 2.32
+            },
+            {
+              "word": "feeling",
+              "start": 2.32,
+              "end": 2.54
+            },
+            {
+              "word": "of",
+              "start": 2.54,
+              "end": 2.76
+            },
+            {
+              "word": "certainty",
+              "start": 2.76,
+              "end": 3.28
+            },
+            {
+              "word": "they",
+              "start": 3.28,
+              "end": 3.6
+            },
+            {
+              "word": "cannot",
+              "start": 3.6,
+              "end": 3.86
+            },
+            {
+              "word": "supply.",
+              "start": 3.86,
+              "end": 4.34
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 14,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-014-0-a.wav",
+          "expected": "Alex needs a stopping condition, not carelessness: identify the unfinished review, ask what Jamie meant, and make one specific proposal.",
+          "agreement": 1.0,
+          "words": [
+            {
+              "word": "Alex",
+              "start": 0.0,
+              "end": 0.2
+            },
+            {
+              "word": "needs",
+              "start": 0.2,
+              "end": 0.44
+            },
+            {
+              "word": "a",
+              "start": 0.44,
+              "end": 0.66
+            },
+            {
+              "word": "stopping",
+              "start": 0.66,
+              "end": 0.88
+            },
+            {
+              "word": "condition,",
+              "start": 0.88,
+              "end": 1.36
+            },
+            {
+              "word": "not",
+              "start": 1.96,
+              "end": 2.0
+            },
+            {
+              "word": "carelessness,",
+              "start": 2.0,
+              "end": 2.5
+            },
+            {
+              "word": "identify",
+              "start": 3.18,
+              "end": 3.4
+            },
+            {
+              "word": "the",
+              "start": 3.4,
+              "end": 3.98
+            },
+            {
+              "word": "unfinished",
+              "start": 3.98,
+              "end": 4.26
+            },
+            {
+              "word": "review,",
+              "start": 4.26,
+              "end": 4.72
+            },
+            {
+              "word": "ask",
+              "start": 5.42,
+              "end": 5.56
+            },
+            {
+              "word": "what",
+              "start": 5.56,
+              "end": 5.8
+            },
+            {
+              "word": "Jamie",
+              "start": 5.8,
+              "end": 6.02
+            },
+            {
+              "word": "meant",
+              "start": 6.02,
+              "end": 6.44
+            },
+            {
+              "word": "and",
+              "start": 6.44,
+              "end": 6.82
+            },
+            {
+              "word": "make",
+              "start": 6.82,
+              "end": 7.02
+            },
+            {
+              "word": "one",
+              "start": 7.02,
+              "end": 7.36
+            },
+            {
+              "word": "specific",
+              "start": 7.36,
+              "end": 7.76
+            },
+            {
+              "word": "proposal.",
+              "start": 7.76,
+              "end": 8.62
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 15,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-015-0-a.wav",
+          "expected": "On his walk, Alex notices that every draft has a hidden demand: make Jamie react exactly as he hopes.",
+          "agreement": 1.0,
+          "words": [
+            {
+              "word": "On",
+              "start": 0.0,
+              "end": 0.1
+            },
+            {
+              "word": "his",
+              "start": 0.1,
+              "end": 0.22
+            },
+            {
+              "word": "walk,",
+              "start": 0.22,
+              "end": 0.48
+            },
+            {
+              "word": "Alex",
+              "start": 0.68,
+              "end": 0.84
+            },
+            {
+              "word": "notices",
+              "start": 0.84,
+              "end": 1.14
+            },
+            {
+              "word": "that",
+              "start": 1.14,
+              "end": 1.66
+            },
+            {
+              "word": "every",
+              "start": 1.66,
+              "end": 1.86
+            },
+            {
+              "word": "draft",
+              "start": 1.86,
+              "end": 2.12
+            },
+            {
+              "word": "has",
+              "start": 2.12,
+              "end": 2.5
+            },
+            {
+              "word": "a",
+              "start": 2.5,
+              "end": 2.64
+            },
+            {
+              "word": "hidden",
+              "start": 2.64,
+              "end": 2.88
+            },
+            {
+              "word": "demand,",
+              "start": 2.88,
+              "end": 3.34
+            },
+            {
+              "word": "make",
+              "start": 3.88,
+              "end": 4.08
+            },
+            {
+              "word": "Jamie",
+              "start": 4.08,
+              "end": 4.28
+            },
+            {
+              "word": "react",
+              "start": 4.28,
+              "end": 4.78
+            },
+            {
+              "word": "exactly",
+              "start": 4.78,
+              "end": 5.3
+            },
+            {
+              "word": "as",
+              "start": 5.3,
+              "end": 5.78
+            },
+            {
+              "word": "he",
+              "start": 5.78,
+              "end": 6.0
+            },
+            {
+              "word": "hopes.",
+              "start": 6.0,
+              "end": 6.3
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 16,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-016-0-a.wav",
+          "expected": "No wording can guarantee that, because another person brings a mood, a history, and information he does not have.",
+          "agreement": 0.9474,
+          "words": [
+            {
+              "word": "No",
+              "start": 0.0,
+              "end": 0.22
+            },
+            {
+              "word": "wording",
+              "start": 0.22,
+              "end": 0.72
+            },
+            {
+              "word": "can",
+              "start": 0.72,
+              "end": 1.08
+            },
+            {
+              "word": "guarantee",
+              "start": 1.08,
+              "end": 1.4
+            },
+            {
+              "word": "that",
+              "start": 1.4,
+              "end": 1.86
+            },
+            {
+              "word": "because",
+              "start": 1.86,
+              "end": 2.26
+            },
+            {
+              "word": "another",
+              "start": 2.26,
+              "end": 2.58
+            },
+            {
+              "word": "person",
+              "start": 2.58,
+              "end": 3.2
+            },
+            {
+              "word": "brings",
+              "start": 3.2,
+              "end": 3.56
+            },
+            {
+              "word": "a",
+              "start": 3.56,
+              "end": 3.76
+            },
+            {
+              "word": "mood,",
+              "start": 3.76,
+              "end": 4.02
+            },
+            {
+              "word": "a",
+              "start": 4.54,
+              "end": 4.56
+            },
+            {
+              "word": "history,",
+              "start": 4.56,
+              "end": 4.92
+            },
+            {
+              "word": "an",
+              "start": 5.42,
+              "end": 5.44
+            },
+            {
+              "word": "information",
+              "start": 5.44,
+              "end": 5.98
+            },
+            {
+              "word": "he",
+              "start": 5.98,
+              "end": 6.4
+            },
+            {
+              "word": "does",
+              "start": 6.4,
+              "end": 6.56
+            },
+            {
+              "word": "not",
+              "start": 6.56,
+              "end": 6.8
+            },
+            {
+              "word": "have.",
+              "start": 6.8,
+              "end": 7.12
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 17,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-017-0-a.wav",
+          "expected": "He can still be honest and considerate; those are choices about his message, not guarantees about her response.",
+          "agreement": 1.0,
+          "words": [
+            {
+              "word": "He",
+              "start": 0.0,
+              "end": 0.1
+            },
+            {
+              "word": "can",
+              "start": 0.1,
+              "end": 0.2
+            },
+            {
+              "word": "still",
+              "start": 0.2,
+              "end": 0.48
+            },
+            {
+              "word": "be",
+              "start": 0.48,
+              "end": 0.68
+            },
+            {
+              "word": "honest",
+              "start": 0.68,
+              "end": 1.02
+            },
+            {
+              "word": "and",
+              "start": 1.02,
+              "end": 1.36
+            },
+            {
+              "word": "considerate.",
+              "start": 1.36,
+              "end": 2.08
+            },
+            {
+              "word": "Those",
+              "start": 2.7,
+              "end": 2.76
+            },
+            {
+              "word": "are",
+              "start": 2.76,
+              "end": 2.96
+            },
+            {
+              "word": "choices",
+              "start": 2.96,
+              "end": 3.22
+            },
+            {
+              "word": "about",
+              "start": 3.22,
+              "end": 3.7
+            },
+            {
+              "word": "his",
+              "start": 3.7,
+              "end": 3.94
+            },
+            {
+              "word": "message,",
+              "start": 3.94,
+              "end": 4.34
+            },
+            {
+              "word": "not",
+              "start": 4.76,
+              "end": 5.02
+            },
+            {
+              "word": "guarantees",
+              "start": 5.02,
+              "end": 5.36
+            },
+            {
+              "word": "about",
+              "start": 5.36,
+              "end": 6.12
+            },
+            {
+              "word": "her",
+              "start": 6.12,
+              "end": 6.34
+            },
+            {
+              "word": "response.",
+              "start": 6.34,
+              "end": 6.72
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 18,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-018-0-a.wav",
+          "expected": "He writes, \u201cI may have misread: did you mean the review?\u201d\u2014a question Jamie can actually answer.",
+          "agreement": 1.0,
+          "words": [
+            {
+              "word": "he",
+              "start": 0.0,
+              "end": 0.08
+            },
+            {
+              "word": "writes,",
+              "start": 0.08,
+              "end": 0.32
+            },
+            {
+              "word": "I",
+              "start": 0.86,
+              "end": 1.0
+            },
+            {
+              "word": "may",
+              "start": 1.0,
+              "end": 1.18
+            },
+            {
+              "word": "have",
+              "start": 1.18,
+              "end": 1.34
+            },
+            {
+              "word": "misread.",
+              "start": 1.34,
+              "end": 1.78
+            },
+            {
+              "word": "Did",
+              "start": 2.42,
+              "end": 2.46
+            },
+            {
+              "word": "you",
+              "start": 2.46,
+              "end": 2.62
+            },
+            {
+              "word": "mean",
+              "start": 2.62,
+              "end": 2.84
+            },
+            {
+              "word": "the",
+              "start": 2.84,
+              "end": 3.14
+            },
+            {
+              "word": "review?",
+              "start": 3.14,
+              "end": 3.34
+            },
+            {
+              "word": "A",
+              "start": 4.12,
+              "end": 4.2
+            },
+            {
+              "word": "question",
+              "start": 4.2,
+              "end": 4.56
+            },
+            {
+              "word": "Jamie",
+              "start": 4.56,
+              "end": 4.86
+            },
+            {
+              "word": "can",
+              "start": 4.86,
+              "end": 5.22
+            },
+            {
+              "word": "actually",
+              "start": 5.22,
+              "end": 5.54
+            },
+            {
+              "word": "answer.",
+              "start": 5.54,
+              "end": 5.98
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 19,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-019-0-a.wav",
+          "expected": "He presses send while the doubt remains; this time, sending begins the conversation instead of pretending to finish it.",
+          "agreement": 1.0,
+          "words": [
+            {
+              "word": "He",
+              "start": 0.0,
+              "end": 0.1
+            },
+            {
+              "word": "presses",
+              "start": 0.1,
+              "end": 0.4
+            },
+            {
+              "word": "send",
+              "start": 0.4,
+              "end": 0.76
+            },
+            {
+              "word": "while",
+              "start": 0.76,
+              "end": 1.22
+            },
+            {
+              "word": "the",
+              "start": 1.22,
+              "end": 1.44
+            },
+            {
+              "word": "doubt",
+              "start": 1.44,
+              "end": 1.52
+            },
+            {
+              "word": "remains.",
+              "start": 1.52,
+              "end": 2.1
+            },
+            {
+              "word": "This",
+              "start": 2.94,
+              "end": 2.96
+            },
+            {
+              "word": "time,",
+              "start": 2.96,
+              "end": 3.24
+            },
+            {
+              "word": "sending",
+              "start": 3.24,
+              "end": 3.82
+            },
+            {
+              "word": "begins",
+              "start": 3.82,
+              "end": 4.26
+            },
+            {
+              "word": "the",
+              "start": 4.26,
+              "end": 4.58
+            },
+            {
+              "word": "conversation",
+              "start": 4.58,
+              "end": 5.0
+            },
+            {
+              "word": "instead",
+              "start": 5.0,
+              "end": 5.62
+            },
+            {
+              "word": "of",
+              "start": 5.62,
+              "end": 5.82
+            },
+            {
+              "word": "pretending",
+              "start": 5.82,
+              "end": 6.12
+            },
+            {
+              "word": "to",
+              "start": 6.12,
+              "end": 6.56
+            },
+            {
+              "word": "finish",
+              "start": 6.56,
+              "end": 6.78
+            },
+            {
+              "word": "it.",
+              "start": 6.78,
+              "end": 7.04
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 20,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-020-0-a.wav",
+          "expected": "Jamie replies, \u201cJust the review\u2014I thought you were waiting for me,\u201d and Alex reads it twice.",
+          "agreement": 1.0,
+          "words": [
+            {
+              "word": "Jamie",
+              "start": 0.0,
+              "end": 0.24
+            },
+            {
+              "word": "replies,",
+              "start": 0.24,
+              "end": 0.58
+            },
+            {
+              "word": "just",
+              "start": 1.18,
+              "end": 1.3
+            },
+            {
+              "word": "the",
+              "start": 1.3,
+              "end": 1.44
+            },
+            {
+              "word": "review.",
+              "start": 1.44,
+              "end": 1.68
+            },
+            {
+              "word": "I",
+              "start": 2.2,
+              "end": 2.24
+            },
+            {
+              "word": "thought",
+              "start": 2.24,
+              "end": 2.48
+            },
+            {
+              "word": "you",
+              "start": 2.48,
+              "end": 2.68
+            },
+            {
+              "word": "were",
+              "start": 2.68,
+              "end": 2.78
+            },
+            {
+              "word": "waiting",
+              "start": 2.78,
+              "end": 3.08
+            },
+            {
+              "word": "for",
+              "start": 3.08,
+              "end": 3.36
+            },
+            {
+              "word": "me",
+              "start": 3.36,
+              "end": 3.56
+            },
+            {
+              "word": "and",
+              "start": 3.56,
+              "end": 3.92
+            },
+            {
+              "word": "Alex",
+              "start": 3.92,
+              "end": 4.08
+            },
+            {
+              "word": "reads",
+              "start": 4.08,
+              "end": 4.4
+            },
+            {
+              "word": "it",
+              "start": 4.4,
+              "end": 4.62
+            },
+            {
+              "word": "twice.",
+              "start": 4.62,
+              "end": 4.86
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 21,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-021-0-a.wav",
+          "expected": "He had interpreted her comment as a judgment, while she had interpreted his silence as a request for time.",
+          "agreement": 0.9474,
+          "words": [
+            {
+              "word": "he",
+              "start": 0.0,
+              "end": 0.14
+            },
+            {
+              "word": "had",
+              "start": 0.14,
+              "end": 0.26
+            },
+            {
+              "word": "interpreted",
+              "start": 0.26,
+              "end": 0.72
+            },
+            {
+              "word": "her",
+              "start": 0.72,
+              "end": 1.1
+            },
+            {
+              "word": "comment",
+              "start": 1.1,
+              "end": 1.48
+            },
+            {
+              "word": "as",
+              "start": 1.48,
+              "end": 1.92
+            },
+            {
+              "word": "a",
+              "start": 1.92,
+              "end": 2.0
+            },
+            {
+              "word": "judgement,",
+              "start": 2.0,
+              "end": 2.28
+            },
+            {
+              "word": "while",
+              "start": 3.02,
+              "end": 3.16
+            },
+            {
+              "word": "she",
+              "start": 3.16,
+              "end": 3.4
+            },
+            {
+              "word": "had",
+              "start": 3.4,
+              "end": 3.6
+            },
+            {
+              "word": "interpreted",
+              "start": 3.6,
+              "end": 4.04
+            },
+            {
+              "word": "his",
+              "start": 4.04,
+              "end": 4.4
+            },
+            {
+              "word": "silence",
+              "start": 4.4,
+              "end": 4.74
+            },
+            {
+              "word": "as",
+              "start": 4.74,
+              "end": 5.44
+            },
+            {
+              "word": "a",
+              "start": 5.44,
+              "end": 5.5
+            },
+            {
+              "word": "request",
+              "start": 5.5,
+              "end": 5.82
+            },
+            {
+              "word": "for",
+              "start": 5.82,
+              "end": 6.16
+            },
+            {
+              "word": "time.",
+              "start": 6.16,
+              "end": 6.56
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 22,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-022-0-a.wav",
+          "expected": "Neither explanation was hidden inside the original sentence; they needed another exchange to find out.",
+          "agreement": 1.0,
+          "words": [
+            {
+              "word": "Neither",
+              "start": 0.0,
+              "end": 0.18
+            },
+            {
+              "word": "explanation",
+              "start": 0.18,
+              "end": 0.62
+            },
+            {
+              "word": "was",
+              "start": 0.62,
+              "end": 1.16
+            },
+            {
+              "word": "hidden",
+              "start": 1.16,
+              "end": 1.38
+            },
+            {
+              "word": "inside",
+              "start": 1.38,
+              "end": 1.8
+            },
+            {
+              "word": "the",
+              "start": 1.8,
+              "end": 2.06
+            },
+            {
+              "word": "original",
+              "start": 2.06,
+              "end": 2.26
+            },
+            {
+              "word": "sentence.",
+              "start": 2.26,
+              "end": 2.74
+            },
+            {
+              "word": "They",
+              "start": 3.32,
+              "end": 3.42
+            },
+            {
+              "word": "needed",
+              "start": 3.42,
+              "end": 3.68
+            },
+            {
+              "word": "another",
+              "start": 3.68,
+              "end": 4.08
+            },
+            {
+              "word": "exchange",
+              "start": 4.08,
+              "end": 4.42
+            },
+            {
+              "word": "to",
+              "start": 4.42,
+              "end": 5.04
+            },
+            {
+              "word": "find",
+              "start": 5.04,
+              "end": 5.28
+            },
+            {
+              "word": "out.",
+              "start": 5.28,
+              "end": 5.56
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 23,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-023-0-a.wav",
+          "expected": "They meet at the caf\u00e9 and agree that Alex will send a draft today, and Jamie will review it tomorrow.",
+          "agreement": 0.95,
+          "words": [
+            {
+              "word": "They",
+              "start": 0.0,
+              "end": 0.14
+            },
+            {
+              "word": "meet",
+              "start": 0.14,
+              "end": 0.3
+            },
+            {
+              "word": "at",
+              "start": 0.3,
+              "end": 0.5
+            },
+            {
+              "word": "the",
+              "start": 0.5,
+              "end": 0.6
+            },
+            {
+              "word": "cafe",
+              "start": 0.6,
+              "end": 0.9
+            },
+            {
+              "word": "and",
+              "start": 0.9,
+              "end": 1.56
+            },
+            {
+              "word": "agree",
+              "start": 1.56,
+              "end": 1.82
+            },
+            {
+              "word": "that",
+              "start": 1.82,
+              "end": 2.06
+            },
+            {
+              "word": "Alex",
+              "start": 2.06,
+              "end": 2.26
+            },
+            {
+              "word": "will",
+              "start": 2.26,
+              "end": 2.58
+            },
+            {
+              "word": "send",
+              "start": 2.58,
+              "end": 2.82
+            },
+            {
+              "word": "a",
+              "start": 2.82,
+              "end": 2.96
+            },
+            {
+              "word": "draft",
+              "start": 2.96,
+              "end": 3.16
+            },
+            {
+              "word": "today",
+              "start": 3.16,
+              "end": 3.56
+            },
+            {
+              "word": "and",
+              "start": 3.56,
+              "end": 4.08
+            },
+            {
+              "word": "Jamie",
+              "start": 4.08,
+              "end": 4.3
+            },
+            {
+              "word": "will",
+              "start": 4.3,
+              "end": 4.6
+            },
+            {
+              "word": "review",
+              "start": 4.6,
+              "end": 4.9
+            },
+            {
+              "word": "it",
+              "start": 4.9,
+              "end": 5.06
+            },
+            {
+              "word": "tomorrow.",
+              "start": 5.06,
+              "end": 5.32
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 24,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-024-0-a.wav",
+          "expected": "This doesn\u2019t prove every difficult conversation ends kindly; it shows what this particular exchange made possible: information that rehearsal couldn\u2019t provide.",
+          "agreement": 1.0,
+          "words": [
+            {
+              "word": "this",
+              "start": 0.0,
+              "end": 0.1
+            },
+            {
+              "word": "doesn't",
+              "start": 0.1,
+              "end": 0.4
+            },
+            {
+              "word": "prove",
+              "start": 0.4,
+              "end": 0.64
+            },
+            {
+              "word": "every",
+              "start": 0.64,
+              "end": 0.94
+            },
+            {
+              "word": "difficult",
+              "start": 0.94,
+              "end": 1.34
+            },
+            {
+              "word": "conversation",
+              "start": 1.34,
+              "end": 1.82
+            },
+            {
+              "word": "ends",
+              "start": 1.82,
+              "end": 2.24
+            },
+            {
+              "word": "kindly,",
+              "start": 2.24,
+              "end": 2.68
+            },
+            {
+              "word": "it",
+              "start": 3.32,
+              "end": 3.38
+            },
+            {
+              "word": "shows",
+              "start": 3.38,
+              "end": 3.62
+            },
+            {
+              "word": "what",
+              "start": 3.62,
+              "end": 3.98
+            },
+            {
+              "word": "this",
+              "start": 3.98,
+              "end": 4.18
+            },
+            {
+              "word": "particular",
+              "start": 4.18,
+              "end": 4.74
+            },
+            {
+              "word": "exchange",
+              "start": 4.74,
+              "end": 5.12
+            },
+            {
+              "word": "made",
+              "start": 5.12,
+              "end": 5.62
+            },
+            {
+              "word": "possible,",
+              "start": 5.62,
+              "end": 6.0
+            },
+            {
+              "word": "information",
+              "start": 6.62,
+              "end": 7.0
+            },
+            {
+              "word": "that",
+              "start": 7.0,
+              "end": 7.44
+            },
+            {
+              "word": "rehearsal",
+              "start": 7.44,
+              "end": 7.82
+            },
+            {
+              "word": "couldn't",
+              "start": 7.82,
+              "end": 8.52
+            },
+            {
+              "word": "provide.",
+              "start": 8.52,
+              "end": 8.86
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 25,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-025-0-a.wav",
+          "expected": "Alex\u2019s habit of imagining consequences hasn\u2019t vanished; later, it helps him notice that a page is missing from the draft.",
+          "agreement": 1.0,
+          "words": [
+            {
+              "word": "Alex's",
+              "start": 0.0,
+              "end": 0.32
+            },
+            {
+              "word": "habit",
+              "start": 0.32,
+              "end": 0.6
+            },
+            {
+              "word": "of",
+              "start": 0.6,
+              "end": 0.84
+            },
+            {
+              "word": "imagining",
+              "start": 0.84,
+              "end": 1.22
+            },
+            {
+              "word": "consequences",
+              "start": 1.22,
+              "end": 1.74
+            },
+            {
+              "word": "hasn't",
+              "start": 1.74,
+              "end": 2.54
+            },
+            {
+              "word": "vanished.",
+              "start": 2.54,
+              "end": 2.78
+            },
+            {
+              "word": "Later,",
+              "start": 3.76,
+              "end": 4.0
+            },
+            {
+              "word": "it",
+              "start": 4.34,
+              "end": 4.5
+            },
+            {
+              "word": "helps",
+              "start": 4.5,
+              "end": 4.68
+            },
+            {
+              "word": "him",
+              "start": 4.68,
+              "end": 4.88
+            },
+            {
+              "word": "notice",
+              "start": 4.88,
+              "end": 5.2
+            },
+            {
+              "word": "that",
+              "start": 5.2,
+              "end": 5.54
+            },
+            {
+              "word": "a",
+              "start": 5.54,
+              "end": 5.62
+            },
+            {
+              "word": "page",
+              "start": 5.62,
+              "end": 5.9
+            },
+            {
+              "word": "is",
+              "start": 5.9,
+              "end": 6.18
+            },
+            {
+              "word": "missing",
+              "start": 6.18,
+              "end": 6.34
+            },
+            {
+              "word": "from",
+              "start": 6.34,
+              "end": 6.68
+            },
+            {
+              "word": "the",
+              "start": 6.68,
+              "end": 6.8
+            },
+            {
+              "word": "draft.",
+              "start": 6.8,
+              "end": 7.04
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 26,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-026-0-a.wav",
+          "expected": "This time there is something concrete to check, so he adds the page, checks the attachment, and sends the work they agreed on.",
+          "agreement": 1.0,
+          "words": [
+            {
+              "word": "this",
+              "start": 0.0,
+              "end": 0.14
+            },
+            {
+              "word": "time",
+              "start": 0.14,
+              "end": 0.38
+            },
+            {
+              "word": "there",
+              "start": 0.38,
+              "end": 0.6
+            },
+            {
+              "word": "is",
+              "start": 0.6,
+              "end": 0.72
+            },
+            {
+              "word": "something",
+              "start": 0.72,
+              "end": 0.98
+            },
+            {
+              "word": "concrete",
+              "start": 0.98,
+              "end": 1.44
+            },
+            {
+              "word": "to",
+              "start": 1.44,
+              "end": 1.76
+            },
+            {
+              "word": "check,",
+              "start": 1.76,
+              "end": 1.96
+            },
+            {
+              "word": "so",
+              "start": 2.3,
+              "end": 2.4
+            },
+            {
+              "word": "he",
+              "start": 2.4,
+              "end": 2.5
+            },
+            {
+              "word": "adds",
+              "start": 2.5,
+              "end": 2.7
+            },
+            {
+              "word": "the",
+              "start": 2.7,
+              "end": 2.9
+            },
+            {
+              "word": "page,",
+              "start": 2.9,
+              "end": 3.16
+            },
+            {
+              "word": "checks",
+              "start": 3.54,
+              "end": 3.78
+            },
+            {
+              "word": "the",
+              "start": 3.78,
+              "end": 4.02
+            },
+            {
+              "word": "attachment,",
+              "start": 4.02,
+              "end": 4.2
+            },
+            {
+              "word": "and",
+              "start": 5.06,
+              "end": 5.16
+            },
+            {
+              "word": "sends",
+              "start": 5.16,
+              "end": 5.36
+            },
+            {
+              "word": "the",
+              "start": 5.36,
+              "end": 5.64
+            },
+            {
+              "word": "work",
+              "start": 5.64,
+              "end": 5.84
+            },
+            {
+              "word": "they",
+              "start": 5.84,
+              "end": 6.08
+            },
+            {
+              "word": "agreed",
+              "start": 6.08,
+              "end": 6.3
+            },
+            {
+              "word": "on.",
+              "start": 6.3,
+              "end": 6.62
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 27,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-027-0-a.wav",
+          "expected": "When another worried prediction appears, he does not have to defeat it before continuing.",
+          "agreement": 0.9286,
+          "words": [
+            {
+              "word": "When",
+              "start": 0.0,
+              "end": 0.14
+            },
+            {
+              "word": "another",
+              "start": 0.14,
+              "end": 0.42
+            },
+            {
+              "word": "worry",
+              "start": 0.42,
+              "end": 0.68
+            },
+            {
+              "word": "prediction",
+              "start": 0.68,
+              "end": 1.18
+            },
+            {
+              "word": "appears,",
+              "start": 1.18,
+              "end": 1.74
+            },
+            {
+              "word": "he",
+              "start": 2.12,
+              "end": 2.2
+            },
+            {
+              "word": "does",
+              "start": 2.2,
+              "end": 2.42
+            },
+            {
+              "word": "not",
+              "start": 2.42,
+              "end": 2.68
+            },
+            {
+              "word": "have",
+              "start": 2.68,
+              "end": 2.9
+            },
+            {
+              "word": "to",
+              "start": 2.9,
+              "end": 3.04
+            },
+            {
+              "word": "defeat",
+              "start": 3.04,
+              "end": 3.36
+            },
+            {
+              "word": "it",
+              "start": 3.36,
+              "end": 3.54
+            },
+            {
+              "word": "before",
+              "start": 3.54,
+              "end": 3.74
+            },
+            {
+              "word": "continuing.",
+              "start": 3.74,
+              "end": 4.38
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 28,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-028-0-a.wav",
+          "expected": "He can ask whether it points to a task he can perform, a question he can ask, or an outcome he cannot control.",
+          "agreement": 1.0,
+          "words": [
+            {
+              "word": "He",
+              "start": 0.0,
+              "end": 0.1
+            },
+            {
+              "word": "can",
+              "start": 0.1,
+              "end": 0.28
+            },
+            {
+              "word": "ask",
+              "start": 0.28,
+              "end": 0.46
+            },
+            {
+              "word": "whether",
+              "start": 0.46,
+              "end": 0.72
+            },
+            {
+              "word": "it",
+              "start": 0.72,
+              "end": 0.94
+            },
+            {
+              "word": "points",
+              "start": 0.94,
+              "end": 1.14
+            },
+            {
+              "word": "to",
+              "start": 1.14,
+              "end": 1.46
+            },
+            {
+              "word": "a",
+              "start": 1.46,
+              "end": 1.52
+            },
+            {
+              "word": "task",
+              "start": 1.52,
+              "end": 1.76
+            },
+            {
+              "word": "he",
+              "start": 1.76,
+              "end": 2.04
+            },
+            {
+              "word": "can",
+              "start": 2.04,
+              "end": 2.18
+            },
+            {
+              "word": "perform,",
+              "start": 2.18,
+              "end": 2.48
+            },
+            {
+              "word": "a",
+              "start": 3.08,
+              "end": 3.14
+            },
+            {
+              "word": "question",
+              "start": 3.14,
+              "end": 3.44
+            },
+            {
+              "word": "he",
+              "start": 3.44,
+              "end": 3.74
+            },
+            {
+              "word": "can",
+              "start": 3.74,
+              "end": 3.88
+            },
+            {
+              "word": "ask,",
+              "start": 3.88,
+              "end": 4.18
+            },
+            {
+              "word": "or",
+              "start": 4.5,
+              "end": 4.68
+            },
+            {
+              "word": "an",
+              "start": 4.68,
+              "end": 4.78
+            },
+            {
+              "word": "outcome",
+              "start": 4.78,
+              "end": 4.94
+            },
+            {
+              "word": "he",
+              "start": 4.94,
+              "end": 5.32
+            },
+            {
+              "word": "cannot",
+              "start": 5.32,
+              "end": 5.56
+            },
+            {
+              "word": "control.",
+              "start": 5.56,
+              "end": 5.96
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        },
+        {
+          "shot": 29,
+          "line": 0,
+          "part": "main",
+          "file": "build/voice/vo-029-0-a.wav",
+          "expected": "Thinking becomes useful again when it serves those distinctions; the goal is not an empty mind, but a mind that can finish a job.",
+          "agreement": 1.0,
+          "words": [
+            {
+              "word": "Thinking",
+              "start": 0.0,
+              "end": 0.2
+            },
+            {
+              "word": "becomes",
+              "start": 0.2,
+              "end": 0.46
+            },
+            {
+              "word": "useful",
+              "start": 0.46,
+              "end": 0.94
+            },
+            {
+              "word": "again",
+              "start": 0.94,
+              "end": 1.4
+            },
+            {
+              "word": "when",
+              "start": 1.4,
+              "end": 1.66
+            },
+            {
+              "word": "it",
+              "start": 1.66,
+              "end": 1.8
+            },
+            {
+              "word": "serves",
+              "start": 1.8,
+              "end": 2.06
+            },
+            {
+              "word": "those",
+              "start": 2.06,
+              "end": 2.48
+            },
+            {
+              "word": "distinctions.",
+              "start": 2.48,
+              "end": 2.96
+            },
+            {
+              "word": "The",
+              "start": 4.08,
+              "end": 4.14
+            },
+            {
+              "word": "goal",
+              "start": 4.14,
+              "end": 4.34
+            },
+            {
+              "word": "is",
+              "start": 4.34,
+              "end": 4.66
+            },
+            {
+              "word": "not",
+              "start": 4.66,
+              "end": 4.82
+            },
+            {
+              "word": "an",
+              "start": 4.82,
+              "end": 4.94
+            },
+            {
+              "word": "empty",
+              "start": 4.94,
+              "end": 5.2
+            },
+            {
+              "word": "mind,",
+              "start": 5.2,
+              "end": 5.42
+            },
+            {
+              "word": "but",
+              "start": 5.92,
+              "end": 6.08
+            },
+            {
+              "word": "a",
+              "start": 6.08,
+              "end": 6.16
+            },
+            {
+              "word": "mind",
+              "start": 6.16,
+              "end": 6.44
+            },
+            {
+              "word": "that",
+              "start": 6.44,
+              "end": 6.64
+            },
+            {
+              "word": "can",
+              "start": 6.64,
+              "end": 6.8
+            },
+            {
+              "word": "finish",
+              "start": 6.8,
+              "end": 7.1
+            },
+            {
+              "word": "a",
+              "start": 7.1,
+              "end": 7.34
+            },
+            {
+              "word": "job.",
+              "start": 7.34,
+              "end": 7.62
+            }
+          ],
+          "negation_changed": false,
+          "passed": true
+        }
+      ]
+    }
+  ]
+}
