@@ -1,5 +1,5 @@
 name: Inspect production rig in motion
-# Iteration 6: a real typing device on cafe tables and lap surfaces.
+# Iteration 7: leave time to observe the planted stop before the next shot.
 on:
   workflow_dispatch:
   push:
@@ -25,7 +25,7 @@ jobs:
           mkdir -p motion-review
           node render/render.mjs --film examples/rig-review.json --out motion-review/rig.mp4 --width 1280 --fps 30
           ffmpeg -v error -i motion-review/rig.mp4 -f null -
-          node render/render.mjs --film examples/rig-review.json --stills motion-review/frames --times "0.6,0.8,1.0,1.2,5.6,5.8,6.0,6.2,10.0,13.5,16.5,20.0,24.0,27.0,28.0,29.0,32.0,35.2,36.3,38.0,39.3,42.0,44.0" --width 960
+          node render/render.mjs --film examples/rig-review.json --stills motion-review/frames --times "0.6,0.8,1.0,1.2,4.8,4.95,5.1,5.4,7.1,7.3,7.5,7.7,10.0,12.0,15.0,18.0,21.5,25.5,28.5,30.5,34.0,37.0,38.8,40.0,41.5,44.0,45.5" --width 960
           python3 - <<'PY'
           import base64
           from pathlib import Path
