@@ -1,0 +1,388 @@
+[
+ {
+  "round": 1,
+  "reviewer": "groq:qwen/qwen3.8-27b",
+  "review": {
+   "issues": [
+    {
+     "severity": "major",
+     "beats": [
+      4,
+      5,
+      6
+     ],
+     "revise": [
+      4,
+      5,
+      6
+     ],
+     "problem": "The narrative logic is fractured and repetitive. Beat 4 concludes with the misunderstanding resolved and Alex feeling lighter. Beat 5 then resets the state, showing Alex still spiraling in a 'void' and imagining Jamie is annoyed, contradicting the resolution in Beat 4. Beat 6 then restarts the interaction, having Alex type a new message proposing a meeting, which is redundant because Beat 4 already established they were communicating and resolving the issue. The sequence fails to maintain the factual state of the conversation.",
+     "repair": "Restructure the sequence to show a continuous progression. Beat 4 should show Alex sending the initial honest message and receiving Jamie's clarifying question (not a full resolution yet). Beat 5 should depict the internal struggle of interpreting that question (the 'void' of doubt) where Alex realizes he is rehearsing worst-case scenarios rather than analyzing facts. Beat 6 should show Alex responding to that specific question with a concrete proposal (the meeting), leading to the final resolution. This preserves the 'rehearsal vs. research' theme without resetting the plot."
+    },
+    {
+     "severity": "minor",
+     "beats": [
+      2
+     ],
+     "revise": [
+      2
+     ],
+     "problem": "The narration in Beat 2 states 'The office lights flicker as Alex rewrites the same paragraph,' which is a visual metaphor that does not clearly carry the narration's point about mental rehearsal. Flickering lights are an external, arbitrary event that distracts from the internal psychological state being described.",
+     "repair": "Replace the flickering lights with a visual action that mirrors the internal loop, such as Alex’s cursor blinking repeatedly or his finger hovering over the backspace key, to visually represent the 'rehearsal' without introducing unrelated environmental changes."
+    }
+   ],
+   "strengths": [
+    "The core distinction between 'gathering new information' and 'rehearsing possibilities' is clearly defined and central to the argument.",
+    "The inclusion of the objection that hard-to-reverse decisions deserve scrutiny (Beat 3) adds necessary nuance and prevents the essay from being a simplistic 'stop thinking' slogan.",
+    "The use of specific, grounded actions (typing, deleting, reading reports) effectively anchors the abstract psychological concept in observable behavior."
+   ]
+  },
+  "edits": [
+   {
+    "beat": 2,
+    "changes": {
+     "narration": [
+      "Alex pulls up the report, eyes scanning figures for the first time.",
+      "He pauses, then imagines every possible reaction to the numbers.",
+      "Jamie watches, noting the sudden shift from data to endless scenarios.",
+      "Alex’s cursor blinks repeatedly as he rewrites the same paragraph, each edit a rehearsal.",
+      "He realizes the loop is not new information but a mental rehearsal of outcomes.",
+      "Recognizing this, he decides to stop rehearsing and simply read the facts.",
+      "The room quiets, and clarity settles in."
+     ]
+    }
+   },
+   {
+    "beat": 4,
+    "changes": {
+     "what_happens": "Alex types a brief, honest message to Jamie, still unsure of the outcome. He hesitates, then hits send. Jamie reads it, smiles, and replies with a clarifying question rather than a full answer, keeping the conversation open.",
+     "narration": [
+      "Alex’s fingers pause on the send button, the screen’s blue glow reflecting a flicker of doubt.",
+      "He writes, “I’m not sure what I should do, but I’ll try my best.”",
+      "Jamie’s reply arrives: “Can you tell me what part feels most uncertain for you?”",
+      "The exchange shows that honest uncertainty can be shared without spiraling into endless rehearsal.",
+      "Their dialogue opens a space for clarification, illustrating that clarity comes from asking questions, not from instantly resolving the loop."
+     ]
+    }
+   },
+   {
+    "beat": 5,
+    "changes": {
+     "what_happens": "Alex reads Jamie’s clarifying question and feels a surge of doubt, his mind flickering between worst‑case interpretations and the actual words on the screen.",
+     "narration": [
+      "Alex’s eyes scan Jamie’s message: “Can you tell me what part feels most uncertain for you?”",
+      "Instead of jumping to imagined accusations, he notices the question is an invitation to explore the real issue.",
+      "A vague silhouette of doubt appears, but this time it mirrors his own rehearsals, not Jamie’s feelings.",
+      "He catches himself looping over “What if she thinks I’m incompetent?” and pulls back to the concrete request she made.",
+      "Recognizing the rehearsal, Alex steadies his breath and focuses on the fact that Jamie is asking for clarification, not judging him.",
+      "The moment highlights that misunderstanding often stems from our own internal replay, not from the other person’s intent."
+     ]
+    }
+   },
+   {
+    "beat": 6,
+    "changes": {
+     "what_happens": "Alex and Jamie sit across a small table. Jamie’s clarifying question is on the screen: “Can you tell me what part feels most uncertain for you?” Alex reads it, notices his mind slipping into worst‑case rehearsals, and decides to answer directly. He types, “I’m unsure about the timeline for the next milestone. Could we meet tomorrow at 10 am to sort it out?” He pauses, feels the familiar tug of doubt, then presses send. Jamie smiles, replies “Perfect, see you then,” and they discuss the plan while sipping coffee.",
+     "narration": [
+      "Alex reads Jamie’s clarifying question, “Can you tell me what part feels most uncertain for you?”",
+      "He catches himself looping over imagined accusations and instead focuses on the concrete issue she raised.",
+      "He types a concise reply that acknowledges his uncertainty and proposes a specific next step.",
+      "He pauses, feels the familiar tug of doubt, then presses send.",
+      "Jamie’s smile widens as she replies, “Perfect, see you then.”",
+      "Their brief exchange shows that moving from endless rehearsal to a clear request creates forward momentum."
+     ],
+     "dialogue": [
+      {
+       "who": "alex",
+       "text": "I’m unsure about the timeline for the next milestone. Could we meet tomorrow at 10 am to sort it out?"
+      },
+      {
+       "who": "jamie",
+       "text": "Perfect, see you then."
+      }
+     ]
+    }
+   }
+  ],
+  "proposals": [
+   {
+    "beat": 2,
+    "data": {
+     "changes": {
+      "narration": [
+       "Alex pulls up the report, eyes scanning figures for the first time.",
+       "He pauses, then imagines every possible reaction to the numbers.",
+       "Jamie watches, noting the sudden shift from data to endless scenarios.",
+       "Alex’s cursor blinks repeatedly as he rewrites the same paragraph, each edit a rehearsal.",
+       "He realizes the loop is not new information but a mental rehearsal of outcomes.",
+       "Recognizing this, he decides to stop rehearsing and simply read the facts.",
+       "The room quiets, and clarity settles in."
+      ]
+     }
+    }
+   },
+   {
+    "beat": 4,
+    "data": {
+     "changes": {
+      "what_happens": "Alex types a brief, honest message to Jamie, still unsure of the outcome. He hesitates, then hits send. Jamie reads it, smiles, and replies with a clarifying question rather than a full answer, keeping the conversation open.",
+      "narration": [
+       "Alex’s fingers pause on the send button, the screen’s blue glow reflecting a flicker of doubt.",
+       "He writes, “I’m not sure what I should do, but I’ll try my best.”",
+       "Jamie’s reply arrives: “Can you tell me what part feels most uncertain for you?”",
+       "The exchange shows that honest uncertainty can be shared without spiraling into endless rehearsal.",
+       "Their dialogue opens a space for clarification, illustrating that clarity comes from asking questions, not from instantly resolving the loop."
+      ]
+     }
+    }
+   },
+   {
+    "beat": 5,
+    "data": {
+     "changes": {
+      "what_happens": "Alex reads Jamie’s clarifying question and feels a surge of doubt, his mind flickering between worst‑case interpretations and the actual words on the screen.",
+      "narration": [
+       "Alex’s eyes scan Jamie’s message: “Can you tell me what part feels most uncertain for you?”",
+       "Instead of jumping to imagined accusations, he notices the question is an invitation to explore the real issue.",
+       "A vague silhouette of doubt appears, but this time it mirrors his own rehearsals, not Jamie’s feelings.",
+       "He catches himself looping over “What if she thinks I’m incompetent?” and pulls back to the concrete request she made.",
+       "Recognizing the rehearsal, Alex steadies his breath and focuses on the fact that Jamie is asking for clarification, not judging him.",
+       "The moment highlights that misunderstanding often stems from our own internal replay, not from the other person’s intent."
+      ]
+     }
+    }
+   },
+   {
+    "beat": 6,
+    "data": {
+     "changes": {
+      "what_happens": "Alex and Jamie sit across a small table. Jamie’s clarifying question is on the screen: “Can you tell me what part feels most uncertain for you?” Alex reads it, notices his mind slipping into worst‑case rehearsals, and decides to answer directly. He types, “I’m unsure about the timeline for the next milestone. Could we meet tomorrow at 10 am to sort it out?” He pauses, feels the familiar tug of doubt, then presses send. Jamie smiles, replies “Perfect, see you then,” and they discuss the plan while sipping coffee.",
+      "narration": [
+       "Alex reads Jamie’s clarifying question, “Can you tell me what part feels most uncertain for you?”",
+       "He catches himself looping over imagined accusations and instead focuses on the concrete issue she raised.",
+       "He types a concise reply that acknowledges his uncertainty and proposes a specific next step.",
+       "He pauses, feels the familiar tug of doubt, then presses send.",
+       "Jamie’s smile widens as she replies, “Perfect, see you then.”",
+       "Their brief exchange shows that moving from endless rehearsal to a clear request creates forward momentum."
+      ],
+      "dialogue": [
+       {
+        "who": "alex",
+        "text": "I’m unsure about the timeline for the next milestone. Could we meet tomorrow at 10 am to sort it out?"
+       },
+       {
+        "who": "jamie",
+        "text": "Perfect, see you then."
+       }
+      ]
+     }
+    }
+   }
+  ]
+ },
+ {
+  "round": 2,
+  "reviewer": "groq:qwen/qwen3.8-27b",
+  "review": {
+   "issues": [
+    {
+     "severity": "major",
+     "beats": [
+      4,
+      5,
+      6
+     ],
+     "revise": [
+      4,
+      5,
+      6
+     ],
+     "problem": "The narrative state is contradictory and repetitive. In Beat 4, the narration claims Jamie replies with a clarifying question ('Can you tell me what part feels most uncertain for you?'), but the dialogue field shows a different, non-clarifying response ('Let's talk it over when you're ready'). Beat 5 then treats this clarifying question as a new event, ignoring that Beat 4 already established it. Beat 6 repeats the reading of this same question and the subsequent resolution, creating a loop where the same message is read and answered twice. This violates the rule that completed events must not restart.",
+     "repair": "1. In Beat 4, change the dialogue to match the narration: Jamie's reply should be the clarifying question. Remove the 'Let's talk it over' line. 2. In Beat 5, focus on Alex's internal reaction to that specific question (the doubt about being judged), without re-introducing the message as if it just arrived. 3. In Beat 6, remove the re-reading of the question. Start with Alex composing the specific answer to the timeline issue, sending it, and Jamie's final confirmation. This creates a linear flow: Send initial honest message -> Receive clarifying question -> Internal struggle -> Send specific answer -> Resolution."
+    },
+    {
+     "severity": "minor",
+     "beats": [
+      1
+     ],
+     "revise": [
+      1
+     ],
+     "problem": "The narration in Beat 1 jumps to a prescriptive conclusion ('Only by recognizing this pattern can he begin to move toward decisive action') before the story has established the distinction between rehearsal and research. This feels like a premature moral rather than an observation of the current state.",
+     "repair": "Replace the final narration line with a description of the physical or mental cost of the loop (e.g., 'The energy spent on these edits leaves him too drained to actually send the message'), saving the resolution for later beats."
+    }
+   ],
+   "strengths": [
+    "The visual distinction between 'scanning data' and 'imagining reactions' in Beat 2 is effective.",
+    "The inclusion of the objection in Beat 3 (hard decisions deserve scrutiny) adds necessary nuance to the argument against overthinking.",
+    "The specific dialogue in Beat 6 ('unsure about the timeline... meet tomorrow at 10 am') provides a concrete example of moving from vague anxiety to actionable communication."
+   ]
+  },
+  "edits": [
+   {
+    "beat": 1,
+    "changes": {
+     "narration": [
+      "Alex’s fingers hover over the keyboard, the glow of the screen reflecting in his eyes.",
+      "He writes a friendly note, then stops, eyes widening as doubt creeps in.",
+      "He deletes the last line, rewrites it more carefully, then pauses again.",
+      "Each edit feels like a rehearsal of possible outcomes rather than new information.",
+      "The cycle drains his energy, keeping him stuck in a loop of imagined responses.",
+      "The energy spent on these edits leaves him drained, and the message remains unsent."
+     ]
+    }
+   },
+   {
+    "beat": 4,
+    "changes": {
+     "dialogue": [
+      {
+       "who": "alex",
+       "text": "I’m not sure what I should do, but I’ll try my best."
+      },
+      {
+       "who": "jamie",
+       "text": "Can you tell me what part feels most uncertain for you?"
+      }
+     ]
+    }
+   },
+   {
+    "beat": 5,
+    "changes": {
+     "what_happens": "Alex reads Jamie’s clarifying question and feels a surge of doubt, his mind flickering between worst‑case interpretations and the actual words on the screen, recognizing that the misunderstanding stems from his own replay rather than Jamie’s intent.",
+     "narration": [
+      "Alex’s eyes scan Jamie’s message: “Can you tell me what part feels most uncertain for you?”",
+      "Instead of leaping to imagined accusations, he notices the question is an invitation to explore the real issue.",
+      "A vague silhouette of doubt appears, but this time it mirrors his own rehearsals, not Jamie’s feelings.",
+      "He catches himself looping over “What if she thinks I’m incompetent?” and pulls back to the concrete request she made.",
+      "Recognizing the rehearsal, Alex steadies his breath and focuses on the fact that Jamie is asking for clarification, not judging him.",
+      "The moment highlights that misunderstanding often arises from our internal replay, not from the other person’s intent."
+     ]
+    }
+   },
+   {
+    "beat": 6,
+    "changes": {
+     "what_happens": "Alex sits across the small table from Jamie, the clarifying question still displayed on his laptop: “Can you tell me what part feels most uncertain for you?” He focuses on the concrete issue, types, “I’m unsure about the timeline for the next milestone. Could we meet tomorrow at 10 am to sort it out?” He feels the familiar tug of doubt, pauses, then presses send. Jamie smiles and replies, “Perfect, see you then,” and they continue the conversation over coffee, planning the next steps.",
+     "narration": [
+      "Alex reads Jamie’s clarifying question and deliberately shifts his attention to the specific uncertainty she raised.",
+      "He types a concise reply that names his concern about the timeline and proposes a concrete meeting time.",
+      "A brief pause brings the familiar doubt, but he acknowledges it and sends the message anyway.",
+      "Jamie’s smile widens as she replies, “Perfect, see you then,” and they discuss the plan while sipping coffee."
+     ]
+    }
+   }
+  ],
+  "proposals": [
+   {
+    "beat": 1,
+    "data": {
+     "changes": {
+      "narration": [
+       "Alex’s fingers hover over the keyboard, the glow of the screen reflecting in his eyes.",
+       "He writes a friendly note, then stops, eyes widening as doubt creeps in.",
+       "He deletes the last line, rewrites it more carefully, then pauses again.",
+       "Each edit feels like a rehearsal of possible outcomes rather than new information.",
+       "The cycle drains his energy, keeping him stuck in a loop of imagined responses.",
+       "The energy spent on these edits leaves him drained, and the message remains unsent."
+      ]
+     }
+    }
+   },
+   {
+    "beat": 4,
+    "data": {
+     "changes": {
+      "dialogue": [
+       {
+        "who": "alex",
+        "text": "I’m not sure what I should do, but I’ll try my best."
+       },
+       {
+        "who": "jamie",
+        "text": "Can you tell me what part feels most uncertain for you?"
+       }
+      ]
+     }
+    }
+   },
+   {
+    "beat": 5,
+    "data": {
+     "changes": {
+      "what_happens": "Alex reads Jamie’s clarifying question and feels a surge of doubt, his mind flickering between worst‑case interpretations and the actual words on the screen, recognizing that the misunderstanding stems from his own replay rather than Jamie’s intent.",
+      "narration": [
+       "Alex’s eyes scan Jamie’s message: “Can you tell me what part feels most uncertain for you?”",
+       "Instead of leaping to imagined accusations, he notices the question is an invitation to explore the real issue.",
+       "A vague silhouette of doubt appears, but this time it mirrors his own rehearsals, not Jamie’s feelings.",
+       "He catches himself looping over “What if she thinks I’m incompetent?” and pulls back to the concrete request she made.",
+       "Recognizing the rehearsal, Alex steadies his breath and focuses on the fact that Jamie is asking for clarification, not judging him.",
+       "The moment highlights that misunderstanding often arises from our internal replay, not from the other person’s intent."
+      ]
+     }
+    }
+   },
+   {
+    "beat": 6,
+    "data": {
+     "changes": {
+      "what_happens": "Alex sits across the small table from Jamie, the clarifying question still displayed on his laptop: “Can you tell me what part feels most uncertain for you?” He focuses on the concrete issue, types, “I’m unsure about the timeline for the next milestone. Could we meet tomorrow at 10 am to sort it out?” He feels the familiar tug of doubt, pauses, then presses send. Jamie smiles and replies, “Perfect, see you then,” and they continue the conversation over coffee, planning the next steps.",
+      "narration": [
+       "Alex reads Jamie’s clarifying question and deliberately shifts his attention to the specific uncertainty she raised.",
+       "He types a concise reply that names his concern about the timeline and proposes a concrete meeting time.",
+       "A brief pause brings the familiar doubt, but he acknowledges it and sends the message anyway.",
+       "Jamie’s smile widens as she replies, “Perfect, see you then,” and they discuss the plan while sipping coffee."
+      ]
+     }
+    }
+   }
+  ]
+ },
+ {
+  "round": 3,
+  "reviewer": "groq:qwen/qwen3.8-27b",
+  "review": {
+   "issues": [
+    {
+     "severity": "major",
+     "beats": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "revise": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "problem": "The narrative lacks a coherent factual thread. Beat 1 shows Alex drafting a message in a cafe. Beat 2 shifts to an office where he reads a report, with no transition. Beat 3 introduces a 'Project Deadline' sticky note, implying a new context. Beat 4 returns to the cafe, but the message sent is a generic statement of uncertainty ('I'm not sure what I should do'), which does not logically follow from the specific work context established in Beats 2-3, nor does it resolve the initial 'awkward conversation' premise. Beat 5 has Alex reacting to a question about uncertainty, but Beat 6 suddenly introduces a specific 'timeline for the next milestone' that was never established in the previous beats. The 'misunderstanding' in Beat 5 is internal and vague, not a specific conversational misunderstanding as requested. The story jumps between contexts (cafe/office) and topics (generic doubt/specific project) without logical connection, failing to show a single continuous event where a specific misunderstanding is resolved through conversation.",
+     "repair": "Unify the narrative around a single specific event: Alex is in a cafe with Jamie after an awkward conversation about a project deadline. Beat 1: Alex types a defensive/overthought reply to Jamie's earlier comment about the deadline. Beat 2: Contrast: Instead of rehearsing her reaction, he looks at the actual project data on his laptop (gathering info). Beat 3: Objection: He worries that checking the data is 'rushing' a hard decision, but Jamie points out that looking at facts is different from looping. Beat 4: He sends a specific, honest message: 'I was overthinking your comment. I checked the timeline, and we are tight. Can we adjust the scope?' Beat 5: Jamie replies, 'That makes sense. I was just worried we'd miss the date.' This resolves the specific misunderstanding (she was worried, he thought she was criticizing). Beat 6: They agree on a new plan. Ensure all beats reference the same 'project deadline' and 'cafe' setting to maintain factual continuity."
+    },
+    {
+     "severity": "minor",
+     "beats": [
+      5
+     ],
+     "revise": [
+      5
+     ],
+     "problem": "Beat 5 describes an 'inner' mode in a 'void' where Alex recognizes his own replay. This is abstract and does not show the 'conversation' resolving the misunderstanding as requested. The misunderstanding is internal, not interpersonal.",
+     "repair": "Change Beat 5 to show the actual exchange. Alex sends the specific message from Beat 4. Jamie's reply arrives on screen. Alex reads it and sees that her concern was practical (missing the date), not personal (judging his competence). This visualizes the resolution of the specific misunderstanding through the text of the conversation."
+    }
+   ],
+   "strengths": [
+    "The core philosophical distinction between 'rehearsal' and 'research' is clearly defined in the idea section.",
+    "The visual metaphor of the 'inner voice' as a hum is a good device for representing the overthinking loop.",
+    "The cast and setting are simple and focused, allowing for clear visual storytelling."
+   ]
+  },
+  "edits": []
+ }
+]

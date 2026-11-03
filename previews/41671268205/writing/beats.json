@@ -1,0 +1,285 @@
+{
+ "title": "Why Smart People Overthink Everything",
+ "idea": {
+  "definition": "Overthinking is the repetitive rehearsal of possible outcomes, not the gathering of new information.",
+  "mechanism": "It keeps the mind stuck in a loop of imagined scenarios, draining energy and delaying action.",
+  "turn": "When we distinguish rehearsal from research, we free our decisions and reduce distress.",
+  "thinkers": "Maladaptive rumination, self‑critical rumination"
+ },
+ "approach": "Show Alex’s day‑to‑day actions and inner monologue to expose the difference between gathering facts and rehearsing possibilities.",
+ "cast": [
+  {
+   "id": "alex",
+   "kind": "hero",
+   "top": "blue",
+   "hair": "short",
+   "hat": "none"
+  },
+  {
+   "id": "jamie",
+   "kind": "friend",
+   "top": "green",
+   "hair": "long",
+   "hat": "none"
+  },
+  {
+   "id": "demon",
+   "kind": "demon"
+  }
+ ],
+ "device": {
+  "type": "none",
+  "items": []
+ },
+ "inner_voice": {
+  "represents": "overthinking loop",
+  "color": "#ffcccc"
+ },
+ "beats": [
+  {
+   "idea": "overthinking",
+   "mode": "vignette",
+   "where": "cafe",
+   "seconds": 60,
+   "who": [
+    "alex"
+   ],
+   "emotion": "anxious",
+   "what_happens": "Alex sits at a small table, laptop open. He types a draft message, pauses, deletes a sentence, retypes it, then hesitates again.",
+   "narration": [
+    "Alex’s fingers hover over the keyboard, the glow of the screen reflecting in his eyes.",
+    "He writes a friendly note, then stops, eyes widening as doubt creeps in.",
+    "He deletes the last line, rewrites it more carefully, then pauses again.",
+    "Each edit feels like a rehearsal of possible outcomes rather than new information.",
+    "The cycle drains his energy, keeping him stuck in a loop of imagined responses.",
+    "The energy spent on these edits leaves him drained, and the message remains unsent."
+   ],
+   "time": "midday",
+   "weather": "overcast",
+   "grade": "soft cream",
+   "dialogue": []
+  },
+  {
+   "idea": "rehearsal vs research",
+   "mode": "contrast",
+   "where": "office",
+   "seconds": 60,
+   "who": [
+    "alex",
+    "jamie"
+   ],
+   "emotion": "contemplative",
+   "what_happens": "Alex reads data, then replays scenarios",
+   "narration": [
+    "Alex pulls up the report, eyes scanning figures for the first time.",
+    "He pauses, then imagines every possible reaction to the numbers.",
+    "Jamie watches, noting the sudden shift from data to endless scenarios.",
+    "Alex’s cursor blinks repeatedly as he rewrites the same paragraph, each edit a rehearsal.",
+    "He realizes the loop is not new information but a mental rehearsal of outcomes.",
+    "Recognizing this, he decides to stop rehearsing and simply read the facts.",
+    "The room quiets, and clarity settles in."
+   ],
+   "time": "midday",
+   "weather": "overcast",
+   "grade": "soft cream",
+   "dialogue": [
+    {
+     "who": "jamie",
+     "text": "You look like you're stuck in a loop."
+    }
+   ],
+   "inner_voice_line": "The loop hums in the back of Alex's mind.",
+   "scene": {
+    "base": "room",
+    "elements": [
+     {
+      "type": "desk",
+      "x": 20
+     },
+     {
+      "type": "chair",
+      "x": 60
+     },
+     {
+      "type": "window",
+      "x": 80
+     },
+     {
+      "type": "lamp",
+      "x": 50
+     }
+    ]
+   },
+   "demon_line": "The loop hums in the back of Alex's mind."
+  },
+  {
+   "idea": "objection",
+   "mode": "lesson",
+   "where": "desk",
+   "seconds": 60,
+   "who": [
+    "alex",
+    "jamie"
+   ],
+   "emotion": "uneasy",
+   "what_happens": "Alex sits at a cluttered desk, a sticky note reads “Project Deadline.” He pauses, eyes flicking to the calendar, then back to the note.",
+   "narration": [
+    "Alex’s hand hovers over the note, the weight of the deadline pressing in.",
+    "He thinks, “If I delay, I’ll miss the window; if I rush, I’ll make a mistake.”",
+    "Jamie enters, sees Alex’s stalled posture, and says, “You’re weighing every tiny risk.”",
+    "The pause reveals a common objection: hard decisions deserve deep scrutiny, not endless rehearsal.",
+    "Alex nods, realizing the tension between careful analysis and productive action.",
+    "The lesson is that thoughtful investigation is different from looping over imagined outcomes."
+   ],
+   "time": "afternoon",
+   "weather": "cloudy",
+   "grade": "soft cream",
+   "dialogue": [
+    {
+     "who": "jamie",
+     "text": "You’re weighing every tiny risk."
+    }
+   ],
+   "inner_voice_line": "The looping hum grows louder as Alex considers each scenario.",
+   "demon_line": "The looping hum grows louder as Alex considers each scenario."
+  },
+  {
+   "idea": "resolution",
+   "mode": "story",
+   "where": "cafe",
+   "seconds": 60,
+   "who": [
+    "alex",
+    "jamie"
+   ],
+   "emotion": "uncertain",
+   "what_happens": "Alex types a brief, honest message to Jamie, still unsure of the outcome. He hesitates, then hits send. Jamie reads it, smiles, and replies with a clarifying question rather than a full answer, keeping the conversation open.",
+   "narration": [
+    "Alex’s fingers pause on the send button, the screen’s blue glow reflecting a flicker of doubt.",
+    "He writes, “I’m not sure what I should do, but I’ll try my best.”",
+    "Jamie’s reply arrives: “Can you tell me what part feels most uncertain for you?”",
+    "The exchange shows that honest uncertainty can be shared without spiraling into endless rehearsal.",
+    "Their dialogue opens a space for clarification, illustrating that clarity comes from asking questions, not from instantly resolving the loop."
+   ],
+   "time": "late afternoon",
+   "weather": "overcast",
+   "grade": "soft cream",
+   "dialogue": [
+    {
+     "who": "alex",
+     "text": "I’m not sure what I should do, but I’ll try my best."
+    },
+    {
+     "who": "jamie",
+     "text": "Can you tell me what part feels most uncertain for you?"
+    }
+   ],
+   "scene": {
+    "base": "room",
+    "elements": [
+     {
+      "type": "table",
+      "x": 40
+     },
+     {
+      "type": "chair",
+      "x": 70
+     },
+     {
+      "type": "lamp",
+      "x": 55
+     },
+     {
+      "type": "window",
+      "x": 80
+     }
+    ]
+   }
+  },
+  {
+   "idea": "misunderstanding",
+   "mode": "inner",
+   "where": "void",
+   "seconds": 60,
+   "who": [
+    "alex"
+   ],
+   "emotion": "confused",
+   "what_happens": "Alex reads Jamie’s clarifying question and feels a surge of doubt, his mind flickering between worst‑case interpretations and the actual words on the screen, recognizing that the misunderstanding stems from his own replay rather than Jamie’s intent.",
+   "narration": [
+    "Alex’s eyes scan Jamie’s message: “Can you tell me what part feels most uncertain for you?”",
+    "Instead of leaping to imagined accusations, he notices the question is an invitation to explore the real issue.",
+    "A vague silhouette of doubt appears, but this time it mirrors his own rehearsals, not Jamie’s feelings.",
+    "He catches himself looping over “What if she thinks I’m incompetent?” and pulls back to the concrete request she made.",
+    "Recognizing the rehearsal, Alex steadies his breath and focuses on the fact that Jamie is asking for clarification, not judging him.",
+    "The moment highlights that misunderstanding often arises from our internal replay, not from the other person’s intent."
+   ],
+   "time": "late afternoon",
+   "weather": "overcast",
+   "grade": "soft cream",
+   "inner_voice_line": "The loop hums, but the silence that follows is clearer.",
+   "dialogue": [],
+   "demon_line": "The loop hums, but the silence that follows is clearer."
+  },
+  {
+   "idea": "clarity",
+   "mode": "story",
+   "where": "cafe",
+   "seconds": 60,
+   "who": [
+    "alex",
+    "jamie"
+   ],
+   "emotion": "hopeful",
+   "what_happens": "Alex sits across the small table from Jamie, the clarifying question still displayed on his laptop: “Can you tell me what part feels most uncertain for you?” He focuses on the concrete issue, types, “I’m unsure about the timeline for the next milestone. Could we meet tomorrow at 10 am to sort it out?” He feels the familiar tug of doubt, pauses, then presses send. Jamie smiles and replies, “Perfect, see you then,” and they continue the conversation over coffee, planning the next steps.",
+   "narration": [
+    "Alex reads Jamie’s clarifying question and deliberately shifts his attention to the specific uncertainty she raised.",
+    "He types a concise reply that names his concern about the timeline and proposes a concrete meeting time.",
+    "A brief pause brings the familiar doubt, but he acknowledges it and sends the message anyway.",
+    "Jamie’s smile widens as she replies, “Perfect, see you then,” and they discuss the plan while sipping coffee."
+   ],
+   "time": "late afternoon",
+   "weather": "overcast",
+   "grade": "soft cream",
+   "dialogue": [
+    {
+     "who": "alex",
+     "text": "I’m unsure about the timeline for the next milestone. Could we meet tomorrow at 10 am to sort it out?"
+    },
+    {
+     "who": "jamie",
+     "text": "Perfect, see you then."
+    }
+   ]
+  }
+ ],
+ "youtube_titles": [
+  "Why Smart People Overthink—and How to Stop It",
+  "The Hidden Cost of Overthinking: A Real‑Life Story",
+  "From Endless Rehearsal to Real Action: Alex’s Journey"
+ ],
+ "description": "In this animated essay we follow Alex as he wrestles with the habit of overthinking. Through everyday scenes—typing drafts, scrolling reports, and a candid coffee‑shop chat—we see the difference between gathering new information and rehearsing the same imagined outcomes. The film shows how recognizing the loop can free us to act, even on decisions that feel high‑stakes.\n\nThe story also addresses the common objection that important, hard‑to‑reverse choices deserve deep scrutiny. By contrasting thoughtful research with endless mental rehearsal, Alex learns to communicate honest uncertainty and move forward without spiraling. #Overthinking #DecisionMaking #MentalHealth #Productivity #AnimatedEssay\n",
+ "tags": [
+  "overthinking",
+  "rumination",
+  "decision making",
+  "mental health",
+  "productivity",
+  "animated essay",
+  "self‑criticism",
+  "psychology",
+  "communication",
+  "Alex and Jamie"
+ ],
+ "pinned_comment": "What’s the smallest step you’ve taken to break an overthinking loop, and how did it change the outcome?",
+ "thumbnail_words": [
+  "Stop",
+  "Overthinking"
+ ],
+ "music_prompt": "A gentle, minimalist piano‑and‑strings instrumental that builds subtly during moments of realization, then resolves into a calm, hopeful chord progression.",
+ "cold_open": "",
+ "ending": "",
+ "_title": "Why Smart People Overthink Everything. Direction from the producer: Challenge the premise that overthinking proves intelligence. Follow Alex revising a message after an awkward conversation. Distinguish gathering new information from rehearsing the same possibilities. Show actual typing, reaching, reading, walking and conversation. Include the objection that important hard-to-reverse decisions deserve investigation. Alex sends a specific honest message while still uncertain. A small misunderstanding is resolved through conversation, not a magical cure. Explain reasons and consequences, not atmospheric slogans. Preserve natural fictional dialogue. Do not invent statistics, attributed quotations or diagnoses.",
+ "_visual_review_notes": [],
+ "_writer": "groq:openai/gpt-oss-120b"
+}

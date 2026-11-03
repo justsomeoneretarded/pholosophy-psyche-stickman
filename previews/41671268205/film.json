@@ -1,0 +1,2134 @@
+{
+ "title": "Why Smart People Overthink Everything",
+ "logline": "Show Alex’s day‑to‑day actions and inner monologue to expose the difference between gathering facts and rehearsing possibilities.",
+ "demon_color": "#ffcccc",
+ "narrator": "male",
+ "hud": null,
+ "music": {
+  "prompt": "A gentle, minimalist piano‑and‑strings instrumental that builds subtly during moments of realization, then resolves into a calm, hopeful chord progression."
+ },
+ "cast": {
+  "hero": {
+   "kind": "hero"
+  },
+  "demon": {
+   "kind": "demon"
+  },
+  "alex": {
+   "kind": "hero",
+   "top": "blue",
+   "hair": "short"
+  },
+  "jamie": {
+   "kind": "friend",
+   "top": "green",
+   "hair": "long"
+  }
+ },
+ "shots": [
+  {
+   "set": "cafe",
+   "dur": 14,
+   "camera": {
+    "frame": "wide",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "type",
+     "mood": "neutral",
+     "facing": 1,
+     "seated": true
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Alex’s fingers hover over the keyboard, the glow of the screen reflecting in his eyes.",
+     "at": 0.25
+    }
+   ],
+   "acting_changes": [
+    {
+     "actor": "alex",
+     "from": "sit",
+     "to": "type",
+     "direction": "He types a draft message, pauses, deletes a sentence, retypes it,"
+    }
+   ],
+   "beat": 1,
+   "sfx": [],
+   "items": [],
+   "transition": "fade"
+  },
+  {
+   "set": "cafe",
+   "dur": 14,
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "type",
+     "mood": "neutral",
+     "facing": 1,
+     "seated": true
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He writes a friendly note, then stops, eyes widening as doubt creeps in.",
+     "at": 0.25
+    }
+   ],
+   "acting_changes": [
+    {
+     "actor": "alex",
+     "from": "sit",
+     "to": "type",
+     "direction": "He types a draft message, pauses, deletes a sentence, retypes it,"
+    }
+   ],
+   "beat": 1,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "cafe",
+   "dur": 14,
+   "camera": {
+    "frame": "close",
+    "on": "alex",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "type",
+     "mood": "neutral",
+     "facing": 1,
+     "seated": true
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He deletes the last line, rewrites it more carefully, then pauses again.",
+     "at": 0.25
+    }
+   ],
+   "acting_changes": [
+    {
+     "actor": "alex",
+     "from": "sit",
+     "to": "type",
+     "direction": "He types a draft message, pauses, deletes a sentence, retypes it,"
+    }
+   ],
+   "beat": 1,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "cafe",
+   "dur": 14,
+   "camera": {
+    "frame": "wide",
+    "on": "alex",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "type",
+     "mood": "neutral",
+     "facing": 1,
+     "seated": true
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Each edit feels like a rehearsal of possible outcomes rather than new information.",
+     "at": 0.25
+    }
+   ],
+   "acting_changes": [
+    {
+     "actor": "alex",
+     "from": "sit",
+     "to": "type",
+     "direction": "He types a draft message, pauses, deletes a sentence, retypes it,"
+    }
+   ],
+   "beat": 1,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "cafe",
+   "dur": 14,
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "type",
+     "mood": "neutral",
+     "facing": 1,
+     "seated": true
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The cycle drains his energy, keeping him stuck in a loop of imagined responses.",
+     "at": 0.25
+    }
+   ],
+   "acting_changes": [
+    {
+     "actor": "alex",
+     "from": "sit",
+     "to": "type",
+     "direction": "He types a draft message, pauses, deletes a sentence, retypes it,"
+    }
+   ],
+   "beat": 1,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "cafe",
+   "dur": 14,
+   "camera": {
+    "frame": "close",
+    "on": "alex",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "type",
+     "mood": "neutral",
+     "facing": 1,
+     "seated": true
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The energy spent on these edits leaves him drained, and the message remains unsent.",
+     "at": 0.25
+    }
+   ],
+   "acting_changes": [
+    {
+     "actor": "alex",
+     "from": "sit",
+     "to": "type",
+     "direction": "He types a draft message, pauses, deletes a sentence, retypes it,"
+    }
+   ],
+   "beat": 1,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "scene": {
+    "base": "room",
+    "elements": [
+     {
+      "type": "desk",
+      "x": 20
+     },
+     {
+      "type": "chair",
+      "x": 60
+     },
+     {
+      "type": "window",
+      "x": 80
+     },
+     {
+      "type": "lamp",
+      "x": 50
+     }
+    ]
+   },
+   "set": "office",
+   "dur": 14,
+   "camera": {
+    "frame": "two",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 38.0,
+     "pose": "read",
+     "mood": "neutral",
+     "facing": 1,
+     "seated": true,
+     "hold": "book",
+     "target": "jamie"
+    },
+    {
+     "id": "jamie",
+     "x": 62.0,
+     "pose": "talk",
+     "mood": "neutral",
+     "facing": -1,
+     "seated": true,
+     "target": "alex"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Alex pulls up the report, eyes scanning figures for the first time.",
+     "at": 0.25
+    },
+    {
+     "who": "jamie",
+     "text": "You look like you're stuck in a loop.",
+     "at": 0.4
+    }
+   ],
+   "acting_changes": [
+    {
+     "actor": "alex",
+     "from": "sit",
+     "to": "read",
+     "direction": "Alex reads data,"
+    },
+    {
+     "actor": "jamie",
+     "from": "sit",
+     "to": "talk",
+     "direction": "character dialogue"
+    }
+   ],
+   "beat": 2,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "scene": {
+    "base": "room",
+    "elements": [
+     {
+      "type": "desk",
+      "x": 20
+     },
+     {
+      "type": "chair",
+      "x": 60
+     },
+     {
+      "type": "window",
+      "x": 80
+     },
+     {
+      "type": "lamp",
+      "x": 50
+     }
+    ]
+   },
+   "set": "office",
+   "dur": 14,
+   "camera": {
+    "frame": "two",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 38.0,
+     "pose": "read",
+     "mood": "neutral",
+     "facing": 1,
+     "seated": true,
+     "hold": "book",
+     "target": "jamie"
+    },
+    {
+     "id": "jamie",
+     "x": 62.0,
+     "pose": "sit",
+     "mood": "neutral",
+     "facing": -1
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He pauses, then imagines every possible reaction to the numbers.",
+     "at": 0.25
+    }
+   ],
+   "acting_changes": [
+    {
+     "actor": "alex",
+     "from": "sit",
+     "to": "read",
+     "direction": "Alex reads data,"
+    }
+   ],
+   "beat": 2,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "scene": {
+    "base": "room",
+    "elements": [
+     {
+      "type": "desk",
+      "x": 20
+     },
+     {
+      "type": "chair",
+      "x": 60
+     },
+     {
+      "type": "window",
+      "x": 80
+     },
+     {
+      "type": "lamp",
+      "x": 50
+     }
+    ]
+   },
+   "set": "office",
+   "dur": 14,
+   "camera": {
+    "frame": "close",
+    "on": "alex",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 38.0,
+     "pose": "read",
+     "mood": "neutral",
+     "facing": 1,
+     "seated": true,
+     "hold": "book",
+     "target": "jamie"
+    },
+    {
+     "id": "jamie",
+     "x": 62.0,
+     "pose": "sit",
+     "mood": "neutral",
+     "facing": -1
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Jamie watches, noting the sudden shift from data to endless scenarios.",
+     "at": 0.25
+    }
+   ],
+   "acting_changes": [
+    {
+     "actor": "alex",
+     "from": "sit",
+     "to": "read",
+     "direction": "Alex reads data,"
+    }
+   ],
+   "beat": 2,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "scene": {
+    "base": "room",
+    "elements": [
+     {
+      "type": "desk",
+      "x": 20
+     },
+     {
+      "type": "chair",
+      "x": 60
+     },
+     {
+      "type": "window",
+      "x": 80
+     },
+     {
+      "type": "lamp",
+      "x": 50
+     }
+    ]
+   },
+   "set": "office",
+   "dur": 14,
+   "camera": {
+    "frame": "wide",
+    "on": "alex",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 38.0,
+     "pose": "read",
+     "mood": "neutral",
+     "facing": 1,
+     "seated": true,
+     "hold": "book",
+     "target": "jamie"
+    },
+    {
+     "id": "jamie",
+     "x": 62.0,
+     "pose": "sit",
+     "mood": "neutral",
+     "facing": -1
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Alex’s cursor blinks repeatedly as he rewrites the same paragraph, each edit a rehearsal.",
+     "at": 0.25
+    }
+   ],
+   "acting_changes": [
+    {
+     "actor": "alex",
+     "from": "sit",
+     "to": "read",
+     "direction": "Alex reads data,"
+    }
+   ],
+   "beat": 2,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "scene": {
+    "base": "room",
+    "elements": [
+     {
+      "type": "desk",
+      "x": 20
+     },
+     {
+      "type": "chair",
+      "x": 60
+     },
+     {
+      "type": "window",
+      "x": 80
+     },
+     {
+      "type": "lamp",
+      "x": 50
+     }
+    ]
+   },
+   "set": "office",
+   "dur": 14,
+   "camera": {
+    "frame": "wide",
+    "on": "alex",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 38.0,
+     "pose": "read",
+     "mood": "neutral",
+     "facing": 1,
+     "seated": true,
+     "hold": "book",
+     "target": "jamie"
+    },
+    {
+     "id": "jamie",
+     "x": 62.0,
+     "pose": "sit",
+     "mood": "neutral",
+     "facing": -1
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He realizes the loop is not new information but a mental rehearsal of outcomes.",
+     "at": 0.25
+    }
+   ],
+   "acting_changes": [
+    {
+     "actor": "alex",
+     "from": "sit",
+     "to": "read",
+     "direction": "Alex reads data,"
+    }
+   ],
+   "beat": 2,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "scene": {
+    "base": "room",
+    "elements": [
+     {
+      "type": "desk",
+      "x": 20
+     },
+     {
+      "type": "chair",
+      "x": 60
+     },
+     {
+      "type": "window",
+      "x": 80
+     },
+     {
+      "type": "lamp",
+      "x": 50
+     }
+    ]
+   },
+   "set": "office",
+   "dur": 14,
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 38.0,
+     "pose": "read",
+     "mood": "neutral",
+     "facing": 1,
+     "seated": true,
+     "hold": "book",
+     "target": "jamie"
+    },
+    {
+     "id": "jamie",
+     "x": 62.0,
+     "pose": "sit",
+     "mood": "neutral",
+     "facing": -1
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Recognizing this, he decides to stop rehearsing and simply read the facts.",
+     "at": 0.25
+    }
+   ],
+   "acting_changes": [
+    {
+     "actor": "alex",
+     "from": "sit",
+     "to": "read",
+     "direction": "Alex reads data,"
+    }
+   ],
+   "beat": 2,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "scene": {
+    "base": "room",
+    "elements": [
+     {
+      "type": "desk",
+      "x": 20
+     },
+     {
+      "type": "chair",
+      "x": 60
+     },
+     {
+      "type": "window",
+      "x": 80
+     },
+     {
+      "type": "lamp",
+      "x": 50
+     }
+    ]
+   },
+   "set": "office",
+   "dur": 14,
+   "camera": {
+    "frame": "close",
+    "on": "alex",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 38.0,
+     "pose": "read",
+     "mood": "neutral",
+     "facing": 1,
+     "seated": true,
+     "hold": "book",
+     "target": "jamie"
+    },
+    {
+     "id": "jamie",
+     "x": 62.0,
+     "pose": "sit",
+     "mood": "neutral",
+     "facing": -1
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The room quiets, and clarity settles in.",
+     "at": 0.25
+    }
+   ],
+   "acting_changes": [
+    {
+     "actor": "alex",
+     "from": "sit",
+     "to": "read",
+     "direction": "Alex reads data,"
+    }
+   ],
+   "beat": 2,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "office",
+   "scene": {
+    "base": "room",
+    "elements": [
+     {
+      "type": "desk",
+      "x": 20
+     },
+     {
+      "type": "chair",
+      "x": 60
+     },
+     {
+      "type": "window",
+      "x": 80
+     },
+     {
+      "type": "lamp",
+      "x": 50
+     }
+    ]
+   },
+   "dur": 3.2,
+   "camera": {
+    "frame": "two",
+    "on": "alex",
+    "push": 0.06
+   },
+   "actors": [
+    {
+     "id": "demon",
+     "x": 26.0,
+     "pose": "lean",
+     "target": "alex"
+    },
+    {
+     "id": "alex",
+     "x": 38.0,
+     "pose": "read",
+     "seated": true,
+     "hold": "book"
+    }
+   ],
+   "lines": [
+    {
+     "who": "demon",
+     "text": "The loop hums in the back of Alex's mind.",
+     "at": 0.7
+    }
+   ],
+   "music": "low",
+   "beat": 2,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "desk",
+   "dur": 14,
+   "camera": {
+    "frame": "two",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 38.0,
+     "pose": "read",
+     "mood": "neutral",
+     "facing": 1,
+     "seated": true,
+     "hold": "book",
+     "target": "jamie"
+    },
+    {
+     "id": "jamie",
+     "x": 62.0,
+     "pose": "talk",
+     "mood": "neutral",
+     "facing": -1,
+     "seated": true,
+     "target": "alex"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Alex’s hand hovers over the note, the weight of the deadline pressing in.",
+     "at": 0.25
+    },
+    {
+     "who": "jamie",
+     "text": "You’re weighing every tiny risk.",
+     "at": 0.4
+    }
+   ],
+   "acting_changes": [
+    {
+     "actor": "alex",
+     "from": "sit",
+     "to": "read",
+     "direction": "Alex sits at a cluttered desk, a sticky note reads “Project Deadline"
+    },
+    {
+     "actor": "jamie",
+     "from": "sit",
+     "to": "talk",
+     "direction": "character dialogue"
+    }
+   ],
+   "beat": 3,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "desk",
+   "dur": 14,
+   "camera": {
+    "frame": "two",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 38.0,
+     "pose": "read",
+     "mood": "neutral",
+     "facing": 1,
+     "seated": true,
+     "hold": "book",
+     "target": "jamie"
+    },
+    {
+     "id": "jamie",
+     "x": 62.0,
+     "pose": "sit",
+     "mood": "neutral",
+     "facing": -1
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He thinks, “If I delay, I’ll miss the window; if I rush, I’ll make a mistake.”",
+     "at": 0.25
+    }
+   ],
+   "acting_changes": [
+    {
+     "actor": "alex",
+     "from": "sit",
+     "to": "read",
+     "direction": "Alex sits at a cluttered desk, a sticky note reads “Project Deadline"
+    }
+   ],
+   "beat": 3,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "desk",
+   "dur": 14,
+   "camera": {
+    "frame": "close",
+    "on": "alex",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 38.0,
+     "pose": "read",
+     "mood": "neutral",
+     "facing": 1,
+     "seated": true,
+     "hold": "book",
+     "target": "jamie"
+    },
+    {
+     "id": "jamie",
+     "x": 62.0,
+     "pose": "sit",
+     "mood": "neutral",
+     "facing": -1
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Jamie enters, sees Alex’s stalled posture, and says, “You’re weighing every tiny risk.”",
+     "at": 0.25
+    }
+   ],
+   "acting_changes": [
+    {
+     "actor": "alex",
+     "from": "sit",
+     "to": "read",
+     "direction": "Alex sits at a cluttered desk, a sticky note reads “Project Deadline"
+    }
+   ],
+   "beat": 3,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "desk",
+   "dur": 14,
+   "camera": {
+    "frame": "wide",
+    "on": "alex",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 38.0,
+     "pose": "read",
+     "mood": "neutral",
+     "facing": 1,
+     "seated": true,
+     "hold": "book",
+     "target": "jamie"
+    },
+    {
+     "id": "jamie",
+     "x": 62.0,
+     "pose": "sit",
+     "mood": "neutral",
+     "facing": -1
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The pause reveals a common objection: hard decisions deserve deep scrutiny, not endless rehearsal.",
+     "at": 0.25
+    }
+   ],
+   "acting_changes": [
+    {
+     "actor": "alex",
+     "from": "sit",
+     "to": "read",
+     "direction": "Alex sits at a cluttered desk, a sticky note reads “Project Deadline"
+    }
+   ],
+   "beat": 3,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "desk",
+   "dur": 14,
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 38.0,
+     "pose": "read",
+     "mood": "neutral",
+     "facing": 1,
+     "seated": true,
+     "hold": "book",
+     "target": "jamie"
+    },
+    {
+     "id": "jamie",
+     "x": 62.0,
+     "pose": "sit",
+     "mood": "neutral",
+     "facing": -1
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Alex nods, realizing the tension between careful analysis and productive action.",
+     "at": 0.25
+    }
+   ],
+   "acting_changes": [
+    {
+     "actor": "alex",
+     "from": "sit",
+     "to": "read",
+     "direction": "Alex sits at a cluttered desk, a sticky note reads “Project Deadline"
+    }
+   ],
+   "beat": 3,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "desk",
+   "dur": 14,
+   "camera": {
+    "frame": "close",
+    "on": "alex",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 38.0,
+     "pose": "read",
+     "mood": "neutral",
+     "facing": 1,
+     "seated": true,
+     "hold": "book",
+     "target": "jamie"
+    },
+    {
+     "id": "jamie",
+     "x": 62.0,
+     "pose": "sit",
+     "mood": "neutral",
+     "facing": -1
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The lesson is that thoughtful investigation is different from looping over imagined outcomes.",
+     "at": 0.25
+    }
+   ],
+   "acting_changes": [
+    {
+     "actor": "alex",
+     "from": "sit",
+     "to": "read",
+     "direction": "Alex sits at a cluttered desk, a sticky note reads “Project Deadline"
+    }
+   ],
+   "beat": 3,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "desk",
+   "dur": 3.2,
+   "camera": {
+    "frame": "two",
+    "on": "alex",
+    "push": 0.06
+   },
+   "actors": [
+    {
+     "id": "demon",
+     "x": 26.0,
+     "pose": "lean",
+     "target": "alex"
+    },
+    {
+     "id": "alex",
+     "x": 38.0,
+     "pose": "read",
+     "seated": true,
+     "hold": "book"
+    }
+   ],
+   "lines": [
+    {
+     "who": "demon",
+     "text": "The looping hum grows louder as Alex considers each scenario.",
+     "at": 0.7
+    }
+   ],
+   "music": "low",
+   "beat": 3,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "scene": {
+    "base": "room",
+    "elements": [
+     {
+      "type": "table",
+      "x": 40
+     },
+     {
+      "type": "chair",
+      "x": 70
+     },
+     {
+      "type": "lamp",
+      "x": 55
+     },
+     {
+      "type": "window",
+      "x": 80
+     }
+    ]
+   },
+   "set": "cafe",
+   "dur": 14,
+   "camera": {
+    "frame": "two",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 38.0,
+     "pose": "type",
+     "mood": "neutral",
+     "facing": 1,
+     "seated": true,
+     "target": "jamie"
+    },
+    {
+     "id": "jamie",
+     "x": 62.0,
+     "pose": "read",
+     "mood": "neutral",
+     "facing": -1,
+     "seated": true,
+     "hold": "book",
+     "target": "alex"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Alex’s fingers pause on the send button, the screen’s blue glow reflecting a flicker of doubt.",
+     "at": 0.25
+    },
+    {
+     "who": "alex",
+     "text": "I’m not sure what I should do, but I’ll try my best.",
+     "at": 0.4
+    },
+    {
+     "who": "jamie",
+     "text": "Can you tell me what part feels most uncertain for you?",
+     "at": 0.4
+    }
+   ],
+   "acting_changes": [
+    {
+     "actor": "alex",
+     "from": "sit",
+     "to": "type",
+     "direction": "Alex types a brief, honest message to Jamie, still unsure of the outcome"
+    },
+    {
+     "actor": "jamie",
+     "from": "sit",
+     "to": "read",
+     "direction": "Jamie reads it, smiles, and replies with a clarifying question rather than a full answer, keeping the conversation open"
+    }
+   ],
+   "beat": 4,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "scene": {
+    "base": "room",
+    "elements": [
+     {
+      "type": "table",
+      "x": 40
+     },
+     {
+      "type": "chair",
+      "x": 70
+     },
+     {
+      "type": "lamp",
+      "x": 55
+     },
+     {
+      "type": "window",
+      "x": 80
+     }
+    ]
+   },
+   "set": "cafe",
+   "dur": 14,
+   "camera": {
+    "frame": "two",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 38.0,
+     "pose": "type",
+     "mood": "neutral",
+     "facing": 1,
+     "seated": true,
+     "target": "jamie"
+    },
+    {
+     "id": "jamie",
+     "x": 62.0,
+     "pose": "read",
+     "mood": "neutral",
+     "facing": -1,
+     "seated": true,
+     "hold": "book",
+     "target": "alex"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He writes, “I’m not sure what I should do, but I’ll try my best.”",
+     "at": 0.25
+    }
+   ],
+   "acting_changes": [
+    {
+     "actor": "alex",
+     "from": "sit",
+     "to": "type",
+     "direction": "Alex types a brief, honest message to Jamie, still unsure of the outcome"
+    },
+    {
+     "actor": "jamie",
+     "from": "sit",
+     "to": "read",
+     "direction": "Jamie reads it, smiles, and replies with a clarifying question rather than a full answer, keeping the conversation open"
+    }
+   ],
+   "beat": 4,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "scene": {
+    "base": "room",
+    "elements": [
+     {
+      "type": "table",
+      "x": 40
+     },
+     {
+      "type": "chair",
+      "x": 70
+     },
+     {
+      "type": "lamp",
+      "x": 55
+     },
+     {
+      "type": "window",
+      "x": 80
+     }
+    ]
+   },
+   "set": "cafe",
+   "dur": 14,
+   "camera": {
+    "frame": "close",
+    "on": "alex",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 38.0,
+     "pose": "type",
+     "mood": "neutral",
+     "facing": 1,
+     "seated": true,
+     "target": "jamie"
+    },
+    {
+     "id": "jamie",
+     "x": 62.0,
+     "pose": "read",
+     "mood": "neutral",
+     "facing": -1,
+     "seated": true,
+     "hold": "book",
+     "target": "alex"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Jamie’s reply arrives: “Can you tell me what part feels most uncertain for you?”",
+     "at": 0.25
+    }
+   ],
+   "acting_changes": [
+    {
+     "actor": "alex",
+     "from": "sit",
+     "to": "type",
+     "direction": "Alex types a brief, honest message to Jamie, still unsure of the outcome"
+    },
+    {
+     "actor": "jamie",
+     "from": "sit",
+     "to": "read",
+     "direction": "Jamie reads it, smiles, and replies with a clarifying question rather than a full answer, keeping the conversation open"
+    }
+   ],
+   "beat": 4,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "scene": {
+    "base": "room",
+    "elements": [
+     {
+      "type": "table",
+      "x": 40
+     },
+     {
+      "type": "chair",
+      "x": 70
+     },
+     {
+      "type": "lamp",
+      "x": 55
+     },
+     {
+      "type": "window",
+      "x": 80
+     }
+    ]
+   },
+   "set": "cafe",
+   "dur": 14,
+   "camera": {
+    "frame": "wide",
+    "on": "alex",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 38.0,
+     "pose": "type",
+     "mood": "neutral",
+     "facing": 1,
+     "seated": true,
+     "target": "jamie"
+    },
+    {
+     "id": "jamie",
+     "x": 62.0,
+     "pose": "read",
+     "mood": "neutral",
+     "facing": -1,
+     "seated": true,
+     "hold": "book",
+     "target": "alex"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The exchange shows that honest uncertainty can be shared without spiraling into endless rehearsal.",
+     "at": 0.25
+    }
+   ],
+   "acting_changes": [
+    {
+     "actor": "alex",
+     "from": "sit",
+     "to": "type",
+     "direction": "Alex types a brief, honest message to Jamie, still unsure of the outcome"
+    },
+    {
+     "actor": "jamie",
+     "from": "sit",
+     "to": "read",
+     "direction": "Jamie reads it, smiles, and replies with a clarifying question rather than a full answer, keeping the conversation open"
+    }
+   ],
+   "beat": 4,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "scene": {
+    "base": "room",
+    "elements": [
+     {
+      "type": "table",
+      "x": 40
+     },
+     {
+      "type": "chair",
+      "x": 70
+     },
+     {
+      "type": "lamp",
+      "x": 55
+     },
+     {
+      "type": "window",
+      "x": 80
+     }
+    ]
+   },
+   "set": "cafe",
+   "dur": 14,
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 38.0,
+     "pose": "type",
+     "mood": "neutral",
+     "facing": 1,
+     "seated": true,
+     "target": "jamie"
+    },
+    {
+     "id": "jamie",
+     "x": 62.0,
+     "pose": "read",
+     "mood": "neutral",
+     "facing": -1,
+     "seated": true,
+     "hold": "book",
+     "target": "alex"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Their dialogue opens a space for clarification, illustrating that clarity comes from asking questions, not from instantly resolving the loop.",
+     "at": 0.25
+    }
+   ],
+   "acting_changes": [
+    {
+     "actor": "alex",
+     "from": "sit",
+     "to": "type",
+     "direction": "Alex types a brief, honest message to Jamie, still unsure of the outcome"
+    },
+    {
+     "actor": "jamie",
+     "from": "sit",
+     "to": "read",
+     "direction": "Jamie reads it, smiles, and replies with a clarifying question rather than a full answer, keeping the conversation open"
+    }
+   ],
+   "beat": 4,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "void",
+   "dur": 14,
+   "camera": {
+    "frame": "wide",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "read",
+     "mood": "neutral",
+     "facing": 1,
+     "hold": "book"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Alex’s eyes scan Jamie’s message: “Can you tell me what part feels most uncertain for you?”",
+     "at": 0.25
+    }
+   ],
+   "acting_changes": [
+    {
+     "actor": "alex",
+     "from": "stand",
+     "to": "read",
+     "direction": "Alex reads Jamie’s clarifying question and feels a surge of doubt, his mind flickering between worst‑case interpretations and the actual words on the screen, recognizing that the misunderstanding stems from his own replay rather than Jamie’s intent"
+    }
+   ],
+   "beat": 5,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "void",
+   "dur": 14,
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "read",
+     "mood": "neutral",
+     "facing": 1,
+     "hold": "book"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Instead of leaping to imagined accusations, he notices the question is an invitation to explore the real issue.",
+     "at": 0.25
+    }
+   ],
+   "acting_changes": [
+    {
+     "actor": "alex",
+     "from": "stand",
+     "to": "read",
+     "direction": "Alex reads Jamie’s clarifying question and feels a surge of doubt, his mind flickering between worst‑case interpretations and the actual words on the screen, recognizing that the misunderstanding stems from his own replay rather than Jamie’s intent"
+    }
+   ],
+   "beat": 5,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "void",
+   "dur": 14,
+   "camera": {
+    "frame": "close",
+    "on": "alex",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "read",
+     "mood": "neutral",
+     "facing": 1,
+     "hold": "book"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "A vague silhouette of doubt appears, but this time it mirrors his own rehearsals, not Jamie’s feelings.",
+     "at": 0.25
+    }
+   ],
+   "acting_changes": [
+    {
+     "actor": "alex",
+     "from": "stand",
+     "to": "read",
+     "direction": "Alex reads Jamie’s clarifying question and feels a surge of doubt, his mind flickering between worst‑case interpretations and the actual words on the screen, recognizing that the misunderstanding stems from his own replay rather than Jamie’s intent"
+    }
+   ],
+   "beat": 5,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "void",
+   "dur": 14,
+   "camera": {
+    "frame": "wide",
+    "on": "alex",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "read",
+     "mood": "neutral",
+     "facing": 1,
+     "hold": "book"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He catches himself looping over “What if she thinks I’m incompetent?” and pulls back to the concrete request she made.",
+     "at": 0.25
+    }
+   ],
+   "acting_changes": [
+    {
+     "actor": "alex",
+     "from": "stand",
+     "to": "read",
+     "direction": "Alex reads Jamie’s clarifying question and feels a surge of doubt, his mind flickering between worst‑case interpretations and the actual words on the screen, recognizing that the misunderstanding stems from his own replay rather than Jamie’s intent"
+    }
+   ],
+   "beat": 5,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "void",
+   "dur": 14,
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "read",
+     "mood": "neutral",
+     "facing": 1,
+     "hold": "book"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Recognizing the rehearsal, Alex steadies his breath and focuses on the fact that Jamie is asking for clarification, not judging him.",
+     "at": 0.25
+    }
+   ],
+   "acting_changes": [
+    {
+     "actor": "alex",
+     "from": "stand",
+     "to": "read",
+     "direction": "Alex reads Jamie’s clarifying question and feels a surge of doubt, his mind flickering between worst‑case interpretations and the actual words on the screen, recognizing that the misunderstanding stems from his own replay rather than Jamie’s intent"
+    }
+   ],
+   "beat": 5,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "void",
+   "dur": 14,
+   "camera": {
+    "frame": "close",
+    "on": "alex",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "read",
+     "mood": "neutral",
+     "facing": 1,
+     "hold": "book"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The moment highlights that misunderstanding often arises from our internal replay, not from the other person’s intent.",
+     "at": 0.25
+    }
+   ],
+   "acting_changes": [
+    {
+     "actor": "alex",
+     "from": "stand",
+     "to": "read",
+     "direction": "Alex reads Jamie’s clarifying question and feels a surge of doubt, his mind flickering between worst‑case interpretations and the actual words on the screen, recognizing that the misunderstanding stems from his own replay rather than Jamie’s intent"
+    }
+   ],
+   "beat": 5,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "void",
+   "dur": 3.2,
+   "camera": {
+    "frame": "two",
+    "on": "alex",
+    "push": 0.06
+   },
+   "actors": [
+    {
+     "id": "demon",
+     "x": 38.0,
+     "pose": "lean",
+     "target": "alex"
+    },
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "read",
+     "hold": "book"
+    }
+   ],
+   "lines": [
+    {
+     "who": "demon",
+     "text": "The loop hums, but the silence that follows is clearer.",
+     "at": 0.7
+    }
+   ],
+   "music": "low",
+   "beat": 5,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "cafe",
+   "dur": 14,
+   "camera": {
+    "frame": "two",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 38.0,
+     "pose": "type",
+     "mood": "hopeful",
+     "facing": 1,
+     "seated": true,
+     "target": "jamie"
+    },
+    {
+     "id": "jamie",
+     "x": 62.0,
+     "pose": "talk",
+     "mood": "hopeful",
+     "facing": -1,
+     "seated": true,
+     "target": "alex"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Alex reads Jamie’s clarifying question and deliberately shifts his attention to the specific uncertainty she raised.",
+     "at": 0.25
+    },
+    {
+     "who": "alex",
+     "text": "I’m unsure about the timeline for the next milestone. Could we meet to",
+     "at": 0.4
+    },
+    {
+     "who": "jamie",
+     "text": "Perfect, see you then.",
+     "at": 0.4
+    }
+   ],
+   "acting_changes": [
+    {
+     "actor": "alex",
+     "from": "sit",
+     "to": "type",
+     "direction": "Alex sits across the small table from Jamie, the clarifying question still displayed on his laptop: “Can you tell me what part feels most uncertain for you?” He focuses on the concrete issue, types, “I’m unsure about the timeline for the next milestone"
+    },
+    {
+     "actor": "jamie",
+     "from": "sit",
+     "to": "talk",
+     "direction": "Jamie smiles and replies, “Perfect, see you"
+    }
+   ],
+   "beat": 6,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "cafe",
+   "dur": 14,
+   "camera": {
+    "frame": "two",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 38.0,
+     "pose": "type",
+     "mood": "hopeful",
+     "facing": 1,
+     "seated": true,
+     "target": "jamie"
+    },
+    {
+     "id": "jamie",
+     "x": 62.0,
+     "pose": "talk",
+     "mood": "hopeful",
+     "facing": -1,
+     "seated": true,
+     "target": "alex"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He types a concise reply that names his concern about the timeline and proposes a concrete meeting time.",
+     "at": 0.25
+    }
+   ],
+   "acting_changes": [
+    {
+     "actor": "alex",
+     "from": "sit",
+     "to": "type",
+     "direction": "Alex sits across the small table from Jamie, the clarifying question still displayed on his laptop: “Can you tell me what part feels most uncertain for you?” He focuses on the concrete issue, types, “I’m unsure about the timeline for the next milestone"
+    },
+    {
+     "actor": "jamie",
+     "from": "sit",
+     "to": "talk",
+     "direction": "Jamie smiles and replies, “Perfect, see you"
+    }
+   ],
+   "beat": 6,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "cafe",
+   "dur": 14,
+   "camera": {
+    "frame": "close",
+    "on": "alex",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 38.0,
+     "pose": "type",
+     "mood": "hopeful",
+     "facing": 1,
+     "seated": true,
+     "target": "jamie"
+    },
+    {
+     "id": "jamie",
+     "x": 62.0,
+     "pose": "talk",
+     "mood": "hopeful",
+     "facing": -1,
+     "seated": true,
+     "target": "alex"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "A brief pause brings the familiar doubt, but he acknowledges it and sends the message anyway.",
+     "at": 0.25
+    }
+   ],
+   "acting_changes": [
+    {
+     "actor": "alex",
+     "from": "sit",
+     "to": "type",
+     "direction": "Alex sits across the small table from Jamie, the clarifying question still displayed on his laptop: “Can you tell me what part feels most uncertain for you?” He focuses on the concrete issue, types, “I’m unsure about the timeline for the next milestone"
+    },
+    {
+     "actor": "jamie",
+     "from": "sit",
+     "to": "talk",
+     "direction": "Jamie smiles and replies, “Perfect, see you"
+    }
+   ],
+   "beat": 6,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "cafe",
+   "dur": 14,
+   "camera": {
+    "frame": "wide",
+    "on": "alex",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 38.0,
+     "pose": "type",
+     "mood": "hopeful",
+     "facing": 1,
+     "seated": true,
+     "target": "jamie"
+    },
+    {
+     "id": "jamie",
+     "x": 62.0,
+     "pose": "talk",
+     "mood": "hopeful",
+     "facing": -1,
+     "seated": true,
+     "target": "alex"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Jamie’s smile widens as she replies, “Perfect, see you then,” and they discuss the plan while sipping coffee.",
+     "at": 0.25
+    }
+   ],
+   "acting_changes": [
+    {
+     "actor": "alex",
+     "from": "sit",
+     "to": "type",
+     "direction": "Alex sits across the small table from Jamie, the clarifying question still displayed on his laptop: “Can you tell me what part feels most uncertain for you?” He focuses on the concrete issue, types, “I’m unsure about the timeline for the next milestone"
+    },
+    {
+     "actor": "jamie",
+     "from": "sit",
+     "to": "talk",
+     "direction": "Jamie smiles and replies, “Perfect, see you"
+    }
+   ],
+   "beat": 6,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 4.0,
+   "music": "mid",
+   "card": {
+    "style": "cta",
+    "lines": [
+     "If this made you think, like and subscribe."
+    ]
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 18,
+     "pose": "wave",
+     "mood": "happy",
+     "scale": 0.6,
+     "seated": false
+    }
+   ],
+   "set": "void",
+   "camera": {
+    "frame": "wide"
+   },
+   "lines": [],
+   "sfx": [],
+   "items": []
+  }
+ ],
+ "publish": {
+  "youtube_titles": [
+   "Why Smart People Overthink—and How to Stop It",
+   "The Hidden Cost of Overthinking: A Real‑Life Story",
+   "From Endless Rehearsal to Real Action: Alex’s Journey"
+  ],
+  "description": "In this animated essay we follow Alex as he wrestles with the habit of overthinking. Through everyday scenes—typing drafts, scrolling reports, and a candid coffee‑shop chat—we see the difference between gathering new information and rehearsing the same imagined outcomes. The film shows how recognizing the loop can free us to act, even on decisions that feel high‑stakes.\n\nThe story also addresses the common objection that important, hard‑to‑reverse choices deserve deep scrutiny. By contrasting thoughtful research with endless mental rehearsal, Alex learns to communicate honest uncertainty and move forward without spiraling. #Overthinking #DecisionMaking #MentalHealth #Productivity #AnimatedEssay\n",
+  "tags": [
+   "overthinking",
+   "rumination",
+   "decision making",
+   "mental health",
+   "productivity",
+   "animated essay",
+   "self‑criticism",
+   "psychology",
+   "communication",
+   "Alex and Jamie"
+  ],
+  "pinned_comment": "What’s the smallest step you’ve taken to break an overthinking loop, and how did it change the outcome?",
+  "thumbnail_words": [
+   "Stop",
+   "Overthinking"
+  ],
+  "idea": {
+   "definition": "Overthinking is the repetitive rehearsal of possible outcomes, not the gathering of new information.",
+   "mechanism": "It keeps the mind stuck in a loop of imagined scenarios, draining energy and delaying action.",
+   "turn": "When we distinguish rehearsal from research, we free our decisions and reduce distress.",
+   "thinkers": "Maladaptive rumination, self‑critical rumination"
+  },
+  "inner_voice": {
+   "represents": "overthinking loop",
+   "color": "#ffcccc"
+  },
+  "approach": "Show Alex’s day‑to‑day actions and inner monologue to expose the difference between gathering facts and rehearsing possibilities."
+ },
+ "writer": "groq:openai/gpt-oss-120b",
+ "sources": [
+  {
+   "title": "Maladaptive Rumination as a Transdiagnostic Mediator of Vulnerability and Outcome in Psychopathology.",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/30841644/",
+   "source": "PubMed",
+   "pmid": "30841644",
+   "query": "rumination[Title/Abstract] AND (metacognition[Title/Abstract] OR repetitive thinking[Title/Abstract]) NOT (psychosis[Title] OR schizophrenia[Title] OR bipolar[Title])",
+   "publication_types": [
+    "Journal Article",
+    "Review"
+   ],
+   "evidence_type": "review",
+   "doi": "10.3390/jcm8030314"
+  },
+  {
+   "title": "Development and Validation of a Measure of Self-Critical Rumination.",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/25712674/",
+   "source": "PubMed",
+   "pmid": "25712674",
+   "query": "rumination[Title/Abstract] AND (metacognition[Title/Abstract] OR repetitive thinking[Title/Abstract]) NOT (psychosis[Title] OR schizophrenia[Title] OR bipolar[Title])",
+   "publication_types": [
+    "Journal Article",
+    "Review"
+   ],
+   "evidence_type": "review",
+   "doi": "10.1177/1073191115573300"
+  },
+  {
+   "title": "Rumination (psychology)",
+   "url": "https://en.wikipedia.org/wiki/Rumination_(psychology)",
+   "source": "Wikipedia",
+   "query": "rumination psychology metacognition"
+  },
+  {
+   "title": "Metacognition",
+   "url": "https://en.wikipedia.org/wiki/Metacognition",
+   "source": "Wikipedia",
+   "query": "rumination psychology metacognition"
+  },
+  {
+   "title": "Mindfulness",
+   "url": "https://en.wikipedia.org/wiki/Mindfulness",
+   "source": "Wikipedia",
+   "query": "rumination psychology metacognition"
+  }
+ ],
+ "acting_report": {
+  "director": "verified physical-action compiler",
+  "changes": [
+   {
+    "shot": 13,
+    "beat": 2,
+    "changes": [
+     {
+      "actor": "alex",
+      "from": "stand",
+      "to": "read",
+      "direction": "Alex reads data,"
+     }
+    ]
+   },
+   {
+    "shot": 20,
+    "beat": 3,
+    "changes": [
+     {
+      "actor": "alex",
+      "from": "stand",
+      "to": "read",
+      "direction": "Alex sits at a cluttered desk, a sticky note reads “Project Deadline"
+     }
+    ]
+   },
+   {
+    "shot": 32,
+    "beat": 5,
+    "changes": [
+     {
+      "actor": "alex",
+      "from": "stand",
+      "to": "read",
+      "direction": "Alex reads Jamie’s clarifying question and feels a surge of doubt, his mind flickering between worst‑case interpretations and the actual words on the screen, recognizing that the misunderstanding stems from his own replay rather than Jamie’s intent"
+     }
+    ]
+   }
+  ],
+  "limitations": [
+   "Unsupported physical detail is not simulated; inspect scene meaning in the contact sheet.",
+   "Thoughtful standing and sitting are permitted, not counted as new performances."
+  ]
+ },
+ "duration": 489.6
+}
