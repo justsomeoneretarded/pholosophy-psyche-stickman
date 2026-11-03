@@ -1,0 +1,4435 @@
+{
+ "title": "What If Nothing Really Matters?",
+ "logline": "Show a character confronting the idea and discovering how personal projects become sources of value.",
+ "demon_color": "#2b2b2b",
+ "narrator": "male",
+ "hud": null,
+ "music": {
+  "prompt": "Minimalist piano with subtle ambient synth pads, slow tempo, building gently to convey introspection turning into hopeful resolve."
+ },
+ "cast": {
+  "hero": {
+   "kind": "hero"
+  },
+  "demon": {
+   "kind": "demon"
+  },
+  "alex": {
+   "kind": "hero"
+  },
+  "sam": {
+   "kind": "friend"
+  }
+ },
+ "shots": [
+  {
+   "dur": 8.3,
+   "music": "low",
+   "card": {
+    "style": "line",
+    "lines": [
+     "A lone billboard reads nothing—just an empty space that whispers, \"Nothing matters.\""
+    ]
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "A lone billboard reads nothing—just an empty space that whispers, \"Nothing matters.\"",
+     "at": 0.3,
+     "hidden": true,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-000-0.wav",
+     "voice_dur": 5.488,
+     "word_times": [
+      {
+       "word": "A",
+       "start": 0.0,
+       "end": 0.08,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "lone",
+       "start": 0.08,
+       "end": 0.3,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "billboard",
+       "start": 0.3,
+       "end": 0.7,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "reads",
+       "start": 0.7,
+       "end": 1.2,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "nothing—just",
+       "start": 1.2,
+       "end": 2.0,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "an",
+       "start": 2.0,
+       "end": 2.16,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "empty",
+       "start": 2.16,
+       "end": 2.38,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "space",
+       "start": 2.38,
+       "end": 2.78,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "that",
+       "start": 2.78,
+       "end": 3.06,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "whispers,",
+       "start": 3.06,
+       "end": 3.24,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "\"Nothing",
+       "start": 3.24,
+       "end": 4.28,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "matters.\"",
+       "start": 4.28,
+       "end": 4.86,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 16.64
+    }
+   ],
+   "set": "void",
+   "camera": {
+    "frame": "wide"
+   },
+   "actors": [],
+   "sfx": [],
+   "items": [],
+   "transition": "fade"
+  },
+  {
+   "grade": "cold",
+   "set": "street",
+   "dur": 6.65,
+   "camera": {
+    "frame": "wide",
+    "push": 0.04
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "stand",
+     "mood": "neutral"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Alex feels the weight of a silent sign, wondering why nothing is written.",
+     "at": 0.25,
+     "speech_check": 0.8462,
+     "speech_verified": true,
+     "voice_file": "vo-001-0.wav",
+     "voice_dur": 4.24,
+     "word_times": [
+      {
+       "word": "Alex",
+       "start": 0.0,
+       "end": 0.22,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "feels",
+       "start": 0.22,
+       "end": 0.48,
+       "timing_source": "estimated_between_anchors"
+      },
+      {
+       "word": "the",
+       "start": 0.48,
+       "end": 0.74,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "weight",
+       "start": 0.74,
+       "end": 0.94,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "of",
+       "start": 0.94,
+       "end": 1.16,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 1.16,
+       "end": 1.22,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "silent",
+       "start": 1.22,
+       "end": 1.56,
+       "timing_source": "estimated_between_anchors"
+      },
+      {
+       "word": "sign,",
+       "start": 1.56,
+       "end": 1.96,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "wondering",
+       "start": 2.4,
+       "end": 2.68,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "why",
+       "start": 2.68,
+       "end": 2.94,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "nothing",
+       "start": 2.94,
+       "end": 3.26,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "is",
+       "start": 3.26,
+       "end": 3.5,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "written.",
+       "start": 3.5,
+       "end": 3.72,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 18.71
+    }
+   ],
+   "beat": 1,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "grade": "cold",
+   "set": "street",
+   "dur": 6.65,
+   "camera": {
+    "frame": "close",
+    "on": "alex",
+    "push": 0.06
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "stand",
+     "mood": "neutral"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The empty space whispers that meaning is not waiting, it must be made.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-002-0.wav",
+     "voice_dur": 4.96,
+     "word_times": [
+      {
+       "word": "The",
+       "start": 0.0,
+       "end": 0.1,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "empty",
+       "start": 0.1,
+       "end": 0.32,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "space",
+       "start": 0.32,
+       "end": 0.72,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "whispers",
+       "start": 0.72,
+       "end": 1.18,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "that",
+       "start": 1.18,
+       "end": 1.62,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "meaning",
+       "start": 1.62,
+       "end": 1.9,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "is",
+       "start": 1.9,
+       "end": 2.32,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "not",
+       "start": 2.32,
+       "end": 2.54,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "waiting,",
+       "start": 2.54,
+       "end": 2.92,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "it",
+       "start": 3.44,
+       "end": 3.56,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "must",
+       "start": 3.56,
+       "end": 3.74,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "be",
+       "start": 3.74,
+       "end": 4.02,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "made.",
+       "start": 4.02,
+       "end": 4.38,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 15.34
+    }
+   ],
+   "beat": 1,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "time": "night",
+   "set": "scene",
+   "scene": {
+    "base": "void",
+    "wall": "black",
+    "elements": [
+     {
+      "type": "word",
+      "x": 50.0,
+      "label": "meaning",
+      "color": "white"
+     }
+    ]
+   },
+   "dur": 7.45,
+   "camera": {
+    "frame": "wide",
+    "push": 0.04
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "sit",
+     "mood": "neutral"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Inside his mind, a dark silhouette asks what purpose remains when the world offers none.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-003-0.wav",
+     "voice_dur": 5.438,
+     "word_times": [
+      {
+       "word": "Inside",
+       "start": 0.0,
+       "end": 0.26,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "his",
+       "start": 0.26,
+       "end": 0.56,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "mind,",
+       "start": 0.56,
+       "end": 0.88,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 1.3,
+       "end": 1.38,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "dark",
+       "start": 1.38,
+       "end": 1.68,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "silhouette",
+       "start": 1.68,
+       "end": 2.0,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "asks",
+       "start": 2.0,
+       "end": 2.52,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "what",
+       "start": 2.52,
+       "end": 2.8,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "purpose",
+       "start": 2.8,
+       "end": 3.18,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "remains",
+       "start": 3.18,
+       "end": 3.58,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "when",
+       "start": 3.58,
+       "end": 3.94,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "the",
+       "start": 3.94,
+       "end": 4.06,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "world",
+       "start": 4.06,
+       "end": 4.32,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "offers",
+       "start": 4.32,
+       "end": 4.62,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "none.",
+       "start": 4.62,
+       "end": 4.94,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 17.59
+    }
+   ],
+   "beat": 2,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "time": "night",
+   "set": "scene",
+   "scene": {
+    "base": "void",
+    "wall": "black",
+    "elements": [
+     {
+      "type": "word",
+      "x": 50.0,
+      "label": "meaning",
+      "color": "white"
+     }
+    ]
+   },
+   "dur": 6.65,
+   "camera": {
+    "frame": "close",
+    "on": "alex",
+    "push": 0.06
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "sit",
+     "mood": "neutral"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Alex realizes that stories he builds become the light that fills the void.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-004-0.wav",
+     "voice_dur": 4.619,
+     "word_times": [
+      {
+       "word": "Alex",
+       "start": 0.0,
+       "end": 0.22,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "realizes",
+       "start": 0.22,
+       "end": 0.62,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "that",
+       "start": 0.62,
+       "end": 1.06,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "stories",
+       "start": 1.06,
+       "end": 1.38,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "he",
+       "start": 1.38,
+       "end": 1.7,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "builds",
+       "start": 1.7,
+       "end": 1.92,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "become",
+       "start": 1.92,
+       "end": 2.42,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "the",
+       "start": 2.42,
+       "end": 2.64,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "light",
+       "start": 2.64,
+       "end": 2.92,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "that",
+       "start": 2.92,
+       "end": 3.24,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "fills",
+       "start": 3.24,
+       "end": 3.5,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "the",
+       "start": 3.5,
+       "end": 3.84,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "void.",
+       "start": 3.84,
+       "end": 4.16,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 17.41
+    }
+   ],
+   "beat": 2,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "grade": "warm",
+   "set": "kitchen",
+   "dur": 8.65,
+   "camera": {
+    "frame": "wide",
+    "push": 0.04
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 42.0,
+     "pose": "stand",
+     "mood": "neutral"
+    },
+    {
+     "id": "sam",
+     "x": 58.0,
+     "pose": "talk",
+     "mood": "neutral",
+     "target": "alex",
+     "facing": -1
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Sam explains that meaning isn’t discovered but built, like stacking words into a story we choose to live.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-005-0.wav",
+     "voice_dur": 6.713,
+     "word_times": [
+      {
+       "word": "Sam",
+       "start": 0.0,
+       "end": 0.26,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "explains",
+       "start": 0.26,
+       "end": 0.62,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "that",
+       "start": 0.62,
+       "end": 1.04,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "meaning",
+       "start": 1.04,
+       "end": 1.26,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "isn’t",
+       "start": 1.26,
+       "end": 1.84,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "discovered",
+       "start": 1.84,
+       "end": 2.16,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "but",
+       "start": 2.16,
+       "end": 2.54,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "built,",
+       "start": 2.54,
+       "end": 2.84,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "like",
+       "start": 3.48,
+       "end": 3.64,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "stacking",
+       "start": 3.64,
+       "end": 3.94,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "words",
+       "start": 3.94,
+       "end": 4.4,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "into",
+       "start": 4.4,
+       "end": 4.74,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 4.74,
+       "end": 4.88,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "story",
+       "start": 4.88,
+       "end": 5.12,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "we",
+       "start": 5.12,
+       "end": 5.48,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "choose",
+       "start": 5.48,
+       "end": 5.7,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "to",
+       "start": 5.7,
+       "end": 6.04,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "live.",
+       "start": 6.04,
+       "end": 6.24,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 17.0
+    }
+   ],
+   "beat": 3,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "grade": "warm",
+   "set": "kitchen",
+   "dur": 6.65,
+   "camera": {
+    "frame": "close",
+    "on": "alex",
+    "push": 0.06
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "talk",
+     "mood": "neutral"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Alex watches the steam rise, realizing each breath can become a deliberate chapter.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-006-0.wav",
+     "voice_dur": 5.759,
+     "word_times": [
+      {
+       "word": "Alex",
+       "start": 0.0,
+       "end": 0.22,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "watches",
+       "start": 0.22,
+       "end": 0.56,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "the",
+       "start": 0.56,
+       "end": 0.94,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "steam",
+       "start": 0.94,
+       "end": 1.22,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "rise,",
+       "start": 1.22,
+       "end": 1.68,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "realizing",
+       "start": 1.68,
+       "end": 2.58,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "each",
+       "start": 2.58,
+       "end": 3.08,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "breath",
+       "start": 3.08,
+       "end": 3.42,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "can",
+       "start": 3.42,
+       "end": 3.74,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "become",
+       "start": 3.74,
+       "end": 4.02,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 4.02,
+       "end": 4.22,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "deliberate",
+       "start": 4.22,
+       "end": 4.58,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "chapter.",
+       "start": 4.58,
+       "end": 5.22,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 15.67
+    }
+   ],
+   "beat": 3,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "kitchen",
+   "dur": 9.05,
+   "camera": {
+    "frame": "wide",
+    "push": 0.04
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 42.0,
+     "pose": "stand",
+     "mood": "hopeful"
+    },
+    {
+     "id": "sam",
+     "x": 58.0,
+     "pose": "stand",
+     "mood": "hopeful"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Alex asks how a fleeting hobby can feel lasting, and Sam replies that personal projects anchor our self‑crafted purpose.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-007-0.wav",
+     "voice_dur": 8.04,
+     "word_times": [
+      {
+       "word": "Alex",
+       "start": 0.0,
+       "end": 0.18,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "asks",
+       "start": 0.18,
+       "end": 0.5,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "how",
+       "start": 0.5,
+       "end": 0.8,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 0.8,
+       "end": 0.92,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "fleeting",
+       "start": 0.92,
+       "end": 1.14,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "hobby",
+       "start": 1.14,
+       "end": 1.56,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "can",
+       "start": 1.56,
+       "end": 1.88,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "feel",
+       "start": 1.88,
+       "end": 2.14,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "lasting,",
+       "start": 2.14,
+       "end": 2.5,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "and",
+       "start": 3.1,
+       "end": 3.12,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "Sam",
+       "start": 3.12,
+       "end": 3.32,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "replies",
+       "start": 3.32,
+       "end": 3.74,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "that",
+       "start": 3.74,
+       "end": 4.06,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "personal",
+       "start": 4.06,
+       "end": 4.38,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "projects",
+       "start": 4.38,
+       "end": 5.12,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "anchor",
+       "start": 5.12,
+       "end": 5.66,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "our",
+       "start": 5.66,
+       "end": 6.18,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "self‑crafted",
+       "start": 6.18,
+       "end": 7.06,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "purpose.",
+       "start": 7.06,
+       "end": 7.54,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 16.22
+    }
+   ],
+   "beat": 4,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "kitchen",
+   "dur": 7.45,
+   "camera": {
+    "frame": "close",
+    "on": "alex",
+    "push": 0.06
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "stand",
+     "mood": "hopeful"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Together they sketch a small garden, a symbol of value grown from their own hands.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-008-0.wav",
+     "voice_dur": 5.158,
+     "word_times": [
+      {
+       "word": "Together",
+       "start": 0.0,
+       "end": 0.28,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "they",
+       "start": 0.28,
+       "end": 0.58,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "sketch",
+       "start": 0.58,
+       "end": 0.82,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 0.82,
+       "end": 1.02,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "small",
+       "start": 1.02,
+       "end": 1.24,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "garden,",
+       "start": 1.24,
+       "end": 1.7,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 2.22,
+       "end": 2.28,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "symbol",
+       "start": 2.28,
+       "end": 2.56,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "of",
+       "start": 2.56,
+       "end": 2.72,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "value",
+       "start": 2.72,
+       "end": 3.2,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "grown",
+       "start": 3.2,
+       "end": 3.48,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "from",
+       "start": 3.48,
+       "end": 3.86,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "their",
+       "start": 3.86,
+       "end": 4.04,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "own",
+       "start": 4.04,
+       "end": 4.22,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "hands.",
+       "start": 4.22,
+       "end": 4.58,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 17.28
+    }
+   ],
+   "beat": 4,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "time": "night",
+   "grade": "cold",
+   "set": "bedroom",
+   "dur": 9.45,
+   "camera": {
+    "frame": "wide",
+    "push": 0.04
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 42.0,
+     "pose": "sit",
+     "mood": "neutral"
+    },
+    {
+     "id": "sam",
+     "x": 58.0,
+     "pose": "sit",
+     "mood": "neutral"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Many think happiness comes from external approval, like applause or likes, but those sounds fade when the room goes dark.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-009-0.wav",
+     "voice_dur": 7.635,
+     "word_times": [
+      {
+       "word": "Many",
+       "start": 0.0,
+       "end": 0.16,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "think",
+       "start": 0.16,
+       "end": 0.44,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "happiness",
+       "start": 0.44,
+       "end": 0.66,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "comes",
+       "start": 0.66,
+       "end": 1.16,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "from",
+       "start": 1.16,
+       "end": 1.38,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "external",
+       "start": 1.38,
+       "end": 1.9,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "approval,",
+       "start": 1.9,
+       "end": 2.32,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "like",
+       "start": 2.86,
+       "end": 3.0,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "applause",
+       "start": 3.0,
+       "end": 3.3,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "or",
+       "start": 3.3,
+       "end": 3.76,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "likes,",
+       "start": 3.76,
+       "end": 4.0,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "but",
+       "start": 4.44,
+       "end": 4.66,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "those",
+       "start": 4.66,
+       "end": 4.8,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "sounds",
+       "start": 4.8,
+       "end": 5.18,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "fade",
+       "start": 5.18,
+       "end": 5.62,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "when",
+       "start": 5.62,
+       "end": 6.0,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "the",
+       "start": 6.0,
+       "end": 6.14,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "room",
+       "start": 6.14,
+       "end": 6.4,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "goes",
+       "start": 6.4,
+       "end": 6.76,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "dark.",
+       "start": 6.76,
+       "end": 7.26,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 17.23
+    }
+   ],
+   "beat": 5,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "time": "night",
+   "grade": "cold",
+   "set": "bedroom",
+   "dur": 7.05,
+   "camera": {
+    "frame": "close",
+    "on": "alex",
+    "push": 0.06
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "sit",
+     "mood": "neutral"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Alex feels the emptiness deepen, realizing the party’s glow cannot fill the silence inside.",
+     "at": 0.25,
+     "speech_check": 0.8667,
+     "speech_verified": true,
+     "voice_file": "vo-010-0.wav",
+     "voice_dur": 5.978,
+     "word_times": [
+      {
+       "word": "Alex",
+       "start": 0.0,
+       "end": 0.16,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "feels",
+       "start": 0.16,
+       "end": 0.42,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "the",
+       "start": 0.42,
+       "end": 0.68,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "emptiness",
+       "start": 0.68,
+       "end": 0.9,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "deepen,",
+       "start": 0.9,
+       "end": 1.54,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "realizing",
+       "start": 1.54,
+       "end": 2.58,
+       "timing_source": "estimated_between_anchors"
+      },
+      {
+       "word": "the",
+       "start": 2.58,
+       "end": 2.84,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "party’s",
+       "start": 2.84,
+       "end": 3.3,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "glow",
+       "start": 3.3,
+       "end": 3.54,
+       "timing_source": "estimated_between_anchors"
+      },
+      {
+       "word": "cannot",
+       "start": 3.54,
+       "end": 3.9,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "fill",
+       "start": 3.9,
+       "end": 4.26,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "the",
+       "start": 4.26,
+       "end": 4.54,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "silence",
+       "start": 4.54,
+       "end": 4.82,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "inside.",
+       "start": 4.82,
+       "end": 5.24,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 16.55
+    }
+   ],
+   "beat": 5,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "time": "night",
+   "grade": "warm",
+   "set": "scene",
+   "scene": {
+    "base": "void",
+    "elements": []
+   },
+   "dur": 8.25,
+   "camera": {
+    "frame": "wide",
+    "push": 0.04
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "sit",
+     "mood": "determined"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "When the void whispers that nothing matters, Alex chooses a small project—a sketch of a seedling—to nurture.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-011-0.wav",
+     "voice_dur": 6.738,
+     "word_times": [
+      {
+       "word": "When",
+       "start": 0.0,
+       "end": 0.22,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "the",
+       "start": 0.22,
+       "end": 0.32,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "void",
+       "start": 0.32,
+       "end": 0.56,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "whispers",
+       "start": 0.56,
+       "end": 0.92,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "that",
+       "start": 0.92,
+       "end": 1.26,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "nothing",
+       "start": 1.26,
+       "end": 1.52,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "matters,",
+       "start": 1.52,
+       "end": 2.0,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "Alex",
+       "start": 2.66,
+       "end": 2.66,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "chooses",
+       "start": 2.66,
+       "end": 3.22,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 3.22,
+       "end": 3.44,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "small",
+       "start": 3.44,
+       "end": 3.64,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "project—a",
+       "start": 3.64,
+       "end": 4.32,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "sketch",
+       "start": 4.32,
+       "end": 4.82,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "of",
+       "start": 4.82,
+       "end": 5.16,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 5.16,
+       "end": 5.26,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "seedling—to",
+       "start": 5.26,
+       "end": 5.94,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "nurture.",
+       "start": 5.94,
+       "end": 6.18,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 17.42
+    }
+   ],
+   "beat": 6,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "time": "night",
+   "grade": "warm",
+   "set": "scene",
+   "scene": {
+    "base": "void",
+    "elements": []
+   },
+   "dur": 7.45,
+   "camera": {
+    "frame": "close",
+    "on": "alex",
+    "push": 0.06
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "sit",
+     "mood": "determined"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The act of creating a tangible goal turns the darkness into a quiet, purposeful light.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-012-0.wav",
+     "voice_dur": 6.101,
+     "word_times": [
+      {
+       "word": "The",
+       "start": 0.0,
+       "end": 0.08,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "act",
+       "start": 0.08,
+       "end": 0.36,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "of",
+       "start": 0.36,
+       "end": 0.62,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "creating",
+       "start": 0.62,
+       "end": 1.0,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 1.0,
+       "end": 1.3,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "tangible",
+       "start": 1.3,
+       "end": 1.68,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "goal",
+       "start": 1.68,
+       "end": 2.28,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "turns",
+       "start": 2.28,
+       "end": 2.84,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "the",
+       "start": 2.84,
+       "end": 3.1,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "darkness",
+       "start": 3.1,
+       "end": 3.38,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "into",
+       "start": 3.38,
+       "end": 3.96,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 3.96,
+       "end": 4.08,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "quiet,",
+       "start": 4.08,
+       "end": 4.46,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "purposeful",
+       "start": 4.58,
+       "end": 5.28,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "light.",
+       "start": 5.28,
+       "end": 5.6,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 15.32
+    }
+   ],
+   "beat": 6,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "time": "night",
+   "grade": "cold",
+   "set": "void",
+   "dur": 8.25,
+   "camera": {
+    "frame": "wide",
+    "push": 0.04
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "stand",
+     "mood": "neutral"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The silhouette’s glowing eyes murmur that existence is empty, and Alex’s breath catches in the cold hush.",
+     "at": 0.25,
+     "speech_check": 0.9143,
+     "speech_verified": true,
+     "voice_file": "vo-013-0.wav",
+     "voice_dur": 7.452,
+     "word_times": [
+      {
+       "word": "The",
+       "start": 0.0,
+       "end": 0.1,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "silhouette’s",
+       "start": 0.1,
+       "end": 0.64,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "glowing",
+       "start": 0.64,
+       "end": 0.84,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "eyes",
+       "start": 0.84,
+       "end": 1.44,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "murmur",
+       "start": 1.44,
+       "end": 1.88,
+       "timing_source": "estimated_between_anchors"
+      },
+      {
+       "word": "that",
+       "start": 1.88,
+       "end": 2.0,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "existence",
+       "start": 2.0,
+       "end": 2.34,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "is",
+       "start": 2.34,
+       "end": 2.98,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "empty,",
+       "start": 2.98,
+       "end": 3.38,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "and",
+       "start": 4.02,
+       "end": 4.04,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "Alex’s",
+       "start": 4.04,
+       "end": 4.46,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "breath",
+       "start": 4.46,
+       "end": 4.84,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "catches",
+       "start": 4.84,
+       "end": 5.42,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "in",
+       "start": 5.42,
+       "end": 5.94,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "the",
+       "start": 5.94,
+       "end": 6.06,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "cold",
+       "start": 6.06,
+       "end": 6.32,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "hush.",
+       "start": 6.32,
+       "end": 6.88,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 15.31
+    }
+   ],
+   "beat": 7,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "time": "night",
+   "grade": "cold",
+   "set": "void",
+   "dur": 3.85,
+   "camera": {
+    "frame": "close",
+    "on": "alex",
+    "push": 0.06
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "stand",
+     "mood": "neutral"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The shadow’s voice sharpens, “A sketch?",
+     "at": 0.25,
+     "speech_check": 0.8333,
+     "speech_verified": true,
+     "voice_file": "vo-014-0.wav",
+     "voice_dur": 2.521,
+     "word_times": [
+      {
+       "word": "The",
+       "start": 0.0,
+       "end": 0.06,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "shadow’s",
+       "start": 0.06,
+       "end": 0.34,
+       "timing_source": "estimated_between_anchors"
+      },
+      {
+       "word": "voice",
+       "start": 0.34,
+       "end": 0.58,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "sharpens,",
+       "start": 0.58,
+       "end": 1.16,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "“A",
+       "start": 1.66,
+       "end": 1.72,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "sketch?",
+       "start": 1.72,
+       "end": 2.0,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 16.82
+    }
+   ],
+   "beat": 7,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "time": "night",
+   "grade": "cold",
+   "set": "void",
+   "dur": 3.05,
+   "camera": {
+    "frame": "wide",
+    "on": "alex",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "stand",
+     "mood": "neutral"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "A tiny, fragile thing?",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-015-0.wav",
+     "voice_dur": 1.985,
+     "word_times": [
+      {
+       "word": "A",
+       "start": 0.0,
+       "end": 0.12,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "tiny,",
+       "start": 0.12,
+       "end": 0.4,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "fragile",
+       "start": 0.64,
+       "end": 0.98,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "thing?",
+       "start": 0.98,
+       "end": 1.42,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 12.05
+    }
+   ],
+   "beat": 7,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "time": "night",
+   "grade": "cold",
+   "set": "void",
+   "dur": 6.36,
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "stand",
+     "mood": "neutral"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "It will fade, Alex.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-016-0.wav",
+     "voice_dur": 1.595,
+     "word_times": [
+      {
+       "word": "It",
+       "start": 0.0,
+       "end": 0.14,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "will",
+       "start": 0.14,
+       "end": 0.28,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "fade,",
+       "start": 0.28,
+       "end": 0.6,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "Alex.",
+       "start": 0.82,
+       "end": 0.98,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 12.95
+    }
+   ],
+   "beat": 7,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "time": "night",
+   "grade": "cold",
+   "set": "void",
+   "dur": 3.85,
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "stand",
+     "mood": "neutral"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The universe is vast and indifferent.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-017-0.wav",
+     "voice_dur": 2.41,
+     "word_times": [
+      {
+       "word": "The",
+       "start": 0.0,
+       "end": 0.08,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "universe",
+       "start": 0.08,
+       "end": 0.46,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "is",
+       "start": 0.46,
+       "end": 0.74,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "vast",
+       "start": 0.74,
+       "end": 1.06,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "and",
+       "start": 1.06,
+       "end": 1.48,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "indifferent.",
+       "start": 1.48,
+       "end": 1.82,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 16.69
+    }
+   ],
+   "beat": 7,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "time": "night",
+   "grade": "cold",
+   "set": "void",
+   "dur": 3.5,
+   "camera": {
+    "frame": "close",
+    "on": "alex",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "stand",
+     "mood": "neutral"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Your little garden will wither.”",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-018-0.wav",
+     "voice_dur": 1.989,
+     "word_times": [
+      {
+       "word": "Your",
+       "start": 0.0,
+       "end": 0.22,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "little",
+       "start": 0.22,
+       "end": 0.4,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "garden",
+       "start": 0.4,
+       "end": 0.78,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "will",
+       "start": 0.78,
+       "end": 1.14,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "wither.”",
+       "start": 1.14,
+       "end": 1.6,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 17.49
+    }
+   ],
+   "beat": 7,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "time": "night",
+   "grade": "cold",
+   "set": "void",
+   "dur": 6.65,
+   "camera": {
+    "frame": "wide",
+    "on": "alex",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "stand",
+     "mood": "neutral"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Alex’s resolve hardens as he steadies his hand, willing to confront the silence.",
+     "at": 0.25,
+     "speech_check": 0.8462,
+     "speech_verified": true,
+     "voice_file": "vo-019-0.wav",
+     "voice_dur": 4.957,
+     "word_times": [
+      {
+       "word": "Alex’s",
+       "start": 0.0,
+       "end": 0.48,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "resolve",
+       "start": 0.48,
+       "end": 0.84,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "hardens",
+       "start": 0.84,
+       "end": 1.78,
+       "timing_source": "estimated_between_anchors"
+      },
+      {
+       "word": "as",
+       "start": 1.78,
+       "end": 1.92,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "he",
+       "start": 1.92,
+       "end": 2.02,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "steadies",
+       "start": 2.02,
+       "end": 2.4,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "his",
+       "start": 2.4,
+       "end": 2.5,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "hand,",
+       "start": 2.5,
+       "end": 2.88,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "willing",
+       "start": 3.18,
+       "end": 3.38,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "to",
+       "start": 3.38,
+       "end": 3.6,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "confront",
+       "start": 3.6,
+       "end": 3.9,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "the",
+       "start": 3.9,
+       "end": 4.14,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "silence.",
+       "start": 4.14,
+       "end": 4.957,
+       "timing_source": "estimated_between_anchors"
+      }
+     ],
+     "cps": 17.54
+    }
+   ],
+   "beat": 7,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "time": "day",
+   "grade": "warm",
+   "set": "park",
+   "dur": 7.05,
+   "camera": {
+    "frame": "wide",
+    "push": 0.04
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "write",
+     "mood": "hopeful",
+     "seated": true,
+     "hold": "pencil",
+     "artwork": "seedling"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "On a sun‑dappled bench, Alex spreads a sketchpad and begins tracing a blooming seedling.",
+     "at": 0.25,
+     "speech_check": 0.8387,
+     "speech_verified": true,
+     "voice_file": "vo-020-0.wav",
+     "voice_dur": 5.988,
+     "word_times": [
+      {
+       "word": "On",
+       "start": 0.0,
+       "end": 0.12,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 0.12,
+       "end": 0.2,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "sun‑dappled",
+       "start": 0.2,
+       "end": 1.08,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "bench,",
+       "start": 1.08,
+       "end": 1.52,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "Alex",
+       "start": 1.98,
+       "end": 2.1,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "spreads",
+       "start": 2.1,
+       "end": 2.46,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 2.46,
+       "end": 2.72,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "sketchpad",
+       "start": 2.72,
+       "end": 3.28,
+       "timing_source": "estimated_between_anchors"
+      },
+      {
+       "word": "and",
+       "start": 3.28,
+       "end": 3.5,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "begins",
+       "start": 3.5,
+       "end": 3.74,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "tracing",
+       "start": 3.74,
+       "end": 4.28,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 4.28,
+       "end": 4.6,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "blooming",
+       "start": 4.6,
+       "end": 5.04,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "seedling.",
+       "start": 5.04,
+       "end": 5.988,
+       "timing_source": "estimated_between_anchors"
+      }
+     ],
+     "cps": 15.97
+    }
+   ],
+   "beat": 8,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "time": "day",
+   "grade": "warm",
+   "set": "park",
+   "dur": 6.65,
+   "camera": {
+    "frame": "close",
+    "on": "alex",
+    "push": 0.06
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "write",
+     "mood": "hopeful",
+     "seated": true,
+     "hold": "pencil",
+     "artwork": "seedling"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Each line stitches meaning into the air, turning idle time into quiet fulfillment.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-021-0.wav",
+     "voice_dur": 5.383,
+     "word_times": [
+      {
+       "word": "Each",
+       "start": 0.0,
+       "end": 0.16,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "line",
+       "start": 0.16,
+       "end": 0.44,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "stitches",
+       "start": 0.44,
+       "end": 0.86,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "meaning",
+       "start": 0.86,
+       "end": 1.3,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "into",
+       "start": 1.3,
+       "end": 1.76,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "the",
+       "start": 1.76,
+       "end": 1.9,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "air,",
+       "start": 1.9,
+       "end": 2.16,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "turning",
+       "start": 2.4,
+       "end": 2.66,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "idle",
+       "start": 2.66,
+       "end": 2.94,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "time",
+       "start": 2.94,
+       "end": 3.4,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "into",
+       "start": 3.4,
+       "end": 3.88,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "quiet",
+       "start": 3.88,
+       "end": 4.28,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "fulfillment.",
+       "start": 4.28,
+       "end": 4.76,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 16.56
+    }
+   ],
+   "beat": 8,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "time": "day",
+   "grade": "warm",
+   "set": "park",
+   "dur": 6.65,
+   "camera": {
+    "frame": "wide",
+    "push": 0.04
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 42.0,
+     "pose": "show",
+     "mood": "hopeful",
+     "seated": true,
+     "hold": "book",
+     "target": "sam",
+     "facing": 1,
+     "artwork": "seedling"
+    },
+    {
+     "id": "sam",
+     "x": 58.0,
+     "pose": "sit",
+     "mood": "hopeful"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Alex invites Sam to the bench, unveiling the sketch that now feels alive.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-022-0.wav",
+     "voice_dur": 4.859,
+     "word_times": [
+      {
+       "word": "Alex",
+       "start": 0.0,
+       "end": 0.18,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "invites",
+       "start": 0.18,
+       "end": 0.52,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "Sam",
+       "start": 0.52,
+       "end": 0.92,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "to",
+       "start": 0.92,
+       "end": 1.1,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "the",
+       "start": 1.1,
+       "end": 1.18,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "bench,",
+       "start": 1.18,
+       "end": 1.56,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "unveiling",
+       "start": 1.94,
+       "end": 2.16,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "the",
+       "start": 2.16,
+       "end": 2.48,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "sketch",
+       "start": 2.48,
+       "end": 2.72,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "that",
+       "start": 2.72,
+       "end": 3.06,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "now",
+       "start": 3.06,
+       "end": 3.32,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "feels",
+       "start": 3.32,
+       "end": 3.7,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "alive.",
+       "start": 3.7,
+       "end": 4.3,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 16.33
+    }
+   ],
+   "beat": 9,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "time": "day",
+   "grade": "warm",
+   "set": "park",
+   "dur": 6.65,
+   "camera": {
+    "frame": "close",
+    "on": "alex",
+    "push": 0.06
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "show",
+     "mood": "hopeful",
+     "seated": true,
+     "hold": "book",
+     "artwork": "seedling"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Together they discuss its colors, realizing a shared purpose can anchor fleeting thoughts.",
+     "at": 0.25,
+     "speech_check": 0.8462,
+     "speech_verified": true,
+     "voice_file": "vo-023-0.wav",
+     "voice_dur": 5.005,
+     "word_times": [
+      {
+       "word": "Together",
+       "start": 0.0,
+       "end": 0.28,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "they",
+       "start": 0.28,
+       "end": 0.58,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "discuss",
+       "start": 0.58,
+       "end": 0.82,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "its",
+       "start": 0.82,
+       "end": 1.12,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "colors,",
+       "start": 1.12,
+       "end": 1.58,
+       "timing_source": "estimated_between_anchors"
+      },
+      {
+       "word": "realizing",
+       "start": 1.58,
+       "end": 2.04,
+       "timing_source": "estimated_between_anchors"
+      },
+      {
+       "word": "a",
+       "start": 2.04,
+       "end": 2.2,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "shared",
+       "start": 2.2,
+       "end": 2.46,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "purpose",
+       "start": 2.46,
+       "end": 2.92,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "can",
+       "start": 2.92,
+       "end": 3.24,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "anchor",
+       "start": 3.24,
+       "end": 3.56,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "fleeting",
+       "start": 3.56,
+       "end": 3.96,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "thoughts.",
+       "start": 3.96,
+       "end": 4.5,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 19.55
+    }
+   ],
+   "beat": 9,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "time": "night",
+   "grade": "cold",
+   "set": "scene",
+   "scene": {
+    "base": "stage",
+    "elements": []
+   },
+   "dur": 8.25,
+   "camera": {
+    "frame": "wide",
+    "push": 0.04
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "sit",
+     "mood": "determined"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Shadow steps forward, voice low and echoing, \"Your meaning is arbitrary, a mere trick of the mind.",
+     "at": 0.25,
+     "speech_check": 0.9412,
+     "speech_verified": true,
+     "voice_file": "vo-024-0.wav",
+     "voice_dur": 6.849,
+     "word_times": [
+      {
+       "word": "Shadow",
+       "start": 0.0,
+       "end": 0.3,
+       "timing_source": "estimated_between_anchors"
+      },
+      {
+       "word": "steps",
+       "start": 0.3,
+       "end": 0.52,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "forward,",
+       "start": 0.52,
+       "end": 1.08,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "voice",
+       "start": 1.44,
+       "end": 1.62,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "low",
+       "start": 1.62,
+       "end": 1.96,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "and",
+       "start": 1.96,
+       "end": 2.3,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "echoing,",
+       "start": 2.3,
+       "end": 2.56,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "\"Your",
+       "start": 3.18,
+       "end": 3.2,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "meaning",
+       "start": 3.2,
+       "end": 3.48,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "is",
+       "start": 3.48,
+       "end": 3.86,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "arbitrary,",
+       "start": 3.86,
+       "end": 4.2,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 4.96,
+       "end": 5.02,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "mere",
+       "start": 5.02,
+       "end": 5.24,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "trick",
+       "start": 5.24,
+       "end": 5.6,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "of",
+       "start": 5.6,
+       "end": 5.9,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "the",
+       "start": 5.9,
+       "end": 6.02,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "mind.",
+       "start": 6.02,
+       "end": 6.32,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 15.55
+    }
+   ],
+   "beat": 10,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "time": "night",
+   "grade": "cold",
+   "set": "scene",
+   "scene": {
+    "base": "stage",
+    "elements": []
+   },
+   "dur": 4.25,
+   "camera": {
+    "frame": "close",
+    "on": "alex",
+    "push": 0.06
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "sit",
+     "mood": "determined"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "It holds no weight against the void.\"",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-025-0.wav",
+     "voice_dur": 2.538,
+     "word_times": [
+      {
+       "word": "It",
+       "start": 0.0,
+       "end": 0.14,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "holds",
+       "start": 0.14,
+       "end": 0.34,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "no",
+       "start": 0.34,
+       "end": 0.7,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "weight",
+       "start": 0.7,
+       "end": 1.16,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "against",
+       "start": 1.16,
+       "end": 1.48,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "the",
+       "start": 1.48,
+       "end": 1.74,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "void.\"",
+       "start": 1.74,
+       "end": 2.02,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 15.85
+    }
+   ],
+   "beat": 10,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "time": "night",
+   "grade": "cold",
+   "set": "scene",
+   "scene": {
+    "base": "stage",
+    "elements": []
+   },
+   "dur": 6.25,
+   "camera": {
+    "frame": "wide",
+    "on": "alex",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "sit",
+     "mood": "determined"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Alex turns, eyes steady, and gestures toward the sketchbook on the bench.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-026-0.wav",
+     "voice_dur": 4.707,
+     "word_times": [
+      {
+       "word": "Alex",
+       "start": 0.0,
+       "end": 0.22,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "turns,",
+       "start": 0.22,
+       "end": 0.62,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "eyes",
+       "start": 1.06,
+       "end": 1.4,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "steady,",
+       "start": 1.4,
+       "end": 1.74,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "and",
+       "start": 1.74,
+       "end": 2.3,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "gestures",
+       "start": 2.3,
+       "end": 2.58,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "toward",
+       "start": 2.58,
+       "end": 3.12,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "the",
+       "start": 3.12,
+       "end": 3.32,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "sketchbook",
+       "start": 3.32,
+       "end": 3.78,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "on",
+       "start": 3.78,
+       "end": 3.92,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "the",
+       "start": 3.92,
+       "end": 4.02,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "bench.",
+       "start": 4.02,
+       "end": 4.2,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 16.86
+    }
+   ],
+   "beat": 10,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "time": "night",
+   "grade": "cold",
+   "set": "scene",
+   "scene": {
+    "base": "stage",
+    "elements": []
+   },
+   "dur": 5.05,
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "sit",
+     "mood": "determined"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "\"It doesn't need to be absolute to be real.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-027-0.wav",
+     "voice_dur": 2.915,
+     "word_times": [
+      {
+       "word": "\"It",
+       "start": 0.0,
+       "end": 0.08,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "doesn't",
+       "start": 0.08,
+       "end": 0.42,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "need",
+       "start": 0.42,
+       "end": 0.58,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "to",
+       "start": 0.58,
+       "end": 0.74,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "be",
+       "start": 0.74,
+       "end": 0.84,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "absolute",
+       "start": 0.84,
+       "end": 1.38,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "to",
+       "start": 1.38,
+       "end": 1.96,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "be",
+       "start": 1.96,
+       "end": 2.1,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "real.",
+       "start": 2.1,
+       "end": 2.5,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 16.03
+    }
+   ],
+   "beat": 10,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "time": "night",
+   "grade": "cold",
+   "set": "scene",
+   "scene": {
+    "base": "stage",
+    "elements": []
+   },
+   "dur": 8.25,
+   "camera": {
+    "frame": "close",
+    "on": "alex",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "sit",
+     "mood": "determined"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The fact that I chose this, and that it anchors my days, makes it true for me.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-028-0.wav",
+     "voice_dur": 4.534,
+     "word_times": [
+      {
+       "word": "The",
+       "start": 0.0,
+       "end": 0.08,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "fact",
+       "start": 0.08,
+       "end": 0.26,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "that",
+       "start": 0.26,
+       "end": 0.44,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "I",
+       "start": 0.44,
+       "end": 0.56,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "chose",
+       "start": 0.56,
+       "end": 0.8,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "this,",
+       "start": 0.8,
+       "end": 1.08,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "and",
+       "start": 1.08,
+       "end": 1.3,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "that",
+       "start": 1.3,
+       "end": 1.4,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "it",
+       "start": 1.4,
+       "end": 1.5,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "anchors",
+       "start": 1.5,
+       "end": 1.82,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "my",
+       "start": 1.82,
+       "end": 2.08,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "days,",
+       "start": 2.08,
+       "end": 2.4,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "makes",
+       "start": 2.4,
+       "end": 2.98,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "it",
+       "start": 2.98,
+       "end": 3.26,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "true",
+       "start": 3.26,
+       "end": 3.64,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "for",
+       "start": 3.64,
+       "end": 3.94,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "me.",
+       "start": 3.94,
+       "end": 4.16,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 18.7
+    }
+   ],
+   "beat": 10,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "time": "night",
+   "grade": "cold",
+   "set": "scene",
+   "scene": {
+    "base": "stage",
+    "elements": []
+   },
+   "dur": 5.05,
+   "camera": {
+    "frame": "wide",
+    "on": "alex",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "sit",
+     "mood": "determined"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The void is empty, but my choice fills it.\"",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-029-0.wav",
+     "voice_dur": 2.908,
+     "word_times": [
+      {
+       "word": "The",
+       "start": 0.0,
+       "end": 0.16,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "void",
+       "start": 0.16,
+       "end": 0.36,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "is",
+       "start": 0.36,
+       "end": 0.58,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "empty,",
+       "start": 0.58,
+       "end": 0.9,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "but",
+       "start": 1.26,
+       "end": 1.48,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "my",
+       "start": 1.48,
+       "end": 1.68,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "choice",
+       "start": 1.68,
+       "end": 1.94,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "fills",
+       "start": 1.94,
+       "end": 2.3,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "it.\"",
+       "start": 2.3,
+       "end": 2.56,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 16.07
+    }
+   ],
+   "beat": 10,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "time": "night",
+   "grade": "cold",
+   "set": "scene",
+   "scene": {
+    "base": "stage",
+    "elements": [
+     {
+      "type": "word",
+      "x": 50.0,
+      "label": "CHOICE",
+      "color": "white"
+     }
+    ]
+   },
+   "dur": 6.25,
+   "camera": {
+    "frame": "wide",
+    "push": 0.04
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "sit",
+     "mood": "determined"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The light isn’t a cure; it’s a spotlight on his own agency.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-030-0.wav",
+     "voice_dur": 4.221,
+     "word_times": [
+      {
+       "word": "The",
+       "start": 0.0,
+       "end": 0.14,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "light",
+       "start": 0.14,
+       "end": 0.34,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "isn’t",
+       "start": 0.34,
+       "end": 0.78,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 0.78,
+       "end": 0.86,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "cure;",
+       "start": 0.86,
+       "end": 1.18,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "it’s",
+       "start": 1.74,
+       "end": 1.84,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 1.84,
+       "end": 1.9,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "spotlight",
+       "start": 1.9,
+       "end": 2.28,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "on",
+       "start": 2.28,
+       "end": 2.76,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "his",
+       "start": 2.76,
+       "end": 2.9,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "own",
+       "start": 2.9,
+       "end": 3.12,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "agency.",
+       "start": 3.12,
+       "end": 3.48,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 15.19
+    }
+   ],
+   "beat": 11,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "time": "night",
+   "grade": "cold",
+   "set": "scene",
+   "scene": {
+    "base": "stage",
+    "elements": [
+     {
+      "type": "word",
+      "x": 50.0,
+      "label": "CHOICE",
+      "color": "white"
+     }
+    ]
+   },
+   "dur": 7.85,
+   "camera": {
+    "frame": "close",
+    "on": "alex",
+    "push": 0.06
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "sit",
+     "mood": "determined"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The weight of the void doesn’t vanish, but it becomes a backdrop to his active choice.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-031-0.wav",
+     "voice_dur": 4.995,
+     "word_times": [
+      {
+       "word": "The",
+       "start": 0.0,
+       "end": 0.1,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "weight",
+       "start": 0.1,
+       "end": 0.34,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "of",
+       "start": 0.34,
+       "end": 0.5,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "the",
+       "start": 0.5,
+       "end": 0.6,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "void",
+       "start": 0.6,
+       "end": 0.86,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "doesn’t",
+       "start": 0.86,
+       "end": 1.26,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "vanish,",
+       "start": 1.26,
+       "end": 1.5,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "but",
+       "start": 1.92,
+       "end": 2.08,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "it",
+       "start": 2.08,
+       "end": 2.16,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "becomes",
+       "start": 2.16,
+       "end": 2.42,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 2.42,
+       "end": 2.6,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "backdrop",
+       "start": 2.6,
+       "end": 2.94,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "to",
+       "start": 2.94,
+       "end": 3.62,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "his",
+       "start": 3.62,
+       "end": 3.74,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "active",
+       "start": 3.74,
+       "end": 4.04,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "choice.",
+       "start": 4.04,
+       "end": 4.46,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 18.71
+    }
+   ],
+   "beat": 11,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "time": "night",
+   "grade": "cold",
+   "set": "scene",
+   "scene": {
+    "base": "stage",
+    "elements": [
+     {
+      "type": "word",
+      "x": 50.0,
+      "label": "CHOICE",
+      "color": "white"
+     }
+    ]
+   },
+   "dur": 7.45,
+   "camera": {
+    "frame": "wide",
+    "on": "alex",
+    "push": 0.05
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "sit",
+     "mood": "determined"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The freedom of decision feels heavier than any cosmic promise, yet it steadies his pulse.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-032-0.wav",
+     "voice_dur": 5.398,
+     "word_times": [
+      {
+       "word": "The",
+       "start": 0.0,
+       "end": 0.08,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "freedom",
+       "start": 0.08,
+       "end": 0.4,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "of",
+       "start": 0.4,
+       "end": 0.6,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "decision",
+       "start": 0.6,
+       "end": 0.86,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "feels",
+       "start": 0.86,
+       "end": 1.3,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "heavier",
+       "start": 1.3,
+       "end": 1.76,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "than",
+       "start": 1.76,
+       "end": 2.08,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "any",
+       "start": 2.08,
+       "end": 2.2,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "cosmic",
+       "start": 2.2,
+       "end": 2.44,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "promise,",
+       "start": 2.44,
+       "end": 2.86,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "yet",
+       "start": 3.5,
+       "end": 3.7,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "it",
+       "start": 3.7,
+       "end": 3.8,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "steadies",
+       "start": 3.8,
+       "end": 4.4,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "his",
+       "start": 4.4,
+       "end": 4.5,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "pulse.",
+       "start": 4.5,
+       "end": 4.82,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 17.92
+    }
+   ],
+   "beat": 11,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "time": "dawn",
+   "grade": "warm",
+   "set": "rooftop",
+   "dur": 8.25,
+   "camera": {
+    "frame": "wide",
+    "push": 0.04
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "sit",
+     "mood": "hopeful"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "At sunrise, Alex stands on the rooftop, the city waking below, his sketchbook warm in his hands.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-033-0.wav",
+     "voice_dur": 6.362,
+     "word_times": [
+      {
+       "word": "At",
+       "start": 0.0,
+       "end": 0.12,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "sunrise,",
+       "start": 0.12,
+       "end": 0.34,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "Alex",
+       "start": 1.0,
+       "end": 1.06,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "stands",
+       "start": 1.06,
+       "end": 1.5,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "on",
+       "start": 1.5,
+       "end": 1.72,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "the",
+       "start": 1.72,
+       "end": 1.82,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "rooftop,",
+       "start": 1.82,
+       "end": 2.04,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "the",
+       "start": 2.74,
+       "end": 2.82,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "city",
+       "start": 2.82,
+       "end": 3.08,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "waking",
+       "start": 3.08,
+       "end": 3.36,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "below,",
+       "start": 3.36,
+       "end": 3.88,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "his",
+       "start": 4.3,
+       "end": 4.48,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "sketchbook",
+       "start": 4.48,
+       "end": 5.08,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "warm",
+       "start": 5.08,
+       "end": 5.32,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "in",
+       "start": 5.32,
+       "end": 5.5,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "his",
+       "start": 5.5,
+       "end": 5.64,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "hands.",
+       "start": 5.64,
+       "end": 5.9,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 16.4
+    }
+   ],
+   "beat": 12,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "time": "dawn",
+   "grade": "warm",
+   "set": "rooftop",
+   "dur": 10.65,
+   "camera": {
+    "frame": "close",
+    "on": "alex",
+    "push": 0.06
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "sit",
+     "mood": "hopeful"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He smiles, accepting that the void still exists but no longer defines him, and that he has built a home within its silence.",
+     "at": 0.25,
+     "speech_check": 1.0,
+     "speech_verified": true,
+     "voice_file": "vo-034-0.wav",
+     "voice_dur": 7.588,
+     "word_times": [
+      {
+       "word": "He",
+       "start": 0.0,
+       "end": 0.08,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "smiles,",
+       "start": 0.08,
+       "end": 0.42,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "accepting",
+       "start": 0.9,
+       "end": 1.28,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "that",
+       "start": 1.28,
+       "end": 1.7,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "the",
+       "start": 1.7,
+       "end": 1.8,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "void",
+       "start": 1.8,
+       "end": 2.04,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "still",
+       "start": 2.04,
+       "end": 2.38,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "exists",
+       "start": 2.38,
+       "end": 2.7,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "but",
+       "start": 2.7,
+       "end": 3.12,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "no",
+       "start": 3.12,
+       "end": 3.34,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "longer",
+       "start": 3.34,
+       "end": 3.7,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "defines",
+       "start": 3.7,
+       "end": 4.04,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "him,",
+       "start": 4.04,
+       "end": 4.52,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "and",
+       "start": 4.86,
+       "end": 4.94,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "that",
+       "start": 4.94,
+       "end": 5.04,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "he",
+       "start": 5.04,
+       "end": 5.18,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "has",
+       "start": 5.18,
+       "end": 5.34,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "built",
+       "start": 5.34,
+       "end": 5.6,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "a",
+       "start": 5.6,
+       "end": 5.78,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "home",
+       "start": 5.78,
+       "end": 6.06,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "within",
+       "start": 6.06,
+       "end": 6.4,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "its",
+       "start": 6.4,
+       "end": 6.62,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "silence.",
+       "start": 6.62,
+       "end": 7.04,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 17.62
+    }
+   ],
+   "beat": 12,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 9.72,
+   "music": "high",
+   "card": {
+    "style": "line",
+    "lines": [
+     "At sunrise, Alex smiles, sketchbook warm, realizing every line he draws writes his own purpose."
+    ]
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "At sunrise, Alex smiles, sketchbook warm, realizing every line he draws writes his own purpose.",
+     "at": 0.4,
+     "hidden": true,
+     "speech_check": 0.9032,
+     "speech_verified": true,
+     "voice_file": "vo-035-0.wav",
+     "voice_dur": 6.316,
+     "word_times": [
+      {
+       "word": "At",
+       "start": 0.0,
+       "end": 0.14,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "sunrise,",
+       "start": 0.14,
+       "end": 1.0,
+       "timing_source": "estimated_between_anchors"
+      },
+      {
+       "word": "Alex",
+       "start": 1.0,
+       "end": 1.08,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "smiles,",
+       "start": 1.08,
+       "end": 1.36,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "sketchbook",
+       "start": 2.08,
+       "end": 2.38,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "warm,",
+       "start": 2.38,
+       "end": 2.74,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "realizing",
+       "start": 3.14,
+       "end": 3.5,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "every",
+       "start": 3.5,
+       "end": 3.94,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "line",
+       "start": 3.94,
+       "end": 4.24,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "he",
+       "start": 4.24,
+       "end": 4.42,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "draws",
+       "start": 4.42,
+       "end": 4.66,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "writes",
+       "start": 4.66,
+       "end": 5.08,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "his",
+       "start": 5.08,
+       "end": 5.26,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "own",
+       "start": 5.26,
+       "end": 5.44,
+       "timing_source": "whisper"
+      },
+      {
+       "word": "purpose.",
+       "start": 5.44,
+       "end": 5.84,
+       "timing_source": "whisper"
+      }
+     ],
+     "cps": 16.35
+    }
+   ],
+   "set": "void",
+   "camera": {
+    "frame": "wide"
+   },
+   "actors": [],
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 4.0,
+   "music": "mid",
+   "card": {
+    "style": "cta",
+    "lines": [
+     "If this made you think, like and subscribe."
+    ]
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 50.0,
+     "pose": "wave",
+     "mood": "happy",
+     "scale": 0.7
+    }
+   ],
+   "set": "void",
+   "camera": {
+    "frame": "wide"
+   },
+   "lines": [],
+   "sfx": [],
+   "items": []
+  }
+ ],
+ "publish": {
+  "youtube_titles": [
+   "What If Nothing Really Matters? | Finding Purpose in a Void",
+   "When Life Has No Meaning: Turning Nihilism Into Fulfillment",
+   "From Existential Void to Personal Projects – A Short Film"
+  ],
+  "description": "In this animated essay we follow Alex as he confronts existential nihilism and discovers that meaning isn’t handed down from the universe—it’s built, one small project at a time. Through sketchbooks, coffee talks, and a shadowy personification of the Void, the film shows how personal creativity can turn emptiness into quiet fulfillment.\n\nWatch the journey from confusion on an empty billboard to hopeful sunrise on a rooftop, and learn why self‑made purpose beats the search for cosmic significance. #Existentialism #Nihilism #SelfMadeMeaning #AnimatedEssay #Philosophy\n",
+  "tags": [
+   "existential nihilism",
+   "meaning of life",
+   "self made purpose",
+   "animated philosophy",
+   "personal projects",
+   "Nietzsche",
+   "Sartre",
+   "Camus",
+   "creative fulfillment",
+   "short philosophical film"
+  ],
+  "pinned_comment": "What small project have you started that suddenly gave your day more meaning?",
+  "thumbnail_words": "Choose Your Meaning",
+  "idea": {
+   "definition": "Existential nihilism claims life lacks inherent meaning or value.",
+   "mechanism": "Meaning is a human construct; without external purpose, we create our own narratives.",
+   "turn": "Even if meaning is self‑made, it can still generate genuine fulfillment.",
+   "thinkers": "Friedrich Nietzsche, Jean-Paul Sartre, Albert Camus"
+  },
+  "inner_voice": {
+   "represents": "the Void of Meaning",
+   "color": "#2b2b2b"
+  },
+  "approach": "Show a character confronting the idea and discovering how personal projects become sources of value."
+ },
+ "writer": "groq:openai/gpt-oss-20b",
+ "sources": [
+  {
+   "title": "Nihilism",
+   "url": "https://en.wikipedia.org/wiki/Nihilism",
+   "source": "Wikipedia",
+   "query": "existential nihilism meaning of life"
+  },
+  {
+   "title": "Meaning of life",
+   "url": "https://en.wikipedia.org/wiki/Meaning_of_life",
+   "source": "Wikipedia",
+   "query": "existential nihilism meaning of life"
+  },
+  {
+   "title": "Existential nihilism",
+   "url": "https://en.wikipedia.org/wiki/Existential_nihilism",
+   "source": "Wikipedia",
+   "query": "existential nihilism meaning of life"
+  }
+ ],
+ "duration": 253.48,
+ "speech_verification": {
+  "passed": true,
+  "parts": 36,
+  "minimum_agreement": 0.8333
+ },
+ "narrator_voice": "warguy",
+ "acting_report": {
+  "director": "verified physical-action compiler",
+  "changes": [
+   {
+    "shot": 5,
+    "beat": 3,
+    "changes": [
+     {
+      "actor": "sam",
+      "from": "stand",
+      "to": "talk",
+      "direction": "Sam pours coffee, gestures toward notebook"
+     }
+    ]
+   },
+   {
+    "shot": 6,
+    "beat": 3,
+    "changes": [
+     {
+      "actor": "alex",
+      "from": "stand",
+      "to": "talk",
+      "direction": "Sam pours coffee, gestures toward notebook"
+     }
+    ]
+   },
+   {
+    "shot": 20,
+    "beat": 8,
+    "changes": [
+     {
+      "actor": "alex",
+      "from": "sit",
+      "to": "write",
+      "direction": "He starts drawing, feels purpose"
+     }
+    ]
+   },
+   {
+    "shot": 21,
+    "beat": 8,
+    "changes": [
+     {
+      "actor": "alex",
+      "from": "sit",
+      "to": "write",
+      "direction": "He starts drawing, feels purpose"
+     }
+    ]
+   },
+   {
+    "shot": 22,
+    "beat": 9,
+    "changes": [
+     {
+      "actor": "alex",
+      "from": "sit",
+      "to": "show",
+      "direction": "Alex shows sketch to Sam"
+     }
+    ]
+   },
+   {
+    "shot": 23,
+    "beat": 9,
+    "changes": [
+     {
+      "actor": "alex",
+      "from": "sit",
+      "to": "show",
+      "direction": "Alex shows sketch to Sam"
+     }
+    ]
+   }
+  ],
+  "limitations": [
+   "Unsupported physical detail is not simulated; inspect scene meaning in the contact sheet.",
+   "Thoughtful standing and sitting are permitted, not counted as new performances."
+  ]
+ },
+ "music_credit": "Synthesized score"
+}
