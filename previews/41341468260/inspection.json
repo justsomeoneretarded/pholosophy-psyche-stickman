@@ -1,0 +1,19 @@
+{
+  "source": "decoded final MP4",
+  "selected": [
+    [
+      0,
+      2
+    ],
+    [
+      5,
+      36.33
+    ]
+  ],
+  "pose_usage": {
+    "think": 3,
+    "phone": 2,
+    "headhands": 1,
+    "type": 2
+  }
+}
