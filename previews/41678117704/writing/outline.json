@@ -1,0 +1,72 @@
+{
+ "title": "Why Smart People Overthink Everything",
+ "idea": {
+  "definition": "Overthinking is the repetitive rehearsal of possible outcomes, not the gathering of new information.",
+  "mechanism": "It keeps the mind stuck in a loop of imagined scenarios, draining energy and delaying action.",
+  "turn": "When we distinguish rehearsal from research, we free our decisions and reduce distress.",
+  "thinkers": "Maladaptive rumination, self‑critical rumination"
+ },
+ "approach": "Show Alex’s day‑to‑day actions and inner monologue to expose the difference between gathering facts and rehearsing possibilities.",
+ "cast": [
+  {
+   "id": "alex",
+   "kind": "hero",
+   "top": "blue",
+   "hair": "short",
+   "hat": "none"
+  },
+  {
+   "id": "jamie",
+   "kind": "friend",
+   "top": "green",
+   "hair": "long",
+   "hat": "none"
+  }
+ ],
+ "device": {
+  "type": "none",
+  "items": []
+ },
+ "inner_voice": {
+  "represents": "overthinking loop",
+  "color": "#ffcccc"
+ },
+ "spine": [
+  {
+   "idea": "overthinking",
+   "mode": "vignette",
+   "where": "cafe",
+   "what_happens": "Alex types a draft, pauses, retypes again"
+  },
+  {
+   "idea": "rehearsal vs research",
+   "mode": "contrast",
+   "where": "office",
+   "what_happens": "Alex reads data, then replays scenarios"
+  },
+  {
+   "idea": "objection",
+   "mode": "lesson",
+   "where": "desk",
+   "what_happens": "Alex notes a hard decision, hesitates"
+  },
+  {
+   "idea": "resolution",
+   "mode": "story",
+   "where": "cafe",
+   "what_happens": "Alex sends honest message, still unsure"
+  },
+  {
+   "idea": "misunderstanding",
+   "mode": "inner",
+   "where": "void",
+   "what_happens": "Silhouette of doubt flickers"
+  },
+  {
+   "idea": "clarity",
+   "mode": "story",
+   "where": "cafe",
+   "what_happens": "Jamie confirms intent, conversation clears air"
+  }
+ ]
+}

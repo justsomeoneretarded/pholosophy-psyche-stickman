@@ -1,0 +1,1174 @@
+{
+ "title": "Why Smart People Overthink Everything",
+ "logline": "One ambiguous comment about Friday becomes a conversation about a specific unfinished review; the distinction between rehearsal and investigation drives each advance.",
+ "demon_color": "#ff2a2a",
+ "narrator": "male",
+ "hud": null,
+ "music": {
+  "prompt": "Restrained thoughtful felt piano and warm ambient textures, 72 bpm, instrumental, gentle tension resolving into calm focus."
+ },
+ "cast": {
+  "hero": {
+   "kind": "hero"
+  },
+  "demon": {
+   "kind": "demon"
+  },
+  "alex": {
+   "kind": "hero",
+   "hair": "short",
+   "top": "charcoal"
+  },
+  "jamie": {
+   "kind": "friend",
+   "hair": "long",
+   "top": "blue"
+  }
+ },
+ "shots": [
+  {
+   "set": "cafe",
+   "time": "day",
+   "grade": "warm",
+   "dur": 10.53,
+   "camera": {
+    "frame": "two",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "think",
+     "x": 19.0,
+     "seated": true,
+     "facing": 1,
+     "mood": "neutral"
+    },
+    {
+     "id": "jamie",
+     "pose": "talk",
+     "x": 31.0,
+     "seated": true,
+     "facing": -1,
+     "mood": "neutral"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "When Jamie said, “Friday looks tight,” Alex heard a different sentence: “You’ve let everyone down.”",
+     "at": 0.25
+    },
+    {
+     "who": "jamie",
+     "text": "Friday looks tight.",
+     "at": 0.4
+    }
+   ],
+   "narration_index": 0,
+   "beat": 1,
+   "sfx": [],
+   "items": [],
+   "transition": "fade"
+  },
+  {
+   "set": "desk",
+   "time": "day",
+   "grade": "warm",
+   "dur": 11.76,
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "phone",
+     "x": 50.0,
+     "seated": true,
+     "mood": "worried"
+    }
+   ],
+   "narration_index": 1,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "At home, he begins a reply, writes an apology, deletes it, and replaces it with a longer one.",
+     "at": 0.25
+    }
+   ],
+   "beat": 1,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "desk",
+   "time": "day",
+   "grade": "warm",
+   "dur": 12.57,
+   "camera": {
+    "frame": "close",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "phone",
+     "x": 50.0,
+     "seated": true,
+     "mood": "nervous"
+    }
+   ],
+   "narration_index": 2,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Perhaps a warmer opening or a more confident ending will help; soon he is editing a conversation that hasn’t happened.",
+     "at": 0.25
+    }
+   ],
+   "beat": 1,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "desk",
+   "time": "day",
+   "grade": "warm",
+   "dur": 12.16,
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "think",
+     "x": 50.0,
+     "seated": true,
+     "mood": "tired"
+    }
+   ],
+   "narration_index": 3,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The problem isn’t that he has run out of answers; he can imagine so many that none feels safe.",
+     "at": 0.25
+    }
+   ],
+   "beat": 1,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "desk",
+   "time": "day",
+   "grade": "warm",
+   "dur": 12.98,
+   "camera": {
+    "frame": "close",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "think",
+     "x": 50.0,
+     "seated": true,
+     "mood": "worried"
+    }
+   ],
+   "narration_index": 4,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Being clever can help generate possibilities, but it doesn’t turn those possibilities into evidence, and overthinking is no proof of intelligence.",
+     "at": 0.25
+    }
+   ],
+   "beat": 1,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "office",
+   "time": "day",
+   "grade": "warm",
+   "dur": 12.57,
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "phone",
+     "x": 50.0,
+     "facing": 1,
+     "mood": "neutral",
+     "seated": true,
+     "hold": "phone"
+    }
+   ],
+   "narration_index": 0,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Next morning, Alex opens the project schedule and finds one unfinished review, while the other tasks are where they should be.",
+     "at": 0.25
+    }
+   ],
+   "beat": 2,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "office",
+   "time": "day",
+   "grade": "warm",
+   "dur": 12.57,
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "think",
+     "x": 50.0,
+     "seated": true,
+     "mood": "hopeful"
+    }
+   ],
+   "narration_index": 1,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "That check changes the problem: he now knows what might delay Friday, instead of treating the entire project as a disaster.",
+     "at": 0.25
+    }
+   ],
+   "beat": 2,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "office",
+   "time": "day",
+   "grade": "warm",
+   "dur": 12.16,
+   "camera": {
+    "frame": "close",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "phone",
+     "x": 50.0,
+     "facing": 1,
+     "mood": "worried",
+     "seated": true,
+     "hold": "phone"
+    }
+   ],
+   "narration_index": 2,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Then he imagines Jamie’s face when she reads his reply, changes a word, imagines another expression, and changes it back.",
+     "at": 0.25
+    }
+   ],
+   "beat": 2,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "office",
+   "time": "day",
+   "grade": "warm",
+   "dur": 10.12,
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "think",
+     "x": 50.0,
+     "seated": true,
+     "mood": "tired"
+    }
+   ],
+   "narration_index": 3,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Nothing new has entered the picture; his activity has changed, but his information has not.",
+     "at": 0.25
+    }
+   ],
+   "beat": 2,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "office",
+   "time": "day",
+   "grade": "warm",
+   "dur": 12.57,
+   "camera": {
+    "frame": "close",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "think",
+     "x": 50.0,
+     "seated": true,
+     "mood": "determined"
+    }
+   ],
+   "narration_index": 4,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Instead of asking whether he has thought hard enough, he can ask what this round of thinking has let him learn.",
+     "at": 0.25
+    }
+   ],
+   "beat": 2,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "street",
+   "time": "day",
+   "grade": "warm",
+   "dur": 10.69,
+   "camera": {
+    "frame": "wide",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "walk",
+     "x": 18.0,
+     "to": 50.0,
+     "mood": "neutral"
+    }
+   ],
+   "narration_index": 0,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Acting quickly is not always wiser, because some choices really do deserve slow, uncomfortable investigation.",
+     "at": 0.25
+    }
+   ],
+   "beat": 3,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "street",
+   "time": "day",
+   "grade": "warm",
+   "dur": 11.51,
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "think",
+     "x": 50.0,
+     "mood": "neutral"
+    }
+   ],
+   "narration_index": 1,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Before an expensive commitment or a difficult-to-reverse decision, checking assumptions can save more trouble than it costs.",
+     "at": 0.25
+    }
+   ],
+   "beat": 3,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "street",
+   "time": "day",
+   "grade": "warm",
+   "dur": 13.55,
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "talk",
+     "x": 50.0,
+     "facing": 1,
+     "mood": "neutral"
+    }
+   ],
+   "narration_index": 2,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The distinction is what the extra time is doing: checking a fact, comparing a real option, or seeking a perspective you lack.",
+     "at": 0.25
+    }
+   ],
+   "beat": 3,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "street",
+   "time": "day",
+   "grade": "warm",
+   "dur": 11.51,
+   "camera": {
+    "frame": "close",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "think",
+     "x": 50.0,
+     "mood": "worried"
+    }
+   ],
+   "narration_index": 3,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Or perhaps you are asking the same facts to promise a feeling of certainty they cannot supply.",
+     "at": 0.25
+    }
+   ],
+   "beat": 3,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "street",
+   "time": "day",
+   "grade": "warm",
+   "dur": 12.73,
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "phone",
+     "x": 50.0,
+     "mood": "determined"
+    }
+   ],
+   "narration_index": 4,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Alex needs a stopping condition, not carelessness: identify the unfinished review, ask what Jamie meant, and make one specific proposal.",
+     "at": 0.25
+    }
+   ],
+   "beat": 3,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "park",
+   "time": "day",
+   "grade": "warm",
+   "dur": 12.33,
+   "camera": {
+    "frame": "wide",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "walk",
+     "x": 18.0,
+     "to": 42.0,
+     "mood": "worried"
+    }
+   ],
+   "narration_index": 0,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "On his walk, Alex notices that every draft has a hidden demand: make Jamie react exactly as he hopes.",
+     "at": 0.25
+    }
+   ],
+   "beat": 4,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "park",
+   "time": "day",
+   "grade": "warm",
+   "dur": 12.33,
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "sitdown",
+     "x": 42.0,
+     "facing": 1,
+     "mood": "neutral"
+    }
+   ],
+   "narration_index": 1,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "No wording can guarantee that, because another person brings a mood, a history, and information he does not have.",
+     "at": 0.25
+    }
+   ],
+   "beat": 4,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "park",
+   "time": "day",
+   "grade": "warm",
+   "dur": 11.92,
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "phone",
+     "x": 42.0,
+     "seated": true,
+     "mood": "neutral"
+    }
+   ],
+   "narration_index": 2,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He can still be honest and considerate; those are choices about his message, not guarantees about her response.",
+     "at": 0.25
+    }
+   ],
+   "beat": 4,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "park",
+   "time": "day",
+   "grade": "warm",
+   "dur": 11.1,
+   "camera": {
+    "frame": "phone",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "phone",
+     "x": 42.0,
+     "seated": true
+    }
+   ],
+   "phone": {
+    "app": "chat",
+    "contact": "Jamie",
+    "messages": [
+     {
+      "from": "them",
+      "text": "Friday looks tight.",
+      "at": 0
+     }
+    ],
+    "typing": {
+     "text": "I may have misread: did you mean the review?",
+     "at": 0.5,
+     "action": "hold"
+    }
+   },
+   "narration_index": 3,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He writes, “I may have misread: did you mean the review?”—a question Jamie can actually answer.",
+     "at": 0.25
+    }
+   ],
+   "beat": 4,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "park",
+   "time": "day",
+   "grade": "warm",
+   "dur": 12.33,
+   "camera": {
+    "frame": "phone",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "phone",
+     "x": 42.0,
+     "seated": true,
+     "mood": "nervous"
+    }
+   ],
+   "phone": {
+    "app": "chat",
+    "contact": "Jamie",
+    "messages": [
+     {
+      "from": "them",
+      "text": "Friday looks tight.",
+      "at": 0
+     },
+     {
+      "from": "me",
+      "text": "I may have misread: did you mean the review?",
+      "at": 0.7
+     }
+    ]
+   },
+   "narration_index": 4,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He presses send while the doubt remains; this time, sending begins the conversation instead of pretending to finish it.",
+     "at": 0.25
+    }
+   ],
+   "beat": 4,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "park",
+   "time": "day",
+   "grade": "warm",
+   "dur": 11.1,
+   "camera": {
+    "frame": "phone",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "phone",
+     "x": 42.0,
+     "seated": true,
+     "mood": "shocked"
+    }
+   ],
+   "phone": {
+    "app": "chat",
+    "contact": "Jamie",
+    "messages": [
+     {
+      "from": "me",
+      "text": "I may have misread: did you mean the review?",
+      "at": 0
+     },
+     {
+      "from": "them",
+      "text": "Just the review. I thought you were waiting for me.",
+      "at": 0.5
+     }
+    ]
+   },
+   "narration_index": 0,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Jamie replies, “Just the review—I thought you were waiting for me,” and Alex reads it twice.",
+     "at": 0.25
+    }
+   ],
+   "beat": 5,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "park",
+   "time": "day",
+   "grade": "warm",
+   "dur": 12.33,
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "think",
+     "x": 42.0,
+     "seated": true,
+     "mood": "relieved"
+    }
+   ],
+   "narration_index": 1,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He had interpreted her comment as a judgment, while she had interpreted his silence as a request for time.",
+     "at": 0.25
+    }
+   ],
+   "beat": 5,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "cafe",
+   "time": "day",
+   "grade": "warm",
+   "dur": 10.69,
+   "camera": {
+    "frame": "wide",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "think",
+     "x": 19.0,
+     "seated": true,
+     "facing": 1
+    },
+    {
+     "id": "jamie",
+     "pose": "walk",
+     "x": 65.0,
+     "to": 31.0,
+     "facing": -1
+    }
+   ],
+   "narration_index": 2,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Neither explanation was hidden inside the original sentence; they needed another exchange to find out.",
+     "at": 0.25
+    }
+   ],
+   "beat": 5,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "cafe",
+   "time": "day",
+   "grade": "warm",
+   "dur": 12.73,
+   "camera": {
+    "frame": "two",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "talk",
+     "x": 19.0,
+     "seated": true,
+     "facing": 1,
+     "mood": "neutral"
+    },
+    {
+     "id": "jamie",
+     "pose": "sitdown",
+     "x": 31.0,
+     "seated": true,
+     "facing": -1,
+     "mood": "neutral"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "They meet at the café and agree that Alex will send a draft today, and Jamie will review it tomorrow.",
+     "at": 0.25
+    },
+    {
+     "who": "alex",
+     "text": "Draft today, review tomorrow?",
+     "at": 0.5
+    }
+   ],
+   "narration_index": 3,
+   "beat": 5,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "cafe",
+   "time": "day",
+   "grade": "warm",
+   "dur": 13.14,
+   "camera": {
+    "frame": "two",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "think",
+     "x": 19.0,
+     "seated": true,
+     "facing": 1,
+     "mood": "neutral"
+    },
+    {
+     "id": "jamie",
+     "pose": "talk",
+     "x": 31.0,
+     "seated": true,
+     "facing": -1,
+     "mood": "neutral"
+    }
+   ],
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "This doesn’t prove every difficult conversation ends kindly; it shows what this particular exchange made possible: information that rehearsal couldn’t provide.",
+     "at": 0.25
+    },
+    {
+     "who": "jamie",
+     "text": "That works for me.",
+     "at": 0.5
+    }
+   ],
+   "narration_index": 4,
+   "beat": 5,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "desk",
+   "time": "day",
+   "grade": "warm",
+   "dur": 11.67,
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "think",
+     "x": 50.0,
+     "seated": true,
+     "mood": "worried"
+    }
+   ],
+   "narration_index": 0,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Alex’s habit of imagining consequences hasn’t vanished; later, it helps him notice that a page is missing from the draft.",
+     "at": 0.25
+    }
+   ],
+   "beat": 6,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "desk",
+   "time": "day",
+   "grade": "warm",
+   "dur": 12.9,
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "type",
+     "x": 50.0,
+     "facing": 1,
+     "mood": "determined"
+    }
+   ],
+   "narration_index": 1,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "This time there is something concrete to check, so he adds the page, checks the attachment, and sends the work they agreed on.",
+     "at": 0.25
+    }
+   ],
+   "beat": 6,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "desk",
+   "time": "day",
+   "grade": "warm",
+   "dur": 9.22,
+   "camera": {
+    "frame": "close",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "think",
+     "x": 50.0,
+     "seated": true,
+     "mood": "neutral"
+    }
+   ],
+   "narration_index": 2,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "When another worried prediction appears, he does not have to defeat it before continuing.",
+     "at": 0.25
+    }
+   ],
+   "beat": 6,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "desk",
+   "time": "day",
+   "grade": "warm",
+   "dur": 12.9,
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "talk",
+     "x": 50.0,
+     "seated": true,
+     "facing": 1,
+     "mood": "neutral"
+    }
+   ],
+   "narration_index": 3,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He can ask whether it points to a task he can perform, a question he can ask, or an outcome he cannot control.",
+     "at": 0.25
+    }
+   ],
+   "beat": 6,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "set": "desk",
+   "time": "day",
+   "grade": "warm",
+   "dur": 13.31,
+   "camera": {
+    "frame": "medium",
+    "on": "alex",
+    "push": 0.025
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "pose": "standup",
+     "x": 50.0,
+     "facing": 1,
+     "mood": "relieved"
+    }
+   ],
+   "narration_index": 4,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Thinking becomes useful again when it serves those distinctions; the goal is not an empty mind, but a mind that can finish a job.",
+     "at": 0.25
+    }
+   ],
+   "beat": 6,
+   "sfx": [],
+   "items": []
+  },
+  {
+   "dur": 4.0,
+   "music": "mid",
+   "card": {
+    "style": "cta",
+    "lines": [
+     "If this made you think, like and subscribe."
+    ]
+   },
+   "actors": [
+    {
+     "id": "alex",
+     "x": 18,
+     "pose": "wave",
+     "mood": "happy",
+     "scale": 0.6,
+     "seated": false
+    }
+   ],
+   "set": "void",
+   "camera": {
+    "frame": "wide"
+   },
+   "lines": [],
+   "sfx": [],
+   "items": []
+  }
+ ],
+ "publish": {
+  "youtube_titles": [
+   "Why Smart People Overthink Everything",
+   "When Thinking Stops Helping",
+   "Overthinking: Rehearsal Is Not Research"
+  ],
+  "description": "An ambiguous comment about a deadline sends Alex into a loop of imagined replies. A specific question reveals what more rehearsal could not.\n\nThis fictional educational essay distinguishes useful investigation from repeated prediction. Overthinking is not proof of intelligence, and an uncertain conversation is not a diagnosis.\n\n#Overthinking #Psychology #DecisionMaking",
+  "tags": [
+   "overthinking",
+   "decision making",
+   "uncertainty",
+   "rumination",
+   "communication",
+   "psychology"
+  ],
+  "pinned_comment": "What helps you notice when thinking has stopped adding information?",
+  "thumbnail_words": "REHEARSAL OR REALITY?",
+  "idea": {
+   "definition": "Overthinking is explored as repeated rehearsal that stops adding useful information, not evidence of intelligence.",
+   "mechanism": "Imagined reactions can multiply while the actual evidence remains unchanged.",
+   "turn": "Careful thinking needs a question, new information, or a concrete task; certainty about another person's response is unavailable.",
+   "thinkers": "No attributed quotations or empirical statistics."
+  },
+  "inner_voice": null,
+  "approach": "One ambiguous comment about Friday becomes a conversation about a specific unfinished review; the distinction between rehearsal and investigation drives each advance."
+ },
+ "writer": "AI editorial revision of the generated checkpoint",
+ "sources": [
+  {
+   "title": "Maladaptive Rumination as a Transdiagnostic Mediator of Vulnerability and Outcome in Psychopathology.",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/30841644/",
+   "source": "PubMed",
+   "pmid": "30841644",
+   "query": "rumination[Title/Abstract] AND (metacognition[Title/Abstract] OR repetitive thinking[Title/Abstract]) NOT (psychosis[Title] OR schizophrenia[Title] OR bipolar[Title])",
+   "publication_types": [
+    "Journal Article",
+    "Review"
+   ],
+   "evidence_type": "review",
+   "doi": "10.3390/jcm8030314"
+  },
+  {
+   "title": "Development and Validation of a Measure of Self-Critical Rumination.",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/25712674/",
+   "source": "PubMed",
+   "pmid": "25712674",
+   "query": "rumination[Title/Abstract] AND (metacognition[Title/Abstract] OR repetitive thinking[Title/Abstract]) NOT (psychosis[Title] OR schizophrenia[Title] OR bipolar[Title])",
+   "publication_types": [
+    "Journal Article",
+    "Review"
+   ],
+   "evidence_type": "review",
+   "doi": "10.1177/1073191115573300"
+  },
+  {
+   "title": "Rumination (psychology)",
+   "url": "https://en.wikipedia.org/wiki/Rumination_(psychology)",
+   "source": "Wikipedia",
+   "query": "rumination psychology metacognition"
+  },
+  {
+   "title": "Metacognition",
+   "url": "https://en.wikipedia.org/wiki/Metacognition",
+   "source": "Wikipedia",
+   "query": "rumination psychology metacognition"
+  },
+  {
+   "title": "Mindfulness",
+   "url": "https://en.wikipedia.org/wiki/Mindfulness",
+   "source": "Wikipedia",
+   "query": "rumination psychology metacognition"
+  }
+ ],
+ "acting_report": {
+  "director": "verified physical-action compiler",
+  "changes": [],
+  "limitations": [
+   "Unsupported physical detail is not simulated; inspect scene meaning in the contact sheet.",
+   "Thoughtful standing and sitting are permitted, not counted as new performances."
+  ]
+ },
+ "editorial_origin": "AI editorial revision during autonomous review of the generated episode; not evidence that unattended writing passed.",
+ "script_review": {
+  "reviewer": "groq:qwen/qwen3.8-27b",
+  "issues": [],
+  "major_findings_resolved": true
+ },
+ "duration": 363.98
+}

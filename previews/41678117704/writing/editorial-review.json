@@ -1,0 +1,15 @@
+[
+ {
+  "round": 1,
+  "reviewer": "groq:qwen/qwen3.8-27b",
+  "review": {
+   "issues": [],
+   "strengths": [
+    "The narrative maintains strict factual consistency regarding the status of the unfinished review and the messages sent/received.",
+    "The distinction between 'investigation' (checking facts) and 'rehearsal' (imagining reactions) is clearly defined and applied consistently throughout the beats.",
+    "The ending avoids a universal psychological cure, framing the resolution as specific to this exchange rather than a guarantee for all future interactions."
+   ]
+  },
+  "edits": []
+ }
+]

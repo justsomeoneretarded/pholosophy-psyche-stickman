@@ -1,0 +1,188 @@
+{
+ "title": "Why Smart People Overthink Everything",
+ "_writer": "AI editorial revision of the generated checkpoint",
+ "approach": "One ambiguous comment about Friday becomes a conversation about a specific unfinished review; the distinction between rehearsal and investigation drives each advance.",
+ "idea": {
+  "definition": "Overthinking is explored as repeated rehearsal that stops adding useful information, not evidence of intelligence.",
+  "mechanism": "Imagined reactions can multiply while the actual evidence remains unchanged.",
+  "turn": "Careful thinking needs a question, new information, or a concrete task; certainty about another person's response is unavailable.",
+  "thinkers": "No attributed quotations or empirical statistics."
+ },
+ "cast": [
+  {
+   "id": "alex",
+   "kind": "hero",
+   "hair": "short",
+   "top": "charcoal"
+  },
+  {
+   "id": "jamie",
+   "kind": "friend",
+   "hair": "long",
+   "top": "blue",
+   "hat": "none"
+  }
+ ],
+ "device": {
+  "type": "none"
+ },
+ "inner_voice": null,
+ "cold_open": "",
+ "ending": "",
+ "music_prompt": "Restrained thoughtful felt piano and warm ambient textures, 72 bpm, instrumental, gentle tension resolving into calm focus.",
+ "youtube_titles": [
+  "Why Smart People Overthink Everything",
+  "When Thinking Stops Helping",
+  "Overthinking: Rehearsal Is Not Research"
+ ],
+ "description": "An ambiguous comment about a deadline sends Alex into a loop of imagined replies. A specific question reveals what more rehearsal could not.\n\nThis fictional educational essay distinguishes useful investigation from repeated prediction. Overthinking is not proof of intelligence, and an uncertain conversation is not a diagnosis.\n\n#Overthinking #Psychology #DecisionMaking",
+ "tags": [
+  "overthinking",
+  "decision making",
+  "uncertainty",
+  "rumination",
+  "communication",
+  "psychology"
+ ],
+ "pinned_comment": "What helps you notice when thinking has stopped adding information?",
+ "thumbnail_words": "REHEARSAL OR REALITY?",
+ "beats": [
+  {
+   "idea": "An ambiguous comment becomes an imagined judgment",
+   "mode": "hook",
+   "where": "desk",
+   "seconds": 60,
+   "who": [
+    "alex",
+    "jamie"
+   ],
+   "emotion": "neutral",
+   "time": "day",
+   "grade": "cold",
+   "weather": "none",
+   "what_happens": "Alex drafts, pauses, and checks a reply at home.",
+   "narration": [
+    "When Jamie said, “Friday looks tight,” Alex heard a different sentence: “You’ve let everyone down.”",
+    "At home, he begins a reply, writes an apology, deletes it, and replaces it with a longer one.",
+    "Perhaps a warmer opening or a more confident ending will help; soon he is editing a conversation that hasn’t happened.",
+    "The problem isn’t that he has run out of answers; he can imagine so many that none feels safe.",
+    "Being clever can help generate possibilities, but it doesn’t turn those possibilities into evidence, and overthinking is no proof of intelligence."
+   ],
+   "dialogue": []
+  },
+  {
+   "idea": "Checking evidence changes the question; rehearsing faces does not",
+   "mode": "lesson",
+   "where": "office",
+   "seconds": 60,
+   "who": [
+    "alex"
+   ],
+   "emotion": "neutral",
+   "time": "day",
+   "grade": "cold",
+   "weather": "none",
+   "what_happens": "Alex checks the project schedule, then notices repeated editing.",
+   "narration": [
+    "Next morning, Alex opens the project schedule and finds one unfinished review, while the other tasks are where they should be.",
+    "That check changes the problem: he now knows what might delay Friday, instead of treating the entire project as a disaster.",
+    "Then he imagines Jamie’s face when she reads his reply, changes a word, imagines another expression, and changes it back.",
+    "Nothing new has entered the picture; his activity has changed, but his information has not.",
+    "Instead of asking whether he has thought hard enough, he can ask what this round of thinking has let him learn."
+   ],
+   "dialogue": []
+  },
+  {
+   "idea": "Some decisions need investigation; distinguish it from a demand for certainty",
+   "mode": "contrast",
+   "where": "street",
+   "seconds": 60,
+   "who": [
+    "alex"
+   ],
+   "emotion": "neutral",
+   "time": "day",
+   "grade": "cold",
+   "weather": "none",
+   "what_happens": "Alex walks, stops, thinks, and checks his question.",
+   "narration": [
+    "Acting quickly is not always wiser, because some choices really do deserve slow, uncomfortable investigation.",
+    "Before an expensive commitment or a difficult-to-reverse decision, checking assumptions can save more trouble than it costs.",
+    "The distinction is what the extra time is doing: checking a fact, comparing a real option, or seeking a perspective you lack.",
+    "Or perhaps you are asking the same facts to promise a feeling of certainty they cannot supply.",
+    "Alex needs a stopping condition, not carelessness: identify the unfinished review, ask what Jamie meant, and make one specific proposal."
+   ],
+   "dialogue": []
+  },
+  {
+   "idea": "One answerable question replaces an impossible guarantee",
+   "mode": "story",
+   "where": "park",
+   "seconds": 60,
+   "who": [
+    "alex"
+   ],
+   "emotion": "neutral",
+   "time": "day",
+   "grade": "cold",
+   "weather": "none",
+   "what_happens": "Alex sits on the bench, checks the message, and sends a clear question.",
+   "narration": [
+    "On his walk, Alex notices that every draft has a hidden demand: make Jamie react exactly as he hopes.",
+    "No wording can guarantee that, because another person brings a mood, a history, and information he does not have.",
+    "He can still be honest and considerate; those are choices about his message, not guarantees about her response.",
+    "He writes, “I may have misread: did you mean the review?”—a question Jamie can actually answer.",
+    "He presses send while the doubt remains; this time, sending begins the conversation instead of pretending to finish it."
+   ],
+   "dialogue": []
+  },
+  {
+   "idea": "A real reply exposes two different assumptions",
+   "mode": "story",
+   "where": "cafe",
+   "seconds": 60,
+   "who": [
+    "alex",
+    "jamie"
+   ],
+   "emotion": "neutral",
+   "time": "day",
+   "grade": "warm",
+   "weather": "none",
+   "what_happens": "Jamie replies, meets Alex, and discusses a concrete review plan.",
+   "narration": [
+    "Jamie replies, “Just the review—I thought you were waiting for me,” and Alex reads it twice.",
+    "He had interpreted her comment as a judgment, while she had interpreted his silence as a request for time.",
+    "Neither explanation was hidden inside the original sentence; they needed another exchange to find out.",
+    "They meet at the café and agree that Alex will send a draft today, and Jamie will review it tomorrow.",
+    "This doesn’t prove every difficult conversation ends kindly; it shows what this particular exchange made possible: information that rehearsal couldn’t provide."
+   ],
+   "dialogue": []
+  },
+  {
+   "idea": "Keep useful foresight while returning to concrete tasks",
+   "mode": "lesson",
+   "where": "desk",
+   "seconds": 60,
+   "who": [
+    "alex"
+   ],
+   "emotion": "neutral",
+   "time": "day",
+   "grade": "cold",
+   "weather": "none",
+   "what_happens": "Alex checks the draft, adds the missing page, and finishes the work.",
+   "narration": [
+    "Alex’s habit of imagining consequences hasn’t vanished; later, it helps him notice that a page is missing from the draft.",
+    "This time there is something concrete to check, so he adds the page, checks the attachment, and sends the work they agreed on.",
+    "When another worried prediction appears, he does not have to defeat it before continuing.",
+    "He can ask whether it points to a task he can perform, a question he can ask, or an outcome he cannot control.",
+    "Thinking becomes useful again when it serves those distinctions; the goal is not an empty mind, but a mind that can finish a job."
+   ],
+   "dialogue": []
+  }
+ ],
+ "_editorial_origin": "AI editorial revision during autonomous review of the generated episode; not evidence that unattended writing passed.",
+ "_title": "Why Smart People Overthink Everything. Direction from the producer: Follow Alex drafting a message after Jamie says Friday looks tight; keep ownership of each message clear, resolve the one unfinished review through conversation, and distinguish investigation from rehearsal. This explicit AI editorial revision is a production review, not an unattended writing benchmark.",
+ "_visual_review_notes": []
+}

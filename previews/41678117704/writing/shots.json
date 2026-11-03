@@ -1,0 +1,771 @@
+{
+  "0": [
+    {
+      "set": "cafe",
+      "time": "day",
+      "grade": "warm",
+      "dur": 12,
+      "camera": {
+        "frame": "two",
+        "on": "alex",
+        "push": 0.025
+      },
+      "actors": [
+        {
+          "id": "alex",
+          "pose": "think",
+          "x": 19,
+          "seated": true,
+          "facing": 1,
+          "mood": "neutral"
+        },
+        {
+          "id": "jamie",
+          "pose": "talk",
+          "x": 31,
+          "seated": true,
+          "facing": -1,
+          "mood": "neutral"
+        }
+      ],
+      "lines": [
+        {
+          "who": "jamie",
+          "text": "Friday looks tight.",
+          "at": 0.4
+        }
+      ],
+      "narration_index": 0
+    },
+    {
+      "set": "desk",
+      "time": "day",
+      "grade": "warm",
+      "dur": 12,
+      "camera": {
+        "frame": "medium",
+        "on": "alex",
+        "push": 0.025
+      },
+      "actors": [
+        {
+          "id": "alex",
+          "pose": "phone",
+          "x": 50,
+          "seated": true,
+          "mood": "worried"
+        }
+      ],
+      "narration_index": 1,
+      "lines": []
+    },
+    {
+      "set": "desk",
+      "time": "day",
+      "grade": "warm",
+      "dur": 12,
+      "camera": {
+        "frame": "close",
+        "on": "alex",
+        "push": 0.025
+      },
+      "actors": [
+        {
+          "id": "alex",
+          "pose": "phone",
+          "x": 50,
+          "seated": true,
+          "mood": "nervous"
+        }
+      ],
+      "narration_index": 2,
+      "lines": []
+    },
+    {
+      "set": "desk",
+      "time": "day",
+      "grade": "warm",
+      "dur": 12,
+      "camera": {
+        "frame": "medium",
+        "on": "alex",
+        "push": 0.025
+      },
+      "actors": [
+        {
+          "id": "alex",
+          "pose": "think",
+          "x": 50,
+          "seated": true,
+          "mood": "tired"
+        }
+      ],
+      "narration_index": 3,
+      "lines": []
+    },
+    {
+      "set": "desk",
+      "time": "day",
+      "grade": "warm",
+      "dur": 12,
+      "camera": {
+        "frame": "close",
+        "on": "alex",
+        "push": 0.025
+      },
+      "actors": [
+        {
+          "id": "alex",
+          "pose": "think",
+          "x": 50,
+          "seated": true,
+          "mood": "worried"
+        }
+      ],
+      "narration_index": 4,
+      "lines": []
+    }
+  ],
+  "1": [
+    {
+      "set": "office",
+      "time": "day",
+      "grade": "warm",
+      "dur": 12,
+      "camera": {
+        "frame": "medium",
+        "on": "alex",
+        "push": 0.025
+      },
+      "actors": [
+        {
+          "id": "alex",
+          "pose": "type",
+          "x": 50,
+          "facing": 1,
+          "mood": "neutral"
+        }
+      ],
+      "narration_index": 0,
+      "lines": []
+    },
+    {
+      "set": "office",
+      "time": "day",
+      "grade": "warm",
+      "dur": 12,
+      "camera": {
+        "frame": "medium",
+        "on": "alex",
+        "push": 0.025
+      },
+      "actors": [
+        {
+          "id": "alex",
+          "pose": "think",
+          "x": 50,
+          "seated": true,
+          "mood": "hopeful"
+        }
+      ],
+      "narration_index": 1,
+      "lines": []
+    },
+    {
+      "set": "office",
+      "time": "day",
+      "grade": "warm",
+      "dur": 12,
+      "camera": {
+        "frame": "close",
+        "on": "alex",
+        "push": 0.025
+      },
+      "actors": [
+        {
+          "id": "alex",
+          "pose": "type",
+          "x": 50,
+          "facing": 1,
+          "mood": "worried"
+        }
+      ],
+      "narration_index": 2,
+      "lines": []
+    },
+    {
+      "set": "office",
+      "time": "day",
+      "grade": "warm",
+      "dur": 12,
+      "camera": {
+        "frame": "medium",
+        "on": "alex",
+        "push": 0.025
+      },
+      "actors": [
+        {
+          "id": "alex",
+          "pose": "think",
+          "x": 50,
+          "seated": true,
+          "mood": "tired"
+        }
+      ],
+      "narration_index": 3,
+      "lines": []
+    },
+    {
+      "set": "office",
+      "time": "day",
+      "grade": "warm",
+      "dur": 12,
+      "camera": {
+        "frame": "close",
+        "on": "alex",
+        "push": 0.025
+      },
+      "actors": [
+        {
+          "id": "alex",
+          "pose": "think",
+          "x": 50,
+          "seated": true,
+          "mood": "determined"
+        }
+      ],
+      "narration_index": 4,
+      "lines": []
+    }
+  ],
+  "2": [
+    {
+      "set": "street",
+      "time": "day",
+      "grade": "warm",
+      "dur": 12,
+      "camera": {
+        "frame": "wide",
+        "on": "alex",
+        "push": 0.025
+      },
+      "actors": [
+        {
+          "id": "alex",
+          "pose": "walk",
+          "x": 18,
+          "to": 50,
+          "mood": "neutral"
+        }
+      ],
+      "narration_index": 0,
+      "lines": []
+    },
+    {
+      "set": "street",
+      "time": "day",
+      "grade": "warm",
+      "dur": 12,
+      "camera": {
+        "frame": "medium",
+        "on": "alex",
+        "push": 0.025
+      },
+      "actors": [
+        {
+          "id": "alex",
+          "pose": "think",
+          "x": 50,
+          "mood": "neutral"
+        }
+      ],
+      "narration_index": 1,
+      "lines": []
+    },
+    {
+      "set": "street",
+      "time": "day",
+      "grade": "warm",
+      "dur": 12,
+      "camera": {
+        "frame": "medium",
+        "on": "alex",
+        "push": 0.025
+      },
+      "actors": [
+        {
+          "id": "alex",
+          "pose": "talk",
+          "x": 50,
+          "facing": 1,
+          "mood": "neutral"
+        }
+      ],
+      "narration_index": 2,
+      "lines": []
+    },
+    {
+      "set": "street",
+      "time": "day",
+      "grade": "warm",
+      "dur": 12,
+      "camera": {
+        "frame": "close",
+        "on": "alex",
+        "push": 0.025
+      },
+      "actors": [
+        {
+          "id": "alex",
+          "pose": "think",
+          "x": 50,
+          "mood": "worried"
+        }
+      ],
+      "narration_index": 3,
+      "lines": []
+    },
+    {
+      "set": "street",
+      "time": "day",
+      "grade": "warm",
+      "dur": 12,
+      "camera": {
+        "frame": "medium",
+        "on": "alex",
+        "push": 0.025
+      },
+      "actors": [
+        {
+          "id": "alex",
+          "pose": "phone",
+          "x": 50,
+          "mood": "determined"
+        }
+      ],
+      "narration_index": 4,
+      "lines": []
+    }
+  ],
+  "3": [
+    {
+      "set": "park",
+      "time": "day",
+      "grade": "warm",
+      "dur": 12,
+      "camera": {
+        "frame": "wide",
+        "on": "alex",
+        "push": 0.025
+      },
+      "actors": [
+        {
+          "id": "alex",
+          "pose": "walk",
+          "x": 18,
+          "to": 42,
+          "mood": "worried"
+        }
+      ],
+      "narration_index": 0,
+      "lines": []
+    },
+    {
+      "set": "park",
+      "time": "day",
+      "grade": "warm",
+      "dur": 12,
+      "camera": {
+        "frame": "medium",
+        "on": "alex",
+        "push": 0.025
+      },
+      "actors": [
+        {
+          "id": "alex",
+          "pose": "sitdown",
+          "x": 42,
+          "facing": 1,
+          "mood": "neutral"
+        }
+      ],
+      "narration_index": 1,
+      "lines": []
+    },
+    {
+      "set": "park",
+      "time": "day",
+      "grade": "warm",
+      "dur": 12,
+      "camera": {
+        "frame": "medium",
+        "on": "alex",
+        "push": 0.025
+      },
+      "actors": [
+        {
+          "id": "alex",
+          "pose": "phone",
+          "x": 42,
+          "seated": true,
+          "mood": "neutral"
+        }
+      ],
+      "narration_index": 2,
+      "lines": []
+    },
+    {
+      "set": "park",
+      "time": "day",
+      "grade": "warm",
+      "dur": 12,
+      "camera": {
+        "frame": "phone",
+        "on": "alex",
+        "push": 0.025
+      },
+      "actors": [
+        {
+          "id": "alex",
+          "pose": "phone",
+          "x": 42,
+          "seated": true
+        }
+      ],
+      "phone": {
+        "app": "chat",
+        "contact": "Jamie",
+        "messages": [
+          {
+            "from": "them",
+            "text": "Friday looks tight.",
+            "at": 0
+          }
+        ],
+        "typing": {
+          "text": "I may have misread: did you mean the review?",
+          "at": 0.5,
+          "action": "hold"
+        }
+      },
+      "narration_index": 3,
+      "lines": []
+    },
+    {
+      "set": "park",
+      "time": "day",
+      "grade": "warm",
+      "dur": 12,
+      "camera": {
+        "frame": "phone",
+        "on": "alex",
+        "push": 0.025
+      },
+      "actors": [
+        {
+          "id": "alex",
+          "pose": "phone",
+          "x": 42,
+          "seated": true,
+          "mood": "nervous"
+        }
+      ],
+      "phone": {
+        "app": "chat",
+        "contact": "Jamie",
+        "messages": [
+          {
+            "from": "them",
+            "text": "Friday looks tight.",
+            "at": 0
+          },
+          {
+            "from": "me",
+            "text": "I may have misread: did you mean the review?",
+            "at": 0.7
+          }
+        ]
+      },
+      "narration_index": 4,
+      "lines": []
+    }
+  ],
+  "4": [
+    {
+      "set": "park",
+      "time": "day",
+      "grade": "warm",
+      "dur": 12,
+      "camera": {
+        "frame": "phone",
+        "on": "alex",
+        "push": 0.025
+      },
+      "actors": [
+        {
+          "id": "alex",
+          "pose": "phone",
+          "x": 42,
+          "seated": true,
+          "mood": "shocked"
+        }
+      ],
+      "phone": {
+        "app": "chat",
+        "contact": "Jamie",
+        "messages": [
+          {
+            "from": "me",
+            "text": "I may have misread: did you mean the review?",
+            "at": 0
+          },
+          {
+            "from": "them",
+            "text": "Just the review. I thought you were waiting for me.",
+            "at": 0.5
+          }
+        ]
+      },
+      "narration_index": 0,
+      "lines": []
+    },
+    {
+      "set": "park",
+      "time": "day",
+      "grade": "warm",
+      "dur": 12,
+      "camera": {
+        "frame": "medium",
+        "on": "alex",
+        "push": 0.025
+      },
+      "actors": [
+        {
+          "id": "alex",
+          "pose": "think",
+          "x": 42,
+          "seated": true,
+          "mood": "relieved"
+        }
+      ],
+      "narration_index": 1,
+      "lines": []
+    },
+    {
+      "set": "cafe",
+      "time": "day",
+      "grade": "warm",
+      "dur": 12,
+      "camera": {
+        "frame": "wide",
+        "on": "alex",
+        "push": 0.025
+      },
+      "actors": [
+        {
+          "id": "alex",
+          "pose": "think",
+          "x": 19,
+          "seated": true,
+          "facing": 1
+        },
+        {
+          "id": "jamie",
+          "pose": "walk",
+          "x": 65,
+          "to": 31,
+          "facing": -1
+        }
+      ],
+      "narration_index": 2,
+      "lines": []
+    },
+    {
+      "set": "cafe",
+      "time": "day",
+      "grade": "warm",
+      "dur": 12,
+      "camera": {
+        "frame": "two",
+        "on": "alex",
+        "push": 0.025
+      },
+      "actors": [
+        {
+          "id": "alex",
+          "pose": "talk",
+          "x": 19,
+          "seated": true,
+          "facing": 1,
+          "mood": "neutral"
+        },
+        {
+          "id": "jamie",
+          "pose": "sitdown",
+          "x": 31,
+          "seated": true,
+          "facing": -1,
+          "mood": "neutral"
+        }
+      ],
+      "lines": [
+        {
+          "who": "alex",
+          "text": "Draft today, review tomorrow?",
+          "at": 0.5
+        }
+      ],
+      "narration_index": 3
+    },
+    {
+      "set": "cafe",
+      "time": "day",
+      "grade": "warm",
+      "dur": 12,
+      "camera": {
+        "frame": "two",
+        "on": "alex",
+        "push": 0.025
+      },
+      "actors": [
+        {
+          "id": "alex",
+          "pose": "think",
+          "x": 19,
+          "seated": true,
+          "facing": 1,
+          "mood": "neutral"
+        },
+        {
+          "id": "jamie",
+          "pose": "talk",
+          "x": 31,
+          "seated": true,
+          "facing": -1,
+          "mood": "neutral"
+        }
+      ],
+      "lines": [
+        {
+          "who": "jamie",
+          "text": "That works for me.",
+          "at": 0.5
+        }
+      ],
+      "narration_index": 4
+    }
+  ],
+  "5": [
+    {
+      "set": "desk",
+      "time": "day",
+      "grade": "warm",
+      "dur": 12,
+      "camera": {
+        "frame": "medium",
+        "on": "alex",
+        "push": 0.025
+      },
+      "actors": [
+        {
+          "id": "alex",
+          "pose": "think",
+          "x": 50,
+          "seated": true,
+          "mood": "worried"
+        }
+      ],
+      "narration_index": 0,
+      "lines": []
+    },
+    {
+      "set": "desk",
+      "time": "day",
+      "grade": "warm",
+      "dur": 12,
+      "camera": {
+        "frame": "medium",
+        "on": "alex",
+        "push": 0.025
+      },
+      "actors": [
+        {
+          "id": "alex",
+          "pose": "type",
+          "x": 50,
+          "facing": 1,
+          "mood": "determined"
+        }
+      ],
+      "narration_index": 1,
+      "lines": []
+    },
+    {
+      "set": "desk",
+      "time": "day",
+      "grade": "warm",
+      "dur": 12,
+      "camera": {
+        "frame": "close",
+        "on": "alex",
+        "push": 0.025
+      },
+      "actors": [
+        {
+          "id": "alex",
+          "pose": "think",
+          "x": 50,
+          "seated": true,
+          "mood": "neutral"
+        }
+      ],
+      "narration_index": 2,
+      "lines": []
+    },
+    {
+      "set": "desk",
+      "time": "day",
+      "grade": "warm",
+      "dur": 12,
+      "camera": {
+        "frame": "medium",
+        "on": "alex",
+        "push": 0.025
+      },
+      "actors": [
+        {
+          "id": "alex",
+          "pose": "talk",
+          "x": 50,
+          "seated": true,
+          "facing": 1,
+          "mood": "neutral"
+        }
+      ],
+      "narration_index": 3,
+      "lines": []
+    },
+    {
+      "set": "desk",
+      "time": "day",
+      "grade": "warm",
+      "dur": 12,
+      "camera": {
+        "frame": "medium",
+        "on": "alex",
+        "push": 0.025
+      },
+      "actors": [
+        {
+          "id": "alex",
+          "pose": "standup",
+          "x": 50,
+          "facing": 1,
+          "mood": "relieved"
+        }
+      ],
+      "narration_index": 4,
+      "lines": []
+    }
+  ]
+}
