@@ -1,0 +1,112 @@
+{
+ "title": "What If Nothing Really Matters?",
+ "idea": {
+  "definition": "Life may lack an objective cosmic purpose, yet still hold locally meaningful reasons to act.",
+  "mechanism": "Absence of universal meaning frees individuals to create personal significance through relationships, creativity, and care.",
+  "turn": "When we realize there is no cosmic mandate, we can either despair or find grounding in everyday commitments.",
+  "thinkers": [
+   "Albert Camus",
+   "Jean-Paul Sartre"
+  ]
+ },
+ "approach": "Present contrasting everyday scenes that illustrate how people find purpose without a universal mandate.",
+ "cast": [
+  {
+   "id": "p1",
+   "kind": "hero",
+   "top": "blue",
+   "hair": "short",
+   "hat": "none"
+  },
+  {
+   "id": "p2",
+   "kind": "friend",
+   "top": "green",
+   "hair": "long",
+   "hat": "none"
+  },
+  {
+   "id": "p3",
+   "kind": "extra",
+   "top": "red",
+   "hair": "curly",
+   "hat": "none"
+  },
+  {
+   "id": "p4",
+   "kind": "demon",
+   "top": "black",
+   "hair": "none",
+   "hat": "none"
+  }
+ ],
+ "device": {
+  "type": "none",
+  "items": []
+ },
+ "inner_voice": null,
+ "spine": [
+  {
+   "idea": "cosmic absence",
+   "mode": "hook",
+   "where": "scene",
+   "what_happens": "Hero looks up at starless sky",
+   "scene": {
+    "base": "outside",
+    "elements": []
+   }
+  },
+  {
+   "idea": "local meaning",
+   "mode": "story",
+   "where": "scene",
+   "what_happens": "Hero paints a mural with friends",
+   "scene": {
+    "base": "room",
+    "elements": []
+   }
+  },
+  {
+   "idea": "despair possibility",
+   "mode": "vignette",
+   "where": "scene",
+   "what_happens": "Friend sits alone, staring at empty bench",
+   "scene": {
+    "base": "outside",
+    "elements": []
+   }
+  },
+  {
+   "idea": "human connection",
+   "mode": "contrast",
+   "where": "scene",
+   "what_happens": "Hero invites friend to join painting",
+   "scene": {
+    "base": "room",
+    "elements": []
+   }
+  },
+  {
+   "idea": "creative agency",
+   "mode": "lesson",
+   "where": "scene",
+   "what_happens": "Hero explains freedom to choose purpose",
+   "scene": {
+    "base": "room",
+    "elements": []
+   }
+  },
+  {
+   "idea": "objection",
+   "mode": "inner",
+   "where": "void",
+   "what_happens": "Demon whispers “What if nothing matters?”"
+  },
+  {
+   "idea": "response",
+   "mode": "inner",
+   "where": "void",
+   "what_happens": "Hero counters “Then we make our own meaning.”"
+  }
+ ]
+}
