@@ -83,12 +83,17 @@ def publishing_text(value, fallback=''):
     if isinstance(value,list) and all(isinstance(x,str) for x in value):return ' '.join(value).strip() or fallback
     raise ValueError('Publishing text must be a string or list of strings')
 
+def thumbnail_caption(value, fallback):
+    if isinstance(value,list) and any(isinstance(item,str) and len(item.split())>1 for item in value):
+        value=next((item for item in value if isinstance(item,str) and item.strip()),fallback)
+    return publishing_text(value,fallback)
+
 def thumbnails(film, poster_dir, out):
     from PIL import Image
     stills = sorted(Path(poster_dir).glob('*.jpg'))
     if not stills:
         return []
-    words = publishing_text((film.get('publish') or {}).get('thumbnail_words'),film['title'])
+    words = thumbnail_caption((film.get('publish') or {}).get('thumbnail_words'),film['title'])
     key = words.upper().split()[-1].strip('.,!?') if words else None
     accent = film.get('demon_color') or '#ff4fa0'
     accent = tuple(int(accent[i:i + 2], 16) for i in (1, 3, 5))

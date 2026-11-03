@@ -32,3 +32,16 @@ def test_extra_narration_angle_does_not_replay_a_walk():
     result=place_narration({'who':['alex'],'narration':['He walks to the bench.','He waits for an answer.']},shots)
     assert result[1]['actors'][0]['x']==40
     assert result[1]['actors'][0]['pose']=='stand'
+
+def test_texting_uses_phone_not_an_unrelated_book_or_keyboard():
+    beat={'what_happens':'Alex types a reply on his phone.','narration':['He checks his message.']}
+    from story.director import apply_performance
+    shot={'actors':[{'id':'alex','pose':'type','seated':True}]}
+    apply_performance(shot,beat)
+    assert shot['actors'][0]['pose']=='phone'
+    assert shot['actors'][0]['hold']=='phone'
+def test_walking_approach_stops_beside_partner():
+    from story.director import resolve_blocking
+    shot={'actors':[{'id':'alex','pose':'walk','x':38,'to':63},{'id':'friend','pose':'sit','x':62}]}
+    changes=resolve_blocking(shot)
+    assert changes and shot['actors'][0]['to']==52

@@ -44,6 +44,10 @@ def apply_performance(shot, beat, phase=0, force=False):
     actors=shot.get("actors") or []
     people=[a for a in actors if a.get("id")!="demon"]
     for i,a in enumerate(people):
+        semantic=" ".join([str(beat.get("what_happens") or ""),*[(n.get("text","") if isinstance(n,dict) else str(n)) for n in beat.get("narration") or []]])
+        phone_context=bool(re.search(r"\b(?:phone|text|message|reply|chat)\b",semantic,re.I)) and not re.search(r"\b(?:laptop|computer|keyboard)\b",semantic,re.I)
+        if a.get("pose") in {"type","read","write"} and phone_context:
+            a["pose"]="phone";a["hold"]="phone"
         if not force and a.get("pose","stand") not in IDLE: continue
         actor_id=str(a.get("id",""))
         def subject(clause):
@@ -60,6 +64,7 @@ def apply_performance(shot, beat, phase=0, force=False):
             pose,clause="talk","character dialogue"
         else:
             continue
+        if pose in {"type","read","write"} and phone_context:pose="phone"
         old=a.get("pose","stand")
         seated=old in {"sit","slump","type","write"} or a.get("seated") is True
         a["pose"]=pose
@@ -72,6 +77,7 @@ def apply_performance(shot, beat, phase=0, force=False):
             direction=-1 if re.search(r"\b(?:away|left)\b",clause,re.I) else 1
             a["to"]=max(8,min(92,start+direction*delta))
             a["facing"]=direction
+        if pose=="phone":a["hold"]="phone"
         if pose in {"write","read","show"}:
             a["hold"]="pencil" if pose=="write" else "book"
             if re.search(r"\b(?:seedling|sprout|plant)\b",str(beat),re.I): a["artwork"]="seedling"
@@ -80,6 +86,21 @@ def apply_performance(shot, beat, phase=0, force=False):
             a["target"]=other["id"]
             a["facing"]=1 if float(other.get("x",50))>float(a.get("x",50)) else -1
         changes.append({"actor":actor_id,"from":old,"to":pose,"direction":clause})
+    return changes
+
+def resolve_blocking(shot,clearance=10):
+    """Stop approaches beside a partner instead of through their body."""
+    changes=[]
+    for actor in shot.get("actors",[]):
+        if actor.get("pose") not in {"walk","run"} or "to" not in actor:continue
+        start=float(actor.get("x",50));goal=float(actor["to"]);direction=1 if goal>=start else -1
+        candidates=[float(other.get("x",50)) for other in shot["actors"] if other is not actor and other.get("depth")==actor.get("depth")]
+        for obstacle in sorted(candidates,reverse=direction<0):
+            if direction>0 and start<obstacle and goal>obstacle-clearance:goal=max(start,obstacle-clearance)
+            if direction<0 and start>obstacle and goal<obstacle+clearance:goal=min(start,obstacle+clearance)
+        if goal!=actor["to"]:
+            changes.append({"actor":actor["id"],"requested":actor["to"],"resolved":goal})
+            actor["to"]=goal
     return changes
 
 def direct_beat(beat,vocab):
@@ -105,6 +126,7 @@ def direct_beat(beat,vocab):
                 before=prior.get(actor["id"],{})
                 actor["x"]=before.get("to",before.get("x",actor["x"]))
         shot["acting_changes"]=apply_performance(shot,beat,phase)
+        shot["blocking_changes"]=resolve_blocking(shot)
         shots.append(shot)
     return shots
 
@@ -119,6 +141,8 @@ def enrich_film(film,sheet):
         for actor in shot.get("actors",[]):
             if actor.get("artwork"):artwork[actor["id"]]=actor["artwork"]
             elif actor.get("pose") in ("read","show") and actor["id"] in artwork:actor["artwork"]=artwork[actor["id"]]
+        blocking=resolve_blocking(shot)
+        if blocking:shot["blocking_changes"]=blocking
         if changed: report.append({"shot":i,"beat":index+1,"changes":changed})
     film["acting_report"]={"director":"verified physical-action compiler","changes":report,
       "limitations":["Unsupported physical detail is not simulated; inspect scene meaning in the contact sheet.",
