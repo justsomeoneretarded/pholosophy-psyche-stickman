@@ -62,15 +62,17 @@ Keep the complete outline comfortably below 750 output tokens."""
     (out/'outline.json').write_text(json.dumps(outline,indent=1,ensure_ascii=False))
     spine=outline.get('spine') or outline.get('beats')
     sheet=copy.deepcopy(outline);sheet.pop('spine',None);sheet['beats']=[]
+    # Expand each argument point once. Repeating a spine entry created duplicate resolutions.
+    count=len(spine)
     words=max(20,round(duration*.55*2.45/count))
     history=[]
     local_only=bool(getattr(writer,'specs',None)) and all(s.startswith('ollama:') for s in writer.specs)
     batch_size=1  # One complete beat fits the smallest free-provider response budgets.
     for start in range(0,count,batch_size):
         indices=list(range(start+1,min(count,start+batch_size)+1))
-        slots=[spine[min(len(spine)-1,int((index-1)*len(spine)/count))] for index in indices]
+        slots=[spine[index-1] for index in indices]
         payload={'topic':user,'argument_and_cast':{k:v for k,v in outline.items() if k not in ('spine','beats')},'requested_indices':indices,
-                 'total_beats':count,'spine_entries_to_advance':slots,'previous_beats':sheet['beats'][-2:]}
+                 'total_beats':count,'spine_entries_to_advance':slots,'previous_beats':sheet['beats'],'remaining_outline':spine[start+1:]}
         def check_chunk(data):
             beats=data.get('beats')
             if len(indices)==1 and beats is None and isinstance(data.get('narration'),list):beats=[data]
@@ -104,10 +106,9 @@ narration (a list of complete sentences), time, weather, grade; optional dialogu
 Advance ONLY the supplied spine_entries_to_advance. These are beats {indices} of {count};
 do not skip to the ending or reuse a different spine entry. Use exact supported set IDs,
 not descriptive strings such as park bench or cafe table.
-Each beat needs about {words} spoken words in two complete explanatory sentences,
-lasting about {duration/count:.0f} seconds. The requested beats advance the spine entry
-differently; do not repeat the same explanation or action. Preserve earlier events. Each narrated sentence must add a reason, distinction, example, objection or consequence. Describe fewer atmospheric feelings. Never treat fictional resolution as evidence that the advice works for everyone.
-Keep action descriptions to eight words, and omit unused optional fields.
+Each beat needs about {words} spoken words in four to six complete explanatory sentences,
+lasting about {duration/count:.0f} seconds. Each outline point is expanded exactly once. Do not repeat an earlier explanation or action. Completed physical events remain completed; a later draft cannot become the first unsent message again. If a new message is necessary, distinguish it explicitly from the previous one. Preserve earlier events. Each narrated sentence must add a reason, distinction, example, objection or consequence. Describe fewer atmospheric feelings. Never treat fictional resolution as evidence that the advice works for everyone.
+Use up to 35 words for concrete physical action in chronological phases, and omit unused optional fields.
 When where=scene include base and a few supported elements with x coordinates.
 Otherwise use the named set, without a redundant scene object.
 No metadata or publishing fields. Keep this response below 800 output tokens.
@@ -121,7 +122,7 @@ No metadata or publishing fields. Keep this response below 800 output tokens.
     pub_system="""Write the publishing package for the supplied finished animated essay.
 Return JSON with youtube_titles (3 honest titles), description (2 concise paragraphs plus relevant hashtags),
 tags (10 relevant terms), pinned_comment (a specific question), thumbnail_words (2-4 words),
-music_prompt (instrumental style suited to this argument), cold_open and ending (optional short lines).
+music_prompt (instrumental style suited to this argument), cold_open and ending (use empty strings by default: the first scene supplies the hook and the final scene supplies the conclusion).
 Do not invent research, quotations, search-volume figures or a cure. Do not contradict the essay's conclusion.
 Do not claim an intelligence/diagnosis explanation the essay did not establish. Keep below 750 output tokens."""
     publishing=writer.json(pub_system,json.dumps({'topic':user,'film':sheet},ensure_ascii=False),

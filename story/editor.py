@@ -9,6 +9,7 @@ from pathlib import Path
 
 EDITOR_SYSTEM = """You are a rigorous editor of an original animated psychology/philosophy essay.
 Review the actual supplied story, not an imagined ideal template.
+Track the factual state of the fictional events across ALL beats: messages sent, decisions made, replies received, objects moved. A completed event must not repeatedly restart as though it never happened. Distinct follow-up messages are allowed when identified as such. Cite all contradictory beat indices and repair the later reset, preserving the earliest meaningful occurrence.
 Find substantive problems: unsupported empirical claims; contradictions; missing reasoning;
 unearned cures or guarantees; a reply that does not answer the question actually asked;
 an ending that contradicts the argument; visual actions that do not carry the narration.

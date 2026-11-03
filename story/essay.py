@@ -179,8 +179,8 @@ def check_concept(sheet, minutes):
     problems = []
     drop_end_cards(sheet)
     beats = sheet.get('beats') or []
-    if len(beats) < 9:
-        problems.append(f'only {len(beats)} beats; write 12-20')
+    if len(beats) < 5:
+        problems.append(f'only {len(beats)} argument beats; develop at least five substantive advances')
     lo, hi = target_seconds(minutes)
     total, words = 0., 0
     for i, b in enumerate(beats):

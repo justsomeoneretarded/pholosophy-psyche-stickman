@@ -1,4 +1,5 @@
 name: Full six-minute production review
+# Iteration 2: each argument point expands once, with persistent story state.
 on:
   workflow_dispatch:
   push:
