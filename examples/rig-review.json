@@ -230,6 +230,24 @@
         "frame": "medium",
         "push": 0
       }
+    },
+    {
+      "dur": 4,
+      "set": "cafe",
+      "time": "day",
+      "actors": [
+        {
+          "id": "hero",
+          "pose": "type",
+          "x": 19,
+          "facing": 1,
+          "mood": "determined"
+        }
+      ],
+      "camera": {
+        "frame": "medium",
+        "push": 0
+      }
     }
   ]
 }

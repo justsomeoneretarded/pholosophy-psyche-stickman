@@ -72,7 +72,7 @@ function actorState(shot, a, u) {
   st.wx = x; st.wy = ground(x) + (a.depth === 'back' ? -40 : 0);
   return { st, w: { walked, startBlend, stopBlend, moving: isMoving, dir: x1 >= x0 ? 1 : -1,
     seat: (fallbackSeat ? 58 : (set.seat ? set.seat(x) : 0))/scale,
-    desk: (set.desk ? set.desk(x) : 0)/scale, fallbackSeat } };
+    desk: (set.desk ? set.desk(x) : 0)/scale, typingDevice: a.pose==='type' && !['desk','office'].includes(shot.set) && !(shot.set==='scene' && (shot.scene?.elements||[]).some(e=>e.type==='desk' && e.laptop!==false)), fallbackSeat } };
 }
 
 function camera(shot, actors, u, t) {

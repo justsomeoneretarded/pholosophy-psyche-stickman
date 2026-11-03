@@ -137,6 +137,7 @@ const POSES = {
       P.lapBook = true;
     }
     P.look = [P.sideSit * .6, 4]; P.headDy = 4;
+    P.typingLaptop=w.typingDevice===true;P.keyboardY=w.desk?-w.desk:P.pelvis[1]-18;
   },
   drink(P, a, u, d, w) {
     if (a.seated || w.seat) POSES.sit(P, a, u, d, w); else POSES.stand(P, a, u, d, w);
@@ -620,7 +621,8 @@ function drawCharacter(ctx, a, P, o) {
   }
   ctx.restore();
   ctx.restore();
-  if (P.lapBook && !P.writingPad) { ctx.save(); ctx.translate(0, P.pelvis[1] - 18); lapBook(ctx); ctx.restore(); }
+  if (P.lapBook && !P.writingPad && !P.typingLaptop) { ctx.save(); ctx.translate(0, P.pelvis[1] - 18); lapBook(ctx); ctx.restore(); }
+  if (P.typingLaptop) drawTypingLaptop(ctx,P);
   // Arms
   const hands = [];
   const order = P.profile || P.sideSit ? ((P.profile || P.sideSit) > 0 ? [0, 1] : [1, 0]) : [0, 1];

@@ -94,3 +94,12 @@ function allocateSeatActors(shot,set) {
   }
   return actors;
 }
+
+function drawTypingLaptop(ctx,P) {
+  const x=(P.hands[0][0]+P.hands[1][0])/2,y=P.keyboardY;
+  ctx.save();ctx.fillStyle='#303c50';ctx.strokeStyle='#8d9bad';ctx.lineWidth=2;
+  ctx.beginPath();ctx.moveTo(x-48,y-3);ctx.lineTo(x+47,y-3);ctx.lineTo(x+53,y+5);ctx.lineTo(x-52,y+5);ctx.closePath();ctx.fill();ctx.stroke();
+  ctx.fillStyle='#172436';ctx.fillRect(x+35,y-68,65,66);ctx.strokeRect(x+35,y-68,65,66);
+  ctx.fillStyle='#85b8dc';for(let row=0;row<4;row++)ctx.fillRect(x+43,y-56+row*10,38-row*4,2);
+  ctx.restore();
+}
