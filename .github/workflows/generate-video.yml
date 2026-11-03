@@ -75,6 +75,7 @@ jobs:
       NOTES: ${{ inputs.notes }}
       MINUTES: ${{ inputs.duration_minutes }}
       PLAN_SOURCE_RUN: ${{ inputs.plan_source_run }}
+      RECORDED_SOURCE_RUN: ${{ inputs.recorded_source_run }}
     outputs:
       duration: ${{ steps.done.outputs.duration }}
     steps:
@@ -130,7 +131,7 @@ jobs:
       - name: Assemble and check the shot list
         id: done
         run: |
-          if [ -z "$PLAN_SOURCE_RUN" ] && [ -z "${{ inputs.recorded_source_run }}" ]; then
+          if [ -z "$PLAN_SOURCE_RUN" ] && [ -z "$RECORDED_SOURCE_RUN" ]; then
             python story/essay.py merge --dir build/writing --out build/film.json
           fi
           echo "duration=$(python -c "import json;print(json.load(open('build/film.json'))['duration'])")" >> "$GITHUB_OUTPUT"
