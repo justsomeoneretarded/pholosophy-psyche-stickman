@@ -109,6 +109,8 @@ Use existing cast IDs and supported locations. Dialogue is a list of {who: cast 
                 candidate=copy.deepcopy(sheet)
                 if index:
                     changes=data.get('changes')
+                    if changes is None and data and set(data)<=BEAT_FIELDS|{'beat'}:
+                        changes=dict(data)
                     if changes is None and isinstance(data.get('edits'),list) and len(data['edits'])==1:
                         legacy=data['edits'][0]
                         if legacy.get('beat')!=index:raise ValueError('Edit refers to a different requested beat')

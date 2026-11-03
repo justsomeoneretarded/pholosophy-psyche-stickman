@@ -11,6 +11,9 @@ def supported_location(beat, require_scene=False):
         if require_scene and original=='scene' and not isinstance(beat.get('scene'),dict):
             raise ValueError('A composed scene needs a scene object; do not leave its environment unspecified')
         return beat
+    if original in VOCAB['scene']['base']:
+        beat['where']='scene';beat.setdefault('scene',{'base':original,'elements':[]})
+        return beat
     if isinstance(beat.get('scene'),dict):
         beat['where']='scene'
     else:

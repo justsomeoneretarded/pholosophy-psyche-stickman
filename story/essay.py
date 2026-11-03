@@ -229,19 +229,19 @@ def check_concept(sheet, minutes):
         if not PHONEY.search(topic) and not requested_screen_story:
             phone_beats = sum(1 for b in beats if PHONEY.search(str(b.get('what_happens', ''))))
             if phone_beats > max(2, len(beats) // 5):
-                problems.append(f'{phone_beats} beats revolve around phones or screens, but this concept is not about them; find moments specific to the concept')
+                visual_notes.append(f'{phone_beats} beats revolve around phones or screens, but this concept is not about them; find moments specific to the concept')
         stock = sum(1 for b in beats if STOCK.search(str(b.get('what_happens', ''))))
         if stock > 1:
-            problems.append('stock details (3am clocks, fridges, calendars, alarms) appear repeatedly; invent details specific to this concept')
+            visual_notes.append('stock details (3am clocks, fridges, calendars, alarms) appear repeatedly; invent details specific to this concept')
         abstract = sum(1 for b in beats if (b.get('scene') or {}).get('base') == 'void' or b.get('where') == 'void')
         if abstract > max(2, len(beats) // 4):
-            problems.append(f'{abstract} beats happen in an empty void; show most ideas through people in real or built places')
+            visual_notes.append(f'{abstract} beats happen in an empty void; show most ideas through people in real or built places')
         empty = sum(1 for b in beats if not [w for w in (b.get('who') or []) if w != 'demon'])
         if empty > len(beats) // 4:
-            problems.append(f'{empty} beats have no people on screen ("who"); the film is acted by people')
+            visual_notes.append(f'{empty} beats have no people on screen ("who"); the film is acted by people')
         demon_beats = sum(1 for b in beats if b.get('inner_voice_line'))
         if demon_beats > len(beats) // 2:
-            problems.append('the silhouette speaks in most beats; use it only where it explains something')
+            visual_notes.append('the silhouette speaks in most beats; use it only where it explains something')
     return problems, total
 
 
