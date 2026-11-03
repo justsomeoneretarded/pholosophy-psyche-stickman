@@ -4,7 +4,7 @@ from pathlib import Path
 p=Path(sys.argv[1]); film=json.loads((p/'film.json').read_text());selected=[];t=0
 for i,s in enumerate(film['shots']):
     poses={a.get('pose') for a in s.get('actors',[])}
-    if len(film['shots'])<=15 or i%5==0 or poses & {'write','show','walk','standup','sitdown','talk','phone','type','think','read'}:
+    if i==len(film['shots'])-1 or len(film['shots'])<=15 or i%5==0 or poses & {'write','show','walk','standup','sitdown','talk','phone','type','think','read'}:
         selected.append((i,round(t+min(float(s['dur'])/2,2),2)))
         if poses & {'walk','phone','type'} and float(s['dur'])>6:
             selected.append((i,round(t+5.5,2)))
@@ -17,3 +17,15 @@ for i,at in selected:
 for thumbnail in p.glob('thumbnail-*.jpg'):
     (folder/(thumbnail.name+'.b64')).write_text(base64.b64encode(thumbnail.read_bytes()).decode())
 (p/'inspection.json').write_text(json.dumps({'source':'decoded final MP4','selected':selected,'pose_usage':json.loads((p/'quality_report.json').read_text())['pose_usage']},indent=2))
+
+windows=[];offset=0
+for shot in film['shots']:
+    for line in shot.get('lines',[]):
+        if line.get('who')=='narrator' and line.get('voice_dur'):
+            start=offset+float(line.get('at') or 0);windows.append((start,start+float(line['voice_dur'])))
+    offset+=float(shot['dur'])
+gaps=sorted(windows[i+1][0]-windows[i][1] for i in range(len(windows)-1))
+report=json.loads((p/'inspection.json').read_text())
+report['narration']={'passages':len(windows),'speech_seconds':sum(b-a for a,b in windows),
+ 'median_gap_seconds':gaps[len(gaps)//2] if gaps else 0,'max_gap_seconds':max(gaps) if gaps else 0}
+(p/'inspection.json').write_text(json.dumps(report,indent=2))

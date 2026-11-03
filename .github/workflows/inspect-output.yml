@@ -4,7 +4,7 @@ on:
     inputs:
       source_run_id:
         type: string
-        default: '41678117704'
+        default: '41687663919'
   push:
     paths: ['.github/workflows/inspect-output.yml']
 permissions:
@@ -16,7 +16,7 @@ jobs:
     timeout-minutes: 45
     strategy:
       matrix:
-        source: ['41678117704']
+        source: ['41687663919']
     env:
       SOURCE_RUN: ${{ inputs.source_run_id || matrix.source }}
       GH_TOKEN: ${{ github.token }}

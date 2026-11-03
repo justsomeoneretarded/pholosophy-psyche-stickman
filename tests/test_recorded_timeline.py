@@ -14,3 +14,8 @@ def test_measured_speech_removes_padding_without_cutting_an_action():
     assert film['shots'][0]['dur']==6
     assert film['shots'][1]['dur']>9
     assert film['duration']<20
+
+def test_deletion_finishes_before_the_shot_is_cut():
+    film={'shots':[{'dur':20,'actors':[],'phone':{'typing':{'text':'x'*44,'at':.4,'action':'delete'}},'lines':[{'who':'narrator','at':.25,'voice_dur':1}]}]}
+    fit_recorded_timeline(film)
+    assert film['shots'][0]['dur']>7

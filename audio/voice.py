@@ -91,7 +91,9 @@ def action_minimum(shot):
     phone=shot.get('phone') or {}
     typing=phone.get('typing')
     if typing:
-        duration=max(duration,float(typing.get('at',.3))+len(typing.get('text',''))/float(typing.get('cps',11))+1.2)
+        characters=len(typing.get('text',''));cps=float(typing.get('cps',11))
+        tail=(float(typing.get('pause',.7))+characters/(cps*2.4)+.4) if typing.get('action')=='delete' else 1.2
+        duration=max(duration,float(typing.get('at',.3))+characters/cps+tail)
     for message in phone.get('messages',[]):
         duration=max(duration,float(message.get('at') or 0)+.6)
     return duration
