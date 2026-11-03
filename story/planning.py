@@ -2,6 +2,7 @@
 import copy,json,re
 from pathlib import Path
 from story.normalization import character_ids
+from story.staging import validate_staging
 
 VOCAB=json.loads((Path(__file__).resolve().parents[1]/'engine/vocab.json').read_text())
 
@@ -96,6 +97,7 @@ Keep the complete outline comfortably below 750 output tokens."""
                 b['who'],who_problems=character_ids(b['who'],outline['cast'])
                 if who_problems:raise ValueError('; '.join(who_problems))
                 supported_location(b, require_scene=True)
+                validate_staging(b,outline['cast'])
                 text=' '.join(' '.join(b['narration']).lower().split())
                 if len(text.split())>=20 and text in prior:
                     raise ValueError('This complete narrated beat duplicates an earlier beat; advance the requested idea instead')
@@ -104,7 +106,7 @@ Keep the complete outline comfortably below 750 output tokens."""
         prompt=brief+f"""
 EXPANSION REQUEST: Return ONLY {{"beats":[the {len(indices)} requested complete beat objects]}}.
 Each beat has: idea, mode, where, seconds, who (cast IDs), emotion, what_happens,
-narration (a list of complete sentences), time, weather, grade; optional dialogue
+narration (a list of complete sentences), time, weather, grade, staging; optional dialogue
 [{{"who":"id","text":"short"}}], inner_voice_line and scene.
 Advance ONLY the supplied spine_entries_to_advance. These are beats {indices} of {count};
 do not skip to the ending or reuse a different spine entry. Use exact supported set IDs,
@@ -114,7 +116,13 @@ lasting about {duration/count:.0f} seconds. Each outline point is expanded exact
 Use up to 35 words for concrete physical action in chronological phases, and omit unused optional fields.
 When where=scene include base and a few supported elements with x coordinates.
 Otherwise use the named set, without a redundant scene object.
-No metadata or publishing fields. Keep this response below 800 output tokens.
+No metadata or publishing fields. STAGING: 1-4 chronological phases of verified physical acting, each {{"actors":[{{"id":"cast ID","pose":"supported pose","x":0-100,"to":optional walk destination,"seated":optional true,"target":optional other actor ID,"hold":optional prop}}],"camera":{{"frame":"wide|medium|close|two","on":"visible actor ID"}}}}.
+Supported poses: {', '.join(VOCAB['poses'])}. Held props: {', '.join(VOCAB['holds'])}.
+Use phone for messages, read for books and type for a keyboard; sitdown/standup articulate chair transitions.
+Café seats are x=19 and 31; desk/office chair is x=50; park bench spans x=42-60.
+Face conversation partners toward each other. Put contact partners close enough to reach.
+The application inserts the exact narration: do not echo it inside staging.
+Keep this response below 800 output tokens.
 """
         chunk=writer.json(prompt,json.dumps(payload,ensure_ascii=False),check_chunk,
                           max_tokens=900,temperature=.65,attempts=3)

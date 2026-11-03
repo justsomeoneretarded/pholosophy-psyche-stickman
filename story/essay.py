@@ -190,6 +190,8 @@ def check_concept(sheet, minutes):
             b['who'], who_problems = character_ids(b.get('who',[]), sheet['cast'])
             dialogue_problems.extend(who_problems)
         problems.extend(f'beat {i+1}: {problem}' for problem in dialogue_problems)
+        from story.staging import validate_staging
+        validate_staging(b,sheet.get('cast') or [])
         lines = beat_narration(b)
         if has_attributed_quotation(' '.join(lines)):
             problems.append(f'beat {i + 1} attributes a quotation to a real thinker without verified source evidence')
@@ -298,6 +300,13 @@ def stage_concept(title, minutes, out_dir, research='', reuse_draft=None, review
             b['demon_line'] = b['inner_voice_line']
         for d in b.get('dialogue') or []:
             d['who'] = clean(d.get('who'))
+        for phase in b.get('staging') or []:
+            for actor in phase.get('actors') or []:
+                actor['id']=clean(actor['id'])
+                if actor.get('target'):actor['target']=clean(actor['target'])
+            if (phase.get('camera') or {}).get('on'):phase['camera']['on']=clean(phase['camera']['on'])
+            for line in phase.get('lines') or []:
+                if line.get('who') not in ('narrator','caption'):line['who']=clean(line['who'])
     (out / 'beats.json').write_text(json.dumps(sheet, indent=1, ensure_ascii=False))
     beats = sheet['beats']
     notice('Concept', f"{sheet.get('title')}: {sheet.get('approach', '')} | {(sheet.get('idea') or {}).get('definition', '')} | "

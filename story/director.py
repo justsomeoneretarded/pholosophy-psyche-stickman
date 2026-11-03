@@ -105,6 +105,11 @@ def resolve_blocking(shot,clearance=10):
     return changes
 
 def direct_beat(beat,vocab):
+    from story.staging import compile_staging
+    explicit=compile_staging(beat)
+    if explicit is not None:
+        for shot in explicit:shot["blocking_changes"]=resolve_blocking(shot)
+        return explicit
     mood=beat.get("emotion") if beat.get("emotion") in vocab["moods"] else "neutral"
     where=beat.get("where","void")
     seated=bool(vocab["sets"].get(where,{}).get("seat"))
@@ -138,7 +143,7 @@ def enrich_film(film,sheet):
         index=int(shot.get("beat",0))-1
         if index<0 or index>=len(sheet.get("beats",[])) or shot.get("card"):continue
         phase=phases.get(index,0); phases[index]=phase+1
-        changed=apply_performance(shot,sheet["beats"][index],phase)
+        changed=[] if shot.get('_directed') else apply_performance(shot,sheet["beats"][index],phase)
         for actor in shot.get("actors",[]):
             if actor.get("artwork"):artwork[actor["id"]]=actor["artwork"]
             elif actor.get("pose") in ("read","show") and actor["id"] in artwork:actor["artwork"]=artwork[actor["id"]]

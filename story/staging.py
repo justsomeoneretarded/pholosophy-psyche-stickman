@@ -1,0 +1,51 @@
+"""Data-only physical staging validated against the actual production rig vocabulary."""
+from __future__ import annotations
+import copy,json,math
+from pathlib import Path
+VOCAB=json.loads((Path(__file__).resolve().parents[1]/'engine/vocab.json').read_text())
+FIELDS={'actors','camera','phone','insert','items','sfx','lines','door','door_at','big','set','scene','transition'}
+def validate_staging(beat,cast):
+    phases=beat.get('staging')
+    if phases is None:return
+    if not isinstance(phases,list) or not 1<=len(phases)<=8:raise ValueError('staging needs 1-8 physical phases')
+    known={p['id'] for p in cast}
+    for phase in phases:
+        if not isinstance(phase,dict) or set(phase)-FIELDS:raise ValueError('Unknown staging fields; use actors, camera and supported shot data')
+        actors=phase.get('actors') or []
+        if not isinstance(actors,list) or len(actors)>5:raise ValueError('A staging phase supports up to five actors')
+        present={a.get('id') for a in actors if isinstance(a,dict)}
+        if len(present)!=len(actors):raise ValueError('Actor IDs must be unique within a phase')
+        for actor in actors:
+            if actor.get('id') not in known:raise ValueError('Staging refers to an unknown cast ID')
+            if actor.get('pose') not in VOCAB['poses']:raise ValueError('Unsupported rig pose: '+str(actor.get('pose')))
+            for key in ('x','to'):
+                if key in actor and (type(actor[key]) not in (int,float) or not math.isfinite(actor[key]) or not 0<=actor[key]<=100):
+                    raise ValueError('Staging '+key+' must be a finite coordinate from 0 to 100')
+            if actor.get('target') and actor['target'] not in present:raise ValueError('An interaction target must appear in the same staging phase')
+            if actor.get('hold') and actor['hold'] not in VOCAB['holds']:raise ValueError('Unsupported held prop')
+            if actor.get('mood') and actor['mood'] not in VOCAB['moods']:raise ValueError('Unsupported facial mood')
+        camera=phase.get('camera') or {}
+        frame=camera.get('frame','wide')
+        if frame not in VOCAB['frames']:raise ValueError('Unsupported camera frame')
+        if camera.get('on') and camera['on'] not in present:raise ValueError('Camera target is absent')
+        if frame=='phone' and not isinstance(phase.get('phone'),dict):raise ValueError('A phone shot needs phone screen data')
+        if frame=='insert' and not isinstance(phase.get('insert'),dict):raise ValueError('An insert shot needs insert data')
+        if not actors and frame not in ('phone','insert'):raise ValueError('Staging needs visible actors or a supported object shot')
+        if phase.get('set') and phase['set'] not in VOCAB['sets']:raise ValueError('Unsupported staging set')
+        if any(line.get('who')=='narrator' for line in phase.get('lines',[])):raise ValueError('Keep narration in the beat; do not duplicate it in staging')
+def compile_staging(beat):
+    phases=beat.get('staging')
+    if not phases:return None
+    base={k:copy.deepcopy(beat[k]) for k in ('time','weather','grade','scene') if beat.get(k)}
+    base['set']=beat.get('where','void')
+    result=[]
+    for phase in phases:
+        shot={**copy.deepcopy(base),**copy.deepcopy(phase),'dur':max(3,float(beat.get('seconds',10))/len(phases)),
+              '_directed':True,'acting_source':'validated model staging'}
+        actors=shot.get('actors',[])
+        shot.setdefault('camera',{'frame':'two' if len(actors)>1 else 'medium','on':actors[0]['id'] if actors else None})
+        shot.setdefault('lines',[])
+        result.append(shot)
+    if result and not any(s['lines'] for s in result):
+        result[0]['lines']=copy.deepcopy(beat.get('dialogue') or [])
+    return result

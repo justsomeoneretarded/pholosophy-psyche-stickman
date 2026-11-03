@@ -31,7 +31,7 @@ The beats list is affected context; revise lists only actual patch targets. If b
 List only meaningful issues, not stylistic preferences. Do not invent research or quotations. Proposed repairs must not add unsupported neuroscience or research claims. Replace redundant exposition with deeper reasoning instead of deleting beats."""
 
 BEAT_FIELDS = set("""name seconds where time weather grade emotion what_happens narration
-demon_line inner_voice_line dialogue phone insert big_text counter_values chapter relapse mode idea scene who""".split())
+demon_line inner_voice_line dialogue phone insert big_text counter_values chapter relapse mode idea scene who staging""".split())
 META_FIELDS = set("""opening_line quote logo logline idea inner_voice description youtube_titles
 tags thumbnail_words pinned_comment cold_open ending approach device""".split())
 
@@ -45,7 +45,7 @@ def context(sheet, title):
         'opening_line': sheet.get('opening_line'), 'quote': sheet.get('quote'),
         'logo': sheet.get('logo'), 'description': sheet.get('description'),
         'beats': [{'index': i + 1, **{k: b.get(k) for k in
-                   ('name', 'idea', 'mode', 'where', 'scene', 'who', 'what_happens', 'narration', 'dialogue', 'demon_line', 'inner_voice_line')}}
+                   ('name', 'idea', 'mode', 'where', 'scene', 'who', 'what_happens', 'narration', 'dialogue', 'demon_line', 'inner_voice_line', 'staging')}}
                   for i, b in enumerate(sheet['beats'])]
     }
 
