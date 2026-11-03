@@ -4,7 +4,7 @@ on:
     inputs:
       source_run_id:
         type: string
-        default: '41341144570'
+        default: '41678117704'
   push:
     paths: ['.github/workflows/inspect-output.yml']
 permissions:
@@ -13,10 +13,10 @@ permissions:
 jobs:
   inspect:
     runs-on: ubuntu-24.04
-    timeout-minutes: 35
+    timeout-minutes: 45
     strategy:
       matrix:
-        source: ['41670031050']
+        source: ['41678117704']
     env:
       SOURCE_RUN: ${{ inputs.source_run_id || matrix.source }}
       GH_TOKEN: ${{ github.token }}
@@ -28,7 +28,7 @@ jobs:
           python - <<'PY'
           import os,json,time,urllib.request
           url='https://api.github.com/repos/'+os.environ['REPO']+'/actions/runs/'+os.environ['SOURCE_RUN']
-          for _ in range(60):
+          for _ in range(96):
               with urllib.request.urlopen(urllib.request.Request(url,headers={'Authorization':'Bearer '+os.environ['GH_TOKEN']})) as r:run=json.load(r)
               if run['status']=='completed':
                   if run['conclusion']!='success':raise SystemExit('Production failed; inspect its preserved diagnostics')
