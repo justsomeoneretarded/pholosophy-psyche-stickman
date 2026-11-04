@@ -6,10 +6,26 @@ VOCAB=json.loads((Path(__file__).resolve().parents[1]/'engine/vocab.json').read_
 FIELDS={'actors','camera','phone','insert','items','sfx','lines','door','door_at','big','set','scene','transition'}
 def staging_contract():
     return {'poses':VOCAB['poses'],'holds':VOCAB['holds'],'moods':VOCAB['moods'],
-            'frames':VOCAB['frames'],'sets':list(VOCAB['sets']),
+            'frames':VOCAB['frames'],'sets':list(VOCAB['sets']),'scene':VOCAB['scene'],
             'phase_fields':sorted(FIELDS),
             'actor_example':{'id':'existing_cast_id','pose':'write','x':50,'hold':'pencil'},
             'rules':'Use existing cast IDs; x/to are 0-100. Use write for drawing/painting, not paint. Supported held props only. Narration stays in the beat. Do not invent beat-level action fields.'}
+
+def validate_scene(scene):
+    if not isinstance(scene,dict):raise ValueError('A composed scene needs a scene object')
+    if scene.get('base') not in VOCAB['scene']['base']:
+        raise ValueError('Unsupported scene base: '+str(scene.get('base'))+'; choose '+', '.join(VOCAB['scene']['base'])+'; named sets belong in where/set')
+    for key in ('wall','ground','backdrop','light'):
+        if key in scene and scene[key] not in VOCAB['scene'][key]:
+            raise ValueError('Unsupported scene '+key+': '+str(scene[key]))
+    elements=scene.get('elements',[])
+    if not isinstance(elements,list):raise ValueError('Scene elements must be a list')
+    for element in elements:
+        if not isinstance(element,dict) or element.get('type') not in VOCAB['scene']['elements']:
+            raise ValueError('Unsupported scene element: '+str(element))
+        x=element.get('x',50)
+        if type(x) not in (int,float) or not math.isfinite(x) or not 0<=x<=100:
+            raise ValueError('Scene element x must be finite and between 0 and 100')
 
 def validate_staging(beat,cast):
     phases=beat.get('staging')
@@ -18,6 +34,7 @@ def validate_staging(beat,cast):
     known={p['id'] for p in cast}
     for phase in phases:
         if not isinstance(phase,dict) or set(phase)-FIELDS:raise ValueError('Unknown staging fields; use actors, camera and supported shot data')
+        if 'scene' in phase:validate_scene(phase['scene'])
         actors=phase.get('actors') or []
         if not isinstance(actors,list) or len(actors)>5:raise ValueError('A staging phase supports up to five actors')
         present={a.get('id') for a in actors if isinstance(a,dict)}

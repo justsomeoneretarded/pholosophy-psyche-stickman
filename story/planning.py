@@ -2,11 +2,12 @@
 import copy,json,re
 from pathlib import Path
 from story.normalization import character_ids
-from story.staging import validate_staging
+from story.staging import validate_staging,validate_scene
 
 VOCAB=json.loads((Path(__file__).resolve().parents[1]/'engine/vocab.json').read_text())
 
 def supported_location(beat, require_scene=False):
+    if 'scene' in beat:validate_scene(beat['scene'])
     original=str(beat.get('where') or '')
     if original in VOCAB['sets']:
         if require_scene and original=='scene' and not isinstance(beat.get('scene'),dict):

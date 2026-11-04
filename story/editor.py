@@ -113,7 +113,9 @@ def review_concept(sheet, writer, check, title, minutes, output_dir, rounds=3, r
             issues=[issue for issue in actionable if index in issue.get('revise',issue['beats'])]
             payload={'topic_and_direction':title,'argument':sheet.get('idea'),'approach':sheet.get('approach'),
                      'cast':sheet.get('cast'),'requested_beat':index,
-                     'story_map':[{'beat':i+1,'idea':b.get('idea'),'action':b.get('what_happens')} for i,b in enumerate(sheet['beats'])],
+                     'story_map':[{'beat':i+1,'idea':b.get('idea'),'what_happens':b.get('what_happens'),
+                                   'narration':b.get('narration'),'dialogue':b.get('dialogue'),
+                                   'where':b.get('where'),'scene':b.get('scene')} for i,b in enumerate(sheet['beats'])],
                      'findings':issues}
             from story.staging import staging_contract
             payload['supported_physical_staging']=staging_contract()
@@ -129,6 +131,8 @@ For a nonzero requested_beat return {"changes":{only changed beat fields}}.
 For requested_beat=0 return {"metadata":{only changed publishing/opening/ending fields}}.
 The application applies changes to that fixed part; never return edits to other beats.
 Preserve cast, premise, useful distinctions, informative depth and physical acting.
+The full spoken story_map is authoritative for family relationships, recipients, completed events and object ownership. Preserve those facts even when a proposed repair misstates them. Repair the underlying issue, not a mistaken example verbatim.
+Update staging together with narration when locations/actions change. A named set such as street goes in where; a composed scene.base must come from the supplied contract. Do not invent scene base names.
 Track who originally said each message. Never copy a recipient's reply into the sender's outgoing message as though the sender said it. Apply the shared chronological repair across the requested scene and keep completed invitations/agreements completed.
 Do not delete a beat or replace fields with null. If exposition repeats, advance its
 reasoning or use the slot for a concrete objection/example instead of erasing the slot.

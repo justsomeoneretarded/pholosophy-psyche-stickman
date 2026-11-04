@@ -190,7 +190,8 @@ def check_concept(sheet, minutes):
             b['who'], who_problems = character_ids(b.get('who',[]), sheet['cast'])
             dialogue_problems.extend(who_problems)
         problems.extend(f'beat {i+1}: {problem}' for problem in dialogue_problems)
-        from story.staging import validate_staging
+        from story.staging import validate_staging,validate_scene
+        if 'scene' in b:validate_scene(b['scene'])
         validate_staging(b,sheet.get('cast') or [])
         lines = beat_narration(b)
         if has_attributed_quotation(' '.join(lines)):
