@@ -33,6 +33,18 @@ def supported_location(beat, require_scene=False):
     beat['_location_description']=original
     return beat
 
+def continuity_history(beats):
+    """Keep spoken facts and physical endpoints without repeating complete render data."""
+    history=[]
+    for beat in beats:
+        entry={k:copy.deepcopy(beat[k]) for k in ('idea','what_happens','narration','dialogue','where','who') if k in beat}
+        phases=beat.get('staging') or []
+        if phases:
+            entry['physical_endpoint']=[{k:a[k] for k in ('id','pose','x','to','hold','seated') if k in a}
+                                        for a in phases[-1].get('actors',[])]
+        history.append(entry)
+    return history
+
 def plan_in_parts(writer, system, user, validate, minutes, output_dir):
     out=Path(output_dir);out.mkdir(parents=True,exist_ok=True)
     duration=float(minutes or 4.5)*60
@@ -77,7 +89,7 @@ Keep the complete outline comfortably below 750 output tokens."""
         indices=list(range(start+1,min(count,start+batch_size)+1))
         slots=[spine[index-1] for index in indices]
         payload={'topic':user,'argument_and_cast':{k:v for k,v in outline.items() if k not in ('spine','beats')},'requested_indices':indices,
-                 'total_beats':count,'spine_entries_to_advance':slots,'previous_beats':sheet['beats'],'remaining_outline':spine[start+1:]}
+                 'total_beats':count,'spine_entries_to_advance':slots,'previous_beats':continuity_history(sheet['beats']),'remaining_outline':spine[start+1:]}
         def check_chunk(data):
             beats=data.get('beats')
             if len(indices)==1 and beats is None and isinstance(data.get('narration'),list):beats=[data]
