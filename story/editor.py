@@ -115,6 +115,8 @@ def review_concept(sheet, writer, check, title, minutes, output_dir, rounds=3, r
                      'cast':sheet.get('cast'),'requested_beat':index,
                      'story_map':[{'beat':i+1,'idea':b.get('idea'),'action':b.get('what_happens')} for i,b in enumerate(sheet['beats'])],
                      'findings':issues}
+            from story.staging import staging_contract
+            payload['supported_physical_staging']=staging_contract()
             if index:
                 payload['current_beat']={k:v for k,v in sheet['beats'][index-1].items() if not k.startswith('_')}
                 payload['previous_beat']=sheet['beats'][index-2] if index>1 else None
@@ -133,7 +135,7 @@ reasoning or use the slot for a concrete objection/example instead of erasing th
 Preserve approximately the current amount of narration. Fictional dialogue is allowed.
 Never invent empirical findings, percentages, neuroscience, citations or quotations.
 Unsupported universal claims should be qualified or reframed, not given invented evidence.
-Use existing cast IDs and supported locations. Dialogue is a list of {who: cast ID, text: speech} objects. Do not include beat/index inside changes. Return JSON only."""
+Use existing cast IDs and supported locations. The supplied supported_physical_staging contract is exhaustive: never invent poses or held props. Use write with pencil for drawing/painting, or represent an unsupported object in narration with a supported visual alternative. Actor pose is inside staging[].actors[], never a beat-level action field. Preserve existing valid staging unless the repair changes its meaning. Dialogue is a list of {who: cast ID, text: speech} objects. Do not include beat/index inside changes. Return JSON only."""
             system += "\nAllowed beat fields: " + ", ".join(sorted(BEAT_FIELDS)) + "\nAllowed metadata fields: " + ", ".join(sorted(META_FIELDS))
             def validate_patch(data):
                 history[-1].setdefault('proposals',[]).append({'beat':index,'data':data})

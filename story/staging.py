@@ -4,6 +4,13 @@ import copy,json,math
 from pathlib import Path
 VOCAB=json.loads((Path(__file__).resolve().parents[1]/'engine/vocab.json').read_text())
 FIELDS={'actors','camera','phone','insert','items','sfx','lines','door','door_at','big','set','scene','transition'}
+def staging_contract():
+    return {'poses':VOCAB['poses'],'holds':VOCAB['holds'],'moods':VOCAB['moods'],
+            'frames':VOCAB['frames'],'sets':list(VOCAB['sets']),
+            'phase_fields':sorted(FIELDS),
+            'actor_example':{'id':'existing_cast_id','pose':'write','x':50,'hold':'pencil'},
+            'rules':'Use existing cast IDs; x/to are 0-100. Use write for drawing/painting, not paint. Supported held props only. Narration stays in the beat. Do not invent beat-level action fields.'}
+
 def validate_staging(beat,cast):
     phases=beat.get('staging')
     if phases is None:return
@@ -17,12 +24,12 @@ def validate_staging(beat,cast):
         if len(present)!=len(actors):raise ValueError('Actor IDs must be unique within a phase')
         for actor in actors:
             if actor.get('id') not in known:raise ValueError('Staging refers to an unknown cast ID')
-            if actor.get('pose') not in VOCAB['poses']:raise ValueError('Unsupported rig pose: '+str(actor.get('pose')))
+            if actor.get('pose') not in VOCAB['poses']:raise ValueError('Unsupported rig pose: '+str(actor.get('pose'))+'; choose one of '+', '.join(VOCAB['poses']))
             for key in ('x','to'):
                 if key in actor and (type(actor[key]) not in (int,float) or not math.isfinite(actor[key]) or not 0<=actor[key]<=100):
                     raise ValueError('Staging '+key+' must be a finite coordinate from 0 to 100')
             if actor.get('target') and actor['target'] not in present:raise ValueError('An interaction target must appear in the same staging phase')
-            if actor.get('hold') and actor['hold'] not in VOCAB['holds']:raise ValueError('Unsupported held prop')
+            if actor.get('hold') and actor['hold'] not in VOCAB['holds']:raise ValueError('Unsupported held prop: '+str(actor['hold'])+'; choose one of '+', '.join(VOCAB['holds']))
             if actor.get('mood') and actor['mood'] not in VOCAB['moods']:raise ValueError('Unsupported facial mood')
         camera=phase.get('camera') or {}
         frame=camera.get('frame','wide')

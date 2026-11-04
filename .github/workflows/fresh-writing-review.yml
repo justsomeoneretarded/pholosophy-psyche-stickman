@@ -1,4 +1,5 @@
 name: Fresh title writing and acting benchmark
+# Repair requests now include the exact supported rig contract.
 on:
   workflow_dispatch:
     inputs:
