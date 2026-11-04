@@ -39,8 +39,12 @@ jobs:
           for name in ('concept-before-editor.json','research.txt','sources.json'):
               urllib.request.urlretrieve(root+name,w/name)
           checkpoint=json.loads((w/'concept-before-editor.json').read_text())
+          from pipeline.writing.llm import Writer
+          from story.checkpoint import repair_checkpoint
+          checkpoint=repair_checkpoint(checkpoint,Writer(),w)
+          (w/'repaired-checkpoint.json').write_text(json.dumps(checkpoint))
           direction=checkpoint.get('_title') or title
-          sheet=stage_concept(direction,4,w,(w/'research.txt').read_text(),reuse_draft=w/'concept-before-editor.json')
+          sheet=stage_concept(direction,4,w,(w/'research.txt').read_text(),reuse_draft=w/'repaired-checkpoint.json')
           if not all(beat.get('staging') for beat in sheet['beats']):raise SystemExit('The writer omitted structured physical staging; this benchmark did not pass')
           stage_shots(w);stage_merge(w,Path('build/film.json'))
           PY
