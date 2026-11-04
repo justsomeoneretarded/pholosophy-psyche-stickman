@@ -1,0 +1,85 @@
+{
+ "title": "What If Nothing Really Matters?",
+ "idea": {
+  "definition": "Life may lack an objective cosmic purpose, yet still hold local reasons to act.",
+  "mechanism": "Absence of universal meaning frees individuals to create personal values, but also risks losing motivation.",
+  "turn": "When people confront cosmic emptiness, they either embrace freedom or spiral into apathy.",
+  "thinkers": "Existentialists, Absurdists, Moral Nihilists"
+ },
+ "approach": "Use contrasting scenes of a man in a quiet apartment and a woman on a bustling street to explore how local commitments persist without cosmic purpose.",
+ "cast": [
+  {
+   "id": "m",
+   "kind": "hero",
+   "top": "blue",
+   "hair": "short",
+   "hat": "none"
+  },
+  {
+   "id": "f",
+   "kind": "friend",
+   "top": "green",
+   "hair": "long",
+   "hat": "none"
+  }
+ ],
+ "device": {
+  "type": "none",
+  "items": []
+ },
+ "inner_voice": null,
+ "spine": [
+  {
+   "idea": "cosmic void",
+   "mode": "hook",
+   "where": "scene",
+   "what_happens": "A lone candle flickers, room dark, no stars visible",
+   "scene": {
+    "base": "room",
+    "elements": []
+   }
+  },
+  {
+   "idea": "personal duty",
+   "mode": "story",
+   "where": "scene",
+   "what_happens": "M sits at desk, writes a letter to a sibling",
+   "scene": {
+    "base": "room",
+    "elements": []
+   }
+  },
+  {
+   "idea": "apathy test",
+   "mode": "vignette",
+   "where": "street",
+   "what_happens": "F walks past a homeless person, hesitates, then helps"
+  },
+  {
+   "idea": "freedom paradox",
+   "mode": "contrast",
+   "where": "scene",
+   "what_happens": "M smiles, realizing choice is his own",
+   "scene": {
+    "base": "room",
+    "elements": []
+   }
+  },
+  {
+   "idea": "ethical anchor",
+   "mode": "inner",
+   "where": "void",
+   "what_happens": "M’s silhouette glows, holding a small flag of compassion"
+  },
+  {
+   "idea": "real counterargument",
+   "mode": "lesson",
+   "where": "scene",
+   "what_happens": "M reads a book titled \"Moral Nihilism Explained\"",
+   "scene": {
+    "base": "room",
+    "elements": []
+   }
+  }
+ ]
+}

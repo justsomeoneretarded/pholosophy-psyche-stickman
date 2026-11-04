@@ -1,0 +1,366 @@
+[
+ {
+  "first_beat": 1,
+  "beats": [
+   {
+    "idea": "cosmic void",
+    "mode": "hook",
+    "where": "scene",
+    "seconds": 40,
+    "who": [
+     "m"
+    ],
+    "emotion": "curiosity",
+    "what_happens": "A lone candle flickers in a dim room, no stars visible",
+    "narration": [
+     "In the quiet of a small apartment, a single candle burns, its flame trembling against the darkness.",
+     "The absence of stars outside the window reminds us that the universe offers no grand narrative to guide our days.",
+     "Without a cosmic script, each breath feels unanchored, as if we are writing our own lines on an empty page.",
+     "Yet this void also strips away expectations, leaving only the raw space where personal meaning can begin to form."
+    ],
+    "time": "night",
+    "weather": "none",
+    "grade": "cool",
+    "staging": [
+     {
+      "actors": [
+       {
+        "id": "m",
+        "pose": "stand",
+        "x": 50,
+        "hold": "none"
+       }
+      ],
+      "camera": {
+       "frame": "wide",
+       "on": "m"
+      }
+     }
+    ],
+    "scene": {
+     "base": "room",
+     "elements": [
+      {
+       "type": "candle",
+       "x": 50,
+       "color": "warm"
+      },
+      {
+       "type": "window",
+       "x": 80,
+       "color": "dark"
+      },
+      {
+       "type": "lamp",
+       "x": 20,
+       "color": "warm"
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "first_beat": 2,
+  "beats": [
+   {
+    "idea": "personal duty",
+    "mode": "story",
+    "where": "scene",
+    "seconds": 40,
+    "who": [
+     "m"
+    ],
+    "emotion": "contemplation",
+    "what_happens": "M sits at desk, writes a letter to a sibling",
+    "narration": [
+     "When the night settles, M sits alone at his desk, a single lamp casting a warm glow.",
+     "He picks up a pencil, the simple act of writing a letter to his brother as a quiet act of care.",
+     "The act reminds him that even without a cosmic script, he can choose to honor a personal bond.",
+     "Each sentence he writes feels like a small rebellion against the void, a claim of meaning in a small space."
+    ],
+    "time": "night",
+    "weather": "none",
+    "grade": "soft",
+    "staging": [
+     {
+      "actors": [
+       {
+        "id": "m",
+        "pose": "sitdown",
+        "x": 50,
+        "hold": "pencil"
+       }
+      ],
+      "camera": {
+       "frame": "medium",
+       "on": "m"
+      }
+     }
+    ],
+    "scene": {
+     "base": "room",
+     "elements": [
+      {
+       "type": "desk",
+       "x": 40
+      },
+      {
+       "type": "lamp",
+       "x": 20,
+       "color": "warm"
+      },
+      {
+       "type": "chair",
+       "x": 60
+      },
+      {
+       "type": "paper",
+       "x": 45
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "first_beat": 3,
+  "beats": [
+   {
+    "idea": "apathy test",
+    "mode": "vignette",
+    "where": "street",
+    "seconds": 40,
+    "who": [
+     "f"
+    ],
+    "emotion": "curiosity",
+    "what_happens": "F walks past a homeless person, hesitates, then helps",
+    "narration": [
+     "F stops at a street corner, glancing at a sleeping man under a flickering streetlight.",
+     "She pauses for a moment, then kneels beside him, placing a warm hand on his shoulder.",
+     "Her small gesture of kindness feels like a quiet rebellion against the void.",
+     "Even in a world without cosmic purpose, this moment matters."
+    ],
+    "time": "night",
+    "weather": "none",
+    "grade": "cool",
+    "staging": [
+     {
+      "actors": [
+       {
+        "id": "f",
+        "pose": "kneel",
+        "x": 45,
+        "hold": "none"
+       }
+      ],
+      "camera": {
+       "frame": "medium",
+       "on": "f"
+      }
+     }
+    ],
+    "scene": {
+     "base": "street",
+     "elements": [
+      {
+       "type": "streetlight",
+       "x": 50,
+       "color": "warm"
+      },
+      {
+       "type": "man",
+       "x": 40,
+       "color": "dark"
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "first_beat": 4,
+  "beats": [
+   {
+    "idea": "freedom paradox",
+    "mode": "contrast",
+    "where": "scene",
+    "seconds": 40,
+    "who": [
+     "m",
+     "f"
+    ],
+    "emotion": "reflection",
+    "what_happens": "M smiles, realizing choice is his own while F watches a bus arrive",
+    "narration": [
+     "When M looks up from his window, the sudden silence of his apartment feels like an open field, a space where every step is self‑chosen.",
+     "He smiles, the gesture small yet loaded, because without a cosmic script the weight of decision shifts entirely onto him.",
+     "Across the street, F watches a bus pull away, her face a quiet study of the same freedom—each person can decide where to go.",
+     "Both moments show that absence of universal meaning does not erase the personal responsibility that follows freedom.",
+     "Yet the freedom also carries a paradox: with no guiding purpose, motivation can wane, leaving one adrift in the quiet."
+    ],
+    "time": "night",
+    "weather": "none",
+    "grade": "cool",
+    "staging": [
+     {
+      "actors": [
+       {
+        "id": "m",
+        "pose": "stand",
+        "x": 30,
+        "hold": "pencil"
+       },
+       {
+        "id": "f",
+        "pose": "stand",
+        "x": 70,
+        "hold": "none"
+       }
+      ],
+      "camera": {
+       "frame": "medium",
+       "on": "m"
+      }
+     }
+    ],
+    "scene": {
+     "base": "room",
+     "elements": [
+      {
+       "type": "window",
+       "x": 80,
+       "color": "dark"
+      },
+      {
+       "type": "lamp",
+       "x": 20,
+       "color": "warm"
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "first_beat": 5,
+  "beats": [
+   {
+    "idea": "ethical anchor",
+    "mode": "inner",
+    "where": "void",
+    "seconds": 40,
+    "who": [
+     "m"
+    ],
+    "emotion": "reflection",
+    "what_happens": "M’s silhouette glows, holding a small flag of compassion",
+    "narration": [
+     "When the void stretches around him, M’s silhouette glows faintly, a flag of compassion held in one hand.",
+     "The flag flickers, as if each pulse represents a choice to act with empathy in a world without cosmic directives.",
+     "He feels the weight of responsibility—not from a higher law, but from the simple fact that his actions can alter another’s day.",
+     "This inner light shows that even without universal meaning, people can anchor themselves in shared human values, carving purpose from connection alone."
+    ],
+    "time": "night",
+    "weather": "none",
+    "grade": "soft",
+    "staging": [
+     {
+      "actors": [
+       {
+        "id": "m",
+        "pose": "stand",
+        "x": 50,
+        "hold": "none"
+       }
+      ],
+      "camera": {
+       "frame": "wide",
+       "on": "m"
+      }
+     }
+    ],
+    "scene": {
+     "base": "void",
+     "elements": [
+      {
+       "type": "light_door",
+       "x": 50,
+       "color": "warm"
+      },
+      {
+       "type": "word",
+       "x": 50,
+       "label": "compassion",
+       "color": "white"
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "first_beat": 6,
+  "beats": [
+   {
+    "idea": "real counterargument",
+    "mode": "lesson",
+    "where": "scene",
+    "seconds": 40,
+    "who": [
+     "m"
+    ],
+    "emotion": "curiosity",
+    "what_happens": "M reads a book titled \"Moral Nihilism Explained\"",
+    "narration": [
+     "M flips through the pages of a book that claims morality is nothing more than a social construct.",
+     "The author argues that if there is no objective right or wrong, then traditional moral duties dissolve into personal preference.",
+     "Yet the book also notes that people often create shared rules to maintain cooperation, suggesting that moral frameworks can arise even without cosmic endorsement.",
+     "This counterpoint shows that a lack of universal meaning does not automatically erase the practical need for ethical guidelines."
+    ],
+    "time": "afternoon",
+    "weather": "none",
+    "grade": "neutral",
+    "staging": [
+     {
+      "actors": [
+       {
+        "id": "m",
+        "pose": "sitdown",
+        "x": 50,
+        "hold": "book"
+       }
+      ],
+      "camera": {
+       "frame": "medium",
+       "on": "m"
+      }
+     }
+    ],
+    "scene": {
+     "base": "room",
+     "elements": [
+      {
+       "type": "desk",
+       "x": 40
+      },
+      {
+       "type": "chair",
+       "x": 60
+      },
+      {
+       "type": "book",
+       "x": 45
+      },
+      {
+       "type": "lamp",
+       "x": 20,
+       "color": "warm"
+      }
+     ]
+    }
+   }
+  ]
+ }
+]
